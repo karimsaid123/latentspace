@@ -1,15 +1,32 @@
-import { NextResponse } from 'next/server';
-import { syncFeeds } from '@/lib/rss-fetcher';
+import { NextRequest, NextResponse } from 'next/server';
+import { container } from '@/core/container';
+import { logger } from '@/lib/logger';
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const requestId = `sync_${Date.now()}`;
+  const startTime = Date.now();
+
   try {
-    const result = await syncFeeds();
-    return NextResponse.json(result);
+    await container.bootstrap();
+    const report = await container.ingestionService.runIngestion(requestId);
+
+    // Invalidate list caches so new articles appear immediately
+    await container.cache.clear();
+
+    logger.info('Sync route executed', {
+      requestId,
+      durationMs: Date.now() - startTime,
+      articlesAdded: report.articlesAdded,
+      articlesModified: report.articlesModified,
+    });
+
+    return NextResponse.json(report);
   } catch (error: any) {
-    console.error('Error during sync:', error);
-    return NextResponse.json(
-      { success: false, error: error.message || 'Sync failed' },
-      { status: 500 }
-    );
+    logger.error('Sync route failed', {
+      requestId,
+      durationMs: Date.now() - startTime,
+      error: error.message,
+    });
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

@@ -1,85 +1,107 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getArticles } from '@/lib/storage';
-import { syncFeeds } from '@/lib/rss-fetcher';
-import { Article, Category } from '@/types';
+import { container } from '@/core/container';
+import { logger } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
-  try {
-    let articles = await getArticles();
+  const requestId = `req_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+  const startTime = Date.now();
 
-    // Auto-sync if database is empty on first visit
-    if (articles.length === 0) {
-      await syncFeeds();
-      articles = await getArticles();
-    }
+  try {
+    await container.bootstrap();
 
     const searchParams = request.nextUrl.searchParams;
-    const category = searchParams.get('category');
-    const search = searchParams.get('search')?.toLowerCase().trim();
-    const sort = searchParams.get('sort') || 'latest';
-    const bookmarkedOnly = searchParams.get('bookmarked') === 'true';
+    const category = searchParams.get('category') || undefined;
+    const search = searchParams.get('search') || undefined;
+    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 100;
 
-    // Calculate category counts across all articles
-    const categoryCounts: Record<string, number> = {
-      All: articles.length,
-      'LLMs & GenAI': 0,
-      'Robotics & Hardware': 0,
-      'Open Source & Research': 0,
-      'Business & Big Tech': 0,
-      'Ethics & Policy': 0,
-      Bookmarks: 0,
+    const cacheKey = `articles_list_${category || 'ALL'}_${search || 'NONE'}_${limit}`;
+
+    // Single-Flight Coalesced Query with Cache
+    const data = await container.cache.coalesce(cacheKey, async () => {
+      const [articles, totalCount, allArticles] = await Promise.all([
+        container.articleRepo.list({
+          category: category !== 'All' ? category : undefined,
+          searchQuery: search,
+          limit,
+        }),
+        container.articleRepo.count({
+          category: category !== 'All' ? category : undefined,
+          searchQuery: search,
+        }),
+        container.articleRepo.list({ limit: 1000 }),
+      ]);
+
+      // If store is empty, trigger an initial ingestion
+      if (allArticles.length === 0) {
+        await container.ingestionService.runIngestion(requestId);
+        return null; // Will re-evaluate on next call
+      }
+
+      // Compute live category counts
+      const categoryCounts: Record<string, number> = {
+        All: allArticles.length,
+        'LLMs & GenAI': 0,
+        'Robotics & Hardware': 0,
+        'Open Source & Research': 0,
+        'Business & Big Tech': 0,
+        'Ethics & Policy': 0,
+      };
+
+      for (const a of allArticles) {
+        if (categoryCounts[a.category] !== undefined) {
+          categoryCounts[a.category]++;
+        }
+      }
+
+      // Map to frontend consumer format
+      const formatted = articles.map(a => ({
+        id: a.id,
+        title: a.title,
+        link: a.canonicalUrl,
+        pubDate: a.publishedAt,
+        source: {
+          id: a.sourceId,
+          name: a.sourceName,
+          url: a.canonicalUrl,
+        },
+        author: a.author,
+        contentSnippet: a.contentSnippet,
+        imageUrl: a.imageUrl,
+        category: a.category,
+        aiSummary: a.summary,
+      }));
+
+      const payload = {
+        articles: formatted,
+        total: totalCount,
+        categoryCounts,
+      };
+
+      // Set warm cache for 15 seconds
+      await container.cache.set(cacheKey, payload, 15);
+      return payload;
+    });
+
+    // If cache coalesce returned null because initial sync was triggered
+    const finalData = data || {
+      articles: [],
+      total: 0,
+      categoryCounts: { All: 0, 'LLMs & GenAI': 0, 'Robotics & Hardware': 0, 'Open Source & Research': 0, 'Business & Big Tech': 0, 'Ethics & Policy': 0 },
     };
 
-    articles.forEach(article => {
-      if (categoryCounts[article.category] !== undefined) {
-        categoryCounts[article.category]++;
-      }
-      if (article.bookmarked) {
-        categoryCounts.Bookmarks++;
-      }
+    logger.info('News query served', {
+      requestId,
+      durationMs: Date.now() - startTime,
+      count: finalData.articles.length,
     });
 
-    // Apply filtering
-    let filtered = [...articles];
-
-    if (bookmarkedOnly) {
-      filtered = filtered.filter(a => a.bookmarked);
-    } else if (category && category !== 'All') {
-      filtered = filtered.filter(a => a.category === category);
-    }
-
-    if (search) {
-      filtered = filtered.filter(a =>
-        a.title.toLowerCase().includes(search) ||
-        a.contentSnippet?.toLowerCase().includes(search) ||
-        a.aiSummary.tldr.toLowerCase().includes(search) ||
-        a.aiSummary.takeaways.some(t => t.toLowerCase().includes(search)) ||
-        a.source.name.toLowerCase().includes(search)
-      );
-    }
-
-    // Apply sorting
-    if (sort === 'latest') {
-      filtered.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
-    } else if (sort === 'impact') {
-      const impactWeights: Record<string, number> = {
-        Breakthrough: 4,
-        High: 3,
-        Medium: 2,
-        Notable: 1,
-      };
-      filtered.sort((a, b) => (impactWeights[b.aiSummary.impact] || 0) - (impactWeights[a.aiSummary.impact] || 0));
-    } else if (sort === 'readTime') {
-      filtered.sort((a, b) => a.aiSummary.readTimeMinutes - b.aiSummary.readTimeMinutes);
-    }
-
-    return NextResponse.json({
-      articles: filtered,
-      total: filtered.length,
-      categoryCounts,
-    });
+    return NextResponse.json(finalData);
   } catch (error: any) {
-    console.error('Error fetching news:', error);
-    return NextResponse.json({ error: error.message || 'Failed to fetch news' }, { status: 500 });
+    logger.error('Failed to serve news query', {
+      requestId,
+      durationMs: Date.now() - startTime,
+      error: error.message,
+    });
+    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 });
   }
 }
