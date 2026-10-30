@@ -10,12 +10,21 @@ export class IngestionService {
   private circuitBreakers = new Map<string, CircuitBreaker>();
   private singleFlight = new SingleFlight();
   private diffEngine = new IngestionDiffEngine();
+  private lastRunTimestamp: number = 0;
 
   constructor(
     private readonly feedProvider: FeedProviderPort,
     private readonly articleRepo: ArticleRepositoryPort,
     private readonly sourceRepo: SourceRepositoryPort
   ) {}
+
+  public getLastRunTimestamp(): number {
+    return this.lastRunTimestamp;
+  }
+
+  public shouldRunBackgroundSync(intervalMs = 5 * 60 * 1000): boolean {
+    return Date.now() - this.lastRunTimestamp > intervalMs;
+  }
 
   private getCircuitBreaker(sourceId: string, sourceName: string): CircuitBreaker {
     let breaker = this.circuitBreakers.get(sourceId);
@@ -98,6 +107,7 @@ export class IngestionService {
         }
       }
 
+      this.lastRunTimestamp = Date.now();
       const durationMs = Date.now() - startTime;
       const report: IngestionReport = {
         success: true,

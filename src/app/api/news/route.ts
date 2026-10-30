@@ -98,13 +98,24 @@ export async function GET(request: NextRequest) {
       categoryCounts: { All: 0, 'LLMs & GenAI': 0, 'Robotics & Hardware': 0, 'Open Source & Research': 0, 'Business & Big Tech': 0, 'Ethics & Policy': 0 },
     };
 
+    // Background stale-while-revalidate ingestion if it's been more than 5 minutes
+    if (container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
+      container.ingestionService
+        .runIngestion(`swr_${Date.now()}`)
+        .then(() => container.cache.clear())
+        .catch(() => {});
+    }
+
     logger.info('News query served', {
       requestId,
       durationMs: Date.now() - startTime,
       count: finalData.articles.length,
     });
 
-    return NextResponse.json(finalData);
+    return NextResponse.json({
+      ...finalData,
+      lastSyncedAt: container.ingestionService.getLastRunTimestamp(),
+    });
   } catch (error: any) {
     logger.error('Failed to serve news query', {
       requestId,

@@ -14,6 +14,7 @@ class BackendContainer {
   public readonly ingestionService: IngestionService;
 
   private isInitialized = false;
+  private schedulerTimer: NodeJS.Timeout | null = null;
 
   private constructor() {
     this.feedProvider = new RssFeedAdapter(9000);
@@ -42,6 +43,23 @@ class BackendContainer {
       this.sourceRepo.initialize(),
     ]);
     this.isInitialized = true;
+    this.startAutonomousScheduler();
+  }
+
+  public startAutonomousScheduler(intervalMs = 5 * 60 * 1000): void {
+    if (this.schedulerTimer) return;
+    this.schedulerTimer = setInterval(async () => {
+      try {
+        await this.bootstrap();
+        await this.ingestionService.runIngestion('cron_scheduler');
+        await this.cache.clear();
+      } catch (err: any) {
+        // Suppress or log gracefully
+      }
+    }, intervalMs);
+    if (this.schedulerTimer && typeof this.schedulerTimer.unref === 'function') {
+      this.schedulerTimer.unref();
+    }
   }
 }
 

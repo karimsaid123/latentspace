@@ -7,11 +7,15 @@ import ArtFrame from './ArtFrame';
 interface EditorialSpreadProps {
   articles: Article[];
   onSelectArticle: (article: Article) => void;
+  bookmarkedIds?: string[];
+  onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
 }
 
 export default function EditorialSpread({
   articles,
   onSelectArticle,
+  bookmarkedIds = [],
+  onToggleBookmark,
 }: EditorialSpreadProps) {
   if (!articles || articles.length === 0) return null;
 
@@ -322,11 +326,24 @@ export default function EditorialSpread({
                 </p>
               </div>
 
-              <div className="mt-4 pt-2 border-t border-black/10 flex justify-between font-mono text-[9px] tracking-widest text-black/40 uppercase">
+              <div className="mt-4 pt-2 border-t border-black/10 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
                 <span>{art.category}</span>
-                <span className="font-bold text-black flex items-center gap-1">
-                  READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
-                </span>
+                <div className="flex items-center gap-3">
+                  {onToggleBookmark && (
+                    <button
+                      onClick={(e) => onToggleBookmark(art.id, e)}
+                      className={`hover:text-black cursor-pointer transition-colors ${
+                        bookmarkedIds.includes(art.id) ? 'text-black font-bold' : 'text-black/40'
+                      }`}
+                      title={bookmarkedIds.includes(art.id) ? 'Saved' : 'Save article'}
+                    >
+                      [{bookmarkedIds.includes(art.id) ? '★' : '+ SAVE'}]
+                    </button>
+                  )}
+                  <span className="font-bold text-black flex items-center gap-1">
+                    READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+                  </span>
+                </div>
               </div>
             </div>
           ))}

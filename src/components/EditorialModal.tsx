@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
 import { ExternalLink } from 'lucide-react';
@@ -8,12 +8,18 @@ import { ExternalLink } from 'lucide-react';
 interface EditorialModalProps {
   article: Article | null;
   onClose: () => void;
+  isBookmarked?: boolean;
+  onToggleBookmark?: (id: string) => void;
 }
 
 export default function EditorialModal({
   article,
   onClose,
+  isBookmarked = false,
+  onToggleBookmark,
 }: EditorialModalProps) {
+  const [copied, setCopied] = useState(false);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -22,7 +28,17 @@ export default function EditorialModal({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
+  const handleCopyLink = () => {
+    if (!article) return;
+    navigator.clipboard.writeText(article.link);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   if (!article) return null;
+
+  const wordCount = (article.contentSnippet || '').split(' ').length + (article.aiSummary?.tldr || '').split(' ').length;
+  const readTimeMinutes = Math.max(1, Math.round(wordCount / 40));
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
@@ -44,12 +60,32 @@ export default function EditorialModal({
             <span className="ml-3 font-bold text-black">[{article.source.name}]</span>
           </div>
 
-          <button
-            onClick={onClose}
-            className="font-bold text-black hover:opacity-60 cursor-pointer"
-          >
-            [CLOSE ✕]
-          </button>
+          <div className="flex items-center gap-3">
+            {onToggleBookmark && (
+              <button
+                onClick={() => onToggleBookmark(article.id)}
+                className={`cursor-pointer transition-colors ${
+                  isBookmarked ? 'text-black font-black' : 'text-black/60 hover:text-black'
+                }`}
+              >
+                [{isBookmarked ? '★ SAVED' : '+ SAVE'}]
+              </button>
+            )}
+
+            <button
+              onClick={handleCopyLink}
+              className="text-black/60 hover:text-black cursor-pointer transition-colors"
+            >
+              [{copied ? 'COPIED ✓' : 'SHARE'}]
+            </button>
+
+            <button
+              onClick={onClose}
+              className="font-bold text-black hover:opacity-60 cursor-pointer ml-2"
+            >
+              [CLOSE ✕]
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Content */}
@@ -57,7 +93,7 @@ export default function EditorialModal({
           
           <div>
             <span className="font-mono text-[9px] tracking-widest uppercase text-black/40 block mb-2">
-              CLASSIFICATION // "{article.category}"
+              CLASSIFICATION // "{article.category}" // ~{readTimeMinutes} MIN READ
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black">
               {article.title}
