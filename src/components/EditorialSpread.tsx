@@ -26,7 +26,7 @@ export default function EditorialSpread({
     <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-8 select-none">
       
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: MONUMENTAL SWISS HEADLINES (Lead Breakthrough)
+          SECTION 1: MONUMENTAL SWISS HEADLINES (Image 2 style)
       ───────────────────────────────────────────────────────────── */}
       <section className="relative pt-6 pb-28 border-b border-black/10">
         
@@ -70,7 +70,6 @@ export default function EditorialSpread({
                 src={lead.imageUrl}
                 alt={lead.title}
                 indexCode="001"
-                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -91,10 +90,7 @@ export default function EditorialSpread({
             </div>
 
             {/* Bottom Right Art Block */}
-            <div className="flex justify-end items-end gap-6 pt-4">
-              <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[220px] text-right hidden sm:block">
-                AUTONOMOUS RESEARCH RADAR // DISTRIBUTED INFERENCE
-              </span>
+            <div className="flex justify-end items-end pt-4">
               <div 
                 onClick={() => onSelectArticle(second)}
                 className="cursor-pointer w-28 sm:w-36 shrink-0"
@@ -103,7 +99,6 @@ export default function EditorialSpread({
                   src={second.imageUrl}
                   alt={second.title}
                   indexCode="002"
-                  subTag="FRONTIER"
                   aspect="portrait"
                 />
               </div>
@@ -116,12 +111,12 @@ export default function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 2: VERTICAL SWISS TYPOGRAPHY & ART STACK
+          SECTION 2: VERTICAL SWISS TYPOGRAPHY & ART STACK (Image 3 style)
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-28 border-b border-black/10">
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>NEURAL ARCHITECTURE SPECIFICATIONS</span>
+          <span>NEURAL ARCHITECTURE</span>
           <span>AUTONOMOUS COGNITION</span>
         </div>
 
@@ -139,7 +134,6 @@ export default function EditorialSpread({
                   src={item.imageUrl}
                   alt={item.title}
                   indexCode={`00${idx + 3}`}
-                  subTag="REPORT"
                   aspect="portrait"
                 />
                 <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
@@ -149,7 +143,7 @@ export default function EditorialSpread({
             ))}
           </div>
 
-          {/* Right Column: Giant Horizontal Typography */}
+          {/* Right Column: Giant Typography */}
           <div className="lg:col-span-9 flex flex-col justify-between h-full pl-0 lg:pl-10">
             <div>
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-3">
@@ -175,7 +169,7 @@ export default function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 3: SCATTERED EDITORIAL GALLERY SPREAD
+          SECTION 3: SCATTERED EDITORIAL GALLERY SPREAD (Image 1 style)
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-28 border-b border-black/10">
         
@@ -194,7 +188,6 @@ export default function EditorialSpread({
                 src={fourth.imageUrl}
                 alt={fourth.title}
                 indexCode="004"
-                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -215,7 +208,6 @@ export default function EditorialSpread({
                 src={fifth.imageUrl}
                 alt={fifth.title}
                 indexCode="005"
-                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -252,13 +244,9 @@ export default function EditorialSpread({
                 src={sixth.imageUrl}
                 alt={sixth.title}
                 indexCode="006"
-                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
-            <span className="font-mono text-[9px] tracking-widest text-black/50 block">
-              COGNITIVE AGENT ARCHITECTURE
-            </span>
           </div>
 
         </div>
@@ -294,7 +282,6 @@ export default function EditorialSpread({
                     src={art.imageUrl}
                     alt={art.title}
                     indexCode={`REF_${(idx + 1).toString().padStart(3, '0')}`}
-                    subTag={`"${art.category}"`}
                     aspect="landscape"
                   />
                 </div>

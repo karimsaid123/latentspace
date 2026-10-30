@@ -1,5 +1,34 @@
 [
   {
+    "id": "621b53d3ad76e2c0",
+    "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+    "link": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+    "pubDate": "2026-10-30T16:03:45.000Z",
+    "source": {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "websiteUrl": "https://techcrunch.com/category/artificial-intelligence/",
+      "color": "#059669"
+    },
+    "author": "Amanda Silberling",
+    "contentSnippet": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have never turned a profit are raising capital at trillion-dollar valuations.",
+    "fullContent": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have never turned a profit are raising capital at trillion-dollar valuations. ",
+    "category": "Business & Big Tech",
+    "aiSummary": {
+      "tldr": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have never turned a profit are raising capital at trillion-dollar valuations.",
+      "takeaways": [
+        "Announcement focusing on advances in Theranos whistleblower Tyler Shultz warns that the...",
+        "Relevant for engineers, researchers, and AI industry practitioners."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    },
+    "bookmarked": false,
+    "isFeatured": true
+  },
+  {
     "id": "d7f3b41f1dba70c8",
     "title": "Pope Leo calls for the disarmament of AI: ‘Machines are tools, not persons’",
     "link": "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
@@ -27,7 +56,7 @@
       "generatedWith": "heuristic"
     },
     "bookmarked": false,
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "e54e2cc79a7ae6cb",
@@ -879,6 +908,35 @@
       "tldr": "Ropes & Gray is developing AI for transactional diligence with OpenAI.",
       "takeaways": [
         "Lawyers review grouped documents, summaries, and reports before advising clients.",
+        "Key implications for rapid development and deployment in the AI ecosystem."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    },
+    "bookmarked": false,
+    "isFeatured": false
+  },
+  {
+    "id": "85f94c0fe8f02a81",
+    "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+    "link": "https://openai.com/index/credit-saison",
+    "pubDate": "2026-10-29T00:00:00.000Z",
+    "source": {
+      "id": "openai",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "websiteUrl": "https://openai.com/news",
+      "color": "#10a37f"
+    },
+    "author": "OpenAI News",
+    "contentSnippet": "Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption.",
+    "fullContent": "Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption.",
+    "category": "LLMs & GenAI",
+    "aiSummary": {
+      "tldr": "Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI.",
+      "takeaways": [
+        "See how leaders and employees helped turn the results into companywide adoption.",
         "Key implications for rapid development and deployment in the AI ecosystem."
       ],
       "impact": "Notable",

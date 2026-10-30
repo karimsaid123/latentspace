@@ -70,7 +70,6 @@ export default function EditorialModal({
                 src={article.imageUrl}
                 alt={article.title}
                 indexCode="001"
-                subTag="REPORT"
                 aspect="landscape"
               />
             </div>
