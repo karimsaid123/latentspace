@@ -71,46 +71,48 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: MONUMENTAL SWISS HEADLINES (Image 2 style)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative pt-6 pb-28 border-b border-black/10 animate-fade-up">
+      <section className="relative pt-6 pb-16 lg:pb-20 animate-fade-up">
         
         {/* Lead Giant Headline */}
         <div className="relative mb-14">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
-            <h1
-              onClick={() => onSelectArticle(lead)}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer max-w-6xl"
-            >
-              {lead.title}
-            </h1>
+            <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10 max-w-6xl w-full">
+              <h1
+                onClick={() => onSelectArticle(lead)}
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer"
+              >
+                {lead.title}
+              </h1>
+
+              <div className="mt-6 font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
+                <span>BY {lead.author || lead.source.name}</span>
+                <span>//</span>
+                <span className="font-bold text-black">LAB: [{lead.lab || 'FRONTIER'}]</span>
+                <span>//</span>
+                <span className={lead.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+                  [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+                </span>
+                {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
+                {onToggleBookmark && (
+                  <>
+                    <span>//</span>
+                    <button
+                      onClick={(e) => onToggleBookmark(lead.id, e)}
+                      className={`hover:text-black cursor-pointer transition-colors ${
+                        bookmarkedIds.includes(lead.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                      }`}
+                      title={bookmarkedIds.includes(lead.id) ? 'Saved' : 'Save article'}
+                    >
+                      [{bookmarkedIds.includes(lead.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
             
             <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase shrink-0 pt-3">
               <span>[{lead.source.name}]</span>
             </div>
-          </div>
-
-          <div className="mt-4 font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
-            <span>BY {lead.author || lead.source.name}</span>
-            <span>//</span>
-            <span className="font-bold text-black">LAB: [{lead.lab || 'FRONTIER'}]</span>
-            <span>//</span>
-            <span className={lead.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-              [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
-            </span>
-            {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
-            {onToggleBookmark && (
-              <>
-                <span>//</span>
-                <button
-                  onClick={(e) => onToggleBookmark(lead.id, e)}
-                  className={`hover:text-black cursor-pointer transition-colors ${
-                    bookmarkedIds.includes(lead.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
-                  }`}
-                  title={bookmarkedIds.includes(lead.id) ? 'Saved' : 'Save article'}
-                >
-                  [{bookmarkedIds.includes(lead.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
-                </button>
-              </>
-            )}
           </div>
         </div>
 
@@ -139,26 +141,28 @@ const EditorialSpread = memo(function EditorialSpread({
               onClick={() => onSelectArticle(second)}
               className="cursor-pointer mb-10 group"
             >
-              <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
-                <span>[{second.source.name}]</span>
-                {onToggleBookmark && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleBookmark(second.id, e);
-                    }}
-                    className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(second.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
-                    }`}
-                    title={bookmarkedIds.includes(second.id) ? 'Saved' : 'Save article'}
-                  >
-                    [{bookmarkedIds.includes(second.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
-                  </button>
-                )}
+              <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10">
+                <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
+                  <span>[{second.source.name}]</span>
+                  {onToggleBookmark && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onToggleBookmark(second.id, e);
+                      }}
+                      className={`hover:text-black cursor-pointer transition-colors ${
+                        bookmarkedIds.includes(second.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                      }`}
+                      title={bookmarkedIds.includes(second.id) ? 'Saved' : 'Save article'}
+                    >
+                      [{bookmarkedIds.includes(second.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                    </button>
+                  )}
+                </div>
+                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300">
+                  {second.title}
+                </h2>
               </div>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300">
-                {second.title}
-              </h2>
             </div>
 
             {/* Bottom Right Art Block */}
@@ -182,76 +186,53 @@ const EditorialSpread = memo(function EditorialSpread({
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          EDITORIAL TELEMETRY TICKER MARQUEE (Infinite smooth scroll)
-      ───────────────────────────────────────────────────────────── */}
-      <div className="w-full overflow-hidden border-b border-black py-3 select-none bg-[#faf9f6]">
-        <div className="animate-marquee font-mono text-[10px] tracking-[0.22em] uppercase font-bold text-black flex items-center gap-10 whitespace-nowrap">
-          <span>LATENT SPACE // AUTONOMOUS AI TELEMETRY</span>
-          <span className="text-black/30">▪</span>
-          <span>NEURAL ARCHITECTURE // REAL-TIME HARVEST</span>
-          <span className="text-black/30">▪</span>
-          <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
-          <span className="text-black/30">▪</span>
-          <span>ZERO-LATENCY INGESTION // GLOBAL NETWORK</span>
-          <span className="text-black/30">▪</span>
-          <span>LATENT SPACE // AUTONOMOUS AI TELEMETRY</span>
-          <span className="text-black/30">▪</span>
-          <span>NEURAL ARCHITECTURE // REAL-TIME HARVEST</span>
-          <span className="text-black/30">▪</span>
-          <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
-          <span className="text-black/30">▪</span>
-          <span>ZERO-LATENCY INGESTION // GLOBAL NETWORK</span>
-          <span className="text-black/30">▪</span>
-        </div>
-      </div>
-
-
-      {/* ─────────────────────────────────────────────────────────────
           SECTION 2: MONUMENTAL SWISS TYPOGRAPHY DISPATCH
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-16 lg:py-20">
+      <section className="relative py-12 lg:py-16">
         
-        <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
+        <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-6">
           <span>FEATURED DISPATCH</span>
         </div>
 
         <div className="w-full">
-          <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
-            <div className="flex items-center gap-3">
-              <span className="font-bold text-black">[{third.source.name}]</span>
-              <span>//</span>
-              <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+          <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10">
+            <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
+              <div className="flex items-center gap-3">
+                <span className="font-bold text-black">[{third.source.name}]</span>
+                <span>//</span>
+                <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+              </div>
+              {onToggleBookmark && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleBookmark(third.id, e);
+                  }}
+                  className={`hover:text-black cursor-pointer transition-colors ${
+                    bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                  }`}
+                  title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
+                >
+                  [{bookmarkedIds.includes(third.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                </button>
+              )}
             </div>
-            {onToggleBookmark && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onToggleBookmark(third.id, e);
-                }}
-                className={`hover:text-black cursor-pointer transition-colors ${
-                  bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
-                }`}
-                title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
-              >
-                [{bookmarkedIds.includes(third.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
-              </button>
-            )}
-          </div>
 
-          <h2
-            onClick={() => onSelectArticle(third)}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-8"
-          >
-            {third.title}
-          </h2>
+            <h2
+              onClick={() => onSelectArticle(third)}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-[-0.035em] leading-[0.9] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-6"
+            >
+              {third.title}
+            </h2>
 
-          <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
-            <span>BY {third.author || third.source.name}</span>
-            <span>//</span>
-            <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-              [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
-            </span>
-            {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
+            <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
+              <span>BY {third.author || third.source.name}</span>
+              <span>//</span>
+              <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+                [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+              </span>
+              {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
+            </div>
           </div>
         </div>
 
