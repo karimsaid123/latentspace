@@ -49,3 +49,4 @@ test('CircuitBreaker transitions from CLOSED to OPEN after failure threshold', a
   assert.equal(result, 'recovered');
   assert.equal(breaker.getState(), 'CLOSED');
 });
+

@@ -49,3 +49,4 @@ export class StructuredLogger {
 }
 
 export const logger = new StructuredLogger('latent-space-backend');
+

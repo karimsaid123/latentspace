@@ -81,12 +81,12 @@ export default function EditorialModal({
               "AI TL;DR EXECUTIVE SUMMARY"
             </span>
             <p className="uppercase leading-relaxed text-black/90">
-              {article.aiSummary.tldr}
+              {article.aiSummary?.tldr || article.contentSnippet || ''}
             </p>
           </div>
 
           {/* Takeaways */}
-          {article.aiSummary.takeaways && article.aiSummary.takeaways.length > 0 && (
+          {article.aiSummary?.takeaways && article.aiSummary.takeaways.length > 0 && (
             <div className="font-mono text-xs space-y-2">
               <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
                 BELANGRIJKSTE INZICHTEN:

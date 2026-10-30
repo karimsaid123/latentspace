@@ -187,3 +187,4 @@ export class RssFeedAdapter implements FeedProviderPort {
     };
   }
 }
+

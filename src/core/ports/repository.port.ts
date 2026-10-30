@@ -23,3 +23,4 @@ export interface SourceRepositoryPort {
   updateStatus(id: string, fetchedAt: string, failureCount: number): Promise<void>;
   toggleSource(id: string, enabled: boolean): Promise<void>;
 }
+

@@ -291,7 +291,7 @@ export default function EditorialSpread({
                 </h3>
 
                 <p className="font-mono text-[10px] uppercase text-black/70 line-clamp-2 leading-relaxed">
-                  {art.aiSummary.tldr}
+                  {art.aiSummary?.tldr || art.contentSnippet || ''}
                 </p>
               </div>
 

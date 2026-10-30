@@ -35,3 +35,4 @@ test('SingleFlight executes concurrent duplicate calls exactly once', async () =
   await sf.execute('feed_openai', expensiveFetch);
   assert.equal(executionCount, 2);
 });
+

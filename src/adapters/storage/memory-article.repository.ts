@@ -14,9 +14,33 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   public async initialize(): Promise<void> {
     try {
       const raw = await fs.readFile(this.storageFilePath, 'utf8');
-      const loaded: DomainArticle[] = JSON.parse(raw);
+      const loaded: any[] = JSON.parse(raw);
       for (const item of loaded) {
-        this.articles.set(item.id, item);
+        // Robust adapter normalization: handles both legacy and domain formats
+        const summary = item.summary || item.aiSummary || {
+          tldr: item.contentSnippet || item.title || '',
+          takeaways: [],
+          impact: item.aiSummary?.impact || 'Notable',
+          readTimeMinutes: item.aiSummary?.readTimeMinutes || 2,
+        };
+
+        const normalized: DomainArticle = {
+          id: item.id,
+          canonicalUrl: item.canonicalUrl || item.link || '',
+          title: item.title,
+          publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
+          fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
+          contentHash: item.contentHash || item.id,
+          sourceId: item.sourceId || item.source?.id || 'source',
+          sourceName: item.sourceName || item.source?.name || 'Feed',
+          author: item.author || '',
+          contentSnippet: item.contentSnippet || '',
+          imageUrl: item.imageUrl,
+          category: item.category || 'LLMs & GenAI',
+          summary,
+        };
+
+        this.articles.set(normalized.id, normalized);
       }
     } catch {
       // Empty or not existing yet
@@ -55,7 +79,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       result = result.filter(a =>
         a.title.toLowerCase().includes(q) ||
         a.contentSnippet.toLowerCase().includes(q) ||
-        a.summary.tldr.toLowerCase().includes(q) ||
+        (a.summary?.tldr && a.summary.tldr.toLowerCase().includes(q)) ||
         a.sourceName.toLowerCase().includes(q)
       );
     }

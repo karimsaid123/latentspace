@@ -34,3 +34,4 @@ export class SingleFlight {
     return this.inFlight.size;
   }
 }
+

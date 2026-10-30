@@ -53,23 +53,32 @@ export async function GET(request: NextRequest) {
         }
       }
 
-      // Map to frontend consumer format
-      const formatted = articles.map(a => ({
-        id: a.id,
-        title: a.title,
-        link: a.canonicalUrl,
-        pubDate: a.publishedAt,
-        source: {
-          id: a.sourceId,
-          name: a.sourceName,
-          url: a.canonicalUrl,
-        },
-        author: a.author,
-        contentSnippet: a.contentSnippet,
-        imageUrl: a.imageUrl,
-        category: a.category,
-        aiSummary: a.summary,
-      }));
+      // Map to frontend consumer format with guaranteed summary presence
+      const formatted = articles.map(a => {
+        const summary = a.summary || (a as any).aiSummary || {
+          tldr: a.contentSnippet || a.title || 'No summary available.',
+          takeaways: [],
+          impact: 'Notable',
+          readTimeMinutes: 2,
+        };
+
+        return {
+          id: a.id,
+          title: a.title,
+          link: a.canonicalUrl,
+          pubDate: a.publishedAt,
+          source: {
+            id: a.sourceId,
+            name: a.sourceName,
+            url: a.canonicalUrl,
+          },
+          author: a.author,
+          contentSnippet: a.contentSnippet,
+          imageUrl: a.imageUrl,
+          category: a.category,
+          aiSummary: summary,
+        };
+      });
 
       const payload = {
         articles: formatted,

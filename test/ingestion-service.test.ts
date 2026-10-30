@@ -70,3 +70,4 @@ test('IngestionService integrates with repository and fake provider offline', as
     await fs.rm(testDir, { recursive: true, force: true });
   } catch {}
 });
+

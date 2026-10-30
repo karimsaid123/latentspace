@@ -7,3 +7,4 @@ export interface FeedProviderPort {
    */
   fetchFeed(source: DomainSource): Promise<FeedSnapshot>;
 }
+

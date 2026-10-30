@@ -4,3 +4,4 @@ export interface LockPort {
    */
   withLock<T>(resource: string, ttlMs: number, fn: () => Promise<T>): Promise<T>;
 }
+

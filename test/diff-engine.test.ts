@@ -74,3 +74,4 @@ test('IngestionDiffEngine detects added, modified, and protects against out-of-o
   assert.equal(diff2.modified.length, 0);
   assert.equal(diff2.unchangedCount, 1, 'Stale snapshot must be safely skipped');
 });
+

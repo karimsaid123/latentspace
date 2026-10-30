@@ -64,3 +64,4 @@ export interface IngestionReport {
   durationMs: number;
   timestamp: string;
 }
+
