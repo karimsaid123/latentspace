@@ -25,11 +25,11 @@ export default function EditorialModal({
   if (!article) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-xs select-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
       <div className="fixed inset-0" onClick={onClose} />
 
       {/* Minimalist Reader Sheet */}
-      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl">
+      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in">
         
         {/* 4 Corner Bounding Box Square Handles */}
         <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-black z-30" />

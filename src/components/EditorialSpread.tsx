@@ -28,12 +28,15 @@ export default function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: MONUMENTAL SWISS HEADLINES (Image 2 style)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative pt-6 pb-28 border-b border-black/10">
+      <section className="relative pt-6 pb-28 border-b border-black/10 animate-fade-up">
         
         {/* Top Header Row */}
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
           <span>INDEX // 001</span>
-          <span>FRONTIER AI BULLETIN</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-block w-1.5 h-1.5 bg-black rounded-full animate-pulse" />
+            FRONTIER AI BULLETIN
+          </span>
         </div>
 
         {/* Lead Giant Headline */}
@@ -41,7 +44,7 @@ export default function EditorialSpread({
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
             <h1
               onClick={() => onSelectArticle(lead)}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 transition-opacity cursor-pointer max-w-6xl"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer max-w-6xl"
             >
               {lead.title}
             </h1>
@@ -79,12 +82,12 @@ export default function EditorialSpread({
           <div className="lg:col-span-9 flex flex-col justify-between pl-0 lg:pl-8">
             <div 
               onClick={() => onSelectArticle(second)}
-              className="cursor-pointer mb-10"
+              className="cursor-pointer mb-10 group"
             >
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-2">
                 INDEX // 002 // [{second.source.name}]
               </span>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300">
                 {second.title}
               </h2>
             </div>
@@ -108,6 +111,30 @@ export default function EditorialSpread({
         </div>
 
       </section>
+
+      {/* ─────────────────────────────────────────────────────────────
+          EDITORIAL TELEMETRY TICKER MARQUEE (Infinite smooth scroll)
+      ───────────────────────────────────────────────────────────── */}
+      <div className="w-full overflow-hidden border-b border-black py-3 select-none bg-[#faf9f6]">
+        <div className="animate-marquee font-mono text-[10px] tracking-[0.22em] uppercase font-bold text-black flex items-center gap-10 whitespace-nowrap">
+          <span>LATENT SPACE // AUTONOMOUS AI TELEMETRY</span>
+          <span className="text-black/30">▪</span>
+          <span>NEURAL ARCHITECTURE // REAL-TIME HARVEST</span>
+          <span className="text-black/30">▪</span>
+          <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
+          <span className="text-black/30">▪</span>
+          <span>ZERO-LATENCY INGESTION // SAN FRANCISCO • LONDON • PARIS • TOKYO</span>
+          <span className="text-black/30">▪</span>
+          <span>LATENT SPACE // AUTONOMOUS AI TELEMETRY</span>
+          <span className="text-black/30">▪</span>
+          <span>NEURAL ARCHITECTURE // REAL-TIME HARVEST</span>
+          <span className="text-black/30">▪</span>
+          <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
+          <span className="text-black/30">▪</span>
+          <span>ZERO-LATENCY INGESTION // SAN FRANCISCO • LONDON • PARIS • TOKYO</span>
+          <span className="text-black/30">▪</span>
+        </div>
+      </div>
 
 
       {/* ─────────────────────────────────────────────────────────────
@@ -269,12 +296,12 @@ export default function EditorialSpread({
             <div
               key={art.id}
               onClick={() => onSelectArticle(art)}
-              className="group cursor-pointer flex flex-col justify-between border-t border-black pt-4"
+              className="group cursor-pointer flex flex-col justify-between border-t border-black/30 hover:border-black pt-4 transition-all duration-300 hover:-translate-y-1"
             >
               <div>
                 <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
                   <span>{(idx + 1).toString().padStart(3, '0')}</span>
-                  <span className="font-bold text-black">[{art.source.name}]</span>
+                  <span className="font-bold text-black group-hover:underline">[{art.source.name}]</span>
                 </div>
 
                 <div className="mb-4">
@@ -286,18 +313,20 @@ export default function EditorialSpread({
                   />
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:opacity-70 transition-opacity line-clamp-3 mb-3">
+                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:text-black/70 transition-colors line-clamp-3 mb-3">
                   {art.title}
                 </h3>
 
-                <p className="font-mono text-[10px] uppercase text-black/70 line-clamp-2 leading-relaxed">
+                <p className="font-mono text-[10px] uppercase text-black/60 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed">
                   {art.aiSummary?.tldr || art.contentSnippet || ''}
                 </p>
               </div>
 
               <div className="mt-4 pt-2 border-t border-black/10 flex justify-between font-mono text-[9px] tracking-widest text-black/40 uppercase">
                 <span>{art.category}</span>
-                <span className="font-bold text-black">READ →</span>
+                <span className="font-bold text-black flex items-center gap-1">
+                  READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+                </span>
               </div>
             </div>
           ))}

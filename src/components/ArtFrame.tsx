@@ -41,27 +41,27 @@ export default function ArtFrame({
 
   return (
     <div className={`relative group inline-block select-none ${className}`}>
-      {/* 4 Corner Bounding Box Square Handles */}
-      <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
-      <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
-      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
-      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
+      {/* 4 Corner Bounding Box Square Handles with Viewfinder Lock-on Expansion */}
+      <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:scale-110" />
+      <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110" />
+      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:-translate-x-1 group-hover:translate-y-1 group-hover:scale-110" />
+      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 group-hover:scale-110" />
 
       {/* Clean index above frame (e.g. 001, 002) */}
       {indexCode && (
-        <span className="absolute -top-4 left-0 font-mono text-[9px] tracking-widest text-black/60 uppercase">
+        <span className="absolute -top-4 left-0 font-mono text-[9px] tracking-widest text-black/60 uppercase transition-all duration-300 group-hover:text-black group-hover:tracking-wider">
           {indexCode}
         </span>
       )}
 
       {/* Frame content: Always a real piece of art */}
-      <div className={`relative overflow-hidden bg-[#e8e7e2] border border-black/10 ${aspectClass}`}>
+      <div className={`relative overflow-hidden bg-[#e8e7e2] border border-black/10 transition-colors duration-500 group-hover:border-black/30 ${aspectClass}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageToDisplay}
           alt={alt}
           onError={() => setHasError(true)}
-          className="w-full h-full object-cover grayscale contrast-125 group-hover:contrast-100 group-hover:grayscale-0 transition-all duration-700"
+          className="w-full h-full object-cover grayscale contrast-125 group-hover:contrast-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
         />
       </div>
     </div>

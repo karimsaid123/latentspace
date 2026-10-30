@@ -15,7 +15,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Vertical text layout like in Image 3 */
+/* Vertical text layout */
 .writing-mode-vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -32,16 +32,81 @@ html, body {
   background: #000000;
 }
 
-/* Subtle corner square bounding box */
-.corner-box {
-  position: relative;
+/* Luxury Editorial Animations */
+@keyframes editorialFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.corner-box::before,
-.corner-box::after {
-  content: '';
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: #000000;
-  z-index: 20;
+
+@keyframes editorialFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-fade-up {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: editorialFadeIn 0.5s ease-out forwards;
+}
+
+.animate-modal-in {
+  animation: modalIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-scanline {
+  animation: scanline 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }

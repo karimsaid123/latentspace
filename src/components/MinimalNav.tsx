@@ -36,12 +36,21 @@ export default function MinimalNav({
     <header className="w-full pt-8 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono text-[10px] tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="flex items-baseline justify-between border-b border-black/10 pb-4">
-        
+      <div className="relative flex items-baseline justify-between border-b border-black/10 pb-4 overflow-hidden">
+        {isSyncing && (
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
+            <div className="h-full bg-black w-1/3 animate-scanline" />
+          </div>
+        )}
+
         {/* Brand / Index Number */}
         <div className="flex items-baseline gap-4">
-          <span className="font-black text-sm tracking-tighter text-black">
+          <span className="font-black text-sm tracking-tighter text-black flex items-center gap-2">
             LATENT SPACE
+            <span className="relative flex h-1.5 w-1.5" title="Live Autonomous Telemetry">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+            </span>
           </span>
           <span className="text-black/40 text-[9px]">
             N° 001 // ENTRIES: {totalArticles}
@@ -60,8 +69,9 @@ export default function MinimalNav({
           <button
             onClick={onSync}
             disabled={isSyncing}
-            className="hover:text-black cursor-pointer transition-colors disabled:opacity-40"
+            className="hover:text-black cursor-pointer transition-colors disabled:opacity-40 flex items-center gap-1.5"
           >
+            {isSyncing && <span className="inline-block w-1.5 h-1.5 bg-black animate-spin" />}
             [{isSyncing ? 'SYNCING...' : 'SYNC'}]
           </button>
 
@@ -74,7 +84,7 @@ export default function MinimalNav({
 
       {/* Inline Search Bar if toggled */}
       {showSearch && (
-        <div className="pt-4 pb-2 border-b border-black">
+        <div className="pt-4 pb-2 border-b border-black animate-fade-in">
           <input
             type="text"
             value={searchQuery}

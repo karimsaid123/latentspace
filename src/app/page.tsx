@@ -94,10 +94,12 @@ export default function HomePage() {
             )}
           </div>
         ) : (
-          <EditorialSpread
-            articles={articles}
-            onSelectArticle={setSelectedArticle}
-          />
+          <div key={selectedCategory} className="animate-fade-in">
+            <EditorialSpread
+              articles={articles}
+              onSelectArticle={setSelectedArticle}
+            />
+          </div>
         )}
       </main>
 
