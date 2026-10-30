@@ -12,6 +12,8 @@ export type FrontierLab =
   | 'Google DeepMind'
   | 'Anthropic'
   | 'SpaceX & xAI'
+  | 'Mistral AI'
+  | 'Moonshot AI'
   | 'Meta AI'
   | 'NVIDIA'
   | 'Independent';

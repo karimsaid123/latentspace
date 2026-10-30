@@ -17,6 +17,8 @@ const LAB_SECTORS = [
   { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND', location: 'LONDON • MT VIEW // ORBITAL COMPUTE & GEMINI' },
   { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC', location: 'SAN FRANCISCO // CONSTITUTIONAL REASONING & CLAUDE' },
   { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI', location: 'MEMPHIS • AUSTIN // COLOSSUS CLUSTERS & STARLINK' },
+  { id: 'Mistral AI', name: 'MISTRAL AI', short: 'MISTRAL', location: 'PARIS // SOVEREIGN OPEN WEIGHTS & MIXTRAL' },
+  { id: 'Moonshot AI', name: 'MOONSHOT AI & KIMI', short: 'KIMI', location: 'BEIJING // ULTRA-LONG CONTEXT & KIMI K-SERIES' },
   { id: 'Meta AI', name: 'META AI', short: 'META', location: 'MENLO PARK • PARIS // OPEN WEIGHTS & LLAMA ECOSYSTEM' },
   { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA', location: 'SANTA CLARA // BLACKWELL HARDWARE & ACCELERATION' },
 ];
@@ -312,10 +314,10 @@ export default function EditorialSpread({
             <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
             <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
           </div>
-          <span>ACTIVE MONITORING: 6 ENTERPRISE CLUSTERS</span>
+          <span>ACTIVE MONITORING: 8 ENTERPRISE CLUSTERS</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {LAB_SECTORS.map((lab, idx) => {
             const labArticles = articles.filter(a => a.lab === lab.id);
             const leadArt = labArticles[0];

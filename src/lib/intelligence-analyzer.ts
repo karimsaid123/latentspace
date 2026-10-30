@@ -12,6 +12,8 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
 
   // 1. Direct Source Name lab matching
   if (s.includes('xai') || s.includes('spacex') || s.includes('grok')) return 'SpaceX & xAI';
+  if (s.includes('mistral')) return 'Mistral AI';
+  if (s.includes('moonshot') || s.includes('kimi')) return 'Moonshot AI';
   if (s.includes('openai')) return 'OpenAI';
   if (s.includes('deepmind')) return 'Google DeepMind';
   if (s.includes('anthropic') || s.includes('claude')) return 'Anthropic';
@@ -19,6 +21,24 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   if (s.includes('meta ai') || s.includes('fair')) return 'Meta AI';
 
   // 2. High Priority: Title mentions lab or flagship model
+  if (
+    t.includes('mistral') ||
+    t.includes('mixtral') ||
+    t.includes('codestral') ||
+    t.includes('le chat') ||
+    t.includes('arthur mensch')
+  ) {
+    return 'Mistral AI';
+  }
+
+  if (
+    t.includes('moonshot') ||
+    t.includes('kimi') ||
+    t.includes('yang zhilin')
+  ) {
+    return 'Moonshot AI';
+  }
+
   if (
     t.includes('xai') ||
     t.includes('spacex') ||
@@ -90,6 +110,24 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   }
 
   // 3. Fallback: Combined Text Matching
+  if (
+    combined.includes('mistral') ||
+    combined.includes('mixtral') ||
+    combined.includes('codestral') ||
+    combined.includes('arthur mensch')
+  ) {
+    return 'Mistral AI';
+  }
+
+  if (
+    combined.includes('moonshot ai') ||
+    combined.includes('moonshot') ||
+    combined.includes('kimi k') ||
+    combined.includes('kimi chat')
+  ) {
+    return 'Moonshot AI';
+  }
+
   if (
     combined.includes('xai') ||
     combined.includes('spacex') ||

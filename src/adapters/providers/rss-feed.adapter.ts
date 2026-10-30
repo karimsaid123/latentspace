@@ -31,7 +31,20 @@ export class RssFeedAdapter implements FeedProviderPort {
     const fetchedAt = new Date().toISOString();
 
     try {
-      const feed = await this.parser.parseURL(source.feedUrl);
+      let feed;
+      try {
+        const response = await fetch(source.feedUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LatentSpace/2.0',
+            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+          },
+          signal: AbortSignal.timeout(8000),
+        });
+        const xmlText = await response.text();
+        feed = await this.parser.parseString(xmlText);
+      } catch {
+        feed = await this.parser.parseURL(source.feedUrl);
+      }
       const rawItems = feed.items || [];
       const articles: DomainArticle[] = [];
 
