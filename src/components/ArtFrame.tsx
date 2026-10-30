@@ -15,7 +15,7 @@ export default function ArtFrame({
   src,
   alt = 'Specimen',
   indexCode = '001',
-  subTag = '0.1 PSYCHO',
+  subTag = 'AI.SPECIMEN',
   className = '',
   aspect = 'portrait',
 }: ArtFrameProps) {

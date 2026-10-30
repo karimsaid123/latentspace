@@ -26,14 +26,14 @@ export default function EditorialSpread({
     <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-8 select-none">
       
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: MONUMENTAL SWISS HEADLINES (Image 2 exact match)
+          SECTION 1: MONUMENTAL SWISS HEADLINES (Lead Breakthrough)
       ───────────────────────────────────────────────────────────── */}
       <section className="relative pt-6 pb-28 border-b border-black/10">
         
-        {/* Top Right micro quote */}
+        {/* Top Header Row */}
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>002</span>
-          <span>ISN'T IT PRETTY BAAAD</span>
+          <span>SPECIMEN // 001</span>
+          <span>FRONTIER AI BULLETIN</span>
         </div>
 
         {/* Lead Giant Headline */}
@@ -53,11 +53,11 @@ export default function EditorialSpread({
           </div>
 
           <div className="mt-4 font-mono text-[9px] tracking-widest text-black/50 uppercase">
-            <span>0.2-FROM {lead.author || lead.source.name}</span>
+            <span>BY {lead.author || lead.source.name} // CATEGORY: {lead.category}</span>
           </div>
         </div>
 
-        {/* Nested Art Frame + Secondary Massive Headline (Baudelaire composition) */}
+        {/* Nested Art Frame + Secondary Giant Swiss Headline */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6">
           
           {/* Small thumbnail art with 4 corner black handles */}
@@ -70,7 +70,7 @@ export default function EditorialSpread({
                 src={lead.imageUrl}
                 alt={lead.title}
                 indexCode="001"
-                subTag="0.1 PSYCHO"
+                subTag="AI.SPECIMEN"
                 aspect="portrait"
               />
             </div>
@@ -83,7 +83,7 @@ export default function EditorialSpread({
               className="cursor-pointer mb-10"
             >
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-2">
-                0.1 PSYCHO // [{second.source.name}]
+                SPECIMEN // 002 // [{second.source.name}]
               </span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity">
                 {second.title}
@@ -92,8 +92,8 @@ export default function EditorialSpread({
 
             {/* Bottom Right Art specimen */}
             <div className="flex justify-end items-end gap-6 pt-4">
-              <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[180px] text-right hidden sm:block">
-                JUST GIBBERISH TO BALANCE THE STRUCTURE OF THE NICE LAYOUT
+              <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[220px] text-right hidden sm:block">
+                AUTONOMOUS RESEARCH RADAR // DISTRIBUTED INFERENCE
               </span>
               <div 
                 onClick={() => onSelectArticle(second)}
@@ -103,7 +103,7 @@ export default function EditorialSpread({
                   src={second.imageUrl}
                   alt={second.title}
                   indexCode="002"
-                  subTag="0.1 PSYCHO"
+                  subTag="FRONTIER"
                   aspect="portrait"
                 />
               </div>
@@ -116,18 +116,18 @@ export default function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 2: VERTICAL SWISS TYPOGRAPHY & ART STACK (Image 3 exact match)
+          SECTION 2: VERTICAL SWISS TYPOGRAPHY & ART STACK
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-28 border-b border-black/10">
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>MY BROTHER IN CHRIST SHUT UP</span>
-          <span>ISN'T IT PRETTY BAAAD</span>
+          <span>NEURAL ARCHITECTURE SPECIFICATIONS</span>
+          <span>AUTONOMOUS COGNITION</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Stack of 3 Art Thumbnail Frames (Image 3) */}
+          {/* Left Column: Stack of 3 Art Thumbnail Frames */}
           <div className="lg:col-span-3 flex flex-col gap-10">
             {[third, fourth, fifth].map((item, idx) => (
               <div 
@@ -139,7 +139,7 @@ export default function EditorialSpread({
                   src={item.imageUrl}
                   alt={item.title}
                   indexCode={`00${idx + 3}`}
-                  subTag="0.1 PSYCHO"
+                  subTag="AI.SPECIMEN"
                   aspect="portrait"
                 />
                 <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
@@ -149,11 +149,11 @@ export default function EditorialSpread({
             ))}
           </div>
 
-          {/* Right Column: Giant Horizontal & Sideways Typography */}
+          {/* Right Column: Giant Horizontal Typography */}
           <div className="lg:col-span-9 flex flex-col justify-between h-full pl-0 lg:pl-10">
             <div>
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-3">
-                0.1 PSYCHO // 0.2-FROM COGNITIVE INTELLIGENCE
+                SPECIMEN // 003 // FRONTIER LAB BRIEF
               </span>
               <h2
                 onClick={() => onSelectArticle(third)}
@@ -164,8 +164,8 @@ export default function EditorialSpread({
             </div>
 
             <div className="mt-12 flex justify-between items-end font-mono text-[9px] tracking-widest text-black/50 uppercase">
-              <span>OR MAYBE IT'S GOOD PARIS TO HONGKONG AND THEN DEN</span>
-              <span>0.1 PSYCHO</span>
+              <span>RESEARCH NETWORK: SILICON VALLEY // LONDON // PARIS // TOKYO</span>
+              <span>LATENCY: REALTIME</span>
             </div>
           </div>
 
@@ -175,7 +175,7 @@ export default function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 3: SCATTERED EDITORIAL GALLERY SPREAD (Image 1 exact match)
+          SECTION 3: SCATTERED EDITORIAL GALLERY SPREAD
       ───────────────────────────────────────────────────────────── */}
       <section className="relative py-28 border-b border-black/10">
         
@@ -184,7 +184,7 @@ export default function EditorialSpread({
           {/* Top Left Specimen */}
           <div className="absolute top-0 left-0 sm:left-6">
             <span className="font-mono text-[9px] tracking-widest text-black/50 block mb-2">
-              002
+              004
             </span>
             <div 
               onClick={() => onSelectArticle(fourth)}
@@ -194,15 +194,15 @@ export default function EditorialSpread({
                 src={fourth.imageUrl}
                 alt={fourth.title}
                 indexCode="004"
-                subTag="0.1 PSYCHO"
+                subTag="AI.SPECIMEN"
                 aspect="portrait"
               />
             </div>
           </div>
 
           {/* Top Center-Right Micro Annotation */}
-          <div className="absolute top-8 left-1/3 max-w-[200px] font-mono text-[9px] tracking-widest text-black uppercase leading-relaxed hidden sm:block">
-            <span>JUST GIBBERISH TO BALANCE THE STRUCTURE OF THE NICE LAYOUT</span>
+          <div className="absolute top-8 left-1/3 max-w-[240px] font-mono text-[9px] tracking-widest text-black uppercase leading-relaxed hidden sm:block">
+            <span>PARAMETER SCALE: MULTIMODAL REASONING MATRIX</span>
           </div>
 
           {/* Middle Center Specimen */}
@@ -215,7 +215,7 @@ export default function EditorialSpread({
                 src={fifth.imageUrl}
                 alt={fifth.title}
                 indexCode="005"
-                subTag="0.1 PSYCHO"
+                subTag="AI.SPECIMEN"
                 aspect="portrait"
               />
             </div>
@@ -229,17 +229,17 @@ export default function EditorialSpread({
 
           {/* Middle Right Annotation */}
           <div className="absolute top-64 right-6 font-mono text-[9px] tracking-widest text-black uppercase">
-            <span>0.1 PSYCHO</span>
+            <span>DISTRIBUTED INFERENCE</span>
           </div>
 
           {/* Lower Left Annotation */}
-          <div className="absolute bottom-36 left-0 sm:left-4 font-mono text-[9px] tracking-widest text-black uppercase max-w-[190px] leading-normal hidden sm:block">
-            <span>OR MAYBE IT'S GOOD PARIS TO HONGKONG AND THEN DEN</span>
+          <div className="absolute bottom-36 left-0 sm:left-4 font-mono text-[9px] tracking-widest text-black uppercase max-w-[240px] leading-normal hidden sm:block">
+            <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
           </div>
 
           {/* Lower Center Annotation */}
           <div className="absolute bottom-28 left-1/3 font-mono text-[9px] tracking-widest text-black uppercase">
-            <span>MY BROTHER IN CHRIST SHUT UP</span>
+            <span>REINFORCEMENT & ALIGNMENT</span>
           </div>
 
           {/* Lower Right Specimen */}
@@ -252,12 +252,12 @@ export default function EditorialSpread({
                 src={sixth.imageUrl}
                 alt={sixth.title}
                 indexCode="006"
-                subTag="0.1 PSYCHO"
+                subTag="AI.SPECIMEN"
                 aspect="portrait"
               />
             </div>
             <span className="font-mono text-[9px] tracking-widest text-black/50 block">
-              JUST GIBBERISH TO BALANCE THE STRUCTURE OF THE NICE LAYOUT
+              COGNITIVE AGENT ARCHITECTURE
             </span>
           </div>
 
@@ -268,13 +268,12 @@ export default function EditorialSpread({
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4: COMPLETE SPECIMEN CATALOG (Browse all 80+ AI articles)
-          Stark Swiss typography, minimalist rhythm, corner handles
       ───────────────────────────────────────────────────────────── */}
       <section className="py-24">
         
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16">
           <span className="font-bold text-black">SPECIMEN LEDGER // {articles.length} ENTRIES</span>
-          <span>PARIS TO SAN FRANCISCO</span>
+          <span>SAN FRANCISCO // LONDON // PARIS // TOKYO</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">

@@ -57,7 +57,7 @@ export default function EditorialModal({
           
           <div>
             <span className="font-mono text-[9px] tracking-widest uppercase text-black/40 block mb-2">
-              0.1 PSYCHO // "{article.category}"
+              CLASSIFICATION // "{article.category}"
             </span>
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black">
               {article.title}
@@ -70,7 +70,7 @@ export default function EditorialModal({
                 src={article.imageUrl}
                 alt={article.title}
                 indexCode="001"
-                subTag="0.1 PSYCHO"
+                subTag="AI.SPECIMEN"
                 aspect="landscape"
               />
             </div>

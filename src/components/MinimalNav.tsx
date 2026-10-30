@@ -16,7 +16,7 @@ const CATEGORIES = [
   { id: 'All', label: 'ALL' },
   { id: 'LLMs & GenAI', label: 'LLMs' },
   { id: 'Robotics & Hardware', label: 'ROBOTICS' },
-  { id: 'Open Source & Research', label: 'OPEN SOURCE' },
+  { id: 'Open Source & Research', label: 'RESEARCH' },
   { id: 'Business & Big Tech', label: 'BUSINESS' },
   { id: 'Ethics & Policy', label: 'POLICY' },
 ];
@@ -48,7 +48,7 @@ export default function MinimalNav({
           </span>
         </div>
 
-        {/* Minimal Controls & Quote */}
+        {/* Minimal Controls & Info */}
         <div className="flex items-center gap-6 text-black/60">
           <button
             onClick={() => setShowSearch(!showSearch)}
@@ -65,8 +65,8 @@ export default function MinimalNav({
             [{isSyncing ? 'SYNCING...' : 'SYNC'}]
           </button>
 
-          <div className="text-right hidden sm:block font-bold text-black">
-            ISN'T IT PRETTY<br />BAAAD
+          <div className="text-right hidden sm:block font-bold text-black/80">
+            AUTONOMOUS<br />AI RADAR
           </div>
         </div>
 
