@@ -41,7 +41,7 @@ export default function MinimalNav({
         {/* Brand / Index Number */}
         <div className="flex items-baseline gap-4">
           <span className="font-black text-sm tracking-tighter text-black">
-            EPOCH
+            LATENT SPACE
           </span>
           <span className="text-black/40 text-[9px]">
             N° 001 // ENTRIES: {totalArticles}

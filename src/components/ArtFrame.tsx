@@ -67,7 +67,7 @@ export default function ArtFrame({
           <div className="w-full h-full flex flex-col justify-between p-3 bg-[#e8e7e1] text-black font-mono text-[9px] uppercase">
             <div className="flex justify-between opacity-60">
               <span>{indexCode}</span>
-              <span>EPOCH.AI</span>
+              <span>LATENT.SPACE</span>
             </div>
             <div className="my-auto text-center font-bold tracking-widest opacity-80">
               ENTRY

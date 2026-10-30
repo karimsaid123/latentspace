@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EPOCH // AI INTELLIGENCE",
+  title: "LATENT SPACE // AI INTELLIGENCE",
   description: "Autonomous real-time AI news journal.",
 };
 
