@@ -76,10 +76,10 @@ const EditorialSpread = memo(function EditorialSpread({
         {/* Lead Giant Headline */}
         <div className="relative mb-14">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
-            <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10 max-w-6xl w-full">
+            <div className="border-[7px] sm:border-[8px] border-[#ff8000] p-5 sm:p-8 lg:p-10 max-w-6xl w-full min-w-0 box-border overflow-hidden">
               <h1
                 onClick={() => onSelectArticle(lead)}
-                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer"
+                className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer break-words [overflow-wrap:anywhere] hyphens-auto w-full max-w-full"
               >
                 {lead.title}
               </h1>
@@ -136,12 +136,12 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
 
           {/* Secondary Giant Swiss Headline */}
-          <div className="lg:col-span-9 flex flex-col justify-between pl-0 lg:pl-8">
+          <div className="lg:col-span-9 flex flex-col justify-between pl-0 lg:pl-8 min-w-0">
             <div 
               onClick={() => onSelectArticle(second)}
-              className="cursor-pointer mb-10 group"
+              className="cursor-pointer mb-10 group w-full min-w-0"
             >
-              <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10">
+              <div className="border-[7px] sm:border-[8px] border-[#ff8000] p-5 sm:p-8 lg:p-10 box-border overflow-hidden min-w-0 w-full">
                 <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
                   <span>[{second.source.name}]</span>
                   {onToggleBookmark && (
@@ -159,7 +159,7 @@ const EditorialSpread = memo(function EditorialSpread({
                     </button>
                   )}
                 </div>
-                <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300 break-words [overflow-wrap:anywhere] hyphens-auto w-full max-w-full">
                   {second.title}
                 </h2>
               </div>
@@ -194,8 +194,8 @@ const EditorialSpread = memo(function EditorialSpread({
           <span>FEATURED DISPATCH</span>
         </div>
 
-        <div className="w-full">
-          <div className="border-[3px] border-[#ff8000] p-6 sm:p-8 lg:p-10">
+        <div className="w-full min-w-0">
+          <div className="border-[7px] sm:border-[8px] border-[#ff8000] p-5 sm:p-8 lg:p-10 box-border overflow-hidden min-w-0 w-full">
             <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
               <div className="flex items-center gap-3">
                 <span className="font-bold text-black">[{third.source.name}]</span>
@@ -220,7 +220,7 @@ const EditorialSpread = memo(function EditorialSpread({
 
             <h2
               onClick={() => onSelectArticle(third)}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-[-0.035em] leading-[0.9] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-6"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-[-0.03em] leading-[0.92] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-6 break-words [overflow-wrap:anywhere] hyphens-auto w-full max-w-full"
             >
               {third.title}
             </h2>
@@ -287,7 +287,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Article Headline */}
               <h3 
                 onClick={() => onSelectArticle(fourth)}
-                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px]"
+                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] break-words [overflow-wrap:anywhere]"
               >
                 {fourth.title}
               </h3>
@@ -329,7 +329,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Giant Center Headline */}
               <h3 
                 onClick={() => onSelectArticle(fifth)}
-                className="font-mono text-base sm:text-lg md:text-xl font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center"
+                className="font-mono text-base sm:text-lg md:text-xl font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center break-words [overflow-wrap:anywhere]"
               >
                 {fifth.title}
               </h3>
@@ -371,7 +371,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Article Headline */}
               <h3 
                 onClick={() => onSelectArticle(sixth)}
-                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right"
+                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right break-words [overflow-wrap:anywhere]"
               >
                 {sixth.title}
               </h3>
