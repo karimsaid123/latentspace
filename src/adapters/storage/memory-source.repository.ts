@@ -76,6 +76,42 @@ const DEFAULT_SOURCES: DomainSource[] = [
     enabled: true,
     consecutiveFailures: 0,
   },
+  {
+    id: 'techcrunch-xai',
+    name: 'TechCrunch xAI & Grok',
+    feedUrl: 'https://techcrunch.com/tag/xai/feed/',
+    websiteUrl: 'https://techcrunch.com/tag/xai/',
+    category: 'LLMs & GenAI',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'techcrunch-spacex',
+    name: 'TechCrunch SpaceX & Starlink',
+    feedUrl: 'https://techcrunch.com/tag/spacex/feed/',
+    websiteUrl: 'https://techcrunch.com/tag/spacex/',
+    category: 'Robotics & Hardware',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'arxiv-xai',
+    name: 'arXiv xAI & Autonomous Systems',
+    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:Grok+OR+abs:%22Grok-1%22+OR+abs:%22Colossus%22+OR+ti:%22autonomous+spacecraft%22+OR+abs:%22Starlink%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
+    websiteUrl: 'https://arxiv.org/',
+    category: 'Open Source & Research',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'techcrunch-anthropic',
+    name: 'TechCrunch Anthropic & Claude',
+    feedUrl: 'https://techcrunch.com/tag/anthropic/feed/',
+    websiteUrl: 'https://techcrunch.com/tag/anthropic/',
+    category: 'LLMs & GenAI',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
 ];
 
 export class MemorySourceRepository implements SourceRepositoryPort {
@@ -92,6 +128,16 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       const loaded: DomainSource[] = JSON.parse(raw);
       for (const s of loaded) {
         this.sources.set(s.id, s);
+      }
+      let addedNew = false;
+      for (const s of DEFAULT_SOURCES) {
+        if (!this.sources.has(s.id)) {
+          this.sources.set(s.id, s);
+          addedNew = true;
+        }
+      }
+      if (addedNew) {
+        await this.persist();
       }
     } catch {
       // Seed default sources
@@ -138,7 +184,7 @@ export class MemorySourceRepository implements SourceRepositoryPort {
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
-      const tmpPath = `${this.storageFilePath}.${Date.now()}.tmp`;
+      const tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
       const all = Array.from(this.sources.values());
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);

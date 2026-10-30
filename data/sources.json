@@ -9,7 +9,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.083Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:05:32.961Z",
+    "lastFetchedAt": "2026-10-30T19:15:40.966Z",
     "consecutiveFailures": 0
   },
   {
@@ -22,8 +22,8 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.208Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:05:33.352Z",
-    "consecutiveFailures": 2
+    "lastFetchedAt": "2026-10-30T19:15:42.464Z",
+    "consecutiveFailures": 1
   },
   {
     "id": "techcrunch-ai",
@@ -35,7 +35,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.818Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:05:33.354Z",
+    "lastFetchedAt": "2026-10-30T19:15:42.466Z",
     "consecutiveFailures": 0
   },
   {
@@ -48,7 +48,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.924Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:05:33.470Z",
+    "lastFetchedAt": "2026-10-30T19:15:42.766Z",
     "consecutiveFailures": 0
   },
   {
@@ -61,7 +61,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.302Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:05:33.596Z",
+    "lastFetchedAt": "2026-10-30T19:15:43.078Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,7 +74,67 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.388Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:05:33.881Z",
+    "lastFetchedAt": "2026-10-30T19:15:43.492Z",
     "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-ai",
+    "name": "arXiv cs.AI (Artificial Intelligence)",
+    "feedUrl": "https://rss.arxiv.org/rss/cs.AI",
+    "websiteUrl": "https://arxiv.org/list/cs.AI/recent",
+    "category": "Open Source & Research",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:43.677Z"
+  },
+  {
+    "id": "arxiv-cl",
+    "name": "arXiv cs.CL (Language & LLMs)",
+    "feedUrl": "https://rss.arxiv.org/rss/cs.CL",
+    "websiteUrl": "https://arxiv.org/list/cs.CL/recent",
+    "category": "LLMs & GenAI",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:44.167Z"
+  },
+  {
+    "id": "techcrunch-xai",
+    "name": "TechCrunch xAI & Grok",
+    "feedUrl": "https://techcrunch.com/tag/xai/feed/",
+    "websiteUrl": "https://techcrunch.com/tag/xai/",
+    "category": "LLMs & GenAI",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:44.294Z"
+  },
+  {
+    "id": "techcrunch-spacex",
+    "name": "TechCrunch SpaceX & Starlink",
+    "feedUrl": "https://techcrunch.com/tag/spacex/feed/",
+    "websiteUrl": "https://techcrunch.com/tag/spacex/",
+    "category": "Robotics & Hardware",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:44.377Z"
+  },
+  {
+    "id": "arxiv-xai",
+    "name": "arXiv xAI & Autonomous Systems",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Grok+OR+abs:%22Grok-1%22+OR+abs:%22Colossus%22+OR+ti:%22autonomous+spacecraft%22+OR+abs:%22Starlink%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "Open Source & Research",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:44.457Z"
+  },
+  {
+    "id": "techcrunch-anthropic",
+    "name": "TechCrunch Anthropic & Claude",
+    "feedUrl": "https://techcrunch.com/tag/anthropic/feed/",
+    "websiteUrl": "https://techcrunch.com/tag/anthropic/",
+    "category": "LLMs & GenAI",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-10-30T19:15:44.645Z"
   }
 ]

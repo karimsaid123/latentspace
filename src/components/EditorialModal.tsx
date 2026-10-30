@@ -94,7 +94,7 @@ export default function EditorialModal({
           <div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-[9px] tracking-widest uppercase text-black/50 mb-3">
               <span className={`font-bold ${article.entryType === 'RESEARCH_PAPER' ? 'text-black border border-black px-1.5 py-0.5' : 'text-black'}`}>
-                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PUBLICATION' : 'NEWS DISPATCH'}
+                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
               </span>
               <span>•</span>
               <span className="text-black font-bold">LAB: [{article.lab || 'FRONTIER LAB'}]</span>

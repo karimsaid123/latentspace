@@ -253,7 +253,7 @@ export default function HomePage() {
             </span>
             <span className="text-[10px] text-black/40">
               {selectedLab === 'SAVED'
-                ? 'CLICK [+ SAVE] ON ANY PUBLICATION OR DISPATCH TO BOOKMARK IT HERE'
+                ? 'CLICK [+ SAVE] ON ANY ARTICLE OR RESEARCH PAPER TO BOOKMARK IT HERE'
                 : 'TRY ADJUSTING YOUR LAB FILTER, PUBLICATION TYPE OR SEARCH QUERY'}
             </span>
             {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL') && (

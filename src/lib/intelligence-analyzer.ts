@@ -5,83 +5,154 @@ import { decodeHtmlEntities } from './sanitize';
  * Accurately detects whether an article belongs to a major Frontier AI Lab / Ecosystem
  */
 export function detectFrontierLab(title: string, content: string, sourceName = ''): FrontierLab {
-  const text = `${title} ${content} ${sourceName}`.toLowerCase();
+  const s = sourceName.toLowerCase();
+  const t = title.toLowerCase();
+  const c = content.toLowerCase();
+  const combined = `${t} ${c} ${s}`;
 
-  // OpenAI
-  if (
-    text.includes('openai') ||
-    text.includes('chatgpt') ||
-    text.includes('sam altman') ||
-    text.includes('gpt-4') ||
-    text.includes('gpt-5') ||
-    text.includes('sora') ||
-    text.includes('operator') ||
-    text.includes('o1-') ||
-    text.includes('o3-')
-  ) {
-    return 'OpenAI';
-  }
+  // 1. Direct Source Name lab matching
+  if (s.includes('xai') || s.includes('spacex') || s.includes('grok')) return 'SpaceX & xAI';
+  if (s.includes('openai')) return 'OpenAI';
+  if (s.includes('deepmind')) return 'Google DeepMind';
+  if (s.includes('anthropic') || s.includes('claude')) return 'Anthropic';
+  if (s.includes('nvidia')) return 'NVIDIA';
+  if (s.includes('meta ai') || s.includes('fair')) return 'Meta AI';
 
-  // Google DeepMind
+  // 2. High Priority: Title mentions lab or flagship model
   if (
-    text.includes('deepmind') ||
-    text.includes('demis hassabis') ||
-    text.includes('gemini') ||
-    text.includes('gemma') ||
-    text.includes('alphafold') ||
-    text.includes('project suncatcher') ||
-    (text.includes('google') && (text.includes('tpu') || text.includes('ai server') || text.includes('frontier')))
-  ) {
-    return 'Google DeepMind';
-  }
-
-  // Anthropic
-  if (
-    text.includes('anthropic') ||
-    text.includes('claude') ||
-    text.includes('dario amodei') ||
-    text.includes('constitutional ai') ||
-    text.includes('computer use') ||
-    text.includes('sonnet') ||
-    text.includes('opus') ||
-    text.includes('haiku')
-  ) {
-    return 'Anthropic';
-  }
-
-  // SpaceX & xAI
-  if (
-    text.includes('xai') ||
-    text.includes('spacex') ||
-    text.includes('grok') ||
-    text.includes('colossus') ||
-    text.includes('starlink') ||
-    (text.includes('musk') && (text.includes('cluster') || text.includes('memphis') || text.includes('satellite')))
+    t.includes('xai') ||
+    t.includes('spacex') ||
+    t.includes('grok') ||
+    t.includes('colossus') ||
+    t.includes('starlink') ||
+    t.includes('elon musk') ||
+    t.includes('musk')
   ) {
     return 'SpaceX & xAI';
   }
 
-  // Meta AI
   if (
-    text.includes('meta ai') ||
-    text.includes('llama') ||
-    text.includes('yann lecun') ||
-    text.includes('mark zuckerberg') ||
-    text.includes('fair') ||
-    text.includes('pytorch')
+    t.includes('anthropic') ||
+    t.includes('claude') ||
+    t.includes('dario amodei') ||
+    t.includes('sonnet') ||
+    t.includes('opus') ||
+    t.includes('haiku')
+  ) {
+    return 'Anthropic';
+  }
+
+  if (
+    t.includes('deepmind') ||
+    t.includes('demis hassabis') ||
+    t.includes('gemini') ||
+    t.includes('gemma') ||
+    t.includes('alphafold') ||
+    t.includes('project suncatcher') ||
+    (t.includes('google') && (t.includes('tpu') || t.includes('ai server') || t.includes('frontier') || t.includes('model')))
+  ) {
+    return 'Google DeepMind';
+  }
+
+  if (
+    t.includes('openai') ||
+    t.includes('chatgpt') ||
+    t.includes('sam altman') ||
+    t.includes('gpt-') ||
+    t.includes('sora') ||
+    t.includes('o1-') ||
+    t.includes('o3-') ||
+    t.includes('operator')
+  ) {
+    return 'OpenAI';
+  }
+
+  if (
+    t.includes('nvidia') ||
+    t.includes('jensen huang') ||
+    t.includes('blackwell') ||
+    t.includes('h100') ||
+    t.includes('b200') ||
+    t.includes('cuda') ||
+    t.includes('superchip')
+  ) {
+    return 'NVIDIA';
+  }
+
+  if (
+    t.includes('meta ai') ||
+    t.includes('llama') ||
+    t.includes('yann lecun') ||
+    t.includes('mark zuckerberg') ||
+    t.includes('pytorch')
   ) {
     return 'Meta AI';
   }
 
-  // NVIDIA
+  // 3. Fallback: Combined Text Matching
   if (
-    text.includes('nvidia') ||
-    text.includes('jensen huang') ||
-    text.includes('blackwell') ||
-    text.includes('h100') ||
-    text.includes('b200') ||
-    text.includes('cuda') ||
-    text.includes('superchip')
+    combined.includes('xai') ||
+    combined.includes('spacex') ||
+    combined.includes('grok') ||
+    combined.includes('colossus') ||
+    combined.includes('starlink') ||
+    (combined.includes('musk') && (combined.includes('cluster') || combined.includes('memphis') || combined.includes('satellite') || combined.includes('turbine') || combined.includes('gpu')))
+  ) {
+    return 'SpaceX & xAI';
+  }
+
+  if (
+    combined.includes('anthropic') ||
+    combined.includes('claude') ||
+    combined.includes('dario amodei') ||
+    combined.includes('constitutional ai') ||
+    combined.includes('computer use')
+  ) {
+    return 'Anthropic';
+  }
+
+  if (
+    combined.includes('deepmind') ||
+    combined.includes('demis hassabis') ||
+    combined.includes('gemini') ||
+    combined.includes('gemma') ||
+    combined.includes('alphafold') ||
+    combined.includes('project suncatcher') ||
+    (combined.includes('google') && (combined.includes('tpu') || combined.includes('ai server') || combined.includes('frontier')))
+  ) {
+    return 'Google DeepMind';
+  }
+
+  if (
+    combined.includes('openai') ||
+    combined.includes('chatgpt') ||
+    combined.includes('sam altman') ||
+    combined.includes('gpt-4') ||
+    combined.includes('gpt-5') ||
+    combined.includes('sora') ||
+    combined.includes('operator')
+  ) {
+    return 'OpenAI';
+  }
+
+  if (
+    combined.includes('meta ai') ||
+    combined.includes('llama') ||
+    combined.includes('yann lecun') ||
+    combined.includes('mark zuckerberg') ||
+    combined.includes('pytorch')
+  ) {
+    return 'Meta AI';
+  }
+
+  if (
+    combined.includes('nvidia') ||
+    combined.includes('jensen huang') ||
+    combined.includes('blackwell') ||
+    combined.includes('h100') ||
+    combined.includes('b200') ||
+    combined.includes('cuda') ||
+    combined.includes('superchip')
   ) {
     return 'NVIDIA';
   }

@@ -76,7 +76,7 @@ export default function EditorialSpread({
             <span className="font-bold text-black">LAB: [{lead.lab || 'FRONTIER'}]</span>
             <span>//</span>
             <span className={lead.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-              [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PUBLICATION' : 'NEWS DISPATCH'}]
+              [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
             </span>
             {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
           </div>
@@ -457,7 +457,7 @@ export default function EditorialSpread({
                   <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
                   <span className="text-black/30">•</span>
                   <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
-                    {art.entryType === 'RESEARCH_PAPER' ? 'PAPER' : 'DISPATCH'}
+                    {art.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
                   </span>
                 </div>
                 <div className="flex items-center gap-3 shrink-0">

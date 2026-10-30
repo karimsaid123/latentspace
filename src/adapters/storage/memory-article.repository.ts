@@ -139,7 +139,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
-      const tmpPath = `${this.storageFilePath}.${Date.now()}.tmp`;
+      const tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
       const all = Array.from(this.articles.values());
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);

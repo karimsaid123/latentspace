@@ -179,7 +179,7 @@ export default function MinimalNav({
               selectedType === 'DISPATCH' ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
             }`}
           >
-            [DISPATCHES]
+            [NEWS]
           </button>
           <button
             onClick={() => onSelectType('RESEARCH_PAPER')}
@@ -187,7 +187,7 @@ export default function MinimalNav({
               selectedType === 'RESEARCH_PAPER' ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
             }`}
           >
-            <span>[RESEARCH PAPERS]</span>
+            <span>[RESEARCH]</span>
           </button>
         </div>
 
