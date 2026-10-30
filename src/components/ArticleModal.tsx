@@ -193,3 +193,4 @@ export default function ArticleModal({
     </div>
   );
 }
+

@@ -1,17 +1,16 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import Header from '@/components/Header';
-import Ticker from '@/components/Ticker';
-import HeroFeatured from '@/components/HeroFeatured';
-import CategoryFilter from '@/components/CategoryFilter';
-import ArticleCard from '@/components/ArticleCard';
-import ArticleModal from '@/components/ArticleModal';
+import OffWhiteHeader from '@/components/OffWhiteHeader';
+import OffWhiteCategoryNav from '@/components/OffWhiteCategoryNav';
+import EditorialSpread from '@/components/EditorialSpread';
+import ExhibitionGrid from '@/components/ExhibitionGrid';
+import LedgerIndex from '@/components/LedgerIndex';
+import EditorialModal from '@/components/EditorialModal';
 import SourcesModal from '@/components/SourcesModal';
-import NewsletterBanner from '@/components/NewsletterBanner';
 import Footer from '@/components/Footer';
 import { Article, Category, RSSFeedSource } from '@/types';
-import { Sparkles, RefreshCw, SearchX } from 'lucide-react';
+import { RefreshCw, SearchX } from 'lucide-react';
 
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -24,11 +23,14 @@ export default function HomePage() {
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [syncToast, setSyncToast] = useState<string | null>(null);
 
+  // View state: 'spread' | 'exhibition' | 'archive'
+  const [activeView, setActiveView] = useState<'spread' | 'exhibition' | 'archive'>('spread');
+
   // Modals
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
-  // AI & Sources state
+  // AI & Sources
   const [aiMode, setAiMode] = useState<'gemini' | 'heuristic'>('heuristic');
   const [sources, setSources] = useState<RSSFeedSource[]>([]);
 
@@ -56,7 +58,7 @@ export default function HomePage() {
     }
   }, [selectedCategory, searchQuery, sortOption, showBookmarksOnly]);
 
-  // Load sources & AI config status
+  // Load sources & config
   const loadConfig = useCallback(async () => {
     try {
       const [sourcesRes, keyRes] = await Promise.all([
@@ -64,13 +66,9 @@ export default function HomePage() {
         fetch('/api/test-key'),
       ]);
       const sourcesData = await sourcesRes.json();
-      if (sourcesData.sources) {
-        setSources(sourcesData.sources);
-      }
+      if (sourcesData.sources) setSources(sourcesData.sources);
       const keyData = await keyRes.json();
-      if (keyData.mode) {
-        setAiMode(keyData.mode);
-      }
+      if (keyData.mode) setAiMode(keyData.mode);
     } catch (err) {
       console.error('Failed to load sources & config:', err);
     }
@@ -81,7 +79,7 @@ export default function HomePage() {
     loadConfig();
   }, [loadArticles, loadConfig]);
 
-  // Handle Search debounce
+  // Debounced search
   useEffect(() => {
     const timer = setTimeout(() => {
       loadArticles(selectedCategory, searchQuery, sortOption, showBookmarksOnly);
@@ -89,33 +87,33 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [searchQuery, selectedCategory, sortOption, showBookmarksOnly, loadArticles]);
 
-  // Sync Trigger
+  // Handle Sync
   const handleSync = async () => {
     setIsSyncing(true);
-    setSyncToast('Feeds ophalen en analyseren met AI...');
+    setSyncToast('"AI SPECIMEN HARVEST IN PROGRESS..."');
     try {
       const res = await fetch('/api/sync', { method: 'POST' });
       const data = await res.json();
       if (data.success) {
         setSyncToast(
           data.articlesAdded > 0 
-            ? `Voltooid! ${data.articlesAdded} nieuwe artikelen toegevoegd en samengevat.` 
-            : 'Voltooid! Alle feeds zijn up-to-date.'
+            ? `"HARVEST COMPLETE: +${data.articlesAdded} NEW SPECIMENS"`
+            : '"ALL FEEDS SYNCHRONIZED"'
         );
         await loadArticles();
         await loadConfig();
       } else {
-        setSyncToast('Synchronisatie mislukt.');
+        setSyncToast('"SYNC FAILED"');
       }
     } catch (err: any) {
-      setSyncToast(`Fout bij synchroniseren: ${err.message}`);
+      setSyncToast(`"ERROR: ${err.message}"`);
     } finally {
       setIsSyncing(false);
-      setTimeout(() => setSyncToast(null), 4000);
+      setTimeout(() => setSyncToast(null), 3500);
     }
   };
 
-  // Bookmark Toggle
+  // Bookmark toggle
   const handleToggleBookmark = async (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     try {
@@ -164,7 +162,7 @@ export default function HomePage() {
       const data = await res.json();
       if (data.success && data.source) {
         setSources(prev => [...prev, data.source]);
-        handleSync(); // trigger sync for new feed
+        handleSync();
         return true;
       }
       return false;
@@ -185,21 +183,20 @@ export default function HomePage() {
     }
   };
 
-  const isBrowsingAll = selectedCategory === 'All' && !searchQuery && !showBookmarksOnly;
-
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100 transition-colors selection:bg-violet-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f4f3ef] dark:bg-[#0d0d0d] text-black dark:text-white transition-colors selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       
-      {/* Toast notification */}
+      {/* Industrial Toast Tag */}
       {syncToast && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900 text-white border border-violet-500/50 shadow-2xl animate-bounce">
-          <Sparkles className="w-4 h-4 text-violet-400" />
-          <span className="text-xs font-semibold">{syncToast}</span>
+        <div className="fixed bottom-6 right-6 z-50 font-mono text-xs uppercase tracking-widest px-4 py-2.5 bg-black text-white dark:bg-white dark:text-black border border-black dark:border-white shadow-2xl">
+          {syncToast}
         </div>
       )}
 
       {/* Header */}
-      <Header
+      <OffWhiteHeader
+        activeView={activeView}
+        onChangeView={setActiveView}
         searchQuery={searchQuery}
         onSearch={setSearchQuery}
         onSync={handleSync}
@@ -211,88 +208,77 @@ export default function HomePage() {
           setSelectedCategory('All');
         }}
         bookmarkCount={categoryCounts.Bookmarks || 0}
-        aiMode={aiMode}
       />
 
-      {/* Breaking Ticker */}
-      <Ticker
-        articles={articles}
-        onSelectArticle={setSelectedArticle}
+      {/* Category Navigation Bar */}
+      <OffWhiteCategoryNav
+        selectedCategory={showBookmarksOnly ? 'Bookmarks' : selectedCategory}
+        onSelectCategory={(cat) => {
+          setShowBookmarksOnly(false);
+          setSelectedCategory(cat);
+        }}
+        categoryCounts={categoryCounts}
+        sortOption={sortOption}
+        onChangeSort={setSortOption}
       />
 
-      {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        {/* Loading Spinner */}
+      {/* Main Content Area */}
+      <main className="flex-1 w-full">
         {isLoading ? (
-          <div className="flex flex-col items-center justify-center py-24 gap-4">
-            <RefreshCw className="w-8 h-8 text-violet-500 animate-spin" />
-            <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-              AI Feeds synchroniseren en artikelen laden...
+          <div className="flex flex-col items-center justify-center py-32 gap-4 font-mono text-xs uppercase tracking-widest text-black/60 dark:text-white/60">
+            <RefreshCw className="w-6 h-6 animate-spin text-black dark:text-white" />
+            <span>"LOADING AUTONOMOUS RADAR DATA..."</span>
+          </div>
+        ) : articles.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-32 px-4 text-center font-mono uppercase text-xs">
+            <SearchX className="w-10 h-10 text-black/40 dark:text-white/40 mb-3" />
+            <h3 className="font-bold text-sm mb-1">
+              "NO SPECIMENS FOUND"
+            </h3>
+            <p className="text-black/50 dark:text-white/50 max-w-sm mb-4">
+              {searchQuery 
+                ? `NO RESULTS MATCHING QUERY "${searchQuery}".`
+                : showBookmarksOnly
+                ? 'NO SAVED SPECIMENS IN ARCHIVE.'
+                : 'NO ARTICLES DETECTED IN FEED.'}
             </p>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black font-bold cursor-pointer"
+              >
+                CLEAR FILTER
+              </button>
+            )}
           </div>
         ) : (
           <>
-            {/* Spotlight / Hero Featured Section (shown only on All view with no search) */}
-            {isBrowsingAll && articles.length > 0 && (
-              <HeroFeatured
+            {/* View 1: SPREAD (Editorial Lookbook / Swiss Poetry Layout directly from screenshots) */}
+            {activeView === 'spread' && (
+              <EditorialSpread
                 articles={articles}
                 onSelectArticle={setSelectedArticle}
                 onToggleBookmark={handleToggleBookmark}
               />
             )}
 
-            {/* Category Filter and Sorting Bar */}
-            <CategoryFilter
-              selectedCategory={showBookmarksOnly ? 'Bookmarks' : selectedCategory}
-              onSelectCategory={(cat) => {
-                setShowBookmarksOnly(false);
-                setSelectedCategory(cat);
-              }}
-              categoryCounts={categoryCounts}
-              sortOption={sortOption}
-              onChangeSort={setSortOption}
-            />
-
-            {/* Articles Grid */}
-            {articles.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-20 px-4 text-center rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40">
-                <SearchX className="w-12 h-12 text-slate-400 mb-3" />
-                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-1">
-                  Geen artikelen gevonden
-                </h3>
-                <p className="text-xs text-slate-500 max-w-sm mb-4">
-                  {searchQuery 
-                    ? `Geen resultaten gevonden voor "${searchQuery}". Probeer een andere zoekterm.`
-                    : showBookmarksOnly
-                    ? 'Je hebt nog geen artikelen opgeslagen als bladwijzer. Klik op het bladwijzer-icoontje bij een artikel om het hier te bewaren.'
-                    : 'Er zijn nog geen artikelen gesynchroniseerd.'}
-                </p>
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="px-4 py-2 text-xs font-semibold rounded-lg bg-violet-600 text-white hover:bg-violet-700 transition-colors cursor-pointer"
-                  >
-                    Wis zoekopdracht
-                  </button>
-                )}
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* When on 'All' view without search, skip first 3 items because they are in the hero section */}
-                {(isBrowsingAll ? articles.slice(3) : articles).map((article) => (
-                  <ArticleCard
-                    key={article.id}
-                    article={article}
-                    onSelectArticle={setSelectedArticle}
-                    onToggleBookmark={handleToggleBookmark}
-                  />
-                ))}
-              </div>
+            {/* View 2: EXHIBITION (Card Specimens with 4 corner crop handles) */}
+            {activeView === 'exhibition' && (
+              <ExhibitionGrid
+                articles={articles}
+                onSelectArticle={setSelectedArticle}
+                onToggleBookmark={handleToggleBookmark}
+              />
             )}
 
-            {/* Daily Newsletter Section */}
-            <NewsletterBanner />
+            {/* View 3: LEDGER (Minimalist brutalist table manifest) */}
+            {activeView === 'archive' && (
+              <LedgerIndex
+                articles={articles}
+                onSelectArticle={setSelectedArticle}
+                onToggleBookmark={handleToggleBookmark}
+              />
+            )}
           </>
         )}
       </main>
@@ -301,13 +287,13 @@ export default function HomePage() {
       <Footer />
 
       {/* Reader Modal */}
-      <ArticleModal
+      <EditorialModal
         article={selectedArticle}
         onClose={() => setSelectedArticle(null)}
         onToggleBookmark={handleToggleBookmark}
       />
 
-      {/* Sources & AI Settings Modal */}
+      {/* Sources & AI Config Drawer */}
       <SourcesModal
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}

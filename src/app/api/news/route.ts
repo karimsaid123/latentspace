@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
       articles = await getArticles();
     }
 
-    const { searchParams } = new URL(request.url);
+    const searchParams = request.nextUrl.searchParams;
     const category = searchParams.get('category');
     const search = searchParams.get('search')?.toLowerCase().trim();
     const sort = searchParams.get('sort') || 'latest';

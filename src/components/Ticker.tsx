@@ -51,3 +51,4 @@ export default function Ticker({ articles, onSelectArticle }: TickerProps) {
     </div>
   );
 }
+

@@ -81,7 +81,7 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
+    const searchParams = request.nextUrl.searchParams;
     const id = searchParams.get('id');
     if (!id) {
       return NextResponse.json({ error: 'Source id is required' }, { status: 400 });

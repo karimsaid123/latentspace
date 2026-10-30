@@ -58,3 +58,4 @@ export interface SyncResult {
   sourcesProcessed: number;
   errors?: string[];
 }
+

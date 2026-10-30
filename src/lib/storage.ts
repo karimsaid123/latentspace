@@ -65,3 +65,4 @@ export async function toggleArticleBookmark(id: string): Promise<boolean> {
   await saveArticles(articles);
   return !!articles[index].bookmarked;
 }
+
