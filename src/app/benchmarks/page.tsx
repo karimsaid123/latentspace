@@ -38,6 +38,11 @@ export default function BenchmarksPage() {
   const [selectedModelId, setSelectedModelId] = useState<string | null>(null);
   const [currentTime, setCurrentTime] = useState<string>('');
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
   // Clock
   useEffect(() => {
     const update = () => {
@@ -203,6 +208,7 @@ export default function BenchmarksPage() {
           <div className="flex items-center gap-5 sm:gap-6 text-black/60">
             <Link
               href="/"
+              scroll={true}
               className="hover:text-black cursor-pointer transition-colors text-black font-bold flex items-center gap-1.5 border border-black/30 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
               title="Return to Frontier Feed"
             >
@@ -222,7 +228,7 @@ export default function BenchmarksPage() {
       {/* ─────────────────────────────────────────────────────────────
           HERO & KPI METRICS SUMMARY
       ───────────────────────────────────────────────────────────── */}
-      <main className="flex-1 w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-10 select-none">
+      <main className="flex-1 w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-10 select-none animate-fade-up">
         
         {/* Page Title & Mission Statement with Upward Bounce Animation */}
         <section className="mb-12 animate-fade-up">

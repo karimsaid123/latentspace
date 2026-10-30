@@ -43,11 +43,14 @@ nextjs-portal,
 @keyframes editorialFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(36px);
+    transform: translateY(44px);
   }
-  70% {
+  65% {
     opacity: 1;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+  }
+  85% {
+    transform: translateY(2px);
   }
   100% {
     opacity: 1;

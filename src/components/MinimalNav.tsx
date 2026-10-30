@@ -101,6 +101,7 @@ export default function MinimalNav({
         <div className="flex items-center gap-5 sm:gap-6 text-black/60">
           <Link
             href="/benchmarks"
+            scroll={true}
             className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-mono text-[9px] font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
