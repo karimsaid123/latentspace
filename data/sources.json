@@ -9,7 +9,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.083Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:38:30.848Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.186Z",
     "consecutiveFailures": 0
   },
   {
@@ -22,7 +22,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.208Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:38:31.165Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.484Z",
     "consecutiveFailures": 0
   },
   {
@@ -35,7 +35,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.818Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:38:31.256Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.552Z",
     "consecutiveFailures": 0
   },
   {
@@ -48,7 +48,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.924Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:38:31.340Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.606Z",
     "consecutiveFailures": 0
   },
   {
@@ -61,7 +61,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.302Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:38:31.459Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.714Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,7 +74,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.388Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:38:31.683Z",
+    "lastFetchedAt": "2026-10-30T20:35:44.983Z",
     "consecutiveFailures": 0
   },
   {
@@ -85,7 +85,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:31.762Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.092Z"
   },
   {
     "id": "arxiv-cl",
@@ -95,7 +95,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:31.897Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.232Z"
   },
   {
     "id": "techcrunch-xai",
@@ -105,7 +105,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:31.934Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.267Z"
   },
   {
     "id": "techcrunch-spacex",
@@ -115,7 +115,7 @@
     "category": "Robotics & Hardware",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:31.988Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.301Z"
   },
   {
     "id": "arxiv-xai",
@@ -125,7 +125,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.031Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.325Z"
   },
   {
     "id": "techcrunch-anthropic",
@@ -135,7 +135,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.173Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.404Z"
   },
   {
     "id": "arxiv-deepmind",
@@ -145,7 +145,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.212Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.442Z"
   },
   {
     "id": "techcrunch-mistral",
@@ -155,7 +155,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.232Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.474Z"
   },
   {
     "id": "arxiv-mistral",
@@ -165,7 +165,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.262Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.511Z"
   },
   {
     "id": "techcrunch-moonshot",
@@ -175,7 +175,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.281Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.525Z"
   },
   {
     "id": "arxiv-moonshot",
@@ -185,6 +185,6 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:38:32.386Z"
+    "lastFetchedAt": "2026-10-30T20:35:45.550Z"
   }
 ]

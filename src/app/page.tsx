@@ -25,6 +25,7 @@ export default function HomePage() {
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
+  const [isBenchmarkOpen, setIsBenchmarkOpen] = useState<boolean>(false);
 
   // Set initial client timestamp after mount
   useEffect(() => {
@@ -297,10 +298,8 @@ export default function HomePage() {
         savedCount={bookmarkedIds.length}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
+        onOpenBenchmarks={() => setIsBenchmarkOpen(true)}
       />
-
-      {/* 00 // Artificial Analysis Independent Benchmarks */}
-      <BenchmarkRadar onSelectLab={setSelectedLab} />
 
       {/* Main Content Area */}
       <main className="flex-1 w-full">
@@ -365,6 +364,16 @@ export default function HomePage() {
         onClose={handleCloseArticle}
         isBookmarked={selectedArticle ? bookmarkedIds.includes(selectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
+      />
+
+      {/* Artificial Analysis Benchmark Radar Modal */}
+      <BenchmarkRadar
+        isOpen={isBenchmarkOpen}
+        onClose={() => setIsBenchmarkOpen(false)}
+        onSelectLab={(lab) => {
+          setSelectedLab(lab);
+          setIsBenchmarkOpen(false);
+        }}
       />
 
     </div>

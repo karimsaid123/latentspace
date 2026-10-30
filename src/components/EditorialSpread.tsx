@@ -336,7 +336,7 @@ export default function EditorialSpread({
                 <div>
                   <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
                     <span>SECTOR // 00{idx + 1}</span>
-                    <span className="font-bold text-black">[{labArticles.length} ENTRIES]</span>
+                    <span className="font-bold text-black">[DOSSIER]</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-2 group-hover:translate-x-1 transition-transform">
@@ -419,7 +419,7 @@ export default function EditorialSpread({
       <section className="py-24">
         
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16">
-          <span className="font-bold text-black">CATALOG ARCHIVE // {articles.length} ENTRIES</span>
+          <span className="font-bold text-black">CATALOG ARCHIVE // GLOBAL REPOSITORY</span>
           <span>SAN FRANCISCO // LONDON // PARIS // TOKYO</span>
         </div>
 

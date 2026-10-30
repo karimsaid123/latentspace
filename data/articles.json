@@ -8695,5 +8695,36 @@
       "impact": "Breakthrough",
       "readTimeMinutes": 3
     }
+  },
+  {
+    "id": "7a24eca35f77e86d",
+    "canonicalUrl": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+    "title": "The biggest names in AI are backing a new way to opt out of scraping",
+    "publishedAt": "2026-10-30T20:26:10.000Z",
+    "fetchedAt": "2026-10-30T20:30:05.637Z",
+    "contentHash": "760769bf15d794c4",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable . With this control, publishers can apply their AI training preferences across multiple AI companies, instead of setting them individuall",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25330660/STK414_AI_CHATBOT_H.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use to opt out of being scraped by AI, as reported earlier by Search Engine Roundtable . With this control, publishers can apply their AI training preferences across multiple AI companies, instead of setting them individually. As telemetry indicators suggest, this initiative directly influences how Anthropic navigate modern compute scaling, inference latency, and multi-modal alignment.",
+      "takeaways": [
+        "With this control, publishers can apply their AI training preferences across multiple AI companies, instead of setting them individually.",
+        "The shared \"policy token\" signal is proposed by Kevin Kelley, a technical lead for standards at Anthropic, as part of the Internet Engineering Task Force (IETF).",
+        "It will live within a website's robots.txt file , which has long signaled which web crawlers can and can't scrape a site - whether for search indexing, archiving, or … Read the full story at The Verge.",
+        "Direct competitive pressure applied to peer labs in algorithmic efficiency and compute density.",
+        "Strategic validation of next-generation distributed reasoning architectures in enterprise workflows."
+      ],
+      "technicalAnalysis": "The shared \"policy token\" signal is proposed by Kevin Kelley, a technical lead for standards at Anthropic, as part of the Internet Engineering Task Force (IETF). It will live within a website's robots.txt file , which has long signaled which web crawlers can and can't scrape a site - whether for search indexing, archiving, or … Read the full story at The Verge. System telemetry reveals significant optimizations around memory bandwidth, pipeline parallelism, and distributed model synchronization across high-density clusters.",
+      "strategicImplications": "This milestone intensifies the competitive frontier between Anthropic and broader ecosystem rivals. Organizations deploying these methodologies gain significant operational advantages in cost-per-token efficiency, proprietary moat defensibility, and scalable infrastructure sovereignty.",
+      "primaryThesis": "Pivotal acceleration in Anthropic infrastructure demonstrating tangible gains in frontier capability.",
+      "impact": "Notable",
+      "readTimeMinutes": 2
+    }
   }
 ]

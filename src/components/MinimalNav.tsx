@@ -16,6 +16,7 @@ interface MinimalNavProps {
   savedCount?: number;
   isSearchOpen: boolean;
   setIsSearchOpen: (open: boolean) => void;
+  onOpenBenchmarks?: () => void;
 }
 
 export const LAB_FILTERS = [
@@ -44,30 +45,22 @@ export default function MinimalNav({
   savedCount = 0,
   isSearchOpen,
   setIsSearchOpen,
+  onOpenBenchmarks,
 }: MinimalNavProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [currentTime, setCurrentTime] = useState<string>('');
-  const [timeZone, setTimeZone] = useState<string>('');
 
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
       setCurrentTime(
-        now.toLocaleTimeString(undefined, {
+        now.toLocaleTimeString('en-US', {
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
           hour12: false,
         })
       );
-      try {
-        const shortTz = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
-          .formatToParts(now)
-          .find((part) => part.type === 'timeZoneName')?.value;
-        setTimeZone(shortTz || 'LOCAL');
-      } catch (_) {
-        setTimeZone('LOCAL');
-      }
     };
 
     updateClock();
@@ -92,48 +85,28 @@ export default function MinimalNav({
           </div>
         )}
 
-        {/* Brand / Index Number & Live User Device Clock */}
-        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+        {/* Brand */}
+        <div className="flex items-center gap-4">
           <span className="font-black text-sm tracking-tighter text-black flex items-center gap-2">
             LATENT SPACE
-          </span>
-
-          {/* Live Device Clock Badge (Phone & PC) */}
-          <div 
-            className="flex items-center gap-1.5 border border-black px-2 py-0.5 bg-white shadow-xs font-mono text-[9px]"
-            title="Live lokale tijd van jouw apparaat (PC/telefoon)"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span className="relative flex h-1.5 w-1.5" title="Live System">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
             </span>
-            <span className="font-bold text-black tracking-wider">
-              {currentTime || '--:--:--'}
-            </span>
-            {timeZone && (
-              <span className="text-[8px] text-black/50 hidden xs:inline">
-                [{timeZone}]
-              </span>
-            )}
-            <span className="text-[8px] text-emerald-700 font-bold hidden sm:inline">
-              LIVE
-            </span>
-          </div>
-
-          <span className="text-black/40 text-[9px] hidden md:inline">
-            N° 001 // ENTRIES: {totalArticles}
           </span>
         </div>
 
         {/* Minimal Controls */}
-        <div className="flex items-center gap-6 text-black/60">
-          <a
-            href="#benchmark-radar"
-            className="hover:text-black cursor-pointer transition-colors hidden md:block"
-            title="View Artificial Analysis Benchmark Index"
-          >
-            [BENCHMARKS & STATS]
-          </a>
+        <div className="flex items-center gap-5 sm:gap-6 text-black/60">
+          {onOpenBenchmarks && (
+            <button
+              onClick={onOpenBenchmarks}
+              className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6]"
+              title="Open Artificial Analysis Benchmark Radar"
+            >
+              [BENCHMARKS & STATS]
+            </button>
+          )}
 
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
@@ -153,11 +126,9 @@ export default function MinimalNav({
             [{isSyncing ? 'SYNCING...' : 'SYNC'}]
           </button>
 
-          <div className="text-right hidden sm:block font-bold text-black/80">
-            AUTONOMOUS RADAR<br />
-            <span className="text-[9px] font-normal text-black/40 tracking-wider">
-              {currentTime ? `${currentTime} • ` : ''}AUTO-SYNC // {lastSyncedText}
-            </span>
+          {/* Time ONLY completely on the right */}
+          <div className="text-right hidden sm:block font-bold text-black font-mono text-xs tracking-wider pl-2 border-l border-black/15">
+            {currentTime || '--:--:--'}
           </div>
         </div>
 

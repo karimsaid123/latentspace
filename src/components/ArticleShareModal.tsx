@@ -87,7 +87,7 @@ export default function ArticleShareModal({
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
-  const formattedDate = new Date(article.pubDate).toLocaleDateString('nl-NL', {
+  const formattedDate = new Date(article.pubDate).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',
@@ -118,7 +118,7 @@ export default function ArticleShareModal({
           <button
             onClick={onClose}
             className="w-7 h-7 border border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
-            title="Sluiten"
+            title="Close"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -199,7 +199,7 @@ export default function ArticleShareModal({
           {/* QUICK SHARING CONTROLS */}
           <div className="space-y-4">
             <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
-              SNEL DELEN VIA:
+              QUICK SHARE VIA:
             </span>
 
             {/* Social Share Buttons Grid */}
@@ -241,7 +241,7 @@ export default function ArticleShareModal({
                 className="p-2.5 border border-black bg-white hover:bg-black hover:text-white transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
               >
                 <Share2 className="w-3.5 h-3.5" />
-                <span>MEER...</span>
+                <span>MORE...</span>
               </button>
             </div>
 
@@ -256,7 +256,7 @@ export default function ArticleShareModal({
                 }`}
               >
                 {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedLink ? 'LINK GEKOPIEERD! ✓' : 'KOPIEER DIRECTE PAGINA LINK'}</span>
+                <span>{copiedLink ? 'LINK COPIED! ✓' : 'COPY DIRECT ARTICLE LINK'}</span>
               </button>
 
               <button
@@ -266,10 +266,10 @@ export default function ArticleShareModal({
                     ? 'bg-black text-white'
                     : 'bg-white text-black hover:bg-black hover:text-white'
                 }`}
-                title="Kopieer de volledige opgemaakte samenvatting"
+                title="Copy formatted summary to clipboard"
               >
                 {copiedText ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedText ? 'BERICHT GEKOPIEERD! ✓' : 'KOPIEER OPGEMAAKT BERICHT'}</span>
+                <span>{copiedText ? 'TEXT COPIED! ✓' : 'COPY FORMATTED SUMMARY'}</span>
               </button>
             </div>
 
@@ -290,7 +290,7 @@ export default function ArticleShareModal({
             onClick={onClose}
             className="font-bold text-black hover:underline cursor-pointer"
           >
-            [SLUITEN]
+            [CLOSE]
           </button>
         </div>
 

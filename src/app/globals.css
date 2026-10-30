@@ -25,6 +25,13 @@ html, body {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
+/* Hide Next.js dev overlay indicator ("N" icon) */
+nextjs-portal,
+[data-nextjs-dev-indicator],
+[data-nextjs-toast] {
+  display: none !important;
+}
 ::-webkit-scrollbar-track {
   background: transparent;
 }
