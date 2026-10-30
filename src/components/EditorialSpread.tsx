@@ -216,78 +216,60 @@ const EditorialSpread = memo(function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 2: VERTICAL SWISS TYPOGRAPHY & ART STACK (Image 3 style)
+          SECTION 2: MONUMENTAL SWISS TYPOGRAPHY DISPATCH
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-28 border-b border-black/10">
+      <section className="relative py-20 lg:py-28 border-b border-black/10">
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
           <span>NEURAL ARCHITECTURE</span>
-          <span>AUTONOMOUS COGNITION</span>
+          <span>AUTONOMOUS COGNITION // DISPATCH 003</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column: Stack of 3 Art Thumbnail Frames */}
-          <div className="lg:col-span-3 flex flex-col gap-10">
-            {[third, fourth, fifth].map((item, idx) => (
-              <ScrollReveal 
-                key={`${item.id}_stack_${idx}`}
-                delayMs={idx * 120}
-                yOffset={35}
-                parallaxSpeed={0.03 * (idx + 1)}
+        <div className="w-full">
+          <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
+            <div className="flex items-center gap-3">
+              <span className="font-bold text-black">INDEX // 003</span>
+              <span>//</span>
+              <span>[{third.source.name}]</span>
+              <span>//</span>
+              <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+            </div>
+            {onToggleBookmark && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleBookmark(third.id, e);
+                }}
+                className={`hover:text-black cursor-pointer transition-colors ${
+                  bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                }`}
+                title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
               >
-                <div 
-                  onClick={() => onSelectArticle(item)}
-                  className="cursor-pointer max-w-[160px] sm:max-w-[190px]"
-                >
-                  <ArtFrame
-                    src={item.imageUrl}
-                    alt={item.title}
-                    indexCode={`00${idx + 3}`}
-                    aspect="portrait"
-                  />
-                  <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
-                    [{item.source.name}]
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                [{bookmarkedIds.includes(third.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+              </button>
+            )}
           </div>
 
-          {/* Right Column: Giant Typography */}
-          <div className="lg:col-span-9 flex flex-col justify-between h-full pl-0 lg:pl-10">
-            <div>
-              <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
-                <span>INDEX // 003 // FRONTIER LAB BRIEF</span>
-                {onToggleBookmark && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleBookmark(third.id, e);
-                    }}
-                    className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
-                    }`}
-                    title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
-                  >
-                    [{bookmarkedIds.includes(third.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
-                  </button>
-                )}
-              </div>
-              <h2
-                onClick={() => onSelectArticle(third)}
-                className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity cursor-pointer mb-8"
-              >
-                {third.title}
-              </h2>
-            </div>
+          <h2
+            onClick={() => onSelectArticle(third)}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity cursor-pointer mb-8"
+          >
+            {third.title}
+          </h2>
 
-            <div className="mt-12 flex justify-between items-end font-mono text-[9px] tracking-widest text-black/50 uppercase">
-              <span>RESEARCH NETWORK: SILICON VALLEY // LONDON // PARIS // TOKYO</span>
-              <span>LATENCY: REALTIME</span>
-            </div>
+          <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
+            <span>BY {third.author || third.source.name}</span>
+            <span>//</span>
+            <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+              [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+            </span>
+            {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
           </div>
 
+          <div className="mt-12 pt-6 border-t border-black/10 flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase gap-2">
+            <span>RESEARCH NETWORK: SILICON VALLEY // LONDON // PARIS // TOKYO</span>
+            <span>LATENCY: REALTIME // VERIFIED DISPATCH</span>
+          </div>
         </div>
 
       </section>
