@@ -80,6 +80,14 @@ export default function MinimalNav({
 
         {/* Minimal Controls */}
         <div className="flex items-center gap-6 text-black/60">
+          <a
+            href="#benchmark-radar"
+            className="hover:text-black cursor-pointer transition-colors hidden md:block"
+            title="View Artificial Analysis Benchmark Index"
+          >
+            [BENCHMARKS & STATS]
+          </a>
+
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
             className="hover:text-black cursor-pointer transition-colors"

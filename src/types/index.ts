@@ -1,3 +1,5 @@
+export * from './benchmark';
+
 export type Category = 
   | 'LLMs & GenAI'
   | 'Robotics & Hardware'

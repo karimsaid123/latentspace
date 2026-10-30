@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import MinimalNav from '@/components/MinimalNav';
 import EditorialSpread from '@/components/EditorialSpread';
 import EditorialModal from '@/components/EditorialModal';
+import BenchmarkRadar from '@/components/BenchmarkRadar';
 import Footer from '@/components/Footer';
 import { Article } from '@/types';
 import { RefreshCw } from 'lucide-react';
@@ -238,6 +239,9 @@ export default function HomePage() {
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
       />
+
+      {/* 00 // Artificial Analysis Independent Benchmarks */}
+      <BenchmarkRadar onSelectLab={setSelectedLab} />
 
       {/* Main Content Area */}
       <main className="flex-1 w-full">

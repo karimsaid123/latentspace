@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
 import { ExternalLink } from 'lucide-react';
+import { getTopBenchmarkForLab } from '@/lib/benchmark-client';
 
 interface EditorialModalProps {
   article: Article | null;
@@ -114,6 +115,27 @@ export default function EditorialModal({
               {article.title}
             </h2>
           </div>
+
+          {/* Artificial Analysis Benchmark Telemetry for Lab */}
+          {(() => {
+            const topBenchmark = article.lab ? getTopBenchmarkForLab(article.lab) : undefined;
+            if (!topBenchmark) return null;
+            return (
+              <div className="p-3 bg-black/[0.02] border border-black/15 font-mono text-[9px] uppercase tracking-wider flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-black">AA BENCHMARK [{topBenchmark.name}]:</span>
+                  <span className="text-black/50">INDEPENDENT EVALUATION</span>
+                </div>
+                <div className="flex items-center gap-3 font-bold text-black">
+                  <span>IQ: {topBenchmark.evaluations.intelligenceIndex}/100</span>
+                  <span>•</span>
+                  <span>SPEED: {topBenchmark.evaluations.speedTokensPerSecond} TOK/S</span>
+                  <span>•</span>
+                  <span>COST: ${topBenchmark.evaluations.blendedPricePer1M?.toFixed(2)}/1M</span>
+                </div>
+              </div>
+            );
+          })()}
 
           {article.imageUrl && (
             <div className="max-w-md">
