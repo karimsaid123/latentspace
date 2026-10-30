@@ -294,96 +294,190 @@ const EditorialSpread = memo(function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 3: SCATTERED EDITORIAL GALLERY SPREAD (Image 1 style)
+          SECTION 3: ARCHITECTURAL 3-COLUMN EDITORIAL GALLERY SPREAD
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-28 border-b border-black/10">
+      <section className="relative py-20 lg:py-28 border-b border-black/10">
         
-        <div className="relative min-h-[750px] w-full">
+        {/* Top Header of Section 3 */}
+        <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-12 pb-4 border-b border-black/10">
+          <span>GALLERY ARCHIVE // 004 — 006</span>
+          <span className="hidden sm:inline">AUTONOMOUS COGNITION MATRIX</span>
+          <span>CURATED TELEMETRY</span>
+        </div>
+
+        {/* 3-Column Swiss Grid with Vertical Hairline Dividers */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-black/15 items-start">
           
-          {/* Top Left Item (004) with Scroll Reveal & Parallax */}
-          <div className="absolute top-0 left-0 sm:left-6">
-            <ScrollReveal yOffset={55} parallaxSpeed={0.06} delayMs={50}>
-              <span className="font-mono text-[9px] tracking-widest text-black/50 block mb-2">
-                004
-              </span>
+          {/* ─── COLUMN 1: LEFT (004) ─── */}
+          <div className="lg:pr-8 xl:pr-10 pb-12 lg:pb-0 flex flex-col items-start w-full">
+            <ScrollReveal yOffset={45} parallaxSpeed={0.04} delayMs={50} className="w-full">
+              
+              {/* Header row with Index & Lab Tag */}
+              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[380px]">
+                <span className="font-bold text-black">N° 004 // ARCHIVE</span>
+                <span>[{fourth.lab || 'FRONTIER'}]</span>
+              </div>
+
+              {/* Large ArtFrame */}
               <div 
                 onClick={() => onSelectArticle(fourth)}
-                className="w-28 sm:w-36 cursor-pointer"
+                className="w-full max-w-[380px] cursor-pointer"
               >
                 <ArtFrame
                   src={fourth.imageUrl}
                   alt={fourth.title}
                   indexCode="004"
                   aspect="portrait"
+                  className="w-full"
                 />
+              </div>
+
+              {/* Architectural Hairline with Source & Short Title */}
+              <div 
+                onClick={() => onSelectArticle(fourth)}
+                className="w-full max-w-[380px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                title={fourth.title}
+              >
+                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
+                  [{fourth.source.name}]
+                </span>
+                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
+                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
+                  {fourth.title}
+                </span>
+              </div>
+
+              {/* Article Headline */}
+              <h3 
+                onClick={() => onSelectArticle(fourth)}
+                className="font-mono text-xs sm:text-sm font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px]"
+              >
+                {fourth.title}
+              </h3>
+
+              {/* Micro telemetry footer */}
+              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[380px] w-full">
+                <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Top Center-Right Micro Annotation */}
-          <div className="absolute top-8 left-1/3 max-w-[240px] font-mono text-[9px] tracking-widest text-black uppercase leading-relaxed hidden sm:block">
-            <ScrollReveal yOffset={30} delayMs={150}>
-              <span>PARAMETER SCALE: MULTIMODAL REASONING MATRIX</span>
-            </ScrollReveal>
-          </div>
+          {/* ─── COLUMN 2: CENTER (005) ─── */}
+          <div className="lg:px-8 xl:px-10 py-12 lg:py-0 flex flex-col items-center w-full">
+            <ScrollReveal yOffset={55} parallaxSpeed={-0.03} delayMs={100} className="w-full flex flex-col items-center">
+              
+              {/* Top Annotation */}
+              <div className="font-mono text-[9px] tracking-widest text-black uppercase mb-3 text-center max-w-[450px] w-full">
+                PARAMETER SCALE: MULTIMODAL REASONING MATRIX
+              </div>
 
-          {/* Middle Center Item (005) with Scroll Reveal & Parallax */}
-          <div className="absolute top-64 left-1/2 -translate-x-1/2 flex flex-col items-center">
-            <ScrollReveal yOffset={65} parallaxSpeed={-0.08} delayMs={100}>
+              {/* Architectural Hairline with Source above Hero Image */}
               <div 
                 onClick={() => onSelectArticle(fifth)}
-                className="w-32 sm:w-44 cursor-pointer"
+                className="w-full max-w-[450px] flex items-center gap-3 mb-4 cursor-pointer group"
+                title={fifth.title}
+              >
+                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
+                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
+                  [{fifth.source.name}]
+                </span>
+                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
+              </div>
+
+              {/* Hero Large Center ArtFrame */}
+              <div 
+                onClick={() => onSelectArticle(fifth)}
+                className="w-full max-w-[450px] cursor-pointer"
               >
                 <ArtFrame
                   src={fifth.imageUrl}
                   alt={fifth.title}
                   indexCode="005"
                   aspect="portrait"
+                  className="w-full"
                 />
               </div>
+
+              {/* Lower Hairline with Source & Short Title */}
               <div 
                 onClick={() => onSelectArticle(fifth)}
-                className="mt-4 font-mono text-[10px] text-center max-w-xs cursor-pointer uppercase font-bold hover:opacity-70 transition-opacity"
+                className="w-full max-w-[450px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                title={fifth.title}
+              >
+                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
+                  005 // [{fifth.source.name}]
+                </span>
+                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
+                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
+                  {fifth.title}
+                </span>
+              </div>
+
+              {/* Giant Center Headline */}
+              <h3 
+                onClick={() => onSelectArticle(fifth)}
+                className="font-mono text-sm sm:text-base font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center"
               >
                 {fifth.title}
+              </h3>
+
+              {/* Micro telemetry footer */}
+              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase text-center max-w-[450px] w-full">
+                <span>REINFORCEMENT & ALIGNMENT // ZERO-LATENCY ORBIT</span>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Middle Right Annotation */}
-          <div className="absolute top-64 right-6 font-mono text-[9px] tracking-widest text-black uppercase">
-            <ScrollReveal yOffset={30} delayMs={200}>
-              <span>DISTRIBUTED INFERENCE</span>
-            </ScrollReveal>
-          </div>
+          {/* ─── COLUMN 3: RIGHT (006) ─── */}
+          <div className="lg:pl-8 xl:pl-10 pt-12 lg:pt-0 flex flex-col items-start lg:items-end w-full">
+            <ScrollReveal yOffset={45} parallaxSpeed={0.05} delayMs={150} className="w-full flex flex-col items-start lg:items-end">
+              
+              {/* Header row with Index & Tag */}
+              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[380px]">
+                <span className="font-bold text-black">DISTRIBUTED INFERENCE</span>
+                <span>N° 006</span>
+              </div>
 
-          {/* Lower Left Annotation */}
-          <div className="absolute bottom-36 left-0 sm:left-4 font-mono text-[9px] tracking-widest text-black uppercase max-w-[240px] leading-normal hidden sm:block">
-            <ScrollReveal yOffset={30} delayMs={250}>
-              <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
-            </ScrollReveal>
-          </div>
-
-          {/* Lower Center Annotation */}
-          <div className="absolute bottom-28 left-1/3 font-mono text-[9px] tracking-widest text-black uppercase">
-            <ScrollReveal yOffset={30} delayMs={300}>
-              <span>REINFORCEMENT & ALIGNMENT</span>
-            </ScrollReveal>
-          </div>
-
-          {/* Lower Right Item (006) with Scroll Reveal & Parallax */}
-          <div className="absolute bottom-12 right-0 sm:right-8">
-            <ScrollReveal yOffset={55} parallaxSpeed={0.08} delayMs={180}>
+              {/* Large ArtFrame */}
               <div 
                 onClick={() => onSelectArticle(sixth)}
-                className="w-28 sm:w-36 cursor-pointer mb-2"
+                className="w-full max-w-[380px] cursor-pointer"
               >
                 <ArtFrame
                   src={sixth.imageUrl}
                   alt={sixth.title}
                   indexCode="006"
                   aspect="portrait"
+                  className="w-full"
                 />
+              </div>
+
+              {/* Architectural Hairline with Source & Short Title */}
+              <div 
+                onClick={() => onSelectArticle(sixth)}
+                className="w-full max-w-[380px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                title={sixth.title}
+              >
+                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
+                  [{sixth.source.name}]
+                </span>
+                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
+                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
+                  {sixth.title}
+                </span>
+              </div>
+
+              {/* Article Headline */}
+              <h3 
+                onClick={() => onSelectArticle(sixth)}
+                className="font-mono text-xs sm:text-sm font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right"
+              >
+                {sixth.title}
+              </h3>
+
+              {/* Micro telemetry footer */}
+              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[380px] w-full text-left lg:text-right">
+                <span>SCALING LAWS // LATENT CONVERGENCE</span>
               </div>
             </ScrollReveal>
           </div>

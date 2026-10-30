@@ -48,7 +48,7 @@ const ArtFrame = memo(function ArtFrame({
   const imageToDisplay = src && !hasError ? src : fallbackSrc;
 
   return (
-    <div className={`relative group inline-block select-none ${className}`}>
+    <div className={`relative group select-none ${className || 'inline-block'}`}>
       {/* 4 Corner Bounding Box Square Handles with Viewfinder Lock-on Expansion */}
       <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:scale-110" />
       <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110" />
@@ -63,7 +63,7 @@ const ArtFrame = memo(function ArtFrame({
       )}
 
       {/* Frame content: Always a real piece of art */}
-      <div className={`relative overflow-hidden bg-[#e8e7e2] border border-black/10 transition-colors duration-500 group-hover:border-black/30 ${aspectClass}`}>
+      <div className={`relative overflow-hidden bg-[#e8e7e2] border border-black/10 transition-colors duration-500 group-hover:border-black/30 w-full ${aspectClass}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageToDisplay}
