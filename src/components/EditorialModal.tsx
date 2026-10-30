@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
 import { ExternalLink, Share2, Check } from 'lucide-react';
@@ -22,6 +23,11 @@ export default function EditorialModal({
 }: EditorialModalProps) {
   const [copied, setCopied] = useState(false);
   const [isShareOpen, setIsShareOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,13 +51,13 @@ export default function EditorialModal({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  if (!article) return null;
+  if (!mounted || !article) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
   const wordCount = (article.contentSnippet || '').split(' ').length + (article.aiSummary?.tldr || '').split(' ').length;
   const readTimeMinutes = Math.max(1, Math.round(wordCount / 40));
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
       <div 
         className="fixed inset-0" 
@@ -74,7 +80,7 @@ export default function EditorialModal({
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[9px] uppercase tracking-widest text-black/60">
           <div>
             <span>ENTRY // {article.id.slice(0, 8)}</span>
-            <span className="ml-3 font-bold text-black">[{article.source.name}]</span>
+            <span className="ml-3 font-bold text-black">[{article.source?.name || 'LATENTSPACE'}]</span>
           </div>
 
           <div className="flex items-center gap-3">
@@ -259,12 +265,12 @@ export default function EditorialModal({
             )}
 
             <a
-              href={article.link}
+              href={article.link || (article as any).canonicalUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
             >
-              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV / SOURCE' : `READ ON ${article.source.name}`}</span>
+              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV / SOURCE' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
@@ -280,4 +286,6 @@ export default function EditorialModal({
       />
     </div>
   );
+
+  return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }

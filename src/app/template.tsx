@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <div className="animate-fade-up w-full">
+    <div className="animate-fade-in w-full">
       {children}
     </div>
   );

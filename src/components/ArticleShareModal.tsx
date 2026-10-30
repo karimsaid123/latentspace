@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import { 
@@ -25,8 +26,13 @@ export default function ArticleShareModal({
 }: ArticleShareModalProps) {
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedText, setCopiedText] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  if (!isOpen) return null;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!isOpen || !mounted) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
   const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.ai';
@@ -93,7 +99,7 @@ export default function ArticleShareModal({
     year: 'numeric',
   });
 
-  return (
+  const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm select-none animate-fade-in">
       {/* Backdrop */}
       <div className="fixed inset-0" onClick={onClose} />
@@ -297,4 +303,6 @@ export default function ArticleShareModal({
       </div>
     </div>
   );
+
+  return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }
