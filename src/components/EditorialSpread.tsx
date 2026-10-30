@@ -221,8 +221,8 @@ const EditorialSpread = memo(function EditorialSpread({
       <section className="relative py-20 lg:py-28 border-b border-black/10">
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>NEURAL ARCHITECTURE</span>
-          <span>AUTONOMOUS COGNITION // DISPATCH 003</span>
+          <span>FEATURED DISPATCH</span>
+          <span>INDEX // 003</span>
         </div>
 
         <div className="w-full">
@@ -283,8 +283,6 @@ const EditorialSpread = memo(function EditorialSpread({
         {/* Top Header of Section 3 */}
         <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-12 pb-4 border-b border-black/10">
           <span>GALLERY ARCHIVE // 004 — 006</span>
-          <span className="hidden sm:inline">AUTONOMOUS COGNITION MATRIX</span>
-          <span>CURATED TELEMETRY</span>
         </div>
 
         {/* 3-Column Swiss Grid with Vertical Hairline Dividers */}
@@ -336,11 +334,6 @@ const EditorialSpread = memo(function EditorialSpread({
               >
                 {fourth.title}
               </h3>
-
-              {/* Micro telemetry footer */}
-              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[380px] w-full">
-                <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
-              </div>
             </ScrollReveal>
           </div>
 
@@ -348,9 +341,10 @@ const EditorialSpread = memo(function EditorialSpread({
           <div className="lg:px-8 xl:px-10 py-12 lg:py-0 flex flex-col items-center w-full">
             <ScrollReveal yOffset={55} parallaxSpeed={-0.03} delayMs={100} className="w-full flex flex-col items-center">
               
-              {/* Top Annotation */}
-              <div className="font-mono text-[9px] tracking-widest text-black uppercase mb-3 text-center max-w-[450px] w-full">
-                PARAMETER SCALE: MULTIMODAL REASONING MATRIX
+              {/* Header row with Index & Lab Tag */}
+              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[450px]">
+                <span className="font-bold text-black">N° 005 // ARCHIVE</span>
+                <span>[{fifth.lab || 'FRONTIER'}]</span>
               </div>
 
               {/* Architectural Hairline with Source above Hero Image */}
@@ -402,11 +396,6 @@ const EditorialSpread = memo(function EditorialSpread({
               >
                 {fifth.title}
               </h3>
-
-              {/* Micro telemetry footer */}
-              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase text-center max-w-[450px] w-full">
-                <span>REINFORCEMENT & ALIGNMENT // ZERO-LATENCY ORBIT</span>
-              </div>
             </ScrollReveal>
           </div>
 
@@ -416,8 +405,8 @@ const EditorialSpread = memo(function EditorialSpread({
               
               {/* Header row with Index & Tag */}
               <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[380px]">
-                <span className="font-bold text-black">DISTRIBUTED INFERENCE</span>
-                <span>N° 006</span>
+                <span className="font-bold text-black">N° 006 // ARCHIVE</span>
+                <span>[{sixth.lab || 'FRONTIER'}]</span>
               </div>
 
               {/* Large ArtFrame */}
@@ -456,11 +445,6 @@ const EditorialSpread = memo(function EditorialSpread({
               >
                 {sixth.title}
               </h3>
-
-              {/* Micro telemetry footer */}
-              <div className="mt-8 pt-4 border-t border-black/10 font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[380px] w-full text-left lg:text-right">
-                <span>SCALING LAWS // LATENT CONVERGENCE</span>
-              </div>
             </ScrollReveal>
           </div>
 
