@@ -208,7 +208,7 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 2: MONUMENTAL SWISS TYPOGRAPHY DISPATCH
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 border-b border-black/10">
+      <section className="relative py-16 lg:py-20">
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
           <span>FEATURED DISPATCH</span>
@@ -252,11 +252,6 @@ const EditorialSpread = memo(function EditorialSpread({
             </span>
             {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
           </div>
-
-          <div className="mt-12 pt-6 border-t border-black/10 flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase gap-2">
-            <span>EDITORIAL DISPATCH</span>
-            <span>LATENCY: REALTIME // VERIFIED</span>
-          </div>
         </div>
 
       </section>
@@ -265,18 +260,18 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 3: ARCHITECTURAL 3-COLUMN EDITORIAL GALLERY SPREAD
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-28 border-b border-black/10">
+      <section className="relative py-16 lg:py-20">
         
         {/* Top Header of Section 3 */}
-        <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-12 pb-4 border-b border-black/10">
+        <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
           <span>GALLERY ARCHIVE</span>
         </div>
 
-        {/* 3-Column Swiss Grid with Vertical Hairline Dividers */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-black/15 items-start">
+        {/* 3-Column Swiss Grid with Clean Spacing (no dividing lines) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
           
           {/* ─── COLUMN 1: LEFT (004) ─── */}
-          <div className="lg:pr-8 xl:pr-10 pb-12 lg:pb-0 flex flex-col items-start w-full">
+          <div className="flex flex-col items-start w-full">
             <ScrollReveal yOffset={45} parallaxSpeed={0.04} delayMs={50} className="w-full">
               
               {/* Large ArtFrame */}
@@ -293,18 +288,17 @@ const EditorialSpread = memo(function EditorialSpread({
                 />
               </div>
 
-              {/* Architectural Hairline with Source & Short Title */}
+              {/* Source & Lab Metadata Line */}
               <div 
                 onClick={() => onSelectArticle(fourth)}
-                className="w-full max-w-[380px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                className="w-full max-w-[380px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
                 title={fourth.title}
               >
                 <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
                   [{fourth.source.name}]
                 </span>
-                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
-                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
-                  {fourth.title}
+                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                  [{fourth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
@@ -319,7 +313,7 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
 
           {/* ─── COLUMN 2: CENTER (005) ─── */}
-          <div className="lg:px-8 xl:px-10 py-12 lg:py-0 flex flex-col items-center w-full">
+          <div className="flex flex-col items-center w-full">
             <ScrollReveal yOffset={55} parallaxSpeed={-0.03} delayMs={100} className="w-full flex flex-col items-center">
               
               {/* Hero Large Center ArtFrame */}
@@ -336,18 +330,17 @@ const EditorialSpread = memo(function EditorialSpread({
                 />
               </div>
 
-              {/* Lower Hairline with Source & Short Title */}
+              {/* Source & Lab Metadata Line */}
               <div 
                 onClick={() => onSelectArticle(fifth)}
-                className="w-full max-w-[450px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                className="w-full max-w-[450px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
                 title={fifth.title}
               >
                 <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
                   [{fifth.source.name}]
                 </span>
-                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
-                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
-                  {fifth.title}
+                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                  [{fifth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
@@ -362,7 +355,7 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
 
           {/* ─── COLUMN 3: RIGHT (006) ─── */}
-          <div className="lg:pl-8 xl:pl-10 pt-12 lg:pt-0 flex flex-col items-start lg:items-end w-full">
+          <div className="flex flex-col items-start lg:items-end w-full">
             <ScrollReveal yOffset={45} parallaxSpeed={0.05} delayMs={150} className="w-full flex flex-col items-start lg:items-end">
               
               {/* Large ArtFrame */}
@@ -379,18 +372,17 @@ const EditorialSpread = memo(function EditorialSpread({
                 />
               </div>
 
-              {/* Architectural Hairline with Source & Short Title */}
+              {/* Source & Lab Metadata Line */}
               <div 
                 onClick={() => onSelectArticle(sixth)}
-                className="w-full max-w-[380px] flex items-center gap-2.5 my-4 cursor-pointer group"
+                className="w-full max-w-[380px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
                 title={sixth.title}
               >
                 <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
                   [{sixth.source.name}]
                 </span>
-                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
-                <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
-                  {sixth.title}
+                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                  [{sixth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
@@ -411,9 +403,9 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION: FRONTIER LABS INTELLIGENCE DOSSIER (Dedicated Lab Sections)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-28 border-b border-black">
+      <section className="relative py-20 lg:py-24">
         
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16 gap-2">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-12 gap-2">
           <div>
             <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
             <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
@@ -494,7 +486,7 @@ const EditorialSpread = memo(function EditorialSpread({
 
                     {/* Secondary Lab Headlines */}
                     {labArticles.slice(1, 3).length > 0 && (
-                      <div className="space-y-2.5 pt-4 border-t border-black/10 font-mono text-[9px]">
+                      <div className="space-y-2.5 pt-4 font-mono text-[9px]">
                         {labArticles.slice(1, 3).map((art, aIdx) => (
                           <div
                             key={`${art.id}_lab_${aIdx}`}
@@ -509,7 +501,7 @@ const EditorialSpread = memo(function EditorialSpread({
                     )}
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
+                  <div className="mt-8 flex justify-between items-center font-mono text-[9px]">
                     <span className="text-black/40 uppercase">STATUS: LIVE RADAR</span>
                     {onSelectLab && (
                       <button
@@ -531,18 +523,18 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4: COMPLETE CATALOG (Browse all AI articles)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-20 lg:py-24">
         
-        <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16">
+        <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-12">
           <span className="font-bold text-black">CATALOG ARCHIVE</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {catalogSlice.map((art, idx) => (
             <div
               key={`${art.id}_catalog_${idx}`}
               onClick={() => onSelectArticle(art)}
-              className="group cursor-pointer flex flex-col justify-between border-t border-black/30 hover:border-black pt-4 transition-all duration-300 hover:-translate-y-1"
+              className="group cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
             >
               <div>
                 <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
@@ -567,7 +559,7 @@ const EditorialSpread = memo(function EditorialSpread({
                 </p>
               </div>
 
-              <div className="mt-4 pt-2 border-t border-black/10 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+              <div className="mt-4 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
                 <div className="flex items-center gap-2 truncate">
                   <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
                   <span className="text-black/30">•</span>
@@ -597,7 +589,7 @@ const EditorialSpread = memo(function EditorialSpread({
         </div>
 
         {remainingCount > 0 && (
-          <div className="mt-16 pt-8 border-t border-black/15 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
             <span className="text-black/50">
               SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
             </span>
