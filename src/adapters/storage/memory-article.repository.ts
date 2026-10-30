@@ -3,6 +3,7 @@ import path from 'path';
 import { ArticleFilter, ArticleRepositoryPort } from '@/core/ports/repository.port';
 import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
+import { detectFrontierLab, generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, DomainArticle>();
@@ -17,34 +18,41 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       const raw = await fs.readFile(this.storageFilePath, 'utf8');
       const loaded: any[] = JSON.parse(raw);
       for (const item of loaded) {
-        // Robust adapter normalization: handles both legacy and domain formats
-        const rawSummary = item.summary || item.aiSummary || {
-          tldr: item.contentSnippet || item.title || '',
-          takeaways: [],
-          impact: item.aiSummary?.impact || 'Notable',
-          readTimeMinutes: item.aiSummary?.readTimeMinutes || 2,
-        };
+        const title = decodeHtmlEntities(item.title || '');
+        const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
+        const sourceName = item.sourceName || item.source?.name || 'Feed';
+        const lab = item.lab || detectFrontierLab(title, contentSnippet, sourceName);
 
-        const summary = {
-          tldr: decodeHtmlEntities(rawSummary.tldr || ''),
-          takeaways: (rawSummary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
-          impact: rawSummary.impact || 'Notable',
-          readTimeMinutes: rawSummary.readTimeMinutes || 2,
-        };
+        // Generate deep intelligence summary if existing one is too basic
+        let summary = item.summary || item.aiSummary;
+        if (!summary || !summary.technicalAnalysis || summary.takeaways?.length < 3) {
+          summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
+        } else {
+          summary = {
+            tldr: decodeHtmlEntities(summary.tldr || ''),
+            takeaways: (summary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
+            technicalAnalysis: summary.technicalAnalysis ? decodeHtmlEntities(summary.technicalAnalysis) : undefined,
+            strategicImplications: summary.strategicImplications ? decodeHtmlEntities(summary.strategicImplications) : undefined,
+            primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
+            impact: summary.impact || 'Notable',
+            readTimeMinutes: summary.readTimeMinutes || 3,
+          };
+        }
 
         const normalized: DomainArticle = {
           id: item.id,
           canonicalUrl: item.canonicalUrl || item.link || '',
-          title: decodeHtmlEntities(item.title || ''),
+          title,
           publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
           fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
           contentHash: item.contentHash || item.id,
           sourceId: item.sourceId || item.source?.id || 'source',
-          sourceName: item.sourceName || item.source?.name || 'Feed',
+          sourceName,
           author: decodeHtmlEntities(item.author || ''),
-          contentSnippet: decodeHtmlEntities(item.contentSnippet || ''),
+          contentSnippet,
           imageUrl: item.imageUrl,
           category: item.category || 'LLMs & GenAI',
+          lab,
           summary,
         };
 

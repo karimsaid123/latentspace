@@ -66,8 +66,11 @@ export async function GET(request: NextRequest) {
         const summary = {
           tldr: decodeHtmlEntities(rawSummary.tldr || ''),
           takeaways: (rawSummary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
+          technicalAnalysis: rawSummary.technicalAnalysis ? decodeHtmlEntities(rawSummary.technicalAnalysis) : undefined,
+          strategicImplications: rawSummary.strategicImplications ? decodeHtmlEntities(rawSummary.strategicImplications) : undefined,
+          primaryThesis: rawSummary.primaryThesis ? decodeHtmlEntities(rawSummary.primaryThesis) : undefined,
           impact: rawSummary.impact || 'Notable',
-          readTimeMinutes: rawSummary.readTimeMinutes || 2,
+          readTimeMinutes: rawSummary.readTimeMinutes || 3,
         };
 
         return {
@@ -84,6 +87,7 @@ export async function GET(request: NextRequest) {
           contentSnippet: decodeHtmlEntities(a.contentSnippet || ''),
           imageUrl: a.imageUrl,
           category: a.category,
+          lab: a.lab || 'Independent',
           aiSummary: summary,
         };
       });

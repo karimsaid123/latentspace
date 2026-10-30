@@ -11,6 +11,7 @@ import { RefreshCw } from 'lucide-react';
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedLab, setSelectedLab] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -192,13 +193,17 @@ export default function HomePage() {
     }
   };
 
-  // Filter articles for SAVED tab if active
+  // Filter articles for SAVED tab and LAB sector if active
   const displayedArticles = useMemo(() => {
+    let list = articles;
     if (selectedCategory === 'SAVED') {
-      return articles.filter((a) => bookmarkedIds.includes(a.id));
+      list = list.filter((a) => bookmarkedIds.includes(a.id));
     }
-    return articles;
-  }, [articles, selectedCategory, bookmarkedIds]);
+    if (selectedLab !== 'All') {
+      list = list.filter((a) => a.lab === selectedLab);
+    }
+    return list;
+  }, [articles, selectedCategory, selectedLab, bookmarkedIds]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
@@ -220,6 +225,8 @@ export default function HomePage() {
       <MinimalNav
         selectedCategory={selectedCategory}
         onSelectCategory={setSelectedCategory}
+        selectedLab={selectedLab}
+        onSelectLab={setSelectedLab}
         searchQuery={searchQuery}
         onSearch={setSearchQuery}
         onSync={handleSync}
@@ -241,29 +248,34 @@ export default function HomePage() {
         ) : displayedArticles.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-40 px-4 text-center font-mono text-xs uppercase tracking-widest text-black/60">
             <span className="mb-2 font-bold">
-              {selectedCategory === 'SAVED' ? 'NO SAVED ARTICLES YET' : 'NO ARTICLES FOUND'}
+              {selectedCategory === 'SAVED' ? 'NO SAVED ARTICLES YET' : 'NO ARTICLES FOUND IN THIS SECTOR'}
             </span>
             <span className="text-[10px] text-black/40">
               {selectedCategory === 'SAVED'
                 ? 'CLICK [+ SAVE] ON ANY ARTICLE TO BOOKMARK IT HERE'
-                : 'TRY ADJUSTING YOUR FILTER OR SEARCH QUERY'}
+                : 'TRY ADJUSTING YOUR LAB FILTER, CATEGORY OR SEARCH QUERY'}
             </span>
-            {searchQuery && (
+            {(searchQuery || selectedCategory !== 'All' || selectedLab !== 'All') && (
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedCategory('All');
+                  setSelectedLab('All');
+                }}
                 className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
               >
-                [RESET SEARCH]
+                [RESET ALL FILTERS]
               </button>
             )}
           </div>
         ) : (
-          <div key={selectedCategory} className="animate-fade-in">
+          <div key={`${selectedCategory}_${selectedLab}`} className="animate-fade-in">
             <EditorialSpread
               articles={displayedArticles}
               onSelectArticle={setSelectedArticle}
               bookmarkedIds={bookmarkedIds}
               onToggleBookmark={toggleBookmark}
+              onSelectLab={setSelectedLab}
             />
           </div>
         )}

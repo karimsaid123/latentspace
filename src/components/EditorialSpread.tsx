@@ -9,13 +9,24 @@ interface EditorialSpreadProps {
   onSelectArticle: (article: Article) => void;
   bookmarkedIds?: string[];
   onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
+  onSelectLab?: (lab: string) => void;
 }
+
+const LAB_SECTORS = [
+  { id: 'OpenAI', name: 'OPENAI', short: 'OPENAI', location: 'SAN FRANCISCO // REASONING MATRIX & SCALING' },
+  { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND', location: 'LONDON • MT VIEW // ORBITAL COMPUTE & GEMINI' },
+  { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC', location: 'SAN FRANCISCO // CONSTITUTIONAL REASONING & CLAUDE' },
+  { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI', location: 'MEMPHIS • AUSTIN // COLOSSUS CLUSTERS & STARLINK' },
+  { id: 'Meta AI', name: 'META AI', short: 'META', location: 'MENLO PARK • PARIS // OPEN WEIGHTS & LLAMA ECOSYSTEM' },
+  { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA', location: 'SANTA CLARA // BLACKWELL HARDWARE & ACCELERATION' },
+];
 
 export default function EditorialSpread({
   articles,
   onSelectArticle,
   bookmarkedIds = [],
   onToggleBookmark,
+  onSelectLab,
 }: EditorialSpreadProps) {
   if (!articles || articles.length === 0) return null;
 
@@ -284,9 +295,117 @@ export default function EditorialSpread({
 
       </section>
 
+      {/* ─────────────────────────────────────────────────────────────
+          SECTION: FRONTIER LABS INTELLIGENCE DOSSIER (Dedicated Lab Sections)
+      ───────────────────────────────────────────────────────────── */}
+      <section className="relative py-28 border-b border-black">
+        
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16 gap-2">
+          <div>
+            <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
+            <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
+          </div>
+          <span>ACTIVE MONITORING: 6 ENTERPRISE CLUSTERS</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {LAB_SECTORS.map((lab, idx) => {
+            const labArticles = articles.filter(a => a.lab === lab.id);
+            const leadArt = labArticles[0];
+
+            return (
+              <div 
+                key={lab.id}
+                className="border border-black p-6 sm:p-8 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300"
+              >
+                {/* 4 Corner Bounding Box Square Handles */}
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+
+                <div>
+                  <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
+                    <span>SECTOR // 00{idx + 1}</span>
+                    <span className="font-bold text-black">[{labArticles.length} ENTRIES]</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-2 group-hover:translate-x-1 transition-transform">
+                    {lab.name}
+                  </h3>
+
+                  <span className="font-mono text-[9px] tracking-wider uppercase text-black/50 block mb-6">
+                    {lab.location}
+                  </span>
+
+                  {leadArt ? (
+                    <div className="mb-6">
+                      <div 
+                        onClick={() => onSelectArticle(leadArt)}
+                        className="cursor-pointer mb-3"
+                      >
+                        <ArtFrame
+                          src={leadArt.imageUrl}
+                          alt={leadArt.title}
+                          indexCode={`LAB_00${idx + 1}`}
+                          aspect="landscape"
+                        />
+                      </div>
+
+                      <h4 
+                        onClick={() => onSelectArticle(leadArt)}
+                        className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
+                      >
+                        {leadArt.title}
+                      </h4>
+
+                      <p className="font-mono text-[9px] uppercase text-black/60 line-clamp-2 leading-relaxed">
+                        {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="py-12 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+                      NO DIRECT TELEMETRY IN CURRENT CYCLE
+                    </div>
+                  )}
+
+                  {/* Secondary Lab Headlines */}
+                  {labArticles.slice(1, 3).length > 0 && (
+                    <div className="space-y-2.5 pt-4 border-t border-black/10 font-mono text-[9px]">
+                      {labArticles.slice(1, 3).map((art) => (
+                        <div
+                          key={art.id}
+                          onClick={() => onSelectArticle(art)}
+                          className="flex items-start gap-2 text-black/70 hover:text-black cursor-pointer uppercase truncate group/link"
+                        >
+                          <span className="font-bold text-black shrink-0 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                          <span className="truncate">{art.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
+                  <span className="text-black/40 uppercase">STATUS: LIVE RADAR</span>
+                  {onSelectLab && (
+                    <button
+                      onClick={() => onSelectLab(lab.id)}
+                      className="font-bold uppercase text-black hover:underline underline-offset-4 cursor-pointer"
+                    >
+                      VIEW ALL {lab.short} →
+                    </button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+      </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 4: COMPLETE CATALOG (Browse all 80+ AI articles)
+          SECTION 4: COMPLETE CATALOG (Browse all AI articles)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-24">
         

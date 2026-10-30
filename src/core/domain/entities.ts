@@ -7,11 +7,23 @@ export type Category =
 
 export type ImpactLevel = 'Breakthrough' | 'High' | 'Medium' | 'Notable';
 
+export type FrontierLab = 
+  | 'OpenAI'
+  | 'Google DeepMind'
+  | 'Anthropic'
+  | 'SpaceX & xAI'
+  | 'Meta AI'
+  | 'NVIDIA'
+  | 'Independent';
+
 export interface AISummary {
   tldr: string;
   takeaways: string[];
   impact: ImpactLevel;
   readTimeMinutes: number;
+  technicalAnalysis?: string;
+  strategicImplications?: string;
+  primaryThesis?: string;
 }
 
 export interface DomainSource {
@@ -38,6 +50,7 @@ export interface DomainArticle {
   contentSnippet: string;
   imageUrl?: string;
   category: Category;
+  lab?: FrontierLab;
   summary: AISummary;
 }
 

@@ -92,16 +92,23 @@ export default function EditorialModal({
         <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 select-text">
           
           <div>
-            <span className="font-mono text-[9px] tracking-widest uppercase text-black/40 block mb-2">
-              CLASSIFICATION // "{article.category}" // ~{readTimeMinutes} MIN READ
-            </span>
+            <div className="flex flex-wrap items-center gap-3 font-mono text-[9px] tracking-widest uppercase text-black/50 mb-3">
+              <span>CLASSIFICATION // "{article.category}"</span>
+              <span>•</span>
+              <span className="text-black font-bold">LAB: [{article.lab || 'FRONTIER LAB'}]</span>
+              <span>•</span>
+              <span>IMPACT: [{article.aiSummary?.impact || 'NOTABLE'}]</span>
+              <span>•</span>
+              <span>~{readTimeMinutes} MIN READ</span>
+            </div>
+
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black">
               {article.title}
             </h2>
           </div>
 
           {article.imageUrl && (
-            <div className="max-w-sm">
+            <div className="max-w-md">
               <ArtFrame
                 src={article.imageUrl}
                 alt={article.title}
@@ -111,26 +118,50 @@ export default function EditorialModal({
             </div>
           )}
 
-          {/* AI TLDR Box */}
+          {/* 01: Executive Intelligence Brief */}
           <div className="p-6 bg-black/[0.03] border-l-2 border-black font-mono text-xs">
-            <span className="text-[10px] font-bold uppercase tracking-widest block mb-2">
-              "AI TL;DR EXECUTIVE SUMMARY"
+            <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
+              01 // EXECUTIVE INTELLIGENCE BRIEF
             </span>
             <p className="uppercase leading-relaxed text-black/90">
               {article.aiSummary?.tldr || article.contentSnippet || ''}
             </p>
           </div>
 
-          {/* Takeaways */}
-          {article.aiSummary?.takeaways && article.aiSummary.takeaways.length > 0 && (
-            <div className="font-mono text-xs space-y-2">
-              <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
-                BELANGRIJKSTE INZICHTEN:
+          {/* 02: Technical & Architectural Breakdown */}
+          {article.aiSummary?.technicalAnalysis && (
+            <div className="p-6 border border-black/10 font-mono text-xs bg-black/[0.01]">
+              <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
+                02 // TECHNICAL & ARCHITECTURAL BREAKDOWN
               </span>
-              <ul className="space-y-2">
+              <p className="uppercase leading-relaxed text-black/80">
+                {article.aiSummary.technicalAnalysis}
+              </p>
+            </div>
+          )}
+
+          {/* 03: Strategic & Ecosystem Implications */}
+          {article.aiSummary?.strategicImplications && (
+            <div className="p-6 border-l-2 border-black/30 bg-black/[0.02] font-mono text-xs">
+              <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
+                03 // STRATEGIC & ECOSYSTEM IMPLICATIONS
+              </span>
+              <p className="uppercase leading-relaxed text-black/80">
+                {article.aiSummary.strategicImplications}
+              </p>
+            </div>
+          )}
+
+          {/* 04: Key Actionable Takeaways */}
+          {article.aiSummary?.takeaways && article.aiSummary.takeaways.length > 0 && (
+            <div className="font-mono text-xs space-y-3">
+              <span className="text-[10px] font-black uppercase tracking-widest text-black block">
+                04 // KEY ACTIONABLE TAKEAWAYS:
+              </span>
+              <ul className="space-y-2.5">
                 {article.aiSummary.takeaways.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 uppercase text-black/80">
-                    <span className="font-bold">—</span>
+                  <li key={idx} className="flex items-start gap-3 uppercase text-black/85 leading-relaxed">
+                    <span className="font-bold text-black">—</span>
                     <span>{point}</span>
                   </li>
                 ))}
@@ -138,11 +169,11 @@ export default function EditorialModal({
             </div>
           )}
 
-          {/* Snippet */}
+          {/* Source Snippet */}
           {article.contentSnippet && (
             <div className="font-mono text-xs space-y-2 pt-4 border-t border-black/10">
               <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
-                CONTENT SNIPPET:
+                PRIMARY SOURCE SNIPPET:
               </span>
               <p className="text-black/60 leading-relaxed uppercase">
                 {article.contentSnippet}
@@ -155,7 +186,7 @@ export default function EditorialModal({
         {/* Footer */}
         <div className="px-6 py-4 border-t border-black/10 flex items-center justify-between font-mono text-[10px]">
           <span className="text-black/40">
-            {new Date(article.pubDate).toLocaleDateString()}
+            RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
           </span>
 
           <a
@@ -164,7 +195,7 @@ export default function EditorialModal({
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
           >
-            <span>LEES OP {article.source.name}</span>
+            <span>READ ON {article.source.name}</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>

@@ -5,6 +5,8 @@ import React, { useRef, useEffect } from 'react';
 interface MinimalNavProps {
   selectedCategory: string;
   onSelectCategory: (cat: string) => void;
+  selectedLab: string;
+  onSelectLab: (lab: string) => void;
   searchQuery: string;
   onSearch: (q: string) => void;
   onSync: () => void;
@@ -17,7 +19,7 @@ interface MinimalNavProps {
 }
 
 const CATEGORIES = [
-  { id: 'All', label: 'ALL' },
+  { id: 'All', label: 'ALL CATEGORIES' },
   { id: 'LLMs & GenAI', label: 'LLMs' },
   { id: 'Robotics & Hardware', label: 'ROBOTICS' },
   { id: 'Open Source & Research', label: 'RESEARCH' },
@@ -25,9 +27,21 @@ const CATEGORIES = [
   { id: 'Ethics & Policy', label: 'POLICY' },
 ];
 
+export const LAB_FILTERS = [
+  { id: 'All', label: 'ALL LABS' },
+  { id: 'OpenAI', label: 'OPENAI' },
+  { id: 'Google DeepMind', label: 'DEEPMIND' },
+  { id: 'Anthropic', label: 'ANTHROPIC' },
+  { id: 'SpaceX & xAI', label: 'SPACEX & xAI' },
+  { id: 'Meta AI', label: 'META AI' },
+  { id: 'NVIDIA', label: 'NVIDIA' },
+];
+
 export default function MinimalNav({
   selectedCategory,
   onSelectCategory,
+  selectedLab,
+  onSelectLab,
   searchQuery,
   onSearch,
   onSync,
@@ -123,9 +137,9 @@ export default function MinimalNav({
         </div>
       )}
 
-      {/* Minimal Category Filter Line */}
+      {/* Category Filter Line */}
       <div className="flex items-center gap-4 pt-3 overflow-x-auto no-scrollbar text-[9px] text-black/40">
-        <span className="text-black/60 font-bold shrink-0">FILTER:</span>
+        <span className="text-black/60 font-bold shrink-0">TOPIC:</span>
         {CATEGORIES.map((cat) => {
           const isSelected = selectedCategory === cat.id;
           return (
@@ -152,6 +166,25 @@ export default function MinimalNav({
         >
           [★ SAVED ({savedCount})]
         </button>
+      </div>
+
+      {/* Frontier Labs Navigation Track */}
+      <div className="flex items-center gap-3 pt-2.5 overflow-x-auto no-scrollbar text-[9px] text-black/40 border-t border-black/5 mt-2.5">
+        <span className="text-black/60 font-bold shrink-0">LAB SECTOR:</span>
+        {LAB_FILTERS.map((lab) => {
+          const isSelected = selectedLab === lab.id;
+          return (
+            <button
+              key={lab.id}
+              onClick={() => onSelectLab(lab.id)}
+              className={`hover:text-black transition-colors shrink-0 cursor-pointer ${
+                isSelected ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
+              }`}
+            >
+              [{lab.label}]
+            </button>
+          );
+        })}
       </div>
 
     </header>

@@ -7,12 +7,24 @@ export type Category =
 
 export type ImpactLevel = 'Breakthrough' | 'High' | 'Medium' | 'Notable';
 
+export type FrontierLab = 
+  | 'OpenAI'
+  | 'Google DeepMind'
+  | 'Anthropic'
+  | 'SpaceX & xAI'
+  | 'Meta AI'
+  | 'NVIDIA'
+  | 'Independent';
+
 export interface AISummary {
   tldr: string;
   takeaways: string[];
   impact: ImpactLevel;
   readTimeMinutes: number;
-  generatedWith: 'gemini' | 'heuristic';
+  technicalAnalysis?: string;
+  strategicImplications?: string;
+  primaryThesis?: string;
+  generatedWith?: 'gemini' | 'heuristic';
 }
 
 export interface ArticleSource {
@@ -34,6 +46,7 @@ export interface Article {
   fullContent?: string;
   imageUrl?: string;
   category: Category;
+  lab?: FrontierLab;
   aiSummary: AISummary;
   isFeatured?: boolean;
   bookmarked?: boolean;
