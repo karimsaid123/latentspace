@@ -82,6 +82,20 @@ export default function EditorialSpread({
               [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
             </span>
             {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
+            {onToggleBookmark && (
+              <>
+                <span>//</span>
+                <button
+                  onClick={(e) => onToggleBookmark(lead.id, e)}
+                  className={`hover:text-black cursor-pointer transition-colors ${
+                    bookmarkedIds.includes(lead.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                  }`}
+                  title={bookmarkedIds.includes(lead.id) ? 'Saved' : 'Save article'}
+                >
+                  [{bookmarkedIds.includes(lead.id) ? '★ SAVED' : '+ SAVE'}]
+                </button>
+              </>
+            )}
           </div>
         </div>
 
@@ -109,9 +123,23 @@ export default function EditorialSpread({
               onClick={() => onSelectArticle(second)}
               className="cursor-pointer mb-10 group"
             >
-              <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-2">
-                INDEX // 002 // [{second.source.name}]
-              </span>
+              <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
+                <span>INDEX // 002 // [{second.source.name}]</span>
+                {onToggleBookmark && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleBookmark(second.id, e);
+                    }}
+                    className={`hover:text-black cursor-pointer transition-colors ${
+                      bookmarkedIds.includes(second.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                    }`}
+                    title={bookmarkedIds.includes(second.id) ? 'Saved' : 'Save article'}
+                  >
+                    [{bookmarkedIds.includes(second.id) ? '★ SAVED' : '+ SAVE'}]
+                  </button>
+                )}
+              </div>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300">
                 {second.title}
               </h2>
@@ -204,9 +232,23 @@ export default function EditorialSpread({
           {/* Right Column: Giant Typography */}
           <div className="lg:col-span-9 flex flex-col justify-between h-full pl-0 lg:pl-10">
             <div>
-              <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-3">
-                INDEX // 003 // FRONTIER LAB BRIEF
-              </span>
+              <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
+                <span>INDEX // 003 // FRONTIER LAB BRIEF</span>
+                {onToggleBookmark && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleBookmark(third.id, e);
+                    }}
+                    className={`hover:text-black cursor-pointer transition-colors ${
+                      bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                    }`}
+                    title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
+                  >
+                    [{bookmarkedIds.includes(third.id) ? '★ SAVED' : '+ SAVE'}]
+                  </button>
+                )}
+              </div>
               <h2
                 onClick={() => onSelectArticle(third)}
                 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity cursor-pointer mb-8"
@@ -387,12 +429,28 @@ export default function EditorialSpread({
                           />
                         </div>
 
-                        <h4 
-                          onClick={() => onSelectArticle(leadArt)}
-                          className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
-                        >
-                          {leadArt.title}
-                        </h4>
+                        <div className="flex items-start justify-between gap-2 mb-2">
+                          <h4 
+                            onClick={() => onSelectArticle(leadArt)}
+                            className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer flex-1"
+                          >
+                            {leadArt.title}
+                          </h4>
+                          {onToggleBookmark && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onToggleBookmark(leadArt.id, e);
+                              }}
+                              className={`shrink-0 font-mono text-[9px] hover:text-black cursor-pointer transition-colors pt-1 ${
+                                bookmarkedIds.includes(leadArt.id) ? 'text-black font-bold' : 'text-black/40'
+                              }`}
+                              title={bookmarkedIds.includes(leadArt.id) ? 'Saved' : 'Save article'}
+                            >
+                              [{bookmarkedIds.includes(leadArt.id) ? '★' : '+ SAVE'}]
+                            </button>
+                          )}
+                        </div>
 
                         <p className="font-mono text-[9px] uppercase text-black/60 line-clamp-2 leading-relaxed">
                           {leadArt.aiSummary?.tldr || leadArt.contentSnippet}

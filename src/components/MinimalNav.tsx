@@ -98,7 +98,15 @@ export default function MinimalNav({
         </div>
 
         {/* Minimal Controls */}
-        <div className="flex items-center gap-5 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+        <div className="flex items-center gap-4 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+          <Link
+            href="/saved"
+            className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+            title="Open your saved articles dossier"
+          >
+            [★ SAVED ({savedCount})]
+          </Link>
+
           <Link
             href="/benchmarks"
             scroll={true}
@@ -177,17 +185,14 @@ export default function MinimalNav({
             );
           })}
 
-          {/* Saved / Bookmarks Tab */}
-          <button
-            onClick={() => onSelectLab('SAVED')}
-            className={`hover:text-black transition-colors shrink-0 cursor-pointer ml-auto sm:ml-0 font-mono tracking-wider ${
-              selectedLab === 'SAVED'
-                ? 'text-black font-black underline underline-offset-4 decoration-2'
-                : 'text-black/50 hover:text-black'
-            }`}
+          {/* Saved / Bookmarks Link */}
+          <Link
+            href="/saved"
+            className="hover:text-black transition-colors shrink-0 cursor-pointer ml-auto sm:ml-0 font-mono tracking-wider text-black/60 hover:text-black font-bold"
+            title="Go to Saved Telemetry Dossier"
           >
             [★ SAVED ({savedCount})]
-          </button>
+          </Link>
         </div>
 
         {/* Publication Format Selector */}

@@ -205,7 +205,7 @@ export default function BenchmarksPage() {
           </div>
 
           {/* Controls & Navigation */}
-          <div className="flex items-center gap-5 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-4 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
             <Link
               href="/"
               scroll={true}
@@ -214,6 +214,14 @@ export default function BenchmarksPage() {
             >
               <ArrowLeft className="w-3 h-3" />
               <span>[← RETURN TO FEED]</span>
+            </Link>
+
+            <Link
+              href="/saved"
+              className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black/35 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
+              title="View your saved articles dossier"
+            >
+              <span>[★ SAVED]</span>
             </Link>
 
             {/* Time on the far right */}

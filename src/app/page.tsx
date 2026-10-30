@@ -7,6 +7,7 @@ import EditorialModal from '@/components/EditorialModal';
 import Footer from '@/components/Footer';
 import { Article } from '@/types';
 import { RefreshCw } from 'lucide-react';
+import { useSavedArticles } from '@/lib/saved-storage';
 
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -21,7 +22,7 @@ export default function HomePage() {
   // QoL States
   const [lastSyncedTime, setLastSyncedTime] = useState<number>(0);
   const [lastSyncedLabel, setLastSyncedLabel] = useState<string>('JUST NOW');
-  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
+  const { savedIds, count: savedCount, toggleSave, isSaved, reconcile } = useSavedArticles();
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 
@@ -89,26 +90,13 @@ export default function HomePage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Initialize saved bookmarks from localStorage
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('latentspace_saved_articles');
-      if (stored) {
-        setBookmarkedIds(JSON.parse(stored));
-      }
-    } catch (_) {}
-  }, []);
-
   const toggleBookmark = useCallback((id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    setBookmarkedIds((prev) => {
-      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
-      try {
-        localStorage.setItem('latentspace_saved_articles', JSON.stringify(next));
-      } catch (_) {}
-      return next;
-    });
-  }, []);
+    const art = articlesRef.current.find((a) => a.id === id);
+    if (art) {
+      toggleSave(art);
+    }
+  }, [toggleSave]);
 
   // Update relative time label (e.g. "JUST NOW", "30S AGO", "2M AGO")
   useEffect(() => {
@@ -189,6 +177,7 @@ export default function HomePage() {
         } else {
           setArticles(data.articles);
           setIncomingArticles(null);
+          reconcile(data.articles);
         }
         if (data.lastSyncedAt) {
           setLastSyncedTime(data.lastSyncedAt);
@@ -255,7 +244,7 @@ export default function HomePage() {
   const displayedArticles = useMemo(() => {
     let list = articles;
     if (selectedLab === 'SAVED') {
-      list = list.filter((a) => bookmarkedIds.includes(a.id));
+      list = list.filter((a) => savedIds.includes(a.id));
     } else if (selectedLab !== 'All') {
       list = list.filter((a) => a.lab === selectedLab);
     }
@@ -263,7 +252,7 @@ export default function HomePage() {
       list = list.filter((a) => a.entryType === selectedType);
     }
     return list;
-  }, [articles, selectedLab, selectedType, bookmarkedIds]);
+  }, [articles, selectedLab, selectedType, savedIds]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
@@ -293,7 +282,7 @@ export default function HomePage() {
         isSyncing={isSyncing}
         totalArticles={displayedArticles.length}
         lastSyncedText={lastSyncedLabel}
-        savedCount={bookmarkedIds.length}
+        savedCount={savedCount}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
       />
@@ -333,7 +322,7 @@ export default function HomePage() {
             <EditorialSpread
               articles={displayedArticles}
               onSelectArticle={handleOpenArticle}
-              bookmarkedIds={bookmarkedIds}
+              bookmarkedIds={savedIds}
               onToggleBookmark={toggleBookmark}
               onSelectLab={setSelectedLab}
             />
@@ -359,7 +348,7 @@ export default function HomePage() {
       <EditorialModal
         article={selectedArticle}
         onClose={handleCloseArticle}
-        isBookmarked={selectedArticle ? bookmarkedIds.includes(selectedArticle.id) : false}
+        isBookmarked={selectedArticle ? isSaved(selectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
       />
 
