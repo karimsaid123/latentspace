@@ -3,6 +3,7 @@
 import React from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
+import ScrollReveal from './ScrollReveal';
 
 interface EditorialSpreadProps {
   articles: Article[];
@@ -176,21 +177,27 @@ export default function EditorialSpread({
           {/* Left Column: Stack of 3 Art Thumbnail Frames */}
           <div className="lg:col-span-3 flex flex-col gap-10">
             {[third, fourth, fifth].map((item, idx) => (
-              <div 
-                key={`${item.id}_stack_${idx}`} 
-                onClick={() => onSelectArticle(item)}
-                className="cursor-pointer max-w-[160px] sm:max-w-[190px]"
+              <ScrollReveal 
+                key={`${item.id}_stack_${idx}`}
+                delayMs={idx * 120}
+                yOffset={35}
+                parallaxSpeed={0.03 * (idx + 1)}
               >
-                <ArtFrame
-                  src={item.imageUrl}
-                  alt={item.title}
-                  indexCode={`00${idx + 3}`}
-                  aspect="portrait"
-                />
-                <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
-                  [{item.source.name}]
+                <div 
+                  onClick={() => onSelectArticle(item)}
+                  className="cursor-pointer max-w-[160px] sm:max-w-[190px]"
+                >
+                  <ArtFrame
+                    src={item.imageUrl}
+                    alt={item.title}
+                    indexCode={`00${idx + 3}`}
+                    aspect="portrait"
+                  />
+                  <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
+                    [{item.source.name}]
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -226,78 +233,92 @@ export default function EditorialSpread({
         
         <div className="relative min-h-[750px] w-full">
           
-          {/* Top Left Item */}
+          {/* Top Left Item (004) with Scroll Reveal & Parallax */}
           <div className="absolute top-0 left-0 sm:left-6">
-            <span className="font-mono text-[9px] tracking-widest text-black/50 block mb-2">
-              004
-            </span>
-            <div 
-              onClick={() => onSelectArticle(fourth)}
-              className="w-28 sm:w-36 cursor-pointer"
-            >
-              <ArtFrame
-                src={fourth.imageUrl}
-                alt={fourth.title}
-                indexCode="004"
-                aspect="portrait"
-              />
-            </div>
+            <ScrollReveal yOffset={55} parallaxSpeed={0.06} delayMs={50}>
+              <span className="font-mono text-[9px] tracking-widest text-black/50 block mb-2">
+                004
+              </span>
+              <div 
+                onClick={() => onSelectArticle(fourth)}
+                className="w-28 sm:w-36 cursor-pointer"
+              >
+                <ArtFrame
+                  src={fourth.imageUrl}
+                  alt={fourth.title}
+                  indexCode="004"
+                  aspect="portrait"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Top Center-Right Micro Annotation */}
           <div className="absolute top-8 left-1/3 max-w-[240px] font-mono text-[9px] tracking-widest text-black uppercase leading-relaxed hidden sm:block">
-            <span>PARAMETER SCALE: MULTIMODAL REASONING MATRIX</span>
+            <ScrollReveal yOffset={30} delayMs={150}>
+              <span>PARAMETER SCALE: MULTIMODAL REASONING MATRIX</span>
+            </ScrollReveal>
           </div>
 
-          {/* Middle Center Item */}
+          {/* Middle Center Item (005) with Scroll Reveal & Parallax */}
           <div className="absolute top-64 left-1/2 -translate-x-1/2 flex flex-col items-center">
-            <div 
-              onClick={() => onSelectArticle(fifth)}
-              className="w-32 sm:w-44 cursor-pointer"
-            >
-              <ArtFrame
-                src={fifth.imageUrl}
-                alt={fifth.title}
-                indexCode="005"
-                aspect="portrait"
-              />
-            </div>
-            <div 
-              onClick={() => onSelectArticle(fifth)}
-              className="mt-4 font-mono text-[10px] text-center max-w-xs cursor-pointer uppercase font-bold hover:opacity-70 transition-opacity"
-            >
-              {fifth.title}
-            </div>
+            <ScrollReveal yOffset={65} parallaxSpeed={-0.08} delayMs={100}>
+              <div 
+                onClick={() => onSelectArticle(fifth)}
+                className="w-32 sm:w-44 cursor-pointer"
+              >
+                <ArtFrame
+                  src={fifth.imageUrl}
+                  alt={fifth.title}
+                  indexCode="005"
+                  aspect="portrait"
+                />
+              </div>
+              <div 
+                onClick={() => onSelectArticle(fifth)}
+                className="mt-4 font-mono text-[10px] text-center max-w-xs cursor-pointer uppercase font-bold hover:opacity-70 transition-opacity"
+              >
+                {fifth.title}
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Middle Right Annotation */}
           <div className="absolute top-64 right-6 font-mono text-[9px] tracking-widest text-black uppercase">
-            <span>DISTRIBUTED INFERENCE</span>
+            <ScrollReveal yOffset={30} delayMs={200}>
+              <span>DISTRIBUTED INFERENCE</span>
+            </ScrollReveal>
           </div>
 
           {/* Lower Left Annotation */}
           <div className="absolute bottom-36 left-0 sm:left-4 font-mono text-[9px] tracking-widest text-black uppercase max-w-[240px] leading-normal hidden sm:block">
-            <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
+            <ScrollReveal yOffset={30} delayMs={250}>
+              <span>NETWORK TELEMETRY // REAL-TIME INTELLIGENCE HARVEST</span>
+            </ScrollReveal>
           </div>
 
           {/* Lower Center Annotation */}
           <div className="absolute bottom-28 left-1/3 font-mono text-[9px] tracking-widest text-black uppercase">
-            <span>REINFORCEMENT & ALIGNMENT</span>
+            <ScrollReveal yOffset={30} delayMs={300}>
+              <span>REINFORCEMENT & ALIGNMENT</span>
+            </ScrollReveal>
           </div>
 
-          {/* Lower Right Item */}
+          {/* Lower Right Item (006) with Scroll Reveal & Parallax */}
           <div className="absolute bottom-12 right-0 sm:right-8">
-            <div 
-              onClick={() => onSelectArticle(sixth)}
-              className="w-28 sm:w-36 cursor-pointer mb-2"
-            >
-              <ArtFrame
-                src={sixth.imageUrl}
-                alt={sixth.title}
-                indexCode="006"
-                aspect="portrait"
-              />
-            </div>
+            <ScrollReveal yOffset={55} parallaxSpeed={0.08} delayMs={180}>
+              <div 
+                onClick={() => onSelectArticle(sixth)}
+                className="w-28 sm:w-36 cursor-pointer mb-2"
+              >
+                <ArtFrame
+                  src={sixth.imageUrl}
+                  alt={sixth.title}
+                  indexCode="006"
+                  aspect="portrait"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>
@@ -323,90 +344,96 @@ export default function EditorialSpread({
             const leadArt = labArticles[0];
 
             return (
-              <div 
+              <ScrollReveal
                 key={lab.id}
-                className="border border-black p-6 sm:p-8 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300"
+                delayMs={(idx % 4) * 80}
+                yOffset={35}
+                className="h-full"
               >
-                {/* 4 Corner Bounding Box Square Handles */}
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                <div 
+                  className="border border-black p-6 sm:p-8 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300 h-full"
+                >
+                  {/* 4 Corner Bounding Box Square Handles */}
+                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
+                  <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
 
-                <div>
-                  <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
-                    <span>SECTOR // 00{idx + 1}</span>
-                    <span className="font-bold text-black">[DOSSIER]</span>
+                  <div>
+                    <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
+                      <span>SECTOR // 00{idx + 1}</span>
+                      <span className="font-bold text-black">[DOSSIER]</span>
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-2 group-hover:translate-x-1 transition-transform">
+                      {lab.name}
+                    </h3>
+
+                    <span className="font-mono text-[9px] tracking-wider uppercase text-black/50 block mb-6">
+                      {lab.location}
+                    </span>
+
+                    {leadArt ? (
+                      <div className="mb-6">
+                        <div 
+                          onClick={() => onSelectArticle(leadArt)}
+                          className="cursor-pointer mb-3"
+                        >
+                          <ArtFrame
+                            src={leadArt.imageUrl}
+                            alt={leadArt.title}
+                            indexCode={`LAB_00${idx + 1}`}
+                            aspect="landscape"
+                          />
+                        </div>
+
+                        <h4 
+                          onClick={() => onSelectArticle(leadArt)}
+                          className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
+                        >
+                          {leadArt.title}
+                        </h4>
+
+                        <p className="font-mono text-[9px] uppercase text-black/60 line-clamp-2 leading-relaxed">
+                          {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="py-12 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+                        NO DIRECT TELEMETRY IN CURRENT CYCLE
+                      </div>
+                    )}
+
+                    {/* Secondary Lab Headlines */}
+                    {labArticles.slice(1, 3).length > 0 && (
+                      <div className="space-y-2.5 pt-4 border-t border-black/10 font-mono text-[9px]">
+                        {labArticles.slice(1, 3).map((art, aIdx) => (
+                          <div
+                            key={`${art.id}_lab_${aIdx}`}
+                            onClick={() => onSelectArticle(art)}
+                            className="flex items-start gap-2 text-black/70 hover:text-black cursor-pointer uppercase truncate group/link"
+                          >
+                            <span className="font-bold text-black shrink-0 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                            <span className="truncate">{art.title}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-2 group-hover:translate-x-1 transition-transform">
-                    {lab.name}
-                  </h3>
-
-                  <span className="font-mono text-[9px] tracking-wider uppercase text-black/50 block mb-6">
-                    {lab.location}
-                  </span>
-
-                  {leadArt ? (
-                    <div className="mb-6">
-                      <div 
-                        onClick={() => onSelectArticle(leadArt)}
-                        className="cursor-pointer mb-3"
+                  <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
+                    <span className="text-black/40 uppercase">STATUS: LIVE RADAR</span>
+                    {onSelectLab && (
+                      <button
+                        onClick={() => onSelectLab(lab.id)}
+                        className="font-bold uppercase text-black hover:underline underline-offset-4 cursor-pointer"
                       >
-                        <ArtFrame
-                          src={leadArt.imageUrl}
-                          alt={leadArt.title}
-                          indexCode={`LAB_00${idx + 1}`}
-                          aspect="landscape"
-                        />
-                      </div>
-
-                      <h4 
-                        onClick={() => onSelectArticle(leadArt)}
-                        className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
-                      >
-                        {leadArt.title}
-                      </h4>
-
-                      <p className="font-mono text-[9px] uppercase text-black/60 line-clamp-2 leading-relaxed">
-                        {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
-                      </p>
-                    </div>
-                  ) : (
-                    <div className="py-12 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
-                      NO DIRECT TELEMETRY IN CURRENT CYCLE
-                    </div>
-                  )}
-
-                  {/* Secondary Lab Headlines */}
-                  {labArticles.slice(1, 3).length > 0 && (
-                    <div className="space-y-2.5 pt-4 border-t border-black/10 font-mono text-[9px]">
-                      {labArticles.slice(1, 3).map((art, aIdx) => (
-                        <div
-                          key={`${art.id}_lab_${aIdx}`}
-                          onClick={() => onSelectArticle(art)}
-                          className="flex items-start gap-2 text-black/70 hover:text-black cursor-pointer uppercase truncate group/link"
-                        >
-                          <span className="font-bold text-black shrink-0 group-hover/link:translate-x-0.5 transition-transform">→</span>
-                          <span className="truncate">{art.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                        VIEW ALL {lab.short} →
+                      </button>
+                    )}
+                  </div>
                 </div>
-
-                <div className="mt-8 pt-4 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
-                  <span className="text-black/40 uppercase">STATUS: LIVE RADAR</span>
-                  {onSelectLab && (
-                    <button
-                      onClick={() => onSelectLab(lab.id)}
-                      className="font-bold uppercase text-black hover:underline underline-offset-4 cursor-pointer"
-                    >
-                      VIEW ALL {lab.short} →
-                    </button>
-                  )}
-                </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

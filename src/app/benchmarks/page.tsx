@@ -22,6 +22,7 @@ import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import { ModelBenchmark, BenchmarkResponse } from '@/types/benchmark';
 import { VERIFIED_BENCHMARK_SNAPSHOT } from '@/lib/benchmark-client';
 import Footer from '@/components/Footer';
+import ScrollReveal from '@/components/ScrollReveal';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
 type CategoryFilter = 'ALL' | 'Frontier' | 'Open Weights' | 'Specialized';
@@ -223,8 +224,8 @@ export default function BenchmarksPage() {
       ───────────────────────────────────────────────────────────── */}
       <main className="flex-1 w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-10 select-none">
         
-        {/* Page Title & Mission Statement */}
-        <section className="mb-12">
+        {/* Page Title & Mission Statement with Upward Bounce Animation */}
+        <section className="mb-12 animate-fade-up">
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[9px] uppercase tracking-widest text-black/50 mb-4 pb-2 border-b border-black/10">
             <div className="flex items-center gap-2.5">
               <span className="w-2 h-2 bg-black inline-block" />
@@ -251,11 +252,11 @@ export default function BenchmarksPage() {
             </div>
           </div>
 
-          {/* Quick KPI Cards (3 Major Indicators) */}
+          {/* Quick KPI Cards (3 Major Indicators) with Staggered Upward Bounce */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-black">
             
             {/* Card 1: Intelligence Leader */}
-            <div className="relative border border-black p-6 bg-white shadow-sm">
+            <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-1">
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
               <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
@@ -280,7 +281,7 @@ export default function BenchmarksPage() {
             </div>
 
             {/* Card 2: Speed Leader */}
-            <div className="relative border border-black p-6 bg-white shadow-sm">
+            <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-2">
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
               <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
@@ -305,7 +306,7 @@ export default function BenchmarksPage() {
             </div>
 
             {/* Card 3: Cost Efficiency Leader */}
-            <div className="relative border border-black p-6 bg-white shadow-sm">
+            <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-3">
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
               <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
               <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
@@ -335,206 +336,209 @@ export default function BenchmarksPage() {
         {/* ─────────────────────────────────────────────────────────────
             SECTION 1: THE THREE COMPARATIVE CHARTS (Side-by-Side Grid)
         ───────────────────────────────────────────────────────────── */}
-        <section className="mb-20">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-black font-mono text-[10px] tracking-widest uppercase">
-            <div className="flex items-center gap-3">
-              <span className="font-bold text-black">01 // TRI-METRIC COMPARATIVE GRAPHS</span>
-              <span className="text-black/40 hidden sm:inline">|</span>
-              <span className="text-black/60 hidden sm:inline">ARTIFICIAL ANALYSIS BENCHMARKS</span>
+        <ScrollReveal yOffset={45} className="mb-20">
+          <section>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-black font-mono text-[10px] tracking-widest uppercase">
+              <div className="flex items-center gap-3">
+                <span className="font-bold text-black">01 // TRI-METRIC COMPARATIVE GRAPHS</span>
+                <span className="text-black/40 hidden sm:inline">|</span>
+                <span className="text-black/60 hidden sm:inline">ARTIFICIAL ANALYSIS BENCHMARKS</span>
+              </div>
+              <div className="text-black/40 text-[9px] mt-1 sm:mt-0">
+                SYNCHRONIZED WITH INDEPENDENT EVALUATION PIPELINE
+              </div>
             </div>
-            <div className="text-black/40 text-[9px] mt-1 sm:mt-0">
-              SYNCHRONIZED WITH INDEPENDENT EVALUATION PIPELINE
-            </div>
-          </div>
 
-          {/* 3 Column Graphs Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            {/* ──── GRAPH 1: INTELLIGENCE ──── */}
-            <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
+            {/* 3 Column Graphs Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              
+              {/* ──── GRAPH 1: INTELLIGENCE ──── */}
+              <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
-              <div>
-                <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 bg-blue-600 inline-block" />
-                    <span className="font-bold text-black">INTELLIGENCE</span>
+                <div>
+                  <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 bg-blue-600 inline-block" />
+                      <span className="font-bold text-black">INTELLIGENCE</span>
+                    </div>
+                    <span className="text-black/40 text-[9px]">HIGHER IS BETTER</span>
                   </div>
-                  <span className="text-black/40 text-[9px]">HIGHER IS BETTER</span>
-                </div>
-                <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
-                  Artificial Analysis Intelligence Index (0-100)
-                </p>
+                  <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
+                    Artificial Analysis Intelligence Index (0-100)
+                  </p>
 
-                {/* Bars */}
-                <div className="space-y-3.5">
-                  {intelligenceSorted.slice(0, 10).map((m, idx) => {
-                    const brand = getCompanyBrand(m.creator.lab || m.creator.name);
-                    const percentage = Math.min(100, Math.round((m.evaluations.intelligenceIndex / 65) * 100));
+                  {/* Bars */}
+                  <div className="space-y-3.5">
+                    {intelligenceSorted.slice(0, 10).map((m, idx) => {
+                      const brand = getCompanyBrand(m.creator.lab || m.creator.name);
+                      const percentage = Math.min(100, Math.round((m.evaluations.intelligenceIndex / 65) * 100));
 
-                    return (
-                      <div key={m.id} className="group">
-                        <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
-                          <div className="flex items-center gap-2 truncate max-w-[200px]">
-                            <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
-                              <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                      return (
+                        <div key={m.id} className="group">
+                          <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
+                            <div className="flex items-center gap-2 truncate max-w-[200px]">
+                              <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
+                                <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                              </div>
+                              <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
                             </div>
-                            <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
+                            <span className="font-bold text-black font-mono">{m.evaluations.intelligenceIndex}</span>
                           </div>
-                          <span className="font-bold text-black font-mono">{m.evaluations.intelligenceIndex}</span>
+
+                          {/* Bar Track */}
+                          <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
+                            <div
+                              className="h-full transition-all duration-700 group-hover:opacity-85"
+                              style={{
+                                width: `${percentage}%`,
+                                backgroundColor: brand.primaryColor || '#000000',
+                              }}
+                            />
+                          </div>
                         </div>
-
-                        {/* Bar Track */}
-                        <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
-                          <div
-                            className="h-full transition-all duration-700 group-hover:opacity-85"
-                            style={{
-                              width: `${percentage}%`,
-                              backgroundColor: brand.primaryColor || '#000000',
-                            }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
-                <span>SCALE: 0 - 65 INDEX</span>
-                <span>N = 10 TOP PERFORMERS</span>
-              </div>
-            </div>
-
-            {/* ──── GRAPH 2: SPEED (TOKENS / SEC) ──── */}
-            <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
-              <div>
-                <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 bg-amber-500 inline-block" />
-                    <span className="font-bold text-black">SPEED</span>
+                      );
+                    })}
                   </div>
-                  <span className="text-black/40 text-[9px]">HIGHER IS BETTER</span>
                 </div>
-                <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
-                  Output tokens per second latency
-                </p>
 
-                {/* Bars */}
-                <div className="space-y-3.5">
-                  {speedSorted.slice(0, 10).map((m) => {
-                    const brand = getCompanyBrand(m.creator.lab || m.creator.name);
-                    const percentage = Math.min(100, Math.round((m.evaluations.speedTokensPerSecond / 190) * 100));
-
-                    return (
-                      <div key={m.id} className="group">
-                        <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
-                          <div className="flex items-center gap-2 truncate max-w-[200px]">
-                            <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
-                              <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
-                            </div>
-                            <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
-                          </div>
-                          <span className="font-bold text-black font-mono">{m.evaluations.speedTokensPerSecond} <span className="text-[8px] text-black/50">T/S</span></span>
-                        </div>
-
-                        {/* Bar Track */}
-                        <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
-                          <div
-                            className="h-full transition-all duration-700 group-hover:opacity-85"
-                            style={{
-                              width: `${percentage}%`,
-                              backgroundColor: '#2563EB',
-                            }}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
+                  <span>SCALE: 0 - 65 INDEX</span>
+                  <span>N = 10 TOP PERFORMERS</span>
                 </div>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
-                <span>SCALE: 0 - 200 TOK/S</span>
-                <span>N = 10 TOP SPEED</span>
-              </div>
-            </div>
+              {/* ──── GRAPH 2: SPEED (TOKENS / SEC) ──── */}
+              <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
-            {/* ──── GRAPH 3: COST PER TASK (USD) ──── */}
-            <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
-              <div>
-                <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 bg-orange-600 inline-block" />
-                    <span className="font-bold text-black">COST PER TASK</span>
+                <div>
+                  <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 bg-amber-500 inline-block" />
+                      <span className="font-bold text-black">SPEED</span>
+                    </div>
+                    <span className="text-black/40 text-[9px]">HIGHER IS BETTER</span>
                   </div>
-                  <span className="text-black/40 text-[9px]">LOWER IS BETTER</span>
-                </div>
-                <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
-                  Weighted blended cost (USD) per Intelligence task
-                </p>
+                  <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
+                    Output tokens per second latency
+                  </p>
 
-                {/* Bars */}
-                <div className="space-y-3.5">
-                  {costSorted.slice(0, 10).map((m) => {
-                    const brand = getCompanyBrand(m.creator.lab || m.creator.name);
-                    const cost = m.evaluations.blendedPricePer1M || 0;
-                    const percentage = Math.min(100, Math.round((cost / 14) * 100));
+                  {/* Bars */}
+                  <div className="space-y-3.5">
+                    {speedSorted.slice(0, 10).map((m) => {
+                      const brand = getCompanyBrand(m.creator.lab || m.creator.name);
+                      const percentage = Math.min(100, Math.round((m.evaluations.speedTokensPerSecond / 190) * 100));
 
-                    return (
-                      <div key={m.id} className="group">
-                        <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
-                          <div className="flex items-center gap-2 truncate max-w-[200px]">
-                            <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
-                              <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                      return (
+                        <div key={m.id} className="group">
+                          <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
+                            <div className="flex items-center gap-2 truncate max-w-[200px]">
+                              <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
+                                <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                              </div>
+                              <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
                             </div>
-                            <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
+                            <span className="font-bold text-black font-mono">{m.evaluations.speedTokensPerSecond} <span className="text-[8px] text-black/50">T/S</span></span>
                           </div>
-                          <span className="font-bold text-black font-mono">${cost.toFixed(2)}</span>
-                        </div>
 
-                        {/* Bar Track */}
-                        <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
-                          <div
-                            className="h-full transition-all duration-700 group-hover:opacity-85"
-                            style={{
-                              width: `${Math.max(5, percentage)}%`,
-                              backgroundColor: cost < 2 ? '#059669' : cost < 8 ? '#D97706' : '#DC2626',
-                            }}
-                          />
+                          {/* Bar Track */}
+                          <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
+                            <div
+                              className="h-full transition-all duration-700 group-hover:opacity-85"
+                              style={{
+                                width: `${percentage}%`,
+                                backgroundColor: '#2563EB',
+                              }}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
+                  <span>SCALE: 0 - 200 TOK/S</span>
+                  <span>N = 10 TOP SPEED</span>
                 </div>
               </div>
 
-              <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
-                <span>SCALE: $0 - $14 PER TASK</span>
-                <span>N = 10 MOST EFFICIENT</span>
-              </div>
-            </div>
+              {/* ──── GRAPH 3: COST PER TASK (USD) ──── */}
+              <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
-          </div>
-        </section>
+                <div>
+                  <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 bg-orange-600 inline-block" />
+                      <span className="font-bold text-black">COST PER TASK</span>
+                    </div>
+                    <span className="text-black/40 text-[9px]">LOWER IS BETTER</span>
+                  </div>
+                  <p className="font-mono text-[9px] uppercase text-black/50 mt-2 mb-6">
+                    Weighted blended cost (USD) per Intelligence task
+                  </p>
+
+                  {/* Bars */}
+                  <div className="space-y-3.5">
+                    {costSorted.slice(0, 10).map((m) => {
+                      const brand = getCompanyBrand(m.creator.lab || m.creator.name);
+                      const cost = m.evaluations.blendedPricePer1M || 0;
+                      const percentage = Math.min(100, Math.round((cost / 14) * 100));
+
+                      return (
+                        <div key={m.id} className="group">
+                          <div className="flex items-center justify-between font-mono text-[9px] uppercase mb-1">
+                            <div className="flex items-center gap-2 truncate max-w-[200px]">
+                              <div className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0 bg-white" style={{ borderColor: brand.borderColor }}>
+                                <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                              </div>
+                              <span className="font-bold text-black truncate group-hover:underline">{m.name}</span>
+                            </div>
+                            <span className="font-bold text-black font-mono">${cost.toFixed(2)}</span>
+                          </div>
+
+                          {/* Bar Track */}
+                          <div className="w-full h-2 bg-black/[0.04] overflow-hidden border border-black/10">
+                            <div
+                              className="h-full transition-all duration-700 group-hover:opacity-85"
+                              style={{
+                                width: `${Math.max(5, percentage)}%`,
+                                backgroundColor: cost < 2 ? '#059669' : cost < 8 ? '#D97706' : '#DC2626',
+                              }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
+                  <span>SCALE: $0 - $14 PER TASK</span>
+                  <span>N = 10 MOST EFFICIENT</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </ScrollReveal>
 
         {/* ─────────────────────────────────────────────────────────────
             SECTION 2: 2D PARETO EFFICIENCY FRONTIER MATRIX (Scatter Plot)
         ───────────────────────────────────────────────────────────── */}
-        <section className="mb-20">
+        <ScrollReveal yOffset={45} className="mb-20">
+          <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-black font-mono text-[10px] tracking-widest uppercase">
             <div className="flex items-center gap-3">
               <span className="font-bold text-black">02 // 2D PARETO EFFICIENCY FRONTIER</span>
@@ -644,11 +648,13 @@ export default function BenchmarksPage() {
 
           </div>
         </section>
+      </ScrollReveal>
 
         {/* ─────────────────────────────────────────────────────────────
             SECTION 3: FRONTIER LAB HEAD-TO-HEAD MATRICES
         ───────────────────────────────────────────────────────────── */}
-        <section className="mb-20">
+        <ScrollReveal yOffset={45} className="mb-20">
+          <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-black font-mono text-[10px] tracking-widest uppercase">
             <div className="flex items-center gap-3">
               <span className="font-bold text-black">03 // FRONTIER LAB HEAD-TO-HEAD</span>
@@ -742,11 +748,13 @@ export default function BenchmarksPage() {
             })}
           </div>
         </section>
+      </ScrollReveal>
 
         {/* ─────────────────────────────────────────────────────────────
             SECTION 4: COMPLETE VERIFIED TELEMETRY TABLE (Sortable & Filterable)
         ───────────────────────────────────────────────────────────── */}
-        <section className="mb-20">
+        <ScrollReveal yOffset={45} className="mb-20">
+          <section>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-6 border-b border-black font-mono text-[10px] tracking-widest uppercase">
             <div className="flex items-center gap-3">
               <span className="font-bold text-black">04 // VERIFIED TELEMETRY MATRIX</span>
@@ -877,11 +885,13 @@ export default function BenchmarksPage() {
             </table>
           </div>
         </section>
+      </ScrollReveal>
 
         {/* ─────────────────────────────────────────────────────────────
             SECTION 5: OFFICIAL ARTIFICIAL ANALYSIS ATTRIBUTION
         ───────────────────────────────────────────────────────────── */}
-        <section className="mb-16 border border-black p-6 sm:p-8 bg-[#faf9f6] relative">
+        <ScrollReveal yOffset={35} className="mb-16">
+          <section className="border border-black p-6 sm:p-8 bg-[#faf9f6] relative">
           <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
           <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
           <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
@@ -912,6 +922,7 @@ export default function BenchmarksPage() {
             </div>
           </div>
         </section>
+      </ScrollReveal>
 
       </main>
 
