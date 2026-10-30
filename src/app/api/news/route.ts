@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
+import { decodeHtmlEntities } from '@/lib/sanitize';
 
 export async function GET(request: NextRequest) {
   const requestId = `req_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
@@ -55,16 +56,23 @@ export async function GET(request: NextRequest) {
 
       // Map to frontend consumer format with guaranteed summary presence
       const formatted = articles.map(a => {
-        const summary = a.summary || (a as any).aiSummary || {
+        const rawSummary = a.summary || (a as any).aiSummary || {
           tldr: a.contentSnippet || a.title || 'No summary available.',
           takeaways: [],
           impact: 'Notable',
           readTimeMinutes: 2,
         };
 
+        const summary = {
+          tldr: decodeHtmlEntities(rawSummary.tldr || ''),
+          takeaways: (rawSummary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
+          impact: rawSummary.impact || 'Notable',
+          readTimeMinutes: rawSummary.readTimeMinutes || 2,
+        };
+
         return {
           id: a.id,
-          title: a.title,
+          title: decodeHtmlEntities(a.title),
           link: a.canonicalUrl,
           pubDate: a.publishedAt,
           source: {
@@ -72,8 +80,8 @@ export async function GET(request: NextRequest) {
             name: a.sourceName,
             url: a.canonicalUrl,
           },
-          author: a.author,
-          contentSnippet: a.contentSnippet,
+          author: decodeHtmlEntities(a.author || a.sourceName),
+          contentSnippet: decodeHtmlEntities(a.contentSnippet || ''),
           imageUrl: a.imageUrl,
           category: a.category,
           aiSummary: summary,

@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { ArticleFilter, ArticleRepositoryPort } from '@/core/ports/repository.port';
 import { DomainArticle } from '@/core/domain/entities';
+import { decodeHtmlEntities } from '@/lib/sanitize';
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, DomainArticle>();
@@ -17,24 +18,31 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       const loaded: any[] = JSON.parse(raw);
       for (const item of loaded) {
         // Robust adapter normalization: handles both legacy and domain formats
-        const summary = item.summary || item.aiSummary || {
+        const rawSummary = item.summary || item.aiSummary || {
           tldr: item.contentSnippet || item.title || '',
           takeaways: [],
           impact: item.aiSummary?.impact || 'Notable',
           readTimeMinutes: item.aiSummary?.readTimeMinutes || 2,
         };
 
+        const summary = {
+          tldr: decodeHtmlEntities(rawSummary.tldr || ''),
+          takeaways: (rawSummary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
+          impact: rawSummary.impact || 'Notable',
+          readTimeMinutes: rawSummary.readTimeMinutes || 2,
+        };
+
         const normalized: DomainArticle = {
           id: item.id,
           canonicalUrl: item.canonicalUrl || item.link || '',
-          title: item.title,
+          title: decodeHtmlEntities(item.title || ''),
           publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
           fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
           contentHash: item.contentHash || item.id,
           sourceId: item.sourceId || item.source?.id || 'source',
           sourceName: item.sourceName || item.source?.name || 'Feed',
-          author: item.author || '',
-          contentSnippet: item.contentSnippet || '',
+          author: decodeHtmlEntities(item.author || ''),
+          contentSnippet: decodeHtmlEntities(item.contentSnippet || ''),
           imageUrl: item.imageUrl,
           category: item.category || 'LLMs & GenAI',
           summary,

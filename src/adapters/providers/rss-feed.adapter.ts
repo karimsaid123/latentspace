@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import { FeedProviderPort } from '@/core/ports/feed-provider.port';
 import { DomainSource, FeedSnapshot, DomainArticle, Category, ImpactLevel } from '@/core/domain/entities';
 import { ProviderUnavailableError, RateLimitError } from '@/core/domain/errors';
+import { decodeHtmlEntities } from '@/lib/sanitize';
 
 export class RssFeedAdapter implements FeedProviderPort {
   private parser: Parser;
@@ -35,7 +36,7 @@ export class RssFeedAdapter implements FeedProviderPort {
 
       for (const item of rawItems.slice(0, 20)) {
         const rawLink = item.link || item.guid || '';
-        const title = (item.title || '').trim();
+        const title = decodeHtmlEntities((item.title || '').trim());
         if (!rawLink || !title) continue;
 
         const canonicalUrl = this.normalizeCanonicalUrl(rawLink);
@@ -103,16 +104,8 @@ export class RssFeedAdapter implements FeedProviderPort {
 
   private stripHtml(html: string): string {
     if (!html) return '';
-    return html
-      .replace(/<[^>]*>/g, ' ')
-      .replace(/&nbsp;/g, ' ')
-      .replace(/&amp;/g, '&')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/\s+/g, ' ')
-      .trim();
+    const withoutTags = html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    return decodeHtmlEntities(withoutTags);
   }
 
   private extractImageUrl(item: any): string | undefined {
