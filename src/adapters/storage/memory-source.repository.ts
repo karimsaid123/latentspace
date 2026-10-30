@@ -171,12 +171,23 @@ export class MemorySourceRepository implements SourceRepositoryPort {
   public async initialize(): Promise<void> {
     try {
       let loaded: DomainSource[] = [];
-      try {
-        const raw = await fs.readFile(this.storageFilePath, 'utf8');
-        loaded = JSON.parse(raw);
-      } catch {
-        // Fallback to statically bundled sources for Cloudflare Workers / Edge
+      const isServerlessEdge =
+        typeof process === 'undefined' ||
+        !!process.env.CF_PAGES ||
+        !!process.env.WORKERS ||
+        !!process.env.CLOUDFLARE ||
+        process.env.NEXT_RUNTIME === 'edge';
+
+      if (isServerlessEdge) {
         loaded = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
+      } else {
+        try {
+          const raw = await fs.readFile(this.storageFilePath, 'utf8');
+          loaded = JSON.parse(raw);
+        } catch {
+          // Fallback to statically bundled sources
+          loaded = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
+        }
       }
 
       for (const s of loaded) {

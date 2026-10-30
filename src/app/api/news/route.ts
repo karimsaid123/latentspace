@@ -122,8 +122,15 @@ export async function GET(request: NextRequest) {
       categoryCounts: { All: 0, 'LLMs & GenAI': 0, 'Robotics & Hardware': 0, 'Open Source & Research': 0, 'Business & Big Tech': 0, 'Ethics & Policy': 0 },
     };
 
-    // Background stale-while-revalidate ingestion if it's been more than 5 minutes
-    if (container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
+    // Background stale-while-revalidate ingestion (only in persistent local development, not in edge/serverless isolates where waitUntil cancels)
+    const isServerlessEdge =
+      typeof process === 'undefined' ||
+      !!process.env.CF_PAGES ||
+      !!process.env.WORKERS ||
+      !!process.env.CLOUDFLARE ||
+      process.env.NEXT_RUNTIME === 'edge';
+
+    if (!isServerlessEdge && container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
       container.ingestionService
         .runIngestion(`swr_${Date.now()}`)
         .then(() => container.cache.clear())

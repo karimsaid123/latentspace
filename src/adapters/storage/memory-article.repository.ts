@@ -17,12 +17,23 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   public async initialize(): Promise<void> {
     try {
       let loaded: any[] = [];
-      try {
-        const raw = await fs.readFile(this.storageFilePath, 'utf8');
-        loaded = JSON.parse(raw);
-      } catch {
-        // Fallback to statically bundled articles for Cloudflare Workers / Edge / Serverless
+      const isServerlessEdge =
+        typeof process === 'undefined' ||
+        !!process.env.CF_PAGES ||
+        !!process.env.WORKERS ||
+        !!process.env.CLOUDFLARE ||
+        process.env.NEXT_RUNTIME === 'edge';
+
+      if (isServerlessEdge) {
         loaded = staticArticlesData as any[];
+      } else {
+        try {
+          const raw = await fs.readFile(this.storageFilePath, 'utf8');
+          loaded = JSON.parse(raw);
+        } catch {
+          // Fallback to statically bundled articles
+          loaded = staticArticlesData as any[];
+        }
       }
 
       if (!loaded || loaded.length === 0) {

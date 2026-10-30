@@ -46,7 +46,15 @@ class BackendContainer {
 
     // Only run autonomous background scheduler in local Node.js development server
     // In Cloudflare Workers / Edge / Serverless, persistent setInterval timers cause request hangs and 500 cancellations
-    if (typeof process !== 'undefined' && process.env?.NODE_ENV !== 'production' && !process.env?.CF_PAGES && !process.env?.WORKERS) {
+    const isEdgeOrServerless =
+      typeof process === 'undefined' ||
+      !!process.env?.CF_PAGES ||
+      !!process.env?.WORKERS ||
+      !!process.env?.CLOUDFLARE ||
+      process.env?.NEXT_RUNTIME === 'edge' ||
+      process.env?.NODE_ENV === 'production';
+
+    if (!isEdgeOrServerless) {
       this.startAutonomousScheduler();
     }
   }
