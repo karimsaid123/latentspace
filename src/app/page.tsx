@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import MinimalNav from '@/components/MinimalNav';
 import EditorialSpread from '@/components/EditorialSpread';
 import EditorialModal from '@/components/EditorialModal';
-import BenchmarkRadar from '@/components/BenchmarkRadar';
 import Footer from '@/components/Footer';
 import { Article } from '@/types';
 import { RefreshCw } from 'lucide-react';
@@ -25,7 +24,6 @@ export default function HomePage() {
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
-  const [isBenchmarkOpen, setIsBenchmarkOpen] = useState<boolean>(false);
 
   // Set initial client timestamp after mount
   useEffect(() => {
@@ -298,7 +296,6 @@ export default function HomePage() {
         savedCount={bookmarkedIds.length}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
-        onOpenBenchmarks={() => setIsBenchmarkOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -364,16 +361,6 @@ export default function HomePage() {
         onClose={handleCloseArticle}
         isBookmarked={selectedArticle ? bookmarkedIds.includes(selectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
-      />
-
-      {/* Artificial Analysis Benchmark Radar Modal */}
-      <BenchmarkRadar
-        isOpen={isBenchmarkOpen}
-        onClose={() => setIsBenchmarkOpen(false)}
-        onSelectLab={(lab) => {
-          setSelectedLab(lab);
-          setIsBenchmarkOpen(false);
-        }}
       />
 
     </div>

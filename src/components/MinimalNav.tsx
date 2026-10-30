@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
+import Link from 'next/link';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -98,15 +99,13 @@ export default function MinimalNav({
 
         {/* Minimal Controls */}
         <div className="flex items-center gap-5 sm:gap-6 text-black/60">
-          {onOpenBenchmarks && (
-            <button
-              onClick={onOpenBenchmarks}
-              className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6]"
-              title="Open Artificial Analysis Benchmark Radar"
-            >
-              [BENCHMARKS & STATS]
-            </button>
-          )}
+          <Link
+            href="/benchmarks"
+            className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-mono text-[9px] font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+            title="Independent Artificial Analysis Benchmarks & Stats"
+          >
+            [BENCHMARKS & STATS]
+          </Link>
 
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
