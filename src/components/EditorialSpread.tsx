@@ -239,7 +239,7 @@ const EditorialSpread = memo(function EditorialSpread({
 
           <h2
             onClick={() => onSelectArticle(third)}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity cursor-pointer mb-8"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-8"
           >
             {third.title}
           </h2>
