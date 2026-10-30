@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import MinimalNav from '@/components/MinimalNav';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
+import MinimalNav, { LAB_FILTERS } from '@/components/MinimalNav';
 import EditorialSpread from '@/components/EditorialSpread';
 import EditorialModal from '@/components/EditorialModal';
 import Footer from '@/components/Footer';
@@ -26,13 +26,20 @@ export default function HomePage() {
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
 
-  // Set initial client timestamp after mount
+  // Set initial client timestamp & read optional ?lab= URL query param on mount
   useEffect(() => {
     setLastSyncedTime(Date.now());
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const labParam = params.get('lab');
+      if (labParam && LAB_FILTERS.some((l) => l.id === labParam)) {
+        setSelectedLab(labParam);
+      }
+    }
   }, []);
 
   // Initial deep-link check (only runs ONCE when articles first load)
-  const initialDeepLinkChecked = React.useRef(false);
+  const initialDeepLinkChecked = useRef(false);
   useEffect(() => {
     if (initialDeepLinkChecked.current || articles.length === 0) return;
     initialDeepLinkChecked.current = true;
@@ -59,7 +66,7 @@ export default function HomePage() {
     }
   }, []);
 
-  // Close article modal and cleanly clean URL parameter
+  // Close article modal and cleanly remove URL parameter
   const handleCloseArticle = useCallback(() => {
     setSelectedArticle(null);
     if (typeof window !== 'undefined') {
@@ -90,6 +97,9 @@ export default function HomePage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  const articlesRef = useRef<Article[]>([]);
+  articlesRef.current = articles;
+
   const toggleBookmark = useCallback((id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     const art = articlesRef.current.find((a) => a.id === id);
@@ -97,6 +107,13 @@ export default function HomePage() {
       toggleSave(art);
     }
   }, [toggleSave]);
+
+  const handleSelectLabFromDossier = useCallback((lab: string) => {
+    setSelectedLab(lab);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
 
   // Update relative time label (e.g. "JUST NOW", "30S AGO", "2M AGO")
   useEffect(() => {
@@ -115,14 +132,21 @@ export default function HomePage() {
     };
 
     updateLabel();
-    const interval = setInterval(updateLabel, 10_000);
+    const interval = setInterval(updateLabel, 15_000);
     return () => clearInterval(interval);
   }, [lastSyncedTime]);
 
-  // Track window scroll for Back-To-Top button
+  // Track window scroll for Back-To-Top button (rAF throttled)
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 400);
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(() => {
+          setShowBackToTop(window.scrollY > 400);
+          ticking = false;
+        });
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -150,21 +174,29 @@ export default function HomePage() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [handleCloseArticle]);
 
-  // Load articles with stable ref to prevent infinite re-render loops
-  const articlesRef = React.useRef<Article[]>([]);
-  articlesRef.current = articles;
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const fetchArticles = useCallback(async (search: string, isSilent = false) => {
-    if (!isSilent && articlesRef.current.length === 0) {
-      setIsLoading(true);
+    if (!isSilent) {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      abortControllerRef.current = new AbortController();
+      if (articlesRef.current.length === 0) {
+        setIsLoading(true);
+      }
     }
+
+    const signal = !isSilent ? abortControllerRef.current?.signal : undefined;
+
     try {
       const params = new URLSearchParams();
       if (search) params.set('search', search);
 
-      const res = await fetch(`/api/news?${params.toString()}`);
+      const res = await fetch(`/api/news?${params.toString()}`, { signal });
+      if (!res.ok) return;
       const data = await res.json();
       
       if (data.articles) {
@@ -183,20 +215,24 @@ export default function HomePage() {
           setLastSyncedTime(data.lastSyncedAt);
         }
       }
-    } catch (err) {
+    } catch (err: any) {
+      if (err?.name === 'AbortError') return;
       console.error('Failed to load articles:', err);
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [reconcile]);
 
-  // Initial load
+  // Initial load ONCE on mount (prevents double-fetching on every search keystroke)
   useEffect(() => {
-    fetchArticles(searchQuery, false);
-  }, [fetchArticles, searchQuery]);
+    fetchArticles('', false);
+    return () => {
+      abortControllerRef.current?.abort();
+    };
+  }, [fetchArticles]);
 
-  // Debounced search (only triggers when searchQuery changes)
-  const isSearchMounted = React.useRef(false);
+  // Debounced search (only triggers when searchQuery changes after mount)
+  const isSearchMounted = useRef(false);
   useEffect(() => {
     if (!isSearchMounted.current) {
       isSearchMounted.current = true;
@@ -204,47 +240,53 @@ export default function HomePage() {
     }
     const timer = setTimeout(() => {
       fetchArticles(searchQuery, false);
-    }, 300);
+    }, 250);
     return () => clearTimeout(timer);
   }, [searchQuery, fetchArticles]);
 
-  // Autonomous background polling (Every 45 seconds)
+  // Visibility-aware background polling (Every 45s ONLY when tab is visible)
+  const searchQueryRef = useRef(searchQuery);
+  searchQueryRef.current = searchQuery;
   useEffect(() => {
     const pollInterval = setInterval(() => {
-      fetchArticles(searchQuery, true);
+      if (typeof document !== 'undefined' && document.visibilityState !== 'visible') {
+        return;
+      }
+      fetchArticles(searchQueryRef.current, true);
     }, 45_000);
     return () => clearInterval(pollInterval);
-  }, [searchQuery, fetchArticles]);
+  }, [fetchArticles]);
 
   // Manual Force Sync
-  const handleSync = async () => {
+  const handleSync = useCallback(async () => {
     setIsSyncing(true);
     try {
       await fetch('/api/sync', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
-      await fetchArticles(searchQuery, false);
+      await fetchArticles(searchQueryRef.current, false);
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {
       setIsSyncing(false);
     }
-  };
+  }, [fetchArticles]);
 
   // Apply pending incoming articles banner
-  const applyIncomingArticles = () => {
+  const applyIncomingArticles = useCallback(() => {
     if (incomingArticles) {
       setArticles(incomingArticles);
       setIncomingArticles(null);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  };
+  }, [incomingArticles]);
 
   // Filter articles for SAVED tab, LAB sector, and FORMAT type if active
+  const savedIdSet = useMemo(() => new Set(savedIds), [savedIds]);
   const displayedArticles = useMemo(() => {
     let list = articles;
     if (selectedLab === 'SAVED') {
-      list = list.filter((a) => savedIds.includes(a.id));
+      list = list.filter((a) => savedIdSet.has(a.id));
     } else if (selectedLab !== 'All') {
       list = list.filter((a) => a.lab === selectedLab);
     }
@@ -252,7 +294,7 @@ export default function HomePage() {
       list = list.filter((a) => a.entryType === selectedType);
     }
     return list;
-  }, [articles, selectedLab, selectedType, savedIds]);
+  }, [articles, selectedLab, selectedType, savedIdSet]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
@@ -324,7 +366,7 @@ export default function HomePage() {
               onSelectArticle={handleOpenArticle}
               bookmarkedIds={savedIds}
               onToggleBookmark={toggleBookmark}
-              onSelectLab={setSelectedLab}
+              onSelectLab={handleSelectLabFromDossier}
             />
           </div>
         )}

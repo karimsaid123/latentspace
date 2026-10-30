@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
-import { decodeHtmlEntities } from '@/lib/sanitize';
+import { isLocalPersistentDev } from '@/lib/runtime-env';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -18,119 +18,62 @@ export async function GET(request: NextRequest) {
     const lab = searchParams.get('lab') || undefined;
     const entryType = searchParams.get('entryType') || undefined;
     const search = searchParams.get('search') || undefined;
-    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 500;
+    const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 200;
+    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 500) : 200;
 
     const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
 
     // Single-Flight Coalesced Query with Cache
     const data = await container.cache.coalesce(cacheKey, async () => {
-      const [articles, totalCount, allArticles] = await Promise.all([
-        container.articleRepo.list({
-          category: category !== 'All' ? category : undefined,
-          lab: lab !== 'All' ? lab : undefined,
-          entryType: entryType !== 'ALL' ? entryType : undefined,
-          searchQuery: search,
-          limit,
-        }),
-        container.articleRepo.count({
-          category: category !== 'All' ? category : undefined,
-          lab: lab !== 'All' ? lab : undefined,
-          entryType: entryType !== 'ALL' ? entryType : undefined,
-          searchQuery: search,
-        }),
-        container.articleRepo.list({ limit: 1000 }),
-      ]);
+      const { articles, total, categoryCounts } = await container.articleRepo.queryWithStats({
+        category: category !== 'All' ? category : undefined,
+        lab: lab !== 'All' ? lab : undefined,
+        entryType: entryType !== 'ALL' ? entryType : undefined,
+        searchQuery: search,
+        limit,
+      });
 
-      // If store is empty, trigger an initial ingestion
-      if (allArticles.length === 0) {
-        await container.ingestionService.runIngestion(requestId);
-        return null; // Will re-evaluate on next call
-      }
-
-      // Compute live category counts
-      const categoryCounts: Record<string, number> = {
-        All: allArticles.length,
-        'LLMs & GenAI': 0,
-        'Robotics & Hardware': 0,
-        'Open Source & Research': 0,
-        'Business & Big Tech': 0,
-        'Ethics & Policy': 0,
-      };
-
-      for (const a of allArticles) {
-        if (categoryCounts[a.category] !== undefined) {
-          categoryCounts[a.category]++;
-        }
-      }
-
-      // Map to frontend consumer format with guaranteed summary presence
-      const formatted = articles.map(a => {
-        const rawSummary = a.summary || (a as any).aiSummary || {
+      // Map already-decoded repository entities to frontend consumer format
+      const formatted = articles.map(a => ({
+        id: a.id,
+        title: a.title,
+        link: a.canonicalUrl,
+        pubDate: a.publishedAt,
+        source: {
+          id: a.sourceId,
+          name: a.sourceName,
+          url: a.canonicalUrl,
+        },
+        author: a.author || a.sourceName,
+        contentSnippet: a.contentSnippet || '',
+        imageUrl: a.imageUrl,
+        category: a.category,
+        lab: a.lab || 'Independent',
+        entryType: a.entryType || 'DISPATCH',
+        arxivId: a.arxivId,
+        pdfUrl: a.pdfUrl,
+        aiSummary: a.summary || {
           tldr: a.contentSnippet || a.title || 'No summary available.',
           takeaways: [],
           impact: 'Notable',
           readTimeMinutes: 2,
-        };
-
-        const summary = {
-          tldr: decodeHtmlEntities(rawSummary.tldr || ''),
-          takeaways: (rawSummary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
-          technicalAnalysis: rawSummary.technicalAnalysis ? decodeHtmlEntities(rawSummary.technicalAnalysis) : undefined,
-          strategicImplications: rawSummary.strategicImplications ? decodeHtmlEntities(rawSummary.strategicImplications) : undefined,
-          primaryThesis: rawSummary.primaryThesis ? decodeHtmlEntities(rawSummary.primaryThesis) : undefined,
-          impact: rawSummary.impact || 'Notable',
-          readTimeMinutes: rawSummary.readTimeMinutes || 3,
-        };
-
-        return {
-          id: a.id,
-          title: decodeHtmlEntities(a.title),
-          link: a.canonicalUrl,
-          pubDate: a.publishedAt,
-          source: {
-            id: a.sourceId,
-            name: a.sourceName,
-            url: a.canonicalUrl,
-          },
-          author: decodeHtmlEntities(a.author || a.sourceName),
-          contentSnippet: decodeHtmlEntities(a.contentSnippet || ''),
-          imageUrl: a.imageUrl,
-          category: a.category,
-          lab: a.lab || 'Independent',
-          entryType: a.entryType || 'DISPATCH',
-          arxivId: a.arxivId,
-          pdfUrl: a.pdfUrl,
-          aiSummary: summary,
-        };
-      });
+        },
+      }));
 
       const payload = {
         articles: formatted,
-        total: totalCount,
+        total,
         categoryCounts,
       };
 
-      // Set warm cache for 15 seconds
-      await container.cache.set(cacheKey, payload, 15);
+      // Set warm cache for 30 seconds
+      await container.cache.set(cacheKey, payload, 30);
       return payload;
     });
 
-    // If cache coalesce returned null because initial sync was triggered
-    const finalData = data || {
-      articles: [],
-      total: 0,
-      categoryCounts: { All: 0, 'LLMs & GenAI': 0, 'Robotics & Hardware': 0, 'Open Source & Research': 0, 'Business & Big Tech': 0, 'Ethics & Policy': 0 },
-    };
-
-    // Background stale-while-revalidate ingestion (only in persistent local development, not in edge/serverless isolates where waitUntil cancels)
-    const isServerlessEdge =
-      typeof process === 'undefined' ||
-      !!process.env.CF_PAGES ||
-      !!process.env.WORKERS ||
-      !!process.env.CLOUDFLARE ||
-      process.env.NEXT_RUNTIME === 'edge';
-
-    if (!isServerlessEdge && container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
+    // Background stale-while-revalidate ingestion ONLY in persistent local development
+    // (Prevents unawaited promises / waitUntil timeouts on Cloudflare Workers & Edge)
+    if (isLocalPersistentDev() && container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
       container.ingestionService
         .runIngestion(`swr_${Date.now()}`)
         .then(() => container.cache.clear())
@@ -140,13 +83,20 @@ export async function GET(request: NextRequest) {
     logger.info('News query served', {
       requestId,
       durationMs: Date.now() - startTime,
-      count: finalData.articles.length,
+      count: data.articles.length,
     });
 
-    return NextResponse.json({
-      ...finalData,
-      lastSyncedAt: container.ingestionService.getLastRunTimestamp(),
-    });
+    return NextResponse.json(
+      {
+        ...data,
+        lastSyncedAt: container.ingestionService.getLastRunTimestamp(),
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, max-age=15, stale-while-revalidate=60',
+        },
+      }
+    );
   } catch (error: any) {
     logger.error('Failed to serve news query', {
       requestId,

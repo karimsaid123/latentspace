@@ -1,30 +1,50 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { ArticleFilter, ArticleRepositoryPort } from '@/core/ports/repository.port';
+import { ArticleFilter, ArticleQueryResult, ArticleRepositoryPort } from '@/core/ports/repository.port';
 import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
+import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticArticlesData from '../../../data/articles.json';
 
+const MAX_STORED_ARTICLES = 400;
+
+interface IndexedArticle {
+  article: DomainArticle;
+  publishedAtMs: number;
+  searchBlob: string;
+}
+
 export class MemoryArticleRepository implements ArticleRepositoryPort {
-  private articles = new Map<string, DomainArticle>();
+  private articles = new Map<string, IndexedArticle>();
+  private sortedCache: IndexedArticle[] | null = null;
   private readonly storageFilePath: string;
 
   constructor(customStoragePath?: string) {
     this.storageFilePath = customStoragePath || path.join(process.cwd(), 'data', 'articles.json');
   }
 
+  private indexArticle(art: DomainArticle): IndexedArticle {
+    const parsedMs = Date.parse(art.publishedAt);
+    const publishedAtMs = Number.isNaN(parsedMs) ? 0 : parsedMs;
+    const searchBlob = `${art.title} ${art.contentSnippet} ${art.summary?.tldr || ''} ${art.sourceName} ${art.lab || ''}`.toLowerCase();
+    return { article: art, publishedAtMs, searchBlob };
+  }
+
+  private getSortedEntries(): IndexedArticle[] {
+    if (!this.sortedCache) {
+      this.sortedCache = Array.from(this.articles.values()).sort(
+        (a, b) => b.publishedAtMs - a.publishedAtMs
+      );
+    }
+    return this.sortedCache;
+  }
+
   public async initialize(): Promise<void> {
     try {
       let loaded: any[] = [];
-      const isServerlessEdge =
-        typeof process === 'undefined' ||
-        !!process.env.CF_PAGES ||
-        !!process.env.WORKERS ||
-        !!process.env.CLOUDFLARE ||
-        process.env.NEXT_RUNTIME === 'edge';
 
-      if (isServerlessEdge) {
+      if (isServerlessOrEdge()) {
         loaded = staticArticlesData as any[];
       } else {
         try {
@@ -41,6 +61,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       }
 
       for (const item of loaded) {
+        if (!item?.id) continue;
         const title = decodeHtmlEntities(item.title || '');
         const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
         const sourceName = item.sourceName || item.source?.name || 'Feed';
@@ -87,8 +108,9 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
           summary,
         };
 
-        this.articles.set(normalized.id, normalized);
+        this.articles.set(normalized.id, this.indexArticle(normalized));
       }
+      this.sortedCache = null;
     } catch {
       // Empty or not existing yet
     }
@@ -96,81 +118,142 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
   public async saveMany(incoming: DomainArticle[]): Promise<{ savedCount: number }> {
     for (const art of incoming) {
-      this.articles.set(art.id, art);
+      this.articles.set(art.id, this.indexArticle(art));
     }
+    this.sortedCache = null;
+
+    // Bound memory & disk footprint to latest MAX_STORED_ARTICLES
+    if (this.articles.size > MAX_STORED_ARTICLES) {
+      const sorted = this.getSortedEntries();
+      const trimmed = sorted.slice(0, MAX_STORED_ARTICLES);
+      this.articles.clear();
+      for (const entry of trimmed) {
+        this.articles.set(entry.article.id, entry);
+      }
+      this.sortedCache = trimmed;
+    }
+
     await this.persist();
     return { savedCount: incoming.length };
   }
 
   public async findById(id: string): Promise<DomainArticle | null> {
-    return this.articles.get(id) || null;
+    return this.articles.get(id)?.article || null;
   }
 
   public async getAllAsMap(): Promise<Map<string, DomainArticle>> {
-    return new Map(this.articles);
+    const map = new Map<string, DomainArticle>();
+    for (const [id, entry] of this.articles.entries()) {
+      map.set(id, entry.article);
+    }
+    return map;
+  }
+
+  private matchesFilter(entry: IndexedArticle, filter?: ArticleFilter, normalizedQuery?: string): boolean {
+    const a = entry.article;
+    if (filter?.category && filter.category !== 'All' && a.category !== filter.category) {
+      return false;
+    }
+    if (filter?.lab && filter.lab !== 'All' && a.lab !== filter.lab) {
+      return false;
+    }
+    if (filter?.entryType && filter.entryType !== 'ALL' && a.entryType !== filter.entryType) {
+      return false;
+    }
+    if (filter?.sourceId && a.sourceId !== filter.sourceId) {
+      return false;
+    }
+    if (normalizedQuery && !entry.searchBlob.includes(normalizedQuery)) {
+      return false;
+    }
+    return true;
   }
 
   public async list(filter?: ArticleFilter): Promise<DomainArticle[]> {
-    let result = Array.from(this.articles.values());
+    const sorted = this.getSortedEntries();
+    const q = filter?.searchQuery?.toLowerCase().trim() || undefined;
 
-    if (filter?.category && filter.category !== 'All') {
-      result = result.filter(a => a.category === filter.category);
+    const matched: DomainArticle[] = [];
+    const offset = filter?.offset || 0;
+    const limit = filter?.limit;
+    let seen = 0;
+
+    for (const entry of sorted) {
+      if (!this.matchesFilter(entry, filter, q)) continue;
+      if (seen >= offset) {
+        matched.push(entry.article);
+        if (limit !== undefined && matched.length >= limit) {
+          break;
+        }
+      }
+      seen++;
     }
 
-    if (filter?.lab && filter.lab !== 'All') {
-      result = result.filter(a => a.lab === filter.lab);
-    }
-
-    if (filter?.entryType && filter.entryType !== 'ALL') {
-      result = result.filter(a => a.entryType === filter.entryType);
-    }
-
-    if (filter?.sourceId) {
-      result = result.filter(a => a.sourceId === filter.sourceId);
-    }
-
-    if (filter?.searchQuery) {
-      const q = filter.searchQuery.toLowerCase().trim();
-      result = result.filter(a =>
-        a.title.toLowerCase().includes(q) ||
-        a.contentSnippet.toLowerCase().includes(q) ||
-        (a.summary?.tldr && a.summary.tldr.toLowerCase().includes(q)) ||
-        a.sourceName.toLowerCase().includes(q)
-      );
-    }
-
-    // Sort descending by publishedAt
-    result.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
-
-    if (filter?.offset) {
-      result = result.slice(filter.offset);
-    }
-
-    if (filter?.limit) {
-      result = result.slice(0, filter.limit);
-    }
-
-    return result;
+    return matched;
   }
 
   public async count(filter?: ArticleFilter): Promise<number> {
-    const list = await this.list({ ...filter, limit: undefined, offset: undefined });
-    return list.length;
+    const sorted = this.getSortedEntries();
+    const q = filter?.searchQuery?.toLowerCase().trim() || undefined;
+    let total = 0;
+    for (const entry of sorted) {
+      if (this.matchesFilter(entry, filter, q)) total++;
+    }
+    return total;
+  }
+
+  /**
+   * Single-pass query returning filtered articles, total matched count,
+   * and global category counts in O(N) with zero Date allocations.
+   */
+  public async queryWithStats(filter?: ArticleFilter): Promise<ArticleQueryResult> {
+    const sorted = this.getSortedEntries();
+    const q = filter?.searchQuery?.toLowerCase().trim() || undefined;
+    const offset = filter?.offset || 0;
+    const limit = filter?.limit;
+
+    const categoryCounts: Record<string, number> = {
+      All: sorted.length,
+      'LLMs & GenAI': 0,
+      'Robotics & Hardware': 0,
+      'Open Source & Research': 0,
+      'Business & Big Tech': 0,
+      'Ethics & Policy': 0,
+    };
+
+    const articles: DomainArticle[] = [];
+    let total = 0;
+
+    for (const entry of sorted) {
+      const cat = entry.article.category;
+      if (categoryCounts[cat] !== undefined) {
+        categoryCounts[cat]++;
+      }
+
+      if (this.matchesFilter(entry, filter, q)) {
+        if (total >= offset && (limit === undefined || articles.length < limit)) {
+          articles.push(entry.article);
+        }
+        total++;
+      }
+    }
+
+    return { articles, total, categoryCounts };
   }
 
   private async persist(): Promise<void> {
     // Cloudflare Workers and serverless edge runtimes have no writable filesystem
-    if (typeof process === 'undefined' || process.env.CF_PAGES || process.env.WORKERS) {
+    if (isServerlessOrEdge()) {
       return;
     }
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
       const tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
-      const all = Array.from(this.articles.values());
+      const all = this.getSortedEntries().map(e => e.article);
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
-    } catch (err) {
+    } catch {
       // Gracefully ignore on read-only environments
     }
   }

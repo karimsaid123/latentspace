@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { SourceRepositoryPort } from '@/core/ports/repository.port';
 import { DomainSource } from '@/core/domain/entities';
+import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticSourcesData from '../../../data/sources.json';
 
 const DEFAULT_SOURCES: DomainSource[] = [
@@ -162,6 +163,7 @@ const DEFAULT_SOURCES: DomainSource[] = [
 
 export class MemorySourceRepository implements SourceRepositoryPort {
   private sources = new Map<string, DomainSource>();
+  private dirty = false;
   private readonly storageFilePath: string;
 
   constructor(customStoragePath?: string) {
@@ -171,14 +173,8 @@ export class MemorySourceRepository implements SourceRepositoryPort {
   public async initialize(): Promise<void> {
     try {
       let loaded: DomainSource[] = [];
-      const isServerlessEdge =
-        typeof process === 'undefined' ||
-        !!process.env.CF_PAGES ||
-        !!process.env.WORKERS ||
-        !!process.env.CLOUDFLARE ||
-        process.env.NEXT_RUNTIME === 'edge';
 
-      if (isServerlessEdge) {
+      if (isServerlessOrEdge()) {
         loaded = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
       } else {
         try {
@@ -227,12 +223,27 @@ export class MemorySourceRepository implements SourceRepositoryPort {
     return this.sources.get(id) || null;
   }
 
-  public async updateStatus(id: string, fetchedAt: string, failureCount: number): Promise<void> {
+  public async updateStatus(
+    id: string,
+    fetchedAt: string,
+    failureCount: number,
+    deferPersist = false
+  ): Promise<void> {
     const source = this.sources.get(id);
     if (!source) return;
 
     source.lastFetchedAt = fetchedAt;
     source.consecutiveFailures = failureCount;
+    if (deferPersist) {
+      this.dirty = true;
+    } else {
+      await this.persist();
+    }
+  }
+
+  public async flush(): Promise<void> {
+    if (!this.dirty) return;
+    this.dirty = false;
     await this.persist();
   }
 
@@ -246,7 +257,7 @@ export class MemorySourceRepository implements SourceRepositoryPort {
 
   private async persist(): Promise<void> {
     // Cloudflare Workers and serverless edge runtimes have no writable filesystem
-    if (typeof process === 'undefined' || process.env.CF_PAGES || process.env.WORKERS) {
+    if (isServerlessOrEdge()) {
       return;
     }
     try {
@@ -256,9 +267,8 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       const all = Array.from(this.sources.values());
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
-    } catch (err) {
+    } catch {
       // Gracefully ignore on read-only environments
     }
   }
 }
-

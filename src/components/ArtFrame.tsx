@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 const FALLBACK_ART = [
   '/art/art-1.jpg',
@@ -17,16 +17,23 @@ interface ArtFrameProps {
   indexCode?: string;
   className?: string;
   aspect?: 'portrait' | 'square' | 'landscape';
+  priority?: boolean;
 }
 
-export default function ArtFrame({
+const ArtFrame = memo(function ArtFrame({
   src,
   alt = 'Visual',
   indexCode = '001',
   className = '',
   aspect = 'portrait',
+  priority = false,
 }: ArtFrameProps) {
   const [hasError, setHasError] = useState(false);
+
+  // Reset error state whenever the source URL changes
+  useEffect(() => {
+    setHasError(false);
+  }, [src]);
 
   const aspectClass = {
     portrait: 'aspect-[3/4]',
@@ -34,9 +41,10 @@ export default function ArtFrame({
     landscape: 'aspect-[4/3]',
   }[aspect];
 
-  // Pick deterministic fallback art based on indexCode
+  // Pick deterministic fallback art safely (handles "000" without negative modulo)
   const numericIndex = parseInt(indexCode.replace(/\D/g, '') || '1', 10);
-  const fallbackSrc = FALLBACK_ART[(numericIndex - 1) % FALLBACK_ART.length];
+  const safeIdx = (((numericIndex - 1) % FALLBACK_ART.length) + FALLBACK_ART.length) % FALLBACK_ART.length;
+  const fallbackSrc = FALLBACK_ART[safeIdx];
   const imageToDisplay = src && !hasError ? src : fallbackSrc;
 
   return (
@@ -60,10 +68,15 @@ export default function ArtFrame({
         <img
           src={imageToDisplay}
           alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'auto'}
           onError={() => setHasError(true)}
-          className="w-full h-full object-cover grayscale contrast-125 group-hover:contrast-100 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+          className="w-full h-full object-cover grayscale contrast-125 group-hover:contrast-100 group-hover:grayscale-0 group-hover:scale-105 transition-[transform,filter] duration-700 ease-out"
         />
       </div>
     </div>
   );
-}
+});
+
+export default ArtFrame;

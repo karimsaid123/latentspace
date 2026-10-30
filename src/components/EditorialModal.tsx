@@ -30,8 +30,17 @@ export default function EditorialModal({
   }, []);
 
   useEffect(() => {
+    if (!article) {
+      setIsShareOpen(false);
+      return;
+    }
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
+        e.stopImmediatePropagation();
         if (isShareOpen) {
           setIsShareOpen(false);
         } else {
@@ -39,9 +48,12 @@ export default function EditorialModal({
         }
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, isShareOpen]);
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', handleKeyDown, true);
+    };
+  }, [article, onClose, isShareOpen]);
 
   const handleCopyLink = () => {
     if (!article) return;

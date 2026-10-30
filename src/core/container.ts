@@ -2,6 +2,7 @@ import { RssFeedAdapter } from '@/adapters/providers/rss-feed.adapter';
 import { MemoryArticleRepository } from '@/adapters/storage/memory-article.repository';
 import { MemorySourceRepository } from '@/adapters/storage/memory-source.repository';
 import { MemoryCacheAdapter } from '@/adapters/storage/memory-cache.adapter';
+import { isLocalPersistentDev } from '@/lib/runtime-env';
 import { IngestionService } from './services/ingestion.service';
 
 class BackendContainer {
@@ -14,10 +15,11 @@ class BackendContainer {
   public readonly ingestionService: IngestionService;
 
   private isInitialized = false;
+  private bootstrapPromise: Promise<void> | null = null;
   private schedulerTimer: NodeJS.Timeout | null = null;
 
   private constructor() {
-    this.feedProvider = new RssFeedAdapter(9000);
+    this.feedProvider = new RssFeedAdapter(8000);
     this.articleRepo = new MemoryArticleRepository();
     this.sourceRepo = new MemorySourceRepository();
     this.cache = new MemoryCacheAdapter();
@@ -38,25 +40,27 @@ class BackendContainer {
 
   public async bootstrap(): Promise<void> {
     if (this.isInitialized) return;
-    await Promise.all([
-      this.articleRepo.initialize(),
-      this.sourceRepo.initialize(),
-    ]);
-    this.isInitialized = true;
+    if (this.bootstrapPromise) return this.bootstrapPromise;
 
-    // Only run autonomous background scheduler in local Node.js development server
-    // In Cloudflare Workers / Edge / Serverless, persistent setInterval timers cause request hangs and 500 cancellations
-    const isEdgeOrServerless =
-      typeof process === 'undefined' ||
-      !!process.env?.CF_PAGES ||
-      !!process.env?.WORKERS ||
-      !!process.env?.CLOUDFLARE ||
-      process.env?.NEXT_RUNTIME === 'edge' ||
-      process.env?.NODE_ENV === 'production';
+    this.bootstrapPromise = (async () => {
+      try {
+        await Promise.all([
+          this.articleRepo.initialize(),
+          this.sourceRepo.initialize(),
+        ]);
+        this.isInitialized = true;
 
-    if (!isEdgeOrServerless) {
-      this.startAutonomousScheduler();
-    }
+        // Only run autonomous background scheduler in local Node.js development server
+        // In Cloudflare Workers / Edge / Serverless, persistent setInterval timers cause request hangs and 500 cancellations
+        if (isLocalPersistentDev()) {
+          this.startAutonomousScheduler();
+        }
+      } finally {
+        this.bootstrapPromise = null;
+      }
+    })();
+
+    return this.bootstrapPromise;
   }
 
   public startAutonomousScheduler(intervalMs = 5 * 60 * 1000): void {
@@ -65,8 +69,8 @@ class BackendContainer {
       try {
         await this.bootstrap();
         await this.ingestionService.runIngestion('cron_scheduler');
-        await this.cache.clear();
-      } catch (err: any) {
+        this.cache.clear();
+      } catch {
         // Suppress or log gracefully
       }
     }, intervalMs);
@@ -77,4 +81,3 @@ class BackendContainer {
 }
 
 export const container = BackendContainer.getInstance();
-

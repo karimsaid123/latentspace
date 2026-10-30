@@ -1,15 +1,17 @@
 import Parser from 'rss-parser';
 import crypto from 'crypto';
 import { FeedProviderPort } from '@/core/ports/feed-provider.port';
-import { DomainSource, FeedSnapshot, DomainArticle, Category, ImpactLevel } from '@/core/domain/entities';
+import { DomainSource, FeedSnapshot, DomainArticle, Category } from '@/core/domain/entities';
 import { ProviderUnavailableError, RateLimitError } from '@/core/domain/errors';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 
 export class RssFeedAdapter implements FeedProviderPort {
   private parser: Parser;
+  private readonly timeoutMs: number;
 
-  constructor(timeoutMs = 8000) {
+  constructor(timeoutMs = 7000) {
+    this.timeoutMs = timeoutMs;
     this.parser = new Parser({
       timeout: timeoutMs,
       headers: {
@@ -31,20 +33,23 @@ export class RssFeedAdapter implements FeedProviderPort {
     const fetchedAt = new Date().toISOString();
 
     try {
-      let feed;
-      try {
-        const response = await fetch(source.feedUrl, {
-          headers: {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LatentSpace/2.0',
-            'Accept': 'application/rss+xml, application/xml, text/xml, */*',
-          },
-          signal: AbortSignal.timeout(8000),
-        });
-        const xmlText = await response.text();
-        feed = await this.parser.parseString(xmlText);
-      } catch {
-        feed = await this.parser.parseURL(source.feedUrl);
+      const response = await fetch(source.feedUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LatentSpace/2.0',
+          'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+        },
+        signal: AbortSignal.timeout(this.timeoutMs),
+      });
+
+      if (response.status === 429) {
+        throw new RateLimitError(source.name, 60);
       }
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const xmlText = await response.text();
+      const feed = await this.parser.parseString(xmlText);
       const rawItems = feed.items || [];
       const articles: DomainArticle[] = [];
 
@@ -60,8 +65,8 @@ export class RssFeedAdapter implements FeedProviderPort {
         const cleanContent = this.stripHtml(rawContent);
         const contentHash = crypto.createHash('sha256').update(cleanContent || title).digest('hex').slice(0, 16);
 
-        const publishedAt = item.isoDate || (item.pubDate ? new Date(item.pubDate).toISOString() : fetchedAt);
-        const author = (item as any).creator || (item as any).author || source.name;
+        const publishedAt = this.safeParseDate(item.isoDate || item.pubDate, fetchedAt);
+        const author = decodeHtmlEntities((item as any).creator || (item as any).author || source.name);
         const imageUrl = this.extractImageUrl(item);
         const category = this.categorizeText(title, cleanContent, source.category);
         const lab = detectFrontierLab(title, cleanContent, source.name);
@@ -97,7 +102,8 @@ export class RssFeedAdapter implements FeedProviderPort {
         articles,
       };
     } catch (err: any) {
-      const message = err.message || 'Unknown network error';
+      if (err instanceof RateLimitError) throw err;
+      const message = err?.message || 'Unknown network error';
       if (message.includes('429') || message.includes('Rate limit')) {
         throw new RateLimitError(source.name, 60);
       }
@@ -105,10 +111,15 @@ export class RssFeedAdapter implements FeedProviderPort {
     }
   }
 
+  private safeParseDate(rawDate: string | undefined, fallbackIso: string): string {
+    if (!rawDate) return fallbackIso;
+    const parsed = new Date(rawDate);
+    return Number.isNaN(parsed.getTime()) ? fallbackIso : parsed.toISOString();
+  }
+
   private normalizeCanonicalUrl(url: string): string {
     try {
       const parsed = new URL(url);
-      // Strip tracking query params
       parsed.searchParams.delete('utm_source');
       parsed.searchParams.delete('utm_medium');
       parsed.searchParams.delete('utm_campaign');
@@ -159,45 +170,4 @@ export class RssFeedAdapter implements FeedProviderPort {
     }
     return fallback;
   }
-
-  private generateZeroCostSummary(title: string, content: string) {
-    const words = content.split(/\s+/).filter(Boolean);
-    const readTimeMinutes = Math.max(1, Math.ceil(words.length / 180));
-    
-    // Impact determination
-    const lower = `${title} ${content}`.toLowerCase();
-    let impact: ImpactLevel = 'Notable';
-    if (lower.includes('breakthrough') || lower.includes('frontier model') || lower.includes('superintelligence')) {
-      impact = 'Breakthrough';
-    } else if (lower.includes('billion') || lower.includes('major update') || lower.includes('raises') || lower.includes('launches')) {
-      impact = 'High';
-    } else if (lower.includes('announces') || lower.includes('releases')) {
-      impact = 'Medium';
-    }
-
-    // High signal sentence extraction for TL;DR
-    const sentences = content
-      .split(/(?<=[.?!])\s+/)
-      .map(s => s.trim())
-      .filter(s => s.length > 25 && !s.toLowerCase().includes('click here') && !s.toLowerCase().includes('read more'));
-
-    const tldr = sentences[0] || `${title}: Key intelligence update.`;
-    const takeaways: string[] = [];
-    if (sentences[1]) takeaways.push(sentences[1]);
-    if (sentences[2]) takeaways.push(sentences[2]);
-    if (sentences[3]) takeaways.push(sentences[3]);
-
-    if (takeaways.length === 0) {
-      takeaways.push('Core architectural advancement documented in report.');
-      takeaways.push('Implications for distributed model deployment and research.');
-    }
-
-    return {
-      tldr: tldr.length > 220 ? tldr.slice(0, 217) + '...' : tldr,
-      takeaways,
-      impact,
-      readTimeMinutes,
-    };
-  }
 }
-

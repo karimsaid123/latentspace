@@ -3,8 +3,10 @@ import { ArticleRepositoryPort, SourceRepositoryPort } from '../ports/repository
 import { IngestionDiffEngine } from './diff-engine';
 import { CircuitBreaker } from './circuit-breaker';
 import { SingleFlight } from './single-flight';
-import { IngestionReport, DomainArticle } from '../domain/entities';
+import { IngestionReport, DomainArticle, DomainSource, FeedSnapshot } from '../domain/entities';
 import { logger } from '@/lib/logger';
+
+const CONCURRENCY_LIMIT = 6;
 
 export class IngestionService {
   private circuitBreakers = new Map<string, CircuitBreaker>();
@@ -51,10 +53,12 @@ export class IngestionService {
       let articlesModified = 0;
       let sourcesProcessed = 0;
       const triggeredBreakers: string[] = [];
+      const batchedToSave = new Map<string, DomainArticle>();
 
+      // Filter active sources vs open circuit breakers upfront
+      const activeSources: DomainSource[] = [];
       for (const source of sources) {
         const breaker = this.getCircuitBreaker(source.id, source.name);
-
         if (breaker.getState() === 'OPEN') {
           triggeredBreakers.push(source.name);
           logger.warn('Circuit breaker OPEN, skipping feed', {
@@ -62,49 +66,87 @@ export class IngestionService {
             provider: source.name,
             status: 'CIRCUIT_OPEN',
           });
-          continue;
+        } else {
+          activeSources.push(source);
         }
+      }
 
-        try {
-          const snapshot = await breaker.execute(async () => {
-            return await this.feedProvider.fetchFeed(source);
-          });
+      // Fetch feeds concurrently in bounded batches (6x faster than sequential)
+      for (let i = 0; i < activeSources.length; i += CONCURRENCY_LIMIT) {
+        const batch = activeSources.slice(i, i + CONCURRENCY_LIMIT);
 
-          sourcesProcessed++;
-
-          // Compute diff against current state
-          const diff = this.diffEngine.computeDiff(existingMap, snapshot.articles);
-
-          const toSave: DomainArticle[] = [...diff.added, ...diff.modified];
-          if (toSave.length > 0) {
-            await this.articleRepo.saveMany(toSave);
-            // Update in-memory map for subsequent sources in the same run
-            for (const item of toSave) {
-              existingMap.set(item.id, item);
+        const batchResults = await Promise.all(
+          batch.map(async (source): Promise<
+            | { ok: true; source: DomainSource; snapshot: FeedSnapshot }
+            | { ok: false; source: DomainSource; error: Error; circuitState: string }
+          > => {
+            const breaker = this.getCircuitBreaker(source.id, source.name);
+            try {
+              const snapshot = await breaker.execute(() => this.feedProvider.fetchFeed(source));
+              return { ok: true, source, snapshot };
+            } catch (err: any) {
+              return {
+                ok: false,
+                source,
+                error: err instanceof Error ? err : new Error(String(err)),
+                circuitState: breaker.getState(),
+              };
             }
+          })
+        );
+
+        // Deterministically apply diffs in memory without race conditions
+        for (const res of batchResults) {
+          if (res.ok) {
+            sourcesProcessed++;
+            const { source, snapshot } = res;
+            const diff = this.diffEngine.computeDiff(existingMap, snapshot.articles);
+
+            for (const item of diff.added) {
+              existingMap.set(item.id, item);
+              batchedToSave.set(item.id, item);
+            }
+            for (const item of diff.modified) {
+              existingMap.set(item.id, item);
+              batchedToSave.set(item.id, item);
+            }
+
+            articlesAdded += diff.added.length;
+            articlesModified += diff.modified.length;
+
+            await this.sourceRepo.updateStatus(source.id, snapshot.fetchedAt, 0, true);
+
+            logger.info('Feed ingestion success', {
+              requestId,
+              provider: source.name,
+              added: diff.added.length,
+              modified: diff.modified.length,
+              unchanged: diff.unchangedCount,
+            });
+          } else {
+            const { source, error, circuitState } = res;
+            logger.error('Feed ingestion failed', {
+              requestId,
+              provider: source.name,
+              error: error.message,
+              circuitState,
+            });
+            await this.sourceRepo.updateStatus(
+              source.id,
+              new Date().toISOString(),
+              (source.consecutiveFailures || 0) + 1,
+              true
+            );
           }
-
-          articlesAdded += diff.added.length;
-          articlesModified += diff.modified.length;
-
-          await this.sourceRepo.updateStatus(source.id, snapshot.fetchedAt, 0);
-
-          logger.info('Feed ingestion success', {
-            requestId,
-            provider: source.name,
-            added: diff.added.length,
-            modified: diff.modified.length,
-            unchanged: diff.unchangedCount,
-          });
-        } catch (err: any) {
-          logger.error('Feed ingestion failed', {
-            requestId,
-            provider: source.name,
-            error: err.message,
-            circuitState: breaker.getState(),
-          });
-          await this.sourceRepo.updateStatus(source.id, new Date().toISOString(), (source.consecutiveFailures || 0) + 1);
         }
+      }
+
+      // Single atomic persistence write at the end of the run (instead of 34 writes)
+      if (batchedToSave.size > 0) {
+        await this.articleRepo.saveMany(Array.from(batchedToSave.values()));
+      }
+      if (typeof this.sourceRepo.flush === 'function') {
+        await this.sourceRepo.flush();
       }
 
       this.lastRunTimestamp = Date.now();
@@ -130,4 +172,3 @@ export class IngestionService {
     });
   }
 }
-

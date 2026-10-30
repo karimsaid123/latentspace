@@ -23,6 +23,7 @@ import { ModelBenchmark, BenchmarkResponse } from '@/types/benchmark';
 import { VERIFIED_BENCHMARK_SNAPSHOT } from '@/lib/benchmark-client';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
+import LiveClock from '@/components/LiveClock';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
 type CategoryFilter = 'ALL' | 'Frontier' | 'Open Weights' | 'Specialized';
@@ -36,29 +37,10 @@ export default function BenchmarksPage() {
   const [tableSort, setTableSort] = useState<TableSortField>('rank');
   const [sortAsc, setSortAsc] = useState<boolean>(false);
   const [selectedModelId, setSelectedModelId] = useState<string | null>(null);
-  const [currentTime, setCurrentTime] = useState<string>('');
 
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
-
-  // Clock
-  useEffect(() => {
-    const update = () => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString('en-US', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        })
-      );
-    };
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   // Fetch benchmark telemetry from API or fallback
@@ -224,9 +206,9 @@ export default function BenchmarksPage() {
               <span>[★ SAVED]</span>
             </Link>
 
-            {/* Time on the far right */}
+            {/* Isolated 1Hz Clock on the far right */}
             <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-              {currentTime || '--:--:--'}
+              <LiveClock />
             </div>
           </div>
 
@@ -331,7 +313,7 @@ export default function BenchmarksPage() {
                   <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
                   COST EFFICIENCY
                 </span>
-                <span>PER TASK TASK</span>
+                <span>PER TASK</span>
               </div>
               <div className="text-3xl sm:text-4xl font-black tracking-tight text-black mb-1">
                 $0.26 <span className="text-base text-black/40 font-mono">/ TASK</span>
@@ -621,7 +603,7 @@ export default function BenchmarksPage() {
                     </div>
 
                     {/* Popover Pill on Hover or Select */}
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex flex-col items-center pointer-events-none z-50 whitespace-nowrap animate-fade-in">
+                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 ${isSelected ? 'flex' : 'hidden group-hover:flex'} flex-col items-center pointer-events-none z-50 whitespace-nowrap animate-fade-in`}>
                       <div className="bg-black text-[#faf9f6] border border-black px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-wider shadow-xl flex flex-col gap-0.5">
                         <span className="font-bold">{m.name}</span>
                         <div className="flex items-center gap-2 text-[8px] text-white/80">

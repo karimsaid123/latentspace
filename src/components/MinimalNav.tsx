@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import Link from 'next/link';
+import LiveClock from './LiveClock';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -32,7 +33,7 @@ export const LAB_FILTERS = [
   { id: 'NVIDIA', label: 'NVIDIA' },
 ];
 
-export default function MinimalNav({
+const MinimalNav = memo(function MinimalNav({
   selectedLab,
   onSelectLab,
   selectedType,
@@ -41,33 +42,11 @@ export default function MinimalNav({
   onSearch,
   onSync,
   isSyncing,
-  totalArticles,
-  lastSyncedText = 'LIVE',
   savedCount = 0,
   isSearchOpen,
   setIsSearchOpen,
-  onOpenBenchmarks,
 }: MinimalNavProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const [currentTime, setCurrentTime] = useState<string>('');
-
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString('en-US', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        })
-      );
-    };
-
-    updateClock();
-    const timer = setInterval(updateClock, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -134,9 +113,9 @@ export default function MinimalNav({
             [{isSyncing ? 'SYNCING...' : 'SYNC'}]
           </button>
 
-          {/* Time ONLY completely on the right */}
+          {/* Isolated 1Hz Clock completely on the right */}
           <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-            {currentTime || '--:--:--'}
+            <LiveClock />
           </div>
         </div>
 
@@ -228,4 +207,6 @@ export default function MinimalNav({
 
     </header>
   );
-}
+});
+
+export default MinimalNav;

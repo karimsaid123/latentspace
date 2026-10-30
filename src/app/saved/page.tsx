@@ -1,25 +1,19 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { 
   ArrowLeft, 
   Bookmark, 
   BookmarkCheck, 
-  Search, 
-  ExternalLink, 
-  Clock, 
-  Share2, 
-  Filter, 
-  Trash2,
-  Sparkles,
-  Layers
+  Search
 } from 'lucide-react';
 import { Article } from '@/types';
-import { useSavedArticles, SavedArticleItem } from '@/lib/saved-storage';
+import { useSavedArticles } from '@/lib/saved-storage';
 import EditorialModal from '@/components/EditorialModal';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
+import LiveClock from '@/components/LiveClock';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
 type SortOption = 'NEWEST_SAVED' | 'OLDEST_SAVED' | 'PUBLISHED_DATE' | 'ALPHABETICAL';
@@ -71,29 +65,13 @@ export default function SavedPage() {
   const [selectedLab, setSelectedLab] = useState<string>('ALL LABS');
   const [selectedSort, setSelectedSort] = useState<SortOption>('NEWEST_SAVED');
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [currentTime, setCurrentTime] = useState<string>('');
+
+  const savedItemsRef = useRef(savedItems);
+  savedItemsRef.current = savedItems;
 
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
-
-  // Real-time ticking device clock
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
-      setCurrentTime(
-        now.toLocaleTimeString('en-US', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        })
-      );
-    };
-    updateClock();
-    const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   // Reconcile legacy bookmarks with latest articles from API
@@ -112,9 +90,11 @@ export default function SavedPage() {
     loadArticlesForReconciliation();
   }, [reconcile]);
 
-  // Handle URL deep-linking (?article=...)
+  // Handle initial URL deep-linking (?article=...) once
+  const initialDeepLinkChecked = useRef(false);
   useEffect(() => {
-    if (typeof window === 'undefined' || !savedItems.length) return;
+    if (initialDeepLinkChecked.current || typeof window === 'undefined' || !savedItems.length) return;
+    initialDeepLinkChecked.current = true;
     const params = new URLSearchParams(window.location.search);
     const articleId = params.get('article');
     if (articleId) {
@@ -125,16 +105,33 @@ export default function SavedPage() {
     }
   }, [savedItems]);
 
-  const handleOpenArticle = (article: Article) => {
+  // Support browser back/forward navigation on /saved
+  useEffect(() => {
+    const handlePopState = () => {
+      if (typeof window === 'undefined') return;
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('article');
+      if (articleId) {
+        const found = savedItemsRef.current.find((item) => item.id === articleId);
+        setSelectedArticle(found?.article || null);
+      } else {
+        setSelectedArticle(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const handleOpenArticle = useCallback((article: Article) => {
     setSelectedArticle(article);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('article', article.id);
       window.history.pushState({ articleId: article.id }, '', url.toString());
     }
-  };
+  }, []);
 
-  const handleCloseArticle = () => {
+  const handleCloseArticle = useCallback(() => {
     setSelectedArticle(null);
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
@@ -144,7 +141,7 @@ export default function SavedPage() {
         window.history.pushState({}, '', url.pathname + (newSearch ? `?${newSearch}` : ''));
       }
     }
-  };
+  }, []);
 
   // Filter & search pipeline
   const filteredItems = useMemo(() => {
@@ -245,9 +242,9 @@ export default function SavedPage() {
               [BENCHMARKS & STATS]
             </Link>
 
-            {/* Time on the right */}
+            {/* Isolated 1Hz Clock on the right */}
             <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-              {currentTime || '--:--:--'}
+              <LiveClock />
             </div>
           </div>
 

@@ -1,9 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useMemo, useEffect, memo } from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
 import ScrollReveal from './ScrollReveal';
+
+const CATALOG_PAGE_SIZE = 24;
 
 interface EditorialSpreadProps {
   articles: Article[];
@@ -24,13 +26,33 @@ const LAB_SECTORS = [
   { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA', location: 'SANTA CLARA // BLACKWELL HARDWARE & ACCELERATION' },
 ];
 
-export default function EditorialSpread({
+const EditorialSpread = memo(function EditorialSpread({
   articles,
   onSelectArticle,
   bookmarkedIds = [],
   onToggleBookmark,
   onSelectLab,
 }: EditorialSpreadProps) {
+  const [visibleCatalogCount, setVisibleCatalogCount] = useState(CATALOG_PAGE_SIZE);
+
+  // Reset pagination whenever the article list identity changes
+  useEffect(() => {
+    setVisibleCatalogCount(CATALOG_PAGE_SIZE);
+  }, [articles]);
+
+  const savedIdSet = useMemo(() => new Set(bookmarkedIds), [bookmarkedIds]);
+
+  // Single O(N) pass to group articles by lab sector instead of 8 repeated filters per render
+  const articlesByLab = useMemo(() => {
+    const grouped: Record<string, Article[]> = {};
+    for (const a of articles || []) {
+      const lab = a.lab || 'Independent';
+      if (!grouped[lab]) grouped[lab] = [];
+      grouped[lab].push(a);
+    }
+    return grouped;
+  }, [articles]);
+
   if (!articles || articles.length === 0) return null;
 
   const lead = articles[0];
@@ -39,6 +61,8 @@ export default function EditorialSpread({
   const fourth = articles[3] || articles[0];
   const fifth = articles[4] || articles[0];
   const sixth = articles[5] || articles[0];
+  const catalogSlice = articles.slice(0, visibleCatalogCount);
+  const remainingCount = Math.max(0, articles.length - visibleCatalogCount);
 
   return (
     <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-8 select-none">
@@ -113,6 +137,7 @@ export default function EditorialSpread({
                 alt={lead.title}
                 indexCode="001"
                 aspect="portrait"
+                priority
               />
             </div>
           </div>
@@ -382,7 +407,7 @@ export default function EditorialSpread({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {LAB_SECTORS.map((lab, idx) => {
-            const labArticles = articles.filter(a => a.lab === lab.id);
+            const labArticles = articlesByLab[lab.id] || [];
             const leadArt = labArticles[0];
 
             return (
@@ -509,7 +534,7 @@ export default function EditorialSpread({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
-          {articles.map((art, idx) => (
+          {catalogSlice.map((art, idx) => (
             <div
               key={`${art.id}_catalog_${idx}`}
               onClick={() => onSelectArticle(art)}
@@ -552,11 +577,11 @@ export default function EditorialSpread({
                     <button
                       onClick={(e) => onToggleBookmark(art.id, e)}
                       className={`hover:text-black cursor-pointer transition-colors ${
-                        bookmarkedIds.includes(art.id) ? 'text-black font-bold' : 'text-black/40'
+                        savedIdSet.has(art.id) ? 'text-black font-bold' : 'text-black/40'
                       }`}
-                      title={bookmarkedIds.includes(art.id) ? 'Saved' : 'Save article'}
+                      title={savedIdSet.has(art.id) ? 'Saved' : 'Save article'}
                     >
-                      [{bookmarkedIds.includes(art.id) ? '★' : '+ SAVE'}]
+                      [{savedIdSet.has(art.id) ? '★' : '+ SAVE'}]
                     </button>
                   )}
                   <span className="font-bold text-black flex items-center gap-1">
@@ -568,8 +593,24 @@ export default function EditorialSpread({
           ))}
         </div>
 
+        {remainingCount > 0 && (
+          <div className="mt-16 pt-8 border-t border-black/15 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
+            <span className="text-black/50">
+              SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
+            </span>
+            <button
+              onClick={() => setVisibleCatalogCount((prev) => prev + CATALOG_PAGE_SIZE)}
+              className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-colors cursor-pointer"
+            >
+              [LOAD MORE TELEMETRY (+{Math.min(CATALOG_PAGE_SIZE, remainingCount)})]
+            </button>
+          </div>
+        )}
+
       </section>
 
     </div>
   );
-}
+});
+
+export default EditorialSpread;
