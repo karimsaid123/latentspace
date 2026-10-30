@@ -20,8 +20,7 @@ export default function HomePage() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   
   // QoL States
-  const [lastSyncedTime, setLastSyncedTime] = useState<number>(0);
-  const [lastSyncedLabel, setLastSyncedLabel] = useState<string>('JUST NOW');
+  const [lastSyncedTime, setLastSyncedTime] = useState<number>(() => Date.now());
   const { savedIds, count: savedCount, toggleSave, isSaved, reconcile } = useSavedArticles();
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
@@ -115,27 +114,6 @@ export default function HomePage() {
     }
   }, []);
 
-  // Update relative time label (e.g. "JUST NOW", "30S AGO", "2M AGO")
-  useEffect(() => {
-    const updateLabel = () => {
-      if (!lastSyncedTime) {
-        setLastSyncedLabel('JUST NOW');
-        return;
-      }
-      const diffSec = Math.floor((Date.now() - lastSyncedTime) / 1000);
-      if (diffSec < 15) setLastSyncedLabel('JUST NOW');
-      else if (diffSec < 60) setLastSyncedLabel(`${diffSec}S AGO`);
-      else {
-        const mins = Math.floor(diffSec / 60);
-        setLastSyncedLabel(`${mins}M AGO`);
-      }
-    };
-
-    updateLabel();
-    const interval = setInterval(updateLabel, 15_000);
-    return () => clearInterval(interval);
-  }, [lastSyncedTime]);
-
   // Track window scroll for Back-To-Top button (rAF throttled)
   useEffect(() => {
     let ticking = false;
@@ -211,8 +189,10 @@ export default function HomePage() {
           setIncomingArticles(null);
           reconcile(data.articles);
         }
-        if (data.lastSyncedAt) {
+        if (data.lastSyncedAt && data.lastSyncedAt > 0) {
           setLastSyncedTime(data.lastSyncedAt);
+        } else {
+          setLastSyncedTime(Date.now());
         }
       }
     } catch (err: any) {
@@ -323,7 +303,7 @@ export default function HomePage() {
         onSync={handleSync}
         isSyncing={isSyncing}
         totalArticles={displayedArticles.length}
-        lastSyncedText={lastSyncedLabel}
+        lastSyncedTime={lastSyncedTime}
         savedCount={savedCount}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}

@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, memo } from 'react';
 import Link from 'next/link';
 import LiveClock from './LiveClock';
+import { LastSyncedIndicator } from './LastSyncedIndicator';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -14,6 +15,7 @@ interface MinimalNavProps {
   onSync: () => void;
   isSyncing: boolean;
   totalArticles: number;
+  lastSyncedTime?: number;
   lastSyncedText?: string;
   savedCount?: number;
   isSearchOpen: boolean;
@@ -42,6 +44,7 @@ const MinimalNav = memo(function MinimalNav({
   onSearch,
   onSync,
   isSyncing,
+  lastSyncedTime = 0,
   savedCount = 0,
   isSearchOpen,
   setIsSearchOpen,
@@ -103,15 +106,11 @@ const MinimalNav = memo(function MinimalNav({
             [{isSearchOpen ? 'CLOSE SEARCH' : 'SEARCH'}]
           </button>
 
-          <button
-            onClick={onSync}
-            disabled={isSyncing}
-            className="hover:text-black cursor-pointer transition-colors disabled:opacity-40 flex items-center gap-1.5 font-medium"
-            title="Force immediate telemetry ingestion"
-          >
-            {isSyncing && <span className="inline-block w-1.5 h-1.5 bg-black animate-spin" />}
-            [{isSyncing ? 'SYNCING...' : 'SYNC'}]
-          </button>
+          <LastSyncedIndicator
+            lastSyncedTime={lastSyncedTime}
+            isSyncing={isSyncing}
+            onSync={onSync}
+          />
 
           {/* Isolated 1Hz Clock completely on the right */}
           <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
