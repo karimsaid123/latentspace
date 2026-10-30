@@ -34,6 +34,7 @@ const EditorialSpread = memo(function EditorialSpread({
   onSelectLab,
 }: EditorialSpreadProps) {
   const [visibleCatalogCount, setVisibleCatalogCount] = useState(CATALOG_PAGE_SIZE);
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
 
   // Reset pagination whenever the article list identity changes
   useEffect(() => {
@@ -525,80 +526,103 @@ const EditorialSpread = memo(function EditorialSpread({
       ───────────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24">
         
-        <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-12">
+        <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-8">
           <span className="font-bold text-black">CATALOG ARCHIVE</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
-          {catalogSlice.map((art, idx) => (
-            <div
-              key={`${art.id}_catalog_${idx}`}
-              onClick={() => onSelectArticle(art)}
-              className="group cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+          {isCatalogOpen && (
+            <button
+              onClick={() => setIsCatalogOpen(false)}
+              className="text-black/40 hover:text-black cursor-pointer transition-colors"
             >
-              <div>
-                <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
-                  <span className="font-bold text-black group-hover:underline">[{art.source.name}]</span>
-                </div>
-
-                <div className="mb-4">
-                  <ArtFrame
-                    src={art.imageUrl}
-                    alt={art.title}
-                    indexCode={`REF_${(idx + 1).toString().padStart(3, '0')}`}
-                    aspect="landscape"
-                  />
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:text-black/70 transition-colors line-clamp-3 mb-3">
-                  {art.title}
-                </h3>
-
-                <p className="font-mono text-[10px] uppercase text-black/60 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed">
-                  {art.aiSummary?.tldr || art.contentSnippet || ''}
-                </p>
-              </div>
-
-              <div className="mt-4 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
-                <div className="flex items-center gap-2 truncate">
-                  <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
-                  <span className="text-black/30">•</span>
-                  <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
-                    {art.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 shrink-0">
-                  {onToggleBookmark && (
-                    <button
-                      onClick={(e) => onToggleBookmark(art.id, e)}
-                      className={`hover:text-black cursor-pointer transition-colors ${
-                        savedIdSet.has(art.id) ? 'text-black font-bold' : 'text-black/40'
-                      }`}
-                      title={savedIdSet.has(art.id) ? 'Saved' : 'Save article'}
-                    >
-                      [{savedIdSet.has(art.id) ? <span className="text-yellow-500">★</span> : '+ SAVE'}]
-                    </button>
-                  )}
-                  <span className="font-bold text-black flex items-center gap-1">
-                    READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+              [COLLAPSE ARCHIVE]
+            </button>
+          )}
         </div>
 
-        {remainingCount > 0 && (
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
+        {!isCatalogOpen ? (
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest py-8">
             <span className="text-black/50">
-              SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
+              SHOWING <strong className="text-black">0</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
             </span>
             <button
-              onClick={() => setVisibleCatalogCount((prev) => prev + CATALOG_PAGE_SIZE)}
-              className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-colors cursor-pointer"
+              onClick={() => setIsCatalogOpen(true)}
+              className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-all duration-300 hover:scale-[1.01] cursor-pointer"
             >
-              [LOAD MORE TELEMETRY (+{Math.min(CATALOG_PAGE_SIZE, remainingCount)})]
+              [LOAD ARCHIVE (+{Math.min(CATALOG_PAGE_SIZE, articles.length)})]
             </button>
+          </div>
+        ) : (
+          <div className="animate-fade-up">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+              {catalogSlice.map((art, idx) => (
+                <div
+                  key={`${art.id}_catalog_${idx}`}
+                  onClick={() => onSelectArticle(art)}
+                  className="group cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div>
+                    <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
+                      <span className="font-bold text-black group-hover:underline">[{art.source.name}]</span>
+                    </div>
+
+                    <div className="mb-4">
+                      <ArtFrame
+                        src={art.imageUrl}
+                        alt={art.title}
+                        aspect="landscape"
+                      />
+                    </div>
+
+                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:text-black/70 transition-colors line-clamp-3 mb-3">
+                      {art.title}
+                    </h3>
+
+                    <p className="font-mono text-[10px] uppercase text-black/60 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed">
+                      {art.aiSummary?.tldr || art.contentSnippet || ''}
+                    </p>
+                  </div>
+
+                  <div className="mt-4 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+                    <div className="flex items-center gap-2 truncate">
+                      <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
+                      <span className="text-black/30">•</span>
+                      <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
+                        {art.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3 shrink-0">
+                      {onToggleBookmark && (
+                        <button
+                          onClick={(e) => onToggleBookmark(art.id, e)}
+                          className={`hover:text-black cursor-pointer transition-colors ${
+                            savedIdSet.has(art.id) ? 'text-black font-bold' : 'text-black/40'
+                          }`}
+                          title={savedIdSet.has(art.id) ? 'Saved' : 'Save article'}
+                        >
+                          [{savedIdSet.has(art.id) ? <span className="text-yellow-500">★</span> : '+ SAVE'}]
+                        </button>
+                      )}
+                      <span className="font-bold text-black flex items-center gap-1">
+                        READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {remainingCount > 0 && (
+              <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
+                <span className="text-black/50">
+                  SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
+                </span>
+                <button
+                  onClick={() => setVisibleCatalogCount((prev) => prev + CATALOG_PAGE_SIZE)}
+                  className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-colors cursor-pointer"
+                >
+                  [LOAD MORE TELEMETRY (+{Math.min(CATALOG_PAGE_SIZE, remainingCount)})]
+                </button>
+              </div>
+            )}
           </div>
         )}
 
