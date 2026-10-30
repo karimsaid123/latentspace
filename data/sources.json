@@ -9,7 +9,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.083Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:15:40.966Z",
+    "lastFetchedAt": "2026-10-30T19:20:40.947Z",
     "consecutiveFailures": 0
   },
   {
@@ -22,8 +22,8 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.208Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:15:42.464Z",
-    "consecutiveFailures": 1
+    "lastFetchedAt": "2026-10-30T19:20:41.210Z",
+    "consecutiveFailures": 0
   },
   {
     "id": "techcrunch-ai",
@@ -35,7 +35,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.818Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:15:42.466Z",
+    "lastFetchedAt": "2026-10-30T19:20:41.336Z",
     "consecutiveFailures": 0
   },
   {
@@ -48,7 +48,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.924Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:15:42.766Z",
+    "lastFetchedAt": "2026-10-30T19:20:41.434Z",
     "consecutiveFailures": 0
   },
   {
@@ -61,7 +61,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.302Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T19:15:43.078Z",
+    "lastFetchedAt": "2026-10-30T19:20:41.541Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,7 +74,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.388Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T19:15:43.492Z",
+    "lastFetchedAt": "2026-10-30T19:20:41.776Z",
     "consecutiveFailures": 0
   },
   {
@@ -85,7 +85,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:43.677Z"
+    "lastFetchedAt": "2026-10-30T19:20:41.872Z"
   },
   {
     "id": "arxiv-cl",
@@ -95,7 +95,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:44.167Z"
+    "lastFetchedAt": "2026-10-30T19:20:42.082Z"
   },
   {
     "id": "techcrunch-xai",
@@ -105,7 +105,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:44.294Z"
+    "lastFetchedAt": "2026-10-30T19:20:42.118Z"
   },
   {
     "id": "techcrunch-spacex",
@@ -115,7 +115,7 @@
     "category": "Robotics & Hardware",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:44.377Z"
+    "lastFetchedAt": "2026-10-30T19:20:42.137Z"
   },
   {
     "id": "arxiv-xai",
@@ -125,7 +125,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:44.457Z"
+    "lastFetchedAt": "2026-10-30T19:20:42.164Z"
   },
   {
     "id": "techcrunch-anthropic",
@@ -135,6 +135,6 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-30T19:15:44.645Z"
+    "lastFetchedAt": "2026-10-30T19:20:42.248Z"
   }
 ]

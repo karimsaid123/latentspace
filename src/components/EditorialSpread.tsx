@@ -175,7 +175,7 @@ export default function EditorialSpread({
           <div className="lg:col-span-3 flex flex-col gap-10">
             {[third, fourth, fifth].map((item, idx) => (
               <div 
-                key={item.id} 
+                key={`${item.id}_stack_${idx}`} 
                 onClick={() => onSelectArticle(item)}
                 className="cursor-pointer max-w-[160px] sm:max-w-[190px]"
               >
@@ -379,9 +379,9 @@ export default function EditorialSpread({
                   {/* Secondary Lab Headlines */}
                   {labArticles.slice(1, 3).length > 0 && (
                     <div className="space-y-2.5 pt-4 border-t border-black/10 font-mono text-[9px]">
-                      {labArticles.slice(1, 3).map((art) => (
+                      {labArticles.slice(1, 3).map((art, aIdx) => (
                         <div
-                          key={art.id}
+                          key={`${art.id}_lab_${aIdx}`}
                           onClick={() => onSelectArticle(art)}
                           className="flex items-start gap-2 text-black/70 hover:text-black cursor-pointer uppercase truncate group/link"
                         >
@@ -424,7 +424,7 @@ export default function EditorialSpread({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
           {articles.map((art, idx) => (
             <div
-              key={art.id}
+              key={`${art.id}_catalog_${idx}`}
               onClick={() => onSelectArticle(art)}
               className="group cursor-pointer flex flex-col justify-between border-t border-black/30 hover:border-black pt-4 transition-all duration-300 hover:-translate-y-1"
             >
