@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { SourceRepositoryPort } from '@/core/ports/repository.port';
 import { DomainSource } from '@/core/domain/entities';
+import staticSourcesData from '../../../data/sources.json';
 
 const DEFAULT_SOURCES: DomainSource[] = [
   {
@@ -169,8 +170,15 @@ export class MemorySourceRepository implements SourceRepositoryPort {
 
   public async initialize(): Promise<void> {
     try {
-      const raw = await fs.readFile(this.storageFilePath, 'utf8');
-      const loaded: DomainSource[] = JSON.parse(raw);
+      let loaded: DomainSource[] = [];
+      try {
+        const raw = await fs.readFile(this.storageFilePath, 'utf8');
+        loaded = JSON.parse(raw);
+      } catch {
+        // Fallback to statically bundled sources for Cloudflare Workers / Edge
+        loaded = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
+      }
+
       for (const s of loaded) {
         this.sources.set(s.id, s);
       }
@@ -186,10 +194,10 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       }
     } catch {
       // Seed default sources
-      for (const s of DEFAULT_SOURCES) {
+      const seed = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
+      for (const s of seed) {
         this.sources.set(s.id, s);
       }
-      await this.persist();
     }
   }
 
@@ -226,6 +234,10 @@ export class MemorySourceRepository implements SourceRepositoryPort {
   }
 
   private async persist(): Promise<void> {
+    // Cloudflare Workers and serverless edge runtimes have no writable filesystem
+    if (typeof process === 'undefined' || process.env.CF_PAGES || process.env.WORKERS) {
+      return;
+    }
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
@@ -234,7 +246,7 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
     } catch (err) {
-      console.warn('Failed to persist sources to disk:', err);
+      // Gracefully ignore on read-only environments
     }
   }
 }

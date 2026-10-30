@@ -3,6 +3,9 @@ import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(request: NextRequest) {
   const requestId = `req_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
   const startTime = Date.now();

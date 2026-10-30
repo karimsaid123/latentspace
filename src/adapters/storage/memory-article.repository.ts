@@ -4,6 +4,7 @@ import { ArticleFilter, ArticleRepositoryPort } from '@/core/ports/repository.po
 import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
+import staticArticlesData from '../../../data/articles.json';
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, DomainArticle>();
@@ -15,8 +16,19 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
   public async initialize(): Promise<void> {
     try {
-      const raw = await fs.readFile(this.storageFilePath, 'utf8');
-      const loaded: any[] = JSON.parse(raw);
+      let loaded: any[] = [];
+      try {
+        const raw = await fs.readFile(this.storageFilePath, 'utf8');
+        loaded = JSON.parse(raw);
+      } catch {
+        // Fallback to statically bundled articles for Cloudflare Workers / Edge / Serverless
+        loaded = staticArticlesData as any[];
+      }
+
+      if (!loaded || loaded.length === 0) {
+        loaded = staticArticlesData as any[];
+      }
+
       for (const item of loaded) {
         const title = decodeHtmlEntities(item.title || '');
         const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
@@ -136,6 +148,10 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   }
 
   private async persist(): Promise<void> {
+    // Cloudflare Workers and serverless edge runtimes have no writable filesystem
+    if (typeof process === 'undefined' || process.env.CF_PAGES || process.env.WORKERS) {
+      return;
+    }
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
@@ -144,7 +160,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
     } catch (err) {
-      console.warn('Failed to persist articles to disk:', err);
+      // Gracefully ignore on read-only environments
     }
   }
 }

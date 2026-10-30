@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function POST(request: NextRequest) {
   const requestId = `sync_${Date.now()}`;
   const startTime = Date.now();
