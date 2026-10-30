@@ -203,7 +203,7 @@ export default function BenchmarksPage() {
               className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black/35 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
               title="View your saved articles dossier"
             >
-              <span>[★ SAVED]</span>
+              <span>[<span className="text-yellow-500">★</span> SAVED]</span>
             </Link>
 
             {/* Isolated 1Hz Clock on the far right */}

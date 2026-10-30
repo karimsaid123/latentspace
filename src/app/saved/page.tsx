@@ -221,7 +221,7 @@ export default function SavedPage() {
             </Link>
             <span className="text-black/30 hidden sm:inline">//</span>
             <span className="font-bold text-black text-xs hidden sm:inline">
-              [SAVED DOSSIER]
+              [<span className="text-yellow-500">★</span> SAVED DOSSIER]
             </span>
           </div>
 

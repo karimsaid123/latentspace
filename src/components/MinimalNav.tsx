@@ -83,7 +83,7 @@ const MinimalNav = memo(function MinimalNav({
             className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
             title="Open your saved articles dossier"
           >
-            [★ SAVED ({savedCount})]
+            [<span className="text-yellow-500">★</span> SAVED ({savedCount})]
           </Link>
 
           <Link
@@ -163,15 +163,6 @@ const MinimalNav = memo(function MinimalNav({
               </button>
             );
           })}
-
-          {/* Saved / Bookmarks Link */}
-          <Link
-            href="/saved"
-            className="hover:text-black transition-colors shrink-0 cursor-pointer ml-auto sm:ml-0 font-mono tracking-wider text-black/60 hover:text-black font-bold"
-            title="Go to Saved Telemetry Dossier"
-          >
-            [★ SAVED ({savedCount})]
-          </Link>
         </div>
 
         {/* Publication Format Selector */}
