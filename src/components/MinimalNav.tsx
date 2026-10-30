@@ -76,10 +76,10 @@ export default function MinimalNav({
   }, [isSearchOpen]);
 
   return (
-    <header className="w-full pt-8 pb-5 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
+    <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="relative flex items-center justify-between border-b border-black/15 pb-5 overflow-hidden gap-6">
+      <div className="relative flex items-center justify-between border-b border-black/15 pb-3.5 overflow-hidden gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
@@ -87,22 +87,22 @@ export default function MinimalNav({
         )}
 
         {/* Brand */}
-        <div className="flex items-center gap-4">
-          <span className="font-black text-xl sm:text-2xl tracking-tight text-black flex items-center gap-2.5">
+        <div className="flex items-center gap-3">
+          <span className="font-black text-base sm:text-lg tracking-tight text-black flex items-center gap-2">
             LATENT SPACE
-            <span className="relative flex h-2 w-2" title="Live System">
+            <span className="relative flex h-1.5 w-1.5" title="Live System">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
             </span>
           </span>
         </div>
 
         {/* Minimal Controls */}
-        <div className="flex items-center gap-6 sm:gap-8 text-black/70 text-xs sm:text-[13px]">
+        <div className="flex items-center gap-5 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
           <Link
             href="/benchmarks"
             scroll={true}
-            className="border border-black/40 hover:border-black px-3.5 py-1.5 text-black font-mono text-xs sm:text-[13px] font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+            className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
             [BENCHMARKS & STATS]
@@ -122,12 +122,12 @@ export default function MinimalNav({
             className="hover:text-black cursor-pointer transition-colors disabled:opacity-40 flex items-center gap-1.5 font-medium"
             title="Force immediate telemetry ingestion"
           >
-            {isSyncing && <span className="inline-block w-2 h-2 bg-black animate-spin" />}
+            {isSyncing && <span className="inline-block w-1.5 h-1.5 bg-black animate-spin" />}
             [{isSyncing ? 'SYNCING...' : 'SYNC'}]
           </button>
 
           {/* Time ONLY completely on the right */}
-          <div className="text-right hidden sm:block font-bold text-black font-mono text-sm sm:text-base tracking-wider pl-4 border-l-2 border-black/20">
+          <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
             {currentTime || '--:--:--'}
           </div>
         </div>
@@ -136,19 +136,19 @@ export default function MinimalNav({
 
       {/* Inline Search Bar if toggled */}
       {isSearchOpen && (
-        <div className="pt-4 pb-3 border-b border-black animate-fade-in flex items-center justify-between gap-4">
+        <div className="pt-3.5 pb-2.5 border-b border-black animate-fade-in flex items-center justify-between gap-4">
           <input
             ref={searchInputRef}
             type="text"
             value={searchQuery}
             onChange={(e) => onSearch(e.target.value)}
             placeholder="TYPE TO FILTER TELEMETRY (PRESS ESC TO EXIT)..."
-            className="w-full bg-transparent font-mono text-sm sm:text-base uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
+            className="w-full bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
           />
           {searchQuery && (
             <button
               onClick={() => onSearch('')}
-              className="font-mono text-xs text-black/50 hover:text-black cursor-pointer font-bold"
+              className="font-mono text-[10px] text-black/50 hover:text-black cursor-pointer font-bold"
             >
               [CLEAR]
             </button>
@@ -157,11 +157,11 @@ export default function MinimalNav({
       )}
 
       {/* Frontier Labs & Publications Filter Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-4 pb-1 text-xs sm:text-[13px] text-black/60">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5 pt-3 pb-0.5 text-[11px] sm:text-xs text-black/60">
         
         {/* Lab Sectors */}
-        <div className="flex items-center gap-3.5 sm:gap-4 overflow-x-auto no-scrollbar">
-          <span className="text-black font-black shrink-0 tracking-wider">LAB SECTOR:</span>
+        <div className="flex items-center gap-3 sm:gap-3.5 overflow-x-auto no-scrollbar">
+          <span className="text-black font-bold shrink-0 tracking-wider">LAB SECTOR:</span>
           {LAB_FILTERS.map((lab) => {
             const isSelected = selectedLab === lab.id;
             return (
@@ -191,8 +191,8 @@ export default function MinimalNav({
         </div>
 
         {/* Publication Format Selector */}
-        <div className="flex items-center gap-3.5 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider">
-          <span className="text-black font-black shrink-0">TYPE:</span>
+        <div className="flex items-center gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider">
+          <span className="text-black font-bold shrink-0">TYPE:</span>
           <button
             onClick={() => onSelectType('ALL')}
             className={`hover:text-black transition-colors cursor-pointer ${
