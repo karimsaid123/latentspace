@@ -181,43 +181,43 @@ export default function BenchmarksPage() {
       {/* ─────────────────────────────────────────────────────────────
           MINIMAL HEADER / TOP NAVIGATION
       ───────────────────────────────────────────────────────────── */}
-      <header className="w-full pt-8 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono text-[10px] tracking-widest uppercase border-b border-black/10">
-        <div className="flex items-center justify-between pb-4 gap-4">
+      <header className="w-full pt-8 pb-5 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase border-b border-black/15">
+        <div className="flex items-center justify-between pb-5 gap-6">
           
           {/* Brand & Breadcrumb */}
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
             <Link
               href="/"
-              className="font-black text-sm tracking-tighter text-black flex items-center gap-2 hover:opacity-75 transition-opacity"
+              className="font-black text-xl sm:text-2xl tracking-tight text-black flex items-center gap-2.5 hover:opacity-75 transition-opacity"
             >
               LATENT SPACE
-              <span className="relative flex h-1.5 w-1.5">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
               </span>
             </Link>
 
-            <span className="text-black/30 hidden md:inline">/</span>
+            <span className="text-black/30 hidden md:inline text-lg">/</span>
 
-            <span className="text-black/60 font-mono text-[9px] hidden sm:inline">
+            <span className="text-black/60 font-mono text-xs sm:text-[13px] hidden sm:inline tracking-wider">
               INDEX // 000 // ARTIFICIAL ANALYSIS BENCHMARKS
             </span>
           </div>
 
           {/* Controls & Navigation */}
-          <div className="flex items-center gap-5 sm:gap-6 text-black/60">
+          <div className="flex items-center gap-6 sm:gap-8 text-black/70 text-xs sm:text-[13px]">
             <Link
               href="/"
               scroll={true}
-              className="hover:text-black cursor-pointer transition-colors text-black font-bold flex items-center gap-1.5 border border-black/30 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
+              className="hover:text-black cursor-pointer transition-colors text-black font-bold flex items-center gap-2 border border-black/40 hover:border-black px-3.5 py-1.5 hover:bg-black/[0.04]"
               title="Return to Frontier Feed"
             >
-              <ArrowLeft className="w-3 h-3" />
+              <ArrowLeft className="w-3.5 h-3.5" />
               <span>[← RETURN TO FEED]</span>
             </Link>
 
             {/* Time on the far right */}
-            <div className="text-right hidden sm:block font-bold text-black font-mono text-xs tracking-wider pl-3 border-l border-black/15">
+            <div className="text-right hidden sm:block font-bold text-black font-mono text-sm sm:text-base tracking-wider pl-4 border-l-2 border-black/20">
               {currentTime || '--:--:--'}
             </div>
           </div>
