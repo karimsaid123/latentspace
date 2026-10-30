@@ -104,9 +104,14 @@ export default function HomePage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Load articles
-  const loadArticles = useCallback(async (category = selectedCategory, search = searchQuery, isSilent = false) => {
-    if (!isSilent) setIsLoading(true);
+  // Load articles with stable ref to prevent infinite re-render loops
+  const articlesRef = React.useRef<Article[]>([]);
+  articlesRef.current = articles;
+
+  const fetchArticles = useCallback(async (category: string, search: string, isSilent = false) => {
+    if (!isSilent && articlesRef.current.length === 0) {
+      setIsLoading(true);
+    }
     try {
       const params = new URLSearchParams();
       if (category && category !== 'All' && category !== 'SAVED') params.set('category', category);
@@ -116,9 +121,8 @@ export default function HomePage() {
       const data = await res.json();
       
       if (data.articles) {
-        if (isSilent && window.scrollY > 150 && articles.length > 0) {
-          // If user is scrolled down, compare to see if new articles were ingested
-          const currentIds = new Set(articles.map((a) => a.id));
+        if (isSilent && typeof window !== 'undefined' && window.scrollY > 150 && articlesRef.current.length > 0) {
+          const currentIds = new Set(articlesRef.current.map((a) => a.id));
           const newItems = data.articles.filter((a: Article) => !currentIds.has(a.id));
           if (newItems.length > 0) {
             setIncomingArticles(data.articles);
@@ -134,31 +138,35 @@ export default function HomePage() {
     } catch (err) {
       console.error('Failed to load articles:', err);
     } finally {
-      if (!isSilent) setIsLoading(false);
+      setIsLoading(false);
     }
-  }, [selectedCategory, searchQuery, articles]);
+  }, []);
 
-  // Initial load
+  // Category change or initial load
   useEffect(() => {
-    loadArticles(selectedCategory, searchQuery, false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCategory]);
+    fetchArticles(selectedCategory, searchQuery, false);
+  }, [selectedCategory, fetchArticles]);
 
-  // Debounced search
+  // Debounced search (only triggers when searchQuery changes)
+  const isSearchMounted = React.useRef(false);
   useEffect(() => {
+    if (!isSearchMounted.current) {
+      isSearchMounted.current = true;
+      return;
+    }
     const timer = setTimeout(() => {
-      loadArticles(selectedCategory, searchQuery, false);
-    }, 250);
+      fetchArticles(selectedCategory, searchQuery, false);
+    }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery, selectedCategory, loadArticles]);
+  }, [searchQuery, selectedCategory, fetchArticles]);
 
   // Autonomous background polling (Every 45 seconds)
   useEffect(() => {
     const pollInterval = setInterval(() => {
-      loadArticles(selectedCategory, searchQuery, true);
+      fetchArticles(selectedCategory, searchQuery, true);
     }, 45_000);
     return () => clearInterval(pollInterval);
-  }, [loadArticles, selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, fetchArticles]);
 
   // Manual Force Sync
   const handleSync = async () => {
@@ -167,7 +175,7 @@ export default function HomePage() {
       await fetch('/api/sync', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
-      await loadArticles(selectedCategory, searchQuery, false);
+      await fetchArticles(selectedCategory, searchQuery, false);
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {
