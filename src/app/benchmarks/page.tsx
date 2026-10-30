@@ -187,20 +187,21 @@ export default function BenchmarksPage() {
           </div>
 
           {/* Controls & Navigation */}
-          <div className="flex items-center gap-4 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
             <Link
               href="/"
               scroll={true}
-              className="hover:text-black cursor-pointer transition-colors text-black font-bold flex items-center gap-1.5 border border-black/35 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
+              className="hover:text-black cursor-pointer transition-colors text-black font-bold flex items-center gap-1.5 border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 hover:bg-black/[0.04] whitespace-nowrap"
               title="Return to Frontier Feed"
             >
               <ArrowLeft className="w-3 h-3" />
-              <span>[← RETURN TO FEED]</span>
+              <span className="sm:hidden">[← FEED]</span>
+              <span className="hidden sm:inline">[← RETURN TO FEED]</span>
             </Link>
 
             <Link
               href="/saved"
-              className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black/35 hover:border-black px-2.5 py-1 hover:bg-black/[0.04]"
+              className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 hover:bg-black/[0.04] whitespace-nowrap"
               title="View your saved articles dossier"
             >
               <span>[<span className="text-yellow-500">★</span> SAVED]</span>

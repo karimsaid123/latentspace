@@ -226,20 +226,22 @@ export default function SavedPage() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-4 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
             <Link
               href="/"
-              className="hover:text-black transition-colors font-medium flex items-center gap-1.5"
+              className="hover:text-black transition-colors font-medium flex items-center gap-1.5 whitespace-nowrap"
             >
               <ArrowLeft className="w-3 h-3" />
-              <span>[← EDITORIAL]</span>
+              <span className="sm:hidden">[← FEED]</span>
+              <span className="hidden sm:inline">[← EDITORIAL]</span>
             </Link>
 
             <Link
               href="/benchmarks"
-              className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+              className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
             >
-              [BENCHMARKS & STATS]
+              <span className="sm:hidden">[STATS]</span>
+              <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
             </Link>
 
             {/* Isolated 1Hz Clock on the right */}

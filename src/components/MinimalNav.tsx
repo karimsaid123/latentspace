@@ -61,7 +61,7 @@ const MinimalNav = memo(function MinimalNav({
     <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="relative flex items-center justify-between border-b border-black/15 pb-3.5 overflow-hidden gap-4">
+      <div className="relative flex items-center justify-between border-b border-black/15 pb-3 overflow-hidden gap-2 sm:gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
@@ -69,8 +69,8 @@ const MinimalNav = memo(function MinimalNav({
         )}
 
         {/* Brand */}
-        <div className="flex items-center gap-3">
-          <span className="font-black text-base sm:text-lg tracking-tight text-black flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <span className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2">
             LATENT SPACE
             <span className="relative flex h-1.5 w-1.5" title="Live System">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
@@ -80,37 +80,41 @@ const MinimalNav = memo(function MinimalNav({
         </div>
 
         {/* Minimal Controls */}
-        <div className="flex items-center gap-4 sm:gap-6 text-black/70 text-[11px] sm:text-xs">
+        <div className="flex items-center gap-2 sm:gap-4 md:gap-6 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
           <Link
             href="/saved"
-            className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+            className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
             title="Open your saved articles dossier"
           >
-            [<span className="text-yellow-500">★</span> SAVED ({savedCount})]
+            <span className="sm:hidden">[<span className="text-yellow-500">★</span> {savedCount}]</span>
+            <span className="hidden sm:inline">[<span className="text-yellow-500">★</span> SAVED ({savedCount})]</span>
           </Link>
 
           <Link
             href="/benchmarks"
             scroll={true}
-            className="border border-black/35 hover:border-black px-2.5 py-1 text-black font-mono text-[11px] sm:text-xs font-bold tracking-wider hover:bg-black/[0.04] transition-colors inline-block"
+            className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
-            [BENCHMARKS & STATS]
+            <span className="sm:hidden">[STATS]</span>
+            <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
           </Link>
 
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hover:text-black cursor-pointer transition-colors font-medium"
+            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap"
             title="Press '/' to search anywhere"
           >
-            [{isSearchOpen ? 'CLOSE SEARCH' : 'SEARCH'}]
+            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
           </button>
 
-          <LastSyncedIndicator
-            lastSyncedTime={lastSyncedTime}
-            isSyncing={isSyncing}
-            onSync={onSync}
-          />
+          <div className="hidden md:block shrink-0">
+            <LastSyncedIndicator
+              lastSyncedTime={lastSyncedTime}
+              isSyncing={isSyncing}
+              onSync={onSync}
+            />
+          </div>
 
           {/* Isolated 1Hz Clock completely on the right */}
           <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
@@ -134,7 +138,7 @@ const MinimalNav = memo(function MinimalNav({
           {searchQuery && (
             <button
               onClick={() => onSearch('')}
-              className="font-mono text-[10px] text-black/50 hover:text-black cursor-pointer font-bold"
+              className="font-mono text-[10px] text-black/50 hover:text-black cursor-pointer font-bold shrink-0"
             >
               [CLEAR]
             </button>
@@ -143,10 +147,10 @@ const MinimalNav = memo(function MinimalNav({
       )}
 
       {/* Frontier Labs & Publications Filter Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3.5 pt-3 pb-0.5 text-[11px] sm:text-xs text-black/60">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60">
         
         {/* Lab Sectors */}
-        <div className="flex items-center gap-3 sm:gap-3.5 overflow-x-auto no-scrollbar">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-6 px-6 sm:mx-0 sm:px-0">
           <span className="text-black font-bold shrink-0 tracking-wider">LAB SECTOR:</span>
           {LAB_FILTERS.map((lab) => {
             const isSelected = selectedLab === lab.id;
@@ -154,7 +158,7 @@ const MinimalNav = memo(function MinimalNav({
               <button
                 key={lab.id}
                 onClick={() => onSelectLab(lab.id)}
-                className={`hover:text-black transition-colors shrink-0 cursor-pointer font-mono tracking-wider ${
+                className={`hover:text-black transition-colors shrink-0 cursor-pointer font-mono tracking-wider whitespace-nowrap ${
                   isSelected ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
                 }`}
               >
@@ -165,11 +169,11 @@ const MinimalNav = memo(function MinimalNav({
         </div>
 
         {/* Publication Format Selector */}
-        <div className="flex items-center gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider">
+        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1">
           <span className="text-black font-bold shrink-0">TYPE:</span>
           <button
             onClick={() => onSelectType('ALL')}
-            className={`hover:text-black transition-colors cursor-pointer ${
+            className={`hover:text-black transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
               selectedType === 'ALL' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
@@ -177,7 +181,7 @@ const MinimalNav = memo(function MinimalNav({
           </button>
           <button
             onClick={() => onSelectType('DISPATCH')}
-            className={`hover:text-black transition-colors cursor-pointer ${
+            className={`hover:text-black transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
               selectedType === 'DISPATCH' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
@@ -185,7 +189,7 @@ const MinimalNav = memo(function MinimalNav({
           </button>
           <button
             onClick={() => onSelectType('RESEARCH_PAPER')}
-            className={`hover:text-black transition-colors cursor-pointer flex items-center gap-1 ${
+            className={`hover:text-black transition-colors cursor-pointer flex items-center gap-1 shrink-0 whitespace-nowrap ${
               selectedType === 'RESEARCH_PAPER' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
