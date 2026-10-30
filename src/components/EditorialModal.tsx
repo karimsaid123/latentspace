@@ -1,23 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
-import { X, Bookmark, ExternalLink, Share2, Check } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface EditorialModalProps {
   article: Article | null;
   onClose: () => void;
-  onToggleBookmark: (id: string, e: React.MouseEvent) => void;
 }
 
 export default function EditorialModal({
   article,
   onClose,
-  onToggleBookmark,
 }: EditorialModalProps) {
-  const [copied, setCopied] = useState(false);
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -28,103 +24,78 @@ export default function EditorialModal({
 
   if (!article) return null;
 
-  const handleShare = () => {
-    navigator.clipboard.writeText(article.link);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-xs select-none">
       <div className="fixed inset-0" onClick={onClose} />
 
-      {/* Industrial Specimen Sheet */}
-      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#f4f3ef] dark:bg-[#0d0d0d] text-black dark:text-white border-2 border-black dark:border-white z-10 overflow-hidden shadow-2xl">
+      {/* Minimalist Specimen Sheet */}
+      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl">
         
         {/* 4 Corner Bounding Box Square Handles */}
-        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-black dark:bg-white z-30" />
-        <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-black dark:bg-white z-30" />
-        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-black dark:bg-white z-30" />
-        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-black dark:bg-white z-30" />
+        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-black z-30" />
+        <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-black z-30" />
+        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-black z-30" />
+        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-black z-30" />
 
-        {/* Header Telemetry */}
-        <div className="flex items-center justify-between px-6 py-3 border-b border-black/15 dark:border-white/15 font-mono text-[10px] uppercase tracking-widest text-black/60 dark:text-white/60">
+        {/* Top Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[9px] uppercase tracking-widest text-black/60">
           <div>
             <span>SPECIMEN // {article.id.slice(0, 8)}</span>
-            <span className="ml-3 font-bold text-black dark:text-white">"{article.source.name}"</span>
+            <span className="ml-3 font-bold text-black">[{article.source.name}]</span>
           </div>
 
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleShare}
-              className="hover:text-black dark:hover:text-white cursor-pointer"
-            >
-              [{copied ? 'COPIED' : 'SHARE'}]
-            </button>
-            <button
-              onClick={(e) => onToggleBookmark(article.id, e)}
-              className="hover:text-black dark:hover:text-white cursor-pointer"
-            >
-              [{article.bookmarked ? 'SAVED ★' : 'SAVE'}]
-            </button>
-            <button
-              onClick={onClose}
-              className="font-bold text-black dark:text-white hover:text-[#ff3b00] cursor-pointer"
-            >
-              [CLOSE ✕]
-            </button>
-          </div>
+          <button
+            onClick={onClose}
+            className="font-bold text-black hover:opacity-60 cursor-pointer"
+          >
+            [CLOSE ✕]
+          </button>
         </div>
 
-        {/* Body Content */}
+        {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 select-text">
           
-          {/* Title */}
           <div>
-            <div className="font-mono text-[9px] tracking-widest uppercase text-black/50 dark:text-white/50 mb-2">
-              0.1 PSYCHO // CATEGORY: "{article.category}"
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.9] text-black dark:text-white">
+            <span className="font-mono text-[9px] tracking-widest uppercase text-black/40 block mb-2">
+              0.1 PSYCHO // "{article.category}"
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black">
               {article.title}
             </h2>
           </div>
 
-          {/* Optional Art Frame */}
           {article.imageUrl && (
-            <div className="max-w-md">
+            <div className="max-w-sm">
               <ArtFrame
                 src={article.imageUrl}
                 alt={article.title}
-                indexCode="SPECIMEN_ART"
-                subTag="0.1 COGNITION"
-                aspect="wide"
+                indexCode="001"
+                subTag="0.1 PSYCHO"
+                aspect="landscape"
               />
             </div>
           )}
 
-          {/* AI Executive TL;DR Box */}
-          <div className="p-6 bg-black/5 dark:bg-white/5 border-l-4 border-black dark:border-white">
-            <div className="font-mono text-xs font-bold uppercase tracking-widest text-black dark:text-white mb-2 flex items-center justify-between">
-              <span>"AI TL;DR EXECUTIVE SUMMARY"</span>
-              <span className="text-[10px] text-[#ff3b00]">
-                IMPACT: {article.aiSummary.impact}
-              </span>
-            </div>
-            <p className="font-mono text-xs sm:text-sm uppercase leading-relaxed text-black/90 dark:text-white/90">
+          {/* AI TLDR Box */}
+          <div className="p-6 bg-black/[0.03] border-l-2 border-black font-mono text-xs">
+            <span className="text-[10px] font-bold uppercase tracking-widest block mb-2">
+              "AI TL;DR EXECUTIVE SUMMARY"
+            </span>
+            <p className="uppercase leading-relaxed text-black/90">
               {article.aiSummary.tldr}
             </p>
           </div>
 
-          {/* Key Takeaways */}
+          {/* Takeaways */}
           {article.aiSummary.takeaways && article.aiSummary.takeaways.length > 0 && (
             <div className="font-mono text-xs space-y-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 block">
-                "AI TAKEAWAYS":
+              <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
+                BELANGRIJKSTE INZICHTEN:
               </span>
               <ul className="space-y-2">
                 {article.aiSummary.takeaways.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 uppercase text-black/80 dark:text-white/80">
-                    <span className="text-[#ff3b00] font-bold">—</span>
+                  <li key={idx} className="flex items-start gap-3 uppercase text-black/80">
+                    <span className="font-bold">—</span>
                     <span>{point}</span>
                   </li>
                 ))}
@@ -132,13 +103,13 @@ export default function EditorialModal({
             </div>
           )}
 
-          {/* Raw Excerpt */}
+          {/* Snippet */}
           {article.contentSnippet && (
-            <div className="font-mono text-xs space-y-2 pt-4 border-t border-black/10 dark:border-white/10">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-black/50 dark:text-white/50 block">
-                "RAW CONTENT SNIPPET":
+            <div className="font-mono text-xs space-y-2 pt-4 border-t border-black/10">
+              <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
+                CONTENT SNIPPET:
               </span>
-              <p className="text-black/70 dark:text-white/70 leading-relaxed uppercase">
+              <p className="text-black/60 leading-relaxed uppercase">
                 {article.contentSnippet}
               </p>
             </div>
@@ -147,19 +118,19 @@ export default function EditorialModal({
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-black/15 dark:border-white/15 flex items-center justify-between font-mono text-xs">
-          <span className="text-black/50 dark:text-white/50 text-[10px]">
-            DATE: {new Date(article.pubDate).toISOString()}
+        <div className="px-6 py-4 border-t border-black/10 flex items-center justify-between font-mono text-[10px]">
+          <span className="text-black/40">
+            {new Date(article.pubDate).toLocaleDateString()}
           </span>
 
           <a
             href={article.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 font-bold uppercase bg-black text-white dark:bg-white dark:text-black hover:bg-[#ff3b00] dark:hover:bg-[#ff3b00] dark:hover:text-white transition-colors"
+            className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
           >
-            <span>"READ ORIGINAL ON {article.source.name}"</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <span>LEES OP {article.source.name}</span>
+            <ExternalLink className="w-3 h-3" />
           </a>
         </div>
 

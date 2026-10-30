@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NeuralPulse AI | Real-Time AI News & Intelligence",
-  description: "Automated, classified, and AI-summarized intelligence from OpenAI, Google DeepMind, The Verge, TechCrunch, Hugging Face, and leading AI labs.",
+  title: "NEURAL PULSE // AI INTELLIGENCE",
+  description: "Autonomous real-time AI news summarized & classified.",
 };
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="nl"
-      className={`${geistSans.variable} ${geistMono.variable} dark`}
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col antialiased bg-slate-50 dark:bg-[#090d16] text-slate-900 dark:text-slate-100">
+      <body className="min-h-screen bg-[#faf9f6] text-black antialiased selection:bg-black selection:text-white">
         {children}
       </body>
     </html>

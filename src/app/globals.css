@@ -1,50 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f3ef;
+  --background: #faf9f6;
   --foreground: #000000;
-  --card: #eae8e1;
-  --card-foreground: #000000;
-  --border: #dcdad2;
-  --muted: #e4e2da;
-  --muted-foreground: #66645e;
-  --accent: #ff3b00;
-  --accent-blue: #0038ff;
+  --border: rgba(0, 0, 0, 0.08);
 }
 
-.dark {
-  --background: #0d0d0d;
-  --foreground: #f4f3ef;
-  --card: #141414;
-  --card-foreground: #f4f3ef;
-  --border: #222222;
-  --muted: #1c1c1c;
-  --muted-foreground: #888680;
-  --accent: #ff4d1a;
-  --accent-blue: #2e66ff;
-}
-
-body {
+html, body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-geist-sans), "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   overflow-x: hidden;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Hairline technical grid rules */
-.bg-hairline-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-}
-
-.dark .bg-hairline-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 /* Vertical text layout like in Image 3 */
@@ -53,10 +21,9 @@ body {
   transform: rotate(180deg);
 }
 
-/* Custom minimal scrollbar */
+/* Minimalist scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
-  height: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -64,35 +31,17 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #000000;
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #f4f3ef;
-}
 
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Subtle corner square bounding box */
+.corner-box {
+  position: relative;
 }
-
-.animate-spin-slow {
-  animation: spinSlow 20s linear infinite;
-}
-
-/* Off-White typography styles */
-.offwhite-title {
-  font-family: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  line-height: 0.88;
-  text-transform: uppercase;
-}
-
-.mono-meta {
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.corner-box::before,
+.corner-box::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #000000;
+  z-index: 20;
 }
