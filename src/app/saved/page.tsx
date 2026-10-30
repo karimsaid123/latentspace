@@ -261,8 +261,6 @@ export default function SavedPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2 flex items-center gap-2">
-                <span>INDEX // 099</span>
-                <span>•</span>
                 <span>PERSONAL INTELLIGENCE DOSSIER</span>
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.88] text-black">

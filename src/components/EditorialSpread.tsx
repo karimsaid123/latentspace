@@ -16,14 +16,14 @@ interface EditorialSpreadProps {
 }
 
 const LAB_SECTORS = [
-  { id: 'OpenAI', name: 'OPENAI', short: 'OPENAI', location: 'SAN FRANCISCO // REASONING MATRIX & SCALING' },
-  { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND', location: 'LONDON • MT VIEW // ORBITAL COMPUTE & GEMINI' },
-  { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC', location: 'SAN FRANCISCO // CONSTITUTIONAL REASONING & CLAUDE' },
-  { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI', location: 'MEMPHIS • AUSTIN // COLOSSUS CLUSTERS & STARLINK' },
-  { id: 'Mistral AI', name: 'MISTRAL AI', short: 'MISTRAL', location: 'PARIS // SOVEREIGN OPEN WEIGHTS & MIXTRAL' },
-  { id: 'Moonshot AI', name: 'MOONSHOT AI & KIMI', short: 'KIMI', location: 'BEIJING // ULTRA-LONG CONTEXT & KIMI K-SERIES' },
-  { id: 'Meta AI', name: 'META AI', short: 'META', location: 'MENLO PARK • PARIS // OPEN WEIGHTS & LLAMA ECOSYSTEM' },
-  { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA', location: 'SANTA CLARA // BLACKWELL HARDWARE & ACCELERATION' },
+  { id: 'OpenAI', name: 'OPENAI', short: 'OPENAI' },
+  { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND' },
+  { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC' },
+  { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI' },
+  { id: 'Mistral AI', name: 'MISTRAL AI', short: 'MISTRAL' },
+  { id: 'Moonshot AI', name: 'MOONSHOT AI & KIMI', short: 'KIMI' },
+  { id: 'Meta AI', name: 'META AI', short: 'META' },
+  { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA' },
 ];
 
 const EditorialSpread = memo(function EditorialSpread({
@@ -72,15 +72,6 @@ const EditorialSpread = memo(function EditorialSpread({
       ───────────────────────────────────────────────────────────── */}
       <section className="relative pt-6 pb-28 border-b border-black/10 animate-fade-up">
         
-        {/* Top Header Row */}
-        <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>INDEX // 001</span>
-          <span className="flex items-center gap-2">
-            <span className="inline-block w-1.5 h-1.5 bg-black rounded-full animate-pulse" />
-            FRONTIER AI BULLETIN
-          </span>
-        </div>
-
         {/* Lead Giant Headline */}
         <div className="relative mb-14">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
@@ -92,7 +83,6 @@ const EditorialSpread = memo(function EditorialSpread({
             </h1>
             
             <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase shrink-0 pt-3">
-              <span>001</span><br />
               <span>[{lead.source.name}]</span>
             </div>
           </div>
@@ -149,7 +139,7 @@ const EditorialSpread = memo(function EditorialSpread({
               className="cursor-pointer mb-10 group"
             >
               <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
-                <span>INDEX // 002 // [{second.source.name}]</span>
+                <span>[{second.source.name}]</span>
                 {onToggleBookmark && (
                   <button
                     onClick={(e) => {
@@ -201,7 +191,7 @@ const EditorialSpread = memo(function EditorialSpread({
           <span className="text-black/30">▪</span>
           <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
           <span className="text-black/30">▪</span>
-          <span>ZERO-LATENCY INGESTION // SAN FRANCISCO • LONDON • PARIS • TOKYO</span>
+          <span>ZERO-LATENCY INGESTION // GLOBAL NETWORK</span>
           <span className="text-black/30">▪</span>
           <span>LATENT SPACE // AUTONOMOUS AI TELEMETRY</span>
           <span className="text-black/30">▪</span>
@@ -209,7 +199,7 @@ const EditorialSpread = memo(function EditorialSpread({
           <span className="text-black/30">▪</span>
           <span>FRONTIER WEIGHTS // MULTIMODAL INFERENCE</span>
           <span className="text-black/30">▪</span>
-          <span>ZERO-LATENCY INGESTION // SAN FRANCISCO • LONDON • PARIS • TOKYO</span>
+          <span>ZERO-LATENCY INGESTION // GLOBAL NETWORK</span>
           <span className="text-black/30">▪</span>
         </div>
       </div>
@@ -222,15 +212,12 @@ const EditorialSpread = memo(function EditorialSpread({
         
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
           <span>FEATURED DISPATCH</span>
-          <span>INDEX // 003</span>
         </div>
 
         <div className="w-full">
           <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
             <div className="flex items-center gap-3">
-              <span className="font-bold text-black">INDEX // 003</span>
-              <span>//</span>
-              <span>[{third.source.name}]</span>
+              <span className="font-bold text-black">[{third.source.name}]</span>
               <span>//</span>
               <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
             </div>
@@ -267,8 +254,8 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
 
           <div className="mt-12 pt-6 border-t border-black/10 flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase gap-2">
-            <span>RESEARCH NETWORK: SILICON VALLEY // LONDON // PARIS // TOKYO</span>
-            <span>LATENCY: REALTIME // VERIFIED DISPATCH</span>
+            <span>EDITORIAL DISPATCH</span>
+            <span>LATENCY: REALTIME // VERIFIED</span>
           </div>
         </div>
 
@@ -282,7 +269,7 @@ const EditorialSpread = memo(function EditorialSpread({
         
         {/* Top Header of Section 3 */}
         <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-12 pb-4 border-b border-black/10">
-          <span>GALLERY ARCHIVE // 004 — 006</span>
+          <span>GALLERY ARCHIVE</span>
         </div>
 
         {/* 3-Column Swiss Grid with Vertical Hairline Dividers */}
@@ -292,12 +279,6 @@ const EditorialSpread = memo(function EditorialSpread({
           <div className="lg:pr-8 xl:pr-10 pb-12 lg:pb-0 flex flex-col items-start w-full">
             <ScrollReveal yOffset={45} parallaxSpeed={0.04} delayMs={50} className="w-full">
               
-              {/* Header row with Index & Lab Tag */}
-              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[380px]">
-                <span className="font-bold text-black">N° 004 // ARCHIVE</span>
-                <span>[{fourth.lab || 'FRONTIER'}]</span>
-              </div>
-
               {/* Large ArtFrame */}
               <div 
                 onClick={() => onSelectArticle(fourth)}
@@ -330,7 +311,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Article Headline */}
               <h3 
                 onClick={() => onSelectArticle(fourth)}
-                className="font-mono text-xs sm:text-sm font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px]"
+                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px]"
               >
                 {fourth.title}
               </h3>
@@ -341,25 +322,6 @@ const EditorialSpread = memo(function EditorialSpread({
           <div className="lg:px-8 xl:px-10 py-12 lg:py-0 flex flex-col items-center w-full">
             <ScrollReveal yOffset={55} parallaxSpeed={-0.03} delayMs={100} className="w-full flex flex-col items-center">
               
-              {/* Header row with Index & Lab Tag */}
-              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[450px]">
-                <span className="font-bold text-black">N° 005 // ARCHIVE</span>
-                <span>[{fifth.lab || 'FRONTIER'}]</span>
-              </div>
-
-              {/* Architectural Hairline with Source above Hero Image */}
-              <div 
-                onClick={() => onSelectArticle(fifth)}
-                className="w-full max-w-[450px] flex items-center gap-3 mb-4 cursor-pointer group"
-                title={fifth.title}
-              >
-                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
-                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
-                  [{fifth.source.name}]
-                </span>
-                <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
-              </div>
-
               {/* Hero Large Center ArtFrame */}
               <div 
                 onClick={() => onSelectArticle(fifth)}
@@ -381,7 +343,7 @@ const EditorialSpread = memo(function EditorialSpread({
                 title={fifth.title}
               >
                 <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
-                  005 // [{fifth.source.name}]
+                  [{fifth.source.name}]
                 </span>
                 <div className="h-[1px] flex-1 bg-black/30 group-hover:bg-black transition-colors" />
                 <span className="font-mono text-[9px] tracking-wider text-black/70 uppercase truncate max-w-[170px] group-hover:text-black">
@@ -392,7 +354,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Giant Center Headline */}
               <h3 
                 onClick={() => onSelectArticle(fifth)}
-                className="font-mono text-sm sm:text-base font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center"
+                className="font-mono text-base sm:text-lg md:text-xl font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center"
               >
                 {fifth.title}
               </h3>
@@ -403,12 +365,6 @@ const EditorialSpread = memo(function EditorialSpread({
           <div className="lg:pl-8 xl:pl-10 pt-12 lg:pt-0 flex flex-col items-start lg:items-end w-full">
             <ScrollReveal yOffset={45} parallaxSpeed={0.05} delayMs={150} className="w-full flex flex-col items-start lg:items-end">
               
-              {/* Header row with Index & Tag */}
-              <div className="flex justify-between items-center font-mono text-[9px] tracking-widest text-black/60 uppercase mb-3 w-full max-w-[380px]">
-                <span className="font-bold text-black">N° 006 // ARCHIVE</span>
-                <span>[{sixth.lab || 'FRONTIER'}]</span>
-              </div>
-
               {/* Large ArtFrame */}
               <div 
                 onClick={() => onSelectArticle(sixth)}
@@ -441,7 +397,7 @@ const EditorialSpread = memo(function EditorialSpread({
               {/* Article Headline */}
               <h3 
                 onClick={() => onSelectArticle(sixth)}
-                className="font-mono text-xs sm:text-sm font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right"
+                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right"
               >
                 {sixth.title}
               </h3>
@@ -480,25 +436,14 @@ const EditorialSpread = memo(function EditorialSpread({
                 <div 
                   className="border border-black p-6 sm:p-8 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300 h-full"
                 >
-                  {/* 4 Corner Bounding Box Square Handles */}
-                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-                  <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform" />
-
                   <div>
                     <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
-                      <span>SECTOR // 00{idx + 1}</span>
                       <span className="font-bold text-black">[DOSSIER]</span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-2 group-hover:translate-x-1 transition-transform">
+                    <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-6 group-hover:translate-x-1 transition-transform">
                       {lab.name}
                     </h3>
-
-                    <span className="font-mono text-[9px] tracking-wider uppercase text-black/50 block mb-6">
-                      {lab.location}
-                    </span>
 
                     {leadArt ? (
                       <div className="mb-6">
@@ -589,8 +534,7 @@ const EditorialSpread = memo(function EditorialSpread({
       <section className="py-24">
         
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16">
-          <span className="font-bold text-black">CATALOG ARCHIVE // GLOBAL REPOSITORY</span>
-          <span>SAN FRANCISCO // LONDON // PARIS // TOKYO</span>
+          <span className="font-bold text-black">CATALOG ARCHIVE</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
@@ -602,7 +546,6 @@ const EditorialSpread = memo(function EditorialSpread({
             >
               <div>
                 <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
-                  <span>{(idx + 1).toString().padStart(3, '0')}</span>
                   <span className="font-bold text-black group-hover:underline">[{art.source.name}]</span>
                 </div>
 

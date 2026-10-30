@@ -182,7 +182,7 @@ export default function BenchmarksPage() {
             <span className="text-black/30 hidden md:inline text-sm">/</span>
 
             <span className="text-black/60 font-mono text-[11px] sm:text-xs hidden sm:inline tracking-wider">
-              INDEX // 000 // ARTIFICIAL ANALYSIS BENCHMARKS
+              ARTIFICIAL ANALYSIS BENCHMARKS
             </span>
           </div>
 
