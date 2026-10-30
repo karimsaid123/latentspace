@@ -70,8 +70,15 @@ export default function EditorialSpread({
             </div>
           </div>
 
-          <div className="mt-4 font-mono text-[9px] tracking-widest text-black/50 uppercase">
-            <span>BY {lead.author || lead.source.name} // CATEGORY: {lead.category}</span>
+          <div className="mt-4 font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
+            <span>BY {lead.author || lead.source.name}</span>
+            <span>//</span>
+            <span className="font-bold text-black">LAB: [{lead.lab || 'FRONTIER'}]</span>
+            <span>//</span>
+            <span className={lead.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+              [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PUBLICATION' : 'NEWS DISPATCH'}]
+            </span>
+            {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
           </div>
         </div>
 
@@ -446,8 +453,14 @@ export default function EditorialSpread({
               </div>
 
               <div className="mt-4 pt-2 border-t border-black/10 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
-                <span>{art.category}</span>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 truncate">
+                  <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
+                  <span className="text-black/30">•</span>
+                  <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
+                    {art.entryType === 'RESEARCH_PAPER' ? 'PAPER' : 'DISPATCH'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 shrink-0">
                   {onToggleBookmark && (
                     <button
                       onClick={(e) => onToggleBookmark(art.id, e)}

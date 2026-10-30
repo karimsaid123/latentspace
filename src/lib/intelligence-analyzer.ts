@@ -89,6 +89,51 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   return 'Independent';
 }
 
+export function detectEntryType(
+  title: string,
+  content: string,
+  url = '',
+  sourceName = ''
+): { entryType: 'DISPATCH' | 'RESEARCH_PAPER'; arxivId?: string; pdfUrl?: string } {
+  const combined = `${title} ${content} ${url} ${sourceName}`.toLowerCase();
+
+  // 1. Check for arXiv
+  const arxivMatch = url.match(/arxiv\.org\/(abs|pdf)\/([0-9]+\.[0-9]+)/i) || combined.match(/arxiv:([0-9]+\.[0-9]+)/i);
+  if (arxivMatch) {
+    const id = arxivMatch[2] || arxivMatch[1];
+    return {
+      entryType: 'RESEARCH_PAPER',
+      arxivId: `arXiv:${id}`,
+      pdfUrl: `https://arxiv.org/pdf/${id}.pdf`,
+    };
+  }
+
+  // 2. Check for explicit papers or preprint terminology
+  if (
+    combined.includes('arxiv') ||
+    combined.includes('research paper') ||
+    combined.includes('published paper') ||
+    combined.includes('technical report') ||
+    combined.includes('abstract:') ||
+    combined.includes('proposes a novel') ||
+    combined.includes('we introduce') ||
+    combined.includes('empirical evaluation') ||
+    title.toLowerCase().startsWith('evaluating ') ||
+    title.toLowerCase().startsWith('benchmarking ') ||
+    title.toLowerCase().includes(': towards ') ||
+    sourceName.toLowerCase().includes('arxiv') ||
+    sourceName.toLowerCase().includes('research')
+  ) {
+    return {
+      entryType: 'RESEARCH_PAPER',
+    };
+  }
+
+  return {
+    entryType: 'DISPATCH',
+  };
+}
+
 /**
  * Determines impact severity
  */

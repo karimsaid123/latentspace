@@ -12,21 +12,27 @@ export async function GET(request: NextRequest) {
 
     const searchParams = request.nextUrl.searchParams;
     const category = searchParams.get('category') || undefined;
+    const lab = searchParams.get('lab') || undefined;
+    const entryType = searchParams.get('entryType') || undefined;
     const search = searchParams.get('search') || undefined;
-    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 100;
+    const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 500;
 
-    const cacheKey = `articles_list_${category || 'ALL'}_${search || 'NONE'}_${limit}`;
+    const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
 
     // Single-Flight Coalesced Query with Cache
     const data = await container.cache.coalesce(cacheKey, async () => {
       const [articles, totalCount, allArticles] = await Promise.all([
         container.articleRepo.list({
           category: category !== 'All' ? category : undefined,
+          lab: lab !== 'All' ? lab : undefined,
+          entryType: entryType !== 'ALL' ? entryType : undefined,
           searchQuery: search,
           limit,
         }),
         container.articleRepo.count({
           category: category !== 'All' ? category : undefined,
+          lab: lab !== 'All' ? lab : undefined,
+          entryType: entryType !== 'ALL' ? entryType : undefined,
           searchQuery: search,
         }),
         container.articleRepo.list({ limit: 1000 }),
@@ -88,6 +94,9 @@ export async function GET(request: NextRequest) {
           imageUrl: a.imageUrl,
           category: a.category,
           lab: a.lab || 'Independent',
+          entryType: a.entryType || 'DISPATCH',
+          arxivId: a.arxivId,
+          pdfUrl: a.pdfUrl,
           aiSummary: summary,
         };
       });

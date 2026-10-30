@@ -9,7 +9,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.083Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T18:48:05.365Z",
+    "lastFetchedAt": "2026-10-30T19:05:32.961Z",
     "consecutiveFailures": 0
   },
   {
@@ -22,8 +22,8 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.208Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T18:48:05.636Z",
-    "consecutiveFailures": 1
+    "lastFetchedAt": "2026-10-30T19:05:33.352Z",
+    "consecutiveFailures": 2
   },
   {
     "id": "techcrunch-ai",
@@ -35,7 +35,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.818Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T18:48:05.637Z",
+    "lastFetchedAt": "2026-10-30T19:05:33.354Z",
     "consecutiveFailures": 0
   },
   {
@@ -48,7 +48,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.924Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T18:48:05.705Z",
+    "lastFetchedAt": "2026-10-30T19:05:33.470Z",
     "consecutiveFailures": 0
   },
   {
@@ -61,7 +61,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.302Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-30T18:48:05.742Z",
+    "lastFetchedAt": "2026-10-30T19:05:33.596Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,7 +74,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.388Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-30T18:48:05.924Z",
+    "lastFetchedAt": "2026-10-30T19:05:33.881Z",
     "consecutiveFailures": 0
   }
 ]

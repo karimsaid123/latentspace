@@ -4,7 +4,7 @@ import { FeedProviderPort } from '@/core/ports/feed-provider.port';
 import { DomainSource, FeedSnapshot, DomainArticle, Category, ImpactLevel } from '@/core/domain/entities';
 import { ProviderUnavailableError, RateLimitError } from '@/core/domain/errors';
 import { decodeHtmlEntities } from '@/lib/sanitize';
-import { detectFrontierLab, generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
+import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 
 export class RssFeedAdapter implements FeedProviderPort {
   private parser: Parser;
@@ -52,6 +52,7 @@ export class RssFeedAdapter implements FeedProviderPort {
         const imageUrl = this.extractImageUrl(item);
         const category = this.categorizeText(title, cleanContent, source.category);
         const lab = detectFrontierLab(title, cleanContent, source.name);
+        const { entryType, arxivId, pdfUrl } = detectEntryType(title, cleanContent, canonicalUrl, source.name);
         const summary = generateDeepIntelligenceSummary(title, cleanContent, source.name);
 
         articles.push({
@@ -68,6 +69,9 @@ export class RssFeedAdapter implements FeedProviderPort {
           imageUrl,
           category,
           lab,
+          entryType,
+          arxivId,
+          pdfUrl,
           summary,
         });
       }

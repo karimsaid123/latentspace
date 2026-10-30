@@ -35,6 +35,8 @@ export interface ArticleSource {
   color: string;
 }
 
+export type EntryType = 'DISPATCH' | 'RESEARCH_PAPER';
+
 export interface Article {
   id: string;
   title: string;
@@ -47,6 +49,9 @@ export interface Article {
   imageUrl?: string;
   category: Category;
   lab?: FrontierLab;
+  entryType?: EntryType;
+  arxivId?: string;
+  pdfUrl?: string;
   aiSummary: AISummary;
   isFeatured?: boolean;
   bookmarked?: boolean;

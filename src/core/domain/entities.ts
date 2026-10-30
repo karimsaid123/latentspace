@@ -37,6 +37,8 @@ export interface DomainSource {
   consecutiveFailures: number;
 }
 
+export type EntryType = 'DISPATCH' | 'RESEARCH_PAPER';
+
 export interface DomainArticle {
   id: string; // Deterministic sha256 of canonical URL
   canonicalUrl: string;
@@ -51,6 +53,9 @@ export interface DomainArticle {
   imageUrl?: string;
   category: Category;
   lab?: FrontierLab;
+  entryType?: EntryType;
+  arxivId?: string;
+  pdfUrl?: string;
   summary: AISummary;
 }
 

@@ -3,7 +3,7 @@ import path from 'path';
 import { ArticleFilter, ArticleRepositoryPort } from '@/core/ports/repository.port';
 import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
-import { detectFrontierLab, generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
+import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, DomainArticle>();
@@ -21,7 +21,12 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
         const title = decodeHtmlEntities(item.title || '');
         const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
         const sourceName = item.sourceName || item.source?.name || 'Feed';
+        const canonicalUrl = item.canonicalUrl || item.link || '';
         const lab = item.lab || detectFrontierLab(title, contentSnippet, sourceName);
+        const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
+        const entryType = item.entryType || typeInfo.entryType;
+        const arxivId = item.arxivId || typeInfo.arxivId;
+        const pdfUrl = item.pdfUrl || typeInfo.pdfUrl;
 
         // Generate deep intelligence summary if existing one is too basic
         let summary = item.summary || item.aiSummary;
@@ -41,7 +46,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
         const normalized: DomainArticle = {
           id: item.id,
-          canonicalUrl: item.canonicalUrl || item.link || '',
+          canonicalUrl,
           title,
           publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
           fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
@@ -53,6 +58,9 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
           imageUrl: item.imageUrl,
           category: item.category || 'LLMs & GenAI',
           lab,
+          entryType,
+          arxivId,
+          pdfUrl,
           summary,
         };
 
@@ -84,6 +92,14 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
     if (filter?.category && filter.category !== 'All') {
       result = result.filter(a => a.category === filter.category);
+    }
+
+    if (filter?.lab && filter.lab !== 'All') {
+      result = result.filter(a => a.lab === filter.lab);
+    }
+
+    if (filter?.entryType && filter.entryType !== 'ALL') {
+      result = result.filter(a => a.entryType === filter.entryType);
     }
 
     if (filter?.sourceId) {

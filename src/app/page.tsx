@@ -10,8 +10,8 @@ import { RefreshCw } from 'lucide-react';
 
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedLab, setSelectedLab] = useState<string>('All');
+  const [selectedType, setSelectedType] = useState<'ALL' | 'DISPATCH' | 'RESEARCH_PAPER'>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -109,13 +109,12 @@ export default function HomePage() {
   const articlesRef = React.useRef<Article[]>([]);
   articlesRef.current = articles;
 
-  const fetchArticles = useCallback(async (category: string, search: string, isSilent = false) => {
+  const fetchArticles = useCallback(async (search: string, isSilent = false) => {
     if (!isSilent && articlesRef.current.length === 0) {
       setIsLoading(true);
     }
     try {
       const params = new URLSearchParams();
-      if (category && category !== 'All' && category !== 'SAVED') params.set('category', category);
       if (search) params.set('search', search);
 
       const res = await fetch(`/api/news?${params.toString()}`);
@@ -143,10 +142,10 @@ export default function HomePage() {
     }
   }, []);
 
-  // Category change or initial load
+  // Initial load
   useEffect(() => {
-    fetchArticles(selectedCategory, searchQuery, false);
-  }, [selectedCategory, fetchArticles]);
+    fetchArticles(searchQuery, false);
+  }, [fetchArticles, searchQuery]);
 
   // Debounced search (only triggers when searchQuery changes)
   const isSearchMounted = React.useRef(false);
@@ -156,18 +155,18 @@ export default function HomePage() {
       return;
     }
     const timer = setTimeout(() => {
-      fetchArticles(selectedCategory, searchQuery, false);
+      fetchArticles(searchQuery, false);
     }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery, selectedCategory, fetchArticles]);
+  }, [searchQuery, fetchArticles]);
 
   // Autonomous background polling (Every 45 seconds)
   useEffect(() => {
     const pollInterval = setInterval(() => {
-      fetchArticles(selectedCategory, searchQuery, true);
+      fetchArticles(searchQuery, true);
     }, 45_000);
     return () => clearInterval(pollInterval);
-  }, [selectedCategory, searchQuery, fetchArticles]);
+  }, [searchQuery, fetchArticles]);
 
   // Manual Force Sync
   const handleSync = async () => {
@@ -176,7 +175,7 @@ export default function HomePage() {
       await fetch('/api/sync', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
-      await fetchArticles(selectedCategory, searchQuery, false);
+      await fetchArticles(searchQuery, false);
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {
@@ -193,17 +192,19 @@ export default function HomePage() {
     }
   };
 
-  // Filter articles for SAVED tab and LAB sector if active
+  // Filter articles for SAVED tab, LAB sector, and FORMAT type if active
   const displayedArticles = useMemo(() => {
     let list = articles;
-    if (selectedCategory === 'SAVED') {
+    if (selectedLab === 'SAVED') {
       list = list.filter((a) => bookmarkedIds.includes(a.id));
-    }
-    if (selectedLab !== 'All') {
+    } else if (selectedLab !== 'All') {
       list = list.filter((a) => a.lab === selectedLab);
     }
+    if (selectedType !== 'ALL') {
+      list = list.filter((a) => a.entryType === selectedType);
+    }
     return list;
-  }, [articles, selectedCategory, selectedLab, bookmarkedIds]);
+  }, [articles, selectedLab, selectedType, bookmarkedIds]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
@@ -221,12 +222,12 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Minimal Top Nav (No bloat, clean Swiss minimalism) */}
+      {/* Minimal Top Nav (Pure Lab Sectors & Publication Types) */}
       <MinimalNav
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
         selectedLab={selectedLab}
         onSelectLab={setSelectedLab}
+        selectedType={selectedType}
+        onSelectType={setSelectedType}
         searchQuery={searchQuery}
         onSearch={setSearchQuery}
         onSync={handleSync}
@@ -243,24 +244,24 @@ export default function HomePage() {
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-40 gap-3 font-mono text-[10px] tracking-widest uppercase text-black/50">
             <RefreshCw className="w-5 h-5 animate-spin text-black" />
-            <span>FETCHING AUTONOMOUS FEEDS...</span>
+            <span>FETCHING AUTONOMOUS FEEDS & PUBLICATIONS...</span>
           </div>
         ) : displayedArticles.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-40 px-4 text-center font-mono text-xs uppercase tracking-widest text-black/60">
             <span className="mb-2 font-bold">
-              {selectedCategory === 'SAVED' ? 'NO SAVED ARTICLES YET' : 'NO ARTICLES FOUND IN THIS SECTOR'}
+              {selectedLab === 'SAVED' ? 'NO SAVED ENTRIES YET' : 'NO TELEMETRY FOUND IN THIS SECTOR'}
             </span>
             <span className="text-[10px] text-black/40">
-              {selectedCategory === 'SAVED'
-                ? 'CLICK [+ SAVE] ON ANY ARTICLE TO BOOKMARK IT HERE'
-                : 'TRY ADJUSTING YOUR LAB FILTER, CATEGORY OR SEARCH QUERY'}
+              {selectedLab === 'SAVED'
+                ? 'CLICK [+ SAVE] ON ANY PUBLICATION OR DISPATCH TO BOOKMARK IT HERE'
+                : 'TRY ADJUSTING YOUR LAB FILTER, PUBLICATION TYPE OR SEARCH QUERY'}
             </span>
-            {(searchQuery || selectedCategory !== 'All' || selectedLab !== 'All') && (
+            {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL') && (
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedCategory('All');
                   setSelectedLab('All');
+                  setSelectedType('ALL');
                 }}
                 className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
               >
@@ -269,7 +270,7 @@ export default function HomePage() {
             )}
           </div>
         ) : (
-          <div key={`${selectedCategory}_${selectedLab}`} className="animate-fade-in">
+          <div key={`${selectedLab}_${selectedType}`} className="animate-fade-in">
             <EditorialSpread
               articles={displayedArticles}
               onSelectArticle={setSelectedArticle}

@@ -2,6 +2,8 @@ import { DomainArticle, DomainSource } from '../domain/entities';
 
 export interface ArticleFilter {
   category?: string;
+  lab?: string;
+  entryType?: string;
   searchQuery?: string;
   limit?: number;
   offset?: number;

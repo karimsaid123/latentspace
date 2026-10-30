@@ -3,10 +3,10 @@
 import React, { useRef, useEffect } from 'react';
 
 interface MinimalNavProps {
-  selectedCategory: string;
-  onSelectCategory: (cat: string) => void;
   selectedLab: string;
   onSelectLab: (lab: string) => void;
+  selectedType: 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
+  onSelectType: (type: 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER') => void;
   searchQuery: string;
   onSearch: (q: string) => void;
   onSync: () => void;
@@ -17,15 +17,6 @@ interface MinimalNavProps {
   isSearchOpen: boolean;
   setIsSearchOpen: (open: boolean) => void;
 }
-
-const CATEGORIES = [
-  { id: 'All', label: 'ALL CATEGORIES' },
-  { id: 'LLMs & GenAI', label: 'LLMs' },
-  { id: 'Robotics & Hardware', label: 'ROBOTICS' },
-  { id: 'Open Source & Research', label: 'RESEARCH' },
-  { id: 'Business & Big Tech', label: 'BUSINESS' },
-  { id: 'Ethics & Policy', label: 'POLICY' },
-];
 
 export const LAB_FILTERS = [
   { id: 'All', label: 'ALL LABS' },
@@ -38,10 +29,10 @@ export const LAB_FILTERS = [
 ];
 
 export default function MinimalNav({
-  selectedCategory,
-  onSelectCategory,
   selectedLab,
   onSelectLab,
+  selectedType,
+  onSelectType,
   searchQuery,
   onSearch,
   onSync,
@@ -137,54 +128,69 @@ export default function MinimalNav({
         </div>
       )}
 
-      {/* Category Filter Line */}
-      <div className="flex items-center gap-4 pt-3 overflow-x-auto no-scrollbar text-[9px] text-black/40">
-        <span className="text-black/60 font-bold shrink-0">TOPIC:</span>
-        {CATEGORIES.map((cat) => {
-          const isSelected = selectedCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => onSelectCategory(cat.id)}
-              className={`hover:text-black transition-colors shrink-0 cursor-pointer ${
-                isSelected ? 'text-black font-black underline underline-offset-4' : ''
-              }`}
-            >
-              [{cat.label}]
-            </button>
-          );
-        })}
+      {/* Frontier Labs & Publications Filter Row */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-3 text-[9px] text-black/40">
+        
+        {/* Lab Sectors */}
+        <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
+          <span className="text-black/60 font-bold shrink-0">LAB SECTOR:</span>
+          {LAB_FILTERS.map((lab) => {
+            const isSelected = selectedLab === lab.id;
+            return (
+              <button
+                key={lab.id}
+                onClick={() => onSelectLab(lab.id)}
+                className={`hover:text-black transition-colors shrink-0 cursor-pointer ${
+                  isSelected ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
+                }`}
+              >
+                [{lab.label}]
+              </button>
+            );
+          })}
 
-        {/* Saved / Bookmarks Tab */}
-        <button
-          onClick={() => onSelectCategory('SAVED')}
-          className={`hover:text-black transition-colors shrink-0 cursor-pointer ml-auto sm:ml-0 ${
-            selectedCategory === 'SAVED'
-              ? 'text-black font-black underline underline-offset-4'
-              : 'text-black/50'
-          }`}
-        >
-          [★ SAVED ({savedCount})]
-        </button>
-      </div>
+          {/* Saved / Bookmarks Tab */}
+          <button
+            onClick={() => onSelectLab('SAVED')}
+            className={`hover:text-black transition-colors shrink-0 cursor-pointer ml-auto sm:ml-0 ${
+              selectedLab === 'SAVED'
+                ? 'text-black font-black underline underline-offset-4'
+                : 'text-black/50'
+            }`}
+          >
+            [★ SAVED ({savedCount})]
+          </button>
+        </div>
 
-      {/* Frontier Labs Navigation Track */}
-      <div className="flex items-center gap-3 pt-2.5 overflow-x-auto no-scrollbar text-[9px] text-black/40 border-t border-black/5 mt-2.5">
-        <span className="text-black/60 font-bold shrink-0">LAB SECTOR:</span>
-        {LAB_FILTERS.map((lab) => {
-          const isSelected = selectedLab === lab.id;
-          return (
-            <button
-              key={lab.id}
-              onClick={() => onSelectLab(lab.id)}
-              className={`hover:text-black transition-colors shrink-0 cursor-pointer ${
-                isSelected ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
-              }`}
-            >
-              [{lab.label}]
-            </button>
-          );
-        })}
+        {/* Publication Format Selector */}
+        <div className="flex items-center gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10">
+          <span className="text-black/60 font-bold shrink-0">TYPE:</span>
+          <button
+            onClick={() => onSelectType('ALL')}
+            className={`hover:text-black transition-colors cursor-pointer ${
+              selectedType === 'ALL' ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
+            }`}
+          >
+            [ALL ENTRIES]
+          </button>
+          <button
+            onClick={() => onSelectType('DISPATCH')}
+            className={`hover:text-black transition-colors cursor-pointer ${
+              selectedType === 'DISPATCH' ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
+            }`}
+          >
+            [DISPATCHES]
+          </button>
+          <button
+            onClick={() => onSelectType('RESEARCH_PAPER')}
+            className={`hover:text-black transition-colors cursor-pointer flex items-center gap-1 ${
+              selectedType === 'RESEARCH_PAPER' ? 'text-black font-black underline underline-offset-4' : 'text-black/60'
+            }`}
+          >
+            <span>[RESEARCH PAPERS]</span>
+          </button>
+        </div>
+
       </div>
 
     </header>

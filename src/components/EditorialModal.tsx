@@ -93,9 +93,17 @@ export default function EditorialModal({
           
           <div>
             <div className="flex flex-wrap items-center gap-3 font-mono text-[9px] tracking-widest uppercase text-black/50 mb-3">
-              <span>CLASSIFICATION // "{article.category}"</span>
+              <span className={`font-bold ${article.entryType === 'RESEARCH_PAPER' ? 'text-black border border-black px-1.5 py-0.5' : 'text-black'}`}>
+                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PUBLICATION' : 'NEWS DISPATCH'}
+              </span>
               <span>•</span>
               <span className="text-black font-bold">LAB: [{article.lab || 'FRONTIER LAB'}]</span>
+              {article.arxivId && (
+                <>
+                  <span>•</span>
+                  <span className="font-bold text-black">[{article.arxivId}]</span>
+                </>
+              )}
               <span>•</span>
               <span>IMPACT: [{article.aiSummary?.impact || 'NOTABLE'}]</span>
               <span>•</span>
@@ -184,20 +192,33 @@ export default function EditorialModal({
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-black/10 flex items-center justify-between font-mono text-[10px]">
+        <div className="px-6 py-4 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[10px]">
           <span className="text-black/40">
             RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
           </span>
 
-          <a
-            href={article.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
-          >
-            <span>READ ON {article.source.name}</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+          <div className="flex items-center gap-4">
+            {article.pdfUrl && (
+              <a
+                href={article.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 font-bold uppercase text-black border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6] transition-colors"
+              >
+                <span>OPEN PDF ↗</span>
+              </a>
+            )}
+
+            <a
+              href={article.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
+            >
+              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV / SOURCE' : `READ ON ${article.source.name}`}</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
         </div>
 
       </div>

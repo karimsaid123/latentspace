@@ -58,6 +58,24 @@ const DEFAULT_SOURCES: DomainSource[] = [
     enabled: true,
     consecutiveFailures: 0,
   },
+  {
+    id: 'arxiv-ai',
+    name: 'arXiv cs.AI (Artificial Intelligence)',
+    feedUrl: 'https://rss.arxiv.org/rss/cs.AI',
+    websiteUrl: 'https://arxiv.org/list/cs.AI/recent',
+    category: 'Open Source & Research',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'arxiv-cl',
+    name: 'arXiv cs.CL (Language & LLMs)',
+    feedUrl: 'https://rss.arxiv.org/rss/cs.CL',
+    websiteUrl: 'https://arxiv.org/list/cs.CL/recent',
+    category: 'LLMs & GenAI',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
 ];
 
 export class MemorySourceRepository implements SourceRepositoryPort {
