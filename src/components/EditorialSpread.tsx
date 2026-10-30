@@ -32,7 +32,7 @@ export default function EditorialSpread({
         
         {/* Top Header Row */}
         <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>SPECIMEN // 001</span>
+          <span>INDEX // 001</span>
           <span>FRONTIER AI BULLETIN</span>
         </div>
 
@@ -70,7 +70,7 @@ export default function EditorialSpread({
                 src={lead.imageUrl}
                 alt={lead.title}
                 indexCode="001"
-                subTag="AI.SPECIMEN"
+                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -83,14 +83,14 @@ export default function EditorialSpread({
               className="cursor-pointer mb-10"
             >
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-2">
-                SPECIMEN // 002 // [{second.source.name}]
+                INDEX // 002 // [{second.source.name}]
               </span>
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black hover:opacity-75 transition-opacity">
                 {second.title}
               </h2>
             </div>
 
-            {/* Bottom Right Art specimen */}
+            {/* Bottom Right Art Block */}
             <div className="flex justify-end items-end gap-6 pt-4">
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase max-w-[220px] text-right hidden sm:block">
                 AUTONOMOUS RESEARCH RADAR // DISTRIBUTED INFERENCE
@@ -139,7 +139,7 @@ export default function EditorialSpread({
                   src={item.imageUrl}
                   alt={item.title}
                   indexCode={`00${idx + 3}`}
-                  subTag="AI.SPECIMEN"
+                  subTag="REPORT"
                   aspect="portrait"
                 />
                 <div className="mt-2 font-mono text-[9px] uppercase tracking-wider text-black/60 truncate">
@@ -153,7 +153,7 @@ export default function EditorialSpread({
           <div className="lg:col-span-9 flex flex-col justify-between h-full pl-0 lg:pl-10">
             <div>
               <span className="font-mono text-[9px] tracking-widest text-black/50 uppercase block mb-3">
-                SPECIMEN // 003 // FRONTIER LAB BRIEF
+                INDEX // 003 // FRONTIER LAB BRIEF
               </span>
               <h2
                 onClick={() => onSelectArticle(third)}
@@ -181,7 +181,7 @@ export default function EditorialSpread({
         
         <div className="relative min-h-[750px] w-full">
           
-          {/* Top Left Specimen */}
+          {/* Top Left Item */}
           <div className="absolute top-0 left-0 sm:left-6">
             <span className="font-mono text-[9px] tracking-widest text-black/50 block mb-2">
               004
@@ -194,7 +194,7 @@ export default function EditorialSpread({
                 src={fourth.imageUrl}
                 alt={fourth.title}
                 indexCode="004"
-                subTag="AI.SPECIMEN"
+                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -205,7 +205,7 @@ export default function EditorialSpread({
             <span>PARAMETER SCALE: MULTIMODAL REASONING MATRIX</span>
           </div>
 
-          {/* Middle Center Specimen */}
+          {/* Middle Center Item */}
           <div className="absolute top-64 left-1/2 -translate-x-1/2 flex flex-col items-center">
             <div 
               onClick={() => onSelectArticle(fifth)}
@@ -215,7 +215,7 @@ export default function EditorialSpread({
                 src={fifth.imageUrl}
                 alt={fifth.title}
                 indexCode="005"
-                subTag="AI.SPECIMEN"
+                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -242,7 +242,7 @@ export default function EditorialSpread({
             <span>REINFORCEMENT & ALIGNMENT</span>
           </div>
 
-          {/* Lower Right Specimen */}
+          {/* Lower Right Item */}
           <div className="absolute bottom-12 right-0 sm:right-8">
             <div 
               onClick={() => onSelectArticle(sixth)}
@@ -252,7 +252,7 @@ export default function EditorialSpread({
                 src={sixth.imageUrl}
                 alt={sixth.title}
                 indexCode="006"
-                subTag="AI.SPECIMEN"
+                subTag="REPORT"
                 aspect="portrait"
               />
             </div>
@@ -267,12 +267,12 @@ export default function EditorialSpread({
 
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 4: COMPLETE SPECIMEN CATALOG (Browse all 80+ AI articles)
+          SECTION 4: COMPLETE CATALOG (Browse all 80+ AI articles)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-24">
         
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase pb-6 border-b border-black mb-16">
-          <span className="font-bold text-black">SPECIMEN LEDGER // {articles.length} ENTRIES</span>
+          <span className="font-bold text-black">CATALOG ARCHIVE // {articles.length} ENTRIES</span>
           <span>SAN FRANCISCO // LONDON // PARIS // TOKYO</span>
         </div>
 

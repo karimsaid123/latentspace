@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NEURAL PULSE // AI INTELLIGENCE",
-  description: "Autonomous real-time AI news summarized & classified.",
+  title: "EPOCH // AI INTELLIGENCE",
+  description: "Autonomous real-time AI news journal.",
 };
 
 export default function RootLayout({

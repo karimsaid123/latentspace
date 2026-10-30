@@ -83,7 +83,7 @@ export default function HomePage() {
           </div>
         ) : articles.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-40 px-4 text-center font-mono text-xs uppercase tracking-widest text-black/60">
-            <span className="mb-2 font-bold">NO SPECIMENS FOUND</span>
+            <span className="mb-2 font-bold">NO ARTICLES FOUND</span>
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}

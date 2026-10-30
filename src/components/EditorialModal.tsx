@@ -28,7 +28,7 @@ export default function EditorialModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-xs select-none">
       <div className="fixed inset-0" onClick={onClose} />
 
-      {/* Minimalist Specimen Sheet */}
+      {/* Minimalist Reader Sheet */}
       <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl">
         
         {/* 4 Corner Bounding Box Square Handles */}
@@ -40,7 +40,7 @@ export default function EditorialModal({
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[9px] uppercase tracking-widest text-black/60">
           <div>
-            <span>SPECIMEN // {article.id.slice(0, 8)}</span>
+            <span>ENTRY // {article.id.slice(0, 8)}</span>
             <span className="ml-3 font-bold text-black">[{article.source.name}]</span>
           </div>
 
@@ -70,7 +70,7 @@ export default function EditorialModal({
                 src={article.imageUrl}
                 alt={article.title}
                 indexCode="001"
-                subTag="AI.SPECIMEN"
+                subTag="REPORT"
                 aspect="landscape"
               />
             </div>

@@ -13,9 +13,9 @@ interface ArtFrameProps {
 
 export default function ArtFrame({
   src,
-  alt = 'Specimen',
+  alt = 'Visual',
   indexCode = '001',
-  subTag = 'AI.SPECIMEN',
+  subTag = 'REPORT',
   className = '',
   aspect = 'portrait',
 }: ArtFrameProps) {
@@ -34,7 +34,7 @@ export default function ArtFrame({
       onMouseLeave={() => setIsHovered(false)}
       className={`relative group inline-block select-none ${className}`}
     >
-      {/* 4 Corner Bounding Box Square Handles (Directly from user images) */}
+      {/* 4 Corner Bounding Box Square Handles */}
       <div className="absolute -top-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
       <div className="absolute -top-1 -right-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
       <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black z-20 group-hover:scale-125 transition-transform duration-150" />
@@ -63,14 +63,14 @@ export default function ArtFrame({
             className="w-full h-full object-cover grayscale contrast-125 group-hover:contrast-100 group-hover:grayscale-0 transition-all duration-700"
           />
         ) : (
-          /* Minimalist typographic specimen placeholder */
+          /* Minimalist typographic visual placeholder */
           <div className="w-full h-full flex flex-col justify-between p-3 bg-[#e8e7e1] text-black font-mono text-[9px] uppercase">
             <div className="flex justify-between opacity-60">
               <span>{indexCode}</span>
-              <span>AI.RAW</span>
+              <span>EPOCH.AI</span>
             </div>
             <div className="my-auto text-center font-bold tracking-widest opacity-80">
-              SPECIMEN
+              ENTRY
             </div>
             <div className="flex justify-between opacity-40 text-[8px]">
               <span>PARIS</span>
@@ -79,7 +79,7 @@ export default function ArtFrame({
           </div>
         )}
 
-        {/* ASCII / Matrix overlay on hover (Image 4 inspired) */}
+        {/* ASCII / Matrix overlay on hover */}
         <div
           className={`absolute inset-0 p-2.5 font-mono text-[8px] leading-[10px] text-black select-none pointer-events-none flex flex-col justify-between transition-opacity duration-200 ${
             isHovered ? 'opacity-90 bg-white/20 backdrop-blur-[1px]' : 'opacity-0'

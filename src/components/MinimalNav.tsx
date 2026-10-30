@@ -40,15 +40,15 @@ export default function MinimalNav({
         
         {/* Brand / Index Number */}
         <div className="flex items-baseline gap-4">
-          <span className="font-extrabold text-xs text-black">
-            NEURAL PULSE
+          <span className="font-black text-sm tracking-tighter text-black">
+            EPOCH
           </span>
-          <span className="text-black/40">
-            001 // SPECIMENS: {totalArticles}
+          <span className="text-black/40 text-[9px]">
+            N° 001 // ENTRIES: {totalArticles}
           </span>
         </div>
 
-        {/* Minimal Controls & Info */}
+        {/* Minimal Controls */}
         <div className="flex items-center gap-6 text-black/60">
           <button
             onClick={() => setShowSearch(!showSearch)}
@@ -79,7 +79,7 @@ export default function MinimalNav({
             type="text"
             value={searchQuery}
             onChange={(e) => onSearch(e.target.value)}
-            placeholder="TYPE TO FILTER SPECIMENS (PRESS ESC TO CLOSE)..."
+            placeholder="SEARCH ARTICLES (PRESS ESC TO CLOSE)..."
             autoFocus
             className="w-full bg-transparent font-mono text-xs uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
           />

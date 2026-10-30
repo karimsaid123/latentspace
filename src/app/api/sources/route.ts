@@ -7,7 +7,7 @@ import { RSSFeedSource, Category } from '@/types';
 const parser = new Parser({
   timeout: 8000,
   headers: {
-    'User-Agent': 'Mozilla/5.0 NeuralPulse/1.0',
+    'User-Agent': 'Mozilla/5.0 Epoch/1.0',
     'Accept': 'application/rss+xml, application/xml, text/xml, */*'
   }
 });
