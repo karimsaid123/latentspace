@@ -3,8 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Share2, Check } from 'lucide-react';
 import { getTopBenchmarkForLab } from '@/lib/benchmark-client';
+import ArticleShareModal from './ArticleShareModal';
+import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
 
 interface EditorialModalProps {
   article: Article | null;
@@ -20,30 +22,45 @@ export default function EditorialModal({
   onToggleBookmark,
 }: EditorialModalProps) {
   const [copied, setCopied] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        if (isShareOpen) {
+          setIsShareOpen(false);
+        } else {
+          onClose();
+        }
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [onClose, isShareOpen]);
 
   const handleCopyLink = () => {
     if (!article) return;
-    navigator.clipboard.writeText(article.link);
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.ai';
+    navigator.clipboard.writeText(`${origin}/?article=${article.id}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   if (!article) return null;
 
+  const brand = getCompanyBrand(article.lab || article.source?.name);
   const wordCount = (article.contentSnippet || '').split(' ').length + (article.aiSummary?.tldr || '').split(' ').length;
   const readTimeMinutes = Math.max(1, Math.round(wordCount / 40));
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
-      <div className="fixed inset-0" onClick={onClose} />
+      <div 
+        className="fixed inset-0" 
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }} 
+      />
 
       {/* Minimalist Reader Sheet */}
       <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in">
@@ -77,12 +94,26 @@ export default function EditorialModal({
               onClick={handleCopyLink}
               className="text-black/60 hover:text-black cursor-pointer transition-colors"
             >
-              [{copied ? 'COPIED ✓' : 'SHARE'}]
+              [{copied ? 'COPIED ✓' : 'COPY LINK'}]
+            </button>
+
+            {/* Small Square Share Button in the corner */}
+            <button
+              onClick={() => setIsShareOpen(true)}
+              className="w-7 h-7 sm:w-8 sm:h-8 border border-black bg-white hover:bg-black hover:text-[#faf9f6] transition-all flex items-center justify-center cursor-pointer shadow-sm group shrink-0"
+              title="Deel artikel via template"
+              aria-label="Deel artikel"
+            >
+              <Share2 className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
             </button>
 
             <button
-              onClick={onClose}
-              className="font-bold text-black hover:opacity-60 cursor-pointer ml-2"
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+              className="font-bold text-black hover:opacity-60 cursor-pointer ml-1"
             >
               [CLOSE ✕]
             </button>
@@ -98,7 +129,17 @@ export default function EditorialModal({
                 {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
               </span>
               <span>•</span>
-              <span className="text-black font-bold">LAB: [{article.lab || 'FRONTIER LAB'}]</span>
+              <div className="flex items-center gap-1.5">
+                <div
+                  className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0"
+                  style={{ backgroundColor: brand.bgTint, borderColor: brand.borderColor }}
+                >
+                  <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
+                </div>
+                <span className="font-bold" style={{ color: brand.textColor }}>
+                  LAB: [{article.lab || 'FRONTIER LAB'}]
+                </span>
+              </div>
               {article.arxivId && (
                 <>
                   <span>•</span>
@@ -219,7 +260,15 @@ export default function EditorialModal({
             RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
           </span>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsShareOpen(true)}
+              className="flex items-center gap-1.5 font-bold uppercase text-black border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer"
+            >
+              <Share2 className="w-3 h-3" />
+              <span>SHARE TEMPLATE</span>
+            </button>
+
             {article.pdfUrl && (
               <a
                 href={article.pdfUrl}
@@ -244,6 +293,13 @@ export default function EditorialModal({
         </div>
 
       </div>
+
+      {/* Branded Article Share Modal */}
+      <ArticleShareModal
+        article={article}
+        isOpen={isShareOpen}
+        onClose={() => setIsShareOpen(false)}
+      />
     </div>
   );
 }

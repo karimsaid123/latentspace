@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { ModelBenchmark, BenchmarkResponse } from '@/types/benchmark';
 import { ExternalLink, BarChart3, Zap, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 
 interface BenchmarkRadarProps {
   onSelectLab?: (lab: string) => void;
@@ -172,42 +173,64 @@ export default function BenchmarkRadar({ onSelectLab }: BenchmarkRadarProps) {
                   valueDisplay = `$${price.toFixed(2)} / 1M`;
                 }
 
+                const brand = getCompanyBrand(model.creator.id || model.creator.name || model.creator.lab);
+
                 return (
                   <div
                     key={model.id}
-                    className="p-3.5 bg-black/[0.015] border border-black/10 hover:border-black transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 font-mono text-[10px] group"
+                    className="p-3 sm:p-3.5 bg-black/[0.015] border border-black/10 hover:border-black transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 font-mono text-[10px] group"
+                    style={{
+                      borderLeftWidth: '3px',
+                      borderLeftColor: brand.primaryColor,
+                    }}
                   >
-                    {/* Rank & Model Identity */}
-                    <div className="flex items-center gap-4 min-w-[320px]">
-                      <span className="font-bold text-black/40 text-[9px] w-6 shrink-0">
+                    {/* Rank & Company Logo & Model Identity */}
+                    <div className="flex items-center gap-3.5 min-w-[320px]">
+                      <span className="font-bold text-black/40 text-[9px] w-5 shrink-0">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
+
+                      {/* Small Company Logo with brand-matched background and border */}
+                      <div
+                        className="w-7 h-7 shrink-0 border flex items-center justify-center p-1 transition-transform group-hover:scale-105"
+                        style={{
+                          backgroundColor: brand.bgTint,
+                          borderColor: brand.borderColor,
+                        }}
+                        title={brand.name}
+                      >
+                        <CompanyLogo brandId={brand.id} className="w-4 h-4" />
+                      </div>
 
                       <div className="flex flex-col">
                         <span className="font-black text-xs uppercase text-black tracking-tight group-hover:underline">
                           {model.name}
                         </span>
                         
-                        <div className="flex items-center gap-2 text-[9px] text-black/50 mt-0.5">
+                        <div className="flex items-center gap-2 text-[9px] mt-0.5">
                           <button
                             onClick={() => onSelectLab && onSelectLab(model.creator.lab)}
-                            className="font-bold text-black hover:underline cursor-pointer"
+                            className="font-bold hover:underline cursor-pointer flex items-center gap-1"
+                            style={{ color: brand.textColor }}
                             title={`Filter feed to ${model.creator.lab}`}
                           >
-                            [{model.creator.name}]
+                            <span>[{model.creator.name}]</span>
                           </button>
-                          <span>•</span>
-                          <span>{model.category}</span>
+                          <span className="text-black/30">•</span>
+                          <span className="text-black/50">{model.category}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Visual Telemetry Bar */}
+                    {/* Visual Telemetry Bar Matching Company Brand Color */}
                     <div className="flex-1 max-w-xl flex items-center gap-3">
-                      <div className="flex-1 h-3 bg-black/10 relative overflow-hidden border border-black/20">
+                      <div className="flex-1 h-3 bg-black/5 relative overflow-hidden border border-black/15">
                         <div
-                          className="h-full bg-black transition-all duration-500 ease-out"
-                          style={{ width: `${barPercentage}%` }}
+                          className="h-full transition-all duration-500 ease-out"
+                          style={{
+                            width: `${barPercentage}%`,
+                            backgroundColor: brand.primaryColor,
+                          }}
                         />
                       </div>
                     </div>

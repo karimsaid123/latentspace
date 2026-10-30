@@ -31,6 +31,65 @@ export default function HomePage() {
     setLastSyncedTime(Date.now());
   }, []);
 
+  // Initial deep-link check (only runs ONCE when articles first load)
+  const initialDeepLinkChecked = React.useRef(false);
+  useEffect(() => {
+    if (initialDeepLinkChecked.current || articles.length === 0) return;
+    initialDeepLinkChecked.current = true;
+
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('article');
+      if (articleId) {
+        const found = articles.find((a) => a.id === articleId);
+        if (found) {
+          setSelectedArticle(found);
+        }
+      }
+    }
+  }, [articles]);
+
+  // Open article modal and update URL
+  const handleOpenArticle = useCallback((article: Article) => {
+    setSelectedArticle(article);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('article', article.id);
+      window.history.pushState({ articleId: article.id }, '', url.toString());
+    }
+  }, []);
+
+  // Close article modal and cleanly clean URL parameter
+  const handleCloseArticle = useCallback(() => {
+    setSelectedArticle(null);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('article')) {
+        url.searchParams.delete('article');
+        const newSearch = url.searchParams.toString();
+        window.history.pushState({}, '', url.pathname + (newSearch ? `?${newSearch}` : ''));
+      }
+    }
+  }, []);
+
+  // Handle browser back/forward buttons (popstate)
+  useEffect(() => {
+    const handlePopState = () => {
+      if (typeof window === 'undefined') return;
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('article');
+      if (articleId) {
+        const found = articlesRef.current.find((a) => a.id === articleId);
+        setSelectedArticle(found || null);
+      } else {
+        setSelectedArticle(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   // Initialize saved bookmarks from localStorage
   useEffect(() => {
     try {
@@ -97,7 +156,7 @@ export default function HomePage() {
         e.preventDefault();
         setIsSearchOpen(true);
       } else if (e.key === 'Escape') {
-        setSelectedArticle(null);
+        handleCloseArticle();
         setIsSearchOpen(false);
       }
     };
@@ -277,7 +336,7 @@ export default function HomePage() {
           <div key={`${selectedLab}_${selectedType}`} className="animate-fade-in">
             <EditorialSpread
               articles={displayedArticles}
-              onSelectArticle={setSelectedArticle}
+              onSelectArticle={handleOpenArticle}
               bookmarkedIds={bookmarkedIds}
               onToggleBookmark={toggleBookmark}
               onSelectLab={setSelectedLab}
@@ -303,7 +362,7 @@ export default function HomePage() {
       {/* Reader Modal */}
       <EditorialModal
         article={selectedArticle}
-        onClose={() => setSelectedArticle(null)}
+        onClose={handleCloseArticle}
         isBookmarked={selectedArticle ? bookmarkedIds.includes(selectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
       />

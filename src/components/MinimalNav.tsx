@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -46,6 +46,34 @@ export default function MinimalNav({
   setIsSearchOpen,
 }: MinimalNavProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [currentTime, setCurrentTime] = useState<string>('');
+  const [timeZone, setTimeZone] = useState<string>('');
+
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      setCurrentTime(
+        now.toLocaleTimeString(undefined, {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+        })
+      );
+      try {
+        const shortTz = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+          .formatToParts(now)
+          .find((part) => part.type === 'timeZoneName')?.value;
+        setTimeZone(shortTz || 'LOCAL');
+      } catch (_) {
+        setTimeZone('LOCAL');
+      }
+    };
+
+    updateClock();
+    const timer = setInterval(updateClock, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -57,23 +85,42 @@ export default function MinimalNav({
     <header className="w-full pt-8 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono text-[10px] tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="relative flex items-baseline justify-between border-b border-black/10 pb-4 overflow-hidden">
+      <div className="relative flex items-center justify-between border-b border-black/10 pb-4 overflow-hidden gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
           </div>
         )}
 
-        {/* Brand / Index Number */}
-        <div className="flex items-baseline gap-4">
+        {/* Brand / Index Number & Live User Device Clock */}
+        <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
           <span className="font-black text-sm tracking-tighter text-black flex items-center gap-2">
             LATENT SPACE
-            <span className="relative flex h-1.5 w-1.5" title="Autonomous Background Harvester Active">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
-            </span>
           </span>
-          <span className="text-black/40 text-[9px]">
+
+          {/* Live Device Clock Badge (Phone & PC) */}
+          <div 
+            className="flex items-center gap-1.5 border border-black px-2 py-0.5 bg-white shadow-xs font-mono text-[9px]"
+            title="Live lokale tijd van jouw apparaat (PC/telefoon)"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-bold text-black tracking-wider">
+              {currentTime || '--:--:--'}
+            </span>
+            {timeZone && (
+              <span className="text-[8px] text-black/50 hidden xs:inline">
+                [{timeZone}]
+              </span>
+            )}
+            <span className="text-[8px] text-emerald-700 font-bold hidden sm:inline">
+              LIVE
+            </span>
+          </div>
+
+          <span className="text-black/40 text-[9px] hidden md:inline">
             N° 001 // ENTRIES: {totalArticles}
           </span>
         </div>
@@ -109,7 +156,7 @@ export default function MinimalNav({
           <div className="text-right hidden sm:block font-bold text-black/80">
             AUTONOMOUS RADAR<br />
             <span className="text-[9px] font-normal text-black/40 tracking-wider">
-              AUTO-SYNC // {lastSyncedText}
+              {currentTime ? `${currentTime} • ` : ''}AUTO-SYNC // {lastSyncedText}
             </span>
           </div>
         </div>
