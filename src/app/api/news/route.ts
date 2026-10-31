@@ -23,9 +23,10 @@ export async function GET(request: NextRequest) {
 
     const syncRequested = searchParams.get('sync') === '1' || searchParams.get('refresh') === '1';
 
-    // Synchronize telemetry when requested or when data is older than 90 seconds (High-Intensity Radar)
-    // Runs cleanly across Edge, Serverless and Cloudflare Workers with bounded concurrency
-    if (syncRequested || container.ingestionService.shouldRunBackgroundSync(90 * 1000)) {
+    // Synchronize telemetry ONLY when explicitly requested via sync=1 (e.g. manual force sync)
+    // Regular news queries serve instantly (<5ms) from the in-memory repository to guarantee zero-latency
+    // and prevent Cloudflare Workers subrequest limits and timeouts.
+    if (syncRequested) {
       try {
         await container.ingestionService.runIngestion(`sync_${Date.now()}`);
         await container.cache.clear();

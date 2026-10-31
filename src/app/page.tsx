@@ -28,6 +28,23 @@ export default function HomePage() {
   // Set initial client timestamp & read optional ?lab= URL query param on mount
   useEffect(() => {
     setLastSyncedTime(Date.now());
+
+    // Instant zero-latency warm cache from session storage
+    try {
+      if (typeof window !== 'undefined' && articlesRef.current.length === 0) {
+        const cached = sessionStorage.getItem('latentspace_articles_cache');
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setArticles(parsed);
+            setIsLoading(false);
+          }
+        }
+      }
+    } catch {
+      // Fallback to network
+    }
+
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const labParam = params.get('lab');
@@ -157,17 +174,19 @@ export default function HomePage() {
   const abortControllerRef = useRef<AbortController | null>(null);
 
   const fetchArticles = useCallback(async (search: string, isSilent = false, forceBust = false) => {
+    let controller: AbortController | null = null;
     if (!isSilent) {
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
       }
-      abortControllerRef.current = new AbortController();
+      controller = new AbortController();
+      abortControllerRef.current = controller;
       if (articlesRef.current.length === 0) {
         setIsLoading(true);
       }
     }
 
-    const signal = !isSilent ? abortControllerRef.current?.signal : undefined;
+    const signal = controller?.signal;
 
     try {
       const params = new URLSearchParams();
@@ -179,10 +198,22 @@ export default function HomePage() {
       }
 
       const res = await fetch(`/api/news?${params.toString()}`, { signal });
-      if (!res.ok) return;
+      if (!res.ok) {
+        console.error('Failed to fetch /api/news:', res.status);
+        if (articlesRef.current.length === 0 && !isSilent) {
+          setTimeout(() => fetchArticles(search, false), 1500);
+        }
+        return;
+      }
       const data = await res.json();
       
-      if (data.articles) {
+      if (data.articles && Array.isArray(data.articles) && data.articles.length > 0) {
+        try {
+          sessionStorage.setItem('latentspace_articles_cache', JSON.stringify(data.articles.slice(0, 100)));
+        } catch {
+          // Ignore quota errors
+        }
+
         if (isSilent && typeof window !== 'undefined' && window.scrollY > 150 && articlesRef.current.length > 0) {
           const currentIds = new Set(articlesRef.current.map((a) => a.id));
           const newItems = data.articles.filter((a: Article) => !currentIds.has(a.id));
@@ -204,7 +235,9 @@ export default function HomePage() {
       if (err?.name === 'AbortError') return;
       console.error('Failed to load articles:', err);
     } finally {
-      setIsLoading(false);
+      if (!signal || !signal.aborted) {
+        setIsLoading(false);
+      }
     }
   }, [reconcile]);
 
