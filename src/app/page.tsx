@@ -28,6 +28,109 @@ export default function HomePage() {
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
   const hasFetchedLiveRef = useRef<boolean>(false);
 
+  const articlesRef = useRef<Article[]>([]);
+  articlesRef.current = articles;
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const selectedLabRef = useRef(selectedLab);
+  selectedLabRef.current = selectedLab;
+
+  const fetchArticles = useCallback(async (search: string, lab?: string, isSilent = false, bustCache = false) => {
+    const activeLab = lab !== undefined ? lab : selectedLabRef.current;
+    let controller: AbortController | null = null;
+    if (!isSilent) {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      controller = new AbortController();
+      abortControllerRef.current = controller;
+      if (articlesRef.current.length === 0) {
+        setIsLoading(true);
+      }
+    }
+
+    const signal = controller?.signal;
+
+    try {
+      const params = new URLSearchParams();
+      params.set('limit', '150');
+      if (search) params.set('search', search);
+      if (activeLab && activeLab !== 'All' && activeLab !== 'SAVED') {
+        params.set('lab', activeLab);
+      }
+      if (bustCache) {
+        params.set('_v', String(Date.now()));
+      }
+
+      const res = await fetch(`/api/news?${params.toString()}`, { signal });
+      if (!res.ok) {
+        console.error('Failed to fetch /api/news:', res.status);
+        if (articlesRef.current.length === 0 && !isSilent) {
+          setTimeout(() => fetchArticles(search, activeLab, false), 1500);
+        }
+        return;
+      }
+      const data = await res.json();
+      hasFetchedLiveRef.current = true;
+      
+      if (data.articles && Array.isArray(data.articles)) {
+        if (activeLab === 'All' && !search) {
+          try {
+            sessionStorage.setItem('latentspace_articles_cache', JSON.stringify(data.articles.slice(0, 100)));
+          } catch {
+            // Ignore quota errors
+          }
+        }
+
+        if (isSilent && typeof window !== 'undefined' && window.scrollY > 150 && articlesRef.current.length > 0) {
+          const currentIds = new Set(articlesRef.current.map((a) => a.id));
+          const newItems = data.articles.filter((a: Article) => !currentIds.has(a.id));
+          if (newItems.length > 0) {
+            setIncomingArticles(data.articles);
+          }
+        } else {
+          setArticles(data.articles);
+          setIncomingArticles(null);
+          reconcile(data.articles);
+        }
+        if (data.lastSyncedAt && data.lastSyncedAt > 0) {
+          setLastSyncedTime(data.lastSyncedAt);
+        } else {
+          setLastSyncedTime(Date.now());
+        }
+      }
+    } catch (err: any) {
+      if (err?.name === 'AbortError') return;
+      console.error('Failed to load articles:', err);
+    } finally {
+      if (!signal || !signal.aborted) {
+        setIsLoading(false);
+      }
+    }
+  }, [reconcile]);
+
+  const handleSelectLab = useCallback((lab: string) => {
+    setSelectedLab(lab);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (lab === 'All') {
+        url.searchParams.delete('lab');
+      } else {
+        url.searchParams.set('lab', lab);
+      }
+      window.history.pushState({}, '', url.toString());
+    }
+    if (lab !== 'SAVED') {
+      fetchArticles(searchQueryRef.current, lab, false);
+    }
+  }, [fetchArticles]);
+
+  const handleSelectLabFromDossier = useCallback((lab: string) => {
+    handleSelectLab(lab);
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [handleSelectLab]);
+
   // Set initial client timestamp, restore warm session cache post-hydration, & read ?lab= param
   useEffect(() => {
     queueMicrotask(() => {
@@ -49,9 +152,12 @@ export default function HomePage() {
       const labParam = params.get('lab');
       if (labParam && LAB_FILTERS.some((l) => l.id === labParam)) {
         setSelectedLab(labParam);
+        fetchArticles('', labParam, false);
+      } else {
+        fetchArticles('', 'All', false);
       }
     });
-  }, []);
+  }, [fetchArticles]);
 
   // Initial deep-link check (resolves immediately on seed/cache or once live feed arrives)
   const initialDeepLinkChecked = useRef(false);
@@ -116,9 +222,6 @@ export default function HomePage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const articlesRef = useRef<Article[]>([]);
-  articlesRef.current = articles;
-
   const toggleBookmark = useCallback((id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     const art = articlesRef.current.find((a) => a.id === id);
@@ -126,13 +229,6 @@ export default function HomePage() {
       toggleSave(art);
     }
   }, [toggleSave]);
-
-  const handleSelectLabFromDossier = useCallback((lab: string) => {
-    setSelectedLab(lab);
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, []);
 
   // Track window scroll for Back-To-Top button (rAF throttled)
   useEffect(() => {
@@ -174,84 +270,6 @@ export default function HomePage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleCloseArticle]);
 
-  const abortControllerRef = useRef<AbortController | null>(null);
-
-  const fetchArticles = useCallback(async (search: string, isSilent = false, bustCache = false) => {
-    let controller: AbortController | null = null;
-    if (!isSilent) {
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-      }
-      controller = new AbortController();
-      abortControllerRef.current = controller;
-      if (articlesRef.current.length === 0) {
-        setIsLoading(true);
-      }
-    }
-
-    const signal = controller?.signal;
-
-    try {
-      const params = new URLSearchParams();
-      params.set('limit', '150');
-      if (search) params.set('search', search);
-      if (bustCache) {
-        params.set('_v', String(Date.now()));
-      }
-
-      const res = await fetch(`/api/news?${params.toString()}`, { signal });
-      if (!res.ok) {
-        console.error('Failed to fetch /api/news:', res.status);
-        if (articlesRef.current.length === 0 && !isSilent) {
-          setTimeout(() => fetchArticles(search, false), 1500);
-        }
-        return;
-      }
-      const data = await res.json();
-      hasFetchedLiveRef.current = true;
-      
-      if (data.articles && Array.isArray(data.articles) && data.articles.length > 0) {
-        try {
-          sessionStorage.setItem('latentspace_articles_cache', JSON.stringify(data.articles.slice(0, 100)));
-        } catch {
-          // Ignore quota errors
-        }
-
-        if (isSilent && typeof window !== 'undefined' && window.scrollY > 150 && articlesRef.current.length > 0) {
-          const currentIds = new Set(articlesRef.current.map((a) => a.id));
-          const newItems = data.articles.filter((a: Article) => !currentIds.has(a.id));
-          if (newItems.length > 0) {
-            setIncomingArticles(data.articles);
-          }
-        } else {
-          setArticles(data.articles);
-          setIncomingArticles(null);
-          reconcile(data.articles);
-        }
-        if (data.lastSyncedAt && data.lastSyncedAt > 0) {
-          setLastSyncedTime(data.lastSyncedAt);
-        } else {
-          setLastSyncedTime(Date.now());
-        }
-      }
-    } catch (err: any) {
-      if (err?.name === 'AbortError') return;
-      console.error('Failed to load articles:', err);
-    } finally {
-      if (!signal || !signal.aborted) {
-        setIsLoading(false);
-      }
-    }
-  }, [reconcile]);
-
-  // Initial load ONCE on mount (prevents double-fetching on every search keystroke)
-  useEffect(() => {
-    fetchArticles('', false);
-    return () => {
-      abortControllerRef.current?.abort();
-    };
-  }, [fetchArticles]);
-
   // Debounced search (only triggers when searchQuery changes after mount)
   const isSearchMounted = useRef(false);
   useEffect(() => {
@@ -260,7 +278,7 @@ export default function HomePage() {
       return;
     }
     const timer = setTimeout(() => {
-      fetchArticles(searchQuery, false);
+      fetchArticles(searchQuery, selectedLabRef.current, false);
     }, 250);
     return () => clearTimeout(timer);
   }, [searchQuery, fetchArticles]);
@@ -290,7 +308,7 @@ export default function HomePage() {
       }
 
       // Read freshly ingested articles quickly (<10ms) with limit=150 (bust CDN only when batch added items)
-      fetchArticles(searchQueryRef.current, true, hasFresh);
+      fetchArticles(searchQueryRef.current, selectedLabRef.current, true, hasFresh);
     }, 60_000);
 
     return () => clearInterval(pollInterval);
@@ -303,7 +321,7 @@ export default function HomePage() {
       await fetch('/api/sync?force=1', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
-      await fetchArticles(searchQueryRef.current, false, true);
+      await fetchArticles(searchQueryRef.current, selectedLabRef.current, false, true);
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {
@@ -354,7 +372,7 @@ export default function HomePage() {
       {/* Minimal Top Nav (Pure Lab Sectors & Publication Types) */}
       <MinimalNav
         selectedLab={selectedLab}
-        onSelectLab={setSelectedLab}
+        onSelectLab={handleSelectLab}
         selectedType={selectedType}
         onSelectType={setSelectedType}
         searchQuery={searchQuery}
@@ -389,8 +407,8 @@ export default function HomePage() {
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedLab('All');
                   setSelectedType('ALL');
+                  handleSelectLab('All');
                 }}
                 className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
               >

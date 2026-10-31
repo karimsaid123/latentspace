@@ -231,6 +231,24 @@ const DEFAULT_SOURCES: DomainSource[] = [
     enabled: true,
     consecutiveFailures: 0,
   },
+  {
+    id: 'xai-radar',
+    name: 'xAI & Grok Radar',
+    feedUrl: 'https://news.google.com/rss/search?q=xAI+OR+%22Elon+Musk%22+AI+OR+Grok&hl=en-US&gl=US&ceid=US:en',
+    websiteUrl: 'https://x.ai',
+    category: 'LLMs & GenAI',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'teslarati-spacex',
+    name: 'Teslarati SpaceX',
+    feedUrl: 'https://www.teslarati.com/category/spacex/feed/',
+    websiteUrl: 'https://www.teslarati.com',
+    category: 'Robotics & Hardware',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
 ];
 
 const EDGE_SOURCES_STORE_URL = 'https://internal.latentspace/sources-store';
