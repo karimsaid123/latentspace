@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, useEffect, memo } from 'react';
 import { Article } from '@/types';
-import ArtFrame from './ArtFrame';
 import ScrollReveal from './ScrollReveal';
 
 const CATALOG_PAGE_SIZE = 24;
@@ -72,21 +71,21 @@ const EditorialSpread = memo(function EditorialSpread({
     <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-8 select-none">
       
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 1: MONUMENTAL SWISS HEADLINES (Image 2 style)
+          SECTION 1: REFINED SWISS EDITORIAL LEAD STORIES (Image-free)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative pt-6 pb-16 lg:pb-20 animate-fade-up">
+      <section className="relative pt-6 pb-14 lg:pb-16 animate-fade-up">
         
-        {/* Lead Giant Headline */}
-        <div className="relative mb-14">
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-6">
+        {/* Lead Headline */}
+        <div className="relative">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-4">
             <h1
               onClick={() => onSelectArticle(lead)}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black uppercase tracking-[-0.05em] leading-[0.82] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer max-w-6xl break-words [overflow-wrap:anywhere]"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-[-0.035em] leading-[0.98] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer max-w-5xl break-words [overflow-wrap:anywhere]"
             >
               {lead.title}
             </h1>
             
-            <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase shrink-0 pt-3">
+            <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase shrink-0 pt-2">
               <span>[{lead.source.name}]</span>
             </div>
           </div>
@@ -115,40 +114,34 @@ const EditorialSpread = memo(function EditorialSpread({
               </>
             )}
           </div>
+
+          {(lead.aiSummary?.tldr || lead.contentSnippet) && (
+            <p 
+              onClick={() => onSelectArticle(lead)}
+              className="mt-5 text-sm sm:text-base text-black/75 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-90 transition-opacity"
+            >
+              {lead.aiSummary?.tldr || lead.contentSnippet}
+            </p>
+          )}
         </div>
 
-        {/* Nested Art Frame + Secondary Giant Swiss Headline */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-6">
-          
-          {/* Small thumbnail art with 4 corner black handles */}
-          <div className="lg:col-span-3">
-            <div 
-              onClick={() => onSelectArticle(lead)}
-              className="cursor-pointer max-w-[180px] sm:max-w-[210px]"
-            >
-              <ArtFrame
-                src={lead.imageUrl}
-                alt={lead.title}
-                indexCode="001"
-                aspect="portrait"
-                priority
-                title={lead.title}
-                lab={lead.lab}
-                sourceName={lead.source.name}
-                entryType={lead.entryType}
-                arxivId={lead.arxivId}
-              />
-            </div>
-          </div>
-
-          {/* Secondary Giant Swiss Headline */}
-          <div className="lg:col-span-9 flex flex-col justify-between pl-0 lg:pl-8">
+        {/* Secondary Story (Refined Headline, Image-free) */}
+        {second && second.id !== lead.id && (
+          <div className="pt-10 mt-10 border-t border-black/10">
             <div 
               onClick={() => onSelectArticle(second)}
-              className="cursor-pointer mb-10 group"
+              className="cursor-pointer group max-w-5xl"
             >
-              <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
-                <span>[{second.source.name}]</span>
+              <div className="flex items-center justify-between gap-4 font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
+                <div className="flex items-center gap-3">
+                  <span className="font-bold text-black">[{second.source.name}]</span>
+                  <span>//</span>
+                  <span className="font-bold text-black">LAB: [{second.lab || 'FRONTIER'}]</span>
+                  <span>//</span>
+                  <span className={second.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+                    [{second.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+                  </span>
+                </div>
                 {onToggleBookmark && (
                   <button
                     onClick={(e) => {
@@ -164,239 +157,260 @@ const EditorialSpread = memo(function EditorialSpread({
                   </button>
                 )}
               </div>
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.84] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300 break-words [overflow-wrap:anywhere]">
+
+              <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-[-0.035em] leading-[1.02] text-black group-hover:opacity-75 group-hover:translate-x-1 transition-all duration-300 break-words [overflow-wrap:anywhere]">
                 {second.title}
               </h2>
-            </div>
 
-            {/* Bottom Right Art Block */}
-            <div className="flex justify-end items-end pt-4">
-              <div 
-                onClick={() => onSelectArticle(second)}
-                className="cursor-pointer w-28 sm:w-36 shrink-0"
-              >
-                <ArtFrame
-                  src={second.imageUrl}
-                  alt={second.title}
-                  indexCode="002"
-                  aspect="portrait"
-                  title={second.title}
-                  lab={second.lab}
-                  sourceName={second.source.name}
-                  entryType={second.entryType}
-                  arxivId={second.arxivId}
-                />
-              </div>
+              {(second.aiSummary?.tldr || second.contentSnippet) && (
+                <p className="mt-3 text-sm text-black/70 font-sans max-w-3xl leading-relaxed">
+                  {second.aiSummary?.tldr || second.contentSnippet}
+                </p>
+              )}
             </div>
           </div>
-
-        </div>
+        )}
 
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 2: MONUMENTAL SWISS TYPOGRAPHY DISPATCH
+          SECTION 2: FEATURED DISPATCH (Refined Headline, Image-free)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-16 lg:py-20">
-        
-        <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>FEATURED DISPATCH</span>
-        </div>
+      {third && third.id !== lead.id && third.id !== second.id && (
+        <section className="relative py-12 lg:py-16 border-t border-black/10">
+          
+          <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-6">
+            <span>FEATURED DISPATCH</span>
+          </div>
 
-        <div className="w-full">
-          <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-4">
-            <div className="flex items-center gap-3">
-              <span className="font-bold text-black">[{third.source.name}]</span>
-              <span>//</span>
-              <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+          <div className="w-full">
+            <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
+              <div className="flex items-center gap-3">
+                <span className="font-bold text-black">[{third.source.name}]</span>
+                <span>//</span>
+                <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+              </div>
+              {onToggleBookmark && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleBookmark(third.id, e);
+                  }}
+                  className={`hover:text-black cursor-pointer transition-colors ${
+                    bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                  }`}
+                  title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
+                >
+                  [{bookmarkedIds.includes(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                </button>
+              )}
             </div>
-            {onToggleBookmark && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onToggleBookmark(third.id, e);
-                }}
-                className={`hover:text-black cursor-pointer transition-colors ${
-                  bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
-                }`}
-                title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
+
+            <h2
+              onClick={() => onSelectArticle(third)}
+              className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-[-0.035em] leading-[1.02] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-4 break-words [overflow-wrap:anywhere] max-w-5xl"
+            >
+              {third.title}
+            </h2>
+
+            <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3 mb-4">
+              <span>BY {third.author || third.source.name}</span>
+              <span>//</span>
+              <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
+                [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+              </span>
+              {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
+            </div>
+
+            {(third.aiSummary?.tldr || third.contentSnippet) && (
+              <p 
+                onClick={() => onSelectArticle(third)}
+                className="text-sm text-black/70 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-80 transition-opacity"
               >
-                [{bookmarkedIds.includes(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
-              </button>
+                {third.aiSummary?.tldr || third.contentSnippet}
+              </p>
             )}
           </div>
 
-          <h2
-            onClick={() => onSelectArticle(third)}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.04em] leading-[0.86] text-black hover:opacity-75 hover:translate-x-1 transition-all duration-300 cursor-pointer mb-8 break-words [overflow-wrap:anywhere]"
-          >
-            {third.title}
-          </h2>
-
-          <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
-            <span>BY {third.author || third.source.name}</span>
-            <span>//</span>
-            <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-              [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
-            </span>
-            {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
-          </div>
-        </div>
-
-      </section>
-
+        </section>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 3: ARCHITECTURAL 3-COLUMN EDITORIAL GALLERY SPREAD
+          SECTION 3: ARCHITECTURAL 3-COLUMN DISPATCH ARCHIVE (Image-free)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-16 lg:py-20">
+      <section className="relative py-12 lg:py-16 border-t border-black/10">
         
         {/* Top Header of Section 3 */}
         <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>GALLERY ARCHIVE</span>
+          <span>DISPATCH ARCHIVE</span>
+          <span>CURATED SECTOR RADAR</span>
         </div>
 
-        {/* 3-Column Swiss Grid with Clean Spacing (no dividing lines) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+        {/* 3-Column Swiss Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           
-          {/* ─── COLUMN 1: LEFT (004) ─── */}
-          <div className="flex flex-col items-start w-full">
-            <ScrollReveal yOffset={45} parallaxSpeed={0.04} delayMs={50} className="w-full">
+          {/* ─── COLUMN 1: [004] ─── */}
+          <div className="flex flex-col items-start w-full border-t border-black pt-4">
+            <ScrollReveal yOffset={25} delayMs={50} className="w-full">
               
-              {/* Large ArtFrame */}
+              {/* Index & Source */}
               <div 
                 onClick={() => onSelectArticle(fourth)}
-                className="w-full max-w-[380px] cursor-pointer"
+                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
               >
-                <ArtFrame
-                  src={fourth.imageUrl}
-                  alt={fourth.title}
-                  indexCode="004"
-                  aspect="portrait"
-                  className="w-full"
-                  title={fourth.title}
-                  lab={fourth.lab}
-                  sourceName={fourth.source.name}
-                  entryType={fourth.entryType}
-                  arxivId={fourth.arxivId}
-                />
-              </div>
-
-              {/* Source & Lab Metadata Line */}
-              <div 
-                onClick={() => onSelectArticle(fourth)}
-                className="w-full max-w-[380px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
-                title={fourth.title}
-              >
-                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
-                  [{fourth.source.name}]
+                <span className="font-bold tracking-widest text-black group-hover:underline">
+                  [004 // {fourth.source.name}]
                 </span>
-                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                <span className="tracking-wider text-black/50 uppercase">
                   [{fourth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
-              {/* Article Headline */}
+              {/* Headline */}
               <h3 
                 onClick={() => onSelectArticle(fourth)}
-                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] break-words [overflow-wrap:anywhere]"
+                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
               >
                 {fourth.title}
               </h3>
+
+              {/* Snippet */}
+              {(fourth.aiSummary?.tldr || fourth.contentSnippet) && (
+                <p 
+                  onClick={() => onSelectArticle(fourth)}
+                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
+                >
+                  {fourth.aiSummary?.tldr || fourth.contentSnippet}
+                </p>
+              )}
+
+              {/* Meta */}
+              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
+                <span>{fourth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
+                {onToggleBookmark && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleBookmark(fourth.id, e);
+                    }}
+                    className={`hover:text-black cursor-pointer transition-colors ${
+                      bookmarkedIds.includes(fourth.id) ? 'text-black font-bold' : 'text-black/40'
+                    }`}
+                  >
+                    [{bookmarkedIds.includes(fourth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                  </button>
+                )}
+              </div>
             </ScrollReveal>
           </div>
 
-          {/* ─── COLUMN 2: CENTER (005) ─── */}
-          <div className="flex flex-col items-center w-full">
-            <ScrollReveal yOffset={55} parallaxSpeed={-0.03} delayMs={100} className="w-full flex flex-col items-center">
+          {/* ─── COLUMN 2: [005] ─── */}
+          <div className="flex flex-col items-start w-full border-t border-black pt-4">
+            <ScrollReveal yOffset={25} delayMs={100} className="w-full">
               
-              {/* Hero Large Center ArtFrame */}
+              {/* Index & Source */}
               <div 
                 onClick={() => onSelectArticle(fifth)}
-                className="w-full max-w-[450px] cursor-pointer"
+                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
               >
-                <ArtFrame
-                  src={fifth.imageUrl}
-                  alt={fifth.title}
-                  indexCode="005"
-                  aspect="portrait"
-                  className="w-full"
-                  title={fifth.title}
-                  lab={fifth.lab}
-                  sourceName={fifth.source.name}
-                  entryType={fifth.entryType}
-                  arxivId={fifth.arxivId}
-                />
-              </div>
-
-              {/* Source & Lab Metadata Line */}
-              <div 
-                onClick={() => onSelectArticle(fifth)}
-                className="w-full max-w-[450px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
-                title={fifth.title}
-              >
-                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
-                  [{fifth.source.name}]
+                <span className="font-bold tracking-widest text-black group-hover:underline">
+                  [005 // {fifth.source.name}]
                 </span>
-                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                <span className="tracking-wider text-black/50 uppercase">
                   [{fifth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
-              {/* Giant Center Headline */}
+              {/* Headline */}
               <h3 
                 onClick={() => onSelectArticle(fifth)}
-                className="font-mono text-base sm:text-lg md:text-xl font-black uppercase tracking-tight leading-tight cursor-pointer hover:opacity-70 transition-opacity max-w-[450px] text-center break-words [overflow-wrap:anywhere]"
+                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
               >
                 {fifth.title}
               </h3>
+
+              {/* Snippet */}
+              {(fifth.aiSummary?.tldr || fifth.contentSnippet) && (
+                <p 
+                  onClick={() => onSelectArticle(fifth)}
+                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
+                >
+                  {fifth.aiSummary?.tldr || fifth.contentSnippet}
+                </p>
+              )}
+
+              {/* Meta */}
+              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
+                <span>{fifth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
+                {onToggleBookmark && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleBookmark(fifth.id, e);
+                    }}
+                    className={`hover:text-black cursor-pointer transition-colors ${
+                      bookmarkedIds.includes(fifth.id) ? 'text-black font-bold' : 'text-black/40'
+                    }`}
+                  >
+                    [{bookmarkedIds.includes(fifth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                  </button>
+                )}
+              </div>
             </ScrollReveal>
           </div>
 
-          {/* ─── COLUMN 3: RIGHT (006) ─── */}
-          <div className="flex flex-col items-start lg:items-end w-full">
-            <ScrollReveal yOffset={45} parallaxSpeed={0.05} delayMs={150} className="w-full flex flex-col items-start lg:items-end">
+          {/* ─── COLUMN 3: [006] ─── */}
+          <div className="flex flex-col items-start w-full border-t border-black pt-4">
+            <ScrollReveal yOffset={25} delayMs={150} className="w-full">
               
-              {/* Large ArtFrame */}
+              {/* Index & Source */}
               <div 
                 onClick={() => onSelectArticle(sixth)}
-                className="w-full max-w-[380px] cursor-pointer"
+                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
               >
-                <ArtFrame
-                  src={sixth.imageUrl}
-                  alt={sixth.title}
-                  indexCode="006"
-                  aspect="portrait"
-                  className="w-full"
-                  title={sixth.title}
-                  lab={sixth.lab}
-                  sourceName={sixth.source.name}
-                  entryType={sixth.entryType}
-                  arxivId={sixth.arxivId}
-                />
-              </div>
-
-              {/* Source & Lab Metadata Line */}
-              <div 
-                onClick={() => onSelectArticle(sixth)}
-                className="w-full max-w-[380px] flex items-center justify-between gap-2.5 my-3 cursor-pointer group"
-                title={sixth.title}
-              >
-                <span className="font-mono text-[9px] font-bold tracking-widest text-black shrink-0 group-hover:underline">
-                  [{sixth.source.name}]
+                <span className="font-bold tracking-widest text-black group-hover:underline">
+                  [006 // {sixth.source.name}]
                 </span>
-                <span className="font-mono text-[9px] tracking-wider text-black/50 uppercase">
+                <span className="tracking-wider text-black/50 uppercase">
                   [{sixth.lab || 'FRONTIER'}]
                 </span>
               </div>
 
-              {/* Article Headline */}
+              {/* Headline */}
               <h3 
                 onClick={() => onSelectArticle(sixth)}
-                className="font-mono text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity max-w-[380px] text-left lg:text-right break-words [overflow-wrap:anywhere]"
+                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
               >
                 {sixth.title}
               </h3>
+
+              {/* Snippet */}
+              {(sixth.aiSummary?.tldr || sixth.contentSnippet) && (
+                <p 
+                  onClick={() => onSelectArticle(sixth)}
+                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
+                >
+                  {sixth.aiSummary?.tldr || sixth.contentSnippet}
+                </p>
+              )}
+
+              {/* Meta */}
+              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
+                <span>{sixth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
+                {onToggleBookmark && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onToggleBookmark(sixth.id, e);
+                    }}
+                    className={`hover:text-black cursor-pointer transition-colors ${
+                      bookmarkedIds.includes(sixth.id) ? 'text-black font-bold' : 'text-black/40'
+                    }`}
+                  >
+                    [{bookmarkedIds.includes(sixth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                  </button>
+                )}
+              </div>
             </ScrollReveal>
           </div>
 
@@ -407,9 +421,9 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION: FRONTIER LABS INTELLIGENCE DOSSIER (Dedicated Lab Sections)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-20 lg:py-24">
+      <section className="relative py-16 lg:py-20 border-t border-black/10">
         
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-12 gap-2">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-10 gap-2">
           <div>
             <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
             <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
@@ -417,7 +431,7 @@ const EditorialSpread = memo(function EditorialSpread({
           <span>ACTIVE MONITORING: 8 ENTERPRISE CLUSTERS</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {LAB_SECTORS.map((lab, idx) => {
             const labArticles = articlesByLab[lab.id] || [];
             const leadArt = labArticles[0];
@@ -425,55 +439,33 @@ const EditorialSpread = memo(function EditorialSpread({
             return (
               <ScrollReveal
                 key={lab.id}
-                delayMs={(idx % 4) * 80}
-                yOffset={35}
+                delayMs={(idx % 4) * 60}
+                yOffset={25}
                 className="h-full"
               >
                 <div 
-                  className="border border-black p-6 sm:p-8 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300 h-full"
+                  className="border border-black p-6 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300 h-full"
                 >
                   <div>
-                    <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-4">
-                      <span className="font-bold text-black">[DOSSIER]</span>
+                    <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-3">
+                      <span className="font-bold text-black">[DOSSIER 00{idx + 1}]</span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-6 group-hover:translate-x-1 transition-transform">
+                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-5 group-hover:translate-x-1 transition-transform">
                       {lab.name}
                     </h3>
 
                     {leadArt ? (
                       <div className="mb-6">
-                        <div 
-                          onClick={() => onSelectArticle(leadArt)}
-                          className="cursor-pointer mb-3"
-                        >
-                          <ArtFrame
-                            src={leadArt.imageUrl}
-                            alt={leadArt.title}
-                            indexCode={`LAB_00${idx + 1}`}
-                            aspect="landscape"
-                            title={leadArt.title}
-                            lab={leadArt.lab}
-                            sourceName={leadArt.source.name}
-                            entryType={leadArt.entryType}
-                            arxivId={leadArt.arxivId}
-                          />
-                        </div>
-
-                        <div className="flex items-start justify-between gap-2 mb-2">
-                          <h4 
-                            onClick={() => onSelectArticle(leadArt)}
-                            className="text-base sm:text-lg font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer flex-1"
-                          >
-                            {leadArt.title}
-                          </h4>
+                        <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
+                          <span className="font-bold text-black">[{leadArt.source.name}]</span>
                           {onToggleBookmark && (
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
                                 onToggleBookmark(leadArt.id, e);
                               }}
-                              className={`shrink-0 font-mono text-[9px] hover:text-black cursor-pointer transition-colors pt-1 ${
+                              className={`shrink-0 hover:text-black cursor-pointer transition-colors ${
                                 bookmarkedIds.includes(leadArt.id) ? 'text-black font-bold' : 'text-black/40'
                               }`}
                               title={bookmarkedIds.includes(leadArt.id) ? 'Saved' : 'Save article'}
@@ -483,19 +475,26 @@ const EditorialSpread = memo(function EditorialSpread({
                           )}
                         </div>
 
-                        <p className="font-sans text-xs text-black/70 line-clamp-2 leading-relaxed antialiased">
+                        <h4 
+                          onClick={() => onSelectArticle(leadArt)}
+                          className="text-sm sm:text-base font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
+                        >
+                          {leadArt.title}
+                        </h4>
+
+                        <p className="font-sans text-xs text-black/70 line-clamp-3 leading-relaxed antialiased">
                           {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
                         </p>
                       </div>
                     ) : (
-                      <div className="py-12 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+                      <div className="py-10 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
                         NO DIRECT TELEMETRY IN CURRENT CYCLE
                       </div>
                     )}
 
                     {/* Secondary Lab Headlines */}
                     {labArticles.slice(1, 3).length > 0 && (
-                      <div className="space-y-2.5 pt-4 font-mono text-[9px]">
+                      <div className="space-y-2 pt-3 border-t border-black/10 font-mono text-[9px]">
                         {labArticles.slice(1, 3).map((art, aIdx) => (
                           <div
                             key={`${art.id}_lab_${aIdx}`}
@@ -510,8 +509,8 @@ const EditorialSpread = memo(function EditorialSpread({
                     )}
                   </div>
 
-                  <div className="mt-8 flex justify-between items-center font-mono text-[9px]">
-                    <span className="text-black/40 uppercase">STATUS: LIVE RADAR</span>
+                  <div className="mt-6 pt-3 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
+                    <span className="text-black/40 uppercase">STATUS: LIVE</span>
                     {onSelectLab && (
                       <button
                         onClick={() => onSelectLab(lab.id)}
@@ -530,9 +529,9 @@ const EditorialSpread = memo(function EditorialSpread({
       </section>
 
       {/* ─────────────────────────────────────────────────────────────
-          SECTION 4: COMPLETE CATALOG (Browse all AI articles)
+          SECTION 4: COMPLETE CATALOG (Image-free, Balanced Typography)
       ───────────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24">
+      <section className="py-16 lg:py-20 border-t border-black/10">
         
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-8">
           <span className="font-bold text-black">CATALOG ARCHIVE</span>
@@ -560,44 +559,30 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
         ) : (
           <div className="animate-fade-up">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
               {catalogSlice.map((art, idx) => (
                 <div
                   key={`${art.id}_catalog_${idx}`}
                   onClick={() => onSelectArticle(art)}
-                  className="group cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+                  className="group cursor-pointer flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 border-t border-black/10 pt-4"
                 >
                   <div>
-                    <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-3">
+                    <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
                       <span className="font-bold text-black group-hover:underline">[{art.source.name}]</span>
+                      <span>[{art.lab || 'FRONTIER'}]</span>
                     </div>
 
-                    <div className="mb-4">
-                      <ArtFrame
-                        src={art.imageUrl}
-                        alt={art.title}
-                        aspect="landscape"
-                        title={art.title}
-                        lab={art.lab}
-                        sourceName={art.source.name}
-                        entryType={art.entryType}
-                        arxivId={art.arxivId}
-                      />
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.035em] leading-[0.88] text-black group-hover:text-black/70 transition-colors line-clamp-3 mb-3">
+                    <h3 className="text-base sm:text-lg font-black uppercase tracking-[-0.025em] leading-snug text-black group-hover:text-black/70 transition-colors line-clamp-3 mb-2.5">
                       {art.title}
                     </h3>
 
-                    <p className="font-sans text-xs text-black/70 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed antialiased">
+                    <p className="font-sans text-xs text-black/70 group-hover:text-black/90 transition-colors line-clamp-3 leading-relaxed antialiased">
                       {art.aiSummary?.tldr || art.contentSnippet || ''}
                     </p>
                   </div>
 
-                  <div className="mt-4 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
+                  <div className="mt-4 pt-3 border-t border-black/5 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
                     <div className="flex items-center gap-2 truncate">
-                      <span className="font-bold text-black">[{art.lab || 'FRONTIER'}]</span>
-                      <span className="text-black/30">•</span>
                       <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
                         {art.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
                       </span>
@@ -624,7 +609,7 @@ const EditorialSpread = memo(function EditorialSpread({
             </div>
 
             {remainingCount > 0 && (
-              <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
+              <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
                 <span className="text-black/50">
                   SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
                 </span>

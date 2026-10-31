@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { Article } from '@/types';
-import ArtFrame from './ArtFrame';
 import { ExternalLink, Share2 } from 'lucide-react';
 import ArticleShareModal from './ArticleShareModal';
 import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
@@ -126,21 +125,10 @@ export default function EditorialModal({
               )}
             </div>
 
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-[-0.035em] leading-[0.92] text-black">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight leading-snug text-black">
               {article.title}
             </h2>
           </div>
-
-          {article.imageUrl && (
-            <div className="max-w-md">
-              <ArtFrame
-                src={article.imageUrl}
-                alt={article.title}
-                indexCode="001"
-                aspect="landscape"
-              />
-            </div>
-          )}
 
           {/* 01: Executive Intelligence Brief */}
           <div className="space-y-3">
