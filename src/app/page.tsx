@@ -8,14 +8,30 @@ import Footer from '@/components/Footer';
 import { Article } from '@/types';
 import { RefreshCw } from 'lucide-react';
 import { useSavedArticles } from '@/lib/saved-storage';
+import fallbackArticlesData from '@/data/fallback-articles.json';
 
 export default function HomePage() {
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [articles, setArticles] = useState<Article[]>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const cached = sessionStorage.getItem('latentspace_articles_cache');
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            return parsed;
+          }
+        }
+      } catch {
+        // Fallback to static articles
+      }
+    }
+    return fallbackArticlesData as Article[];
+  });
   const [selectedLab, setSelectedLab] = useState<string>('All');
   const [selectedType, setSelectedType] = useState<'ALL' | 'DISPATCH' | 'RESEARCH_PAPER'>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   
@@ -190,7 +206,7 @@ export default function HomePage() {
 
     try {
       const params = new URLSearchParams();
-      params.set('limit', '400');
+      params.set('limit', '150');
       if (search) params.set('search', search);
       if (forceBust) {
         params.set('sync', '1');
@@ -262,16 +278,26 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [searchQuery, fetchArticles]);
 
-  // High-intensity background polling (Every 20s ONLY when tab is visible)
+  // Rolling batch sync & background polling every 60s (only when document is visible)
   const searchQueryRef = useRef(searchQuery);
   searchQueryRef.current = searchQuery;
   useEffect(() => {
-    const pollInterval = setInterval(() => {
+    const pollInterval = setInterval(async () => {
       if (typeof document !== 'undefined' && document.visibilityState !== 'visible') {
         return;
       }
+
+      try {
+        // Trigger rolling batch ingestion of next 8 sources in background
+        await fetch('/api/sync', { method: 'POST' }).catch(() => {});
+      } catch {
+        // Ignore background sync errors
+      }
+
+      // Read freshly ingested articles quickly (<10ms) with limit=150
       fetchArticles(searchQueryRef.current, true);
-    }, 20_000);
+    }, 60_000);
+
     return () => clearInterval(pollInterval);
   }, [fetchArticles]);
 

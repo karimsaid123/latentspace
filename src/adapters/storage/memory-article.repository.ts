@@ -52,7 +52,28 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       let loaded: any[] = [];
 
       if (isServerlessOrEdge()) {
-        loaded = staticArticlesData as any[];
+        loaded = [...(staticArticlesData as any[])];
+        try {
+          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+          if (cache) {
+            const match = await cache.match('https://internal.latentspace/articles-store');
+            if (match) {
+              const cached = await match.json();
+              if (Array.isArray(cached) && cached.length > 0) {
+                const map = new Map<string, any>();
+                for (const item of loaded) {
+                  if (item?.id) map.set(item.id, item);
+                }
+                for (const item of cached) {
+                  if (item?.id) map.set(item.id, item);
+                }
+                loaded = Array.from(map.values());
+              }
+            }
+          }
+        } catch {
+          // Gracefully fallback to static bundled articles
+        }
       } else {
         try {
           const raw = await fs.readFile(this.storageFilePath, 'utf8');
@@ -249,8 +270,24 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   }
 
   private async persist(): Promise<void> {
-    // Cloudflare Workers and serverless edge runtimes have no writable filesystem
+    // Cloudflare Workers and serverless edge runtimes use Cloudflare Cache API for persistent storage
     if (isServerlessOrEdge()) {
+      try {
+        const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+        if (cache) {
+          const all = this.getSortedEntries().map(e => e.article).slice(0, 400);
+          const res = new Response(JSON.stringify(all), {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': 'public, max-age=604800, s-maxage=604800',
+            },
+          });
+          await cache.put('https://internal.latentspace/articles-store', res);
+        }
+      } catch {
+        // Gracefully ignore edge cache write errors
+      }
       return;
     }
     try {

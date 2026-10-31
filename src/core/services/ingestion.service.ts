@@ -5,8 +5,10 @@ import { CircuitBreaker } from './circuit-breaker';
 import { SingleFlight } from './single-flight';
 import { IngestionReport, DomainArticle, DomainSource, FeedSnapshot } from '../domain/entities';
 import { logger } from '@/lib/logger';
+import { isServerlessOrEdge } from '@/lib/runtime-env';
 
 const CONCURRENCY_LIMIT = 6;
+const ROLLING_BATCH_LIMIT = 8;
 
 export class IngestionService {
   private circuitBreakers = new Map<string, CircuitBreaker>();
@@ -46,12 +48,26 @@ export class IngestionService {
     return breaker;
   }
 
-  public async runIngestion(requestId = `sync_${Date.now()}`): Promise<IngestionReport> {
+  public async runIngestion(
+    requestId = `sync_${Date.now()}`,
+    options?: { maxSources?: number }
+  ): Promise<IngestionReport> {
     // Single-Flight Coalescing: If another process/request is currently running sync, share it!
     return this.singleFlight.execute('GLOBAL_FEED_INGESTION', async () => {
       const startTime = Date.now();
-      const sources = await this.sourceRepo.listEnabled();
+      const allEnabledSources = await this.sourceRepo.listEnabled();
       const existingMap = await this.articleRepo.getAllAsMap();
+
+      // Sort sources by lastFetchedAt ascending (oldest-synced or never fetched first)
+      const sortedSources = [...allEnabledSources].sort((a, b) => {
+        const timeA = a.lastFetchedAt ? Date.parse(a.lastFetchedAt) || 0 : 0;
+        const timeB = b.lastFetchedAt ? Date.parse(b.lastFetchedAt) || 0 : 0;
+        return timeA - timeB;
+      });
+
+      // On Edge / Cloudflare Workers, process rolling batches of up to 8 sources to remain safe within subrequest/CPU quotas
+      const batchLimit = options?.maxSources ?? (isServerlessOrEdge() ? ROLLING_BATCH_LIMIT : sortedSources.length);
+      const sourcesToProcess = sortedSources.slice(0, batchLimit);
 
       let articlesAdded = 0;
       let articlesModified = 0;
@@ -61,7 +77,7 @@ export class IngestionService {
 
       // Filter active sources vs open circuit breakers upfront
       const activeSources: DomainSource[] = [];
-      for (const source of sources) {
+      for (const source of sourcesToProcess) {
         const breaker = this.getCircuitBreaker(source.id, source.name);
         if (breaker.getState() === 'OPEN') {
           triggeredBreakers.push(source.name);

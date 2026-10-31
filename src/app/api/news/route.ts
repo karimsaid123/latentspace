@@ -18,8 +18,8 @@ export async function GET(request: NextRequest) {
     const lab = searchParams.get('lab') || undefined;
     const entryType = searchParams.get('entryType') || undefined;
     const search = searchParams.get('search') || undefined;
-    const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 400;
-    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 600) : 400;
+    const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 150;
+    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 600) : 150;
 
     const syncRequested = searchParams.get('sync') === '1' || searchParams.get('refresh') === '1';
 

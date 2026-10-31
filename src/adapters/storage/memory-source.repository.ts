@@ -247,7 +247,24 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       let loaded: DomainSource[] = [];
 
       if (isServerlessOrEdge()) {
-        loaded = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
+        loaded = [...((staticSourcesData as DomainSource[]) || DEFAULT_SOURCES)];
+        try {
+          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+          if (cache) {
+            const match = await cache.match('https://internal.latentspace/sources-store');
+            if (match) {
+              const cached = await match.json();
+              if (Array.isArray(cached) && cached.length > 0) {
+                const map = new Map<string, any>();
+                for (const s of loaded) map.set(s.id, s);
+                for (const s of cached) map.set(s.id, { ...map.get(s.id), ...s });
+                loaded = Array.from(map.values());
+              }
+            }
+          }
+        } catch {
+          // Fallback to static sources
+        }
       } else {
         try {
           const raw = await fs.readFile(this.storageFilePath, 'utf8');
@@ -328,8 +345,24 @@ export class MemorySourceRepository implements SourceRepositoryPort {
   }
 
   private async persist(): Promise<void> {
-    // Cloudflare Workers and serverless edge runtimes have no writable filesystem
+    // Cloudflare Workers and serverless edge runtimes use Cloudflare Cache API for persistent source state
     if (isServerlessOrEdge()) {
+      try {
+        const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+        if (cache) {
+          const all = Array.from(this.sources.values());
+          const res = new Response(JSON.stringify(all), {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': 'public, max-age=604800, s-maxage=604800',
+            },
+          });
+          await cache.put('https://internal.latentspace/sources-store', res);
+        }
+      } catch {
+        // Gracefully ignore edge cache write errors
+      }
       return;
     }
     try {
