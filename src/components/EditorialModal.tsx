@@ -68,13 +68,8 @@ export default function EditorialModal({
 
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
-          <div className="flex items-center gap-2">
+          <div>
             <span className="font-bold text-black uppercase">[{article.source?.name || 'LATENTSPACE'}]</span>
-            {article.lab && article.lab !== 'Independent' && (
-              <span className="hidden sm:inline-block font-semibold uppercase text-black/50">
-                {'//'} {article.lab}
-              </span>
-            )}
           </div>
 
           <div className="flex items-center gap-4">
