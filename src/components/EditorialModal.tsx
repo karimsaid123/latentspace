@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
-import { ExternalLink, Share2, Check } from 'lucide-react';
+import { ExternalLink, Share2 } from 'lucide-react';
 import ArticleShareModal from './ArticleShareModal';
 import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
 
@@ -21,7 +21,6 @@ export default function EditorialModal({
   isBookmarked = false,
   onToggleBookmark,
 }: EditorialModalProps) {
-  const [copied, setCopied] = useState(false);
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -55,14 +54,6 @@ export default function EditorialModal({
     };
   }, [article, onClose, isShareOpen]);
 
-  const handleCopyLink = () => {
-    if (!article) return;
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.ai';
-    navigator.clipboard.writeText(`${origin}/?article=${article.id}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   if (!mounted || !article) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
@@ -89,18 +80,22 @@ export default function EditorialModal({
         <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-black z-30" />
 
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[9px] uppercase tracking-widest text-black/60">
-          <div>
-            <span>ENTRY // {article.id.slice(0, 8)}</span>
-            <span className="ml-3 font-bold text-black">[{article.source?.name || 'LATENTSPACE'}]</span>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-black uppercase">[{article.source?.name || 'LATENTSPACE'}]</span>
+            {article.lab && article.lab !== 'Independent' && (
+              <span className="hidden sm:inline-block font-semibold uppercase text-black/50">
+                // {article.lab}
+              </span>
+            )}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             {onToggleBookmark && (
               <button
                 onClick={() => onToggleBookmark(article.id)}
-                className={`cursor-pointer transition-colors ${
-                  isBookmarked ? 'text-black font-black' : 'text-black/60 hover:text-black'
+                className={`cursor-pointer transition-colors uppercase font-mono ${
+                  isBookmarked ? 'text-black font-bold' : 'text-black/60 hover:text-black'
                 }`}
               >
                 [{isBookmarked ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
@@ -108,20 +103,11 @@ export default function EditorialModal({
             )}
 
             <button
-              onClick={handleCopyLink}
-              className="text-black/60 hover:text-black cursor-pointer transition-colors"
-            >
-              [{copied ? 'COPIED ✓' : 'COPY LINK'}]
-            </button>
-
-            {/* Small Square Share Button in the corner */}
-            <button
               onClick={() => setIsShareOpen(true)}
-              className="w-7 h-7 sm:w-8 sm:h-8 border border-black bg-white hover:bg-black hover:text-[#faf9f6] transition-all flex items-center justify-center cursor-pointer shadow-sm group shrink-0"
-              title="Deel artikel via template"
-              aria-label="Deel artikel"
+              className="text-black/60 hover:text-black cursor-pointer transition-colors uppercase font-mono flex items-center gap-1.5"
             >
-              <Share2 className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
+              <Share2 className="w-3.5 h-3.5" />
+              <span>[SHARE]</span>
             </button>
 
             <button
@@ -130,7 +116,7 @@ export default function EditorialModal({
                 e.stopPropagation();
                 onClose();
               }}
-              className="font-bold text-black hover:opacity-60 cursor-pointer ml-1"
+              className="font-bold text-black hover:opacity-60 cursor-pointer uppercase font-mono ml-1"
             >
               [CLOSE ✕]
             </button>
@@ -140,36 +126,36 @@ export default function EditorialModal({
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 select-text">
           
-          <div>
-            <div className="flex flex-wrap items-center gap-3 font-mono text-[9px] tracking-widest uppercase text-black/50 mb-3">
+          <div className="space-y-3">
+            <div className="flex flex-wrap items-center gap-2.5 font-mono text-[9px] tracking-widest uppercase text-black/50">
               <span className={`font-bold ${article.entryType === 'RESEARCH_PAPER' ? 'text-black border border-black px-1.5 py-0.5' : 'text-black'}`}>
-                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
+                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}
               </span>
               <span>•</span>
               <div className="flex items-center gap-1.5">
                 <div
-                  className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0"
+                  className="w-3.5 h-3.5 border flex items-center justify-center p-0.5 shrink-0"
                   style={{ backgroundColor: brand.bgTint, borderColor: brand.borderColor }}
                 >
                   <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
                 </div>
                 <span className="font-bold" style={{ color: brand.textColor }}>
-                  LAB: [{article.lab || 'FRONTIER LAB'}]
+                  {article.lab || 'FRONTIER LAB'}
                 </span>
               </div>
               {article.arxivId && (
                 <>
                   <span>•</span>
-                  <span className="font-bold text-black">[{article.arxivId}]</span>
+                  <span className="font-bold text-black">{article.arxivId}</span>
                 </>
               )}
               <span>•</span>
-              <span>IMPACT: [{article.aiSummary?.impact || 'NOTABLE'}]</span>
+              <span>IMPACT: {article.aiSummary?.impact || 'NOTABLE'}</span>
               <span>•</span>
               <span>~{readTimeMinutes} MIN READ</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] leading-[0.88] text-black">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-[-0.035em] leading-[0.92] text-black">
               {article.title}
             </h2>
           </div>
@@ -186,64 +172,84 @@ export default function EditorialModal({
           )}
 
           {/* 01: Executive Intelligence Brief */}
-          <div className="p-6 bg-black/[0.03] border-l-2 border-black font-mono text-xs">
-            <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
-              01 // EXECUTIVE INTELLIGENCE BRIEF
-            </span>
-            <p className="uppercase leading-relaxed text-black/90">
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
+                01 // EXECUTIVE SUMMARY
+              </span>
+              <div className="h-px flex-1 bg-black/10" />
+            </div>
+            <p className="font-sans text-base sm:text-lg leading-[1.65] text-black/90 font-normal antialiased">
               {article.aiSummary?.tldr || article.contentSnippet || ''}
             </p>
           </div>
 
-          {/* 02: Technical & Architectural Breakdown */}
-          {article.aiSummary?.technicalAnalysis && (
-            <div className="p-6 border border-black/10 font-mono text-xs bg-black/[0.01]">
-              <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
-                02 // TECHNICAL & ARCHITECTURAL BREAKDOWN
-              </span>
-              <p className="uppercase leading-relaxed text-black/80">
-                {article.aiSummary.technicalAnalysis}
-              </p>
-            </div>
-          )}
-
-          {/* 03: Strategic & Ecosystem Implications */}
-          {article.aiSummary?.strategicImplications && (
-            <div className="p-6 border-l-2 border-black/30 bg-black/[0.02] font-mono text-xs">
-              <span className="text-[10px] font-black uppercase tracking-widest text-black block mb-3">
-                03 // STRATEGIC & ECOSYSTEM IMPLICATIONS
-              </span>
-              <p className="uppercase leading-relaxed text-black/80">
-                {article.aiSummary.strategicImplications}
-              </p>
-            </div>
-          )}
-
-          {/* 04: Key Actionable Takeaways */}
+          {/* 02: Key Actionable Takeaways */}
           {article.aiSummary?.takeaways && article.aiSummary.takeaways.length > 0 && (
-            <div className="font-mono text-xs space-y-3">
-              <span className="text-[10px] font-black uppercase tracking-widest text-black block">
-                04 // KEY ACTIONABLE TAKEAWAYS:
-              </span>
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
+                  02 // KEY TAKEAWAYS
+                </span>
+                <div className="h-px flex-1 bg-black/10" />
+              </div>
               <ul className="space-y-2.5">
                 {article.aiSummary.takeaways.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 uppercase text-black/85 leading-relaxed">
-                    <span className="font-bold text-black">—</span>
-                    <span>{point}</span>
+                  <li key={idx} className="flex items-start gap-3 font-sans text-sm sm:text-base leading-relaxed text-black/85">
+                    <span className="font-mono text-xs font-bold text-[#ff8000] mt-0.5 shrink-0">
+                      [{idx + 1}]
+                    </span>
+                    <span className="antialiased">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
+          {/* 03: Analysis & Implications */}
+          {(article.aiSummary?.technicalAnalysis || article.aiSummary?.strategicImplications) && (
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
+                  03 // ANALYSIS & IMPLICATIONS
+                </span>
+                <div className="h-px flex-1 bg-black/10" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {article.aiSummary?.technicalAnalysis && (
+                  <div className="p-4 bg-white border border-black/10 space-y-2">
+                    <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
+                      TECHNICAL ARCHITECTURE
+                    </span>
+                    <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
+                      {article.aiSummary.technicalAnalysis}
+                    </p>
+                  </div>
+                )}
+
+                {article.aiSummary?.strategicImplications && (
+                  <div className="p-4 bg-white border border-black/10 space-y-2">
+                    <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
+                      STRATEGIC IMPACT
+                    </span>
+                    <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
+                      {article.aiSummary.strategicImplications}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Source Snippet */}
           {article.contentSnippet && (
-            <div className="font-mono text-xs space-y-2 pt-4 border-t border-black/10">
-              <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block">
-                PRIMARY SOURCE SNIPPET:
+            <div className="pt-4 border-t border-black/10 space-y-1.5">
+              <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/40 block">
+                PRIMARY SOURCE EXCERPT
               </span>
-              <p className="text-black/60 leading-relaxed uppercase">
-                {article.contentSnippet}
+              <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/60 italic antialiased">
+                "{article.contentSnippet}"
               </p>
             </div>
           )}
@@ -252,25 +258,17 @@ export default function EditorialModal({
 
         {/* Footer */}
         <div className="px-6 py-4 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[10px]">
-          <span className="text-black/40">
-            RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-          </span>
+          <div className="flex items-center gap-3 text-black/50">
+            <span>RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+          </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsShareOpen(true)}
-              className="flex items-center gap-1.5 font-bold uppercase text-black border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer"
-            >
-              <Share2 className="w-3 h-3" />
-              <span>SHARE TEMPLATE</span>
-            </button>
-
             {article.pdfUrl && (
               <a
                 href={article.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 font-bold uppercase text-black border border-black px-2.5 py-1 hover:bg-black hover:text-[#faf9f6] transition-colors"
+                className="flex items-center gap-1 font-bold uppercase text-black border border-black px-3 py-1.5 hover:bg-black hover:text-[#faf9f6] transition-colors"
               >
                 <span>OPEN PDF ↗</span>
               </a>
@@ -280,9 +278,9 @@ export default function EditorialModal({
               href={article.link || (article as any).canonicalUrl || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 font-bold uppercase text-black hover:opacity-60 underline underline-offset-4"
+              className="flex items-center gap-1.5 font-bold uppercase text-black bg-black text-[#faf9f6] px-3.5 py-1.5 hover:bg-black/80 transition-colors"
             >
-              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV / SOURCE' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
+              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>

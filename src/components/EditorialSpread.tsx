@@ -483,7 +483,7 @@ const EditorialSpread = memo(function EditorialSpread({
                           )}
                         </div>
 
-                        <p className="font-mono text-[9px] uppercase text-black/60 line-clamp-2 leading-relaxed">
+                        <p className="font-sans text-xs text-black/70 line-clamp-2 leading-relaxed antialiased">
                           {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
                         </p>
                       </div>
@@ -589,7 +589,7 @@ const EditorialSpread = memo(function EditorialSpread({
                       {art.title}
                     </h3>
 
-                    <p className="font-mono text-[10px] uppercase text-black/60 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed">
+                    <p className="font-sans text-xs text-black/70 group-hover:text-black/90 transition-colors line-clamp-2 leading-relaxed antialiased">
                       {art.aiSummary?.tldr || art.contentSnippet || ''}
                     </p>
                   </div>

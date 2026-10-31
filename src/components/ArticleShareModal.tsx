@@ -177,10 +177,10 @@ export default function ArticleShareModal({
 
             {/* Template Quote / TL;DR Box */}
             <div 
-              className="p-4 bg-[#faf9f6] border-l-2 font-mono text-xs leading-relaxed text-black/90 uppercase my-4"
+              className="p-4 bg-[#faf9f6] border-l-2 font-sans text-xs sm:text-sm leading-relaxed text-black/90 my-4"
               style={{ borderLeftColor: brand.primaryColor }}
             >
-              <span className="text-[8px] font-bold tracking-widest text-black/40 block mb-1">
+              <span className="font-mono text-[8px] font-bold uppercase tracking-widest text-black/40 block mb-1">
                 EXECUTIVE SUMMARY:
               </span>
               {cleanSummary}
