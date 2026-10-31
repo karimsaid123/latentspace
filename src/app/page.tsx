@@ -156,7 +156,7 @@ export default function HomePage() {
 
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const fetchArticles = useCallback(async (search: string, isSilent = false) => {
+  const fetchArticles = useCallback(async (search: string, isSilent = false, forceBust = false) => {
     if (!isSilent) {
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
@@ -173,6 +173,10 @@ export default function HomePage() {
       const params = new URLSearchParams();
       params.set('limit', '400');
       if (search) params.set('search', search);
+      if (forceBust) {
+        params.set('sync', '1');
+        params.set('_t', String(Date.now()));
+      }
 
       const res = await fetch(`/api/news?${params.toString()}`, { signal });
       if (!res.ok) return;
@@ -245,7 +249,7 @@ export default function HomePage() {
       await fetch('/api/sync', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
-      await fetchArticles(searchQueryRef.current, false);
+      await fetchArticles(searchQueryRef.current, false, true);
     } catch (err) {
       console.error('Sync failed:', err);
     } finally {

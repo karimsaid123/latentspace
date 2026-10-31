@@ -21,6 +21,19 @@ export async function GET(request: NextRequest) {
     const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 400;
     const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 600) : 400;
 
+    const syncRequested = searchParams.get('sync') === '1' || searchParams.get('refresh') === '1';
+
+    // Synchronize telemetry when requested or when data is older than 10 minutes
+    // Runs cleanly across Edge, Serverless and Cloudflare Workers with bounded concurrency
+    if (syncRequested || container.ingestionService.shouldRunBackgroundSync(10 * 60 * 1000)) {
+      try {
+        await container.ingestionService.runIngestion(`sync_${Date.now()}`);
+        await container.cache.clear();
+      } catch (err: any) {
+        logger.warn('Dynamic telemetry ingestion skipped on error', { error: err?.message });
+      }
+    }
+
     const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
 
     // Single-Flight Coalesced Query with Cache
@@ -71,15 +84,6 @@ export async function GET(request: NextRequest) {
       return payload;
     });
 
-    // Background stale-while-revalidate ingestion ONLY in persistent local development
-    // (Prevents unawaited promises / waitUntil timeouts on Cloudflare Workers & Edge)
-    if (isLocalPersistentDev() && container.ingestionService.shouldRunBackgroundSync(5 * 60 * 1000)) {
-      container.ingestionService
-        .runIngestion(`swr_${Date.now()}`)
-        .then(() => container.cache.clear())
-        .catch(() => {});
-    }
-
     logger.info('News query served', {
       requestId,
       durationMs: Date.now() - startTime,
@@ -93,7 +97,7 @@ export async function GET(request: NextRequest) {
       },
       {
         headers: {
-          'Cache-Control': 'public, max-age=15, stale-while-revalidate=60',
+          'Cache-Control': 'public, max-age=30, s-maxage=180, stale-while-revalidate=600',
         },
       }
     );

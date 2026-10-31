@@ -38,6 +38,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No new telemetry harvested in this cycle."
           else
-            git commit -m "chore(telemetry): autonomous harvest cycle $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+            git commit -m "chore(telemetry): autonomous harvest cycle $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push origin main
           fi

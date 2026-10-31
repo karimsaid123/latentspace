@@ -21,7 +21,11 @@ export class IngestionService {
   ) {}
 
   public getLastRunTimestamp(): number {
-    return this.lastRunTimestamp;
+    if (this.lastRunTimestamp > 0) return this.lastRunTimestamp;
+    if (typeof (this.articleRepo as any).getLatestFetchedAtMs === 'function') {
+      return (this.articleRepo as any).getLatestFetchedAtMs();
+    }
+    return 0;
   }
 
   public shouldRunBackgroundSync(intervalMs = 5 * 60 * 1000): boolean {

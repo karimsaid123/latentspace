@@ -40,6 +40,13 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
     return this.sortedCache;
   }
 
+  public getLatestFetchedAtMs(): number {
+    const sorted = this.getSortedEntries();
+    if (sorted.length === 0) return 0;
+    const fetchedMs = Date.parse(sorted[0].article.fetchedAt);
+    return Number.isNaN(fetchedMs) ? sorted[0].publishedAtMs : fetchedMs;
+  }
+
   public async initialize(): Promise<void> {
     try {
       let loaded: any[] = [];
