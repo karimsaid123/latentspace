@@ -9,7 +9,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.083Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-31T20:34:31.488Z",
+    "lastFetchedAt": "2026-10-31T23:41:00.786Z",
     "consecutiveFailures": 0
   },
   {
@@ -22,7 +22,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.208Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-31T20:34:31.493Z",
+    "lastFetchedAt": "2026-10-31T23:41:00.787Z",
     "consecutiveFailures": 0
   },
   {
@@ -35,7 +35,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.818Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-31T20:34:31.495Z",
+    "lastFetchedAt": "2026-10-31T23:41:00.788Z",
     "consecutiveFailures": 0
   },
   {
@@ -48,7 +48,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:04:59.924Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-31T20:34:31.496Z",
+    "lastFetchedAt": "2026-10-31T23:41:00.790Z",
     "consecutiveFailures": 0
   },
   {
@@ -61,7 +61,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.302Z",
     "articleCount": 15,
-    "lastFetchedAt": "2026-10-31T20:34:32.645Z",
+    "lastFetchedAt": "2026-10-31T23:41:01.317Z",
     "consecutiveFailures": 0
   },
   {
@@ -74,7 +74,7 @@
     "enabled": true,
     "lastSynced": "2026-10-30T16:05:00.388Z",
     "articleCount": 10,
-    "lastFetchedAt": "2026-10-31T20:34:32.646Z",
+    "lastFetchedAt": "2026-10-31T23:41:01.319Z",
     "consecutiveFailures": 0
   },
   {
@@ -85,7 +85,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.647Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.320Z"
   },
   {
     "id": "arxiv-cl",
@@ -95,7 +95,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.648Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.322Z"
   },
   {
     "id": "techcrunch-xai",
@@ -105,7 +105,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.649Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.324Z"
   },
   {
     "id": "techcrunch-spacex",
@@ -115,7 +115,7 @@
     "category": "Robotics & Hardware",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.649Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.325Z"
   },
   {
     "id": "arxiv-xai",
@@ -125,7 +125,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.855Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.743Z"
   },
   {
     "id": "techcrunch-anthropic",
@@ -135,7 +135,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.855Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.744Z"
   },
   {
     "id": "arxiv-deepmind",
@@ -145,7 +145,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.856Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.745Z"
   },
   {
     "id": "techcrunch-mistral",
@@ -155,7 +155,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.856Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.745Z"
   },
   {
     "id": "arxiv-mistral",
@@ -165,7 +165,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.856Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.745Z"
   },
   {
     "id": "techcrunch-moonshot",
@@ -175,7 +175,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:32.856Z"
+    "lastFetchedAt": "2026-10-31T23:41:01.746Z"
   },
   {
     "id": "arxiv-moonshot",
@@ -185,7 +185,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.183Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.907Z"
   },
   {
     "id": "nvidia-blog",
@@ -195,7 +195,7 @@
     "category": "Robotics & Hardware",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.183Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.907Z"
   },
   {
     "id": "techcrunch-nvidia",
@@ -205,7 +205,7 @@
     "category": "Robotics & Hardware",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.184Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.908Z"
   },
   {
     "id": "techcrunch-meta",
@@ -215,7 +215,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.184Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.909Z"
   },
   {
     "id": "arxiv-meta",
@@ -225,7 +225,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.184Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.909Z"
   },
   {
     "id": "google-research",
@@ -235,7 +235,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.185Z"
+    "lastFetchedAt": "2026-10-31T23:41:02.909Z"
   },
   {
     "id": "aws-ml",
@@ -245,7 +245,7 @@
     "category": "LLMs & GenAI",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.591Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.244Z"
   },
   {
     "id": "bair-blog",
@@ -255,7 +255,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.591Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.245Z"
   },
   {
     "id": "arxiv-lg",
@@ -265,7 +265,7 @@
     "category": "Open Source & Research",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.592Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.246Z"
   },
   {
     "id": "techmeme",
@@ -276,7 +276,7 @@
     "color": "#2563eb",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.592Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.246Z"
   },
   {
     "id": "marktechpost",
@@ -287,7 +287,7 @@
     "color": "#10b981",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.592Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.247Z"
   },
   {
     "id": "siliconangle-ai",
@@ -298,7 +298,7 @@
     "color": "#d97706",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:33.592Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.247Z"
   },
   {
     "id": "simon-willison",
@@ -309,7 +309,7 @@
     "color": "#8b5cf6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:35.030Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.957Z"
   },
   {
     "id": "arstechnica-tech",
@@ -320,7 +320,7 @@
     "color": "#ea580c",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:35.030Z"
+    "lastFetchedAt": "2026-10-31T23:41:03.958Z"
   },
   {
     "id": "xai-radar",
@@ -331,7 +331,7 @@
     "color": "#1d9bf0",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:31.446Z"
+    "lastFetchedAt": "2026-10-31T23:41:00.757Z"
   },
   {
     "id": "teslarati-spacex",
@@ -342,6 +342,6 @@
     "color": "#0284c7",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-10-31T20:34:31.485Z"
+    "lastFetchedAt": "2026-10-31T23:41:00.785Z"
   }
 ]
