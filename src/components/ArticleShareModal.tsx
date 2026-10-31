@@ -103,12 +103,6 @@ export default function ArticleShareModal({
 
       {/* Main Container Box in Pure Swiss Monospace Theme */}
       <div className="relative w-full max-w-2xl bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in flex flex-col">
-        
-        {/* 4 Corner Bounding Box Square Handles */}
-        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-black z-30" />
 
         {/* Header Row */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black font-mono text-[9px] uppercase tracking-widest text-black/60 bg-black/[0.02]">
@@ -132,12 +126,6 @@ export default function ArticleShareModal({
           
           {/* THE OFFICIAL SHARABLE ARTICLE TEMPLATE CARD */}
           <div className="relative p-6 sm:p-7 border border-black bg-white shadow-sm transition-all">
-            {/* 4 Corner Mini Square Handles for Template Card */}
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
             {/* Template Top Tag & Lab Identity */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-black/10 font-mono text-[9px] tracking-widest uppercase">
               <div className="flex items-center gap-2.5">

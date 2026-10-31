@@ -450,12 +450,6 @@ export default function SavedPage() {
                   key={`${id}_${savedAt}_${index}`}
                   className="relative border border-black bg-white hover:border-black p-4 sm:p-5 transition-all group flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm hover:shadow-md"
                 >
-                  {/* 4 Corner Bounding Box Square Handles */}
-                  <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-black" />
-                  <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-black" />
-                  <div className="absolute bottom-0 left-0 w-1.5 h-1.5 bg-black" />
-                  <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-black" />
-
                   {/* Left Column: Metadata + Title + Snippet */}
                   <div className="flex-1 min-w-0 pr-0 md:pr-4">
                     

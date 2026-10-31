@@ -67,12 +67,6 @@ export default function EditorialModal({
 
       {/* Minimalist Reader Sheet */}
       <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in">
-        
-        {/* 4 Corner Bounding Box Square Handles */}
-        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-black z-30" />
-        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-black z-30" />
 
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
@@ -263,7 +257,7 @@ export default function EditorialModal({
                 href={article.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 font-bold uppercase text-black border border-black px-3 py-1.5 hover:bg-black hover:text-[#faf9f6] transition-colors"
+                className="flex items-center gap-1 font-bold uppercase text-black border border-black px-3.5 py-2 hover:bg-black hover:text-white transition-colors cursor-pointer text-[11px] tracking-wider"
               >
                 <span>OPEN PDF ↗</span>
               </a>
@@ -273,10 +267,10 @@ export default function EditorialModal({
               href={article.link || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 font-bold uppercase text-black bg-black text-[#faf9f6] px-3.5 py-1.5 hover:bg-black/80 transition-colors"
+              className="flex items-center gap-2 font-bold uppercase text-white bg-black px-4 py-2 hover:bg-[#ff8000] hover:text-black transition-all cursor-pointer shadow-sm text-[11px] tracking-wider"
             >
               <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
