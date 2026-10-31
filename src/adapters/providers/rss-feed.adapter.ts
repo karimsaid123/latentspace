@@ -139,17 +139,42 @@ export class RssFeedAdapter implements FeedProviderPort {
     return decodeHtmlEntities(withoutTags);
   }
 
-  private extractImageUrl(item: any): string | undefined {
-    if (item.enclosure?.url && (item.enclosure.type?.includes('image') || /\.(jpg|jpeg|png|webp)/i.test(item.enclosure.url))) {
-      return item.enclosure.url;
-    }
-    if (item.mediaContent?.$?.url) return item.mediaContent.$.url;
-    if (item.mediaThumbnail?.$?.url) return item.mediaThumbnail.$.url;
+  private isAuthorOrAvatar(url: string): boolean {
+    const u = url.toLowerCase();
+    return (
+      u.includes('avatar') ||
+      u.includes('gravatar') ||
+      u.includes('/author/') ||
+      u.includes('headshot') ||
+      u.includes('profile') ||
+      u.includes('bio-') ||
+      u.includes('icon') ||
+      u.includes('feedburner') ||
+      u.includes('doubleclick') ||
+      u.includes('tracking') ||
+      /\b(1x1|100x100|150x150|80x80|50x50)\b/.test(u)
+    );
+  }
 
-    const content = item.contentEncoded || item.content || item.summary || '';
-    const match = content.match(/<img[^>]+src=["']([^"'>]+)["']/i);
-    if (match && match[1] && !match[1].includes('doubleclick') && !match[1].includes('feedburner')) {
-      return match[1];
+  private extractImageUrl(item: any): string | undefined {
+    let candidate: string | undefined;
+
+    if (item.enclosure?.url && (item.enclosure.type?.includes('image') || /\.(jpg|jpeg|png|webp)/i.test(item.enclosure.url))) {
+      candidate = item.enclosure.url;
+    } else if (item.mediaContent?.$?.url) {
+      candidate = item.mediaContent.$.url;
+    } else if (item.mediaThumbnail?.$?.url) {
+      candidate = item.mediaThumbnail.$.url;
+    } else {
+      const content = item.contentEncoded || item.content || item.summary || '';
+      const match = content.match(/<img[^>]+src=["']([^"'>]+)["']/i);
+      if (match && match[1]) {
+        candidate = match[1];
+      }
+    }
+
+    if (candidate && !this.isAuthorOrAvatar(candidate)) {
+      return candidate;
     }
     return undefined;
   }

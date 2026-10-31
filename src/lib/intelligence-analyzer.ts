@@ -20,6 +20,11 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   if (s.includes('nvidia')) return 'NVIDIA';
   if (s.includes('meta ai') || s.includes('fair')) return 'Meta AI';
 
+  // Cloud infrastructure blogs (AWS, Google Cloud) default to Independent unless title is specifically about a frontier lab
+  if ((s.includes('aws') || s.includes('amazon')) && !t.includes('meta') && !t.includes('llama') && !t.includes('nvidia') && !t.includes('openai') && !t.includes('anthropic')) {
+    return 'Independent';
+  }
+
   // 2. High Priority: Title mentions lab or flagship model
   if (
     t.includes('mistral') ||
@@ -104,7 +109,7 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
     t.includes('llama') ||
     t.includes('yann lecun') ||
     t.includes('mark zuckerberg') ||
-    t.includes('pytorch')
+    t.includes('fair lab')
   ) {
     return 'Meta AI';
   }
@@ -178,7 +183,7 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
     combined.includes('llama') ||
     combined.includes('yann lecun') ||
     combined.includes('mark zuckerberg') ||
-    combined.includes('pytorch')
+    combined.includes('fair lab')
   ) {
     return 'Meta AI';
   }

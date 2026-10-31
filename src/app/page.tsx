@@ -343,6 +343,7 @@ export default function HomePage() {
           <div key={`${selectedLab}_${selectedType}`} className="animate-fade-in">
             <EditorialSpread
               articles={displayedArticles}
+              allArticles={articles}
               onSelectArticle={handleOpenArticle}
               bookmarkedIds={savedIds}
               onToggleBookmark={toggleBookmark}

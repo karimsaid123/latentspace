@@ -35,6 +35,6 @@
 
   <!-- Bottom Technical Hairline & Status -->
   <line x1="48" y1="525" x2="752" y2="525" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <text x="48" y="548" font-family="monospace" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.4)">FAIR LABS // DENSE & MIXTURE WEIGHT DISTRIBUTION</text>
+  <text x="48" y="548" font-family="monospace" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.4)">FAIR LABS // DENSE &amp; MIXTURE WEIGHT DISTRIBUTION</text>
   <text x="752" y="548" text-anchor="end" font-family="monospace" font-size="9" letter-spacing="2" fill="#0081fb">STATUS: ONLINE</text>
 </svg>

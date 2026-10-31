@@ -2637,9 +2637,8 @@
     "sourceName": "AWS Machine Learning",
     "author": "Michelle Goodstein",
     "contentSnippet": "With the launch of AWS Batch support for Amazon SageMaker Training jobs, customers gained a new fully managed way to queue, schedule, and retry machine learning (ML) training workloads without building their own infrastructure. Instead, they use the queuing and scheduling features of AWS Batch. As organizations scale t",
-    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/27/ML-21246-1.jpg",
     "category": "Robotics & Hardware",
-    "lab": "Meta AI",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "With the launch of AWS Batch support for Amazon SageMaker Training jobs, customers gained a new fully managed way to queue, schedule, and retry machine learning (ML) training workloads without building their own infrastructure. Instead, they use the queuing and scheduling features of AWS Batch. As telemetry indicators suggest, this initiative directly influences how Meta AI navigate modern compute scaling, inference latency, and multi-modal alignment.",
@@ -3896,7 +3895,7 @@
     "contentSnippet": "Every minute your deep learning container image spends downloading is a minute you pay for and a minute your team waits. Container image download is pure overhead: billable job time that produces no model progress. For modern deep learning images, that overhead is several minutes on every single job. Today, we’re excit",
     "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/23/ML-21882-1-2.png",
     "category": "Robotics & Hardware",
-    "lab": "Meta AI",
+    "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "summary": {
       "tldr": "Every minute your deep learning container image spends downloading is a minute you pay for and a minute your team waits. Container image download is pure overhead: billable job time that produces no model progress. As telemetry indicators suggest, this initiative directly influences how Meta AI navigate modern compute scaling, inference latency, and multi-modal alignment.",
@@ -3927,7 +3926,7 @@
     "contentSnippet": "This post was co-authored with Khaled Thabit, Meriem Boughrara, and Mohamed Desouky from Property Finder. The engineering team at Property Finder , a digital real estate application, discovered that 96.8 percent of their evaluation labels had been inherited directly from a single model’s predictions rather than verifie",
     "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/26/ML-21124-1.jpg",
     "category": "Open Source & Research",
-    "lab": "Meta AI",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This post was co-authored with Khaled Thabit, Meriem Boughrara, and Mohamed Desouky from Property Finder. The engineering team at Property Finder , a digital real estate application, discovered that 96.8 percent of their evaluation labels had been inherited directly from a single model’s predictions rather than verified by human experts. As telemetry indicators suggest, this initiative directly influences how Meta AI navigate modern compute scaling, inference latency, and multi-modal alignment.",
@@ -4384,7 +4383,7 @@
     "contentSnippet": "Fleet-wide computer vision model lifecycle management is a problem that shows up the moment a quality inspection proof of concept succeeds. One camera and one model work fine. Then the plant asks for the same result on 40 lines, each with several cameras, and every camera sees the world differently. Each has a differen",
     "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/19/ML-20483-1-1.png",
     "category": "Robotics & Hardware",
-    "lab": "Meta AI",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Fleet-wide computer vision model lifecycle management is a problem that shows up the moment a quality inspection proof of concept succeeds. One camera and one model work fine. As telemetry indicators suggest, this initiative directly influences how Meta AI navigate modern compute scaling, inference latency, and multi-modal alignment.",

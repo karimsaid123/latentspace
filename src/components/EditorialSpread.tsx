@@ -9,6 +9,7 @@ const CATALOG_PAGE_SIZE = 24;
 
 interface EditorialSpreadProps {
   articles: Article[];
+  allArticles?: Article[];
   onSelectArticle: (article: Article) => void;
   bookmarkedIds?: string[];
   onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
@@ -28,6 +29,7 @@ const LAB_SECTORS = [
 
 const EditorialSpread = memo(function EditorialSpread({
   articles,
+  allArticles,
   onSelectArticle,
   bookmarkedIds = [],
   onToggleBookmark,
@@ -43,16 +45,17 @@ const EditorialSpread = memo(function EditorialSpread({
 
   const savedIdSet = useMemo(() => new Set(bookmarkedIds), [bookmarkedIds]);
 
-  // Single O(N) pass to group articles by lab sector instead of 8 repeated filters per render
+  // Dedicated lab telemetry dossiers always display live sector intelligence across all monitored clusters
   const articlesByLab = useMemo(() => {
+    const sourceList = (allArticles && allArticles.length > 0) ? allArticles : articles;
     const grouped: Record<string, Article[]> = {};
-    for (const a of articles || []) {
+    for (const a of sourceList || []) {
       const lab = a.lab || 'Independent';
       if (!grouped[lab]) grouped[lab] = [];
       grouped[lab].push(a);
     }
     return grouped;
-  }, [articles]);
+  }, [allArticles, articles]);
 
   if (!articles || articles.length === 0) return null;
 
