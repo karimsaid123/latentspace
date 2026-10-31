@@ -18,8 +18,8 @@ export async function GET(request: NextRequest) {
     const lab = searchParams.get('lab') || undefined;
     const entryType = searchParams.get('entryType') || undefined;
     const search = searchParams.get('search') || undefined;
-    const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 200;
-    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 500) : 200;
+    const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 400;
+    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 600) : 400;
 
     const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
 

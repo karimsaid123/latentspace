@@ -171,6 +171,7 @@ export default function HomePage() {
 
     try {
       const params = new URLSearchParams();
+      params.set('limit', '400');
       if (search) params.set('search', search);
 
       const res = await fetch(`/api/news?${params.toString()}`, { signal });
