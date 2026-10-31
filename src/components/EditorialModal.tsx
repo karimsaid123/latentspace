@@ -52,8 +52,6 @@ export default function EditorialModal({
   if (!isMounted || !article) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
-  const wordCount = (article.contentSnippet || '').split(' ').length + (article.aiSummary?.tldr || '').split(' ').length;
-  const readTimeMinutes = Math.max(1, Math.round(wordCount / 40));
 
   const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
@@ -116,32 +114,21 @@ export default function EditorialModal({
         <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 select-text">
           
           <div className="space-y-3">
-            <div className="flex flex-wrap items-center gap-2.5 font-mono text-[9px] tracking-widest uppercase text-black/50">
-              <span className={`font-bold ${article.entryType === 'RESEARCH_PAPER' ? 'text-black border border-black px-1.5 py-0.5' : 'text-black'}`}>
-                {article.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}
-              </span>
-              <span>•</span>
-              <div className="flex items-center gap-1.5">
-                <div
-                  className="w-3.5 h-3.5 border flex items-center justify-center p-0.5 shrink-0"
-                  style={{ backgroundColor: brand.bgTint, borderColor: brand.borderColor }}
-                >
-                  <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
-                </div>
-                <span className="font-bold" style={{ color: brand.textColor }}>
-                  {article.lab || 'FRONTIER LAB'}
-                </span>
+            <div className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+              <div
+                className="w-4 h-4 border flex items-center justify-center p-0.5 shrink-0"
+                style={{ backgroundColor: brand.bgTint, borderColor: brand.borderColor }}
+              >
+                <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
               </div>
+              <span className="font-bold tracking-wider" style={{ color: brand.textColor }}>
+                {article.lab || 'FRONTIER LAB'}
+              </span>
               {article.arxivId && (
-                <>
-                  <span>•</span>
-                  <span className="font-bold text-black">{article.arxivId}</span>
-                </>
+                <span className="font-mono text-[9px] font-semibold text-black/40 ml-1">
+                  [{article.arxivId}]
+                </span>
               )}
-              <span>•</span>
-              <span>IMPACT: {article.aiSummary?.impact || 'NOTABLE'}</span>
-              <span>•</span>
-              <span>~{readTimeMinutes} MIN READ</span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-[-0.035em] leading-[0.92] text-black">
