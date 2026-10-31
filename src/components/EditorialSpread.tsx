@@ -103,7 +103,7 @@ const EditorialSpread = memo(function EditorialSpread({
                       }`}
                       title={bookmarkedIds.includes(lead.id) ? 'Saved' : 'Save article'}
                     >
-                      [{bookmarkedIds.includes(lead.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                      [{bookmarkedIds.includes(lead.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                     </button>
                   </>
                 )}
@@ -155,7 +155,7 @@ const EditorialSpread = memo(function EditorialSpread({
                       }`}
                       title={bookmarkedIds.includes(second.id) ? 'Saved' : 'Save article'}
                     >
-                      [{bookmarkedIds.includes(second.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                      [{bookmarkedIds.includes(second.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                     </button>
                   )}
                 </div>
@@ -213,7 +213,7 @@ const EditorialSpread = memo(function EditorialSpread({
                   }`}
                   title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
                 >
-                  [{bookmarkedIds.includes(third.id) ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                  [{bookmarkedIds.includes(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                 </button>
               )}
             </div>
@@ -451,7 +451,7 @@ const EditorialSpread = memo(function EditorialSpread({
                               }`}
                               title={bookmarkedIds.includes(leadArt.id) ? 'Saved' : 'Save article'}
                             >
-                              [{bookmarkedIds.includes(leadArt.id) ? <span className="text-yellow-500">★</span> : '+ SAVE'}]
+                              [{bookmarkedIds.includes(leadArt.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
                             </button>
                           )}
                         </div>
@@ -579,7 +579,7 @@ const EditorialSpread = memo(function EditorialSpread({
                           }`}
                           title={savedIdSet.has(art.id) ? 'Saved' : 'Save article'}
                         >
-                          [{savedIdSet.has(art.id) ? <span className="text-yellow-500">★</span> : '+ SAVE'}]
+                          [{savedIdSet.has(art.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
                         </button>
                       )}
                       <span className="font-bold text-black flex items-center gap-1">

@@ -215,13 +215,13 @@ export default function SavedPage() {
             >
               LATENT SPACE
               <span className="relative flex h-1.5 w-1.5" title="Live System">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8000] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#ff8000]"></span>
               </span>
             </Link>
             <span className="text-black/30 hidden sm:inline">//</span>
             <span className="font-bold text-black text-xs hidden sm:inline">
-              [<span className="text-yellow-500">★</span> SAVED DOSSIER]
+              [<span className="text-[#ff8000]">★</span> SAVED DOSSIER]
             </span>
           </div>
 
@@ -245,7 +245,7 @@ export default function SavedPage() {
             </Link>
 
             {/* Isolated 1Hz Clock on the right */}
-            <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
+            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
               <LiveClock />
             </div>
           </div>

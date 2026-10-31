@@ -73,8 +73,8 @@ const MinimalNav = memo(function MinimalNav({
           <span className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2">
             LATENT SPACE
             <span className="relative flex h-1.5 w-1.5" title="Live System">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8000] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#ff8000]"></span>
             </span>
           </span>
         </div>
@@ -86,8 +86,8 @@ const MinimalNav = memo(function MinimalNav({
             className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
             title="Open your saved articles dossier"
           >
-            <span className="sm:hidden">[<span className="text-yellow-500">★</span> {savedCount}]</span>
-            <span className="hidden sm:inline">[<span className="text-yellow-500">★</span> SAVED ({savedCount})]</span>
+            <span className="sm:hidden">[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
+            <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> SAVED ({savedCount})]</span>
           </Link>
 
           <Link
@@ -117,7 +117,7 @@ const MinimalNav = memo(function MinimalNav({
           </div>
 
           {/* Isolated 1Hz Clock completely on the right */}
-          <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
+          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
             <LiveClock />
           </div>
         </div>

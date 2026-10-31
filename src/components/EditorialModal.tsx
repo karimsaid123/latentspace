@@ -103,7 +103,7 @@ export default function EditorialModal({
                   isBookmarked ? 'text-black font-black' : 'text-black/60 hover:text-black'
                 }`}
               >
-                [{isBookmarked ? <><span className="text-yellow-500">★</span> SAVED</> : '+ SAVE'}]
+                [{isBookmarked ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
               </button>
             )}
 

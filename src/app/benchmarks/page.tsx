@@ -174,8 +174,8 @@ export default function BenchmarksPage() {
             >
               LATENT SPACE
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-70"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-black"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8000] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#ff8000]"></span>
               </span>
             </Link>
 
@@ -204,11 +204,11 @@ export default function BenchmarksPage() {
               className="hover:text-black cursor-pointer transition-colors text-black font-bold border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 hover:bg-black/[0.04] whitespace-nowrap"
               title="View your saved articles dossier"
             >
-              <span>[<span className="text-yellow-500">★</span> SAVED]</span>
+              <span>[<span className="text-[#ff8000]">★</span> SAVED]</span>
             </Link>
 
             {/* Isolated 1Hz Clock on the far right */}
-            <div className="text-right hidden sm:block font-bold text-black font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
+            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
               <LiveClock />
             </div>
           </div>
