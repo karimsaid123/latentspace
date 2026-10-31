@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#0c0d10"/>
+  <defs>
+    <pattern id="grid_arxivpreprint" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="grad_arxivpreprint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8000"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid_arxivpreprint)"/>
+
+  <!-- Technical border frame -->
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+  <rect x="32" y="32" width="736" height="536" fill="none" stroke="#ff8000" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Top Metadata Header -->
+  <text x="48" y="68" font-family="monospace" font-size="11" font-weight="700" letter-spacing="3" fill="#ff8000">[CORNELL ARXIV // PEER RESEARCH MANUSCRIPT]</text>
+  <text x="752" y="68" text-anchor="end" font-family="monospace" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">TELEMETRY // LIVE</text>
+  <line x1="48" y1="82" x2="752" y2="82" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Center Symbol -->
+  <g transform="translate(400, 275)">
+    
+    <circle r="130" fill="none" stroke="rgba(255,128,0,0.15)" stroke-width="2" stroke-dasharray="2,6"/>
+    <!-- Neural Network Graph -->
+    <line x1="-70" y1="-50" x2="0" y2="-20" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="-70" y1="0" x2="0" y2="-20" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="-70" y1="50" x2="0" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <line x1="0" y1="-20" x2="70" y2="0" stroke="#ff8000" stroke-width="3"/>
+    <line x1="0" y1="20" x2="70" y2="0" stroke="#ff8000" stroke-width="3"/>
+    <!-- Nodes -->
+    <circle cx="-70" cy="-50" r="14" fill="#ffffff"/>
+    <circle cx="-70" cy="0" r="14" fill="#ffffff"/>
+    <circle cx="-70" cy="50" r="14" fill="#ffffff"/>
+    <circle cx="0" cy="-20" r="16" fill="#ff8000"/>
+    <circle cx="0" cy="20" r="16" fill="#ff8000"/>
+    <circle cx="70" cy="0" r="20" fill="#ffffff"/>
+    <circle cx="70" cy="0" r="9" fill="#0c0d10"/>
+  
+  </g>
+
+  <!-- Giant Swiss Monogram Headline -->
+  <text x="48" y="475" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="#ffffff">ARXIV PREPRINT</text>
+  <text x="48" y="505" font-family="monospace" font-size="12" font-weight="700" letter-spacing="2" fill="#ff8000">cs.AI // cs.CL // cs.LG MACHINE LEARNING PAPERS</text>
+
+  <!-- Bottom Technical Hairline & Status -->
+  <line x1="48" y1="525" x2="752" y2="525" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="48" y="548" font-family="monospace" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.4)">ATTENTION MATRIX // LOSS CONVERGENCE TELEMETRY</text>
+  <text x="752" y="548" text-anchor="end" font-family="monospace" font-size="9" letter-spacing="2" fill="#ff8000">STATUS: ONLINE</text>
+</svg>

@@ -1,15 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, memo } from 'react';
-
-const FALLBACK_ART = [
-  '/art/art-1.jpg',
-  '/art/art-2.jpg',
-  '/art/art-3.jpg',
-  '/art/art-4.jpg',
-  '/art/art-5.jpg',
-  '/art/art-6.jpg',
-];
+import { getArticleFallbackVisual } from '@/lib/brand-visuals';
 
 interface ArtFrameProps {
   src?: string;
@@ -18,6 +10,11 @@ interface ArtFrameProps {
   className?: string;
   aspect?: 'portrait' | 'square' | 'landscape';
   priority?: boolean;
+  title?: string;
+  lab?: string;
+  sourceName?: string;
+  entryType?: string;
+  arxivId?: string;
 }
 
 const ArtFrame = memo(function ArtFrame({
@@ -27,6 +24,11 @@ const ArtFrame = memo(function ArtFrame({
   className = '',
   aspect = 'portrait',
   priority = false,
+  title,
+  lab,
+  sourceName,
+  entryType,
+  arxivId,
 }: ArtFrameProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -41,11 +43,16 @@ const ArtFrame = memo(function ArtFrame({
     landscape: 'aspect-[4/3]',
   }[aspect];
 
-  // Pick deterministic fallback art safely (handles "000" without negative modulo)
-  const numericIndex = parseInt(indexCode.replace(/\D/g, '') || '1', 10);
-  const safeIdx = (((numericIndex - 1) % FALLBACK_ART.length) + FALLBACK_ART.length) % FALLBACK_ART.length;
-  const fallbackSrc = FALLBACK_ART[safeIdx];
-  const imageToDisplay = src && !hasError ? src : fallbackSrc;
+  // Resolve intelligent brand/topic editorial visual when source is absent or failed
+  const fallbackVisual = getArticleFallbackVisual({
+    title: title || alt,
+    lab,
+    sourceName,
+    entryType,
+    arxivId,
+  });
+
+  const imageToDisplay = src && !hasError ? src : fallbackVisual;
 
   return (
     <div className={`relative group select-none ${className || 'inline-block'}`}>

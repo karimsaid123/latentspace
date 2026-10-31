@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#0d0e11"/>
+  <!-- Subdued technical grid lines -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="nvGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#76b900"/>
+      <stop offset="100%" stop-color="#4d7c0f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Technical border frame -->
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+  <rect x="32" y="32" width="736" height="536" fill="none" stroke="rgba(118,185,0,0.3)" stroke-width="1"/>
+
+  <!-- Top Metadata Header -->
+  <text x="48" y="68" font-family="monospace" font-size="11" font-weight="700" letter-spacing="3" fill="#76b900">[NVIDIA ACCELERATED COMPUTING // ARCHITECTURE]</text>
+  <text x="752" y="68" text-anchor="end" font-family="monospace" font-size="10" letter-spacing="2" fill="rgba(255,255,255,0.4)">TELEMETRY N-01</text>
+  <line x1="48" y1="82" x2="752" y2="82" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Central NVIDIA Iconic Spiral Eye Geometry -->
+  <g transform="translate(400, 290)">
+    <!-- Outer concentric technical arcs -->
+    <circle r="140" fill="none" stroke="rgba(118,185,0,0.15)" stroke-width="2" stroke-dasharray="4,8"/>
+    <circle r="105" fill="none" stroke="rgba(118,185,0,0.25)" stroke-width="2"/>
+    <circle r="70" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+
+    <!-- NVIDIA Eye Claw Arc Shape -->
+    <path d="M-80,0 C-80,-60 0,-95 70,-75 C45,-50 30,-30 25,0 C20,30 35,50 65,70 C-10,90 -80,55 -80,0 Z" fill="url(#nvGrad)"/>
+    <path d="M-50,0 C-50,-35 0,-55 45,-40 C25,-25 15,-15 12,0 C10,15 20,25 40,35 C-5,50 -50,30 -50,0 Z" fill="#0d0e11"/>
+    <circle cx="12" cy="0" r="14" fill="#76b900"/>
+    <circle cx="12" cy="0" r="7" fill="#ffffff"/>
+  </g>
+
+  <!-- Giant Swiss Monogram Headline -->
+  <text x="48" y="475" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="900" letter-spacing="-2" fill="#ffffff">NVIDIA</text>
+  <text x="48" y="505" font-family="monospace" font-size="12" font-weight="700" letter-spacing="2" fill="#76b900">BLACKWELL // TENSOR CORES // CUDA ACCELERATION</text>
+
+  <!-- Bottom Technical Hairline & Status -->
+  <line x1="48" y1="525" x2="752" y2="525" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="48" y="548" font-family="monospace" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.4)">SPEC: FP8 MATRIX ENGINE // HIGH-BANDWIDTH MEMORY</text>
+  <text x="752" y="548" text-anchor="end" font-family="monospace" font-size="9" letter-spacing="2" fill="#76b900">SYSTEM: ACTIVE</text>
+</svg>

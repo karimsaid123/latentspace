@@ -129,6 +129,11 @@ const EditorialSpread = memo(function EditorialSpread({
                 indexCode="001"
                 aspect="portrait"
                 priority
+                title={lead.title}
+                lab={lead.lab}
+                sourceName={lead.source.name}
+                entryType={lead.entryType}
+                arxivId={lead.arxivId}
               />
             </div>
           </div>
@@ -172,6 +177,11 @@ const EditorialSpread = memo(function EditorialSpread({
                   alt={second.title}
                   indexCode="002"
                   aspect="portrait"
+                  title={second.title}
+                  lab={second.lab}
+                  sourceName={second.source.name}
+                  entryType={second.entryType}
+                  arxivId={second.arxivId}
                 />
               </div>
             </div>
@@ -261,6 +271,11 @@ const EditorialSpread = memo(function EditorialSpread({
                   indexCode="004"
                   aspect="portrait"
                   className="w-full"
+                  title={fourth.title}
+                  lab={fourth.lab}
+                  sourceName={fourth.source.name}
+                  entryType={fourth.entryType}
+                  arxivId={fourth.arxivId}
                 />
               </div>
 
@@ -303,6 +318,11 @@ const EditorialSpread = memo(function EditorialSpread({
                   indexCode="005"
                   aspect="portrait"
                   className="w-full"
+                  title={fifth.title}
+                  lab={fifth.lab}
+                  sourceName={fifth.source.name}
+                  entryType={fifth.entryType}
+                  arxivId={fifth.arxivId}
                 />
               </div>
 
@@ -345,6 +365,11 @@ const EditorialSpread = memo(function EditorialSpread({
                   indexCode="006"
                   aspect="portrait"
                   className="w-full"
+                  title={sixth.title}
+                  lab={sixth.lab}
+                  sourceName={sixth.source.name}
+                  entryType={sixth.entryType}
+                  arxivId={sixth.arxivId}
                 />
               </div>
 
@@ -424,6 +449,11 @@ const EditorialSpread = memo(function EditorialSpread({
                             alt={leadArt.title}
                             indexCode={`LAB_00${idx + 1}`}
                             aspect="landscape"
+                            title={leadArt.title}
+                            lab={leadArt.lab}
+                            sourceName={leadArt.source.name}
+                            entryType={leadArt.entryType}
+                            arxivId={leadArt.arxivId}
                           />
                         </div>
 
@@ -544,6 +574,11 @@ const EditorialSpread = memo(function EditorialSpread({
                         src={art.imageUrl}
                         alt={art.title}
                         aspect="landscape"
+                        title={art.title}
+                        lab={art.lab}
+                        sourceName={art.source.name}
+                        entryType={art.entryType}
+                        arxivId={art.arxivId}
                       />
                     </div>
 
