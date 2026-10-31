@@ -229,7 +229,7 @@ export default function HomePage() {
     return () => clearTimeout(timer);
   }, [searchQuery, fetchArticles]);
 
-  // Visibility-aware background polling (Every 45s ONLY when tab is visible)
+  // High-intensity background polling (Every 20s ONLY when tab is visible)
   const searchQueryRef = useRef(searchQuery);
   searchQueryRef.current = searchQuery;
   useEffect(() => {
@@ -238,7 +238,7 @@ export default function HomePage() {
         return;
       }
       fetchArticles(searchQueryRef.current, true);
-    }, 45_000);
+    }, 20_000);
     return () => clearInterval(pollInterval);
   }, [fetchArticles]);
 

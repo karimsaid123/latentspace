@@ -23,9 +23,9 @@ export async function GET(request: NextRequest) {
 
     const syncRequested = searchParams.get('sync') === '1' || searchParams.get('refresh') === '1';
 
-    // Synchronize telemetry when requested or when data is older than 10 minutes
+    // Synchronize telemetry when requested or when data is older than 90 seconds (High-Intensity Radar)
     // Runs cleanly across Edge, Serverless and Cloudflare Workers with bounded concurrency
-    if (syncRequested || container.ingestionService.shouldRunBackgroundSync(10 * 60 * 1000)) {
+    if (syncRequested || container.ingestionService.shouldRunBackgroundSync(90 * 1000)) {
       try {
         await container.ingestionService.runIngestion(`sync_${Date.now()}`);
         await container.cache.clear();
@@ -79,8 +79,8 @@ export async function GET(request: NextRequest) {
         categoryCounts,
       };
 
-      // Set warm cache for 30 seconds
-      await container.cache.set(cacheKey, payload, 30);
+      // Set warm cache for 15 seconds (High-intensity live updates)
+      await container.cache.set(cacheKey, payload, 15);
       return payload;
     });
 
@@ -97,7 +97,7 @@ export async function GET(request: NextRequest) {
       },
       {
         headers: {
-          'Cache-Control': 'public, max-age=30, s-maxage=180, stale-while-revalidate=600',
+          'Cache-Control': 'public, max-age=15, s-maxage=45, stale-while-revalidate=180',
         },
       }
     );

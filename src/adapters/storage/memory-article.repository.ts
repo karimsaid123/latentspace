@@ -7,7 +7,7 @@ import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } f
 import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticArticlesData from '../../../data/articles.json';
 
-const MAX_STORED_ARTICLES = 400;
+const MAX_STORED_ARTICLES = 600;
 
 interface IndexedArticle {
   article: DomainArticle;
