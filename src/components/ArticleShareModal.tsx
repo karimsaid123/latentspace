@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
@@ -8,7 +8,6 @@ import {
   X, 
   Copy, 
   Check, 
-  ExternalLink, 
   Share2, 
   Send
 } from 'lucide-react';
@@ -19,6 +18,8 @@ interface ArticleShareModalProps {
   onClose: () => void;
 }
 
+const emptySubscribe = () => () => {};
+
 export default function ArticleShareModal({
   article,
   isOpen,
@@ -26,13 +27,9 @@ export default function ArticleShareModal({
 }: ArticleShareModalProps) {
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedText, setCopiedText] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!isOpen || !mounted) return null;
+  if (!isOpen || !isMounted) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
   const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.ai';

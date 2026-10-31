@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import ArtFrame from './ArtFrame';
@@ -15,6 +15,8 @@ interface EditorialModalProps {
   onToggleBookmark?: (id: string) => void;
 }
 
+const emptySubscribe = () => () => {};
+
 export default function EditorialModal({
   article,
   onClose,
@@ -22,17 +24,10 @@ export default function EditorialModal({
   onToggleBookmark,
 }: EditorialModalProps) {
   const [isShareOpen, setIsShareOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!article) {
-      setIsShareOpen(false);
-      return;
-    }
+    if (!article) return;
 
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -54,7 +49,7 @@ export default function EditorialModal({
     };
   }, [article, onClose, isShareOpen]);
 
-  if (!mounted || !article) return null;
+  if (!isMounted || !article) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
   const wordCount = (article.contentSnippet || '').split(' ').length + (article.aiSummary?.tldr || '').split(' ').length;
@@ -85,7 +80,7 @@ export default function EditorialModal({
             <span className="font-bold text-black uppercase">[{article.source?.name || 'LATENTSPACE'}]</span>
             {article.lab && article.lab !== 'Independent' && (
               <span className="hidden sm:inline-block font-semibold uppercase text-black/50">
-                // {article.lab}
+                {'//'} {article.lab}
               </span>
             )}
           </div>
@@ -175,7 +170,7 @@ export default function EditorialModal({
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                01 // EXECUTIVE SUMMARY
+                {'01 // EXECUTIVE SUMMARY'}
               </span>
               <div className="h-px flex-1 bg-black/10" />
             </div>
@@ -189,7 +184,7 @@ export default function EditorialModal({
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                  02 // KEY TAKEAWAYS
+                  {'02 // KEY TAKEAWAYS'}
                 </span>
                 <div className="h-px flex-1 bg-black/10" />
               </div>
@@ -211,7 +206,7 @@ export default function EditorialModal({
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                  03 // ANALYSIS & IMPLICATIONS
+                  {'03 // ANALYSIS & IMPLICATIONS'}
                 </span>
                 <div className="h-px flex-1 bg-black/10" />
               </div>
@@ -249,7 +244,7 @@ export default function EditorialModal({
                 PRIMARY SOURCE EXCERPT
               </span>
               <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/60 italic antialiased">
-                "{article.contentSnippet}"
+                &ldquo;{article.contentSnippet}&rdquo;
               </p>
             </div>
           )}
@@ -275,7 +270,7 @@ export default function EditorialModal({
             )}
 
             <a
-              href={article.link || (article as any).canonicalUrl || '#'}
+              href={article.link || '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 font-bold uppercase text-black bg-black text-[#faf9f6] px-3.5 py-1.5 hover:bg-black/80 transition-colors"
