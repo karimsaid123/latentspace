@@ -23,6 +23,8 @@ export interface ArticleRepositoryPort {
   getAllAsMap(): Promise<Map<string, DomainArticle>>;
   count(filter?: ArticleFilter): Promise<number>;
   queryWithStats?(filter?: ArticleFilter): Promise<ArticleQueryResult>;
+  syncFromEdge?(force?: boolean): Promise<boolean>;
+  getLatestFetchedAtMs?(): number;
 }
 
 export interface SourceRepositoryPort {
@@ -32,4 +34,6 @@ export interface SourceRepositoryPort {
   updateStatus(id: string, fetchedAt: string, failureCount: number, deferPersist?: boolean): Promise<void>;
   toggleSource(id: string, enabled: boolean): Promise<void>;
   flush?(): Promise<void>;
+  syncFromEdge?(force?: boolean): Promise<boolean>;
+  getLatestFetchedAtMs?(): number;
 }

@@ -233,13 +233,87 @@ const DEFAULT_SOURCES: DomainSource[] = [
   },
 ];
 
+const EDGE_SOURCES_STORE_URL = 'https://internal.latentspace/sources-store';
+const EDGE_SYNC_CHECK_TTL_MS = 10_000;
+
 export class MemorySourceRepository implements SourceRepositoryPort {
   private sources = new Map<string, DomainSource>();
   private dirty = false;
+  private lastEdgeSyncCheckMs = 0;
+  private lastKnownEdgeVersion = 0;
   private readonly storageFilePath: string;
 
   constructor(customStoragePath?: string) {
     this.storageFilePath = customStoragePath || path.join(process.cwd(), 'data', 'sources.json');
+  }
+
+  public getLatestFetchedAtMs(): number {
+    let maxMs = 0;
+    for (const s of this.sources.values()) {
+      if (s.lastFetchedAt) {
+        const ms = Date.parse(s.lastFetchedAt);
+        if (!Number.isNaN(ms) && ms > maxMs) {
+          maxMs = ms;
+        }
+      }
+    }
+    return maxMs;
+  }
+
+  /**
+   * Synchronizes warm Cloudflare Worker isolates with shared `caches.default` source state.
+   * Preserves monotonic `lastFetchedAt` progression across concurrent isolates.
+   */
+  public async syncFromEdge(force = false): Promise<boolean> {
+    if (!isServerlessOrEdge()) return false;
+    const now = Date.now();
+    if (!force && now - this.lastEdgeSyncCheckMs < EDGE_SYNC_CHECK_TTL_MS) {
+      return false;
+    }
+    this.lastEdgeSyncCheckMs = now;
+
+    try {
+      const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+      if (!cache) return false;
+
+      const match = await cache.match(new Request(EDGE_SOURCES_STORE_URL, { method: 'GET' }));
+      if (!match) return false;
+
+      const remoteVer = Number(match.headers.get('X-Latent-Version') || 0);
+      if (this.lastKnownEdgeVersion > 0 && remoteVer > 0 && remoteVer <= this.lastKnownEdgeVersion) {
+        return false;
+      }
+
+      const cached = await match.json();
+      if (!Array.isArray(cached) || cached.length === 0) return false;
+
+      let changed = false;
+      for (const remote of cached) {
+        if (!remote?.id) continue;
+        const local = this.sources.get(remote.id);
+        if (!local) {
+          this.sources.set(remote.id, remote);
+          changed = true;
+          continue;
+        }
+        const localMs = local.lastFetchedAt ? Date.parse(local.lastFetchedAt) || 0 : 0;
+        const remoteMs = remote.lastFetchedAt ? Date.parse(remote.lastFetchedAt) || 0 : 0;
+        if (remoteMs > localMs) {
+          local.lastFetchedAt = remote.lastFetchedAt;
+          local.consecutiveFailures = remote.consecutiveFailures ?? local.consecutiveFailures;
+          changed = true;
+        }
+        if (typeof remote.enabled === 'boolean' && remote.enabled !== local.enabled) {
+          local.enabled = remote.enabled;
+          changed = true;
+        }
+      }
+
+      this.lastKnownEdgeVersion = remoteVer || now;
+      return changed;
+    } catch {
+      return false;
+    }
   }
 
   public async initialize(): Promise<void> {
@@ -248,23 +322,6 @@ export class MemorySourceRepository implements SourceRepositoryPort {
 
       if (isServerlessOrEdge()) {
         loaded = [...((staticSourcesData as DomainSource[]) || DEFAULT_SOURCES)];
-        try {
-          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
-          if (cache) {
-            const match = await cache.match('https://internal.latentspace/sources-store');
-            if (match) {
-              const cached = await match.json();
-              if (Array.isArray(cached) && cached.length > 0) {
-                const map = new Map<string, any>();
-                for (const s of loaded) map.set(s.id, s);
-                for (const s of cached) map.set(s.id, { ...map.get(s.id), ...s });
-                loaded = Array.from(map.values());
-              }
-            }
-          }
-        } catch {
-          // Fallback to static sources
-        }
       } else {
         try {
           const raw = await fs.readFile(this.storageFilePath, 'utf8');
@@ -276,23 +333,26 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       }
 
       for (const s of loaded) {
-        this.sources.set(s.id, s);
+        this.sources.set(s.id, { ...s });
       }
       let addedNew = false;
       for (const s of DEFAULT_SOURCES) {
         if (!this.sources.has(s.id)) {
-          this.sources.set(s.id, s);
+          this.sources.set(s.id, { ...s });
           addedNew = true;
         }
       }
-      if (addedNew) {
+
+      if (isServerlessOrEdge()) {
+        await this.syncFromEdge(true);
+      } else if (addedNew) {
         await this.persist();
       }
     } catch {
       // Seed default sources
       const seed = (staticSourcesData as DomainSource[]) || DEFAULT_SOURCES;
       for (const s of seed) {
-        this.sources.set(s.id, s);
+        this.sources.set(s.id, { ...s });
       }
     }
   }
@@ -350,15 +410,19 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       try {
         const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
         if (cache) {
+          const version = Date.now();
           const all = Array.from(this.sources.values());
           const res = new Response(JSON.stringify(all), {
             status: 200,
             headers: {
               'Content-Type': 'application/json',
               'Cache-Control': 'public, max-age=604800, s-maxage=604800',
+              'X-Latent-Version': String(version),
             },
           });
-          await cache.put('https://internal.latentspace/sources-store', res);
+          await cache.put(new Request(EDGE_SOURCES_STORE_URL, { method: 'GET' }), res);
+          this.lastKnownEdgeVersion = version;
+          this.lastEdgeSyncCheckMs = version;
         }
       } catch {
         // Gracefully ignore edge cache write errors

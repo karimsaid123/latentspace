@@ -7,17 +7,23 @@ import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } f
 import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticArticlesData from '../../../data/articles.json';
 
-const MAX_STORED_ARTICLES = 600;
+const MAX_STORED_ARTICLES = 400;
+const EDGE_ARTICLES_STORE_URL = 'https://internal.latentspace/articles-store';
+const EDGE_SYNC_CHECK_TTL_MS = 10_000;
 
 interface IndexedArticle {
   article: DomainArticle;
   publishedAtMs: number;
+  fetchedAtMs: number;
   searchBlob: string;
 }
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, IndexedArticle>();
   private sortedCache: IndexedArticle[] | null = null;
+  private latestFetchedAtMs = 0;
+  private lastEdgeSyncCheckMs = 0;
+  private lastKnownEdgeVersion = 0;
   private readonly storageFilePath: string;
 
   constructor(customStoragePath?: string) {
@@ -25,10 +31,15 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   }
 
   private indexArticle(art: DomainArticle): IndexedArticle {
-    const parsedMs = Date.parse(art.publishedAt);
-    const publishedAtMs = Number.isNaN(parsedMs) ? 0 : parsedMs;
+    const parsedPub = Date.parse(art.publishedAt);
+    const publishedAtMs = Number.isNaN(parsedPub) ? 0 : parsedPub;
+    const parsedFetch = Date.parse(art.fetchedAt);
+    const fetchedAtMs = Number.isNaN(parsedFetch) ? publishedAtMs : parsedFetch;
+    if (fetchedAtMs > this.latestFetchedAtMs) {
+      this.latestFetchedAtMs = fetchedAtMs;
+    }
     const searchBlob = `${art.title} ${art.contentSnippet} ${art.summary?.tldr || ''} ${art.sourceName} ${art.lab || ''}`.toLowerCase();
-    return { article: art, publishedAtMs, searchBlob };
+    return { article: art, publishedAtMs, fetchedAtMs, searchBlob };
   }
 
   private getSortedEntries(): IndexedArticle[] {
@@ -41,10 +52,124 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   }
 
   public getLatestFetchedAtMs(): number {
-    const sorted = this.getSortedEntries();
-    if (sorted.length === 0) return 0;
-    const fetchedMs = Date.parse(sorted[0].article.fetchedAt);
-    return Number.isNaN(fetchedMs) ? sorted[0].publishedAtMs : fetchedMs;
+    return this.latestFetchedAtMs;
+  }
+
+  private normalizeRawItem(item: any): DomainArticle | null {
+    if (!item?.id) return null;
+    const title = decodeHtmlEntities(item.title || '');
+    const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
+    const sourceName = item.sourceName || item.source?.name || 'Feed';
+    const canonicalUrl = item.canonicalUrl || item.link || '';
+    const lab = item.lab || detectFrontierLab(title, contentSnippet, sourceName);
+
+    let entryType = item.entryType;
+    let arxivId = item.arxivId;
+    let pdfUrl = item.pdfUrl;
+    if (!entryType || (entryType === 'RESEARCH_PAPER' && !pdfUrl)) {
+      const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
+      entryType = entryType || typeInfo.entryType;
+      arxivId = arxivId || typeInfo.arxivId;
+      pdfUrl = pdfUrl || typeInfo.pdfUrl;
+    }
+
+    let summary = item.summary || item.aiSummary;
+    if (!summary || !summary.technicalAnalysis || (summary.takeaways?.length || 0) < 3) {
+      summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
+    } else {
+      summary = {
+        tldr: decodeHtmlEntities(summary.tldr || ''),
+        takeaways: (summary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
+        technicalAnalysis: summary.technicalAnalysis ? decodeHtmlEntities(summary.technicalAnalysis) : undefined,
+        strategicImplications: summary.strategicImplications ? decodeHtmlEntities(summary.strategicImplications) : undefined,
+        primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
+        impact: summary.impact || 'Notable',
+        readTimeMinutes: summary.readTimeMinutes || 3,
+      };
+    }
+
+    return {
+      id: item.id,
+      canonicalUrl,
+      title,
+      publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
+      fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
+      contentHash: item.contentHash || item.id,
+      sourceId: item.sourceId || item.source?.id || 'source',
+      sourceName,
+      author: decodeHtmlEntities(item.author || ''),
+      contentSnippet,
+      imageUrl: item.imageUrl,
+      category: item.category || 'LLMs & GenAI',
+      lab,
+      entryType,
+      arxivId,
+      pdfUrl,
+      summary,
+    };
+  }
+
+  /**
+   * Synchronizes warm Cloudflare Worker isolates with shared `caches.default` storage.
+   * Uses `X-Latent-Version` header check first so unchanged states cost ~0ms CPU (no JSON parse).
+   */
+  public async syncFromEdge(force = false): Promise<boolean> {
+    if (!isServerlessOrEdge()) return false;
+    const now = Date.now();
+    if (!force && now - this.lastEdgeSyncCheckMs < EDGE_SYNC_CHECK_TTL_MS) {
+      return false;
+    }
+    this.lastEdgeSyncCheckMs = now;
+
+    try {
+      const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+      if (!cache) return false;
+
+      const match = await cache.match(new Request(EDGE_ARTICLES_STORE_URL, { method: 'GET' }));
+      if (!match) return false;
+
+      const remoteVer = Number(match.headers.get('X-Latent-Version') || 0);
+      if (this.lastKnownEdgeVersion > 0 && remoteVer > 0 && remoteVer <= this.lastKnownEdgeVersion) {
+        return false;
+      }
+
+      const cached = await match.json();
+      if (!Array.isArray(cached) || cached.length === 0) return false;
+
+      let changed = false;
+      for (const raw of cached) {
+        if (!raw?.id) continue;
+        const existing = this.articles.get(raw.id);
+        if (!existing || (raw.contentHash && existing.article.contentHash !== raw.contentHash)) {
+          const normalized = this.normalizeRawItem(raw);
+          if (normalized) {
+            this.articles.set(normalized.id, this.indexArticle(normalized));
+            changed = true;
+          }
+        }
+      }
+
+      if (changed) {
+        this.sortedCache = null;
+        this.trimToMax();
+      }
+      this.lastKnownEdgeVersion = remoteVer || now;
+      return changed;
+    } catch {
+      return false;
+    }
+  }
+
+  private trimToMax(): void {
+    if (this.articles.size > MAX_STORED_ARTICLES) {
+      const sorted = this.getSortedEntries();
+      const trimmed = sorted.slice(0, MAX_STORED_ARTICLES);
+      this.articles.clear();
+      for (const entry of trimmed) {
+        this.articles.set(entry.article.id, entry);
+      }
+      this.sortedCache = trimmed;
+    }
   }
 
   public async initialize(): Promise<void> {
@@ -52,34 +177,12 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       let loaded: any[] = [];
 
       if (isServerlessOrEdge()) {
-        loaded = [...(staticArticlesData as any[])];
-        try {
-          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
-          if (cache) {
-            const match = await cache.match('https://internal.latentspace/articles-store');
-            if (match) {
-              const cached = await match.json();
-              if (Array.isArray(cached) && cached.length > 0) {
-                const map = new Map<string, any>();
-                for (const item of loaded) {
-                  if (item?.id) map.set(item.id, item);
-                }
-                for (const item of cached) {
-                  if (item?.id) map.set(item.id, item);
-                }
-                loaded = Array.from(map.values());
-              }
-            }
-          }
-        } catch {
-          // Gracefully fallback to static bundled articles
-        }
+        loaded = staticArticlesData as any[];
       } else {
         try {
           const raw = await fs.readFile(this.storageFilePath, 'utf8');
           loaded = JSON.parse(raw);
         } catch {
-          // Fallback to statically bundled articles
           loaded = staticArticlesData as any[];
         }
       }
@@ -89,56 +192,18 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       }
 
       for (const item of loaded) {
-        if (!item?.id) continue;
-        const title = decodeHtmlEntities(item.title || '');
-        const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
-        const sourceName = item.sourceName || item.source?.name || 'Feed';
-        const canonicalUrl = item.canonicalUrl || item.link || '';
-        const lab = item.lab || detectFrontierLab(title, contentSnippet, sourceName);
-        const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
-        const entryType = item.entryType || typeInfo.entryType;
-        const arxivId = item.arxivId || typeInfo.arxivId;
-        const pdfUrl = item.pdfUrl || typeInfo.pdfUrl;
-
-        // Generate deep intelligence summary if existing one is too basic
-        let summary = item.summary || item.aiSummary;
-        if (!summary || !summary.technicalAnalysis || summary.takeaways?.length < 3) {
-          summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
-        } else {
-          summary = {
-            tldr: decodeHtmlEntities(summary.tldr || ''),
-            takeaways: (summary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
-            technicalAnalysis: summary.technicalAnalysis ? decodeHtmlEntities(summary.technicalAnalysis) : undefined,
-            strategicImplications: summary.strategicImplications ? decodeHtmlEntities(summary.strategicImplications) : undefined,
-            primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
-            impact: summary.impact || 'Notable',
-            readTimeMinutes: summary.readTimeMinutes || 3,
-          };
+        const normalized = this.normalizeRawItem(item);
+        if (normalized) {
+          this.articles.set(normalized.id, this.indexArticle(normalized));
         }
-
-        const normalized: DomainArticle = {
-          id: item.id,
-          canonicalUrl,
-          title,
-          publishedAt: item.publishedAt || item.pubDate || new Date().toISOString(),
-          fetchedAt: item.fetchedAt || item.pubDate || new Date().toISOString(),
-          contentHash: item.contentHash || item.id,
-          sourceId: item.sourceId || item.source?.id || 'source',
-          sourceName,
-          author: decodeHtmlEntities(item.author || ''),
-          contentSnippet,
-          imageUrl: item.imageUrl,
-          category: item.category || 'LLMs & GenAI',
-          lab,
-          entryType,
-          arxivId,
-          pdfUrl,
-          summary,
-        };
-
-        this.articles.set(normalized.id, this.indexArticle(normalized));
       }
       this.sortedCache = null;
+      this.trimToMax();
+
+      // Overlay any newer edge-persisted articles from caches.default
+      if (isServerlessOrEdge()) {
+        await this.syncFromEdge(true);
+      }
     } catch {
       // Empty or not existing yet
     }
@@ -149,17 +214,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       this.articles.set(art.id, this.indexArticle(art));
     }
     this.sortedCache = null;
-
-    // Bound memory & disk footprint to latest MAX_STORED_ARTICLES
-    if (this.articles.size > MAX_STORED_ARTICLES) {
-      const sorted = this.getSortedEntries();
-      const trimmed = sorted.slice(0, MAX_STORED_ARTICLES);
-      this.articles.clear();
-      for (const entry of trimmed) {
-        this.articles.set(entry.article.id, entry);
-      }
-      this.sortedCache = trimmed;
-    }
+    this.trimToMax();
 
     await this.persist();
     return { savedCount: incoming.length };
@@ -275,15 +330,19 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       try {
         const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
         if (cache) {
-          const all = this.getSortedEntries().map(e => e.article).slice(0, 400);
+          const version = Date.now();
+          const all = this.getSortedEntries().map(e => e.article).slice(0, MAX_STORED_ARTICLES);
           const res = new Response(JSON.stringify(all), {
             status: 200,
             headers: {
               'Content-Type': 'application/json',
               'Cache-Control': 'public, max-age=604800, s-maxage=604800',
+              'X-Latent-Version': String(version),
             },
           });
-          await cache.put('https://internal.latentspace/articles-store', res);
+          await cache.put(new Request(EDGE_ARTICLES_STORE_URL, { method: 'GET' }), res);
+          this.lastKnownEdgeVersion = version;
+          this.lastEdgeSyncCheckMs = version;
         }
       } catch {
         // Gracefully ignore edge cache write errors

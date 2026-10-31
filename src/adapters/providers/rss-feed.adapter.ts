@@ -49,7 +49,17 @@ export class RssFeedAdapter implements FeedProviderPort {
       }
 
       const xmlText = await response.text();
-      const feed = await this.parser.parseString(xmlText);
+      let feed;
+      if (xmlText.length > 100_000) {
+        const truncated = this.truncateLargeFeedXml(xmlText, 22);
+        try {
+          feed = await this.parser.parseString(truncated);
+        } catch {
+          feed = await this.parser.parseString(xmlText);
+        }
+      } else {
+        feed = await this.parser.parseString(xmlText);
+      }
       const rawItems = feed.items || [];
       const articles: DomainArticle[] = [];
 
@@ -109,6 +119,49 @@ export class RssFeedAdapter implements FeedProviderPort {
       }
       throw new ProviderUnavailableError(source.name, message);
     }
+  }
+
+  /**
+   * Pre-slices multi-megabyte XML feeds (e.g. arXiv cs.AI/cs.CL/cs.LG) to the first `maxItems`
+   * entries before xml2js parsing so Cloudflare Workers stay well below the 10ms CPU limit.
+   */
+  private truncateLargeFeedXml(xml: string, maxItems = 22): string {
+    const lowerItem = this.findNthTagBoundary(xml, '<item', maxItems + 1);
+    const itemCutoff = lowerItem !== -1 ? lowerItem : this.findNthTagBoundary(xml, '<ITEM', maxItems + 1);
+
+    if (itemCutoff > 0) {
+      const head = xml.slice(0, 1200);
+      if (/<rdf:rdf\b/i.test(head)) {
+        return `${xml.slice(0, itemCutoff)}\n</rdf:RDF>`;
+      }
+      return `${xml.slice(0, itemCutoff)}\n</channel></rss>`;
+    }
+
+    const lowerEntry = this.findNthTagBoundary(xml, '<entry', maxItems + 1);
+    const entryCutoff = lowerEntry !== -1 ? lowerEntry : this.findNthTagBoundary(xml, '<ENTRY', maxItems + 1);
+
+    if (entryCutoff > 0) {
+      return `${xml.slice(0, entryCutoff)}\n</feed>`;
+    }
+
+    return xml;
+  }
+
+  private findNthTagBoundary(xml: string, tagPrefix: string, n: number): number {
+    let count = 0;
+    let pos = 0;
+    const tagLen = tagPrefix.length;
+    while (pos < xml.length) {
+      const idx = xml.indexOf(tagPrefix, pos);
+      if (idx === -1) return -1;
+      const nextChar = xml[idx + tagLen];
+      if (nextChar === '>' || nextChar === ' ' || nextChar === '\t' || nextChar === '\n' || nextChar === '\r') {
+        count++;
+        if (count === n) return idx;
+      }
+      pos = idx + tagLen;
+    }
+    return -1;
   }
 
   private safeParseDate(rawDate: string | undefined, fallbackIso: string): string {

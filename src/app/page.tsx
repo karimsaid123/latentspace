@@ -11,22 +11,8 @@ import { useSavedArticles } from '@/lib/saved-storage';
 import fallbackArticlesData from '@/data/fallback-articles.json';
 
 export default function HomePage() {
-  const [articles, setArticles] = useState<Article[]>(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const cached = sessionStorage.getItem('latentspace_articles_cache');
-        if (cached) {
-          const parsed = JSON.parse(cached);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            return parsed;
-          }
-        }
-      } catch {
-        // Fallback to static articles
-      }
-    }
-    return fallbackArticlesData as Article[];
-  });
+  // Deterministic SSR + Hydration seed (guarantees non-empty state with zero hydration mismatch)
+  const [articles, setArticles] = useState<Article[]>(fallbackArticlesData as Article[]);
   const [selectedLab, setSelectedLab] = useState<string>('All');
   const [selectedType, setSelectedType] = useState<'ALL' | 'DISPATCH' | 'RESEARCH_PAPER'>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -36,54 +22,55 @@ export default function HomePage() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   
   // QoL States
-  const [lastSyncedTime, setLastSyncedTime] = useState<number>(() => Date.now());
+  const [lastSyncedTime, setLastSyncedTime] = useState<number>(0);
   const { savedIds, count: savedCount, toggleSave, isSaved, reconcile } = useSavedArticles();
   const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
   const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
+  const hasFetchedLiveRef = useRef<boolean>(false);
 
-  // Set initial client timestamp & read optional ?lab= URL query param on mount
+  // Set initial client timestamp, restore warm session cache post-hydration, & read ?lab= param
   useEffect(() => {
-    setLastSyncedTime(Date.now());
+    queueMicrotask(() => {
+      setLastSyncedTime(Date.now());
 
-    // Instant zero-latency warm cache from session storage
-    try {
-      if (typeof window !== 'undefined' && articlesRef.current.length === 0) {
+      try {
         const cached = sessionStorage.getItem('latentspace_articles_cache');
-        if (cached) {
+        if (cached && !hasFetchedLiveRef.current) {
           const parsed = JSON.parse(cached);
           if (Array.isArray(parsed) && parsed.length > 0) {
             setArticles(parsed);
-            setIsLoading(false);
           }
         }
+      } catch {
+        // Fallback to network
       }
-    } catch {
-      // Fallback to network
-    }
 
-    if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const labParam = params.get('lab');
       if (labParam && LAB_FILTERS.some((l) => l.id === labParam)) {
         setSelectedLab(labParam);
       }
-    }
+    });
   }, []);
 
-  // Initial deep-link check (only runs ONCE when articles first load)
+  // Initial deep-link check (resolves immediately on seed/cache or once live feed arrives)
   const initialDeepLinkChecked = useRef(false);
   useEffect(() => {
     if (initialDeepLinkChecked.current || articles.length === 0) return;
-    initialDeepLinkChecked.current = true;
 
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const articleId = params.get('article');
-      if (articleId) {
-        const found = articles.find((a) => a.id === articleId);
-        if (found) {
-          setSelectedArticle(found);
-        }
+      if (!articleId) {
+        initialDeepLinkChecked.current = true;
+        return;
+      }
+      const found = articles.find((a) => a.id === articleId);
+      if (found) {
+        initialDeepLinkChecked.current = true;
+        queueMicrotask(() => setSelectedArticle(found));
+      } else if (hasFetchedLiveRef.current) {
+        initialDeepLinkChecked.current = true;
       }
     }
   }, [articles]);
@@ -189,7 +176,7 @@ export default function HomePage() {
 
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const fetchArticles = useCallback(async (search: string, isSilent = false, forceBust = false) => {
+  const fetchArticles = useCallback(async (search: string, isSilent = false, bustCache = false) => {
     let controller: AbortController | null = null;
     if (!isSilent) {
       if (abortControllerRef.current) {
@@ -208,9 +195,8 @@ export default function HomePage() {
       const params = new URLSearchParams();
       params.set('limit', '150');
       if (search) params.set('search', search);
-      if (forceBust) {
-        params.set('sync', '1');
-        params.set('_t', String(Date.now()));
+      if (bustCache) {
+        params.set('_v', String(Date.now()));
       }
 
       const res = await fetch(`/api/news?${params.toString()}`, { signal });
@@ -222,6 +208,7 @@ export default function HomePage() {
         return;
       }
       const data = await res.json();
+      hasFetchedLiveRef.current = true;
       
       if (data.articles && Array.isArray(data.articles) && data.articles.length > 0) {
         try {
@@ -287,25 +274,33 @@ export default function HomePage() {
         return;
       }
 
+      let hasFresh = false;
       try {
         // Trigger rolling batch ingestion of next 8 sources in background
-        await fetch('/api/sync', { method: 'POST' }).catch(() => {});
+        const syncRes = await fetch('/api/sync', { method: 'POST' });
+        if (syncRes.ok) {
+          const syncData = await syncRes.json();
+          hasFresh = Boolean((syncData?.articlesAdded || 0) > 0 || (syncData?.articlesModified || 0) > 0);
+          if (syncData?.lastSyncedAt > 0) {
+            setLastSyncedTime(syncData.lastSyncedAt);
+          }
+        }
       } catch {
         // Ignore background sync errors
       }
 
-      // Read freshly ingested articles quickly (<10ms) with limit=150
-      fetchArticles(searchQueryRef.current, true);
+      // Read freshly ingested articles quickly (<10ms) with limit=150 (bust CDN only when batch added items)
+      fetchArticles(searchQueryRef.current, true, hasFresh);
     }, 60_000);
 
     return () => clearInterval(pollInterval);
   }, [fetchArticles]);
 
-  // Manual Force Sync
+  // Manual Force Sync (single rolling batch + pure fast read, no duplicate sync)
   const handleSync = useCallback(async () => {
     setIsSyncing(true);
     try {
-      await fetch('/api/sync', { method: 'POST' });
+      await fetch('/api/sync?force=1', { method: 'POST' });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
       await fetchArticles(searchQueryRef.current, false, true);

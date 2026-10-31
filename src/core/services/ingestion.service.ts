@@ -23,15 +23,13 @@ export class IngestionService {
   ) {}
 
   public getLastRunTimestamp(): number {
-    if (this.lastRunTimestamp > 0) return this.lastRunTimestamp;
-    if (typeof (this.articleRepo as any).getLatestFetchedAtMs === 'function') {
-      return (this.articleRepo as any).getLatestFetchedAtMs();
-    }
-    return 0;
+    const sourceLatest = this.sourceRepo.getLatestFetchedAtMs ? this.sourceRepo.getLatestFetchedAtMs() : 0;
+    const articleLatest = this.articleRepo.getLatestFetchedAtMs ? this.articleRepo.getLatestFetchedAtMs() : 0;
+    return Math.max(this.lastRunTimestamp, sourceLatest, articleLatest);
   }
 
   public shouldRunBackgroundSync(intervalMs = 5 * 60 * 1000): boolean {
-    return Date.now() - this.lastRunTimestamp > intervalMs;
+    return Date.now() - this.getLastRunTimestamp() > intervalMs;
   }
 
   private getCircuitBreaker(sourceId: string, sourceName: string): CircuitBreaker {
@@ -55,6 +53,13 @@ export class IngestionService {
     // Single-Flight Coalescing: If another process/request is currently running sync, share it!
     return this.singleFlight.execute('GLOBAL_FEED_INGESTION', async () => {
       const startTime = Date.now();
+
+      // Hydrate latest cross-isolate state from Cloudflare Edge Cache before picking oldest batch
+      await Promise.all([
+        this.sourceRepo.syncFromEdge?.(true),
+        this.articleRepo.syncFromEdge?.(true),
+      ]);
+
       const allEnabledSources = await this.sourceRepo.listEnabled();
       const existingMap = await this.articleRepo.getAllAsMap();
 

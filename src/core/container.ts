@@ -19,7 +19,7 @@ class BackendContainer {
   private schedulerTimer: NodeJS.Timeout | null = null;
 
   private constructor() {
-    this.feedProvider = new RssFeedAdapter(8000);
+    this.feedProvider = new RssFeedAdapter(5500);
     this.articleRepo = new MemoryArticleRepository();
     this.sourceRepo = new MemorySourceRepository();
     this.cache = new MemoryCacheAdapter();
@@ -61,6 +61,21 @@ class BackendContainer {
     })();
 
     return this.bootstrapPromise;
+  }
+
+  /**
+   * Reconciles warm Worker isolates with `caches.default` (throttled to <=1 header check / 10s unless forced).
+   * Automatically invalidates isolate query cache when a sibling isolate persisted newer articles.
+   */
+  public async syncEdgeState(force = false): Promise<boolean> {
+    const [articlesChanged] = await Promise.all([
+      this.articleRepo.syncFromEdge(force),
+      this.sourceRepo.syncFromEdge(force),
+    ]);
+    if (articlesChanged) {
+      this.cache.clear();
+    }
+    return articlesChanged;
   }
 
   public startAutonomousScheduler(intervalMs = 5 * 60 * 1000): void {

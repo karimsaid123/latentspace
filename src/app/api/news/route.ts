@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
-import { isLocalPersistentDev } from '@/lib/runtime-env';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -14,26 +13,17 @@ export async function GET(request: NextRequest) {
     await container.bootstrap();
 
     const searchParams = request.nextUrl.searchParams;
+    const isFreshRead = searchParams.has('_v');
+
+    // Reconcile warm Worker isolate memory with shared Cloudflare `caches.default`
+    await container.syncEdgeState(isFreshRead);
+
     const category = searchParams.get('category') || undefined;
     const lab = searchParams.get('lab') || undefined;
     const entryType = searchParams.get('entryType') || undefined;
     const search = searchParams.get('search') || undefined;
     const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 150;
-    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 600) : 150;
-
-    const syncRequested = searchParams.get('sync') === '1' || searchParams.get('refresh') === '1';
-
-    // Synchronize telemetry ONLY when explicitly requested via sync=1 (e.g. manual force sync)
-    // Regular news queries serve instantly (<5ms) from the in-memory repository to guarantee zero-latency
-    // and prevent Cloudflare Workers subrequest limits and timeouts.
-    if (syncRequested) {
-      try {
-        await container.ingestionService.runIngestion(`sync_${Date.now()}`);
-        await container.cache.clear();
-      } catch (err: any) {
-        logger.warn('Dynamic telemetry ingestion skipped on error', { error: err?.message });
-      }
-    }
+    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 400) : 150;
 
     const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
 
@@ -98,7 +88,9 @@ export async function GET(request: NextRequest) {
       },
       {
         headers: {
-          'Cache-Control': 'public, max-age=15, s-maxage=45, stale-while-revalidate=180',
+          'Cache-Control': isFreshRead
+            ? 'no-store'
+            : 'public, max-age=10, s-maxage=15, stale-while-revalidate=30',
         },
       }
     );
