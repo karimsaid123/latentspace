@@ -187,60 +187,80 @@ export async function summarizeWithGemini(
 ): Promise<AISummary | null> {
   const cleanContent = cleanHtml(rawContent).slice(0, 4000);
 
-  const prompt = `You are an elite AI industry analyst and tech journalist.
-Analyze the following AI news article and provide a crisp executive summary in valid JSON format only.
+  const prompt = `You are an elite AI tech journalist and principal research analyst for LatentSpace.
+Analyze the following AI news development and produce a sharp, deeply insightful executive intelligence briefing.
 
 Article Title: ${title}
-Content: ${cleanContent}
+Content: ${cleanContent || title}
 
-Respond with strictly JSON matching this structure:
+Respond strictly with a valid JSON object matching this exact schema:
 {
-  "tldr": "One or two sharp sentences summarizing the core development and why it matters.",
+  "tldr": "Crisp 2-sentence executive summary explaining the development, technical breakthrough, and core significance.",
   "takeaways": [
-    "Punchy bullet point 1 (core innovation/action)",
-    "Punchy bullet point 2 (strategic/market/technical impact)",
-    "Punchy bullet point 3 (what to watch next or key takeaway)"
+    "Actionable bullet point 1 (core innovation, benchmark delta, or concrete milestone)",
+    "Actionable bullet point 2 (strategic/market/compute impact)",
+    "Actionable bullet point 3 (key implication for engineering, enterprise, or research)"
   ],
-  "impact": "Breakthrough" | "High" | "Medium" | "Notable",
+  "technicalAnalysis": "Deep technical breakdown of the architecture, compute, model weights, algorithms, or infrastructure specifications.",
+  "strategicImplications": "Strategic ecosystem impact, market dynamics, competitive moats, or regulatory considerations.",
+  "primaryThesis": "One concise sentence capturing the primary strategic thesis of this development.",
+  "impact": "Breakthrough" | "High Impact" | "Notable",
   "readTimeMinutes": number
 }`;
 
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.2,
-            responseMimeType: 'application/json',
-          },
-        }),
+  const models = ['gemini-3.5-flash-lite', 'gemini-3.5-flash'];
+
+  for (const model of models) {
+    try {
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.2,
+              responseMimeType: 'application/json',
+            },
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        console.warn(`Gemini API (${model}) returned ${response.status}: ${await response.text()}`);
+        continue;
       }
-    );
 
-    if (!response.ok) {
-      console.warn(`Gemini API returned ${response.status}: ${await response.text()}`);
-      return null;
+      const data = await response.json();
+      const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!candidateText) continue;
+
+      const cleanedText = candidateText.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
+      const parsed = JSON.parse(cleanedText);
+
+      const impactValue: ImpactLevel = 
+        parsed.impact === 'Breakthrough' || parsed.impact === 'High Impact' || parsed.impact === 'Notable'
+          ? parsed.impact
+          : 'High Impact';
+
+      return {
+        tldr: parsed.tldr || cleanContent.slice(0, 200),
+        takeaways: Array.isArray(parsed.takeaways) && parsed.takeaways.length > 0
+          ? parsed.takeaways
+          : ['Key frontier intelligence update.'],
+        technicalAnalysis: parsed.technicalAnalysis || undefined,
+        strategicImplications: parsed.strategicImplications || undefined,
+        primaryThesis: parsed.primaryThesis || undefined,
+        impact: impactValue,
+        readTimeMinutes: Number(parsed.readTimeMinutes) || Math.max(2, Math.ceil((cleanContent.split(/\s+/).length + 100) / 140)),
+        generatedWith: 'gemini',
+      };
+    } catch (error) {
+      console.error(`Failed to summarize with Gemini (${model}):`, error);
     }
-
-    const data = await response.json();
-    const candidateText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!candidateText) return null;
-
-    const parsed = JSON.parse(candidateText);
-    return {
-      tldr: parsed.tldr,
-      takeaways: Array.isArray(parsed.takeaways) ? parsed.takeaways : [],
-      impact: parsed.impact || 'High',
-      readTimeMinutes: Number(parsed.readTimeMinutes) || 3,
-      generatedWith: 'gemini',
-    };
-  } catch (error) {
-    console.error('Failed to summarize with Gemini:', error);
-    return null;
   }
+
+  return null;
 }
 

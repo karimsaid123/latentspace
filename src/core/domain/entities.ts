@@ -26,6 +26,7 @@ export interface AISummary {
   technicalAnalysis?: string;
   strategicImplications?: string;
   primaryThesis?: string;
+  generatedWith?: 'gemini' | 'heuristic';
 }
 
 export interface DomainSource {

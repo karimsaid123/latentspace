@@ -23,7 +23,28 @@ export default function EditorialModal({
   onToggleBookmark,
 }: EditorialModalProps) {
   const [isShareOpen, setIsShareOpen] = useState(false);
+  const [summary, setSummary] = useState(article?.aiSummary);
+  const [isEnriching, setIsEnriching] = useState(false);
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+
+  useEffect(() => {
+    if (!article) return;
+    setSummary(article.aiSummary);
+
+    // If this article only has a heuristic/template summary, enrich it on-demand with Gemini!
+    if (article.aiSummary?.generatedWith !== 'gemini') {
+      setIsEnriching(true);
+      fetch(`/api/summarize?id=${encodeURIComponent(article.id)}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.success && data?.summary) {
+            setSummary(data.summary);
+          }
+        })
+        .catch(() => {})
+        .finally(() => setIsEnriching(false));
+    }
+  }, [article?.id]);
 
   useEffect(() => {
     if (!article) return;
@@ -67,8 +88,19 @@ export default function EditorialModal({
 
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
-          <div>
+          <div className="flex items-center gap-2.5">
             <span className="font-bold text-black uppercase">[{article.source?.name || 'LATENTSPACE'}]</span>
+            {summary?.generatedWith === 'gemini' ? (
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#00aa66]/10 text-[#00aa66] border border-[#00aa66]/30 text-[9px] font-mono font-bold tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00aa66]" />
+                GEMINI FLASH
+              </span>
+            ) : isEnriching ? (
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-black/5 text-black/60 border border-black/10 text-[9px] font-mono tracking-wider uppercase animate-pulse">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] animate-ping" />
+                SYNTHESIZING...
+              </span>
+            ) : null}
           </div>
 
           <div className="flex items-center gap-4">
@@ -139,12 +171,12 @@ export default function EditorialModal({
               <div className="h-px flex-1 bg-black/10" />
             </div>
             <p className="font-sans text-base sm:text-lg leading-[1.65] text-black/90 font-normal antialiased">
-              {article.aiSummary?.tldr || article.contentSnippet || ''}
+              {summary?.tldr || article.contentSnippet || ''}
             </p>
           </div>
 
           {/* 02: Key Actionable Takeaways */}
-          {article.aiSummary?.takeaways && article.aiSummary.takeaways.length > 0 && (
+          {summary?.takeaways && summary.takeaways.length > 0 && (
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
@@ -153,7 +185,7 @@ export default function EditorialModal({
                 <div className="h-px flex-1 bg-black/10" />
               </div>
               <ul className="space-y-2.5">
-                {article.aiSummary.takeaways.map((point, idx) => (
+                {summary.takeaways.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3 font-sans text-sm sm:text-base leading-relaxed text-black/85">
                     <span className="font-mono text-xs font-bold text-[#ff8000] mt-0.5 shrink-0">
                       [{idx + 1}]
@@ -166,7 +198,7 @@ export default function EditorialModal({
           )}
 
           {/* 03: Analysis & Implications */}
-          {(article.aiSummary?.technicalAnalysis || article.aiSummary?.strategicImplications) && (
+          {(summary?.technicalAnalysis || summary?.strategicImplications) && (
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
@@ -176,24 +208,24 @@ export default function EditorialModal({
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {article.aiSummary?.technicalAnalysis && (
+                {summary?.technicalAnalysis && (
                   <div className="p-4 bg-white border border-black/10 space-y-2">
                     <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
                       TECHNICAL ARCHITECTURE
                     </span>
                     <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
-                      {article.aiSummary.technicalAnalysis}
+                      {summary.technicalAnalysis}
                     </p>
                   </div>
                 )}
 
-                {article.aiSummary?.strategicImplications && (
+                {summary?.strategicImplications && (
                   <div className="p-4 bg-white border border-black/10 space-y-2">
                     <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
                       STRATEGIC IMPACT
                     </span>
                     <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
-                      {article.aiSummary.strategicImplications}
+                      {summary.strategicImplications}
                     </p>
                   </div>
                 )}

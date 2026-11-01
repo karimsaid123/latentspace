@@ -1,4 +1,5 @@
 import { container } from '../src/core/container';
+import { summarizeWithGemini } from '../src/lib/ai-summarizer';
 
 async function main() {
   console.log('🔄 Starting autonomous feed synchronization...');
@@ -12,6 +13,29 @@ async function main() {
   console.log(`   - Articles added:    ${report.articlesAdded}`);
   console.log(`   - Articles modified: ${report.articlesModified}`);
   console.log(`   - Circuit breakers:  ${report.circuitBreakersTriggered.length}`);
+
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (apiKey) {
+    console.log('🤖 Checking top featured articles for Gemini intelligence synthesis...');
+    const topArticles = await container.articleRepo.list({ limit: 20 });
+    const toEnrich = topArticles.filter(a => a.summary?.generatedWith !== 'gemini').slice(0, 8);
+
+    if (toEnrich.length > 0) {
+      console.log(`   Found ${toEnrich.length} articles needing Gemini synthesis...`);
+      for (const art of toEnrich) {
+        console.log(`   - Synthesizing: "${art.title.slice(0, 50)}..."`);
+        const geminiSummary = await summarizeWithGemini(art.title, art.contentSnippet || art.title, apiKey);
+        if (geminiSummary) {
+          art.summary = geminiSummary;
+        }
+        await new Promise(r => setTimeout(r, 1200));
+      }
+      await container.articleRepo.saveMany(toEnrich);
+      console.log(`✅ Successfully synthesized ${toEnrich.length} articles with Gemini.`);
+    } else {
+      console.log('✨ Top featured articles already possess verified Gemini intelligence.');
+    }
+  }
 }
 
 main().catch(err => {

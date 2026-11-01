@@ -29,6 +29,8 @@ jobs:
 
       - name: Run autonomous feed ingestion
         run: npm run sync
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Commit and push if fresh telemetry was harvested
         run: |

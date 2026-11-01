@@ -6,6 +6,7 @@ import { SingleFlight } from './single-flight';
 import { IngestionReport, DomainArticle, DomainSource, FeedSnapshot } from '../domain/entities';
 import { logger } from '@/lib/logger';
 import { isServerlessOrEdge } from '@/lib/runtime-env';
+import { summarizeWithGemini } from '@/lib/ai-summarizer';
 
 const CONCURRENCY_LIMIT = 6;
 const ROLLING_BATCH_LIMIT = 8;
@@ -168,6 +169,30 @@ export class IngestionService {
 
       // Single atomic persistence write at the end of the run (instead of 34 writes)
       if (batchedToSave.size > 0) {
+        const apiKey = process.env.GEMINI_API_KEY;
+        if (apiKey) {
+          let count = 0;
+          for (const [id, article] of batchedToSave.entries()) {
+            if (count >= 4) break;
+            if (article.summary?.generatedWith !== 'gemini') {
+              try {
+                const geminiSummary = await summarizeWithGemini(
+                  article.title,
+                  article.contentSnippet || article.title,
+                  apiKey
+                );
+                if (geminiSummary) {
+                  article.summary = geminiSummary;
+                  existingMap.set(id, article);
+                  batchedToSave.set(id, article);
+                  count++;
+                }
+              } catch (err: any) {
+                logger.warn('Gemini summarization failed during ingestion', { id, err: err?.message });
+              }
+            }
+          }
+        }
         await this.articleRepo.saveMany(Array.from(batchedToSave.values()));
       }
       if (typeof this.sourceRepo.flush === 'function') {
