@@ -29,6 +29,7 @@ export const LAB_FILTERS = [
   { id: 'Google DeepMind', label: 'DEEPMIND' },
   { id: 'Anthropic', label: 'ANTHROPIC' },
   { id: 'SpaceX & xAI', label: 'SPACEX & xAI' },
+  { id: 'DeepSeek', label: 'DEEPSEEK' },
   { id: 'Mistral AI', label: 'MISTRAL' },
   { id: 'Moonshot AI', label: 'KIMI / MOONSHOT' },
   { id: 'Meta AI', label: 'META AI' },

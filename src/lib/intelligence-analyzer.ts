@@ -12,6 +12,7 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
 
   // 1. Direct Source Name lab matching
   if (s.includes('xai') || s.includes('spacex') || s.includes('grok')) return 'SpaceX & xAI';
+  if (s.includes('deepseek')) return 'DeepSeek';
   if (s.includes('mistral')) return 'Mistral AI';
   if (s.includes('moonshot') || s.includes('kimi')) return 'Moonshot AI';
   if (s.includes('openai')) return 'OpenAI';
@@ -26,6 +27,16 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   }
 
   // 2. High Priority: Title mentions lab or flagship model
+  if (
+    t.includes('deepseek') ||
+    t.includes('liang wenfeng') ||
+    t.includes('dsh-superagent') ||
+    t.includes('super-agent') ||
+    t.includes('fire-flyer')
+  ) {
+    return 'DeepSeek';
+  }
+
   if (
     t.includes('mistral') ||
     t.includes('mixtral') ||
@@ -115,6 +126,17 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   }
 
   // 3. Fallback: Combined Text Matching
+  if (
+    combined.includes('deepseek') ||
+    combined.includes('deepseek-r1') ||
+    combined.includes('deepseek-v3') ||
+    combined.includes('deepseek r1') ||
+    combined.includes('deepseek v3') ||
+    combined.includes('liang wenfeng')
+  ) {
+    return 'DeepSeek';
+  }
+
   if (
     combined.includes('mistral') ||
     combined.includes('mixtral') ||

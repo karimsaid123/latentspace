@@ -217,7 +217,7 @@ export const VERIFIED_BENCHMARK_SNAPSHOT: ModelBenchmark[] = [
     creator: {
       id: 'deepseek',
       name: 'DeepSeek',
-      lab: 'Independent',
+      lab: 'DeepSeek',
     },
     evaluations: {
       intelligenceIndex: 32,
@@ -403,6 +403,7 @@ function mapCreatorToLab(name: string): FrontierLab {
   if (n.includes('google') || n.includes('deepmind')) return 'Google DeepMind';
   if (n.includes('anthropic')) return 'Anthropic';
   if (n.includes('openai')) return 'OpenAI';
+  if (n.includes('deepseek')) return 'DeepSeek';
   if (n.includes('xai') || n.includes('spacex') || n.includes('musk')) return 'SpaceX & xAI';
   if (n.includes('mistral')) return 'Mistral AI';
   if (n.includes('moonshot') || n.includes('kimi')) return 'Moonshot AI';

@@ -20,6 +20,7 @@ const LAB_SECTORS = [
   { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND' },
   { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC' },
   { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI' },
+  { id: 'DeepSeek', name: 'DEEPSEEK', short: 'DEEPSEEK' },
   { id: 'Mistral AI', name: 'MISTRAL AI', short: 'MISTRAL' },
   { id: 'Moonshot AI', name: 'MOONSHOT AI & KIMI', short: 'KIMI' },
   { id: 'Meta AI', name: 'META AI', short: 'META' },
@@ -428,10 +429,10 @@ const EditorialSpread = memo(function EditorialSpread({
             <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
             <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
           </div>
-          <span>ACTIVE MONITORING: 8 ENTERPRISE CLUSTERS</span>
+          <span>ACTIVE MONITORING: 9 ENTERPRISE CLUSTERS</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {LAB_SECTORS.map((lab, idx) => {
             const labArticles = articlesByLab[lab.id] || [];
             const leadArt = labArticles[0];

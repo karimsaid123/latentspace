@@ -141,6 +141,7 @@ export default function BenchmarksPage() {
       { id: 'google', name: 'Google DeepMind', labFilter: 'Google DeepMind', desc: 'Gemini 4 Multimodal Frontier & Orbital TPU Acceleration' },
       { id: 'anthropic', name: 'Anthropic', labFilter: 'Anthropic', desc: 'Claude Opus 5.5 & Constitutional AI Reasoning' },
       { id: 'openai', name: 'OpenAI', labFilter: 'OpenAI', desc: 'GPT-6 Astro & High-Throughput Reasoning Matrix' },
+      { id: 'deepseek', name: 'DeepSeek', labFilter: 'DeepSeek', desc: 'DeepSeek R1 / V4 Reasoning & Ultra-Efficient Open MoE Architecture' },
       { id: 'xai', name: 'SpaceX & xAI', labFilter: 'SpaceX & xAI', desc: 'Grok 4.7 & Colossus Memphis Supercluster Compute' },
       { id: 'mistral', name: 'Mistral AI', labFilter: 'Mistral AI', desc: 'Mistral Large 4 MoE & Sovereign Open Architecture' },
       { id: 'moonshot', name: 'Moonshot AI', labFilter: 'Moonshot AI', desc: 'Kimi K3.1 Pro & Ultra-Long Context Mathematical Logic' },
