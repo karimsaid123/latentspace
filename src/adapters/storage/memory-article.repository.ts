@@ -85,6 +85,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
         primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
         impact: summary.impact || 'Notable',
         readTimeMinutes: summary.readTimeMinutes || 3,
+        generatedWith: summary.generatedWith,
       };
     }
 
