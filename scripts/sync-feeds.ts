@@ -22,16 +22,27 @@ async function main() {
 
     if (toEnrich.length > 0) {
       console.log(`   Found ${toEnrich.length} articles needing Gemini synthesis...`);
-      for (const art of toEnrich) {
-        console.log(`   - Synthesizing: "${art.title.slice(0, 50)}..."`);
-        const geminiSummary = await summarizeWithGemini(art.title, art.contentSnippet || art.title, apiKey);
-        if (geminiSummary) {
-          art.summary = geminiSummary;
-        }
-        await new Promise(r => setTimeout(r, 1200));
+      const CLI_GEMINI_CONCURRENCY = 3;
+      const enriched: typeof toEnrich = [];
+
+      for (let i = 0; i < toEnrich.length; i += CLI_GEMINI_CONCURRENCY) {
+        const chunk = toEnrich.slice(i, i + CLI_GEMINI_CONCURRENCY);
+        await Promise.all(
+          chunk.map(async art => {
+            console.log(`   - Synthesizing: "${art.title.slice(0, 50)}..."`);
+            const geminiSummary = await summarizeWithGemini(art.title, art.contentSnippet || art.title, apiKey);
+            if (geminiSummary) {
+              art.summary = geminiSummary;
+              enriched.push(art);
+            }
+          })
+        );
       }
-      await container.articleRepo.saveMany(toEnrich);
-      console.log(`✅ Successfully synthesized ${toEnrich.length} articles with Gemini.`);
+
+      if (enriched.length > 0) {
+        await container.articleRepo.saveMany(enriched);
+      }
+      console.log(`✅ Successfully synthesized ${enriched.length}/${toEnrich.length} articles with Gemini.`);
     } else {
       console.log('✨ Top featured articles already possess verified Gemini intelligence.');
     }

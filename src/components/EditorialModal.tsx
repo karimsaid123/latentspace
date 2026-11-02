@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
-import { Article } from '@/types';
+import { Article, AISummary } from '@/types';
 import { ExternalLink, Share2 } from 'lucide-react';
 import ArticleShareModal from './ArticleShareModal';
 import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
@@ -12,39 +12,78 @@ interface EditorialModalProps {
   onClose: () => void;
   isBookmarked?: boolean;
   onToggleBookmark?: (id: string) => void;
+  onSummaryEnriched?: (articleId: string, summary: AISummary) => void;
 }
 
 const emptySubscribe = () => () => {};
+
+function toSafeExternalUrl(raw?: string): string | null {
+  if (!raw) return null;
+  try {
+    const parsed = new URL(raw);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return parsed.toString();
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
 
 export default function EditorialModal({
   article,
   onClose,
   isBookmarked = false,
   onToggleBookmark,
+  onSummaryEnriched,
 }: EditorialModalProps) {
   const [isShareOpen, setIsShareOpen] = useState(false);
-  const [summary, setSummary] = useState(article?.aiSummary);
+  const [summary, setSummary] = useState<AISummary | undefined>(article?.aiSummary);
   const [isEnriching, setIsEnriching] = useState(false);
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   useEffect(() => {
-    if (!article) return;
+    if (!article) {
+      setIsEnriching(false);
+      return;
+    }
     setSummary(article.aiSummary);
 
-    // If this article only has a heuristic/template summary, enrich it on-demand with Gemini!
+    // If this article only has a heuristic/template summary, enrich it on-demand with Gemini via POST
     if (article.aiSummary?.generatedWith !== 'gemini') {
+      const controller = new AbortController();
+      const targetId = article.id;
       setIsEnriching(true);
-      fetch(`/api/summarize?id=${encodeURIComponent(article.id)}`)
-        .then((res) => res.json())
+
+      fetch('/api/summarize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ articleId: targetId }),
+        signal: controller.signal,
+      })
+        .then((res) => (res.ok ? res.json() : null))
         .then((data) => {
-          if (data?.success && data?.summary) {
+          if (!controller.signal.aborted && data?.success && data?.summary) {
             setSummary(data.summary);
+            if (data.summary.generatedWith === 'gemini') {
+              onSummaryEnriched?.(targetId, data.summary);
+            }
           }
         })
         .catch(() => {})
-        .finally(() => setIsEnriching(false));
+        .finally(() => {
+          if (!controller.signal.aborted) {
+            setIsEnriching(false);
+          }
+        });
+
+      return () => {
+        controller.abort();
+      };
+    } else {
+      setIsEnriching(false);
     }
-  }, [article?.id]);
+  }, [article?.id, article?.aiSummary, onSummaryEnriched]);
 
   useEffect(() => {
     if (!article) return;
@@ -72,15 +111,18 @@ export default function EditorialModal({
   if (!isMounted || !article) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
+  const safeArticleLink = toSafeExternalUrl(article.link);
+  const safePdfUrl = toSafeExternalUrl(article.pdfUrl);
+  const enrichedArticle: Article = summary ? { ...article, aiSummary: summary } : article;
 
   const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
-      <div 
-        className="fixed inset-0" 
+      <div
+        className="fixed inset-0"
         onClick={(e) => {
           e.stopPropagation();
           onClose();
-        }} 
+        }}
       />
 
       {/* Minimalist Reader Sheet */}
@@ -138,7 +180,7 @@ export default function EditorialModal({
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-6 sm:p-10 space-y-8 select-text">
-          
+
           <div className="space-y-3">
             <div className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
               <div
@@ -254,9 +296,9 @@ export default function EditorialModal({
           </div>
 
           <div className="flex items-center gap-3">
-            {article.pdfUrl && (
+            {safePdfUrl && (
               <a
-                href={article.pdfUrl}
+                href={safePdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 font-bold uppercase text-black border border-black px-3.5 py-2 hover:bg-black hover:text-white transition-colors cursor-pointer text-[11px] tracking-wider"
@@ -265,15 +307,17 @@ export default function EditorialModal({
               </a>
             )}
 
-            <a
-              href={article.link || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-bold uppercase text-white bg-black px-4 py-2 hover:bg-[#ff8000] hover:text-black transition-all cursor-pointer shadow-sm text-[11px] tracking-wider"
-            >
-              <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
+            {safeArticleLink && (
+              <a
+                href={safeArticleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-bold uppercase text-white bg-black px-4 py-2 hover:bg-[#ff8000] hover:text-black transition-all cursor-pointer shadow-sm text-[11px] tracking-wider"
+              >
+                <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
         </div>
 
@@ -281,7 +325,7 @@ export default function EditorialModal({
 
       {/* Branded Article Share Modal */}
       <ArticleShareModal
-        article={article}
+        article={enrichedArticle}
         isOpen={isShareOpen}
         onClose={() => setIsShareOpen(false)}
       />

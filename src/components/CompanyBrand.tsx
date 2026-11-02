@@ -58,11 +58,11 @@ export const COMPANY_BRANDS: Record<string, CompanyBrandInfo> = {
     id: 'xai',
     name: 'SpaceX & xAI',
     shortName: 'xAI',
-    primaryColor: '#111827',
-    accentColor: '#000000',
-    bgTint: 'rgba(0, 0, 0, 0.06)',
-    borderColor: '#111827',
-    textColor: '#111827',
+    primaryColor: 'var(--foreground)',
+    accentColor: 'var(--foreground)',
+    bgTint: 'var(--border)',
+    borderColor: 'var(--foreground)',
+    textColor: 'var(--foreground)',
   },
   moonshot: {
     id: 'moonshot',
@@ -150,11 +150,11 @@ const DEFAULT_BRAND: CompanyBrandInfo = {
   id: 'independent',
   name: 'Frontier Lab',
   shortName: 'LAB',
-  primaryColor: '#000000',
-  accentColor: '#333333',
-  bgTint: 'rgba(0, 0, 0, 0.04)',
-  borderColor: '#000000',
-  textColor: '#000000',
+  primaryColor: 'var(--foreground)',
+  accentColor: 'var(--foreground)',
+  bgTint: 'var(--border)',
+  borderColor: 'var(--foreground)',
+  textColor: 'var(--foreground)',
 };
 
 export function getCompanyBrand(rawKey?: string | null): CompanyBrandInfo {
@@ -269,7 +269,7 @@ export function CompanyLogo({
 
     case 'xai':
       return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+        <svg viewBox="0 0 24 24" fill={color} className={className}>
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
         </svg>
       );

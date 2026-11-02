@@ -3,6 +3,7 @@
 :root {
   --background: #faf9f6;
   --foreground: #000000;
+  --card-bg: #ffffff;
   --border: rgba(0, 0, 0, 0.08);
   color-scheme: light;
 }
@@ -10,6 +11,7 @@
 html.dark {
   --background: #070709;
   --foreground: #f4f4f6;
+  --card-bg: #121215;
   --border: rgba(255, 255, 255, 0.12);
   color-scheme: dark;
 }
@@ -40,6 +42,10 @@ html.dark .bg-\[\#faf9f6\] {
 
 html.dark .bg-white {
   background-color: #121215 !important;
+}
+
+html.dark .bg-\[\#f2efe9\] {
+  background-color: #0e0e12 !important;
 }
 
 html.dark .bg-\[\#faf9f6\]\/60 {
@@ -99,7 +105,8 @@ html.dark .border-black\/30 {
 html.dark .border-black\/20,
 html.dark .border-black\/15,
 html.dark .border-black\/10,
-html.dark .border-black\/5 {
+html.dark .border-black\/5,
+html.dark .divide-black\/10 > :not([hidden]) ~ :not([hidden]) {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
@@ -150,19 +157,31 @@ html.dark .hover\:bg-black:hover {
   background-color: #f4f4f6 !important;
   color: #070709 !important;
 }
+html.dark .hover\:bg-black:hover .text-black {
+  color: #070709 !important;
+}
 html.dark .hover\:text-black:hover {
   color: #ffffff !important;
 }
 html.dark .hover\:border-black:hover {
   border-color: rgba(255, 255, 255, 0.55) !important;
 }
-html.dark .hover\:bg-black\/\[0\.04\]:hover {
+html.dark .hover\:bg-black\/\[0\.04\]:hover,
+html.dark .hover\:bg-black\/\[0\.02\]:hover {
   background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Form inputs */
+/* Form inputs & native selects */
 html.dark input::placeholder {
   color: rgba(244, 244, 246, 0.35) !important;
+}
+html.dark select,
+html.dark select option {
+  background-color: #121215 !important;
+  color: #f4f4f6 !important;
+}
+html.dark .animate-scanline {
+  background-color: #ff8000 !important;
 }
 
 /* Reader sheet modal */
@@ -309,4 +328,18 @@ nextjs-portal,
 
 .animate-scanline {
   animation: scanline 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up-1,
+  .animate-fade-up-2,
+  .animate-fade-up-3,
+  .animate-fade-up-4,
+  .animate-fade-in,
+  .animate-modal-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

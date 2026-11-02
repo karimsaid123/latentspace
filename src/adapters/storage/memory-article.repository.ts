@@ -61,7 +61,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
     const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
     const sourceName = item.sourceName || item.source?.name || 'Feed';
     const canonicalUrl = item.canonicalUrl || item.link || '';
-    const lab = item.lab || detectFrontierLab(title, contentSnippet, sourceName);
+    const lab = detectFrontierLab(title, contentSnippet, sourceName);
 
     let entryType = item.entryType;
     let arxivId = item.arxivId;
@@ -77,13 +77,21 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
     if (!summary || !summary.technicalAnalysis || (summary.takeaways?.length || 0) < 3) {
       summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
     } else {
+      const rawImpact = summary.impact;
+      const normalizedImpact =
+        rawImpact === 'Breakthrough' || rawImpact === 'High' || rawImpact === 'Medium' || rawImpact === 'Notable'
+          ? rawImpact
+          : rawImpact === 'High Impact'
+          ? 'High'
+          : 'Notable';
+
       summary = {
         tldr: decodeHtmlEntities(summary.tldr || ''),
         takeaways: (summary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
         technicalAnalysis: summary.technicalAnalysis ? decodeHtmlEntities(summary.technicalAnalysis) : undefined,
         strategicImplications: summary.strategicImplications ? decodeHtmlEntities(summary.strategicImplications) : undefined,
         primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
-        impact: summary.impact || 'Notable',
+        impact: normalizedImpact,
         readTimeMinutes: summary.readTimeMinutes || 3,
         generatedWith: summary.generatedWith,
       };
@@ -141,7 +149,14 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       for (const raw of cached) {
         if (!raw?.id) continue;
         const existing = this.articles.get(raw.id);
-        if (!existing || (raw.contentHash && existing.article.contentHash !== raw.contentHash)) {
+        const rawSummaryGen = raw.summary?.generatedWith || raw.aiSummary?.generatedWith;
+        const upgradedToGemini =
+          rawSummaryGen === 'gemini' && existing?.article.summary?.generatedWith !== 'gemini';
+        const contentOrTitleChanged =
+          Boolean(raw.contentHash && existing && existing.article.contentHash !== raw.contentHash) ||
+          Boolean(raw.title && existing && existing.article.title !== raw.title);
+
+        if (!existing || contentOrTitleChanged || upgradedToGemini) {
           const normalized = this.normalizeRawItem(raw);
           if (normalized) {
             this.articles.set(normalized.id, this.indexArticle(normalized));
@@ -350,15 +365,18 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       }
       return;
     }
+    let tmpPath = '';
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
-      const tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
+      tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
       const all = this.getSortedEntries().map(e => e.article);
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
     } catch {
-      // Gracefully ignore on read-only environments
+      if (tmpPath) {
+        await fs.unlink(tmpPath).catch(() => {});
+      }
     }
   }
 }

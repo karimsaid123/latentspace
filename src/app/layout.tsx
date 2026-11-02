@@ -13,8 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://latentspace.science"),
   title: "LATENT SPACE // AI INTELLIGENCE",
-  description: "Autonomous real-time AI news journal.",
+  description:
+    "Autonomous real-time frontier AI intelligence journal, research dispatches, and model benchmarks.",
+  openGraph: {
+    title: "LATENT SPACE // AI INTELLIGENCE",
+    description:
+      "Autonomous real-time frontier AI intelligence journal, research dispatches, and model benchmarks.",
+    url: "https://latentspace.science",
+    siteName: "Latent Space",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LATENT SPACE // AI INTELLIGENCE",
+    description:
+      "Autonomous real-time frontier AI intelligence journal, research dispatches, and model benchmarks.",
+  },
   icons: {
     icon: [
       { url: '/icon.svg', type: 'image/svg+xml' },

@@ -8,20 +8,16 @@ const CATALOG_PAGE_SIZE = 24;
 
 interface EditorialSpreadProps {
   articles: Article[];
-  allArticles?: Article[];
   onSelectArticle: (article: Article) => void;
   bookmarkedIds?: string[];
   onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
-  onSelectLab?: (lab: string) => void;
 }
 
 const EditorialSpread = memo(function EditorialSpread({
   articles,
-  allArticles,
   onSelectArticle,
   bookmarkedIds = [],
   onToggleBookmark,
-  onSelectLab,
 }: EditorialSpreadProps) {
   const [visibleCatalogCount, setVisibleCatalogCount] = useState(CATALOG_PAGE_SIZE);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
@@ -36,22 +32,20 @@ const EditorialSpread = memo(function EditorialSpread({
   if (!articles || articles.length === 0) return null;
 
   const lead = articles[0];
-  const second = articles[1] || articles[0];
-  const third = articles[2] || articles[0];
-  const fourth = articles[3] || articles[0];
-  const fifth = articles[4] || articles[0];
-  const sixth = articles[5] || articles[0];
+  const second = articles[1];
+  const third = articles[2];
+  const archiveItems = articles.slice(3, 6);
   const catalogSlice = articles.slice(0, visibleCatalogCount);
   const remainingCount = Math.max(0, articles.length - visibleCatalogCount);
 
   return (
     <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-12 py-8 select-none">
-      
+
       {/* ─────────────────────────────────────────────────────────────
           SECTION 1: REFINED SWISS EDITORIAL LEAD STORIES (Image-free)
       ───────────────────────────────────────────────────────────── */}
       <section className="relative pt-6 pb-14 lg:pb-16 animate-fade-up">
-        
+
         {/* Lead Headline */}
         <div className="relative">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-4">
@@ -61,7 +55,7 @@ const EditorialSpread = memo(function EditorialSpread({
             >
               {lead.title}
             </h1>
-            
+
             <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase shrink-0 pt-2">
               <span>[{lead.source.name}]</span>
             </div>
@@ -82,18 +76,18 @@ const EditorialSpread = memo(function EditorialSpread({
                 <button
                   onClick={(e) => onToggleBookmark(lead.id, e)}
                   className={`hover:text-black cursor-pointer transition-colors ${
-                    bookmarkedIds.includes(lead.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                    savedIdSet.has(lead.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
                   }`}
-                  title={bookmarkedIds.includes(lead.id) ? 'Saved' : 'Save article'}
+                  title={savedIdSet.has(lead.id) ? 'Saved' : 'Save article'}
                 >
-                  [{bookmarkedIds.includes(lead.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                  [{savedIdSet.has(lead.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                 </button>
               </>
             )}
           </div>
 
           {(lead.aiSummary?.tldr || lead.contentSnippet) && (
-            <p 
+            <p
               onClick={() => onSelectArticle(lead)}
               className="mt-5 text-sm sm:text-base text-black/75 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-90 transition-opacity"
             >
@@ -105,7 +99,7 @@ const EditorialSpread = memo(function EditorialSpread({
         {/* Secondary Story (Refined Headline, Image-free) */}
         {second && second.id !== lead.id && (
           <div className="pt-10 mt-10 border-t border-black/10">
-            <div 
+            <div
               onClick={() => onSelectArticle(second)}
               className="cursor-pointer group max-w-5xl"
             >
@@ -126,11 +120,11 @@ const EditorialSpread = memo(function EditorialSpread({
                       onToggleBookmark(second.id, e);
                     }}
                     className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(second.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                      savedIdSet.has(second.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
                     }`}
-                    title={bookmarkedIds.includes(second.id) ? 'Saved' : 'Save article'}
+                    title={savedIdSet.has(second.id) ? 'Saved' : 'Save article'}
                   >
-                    [{bookmarkedIds.includes(second.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                    [{savedIdSet.has(second.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                   </button>
                 )}
               </div>
@@ -153,9 +147,9 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 2: FEATURED DISPATCH (Refined Headline, Image-free)
       ───────────────────────────────────────────────────────────── */}
-      {third && third.id !== lead.id && third.id !== second.id && (
+      {third && third.id !== lead.id && (!second || third.id !== second.id) && (
         <section className="relative py-12 lg:py-16 border-t border-black/10">
-          
+
           <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-6">
             <span>FEATURED DISPATCH</span>
           </div>
@@ -174,11 +168,11 @@ const EditorialSpread = memo(function EditorialSpread({
                     onToggleBookmark(third.id, e);
                   }}
                   className={`hover:text-black cursor-pointer transition-colors ${
-                    bookmarkedIds.includes(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
+                    savedIdSet.has(third.id) ? 'text-black font-bold' : 'text-black/50 hover:text-black'
                   }`}
-                  title={bookmarkedIds.includes(third.id) ? 'Saved' : 'Save article'}
+                  title={savedIdSet.has(third.id) ? 'Saved' : 'Save article'}
                 >
-                  [{bookmarkedIds.includes(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                  [{savedIdSet.has(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
                 </button>
               )}
             </div>
@@ -200,7 +194,7 @@ const EditorialSpread = memo(function EditorialSpread({
             </div>
 
             {(third.aiSummary?.tldr || third.contentSnippet) && (
-              <p 
+              <p
                 onClick={() => onSelectArticle(third)}
                 className="text-sm text-black/70 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-80 transition-opacity"
               >
@@ -215,191 +209,79 @@ const EditorialSpread = memo(function EditorialSpread({
       {/* ─────────────────────────────────────────────────────────────
           SECTION 3: ARCHITECTURAL 3-COLUMN DISPATCH ARCHIVE (Image-free)
       ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-12 lg:py-16 border-t border-black/10">
-        
-        {/* Top Header of Section 3 */}
-        <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-          <span>DISPATCH ARCHIVE</span>
-          <span>CURATED SECTOR RADAR</span>
-        </div>
+      {archiveItems.length > 0 && (
+        <section className="relative py-12 lg:py-16 border-t border-black/10">
 
-        {/* 3-Column Swiss Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-          
-          {/* ─── COLUMN 1: [004] ─── */}
-          <div className="flex flex-col items-start w-full border-t border-black pt-4">
-            <ScrollReveal yOffset={25} delayMs={50} className="w-full">
-              
-              {/* Index & Source */}
-              <div 
-                onClick={() => onSelectArticle(fourth)}
-                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
-              >
-                <span className="font-bold tracking-widest text-black group-hover:underline">
-                  [004 // {fourth.source.name}]
-                </span>
-                <span className="tracking-wider text-black/50 uppercase">
-                  [{fourth.lab || 'FRONTIER'}]
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h3 
-                onClick={() => onSelectArticle(fourth)}
-                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
-              >
-                {fourth.title}
-              </h3>
-
-              {/* Snippet */}
-              {(fourth.aiSummary?.tldr || fourth.contentSnippet) && (
-                <p 
-                  onClick={() => onSelectArticle(fourth)}
-                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
-                >
-                  {fourth.aiSummary?.tldr || fourth.contentSnippet}
-                </p>
-              )}
-
-              {/* Meta */}
-              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
-                <span>{fourth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
-                {onToggleBookmark && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleBookmark(fourth.id, e);
-                    }}
-                    className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(fourth.id) ? 'text-black font-bold' : 'text-black/40'
-                    }`}
-                  >
-                    [{bookmarkedIds.includes(fourth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
-                  </button>
-                )}
-              </div>
-            </ScrollReveal>
+          <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
+            <span>DISPATCH ARCHIVE</span>
+            <span>CURATED SECTOR RADAR</span>
           </div>
 
-          {/* ─── COLUMN 2: [005] ─── */}
-          <div className="flex flex-col items-start w-full border-t border-black pt-4">
-            <ScrollReveal yOffset={25} delayMs={100} className="w-full">
-              
-              {/* Index & Source */}
-              <div 
-                onClick={() => onSelectArticle(fifth)}
-                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
-              >
-                <span className="font-bold tracking-widest text-black group-hover:underline">
-                  [005 // {fifth.source.name}]
-                </span>
-                <span className="tracking-wider text-black/50 uppercase">
-                  [{fifth.lab || 'FRONTIER'}]
-                </span>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+            {archiveItems.map((item, idx) => {
+              const displayIdx = String(idx + 4).padStart(3, '0');
+              const isItemSaved = savedIdSet.has(item.id);
+              return (
+                <div key={item.id} className="flex flex-col items-start w-full border-t border-black pt-4">
+                  <ScrollReveal yOffset={25} delayMs={(idx + 1) * 50} className="w-full">
+                    <div
+                      onClick={() => onSelectArticle(item)}
+                      className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
+                    >
+                      <span className="font-bold tracking-widest text-black group-hover:underline">
+                        [{displayIdx} // {item.source.name}]
+                      </span>
+                      <span className="tracking-wider text-black/50 uppercase">
+                        [{item.lab || 'FRONTIER'}]
+                      </span>
+                    </div>
 
-              {/* Headline */}
-              <h3 
-                onClick={() => onSelectArticle(fifth)}
-                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
-              >
-                {fifth.title}
-              </h3>
+                    <h3
+                      onClick={() => onSelectArticle(item)}
+                      className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
+                    >
+                      {item.title}
+                    </h3>
 
-              {/* Snippet */}
-              {(fifth.aiSummary?.tldr || fifth.contentSnippet) && (
-                <p 
-                  onClick={() => onSelectArticle(fifth)}
-                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
-                >
-                  {fifth.aiSummary?.tldr || fifth.contentSnippet}
-                </p>
-              )}
+                    {(item.aiSummary?.tldr || item.contentSnippet) && (
+                      <p
+                        onClick={() => onSelectArticle(item)}
+                        className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
+                      >
+                        {item.aiSummary?.tldr || item.contentSnippet}
+                      </p>
+                    )}
 
-              {/* Meta */}
-              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
-                <span>{fifth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
-                {onToggleBookmark && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleBookmark(fifth.id, e);
-                    }}
-                    className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(fifth.id) ? 'text-black font-bold' : 'text-black/40'
-                    }`}
-                  >
-                    [{bookmarkedIds.includes(fifth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
-                  </button>
-                )}
-              </div>
-            </ScrollReveal>
+                    <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
+                      <span>{item.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
+                      {onToggleBookmark && (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onToggleBookmark(item.id, e);
+                          }}
+                          className={`hover:text-black cursor-pointer transition-colors ${
+                            isItemSaved ? 'text-black font-bold' : 'text-black/40'
+                          }`}
+                        >
+                          [{isItemSaved ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                        </button>
+                      )}
+                    </div>
+                  </ScrollReveal>
+                </div>
+              );
+            })}
           </div>
 
-          {/* ─── COLUMN 3: [006] ─── */}
-          <div className="flex flex-col items-start w-full border-t border-black pt-4">
-            <ScrollReveal yOffset={25} delayMs={150} className="w-full">
-              
-              {/* Index & Source */}
-              <div 
-                onClick={() => onSelectArticle(sixth)}
-                className="w-full flex items-center justify-between gap-2.5 mb-3 cursor-pointer group font-mono text-[9px]"
-              >
-                <span className="font-bold tracking-widest text-black group-hover:underline">
-                  [006 // {sixth.source.name}]
-                </span>
-                <span className="tracking-wider text-black/50 uppercase">
-                  [{sixth.lab || 'FRONTIER'}]
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h3 
-                onClick={() => onSelectArticle(sixth)}
-                className="font-mono text-base sm:text-lg font-bold uppercase tracking-tight leading-snug cursor-pointer hover:opacity-70 transition-opacity break-words [overflow-wrap:anywhere] mb-3"
-              >
-                {sixth.title}
-              </h3>
-
-              {/* Snippet */}
-              {(sixth.aiSummary?.tldr || sixth.contentSnippet) && (
-                <p 
-                  onClick={() => onSelectArticle(sixth)}
-                  className="font-sans text-xs text-black/70 leading-relaxed line-clamp-4 cursor-pointer mb-4"
-                >
-                  {sixth.aiSummary?.tldr || sixth.contentSnippet}
-                </p>
-              )}
-
-              {/* Meta */}
-              <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
-                <span>{sixth.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
-                {onToggleBookmark && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onToggleBookmark(sixth.id, e);
-                    }}
-                    className={`hover:text-black cursor-pointer transition-colors ${
-                      bookmarkedIds.includes(sixth.id) ? 'text-black font-bold' : 'text-black/40'
-                    }`}
-                  >
-                    [{bookmarkedIds.includes(sixth.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
-                  </button>
-                )}
-              </div>
-            </ScrollReveal>
-          </div>
-
-        </div>
-
-      </section>
+        </section>
+      )}
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 4: COMPLETE CATALOG (Image-free, Balanced Typography)
       ───────────────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-20 border-t border-black/10">
-        
+
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-8">
           <span className="font-bold text-black">CATALOG ARCHIVE</span>
           {isCatalogOpen && (

@@ -11,214 +11,116 @@ export function detectFrontierLab(title: string, content: string, sourceName = '
   const combined = `${t} ${c} ${s}`;
 
   // 1. Direct Source Name lab matching
-  if (s.includes('xai') || s.includes('spacex') || s.includes('grok')) return 'SpaceX & xAI';
+  if (/\bxai\b|\bspacex\b|\bgrok\b/.test(s)) return 'SpaceX & xAI';
   if (s.includes('deepseek')) return 'DeepSeek';
   if (s.includes('mistral')) return 'Mistral AI';
-  if (s.includes('moonshot') || s.includes('kimi')) return 'Moonshot AI';
+  if (s.includes('moonshot') || /\bkimi\b/.test(s)) return 'Moonshot AI';
   if (s.includes('openai')) return 'OpenAI';
   if (s.includes('deepmind')) return 'Google DeepMind';
-  if (s.includes('anthropic') || s.includes('claude')) return 'Anthropic';
+  if (s.includes('anthropic') || /\bclaude\b/.test(s)) return 'Anthropic';
   if (s.includes('nvidia')) return 'NVIDIA';
-  if (s.includes('meta ai') || s.includes('fair')) return 'Meta AI';
+  if (s.includes('meta ai') || /\bfair\b/.test(s)) return 'Meta AI';
 
   // Cloud infrastructure blogs (AWS, Google Cloud) default to Independent unless title is specifically about a frontier lab
-  if ((s.includes('aws') || s.includes('amazon')) && !t.includes('meta') && !t.includes('llama') && !t.includes('nvidia') && !t.includes('openai') && !t.includes('anthropic')) {
+  if (
+    (/\baws\b/.test(s) || s.includes('amazon')) &&
+    !/\b(meta|llama|nvidia|openai|anthropic|deepseek|mistral)\b/.test(t)
+  ) {
     return 'Independent';
   }
 
-  // 2. High Priority: Title mentions lab or flagship model
-  if (
-    t.includes('deepseek') ||
-    t.includes('liang wenfeng') ||
-    t.includes('dsh-superagent') ||
-    t.includes('super-agent') ||
-    t.includes('fire-flyer')
-  ) {
+  // 2. High Priority: Title mentions lab or flagship model (strict word boundaries prevent "octopus" -> "opus" or "operator" false positives)
+  if (/\b(deepseek|liang wenfeng|dsh-superagent|fire-flyer)\b/.test(t)) {
     return 'DeepSeek';
   }
 
-  if (
-    t.includes('mistral') ||
-    t.includes('mixtral') ||
-    t.includes('codestral') ||
-    t.includes('le chat') ||
-    t.includes('arthur mensch')
-  ) {
+  if (/\b(mistral|mixtral|codestral|le chat|arthur mensch)\b/.test(t)) {
     return 'Mistral AI';
   }
 
-  if (
-    t.includes('moonshot') ||
-    t.includes('kimi') ||
-    t.includes('yang zhilin')
-  ) {
+  if (/\b(moonshot|kimi|yang zhilin)\b/.test(t)) {
     return 'Moonshot AI';
   }
 
-  if (
-    t.includes('xai') ||
-    t.includes('spacex') ||
-    t.includes('grok') ||
-    t.includes('colossus') ||
-    t.includes('starlink') ||
-    t.includes('elon musk') ||
-    t.includes('musk')
-  ) {
+  if (/\b(xai|spacex|grok|colossus|starlink|elon musk|musk)\b/.test(t)) {
     return 'SpaceX & xAI';
   }
 
   if (
-    t.includes('anthropic') ||
-    t.includes('claude') ||
-    t.includes('dario amodei') ||
-    t.includes('sonnet') ||
-    t.includes('opus') ||
-    t.includes('haiku')
+    /\b(anthropic|claude|dario amodei)\b/.test(t) ||
+    /\b(opus|sonnet|haiku)\s+\d/.test(t)
   ) {
     return 'Anthropic';
   }
 
   if (
-    t.includes('deepmind') ||
-    t.includes('demis hassabis') ||
-    t.includes('gemini') ||
-    t.includes('gemma') ||
-    t.includes('alphafold') ||
-    t.includes('project suncatcher') ||
-    (t.includes('google') && (t.includes('tpu') || t.includes('ai server') || t.includes('frontier') || t.includes('model')))
+    /\b(deepmind|demis hassabis|gemini|gemma|alphafold|project suncatcher)\b/.test(t) ||
+    (/\bgoogle\b/.test(t) && /\b(tpu|ai server|frontier|ai model)\b/.test(t))
   ) {
     return 'Google DeepMind';
   }
 
   if (
-    t.includes('openai') ||
-    t.includes('chatgpt') ||
-    t.includes('sam altman') ||
-    t.includes('gpt-') ||
-    t.includes('sora') ||
-    t.includes('o1-') ||
-    t.includes('o3-') ||
-    t.includes('operator')
+    /\b(openai|chatgpt|sam altman|sora|openai operator)\b/.test(t) ||
+    /\b(gpt|o1|o3|o4)-[a-z0-9]/.test(t)
   ) {
     return 'OpenAI';
   }
 
-  if (
-    t.includes('nvidia') ||
-    t.includes('jensen huang') ||
-    t.includes('blackwell') ||
-    t.includes('h100') ||
-    t.includes('b200') ||
-    t.includes('cuda') ||
-    t.includes('superchip')
-  ) {
+  if (/\b(nvidia|jensen huang|blackwell|h100|h200|b200|gb200|cuda|superchip)\b/.test(t)) {
     return 'NVIDIA';
   }
 
-  if (
-    t.includes('meta ai') ||
-    t.includes('llama') ||
-    t.includes('yann lecun') ||
-    t.includes('mark zuckerberg') ||
-    t.includes('fair lab')
-  ) {
+  if (/\b(meta ai|llama|yann lecun|mark zuckerberg|fair lab)\b/.test(t)) {
     return 'Meta AI';
   }
 
-  // 3. Fallback: Combined Text Matching
-  if (
-    combined.includes('deepseek') ||
-    combined.includes('deepseek-r1') ||
-    combined.includes('deepseek-v3') ||
-    combined.includes('deepseek r1') ||
-    combined.includes('deepseek v3') ||
-    combined.includes('liang wenfeng')
-  ) {
+  // 3. Fallback: Combined Text Matching with strict word boundaries
+  if (/\b(deepseek|deepseek-r1|deepseek-v3|liang wenfeng)\b/.test(combined)) {
     return 'DeepSeek';
   }
 
-  if (
-    combined.includes('mistral') ||
-    combined.includes('mixtral') ||
-    combined.includes('codestral') ||
-    combined.includes('arthur mensch')
-  ) {
+  if (/\b(mistral ai|mixtral|codestral|arthur mensch)\b/.test(combined)) {
     return 'Mistral AI';
   }
 
-  if (
-    combined.includes('moonshot ai') ||
-    combined.includes('moonshot') ||
-    combined.includes('kimi k') ||
-    combined.includes('kimi chat')
-  ) {
+  if (/\b(moonshot ai|kimi k\d|kimi chat)\b/.test(combined)) {
     return 'Moonshot AI';
   }
 
   if (
-    combined.includes('xai') ||
-    combined.includes('spacex') ||
-    combined.includes('grok') ||
-    combined.includes('colossus') ||
-    combined.includes('starlink') ||
-    (combined.includes('musk') && (combined.includes('cluster') || combined.includes('memphis') || combined.includes('satellite') || combined.includes('turbine') || combined.includes('gpu')))
+    /\b(xai|spacex|grok|colossus|starlink)\b/.test(combined) ||
+    (/\bmusk\b/.test(combined) && /\b(cluster|memphis|satellite|turbine|gpu)\b/.test(combined))
   ) {
     return 'SpaceX & xAI';
   }
 
   if (
-    combined.includes('anthropic') ||
-    combined.includes('claude') ||
-    combined.includes('dario amodei') ||
-    combined.includes('constitutional ai') ||
-    combined.includes('computer use')
+    /\b(anthropic|claude|dario amodei|constitutional ai)\b/.test(combined) ||
+    /\b(opus|sonnet|haiku)\s+\d/.test(combined)
   ) {
     return 'Anthropic';
   }
 
   if (
-    combined.includes('deepmind') ||
-    combined.includes('demis hassabis') ||
-    combined.includes('gemini') ||
-    combined.includes('gemma') ||
-    combined.includes('alphafold') ||
-    combined.includes('project suncatcher') ||
-    (combined.includes('google') && (combined.includes('tpu') || combined.includes('ai server') || combined.includes('frontier')))
+    /\b(deepmind|demis hassabis|gemini|gemma|alphafold|project suncatcher)\b/.test(combined) ||
+    (/\bgoogle\b/.test(combined) && /\b(tpu|ai server|frontier model)\b/.test(combined))
   ) {
     return 'Google DeepMind';
   }
 
   if (
-    combined.includes('openai') ||
-    combined.includes('chatgpt') ||
-    combined.includes('sam altman') ||
-    combined.includes('gpt-4') ||
-    combined.includes('gpt-5') ||
-    combined.includes('sora') ||
-    combined.includes('operator')
+    /\b(openai|chatgpt|sam altman|sora|openai operator)\b/.test(combined) ||
+    /\b(gpt-4|gpt-5|gpt-6)\b/.test(combined)
   ) {
     return 'OpenAI';
   }
 
-  if (
-    combined.includes('meta ai') ||
-    combined.includes('llama') ||
-    combined.includes('yann lecun') ||
-    combined.includes('mark zuckerberg') ||
-    combined.includes('fair lab')
-  ) {
+  if (/\b(meta ai|llama\s*\d|yann lecun|mark zuckerberg|fair lab)\b/.test(combined)) {
     return 'Meta AI';
   }
 
-  if (
-    combined.includes('nvidia') ||
-    combined.includes('jensen huang') ||
-    combined.includes('blackwell') ||
-    combined.includes('h100') ||
-    combined.includes('b200') ||
-    combined.includes('cuda') ||
-    combined.includes('superchip')
-  ) {
+  if (/\b(nvidia|jensen huang|blackwell|h100|h200|b200|gb200|cuda|superchip)\b/.test(combined)) {
     return 'NVIDIA';
   }
 

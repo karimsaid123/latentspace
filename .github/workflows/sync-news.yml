@@ -6,12 +6,17 @@ on:
     - cron: '*/20 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI anytime
 
+concurrency:
+  group: autonomous-telemetry-harvest
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
 jobs:
   harvest-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -35,11 +40,12 @@ jobs:
       - name: Commit and push if fresh telemetry was harvested
         run: |
           git config --global user.name "LatentSpace Bot"
-          git config --global user.email "bot@latentspace.ai"
+          git config --global user.email "bot@latentspace.science"
           git add data/articles.json data/sources.json
           if git diff --staged --quiet; then
             echo "No new telemetry harvested in this cycle."
           else
             git commit -m "chore(telemetry): autonomous harvest cycle $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin main
             git push origin main
           fi

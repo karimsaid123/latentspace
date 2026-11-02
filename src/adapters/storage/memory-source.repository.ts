@@ -160,6 +160,24 @@ const DEFAULT_SOURCES: DomainSource[] = [
     consecutiveFailures: 0,
   },
   {
+    id: 'techcrunch-deepseek',
+    name: 'TechCrunch DeepSeek',
+    feedUrl: 'https://techcrunch.com/tag/deepseek/feed/',
+    websiteUrl: 'https://techcrunch.com/tag/deepseek/',
+    category: 'Open Source & Research',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
+    id: 'arxiv-deepseek',
+    name: 'arXiv DeepSeek & Reasoning Research',
+    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:DeepSeek+OR+abs:%22DeepSeek%22+OR+abs:%22DeepSeek-R1%22+OR+abs:%22DeepSeek-V3%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
+    websiteUrl: 'https://arxiv.org/',
+    category: 'Open Source & Research',
+    enabled: true,
+    consecutiveFailures: 0,
+  },
+  {
     id: 'nvidia-blog',
     name: 'NVIDIA AI News',
     feedUrl: 'https://blogs.nvidia.com/feed/',
@@ -447,15 +465,18 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       }
       return;
     }
+    let tmpPath = '';
     try {
       const dir = path.dirname(this.storageFilePath);
       await fs.mkdir(dir, { recursive: true });
-      const tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
+      tmpPath = `${this.storageFilePath}.${Date.now()}_${Math.random().toString(36).slice(2, 7)}.tmp`;
       const all = Array.from(this.sources.values());
       await fs.writeFile(tmpPath, JSON.stringify(all, null, 2), 'utf8');
       await fs.rename(tmpPath, this.storageFilePath);
     } catch {
-      // Gracefully ignore on read-only environments
+      if (tmpPath) {
+        await fs.unlink(tmpPath).catch(() => {});
+      }
     }
   }
 }

@@ -6,6 +6,8 @@ import { ProviderUnavailableError, RateLimitError } from '@/core/domain/errors';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 
+const MAX_FEED_BYTES = 5 * 1024 * 1024; // 5 MB safety ceiling for Edge Worker RAM
+
 export class RssFeedAdapter implements FeedProviderPort {
   private parser: Parser;
   private readonly timeoutMs: number;
@@ -48,7 +50,7 @@ export class RssFeedAdapter implements FeedProviderPort {
         throw new Error(`HTTP ${response.status}`);
       }
 
-      const xmlText = await response.text();
+      const xmlText = await this.readBoundedText(response, MAX_FEED_BYTES);
       let feed;
       if (xmlText.length > 100_000) {
         const truncated = this.truncateLargeFeedXml(xmlText, 22);
@@ -64,11 +66,13 @@ export class RssFeedAdapter implements FeedProviderPort {
       const articles: DomainArticle[] = [];
 
       for (const item of rawItems.slice(0, 20)) {
-        const rawLink = item.link || item.guid || '';
+        const rawLink = (item.link || item.guid || '').trim();
         const title = decodeHtmlEntities((item.title || '').trim());
         if (!rawLink || !title) continue;
 
-        const canonicalUrl = this.normalizeCanonicalUrl(rawLink);
+        const canonicalUrl = this.normalizeCanonicalUrl(rawLink, source.websiteUrl);
+        if (!canonicalUrl) continue;
+
         const id = crypto.createHash('sha256').update(canonicalUrl).digest('hex').slice(0, 16);
 
         const rawContent = (item as any).contentEncoded || item.content || item.contentSnippet || item.summary || '';
@@ -77,7 +81,7 @@ export class RssFeedAdapter implements FeedProviderPort {
 
         const publishedAt = this.safeParseDate(item.isoDate || item.pubDate, fetchedAt);
         const author = decodeHtmlEntities((item as any).creator || (item as any).author || source.name);
-        const imageUrl = this.extractImageUrl(item);
+        const imageUrl = this.extractImageUrl(item, canonicalUrl);
         const category = this.categorizeText(title, cleanContent, source.category);
         const lab = detectFrontierLab(title, cleanContent, source.name);
         const { entryType, arxivId, pdfUrl } = detectEntryType(title, cleanContent, canonicalUrl, source.name);
@@ -170,19 +174,63 @@ export class RssFeedAdapter implements FeedProviderPort {
     return Number.isNaN(parsed.getTime()) ? fallbackIso : parsed.toISOString();
   }
 
-  private normalizeCanonicalUrl(url: string): string {
+  private async readBoundedText(response: Response, maxBytes: number): Promise<string> {
+    const contentLength = Number(response.headers.get('content-length') || 0);
+    if (contentLength > maxBytes) {
+      throw new Error(`Feed payload exceeds ${maxBytes} bytes (${contentLength})`);
+    }
+    if (!response.body) {
+      const text = await response.text();
+      return text.length > maxBytes ? text.slice(0, maxBytes) : text;
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder('utf-8', { fatal: false });
+    const chunks: string[] = [];
+    let totalBytes = 0;
+
     try {
-      const parsed = new URL(url);
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        if (value) {
+          totalBytes += value.byteLength;
+          if (totalBytes > maxBytes) {
+            await reader.cancel().catch(() => {});
+            chunks.push(decoder.decode(value.subarray(0, Math.max(0, value.byteLength - (totalBytes - maxBytes))), { stream: false }));
+            break;
+          }
+          chunks.push(decoder.decode(value, { stream: true }));
+        }
+      }
+      chunks.push(decoder.decode());
+    } finally {
+      reader.releaseLock();
+    }
+
+    return chunks.join('');
+  }
+
+  public normalizeCanonicalUrl(url: string, baseUrl?: string): string {
+    const trimmed = decodeHtmlEntities(url || '').trim();
+    if (!trimmed) return '';
+    try {
+      const parsed = baseUrl ? new URL(trimmed, baseUrl) : new URL(trimmed);
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        return '';
+      }
       parsed.searchParams.delete('utm_source');
       parsed.searchParams.delete('utm_medium');
       parsed.searchParams.delete('utm_campaign');
       parsed.searchParams.delete('utm_term');
       parsed.searchParams.delete('utm_content');
       parsed.searchParams.delete('ref');
+      parsed.searchParams.delete('fbclid');
+      parsed.searchParams.delete('gclid');
       parsed.hash = '';
       return parsed.toString();
     } catch {
-      return url.split('?')[0].split('#')[0];
+      return '';
     }
   }
 
@@ -209,7 +257,7 @@ export class RssFeedAdapter implements FeedProviderPort {
     );
   }
 
-  private extractImageUrl(item: any): string | undefined {
+  private extractImageUrl(item: any, baseUrl?: string): string | undefined {
     let candidate: string | undefined;
 
     if (item.enclosure?.url && (item.enclosure.type?.includes('image') || /\.(jpg|jpeg|png|webp)/i.test(item.enclosure.url))) {
@@ -226,8 +274,11 @@ export class RssFeedAdapter implements FeedProviderPort {
       }
     }
 
-    if (candidate && !this.isAuthorOrAvatar(candidate)) {
-      return candidate;
+    if (candidate) {
+      const safeUrl = this.normalizeCanonicalUrl(candidate, baseUrl);
+      if (safeUrl && !this.isAuthorOrAvatar(safeUrl)) {
+        return safeUrl;
+      }
     }
     return undefined;
   }

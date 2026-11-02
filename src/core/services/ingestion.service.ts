@@ -171,26 +171,34 @@ export class IngestionService {
       if (batchedToSave.size > 0) {
         const apiKey = process.env.GEMINI_API_KEY;
         if (apiKey) {
-          let count = 0;
-          for (const [id, article] of batchedToSave.entries()) {
-            if (count >= 4) break;
-            if (article.summary?.generatedWith !== 'gemini') {
-              try {
-                const geminiSummary = await summarizeWithGemini(
-                  article.title,
-                  article.contentSnippet || article.title,
-                  apiKey
-                );
-                if (geminiSummary) {
-                  article.summary = geminiSummary;
-                  existingMap.set(id, article);
-                  batchedToSave.set(id, article);
-                  count++;
+          const candidates = Array.from(batchedToSave.values())
+            .filter(a => a.summary?.generatedWith !== 'gemini')
+            .slice(0, 4);
+
+          const GEMINI_CONCURRENCY = 2;
+          for (let i = 0; i < candidates.length; i += GEMINI_CONCURRENCY) {
+            const chunk = candidates.slice(i, i + GEMINI_CONCURRENCY);
+            await Promise.all(
+              chunk.map(async article => {
+                try {
+                  const geminiSummary = await summarizeWithGemini(
+                    article.title,
+                    article.contentSnippet || article.title,
+                    apiKey
+                  );
+                  if (geminiSummary) {
+                    article.summary = geminiSummary;
+                    existingMap.set(article.id, article);
+                    batchedToSave.set(article.id, article);
+                  }
+                } catch (err: any) {
+                  logger.warn('Gemini summarization failed during ingestion', {
+                    id: article.id,
+                    err: err?.message,
+                  });
                 }
-              } catch (err: any) {
-                logger.warn('Gemini summarization failed during ingestion', { id, err: err?.message });
-              }
-            }
+              })
+            );
           }
         }
         await this.articleRepo.saveMany(Array.from(batchedToSave.values()));

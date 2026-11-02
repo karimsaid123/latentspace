@@ -1,16 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
+import { isLocalPersistentDev } from '@/lib/runtime-env';
+import { checkRateLimit, getClientIp, hasValidAdminSecret } from '@/lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 const AUTO_SYNC_COOLDOWN_MS = 45_000;
+const PUBLIC_FORCE_COOLDOWN_MS = 15_000;
 
 export async function POST(request: NextRequest) {
   const requestId = `sync_${Date.now()}`;
   const startTime = Date.now();
-  const force = request.nextUrl.searchParams.get('force') === '1';
+  const ip = getClientIp(request);
+  const isAdmin = isLocalPersistentDev() || hasValidAdminSecret(request);
+
+  if (!isAdmin) {
+    const rl = checkRateLimit('sync', ip, 4, 60_000);
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, throttled: true, error: 'Sync rate limit exceeded' },
+        {
+          status: 429,
+          headers: {
+            'Cache-Control': 'no-store',
+            'Retry-After': String(rl.retryAfterSeconds),
+          },
+        }
+      );
+    }
+  }
+
+  const requestedForce = request.nextUrl.searchParams.get('force') === '1';
 
   try {
     await container.bootstrap();
@@ -18,9 +40,14 @@ export async function POST(request: NextRequest) {
 
     const lastRunMs = container.ingestionService.getLastRunTimestamp();
     const elapsedMs = Date.now() - lastRunMs;
+    const effectiveCooldownMs = isAdmin && requestedForce
+      ? 0
+      : requestedForce
+      ? PUBLIC_FORCE_COOLDOWN_MS
+      : AUTO_SYNC_COOLDOWN_MS;
 
-    // Multi-tab / multi-visitor protection: skip redundant background batch crawls within 45s cooldown
-    if (!force && lastRunMs > 0 && elapsedMs >= 0 && elapsedMs < AUTO_SYNC_COOLDOWN_MS) {
+    // Multi-tab / multi-visitor protection: skip redundant background batch crawls within cooldown
+    if (effectiveCooldownMs > 0 && lastRunMs > 0 && elapsedMs >= 0 && elapsedMs < effectiveCooldownMs) {
       return NextResponse.json(
         {
           success: true,
@@ -61,8 +88,11 @@ export async function POST(request: NextRequest) {
     logger.error('Sync route failed', {
       requestId,
       durationMs: Date.now() - startTime,
-      error: error.message,
+      error: error?.message,
     });
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: 'Failed to synchronize feeds' },
+      { status: 500, headers: { 'Cache-Control': 'no-store' } }
+    );
   }
 }

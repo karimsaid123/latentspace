@@ -34,7 +34,16 @@ export class IngestionDiffEngine {
 
       // Check if content was modified
       if (existing.contentHash !== incoming.contentHash || existing.title !== incoming.title) {
-        modified.push(incoming);
+        const shouldPreserveGeminiSummary =
+          existing.summary?.generatedWith === 'gemini' &&
+          incoming.summary?.generatedWith !== 'gemini' &&
+          existing.title === incoming.title;
+
+        modified.push(
+          shouldPreserveGeminiSummary
+            ? { ...incoming, summary: existing.summary }
+            : incoming
+        );
       } else {
         unchangedCount++;
       }

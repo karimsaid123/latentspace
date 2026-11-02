@@ -32,8 +32,8 @@ export default function ArticleShareModal({
   if (!isOpen || !isMounted) return null;
 
   const brand = getCompanyBrand(article.lab || article.source?.name);
-  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.ai';
-  const shareUrl = `${origin}/?article=${article.id}`;
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.science';
+  const shareUrl = `${origin}/?article=${encodeURIComponent(article.id)}`;
 
   const cleanSummary = (article.aiSummary?.tldr || article.contentSnippet || '').trim();
   const labText = article.lab || 'Frontier AI';
@@ -180,8 +180,8 @@ export default function ArticleShareModal({
               </div>
 
               <div className="font-bold text-black flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-black rounded-full" />
-                <span>LATENTSPACE.AI</span>
+                <span className="w-1.5 h-1.5 bg-[#ff8000] rounded-full" />
+                <span>LATENTSPACE.SCIENCE</span>
               </div>
             </div>
 

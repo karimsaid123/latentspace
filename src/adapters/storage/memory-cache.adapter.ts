@@ -6,6 +6,8 @@ interface CacheEntry<T> {
   expiresAt: number;
 }
 
+const MAX_CACHE_ENTRIES = 128;
+
 export class MemoryCacheAdapter implements CachePort {
   private store = new Map<string, CacheEntry<unknown>>();
   private singleFlight = new SingleFlight();
@@ -23,9 +25,24 @@ export class MemoryCacheAdapter implements CachePort {
   }
 
   public async set<T>(key: string, value: T, ttlSeconds: number): Promise<void> {
+    const now = Date.now();
+    if (!this.store.has(key) && this.store.size >= MAX_CACHE_ENTRIES) {
+      for (const [k, v] of this.store.entries()) {
+        if (now > v.expiresAt) {
+          this.store.delete(k);
+        }
+      }
+      if (this.store.size >= MAX_CACHE_ENTRIES) {
+        const oldestKey = this.store.keys().next().value;
+        if (oldestKey !== undefined) {
+          this.store.delete(oldestKey);
+        }
+      }
+    }
+
     this.store.set(key, {
       value,
-      expiresAt: Date.now() + ttlSeconds * 1000,
+      expiresAt: now + ttlSeconds * 1000,
     });
   }
 

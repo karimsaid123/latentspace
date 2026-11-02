@@ -11,6 +11,54 @@ interface ScrollRevealProps {
   parallaxSpeed?: number;
 }
 
+interface SharedObserverPool {
+  observer: IntersectionObserver;
+  callbacks: Map<Element, () => void>;
+}
+
+const observerPools = new Map<number, SharedObserverPool>();
+
+function observeOnce(el: Element, threshold: number, onEnter: () => void): () => void {
+  let pool = observerPools.get(threshold);
+  if (!pool) {
+    const callbacks = new Map<Element, () => void>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const cb = callbacks.get(entry.target);
+            if (cb) {
+              callbacks.delete(entry.target);
+              observer.unobserve(entry.target);
+              cb();
+            }
+          }
+        }
+      },
+      {
+        threshold,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+    pool = { observer, callbacks };
+    observerPools.set(threshold, pool);
+  }
+
+  pool.callbacks.set(el, onEnter);
+  pool.observer.observe(el);
+
+  return () => {
+    const activePool = observerPools.get(threshold);
+    if (!activePool) return;
+    activePool.callbacks.delete(el);
+    activePool.observer.unobserve(el);
+    if (activePool.callbacks.size === 0) {
+      activePool.observer.disconnect();
+      observerPools.delete(threshold);
+    }
+  };
+}
+
 export default function ScrollReveal({
   children,
   className = '',
@@ -28,26 +76,30 @@ export default function ScrollReveal({
     const el = outerRef.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      {
-        threshold,
-        rootMargin: '0px 0px -40px 0px',
-      }
-    );
+    if (
+      typeof window !== 'undefined' &&
+      (typeof IntersectionObserver === 'undefined' ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+    ) {
+      setIsVisible(true);
+      setRevealDone(true);
+      return;
+    }
 
-    observer.observe(el);
-    return () => observer.disconnect();
+    return observeOnce(el, threshold, () => {
+      setIsVisible(true);
+    });
   }, [threshold]);
 
   // Direct DOM parallax without React state re-renders or CSS transition thrashing
   useEffect(() => {
     if (parallaxSpeed === 0) return;
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
 
     let rafId: number | null = null;
     const updateParallax = () => {

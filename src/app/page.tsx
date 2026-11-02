@@ -1,457 +1,79 @@
-'use client';
+import React from 'react';
+import FeedClient from '@/components/FeedClient';
+import { Article, ImpactLevel } from '@/types';
+import { decodeHtmlEntities } from '@/lib/sanitize';
+import { detectFrontierLab, detectEntryType } from '@/lib/intelligence-analyzer';
+import rawArticlesData from '../../data/articles.json';
 
-import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import MinimalNav, { LAB_FILTERS } from '@/components/MinimalNav';
-import EditorialSpread from '@/components/EditorialSpread';
-import EditorialModal from '@/components/EditorialModal';
-import Footer from '@/components/Footer';
-import { Article } from '@/types';
-import { RefreshCw } from 'lucide-react';
-import { useSavedArticles } from '@/lib/saved-storage';
-import fallbackArticlesData from '@/data/fallback-articles.json';
+function normalizeImpact(raw: unknown): ImpactLevel {
+  if (raw === 'Breakthrough' || raw === 'High' || raw === 'Medium' || raw === 'Notable') {
+    return raw;
+  }
+  if (raw === 'High Impact') {
+    return 'High';
+  }
+  return 'Notable';
+}
+
+function getInitialSeedArticles(limit = 30): Article[] {
+  const rawList = Array.isArray(rawArticlesData) ? (rawArticlesData as any[]) : [];
+  const sorted = [...rawList].sort((a, b) => {
+    const tA = Date.parse(a?.publishedAt || a?.pubDate || '') || 0;
+    const tB = Date.parse(b?.publishedAt || b?.pubDate || '') || 0;
+    return tB - tA;
+  });
+
+  return sorted.slice(0, limit).map((item) => {
+    const title = decodeHtmlEntities(item.title || '');
+    const contentSnippet = decodeHtmlEntities(item.contentSnippet || '');
+    const sourceName = item.sourceName || item.source?.name || 'Feed';
+    const canonicalUrl = item.canonicalUrl || item.link || '';
+    const lab = detectFrontierLab(title, contentSnippet, sourceName);
+    const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
+    const rawSummary = item.summary || item.aiSummary || {};
+
+    return {
+      id: item.id,
+      title,
+      link: canonicalUrl,
+      pubDate: item.publishedAt || item.pubDate || '2026-11-01T00:00:00.000Z',
+      source: {
+        id: item.sourceId || item.source?.id || 'source',
+        name: sourceName,
+        url: canonicalUrl,
+        color: '#000000',
+      },
+      author: decodeHtmlEntities(item.author || sourceName),
+      contentSnippet,
+      category: item.category || 'LLMs & GenAI',
+      lab,
+      entryType: item.entryType || typeInfo.entryType,
+      arxivId: item.arxivId || typeInfo.arxivId,
+      pdfUrl: item.pdfUrl || typeInfo.pdfUrl,
+      aiSummary: {
+        tldr: decodeHtmlEntities(rawSummary.tldr || contentSnippet || title),
+        takeaways: Array.isArray(rawSummary.takeaways)
+          ? rawSummary.takeaways.map((t: string) => decodeHtmlEntities(t))
+          : [],
+        technicalAnalysis: rawSummary.technicalAnalysis
+          ? decodeHtmlEntities(rawSummary.technicalAnalysis)
+          : undefined,
+        strategicImplications: rawSummary.strategicImplications
+          ? decodeHtmlEntities(rawSummary.strategicImplications)
+          : undefined,
+        primaryThesis: rawSummary.primaryThesis
+          ? decodeHtmlEntities(rawSummary.primaryThesis)
+          : undefined,
+        impact: normalizeImpact(rawSummary.impact),
+        readTimeMinutes: Number(rawSummary.readTimeMinutes) || 3,
+        generatedWith: rawSummary.generatedWith,
+      },
+    };
+  });
+}
+
+const INITIAL_ARTICLES = getInitialSeedArticles(30);
 
 export default function HomePage() {
-  // Deterministic SSR + Hydration seed (guarantees non-empty state with zero hydration mismatch)
-  const [articles, setArticles] = useState<Article[]>(fallbackArticlesData as Article[]);
-  const [selectedLab, setSelectedLab] = useState<string>('All');
-  const [selectedType, setSelectedType] = useState<'ALL' | 'DISPATCH' | 'RESEARCH_PAPER'>('ALL');
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSyncing, setIsSyncing] = useState<boolean>(false);
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  
-  // QoL States
-  const [lastSyncedTime, setLastSyncedTime] = useState<number>(0);
-  const { savedIds, count: savedCount, toggleSave, isSaved, reconcile } = useSavedArticles();
-  const [incomingArticles, setIncomingArticles] = useState<Article[] | null>(null);
-  const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
-  const hasFetchedLiveRef = useRef<boolean>(false);
-
-  const articlesRef = useRef<Article[]>([]);
-  articlesRef.current = articles;
-  const abortControllerRef = useRef<AbortController | null>(null);
-  const selectedLabRef = useRef(selectedLab);
-  selectedLabRef.current = selectedLab;
-
-  const fetchArticles = useCallback(async (search: string, lab?: string, isSilent = false, bustCache = false) => {
-    const activeLab = lab !== undefined ? lab : selectedLabRef.current;
-    let controller: AbortController | null = null;
-    if (!isSilent) {
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-      }
-      controller = new AbortController();
-      abortControllerRef.current = controller;
-      if (articlesRef.current.length === 0) {
-        setIsLoading(true);
-      }
-    }
-
-    const signal = controller?.signal;
-
-    try {
-      const params = new URLSearchParams();
-      params.set('limit', '150');
-      if (search) params.set('search', search);
-      if (activeLab && activeLab !== 'All' && activeLab !== 'SAVED') {
-        params.set('lab', activeLab);
-      }
-      if (bustCache) {
-        params.set('_v', String(Date.now()));
-      }
-
-      const res = await fetch(`/api/news?${params.toString()}`, { signal });
-      if (!res.ok) {
-        console.error('Failed to fetch /api/news:', res.status);
-        if (articlesRef.current.length === 0 && !isSilent) {
-          setTimeout(() => fetchArticles(search, activeLab, false), 1500);
-        }
-        return;
-      }
-      const data = await res.json();
-      hasFetchedLiveRef.current = true;
-      
-      if (data.articles && Array.isArray(data.articles)) {
-        if (activeLab === 'All' && !search) {
-          try {
-            sessionStorage.setItem('latentspace_articles_cache', JSON.stringify(data.articles.slice(0, 100)));
-          } catch {
-            // Ignore quota errors
-          }
-        }
-
-        if (isSilent && typeof window !== 'undefined' && window.scrollY > 150 && articlesRef.current.length > 0) {
-          const currentIds = new Set(articlesRef.current.map((a) => a.id));
-          const newItems = data.articles.filter((a: Article) => !currentIds.has(a.id));
-          if (newItems.length > 0) {
-            setIncomingArticles(data.articles);
-          }
-        } else {
-          setArticles(data.articles);
-          setIncomingArticles(null);
-          reconcile(data.articles);
-        }
-        if (data.lastSyncedAt && data.lastSyncedAt > 0) {
-          setLastSyncedTime(data.lastSyncedAt);
-        } else {
-          setLastSyncedTime(Date.now());
-        }
-      }
-    } catch (err: any) {
-      if (err?.name === 'AbortError') return;
-      console.error('Failed to load articles:', err);
-    } finally {
-      if (!signal || !signal.aborted) {
-        setIsLoading(false);
-      }
-    }
-  }, [reconcile]);
-
-  const handleSelectLab = useCallback((lab: string) => {
-    setSelectedLab(lab);
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      if (lab === 'All') {
-        url.searchParams.delete('lab');
-      } else {
-        url.searchParams.set('lab', lab);
-      }
-      window.history.pushState({}, '', url.toString());
-    }
-    if (lab !== 'SAVED') {
-      fetchArticles(searchQueryRef.current, lab, false);
-    }
-  }, [fetchArticles]);
-
-  const handleSelectLabFromDossier = useCallback((lab: string) => {
-    handleSelectLab(lab);
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [handleSelectLab]);
-
-  // Set initial client timestamp, restore warm session cache post-hydration, & read ?lab= param
-  useEffect(() => {
-    queueMicrotask(() => {
-      setLastSyncedTime(Date.now());
-
-      try {
-        const cached = sessionStorage.getItem('latentspace_articles_cache');
-        if (cached && !hasFetchedLiveRef.current) {
-          const parsed = JSON.parse(cached);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setArticles(parsed);
-          }
-        }
-      } catch {
-        // Fallback to network
-      }
-
-      const params = new URLSearchParams(window.location.search);
-      const labParam = params.get('lab');
-      if (labParam && LAB_FILTERS.some((l) => l.id === labParam)) {
-        setSelectedLab(labParam);
-        fetchArticles('', labParam, false);
-      } else {
-        fetchArticles('', 'All', false);
-      }
-    });
-  }, [fetchArticles]);
-
-  // Initial deep-link check (resolves immediately on seed/cache or once live feed arrives)
-  const initialDeepLinkChecked = useRef(false);
-  useEffect(() => {
-    if (initialDeepLinkChecked.current || articles.length === 0) return;
-
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const articleId = params.get('article');
-      if (!articleId) {
-        initialDeepLinkChecked.current = true;
-        return;
-      }
-      const found = articles.find((a) => a.id === articleId);
-      if (found) {
-        initialDeepLinkChecked.current = true;
-        queueMicrotask(() => setSelectedArticle(found));
-      } else if (hasFetchedLiveRef.current) {
-        initialDeepLinkChecked.current = true;
-      }
-    }
-  }, [articles]);
-
-  // Open article modal and update URL
-  const handleOpenArticle = useCallback((article: Article) => {
-    setSelectedArticle(article);
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      url.searchParams.set('article', article.id);
-      window.history.pushState({ articleId: article.id }, '', url.toString());
-    }
-  }, []);
-
-  // Close article modal and cleanly remove URL parameter
-  const handleCloseArticle = useCallback(() => {
-    setSelectedArticle(null);
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      if (url.searchParams.has('article')) {
-        url.searchParams.delete('article');
-        const newSearch = url.searchParams.toString();
-        window.history.pushState({}, '', url.pathname + (newSearch ? `?${newSearch}` : ''));
-      }
-    }
-  }, []);
-
-  // Handle browser back/forward buttons (popstate)
-  useEffect(() => {
-    const handlePopState = () => {
-      if (typeof window === 'undefined') return;
-      const params = new URLSearchParams(window.location.search);
-      const articleId = params.get('article');
-      if (articleId) {
-        const found = articlesRef.current.find((a) => a.id === articleId);
-        setSelectedArticle(found || null);
-      } else {
-        setSelectedArticle(null);
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  const toggleBookmark = useCallback((id: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    const art = articlesRef.current.find((a) => a.id === id);
-    if (art) {
-      toggleSave(art);
-    }
-  }, [toggleSave]);
-
-  // Track window scroll for Back-To-Top button (rAF throttled)
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        window.requestAnimationFrame(() => {
-          setShowBackToTop(window.scrollY > 400);
-          ticking = false;
-        });
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Global Keyboard Shortcuts (Press '/' to search, 'Esc' to close)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        if (e.key === 'Escape') {
-          (e.target as HTMLElement).blur();
-          setIsSearchOpen(false);
-        }
-        return;
-      }
-
-      if (e.key === '/') {
-        e.preventDefault();
-        setIsSearchOpen(true);
-      } else if (e.key === 'Escape') {
-        handleCloseArticle();
-        setIsSearchOpen(false);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleCloseArticle]);
-
-  // Debounced search (only triggers when searchQuery changes after mount)
-  const isSearchMounted = useRef(false);
-  useEffect(() => {
-    if (!isSearchMounted.current) {
-      isSearchMounted.current = true;
-      return;
-    }
-    const timer = setTimeout(() => {
-      fetchArticles(searchQuery, selectedLabRef.current, false);
-    }, 250);
-    return () => clearTimeout(timer);
-  }, [searchQuery, fetchArticles]);
-
-  // Rolling batch sync & background polling every 60s (only when document is visible)
-  const searchQueryRef = useRef(searchQuery);
-  searchQueryRef.current = searchQuery;
-  useEffect(() => {
-    const pollInterval = setInterval(async () => {
-      if (typeof document !== 'undefined' && document.visibilityState !== 'visible') {
-        return;
-      }
-
-      let hasFresh = false;
-      try {
-        // Trigger rolling batch ingestion of next 8 sources in background
-        const syncRes = await fetch('/api/sync', { method: 'POST' });
-        if (syncRes.ok) {
-          const syncData = await syncRes.json();
-          hasFresh = Boolean((syncData?.articlesAdded || 0) > 0 || (syncData?.articlesModified || 0) > 0);
-          if (syncData?.lastSyncedAt > 0) {
-            setLastSyncedTime(syncData.lastSyncedAt);
-          }
-        }
-      } catch {
-        // Ignore background sync errors
-      }
-
-      // Read freshly ingested articles quickly (<10ms) with limit=150 (bust CDN only when batch added items)
-      fetchArticles(searchQueryRef.current, selectedLabRef.current, true, hasFresh);
-    }, 60_000);
-
-    return () => clearInterval(pollInterval);
-  }, [fetchArticles]);
-
-  // Manual Force Sync (single rolling batch + pure fast read, no duplicate sync)
-  const handleSync = useCallback(async () => {
-    setIsSyncing(true);
-    try {
-      await fetch('/api/sync?force=1', { method: 'POST' });
-      setLastSyncedTime(Date.now());
-      setIncomingArticles(null);
-      await fetchArticles(searchQueryRef.current, selectedLabRef.current, false, true);
-    } catch (err) {
-      console.error('Sync failed:', err);
-    } finally {
-      setIsSyncing(false);
-    }
-  }, [fetchArticles]);
-
-  // Apply pending incoming articles banner
-  const applyIncomingArticles = useCallback(() => {
-    if (incomingArticles) {
-      setArticles(incomingArticles);
-      setIncomingArticles(null);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [incomingArticles]);
-
-  // Filter articles for SAVED tab, LAB sector, and FORMAT type if active
-  const savedIdSet = useMemo(() => new Set(savedIds), [savedIds]);
-  const displayedArticles = useMemo(() => {
-    let list = articles;
-    if (selectedLab === 'SAVED') {
-      list = list.filter((a) => savedIdSet.has(a.id));
-    } else if (selectedLab !== 'All') {
-      list = list.filter((a) => a.lab === selectedLab);
-    }
-    if (selectedType !== 'ALL') {
-      list = list.filter((a) => a.entryType === selectedType);
-    }
-    return list;
-  }, [articles, selectedLab, selectedType, savedIdSet]);
-
-  return (
-    <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
-      
-      {/* Floating Incoming Telemetry Badge (Auto-Sync Notice) */}
-      {incomingArticles && (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-40 animate-fade-in select-none">
-          <button
-            onClick={applyIncomingArticles}
-            className="bg-black text-[#faf9f6] border border-black font-mono text-[9px] tracking-widest uppercase px-5 py-2.5 shadow-2xl cursor-pointer hover:bg-black/85 transition-all flex items-center gap-3"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-            <span>NEW TELEMETRY HARVESTED // CLICK TO VIEW LATEST</span>
-          </button>
-        </div>
-      )}
-
-      {/* Minimal Top Nav (Pure Lab Sectors & Publication Types) */}
-      <MinimalNav
-        selectedLab={selectedLab}
-        onSelectLab={handleSelectLab}
-        selectedType={selectedType}
-        onSelectType={setSelectedType}
-        searchQuery={searchQuery}
-        onSearch={setSearchQuery}
-        onSync={handleSync}
-        isSyncing={isSyncing}
-        totalArticles={displayedArticles.length}
-        lastSyncedTime={lastSyncedTime}
-        savedCount={savedCount}
-        isSearchOpen={isSearchOpen}
-        setIsSearchOpen={setIsSearchOpen}
-      />
-
-      {/* Main Content Area */}
-      <main className="flex-1 w-full">
-        {isLoading ? (
-          <div className="flex flex-col items-center justify-center py-40 gap-3 font-mono text-[10px] tracking-widest uppercase text-black/50">
-            <RefreshCw className="w-5 h-5 animate-spin text-black" />
-            <span>FETCHING AUTONOMOUS FEEDS & PUBLICATIONS...</span>
-          </div>
-        ) : displayedArticles.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-40 px-4 text-center font-mono text-xs uppercase tracking-widest text-black/60">
-            <span className="mb-2 font-bold">
-              {selectedLab === 'SAVED' ? 'NO SAVED ENTRIES YET' : 'NO TELEMETRY FOUND IN THIS SECTOR'}
-            </span>
-            <span className="text-[10px] text-black/40">
-              {selectedLab === 'SAVED'
-                ? 'CLICK [+ SAVE] ON ANY ARTICLE OR RESEARCH PAPER TO BOOKMARK IT HERE'
-                : 'TRY ADJUSTING YOUR LAB FILTER, PUBLICATION TYPE OR SEARCH QUERY'}
-            </span>
-            {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL') && (
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedType('ALL');
-                  handleSelectLab('All');
-                }}
-                className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
-              >
-                [RESET ALL FILTERS]
-              </button>
-            )}
-          </div>
-        ) : (
-          <div key={`${selectedLab}_${selectedType}`} className="animate-fade-in">
-            <EditorialSpread
-              articles={displayedArticles}
-              allArticles={articles}
-              onSelectArticle={handleOpenArticle}
-              bookmarkedIds={savedIds}
-              onToggleBookmark={toggleBookmark}
-              onSelectLab={handleSelectLabFromDossier}
-            />
-          </div>
-        )}
-      </main>
-
-      {/* Floating Back-To-Top Button */}
-      {showBackToTop && (
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 z-40 bg-[#faf9f6] border border-black px-3.5 py-2 font-mono text-[9px] tracking-widest uppercase text-black hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer shadow-lg animate-fade-in"
-          title="Back to top"
-        >
-          [↑ TOP]
-        </button>
-      )}
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Reader Modal */}
-      <EditorialModal
-        article={selectedArticle}
-        onClose={handleCloseArticle}
-        isBookmarked={selectedArticle ? isSaved(selectedArticle.id) : false}
-        onToggleBookmark={(id) => toggleBookmark(id)}
-      />
-
-    </div>
-  );
+  return <FeedClient initialArticles={INITIAL_ARTICLES} />;
 }

@@ -18,10 +18,10 @@ export async function GET(request: NextRequest) {
     // Reconcile warm Worker isolate memory with shared Cloudflare `caches.default`
     await container.syncEdgeState(isFreshRead);
 
-    const category = searchParams.get('category') || undefined;
-    const lab = searchParams.get('lab') || undefined;
-    const entryType = searchParams.get('entryType') || undefined;
-    const search = searchParams.get('search') || undefined;
+    const category = searchParams.get('category')?.trim().slice(0, 64) || undefined;
+    const lab = searchParams.get('lab')?.trim().slice(0, 64) || undefined;
+    const entryType = searchParams.get('entryType')?.trim().slice(0, 32) || undefined;
+    const search = searchParams.get('search')?.trim().toLowerCase().slice(0, 120) || undefined;
     const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 150;
     const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 400) : 150;
 
@@ -98,8 +98,8 @@ export async function GET(request: NextRequest) {
     logger.error('Failed to serve news query', {
       requestId,
       durationMs: Date.now() - startTime,
-      error: error.message,
+      error: error?.message,
     });
-    return NextResponse.json({ error: error.message || 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -45,9 +45,10 @@ export default function BenchmarksPage() {
 
   // Fetch benchmark telemetry from API or fallback
   useEffect(() => {
+    const controller = new AbortController();
     async function loadBenchmarks() {
       try {
-        const res = await fetch('/api/benchmarks');
+        const res = await fetch('/api/benchmarks', { signal: controller.signal });
         if (res.ok) {
           const json: BenchmarkResponse = await res.json();
           setData(json);
@@ -63,7 +64,8 @@ export default function BenchmarksPage() {
             lastUpdated: new Date().toISOString(),
           });
         }
-      } catch (err) {
+      } catch (err: any) {
+        if (err?.name === 'AbortError') return;
         console.error('Failed to load benchmarks, using verified fallback:', err);
         setData({
           source: 'verified_telemetry_snapshot',
@@ -76,10 +78,13 @@ export default function BenchmarksPage() {
           lastUpdated: new Date().toISOString(),
         });
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     }
     loadBenchmarks();
+    return () => controller.abort();
   }, []);
 
   const models = useMemo(() => {
@@ -110,6 +115,10 @@ export default function BenchmarksPage() {
       (a, b) => (a.evaluations.blendedPricePer1M || 0) - (b.evaluations.blendedPricePer1M || 0)
     );
   }, [models]);
+
+  const topIntelligenceModel = intelligenceSorted[0];
+  const topSpeedModel = speedSorted[0];
+  const topCostModel = costSorted.find((m) => (m.evaluations.blendedPricePer1M || 0) > 0) || costSorted[0];
 
   // Sorted list for detailed table
   const tableSortedModels = useMemo(() => {
@@ -267,13 +276,13 @@ export default function BenchmarksPage() {
                 <span>AA INDEX v5</span>
               </div>
               <div className="text-3xl sm:text-4xl font-black tracking-tight text-black mb-1">
-                59 <span className="text-base text-black/40 font-mono">/ 100</span>
+                {topIntelligenceModel?.evaluations.intelligenceIndex ?? 59} <span className="text-base text-black/40 font-mono">/ 100</span>
               </div>
               <div className="font-mono text-[10px] uppercase font-bold text-black">
-                GEMINI 4 CARBON (HIGH)
+                {topIntelligenceModel?.name || 'GEMINI 4 CARBON (HIGH)'}
               </div>
               <div className="font-mono text-[9px] uppercase text-black/50 mt-1">
-                Google DeepMind • Frontier Multimodal
+                {topIntelligenceModel?.creator.name || 'Google DeepMind'} • {topIntelligenceModel?.category || 'Frontier'}
               </div>
             </div>
 
@@ -292,13 +301,13 @@ export default function BenchmarksPage() {
                 <span>MEDIAN LATENCY</span>
               </div>
               <div className="text-3xl sm:text-4xl font-black tracking-tight text-black mb-1">
-                176 <span className="text-base text-black/40 font-mono">TOK/S</span>
+                {topSpeedModel?.evaluations.speedTokensPerSecond ?? 176} <span className="text-base text-black/40 font-mono">TOK/S</span>
               </div>
               <div className="font-mono text-[10px] uppercase font-bold text-black">
-                DEEPSEEK V4.1 FLASH (MAX)
+                {topSpeedModel?.name || 'DEEPSEEK V4.1 FLASH (MAX)'}
               </div>
               <div className="font-mono text-[9px] uppercase text-black/50 mt-1">
-                DeepSeek • Open Weights High-Speed Tier
+                {topSpeedModel?.creator.name || 'DeepSeek'} • {topSpeedModel?.category || 'Open Weights'}
               </div>
             </div>
 
@@ -317,13 +326,13 @@ export default function BenchmarksPage() {
                 <span>PER TASK</span>
               </div>
               <div className="text-3xl sm:text-4xl font-black tracking-tight text-black mb-1">
-                $0.26 <span className="text-base text-black/40 font-mono">/ TASK</span>
+                ${(topCostModel?.evaluations.blendedPricePer1M ?? 0.26).toFixed(2)} <span className="text-base text-black/40 font-mono">/ TASK</span>
               </div>
               <div className="font-mono text-[10px] uppercase font-bold text-black">
-                MIMO-V2.6-PRO
+                {topCostModel?.name || 'MIMO-V2.6-PRO'}
               </div>
               <div className="font-mono text-[9px] uppercase text-black/50 mt-1">
-                MiMo AI • Ultra-Low Latency Inference
+                {topCostModel?.creator.name || 'MiMo AI'} • {topCostModel?.category || 'Specialized'}
               </div>
             </div>
 
@@ -597,7 +606,7 @@ export default function BenchmarksPage() {
                       className="w-7 h-7 rounded-none border border-black flex items-center justify-center p-1 bg-white shadow-md transition-transform"
                       style={{
                         borderColor: brand.borderColor,
-                        backgroundColor: isSelected ? brand.bgTint : '#FFFFFF',
+                        backgroundColor: isSelected ? brand.bgTint : 'var(--card-bg, #ffffff)',
                       }}
                     >
                       <CompanyLogo brandId={brand.id} className="w-4 h-4" />
@@ -607,7 +616,7 @@ export default function BenchmarksPage() {
                     <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 ${isSelected ? 'flex' : 'hidden group-hover:flex'} flex-col items-center pointer-events-none z-50 whitespace-nowrap animate-fade-in`}>
                       <div className="bg-black text-[#faf9f6] border border-black px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-wider shadow-xl flex flex-col gap-0.5">
                         <span className="font-bold">{m.name}</span>
-                        <div className="flex items-center gap-2 text-[8px] text-white/80">
+                        <div className="flex items-center gap-2 text-[8px] opacity-80">
                           <span>IQ: {m.evaluations.intelligenceIndex}</span>
                           <span>•</span>
                           <span>{m.evaluations.speedTokensPerSecond} TOK/S</span>
@@ -659,7 +668,7 @@ export default function BenchmarksPage() {
               <span className="text-black/60 hidden sm:inline">FLAGSHIP PERFORMANCE BREAKDOWN</span>
             </div>
             <div className="text-black/40 text-[9px]">
-              6 GLOBAL RESEARCH ORGANIZATIONS
+              {labHighlights.length} GLOBAL RESEARCH ORGANIZATIONS
             </div>
           </div>
 

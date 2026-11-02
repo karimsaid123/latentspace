@@ -60,7 +60,7 @@ function formatPubDate(dateStr: string): string {
 }
 
 export default function SavedPage() {
-  const { savedItems, removeSave, toggleSave, reconcile, count, isMounted } = useSavedArticles();
+  const { savedItems, removeSave, toggleSave, save, reconcile, count, isMounted } = useSavedArticles();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedFormat, setSelectedFormat] = useState<FormatFilter>('ALL');
   const [selectedLab, setSelectedLab] = useState<string>('ALL LABS');
@@ -567,9 +567,18 @@ export default function SavedPage() {
         article={selectedArticle}
         onClose={handleCloseArticle}
         isBookmarked={selectedArticle ? isMounted && savedItems.some(i => i.id === selectedArticle.id) : false}
-        onToggleBookmark={(id) => {
+        onToggleBookmark={() => {
           if (selectedArticle) {
             toggleSave(selectedArticle);
+          }
+        }}
+        onSummaryEnriched={(articleId, enrichedSummary) => {
+          setSelectedArticle((prev) =>
+            prev && prev.id === articleId ? { ...prev, aiSummary: enrichedSummary } : prev
+          );
+          const existing = savedItemsRef.current.find((i) => i.id === articleId);
+          if (existing) {
+            save({ ...existing.article, aiSummary: enrichedSummary });
           }
         }}
       />
