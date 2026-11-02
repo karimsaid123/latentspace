@@ -321,7 +321,7 @@ export class RssFeedAdapter implements FeedProviderPort {
           sourceId: source.id,
           sourceName: source.name,
           author,
-          contentSnippet: cleanContent.slice(0, 320),
+          contentSnippet: cleanContent.slice(0, 2400),
           imageUrl,
           category,
           lab,

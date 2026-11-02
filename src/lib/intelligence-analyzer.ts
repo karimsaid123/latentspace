@@ -341,178 +341,83 @@ function cleanSentence(s: string): string {
 }
 
 /**
- * Generates an exhaustive, multi-tier intelligence report for an article.
- * Produces deep executive summaries, architectural breakdowns, strategic implications,
- * and structured takeaways with high domain specificity and natural sentence-casing.
+ * Extracts a clean, strictly factual summary and key points directly from the RSS text
+ * WITHOUT inventing any canned filler, buzzwords, or speculative commentary.
+ * Used as the instant baseline until full-article Gemini synthesis completes.
  */
 export function generateDeepIntelligenceSummary(
   rawTitle: string,
   rawContent: string,
   sourceName = 'Frontier Radar'
 ): AISummary {
+  void sourceName;
   const title = decodeHtmlEntities((rawTitle || '').slice(0, 500)).trim();
-  const content = decodeHtmlEntities((rawContent || '').slice(0, 4000)).trim();
-  const lab = detectFrontierLab(title, content, sourceName);
+  const content = decodeHtmlEntities((rawContent || '').slice(0, 8000)).trim();
   const impact = evaluateImpact(title, content);
-  const domain = detectArticleDomain(title, content);
 
-  // Clean RSS boilerplate and HTML artifacts with linear-time bounded patterns (ReDoS-safe)
   const cleanedContent = content
     .replace(/The post [^\n]{1,240}? appeared first on [^\n]{1,200}/gi, '')
-    .replace(/© \d{4} [^\n]{1,160}? All rights reserved\./gi, '')
-    .replace(/Read more\.\.\./gi, '')
+    .replace(/© \d{4} [^\n]{1,160}? All rights reserved\.?/gi, '')
+    .replace(/Continue reading[^\n]{0,120}/gi, '')
+    .replace(/Read more\.{0,3}/gi, '')
     .replace(/\[&#8230;\]/g, '...')
     .replace(/\[…\]/g, '...')
     .replace(/<[^>]{0,1024}>/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
+
+  const normalizedTitle = title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
   const extractedSentences = cleanedContent
     .split(/(?<=[.?!])\s+/)
-    .map(s => s.trim())
-    .filter(s => {
-      if (s.length < 20) return false;
+    .map((s) => s.trim())
+    .filter((s) => {
+      if (s.length < 25) return false;
       const lower = s.toLowerCase();
-      if (lower.startsWith('read more') || lower.startsWith('click here') || lower.startsWith('subscribe')) return false;
-      if (lower.includes('all rights reserved') || lower.includes('appeared first on')) return false;
+      if (
+        lower.startsWith('read more') ||
+        lower.startsWith('click here') ||
+        lower.startsWith('subscribe') ||
+        lower.includes('all rights reserved') ||
+        lower.includes('appeared first on')
+      ) {
+        return false;
+      }
+      const normSent = lower.replace(/[^a-z0-9]+/g, ' ').trim();
+      if (normSent === normalizedTitle) return false;
       return true;
     })
     .map(cleanSentence);
 
-  const labName = lab !== 'Independent' ? lab : 'frontier research teams';
-  const leadSentence = extractedSentences[0] || `${cleanSentence(title)}`;
-
-  // 1. Executive Brief (TL;DR)
-  let domainLede = '';
-  switch (domain) {
-    case 'MARKETS_FINANCE':
-      domainLede = `This development underscores how capital commitments, balance-sheet exposure, and private financing structures are becoming decisive factors in sustaining rapid AI buildouts amidst evolving investor expectations.`;
-      break;
-    case 'HARDWARE_INFRASTRUCTURE':
-      domainLede = `This initiative highlights the intensive global competition for gigawatt-scale power allocations, specialized datacenter footprints, and guaranteed silicon deployment pipelines.`;
-      break;
-    case 'FRONTIER_RESEARCH':
-      domainLede = `The published findings provide rigorous empirical evidence regarding algorithmic trade-offs, model capacity limits, and novel evaluation benchmarks across frontier architectures.`;
-      break;
-    case 'CONSUMER_PRODUCT':
-      domainLede = `This deployment marks an important transition toward embedding frontier capabilities directly into widespread operating platforms, balancing edge inference efficiency with localized market compliance.`;
-      break;
-    case 'POLICY_REGULATION':
-      domainLede = `This milestone reflects the expanding role of statutory oversight, national security considerations, and jurisdictional governance frameworks in shaping the deployment boundaries of frontier systems.`;
-      break;
-    default:
-      domainLede = `This progress demonstrates how ${labName} is advancing state-of-the-art capability horizons, with direct implications for system throughput and real-world deployment reliability.`;
-      break;
-  }
-
-  const secondContextSentence = extractedSentences[1] ? ` ${extractedSentences[1]}` : '';
-  const tldr = `${leadSentence}${secondContextSentence} ${domainLede}`;
-
-  // 2. Technical & Architectural Breakdown
-  let technicalAnalysis = '';
-  switch (domain) {
-    case 'MARKETS_FINANCE':
-      technicalAnalysis = `Commercial deal structuring in this tier typically combines debt-guarantee covenants, hardware collateralization, and reserved capacity commitments. These financing mechanisms de-risk high-capex buildouts for third-party operators while securing guaranteed silicon deployment targets and recurring revenue streams for participating vendors.`;
-      break;
-    case 'HARDWARE_INFRASTRUCTURE':
-      technicalAnalysis = `Datacenter specifications for high-density compute clusters require delivering 40kW to 100kW per rack, coupled with direct-to-chip liquid cooling and ultra-low-latency optical fabric backbones to ensure GPU and accelerator utilization rates remain sustained during distributed collective communication.`;
-      break;
-    case 'FRONTIER_RESEARCH':
-      technicalAnalysis = extractedSentences.length > 3
-        ? `${extractedSentences.slice(2, 4).join(' ')} The methodology evaluates gradient stability, loss convergence, and inference token throughput under distributed scaling constraints.`
-        : `The technical methodology centers on optimizing parameter efficiency, representation fidelity, and autoregressive decoding throughput. Empirical evaluations demonstrate significant compute overhead reduction across dense matrix operations without degradation in downstream benchmark accuracy.`;
-      break;
-    case 'CONSUMER_PRODUCT':
-      technicalAnalysis = `The client runtime utilizes a hybrid execution pipeline, routing latency-critical and privacy-sensitive queries to optimized on-device neural engines, while seamlessly dispatching complex multi-step reasoning workloads to secure private cloud enclaves with cryptographic verification.`;
-      break;
-    case 'POLICY_REGULATION':
-      technicalAnalysis = `The compliance framework establishes auditable verification protocols covering training dataset provenance, safety stress-testing, algorithmic transparency, and cross-border data transfer safeguards. Organizations are required to implement formal logging mechanisms to satisfy regulatory oversight.`;
-      break;
-    default:
-      technicalAnalysis = `The operational architecture emphasizes end-to-end execution efficiency, minimizing pipeline serialization across distributed nodes while sustaining high-throughput inference and deterministic latency bounds.`;
-      break;
-  }
-
-  // 3. Strategic & Ecosystem Implications
-  let strategicImplications = '';
-  switch (domain) {
-    case 'MARKETS_FINANCE':
-      strategicImplications = `This milestone signals evolving risk dynamics across the technology sector. For ${labName}, proactive financial engineering accelerates customer lock-in and deepens ecosystem moats against well-funded hyperscalers, though it increases balance-sheet sensitivity to broader market fluctuations.`;
-      break;
-    case 'HARDWARE_INFRASTRUCTURE':
-      strategicImplications = `Physical power availability and datacenter real estate are rapidly replacing silicon availability as the defining bottleneck in frontier AI. Organizations with secured infrastructure access can deploy and iterate models substantially faster than compute-constrained competitors.`;
-      break;
-    case 'FRONTIER_RESEARCH':
-      strategicImplications = `Disseminating these results advances open scientific progress while raising the competitive bar for peer laboratories. Research teams will likely analyze these techniques to incorporate comparable algorithmic efficiencies into next-generation training pipelines.`;
-      break;
-    case 'CONSUMER_PRODUCT':
-      strategicImplications = `Ubiquitous platform distribution creates durable user retention and substantial switching barriers. Achieving seamless integration across daily user workflows cements competitive advantage in consumer and enterprise ecosystems.`;
-      break;
-    case 'POLICY_REGULATION':
-      strategicImplications = `This action establishes an influential precedent for regulatory enforcement and government oversight across the sector, prompting organizations to proactively harmonize technological development with international governance standards.`;
-      break;
-    default:
-      strategicImplications = `This advancement intensifies the pace of innovation across the frontier landscape, compelling peer organizations to continually elevate their performance benchmarks and operational velocity.`;
-      break;
-  }
-
-  // 4. Primary Thesis
-  const primaryThesis = `Strategic progression in ${domain.replace('_', ' ').toLowerCase()} for ${labName}, reinforcing frontier operational momentum.`;
-
-  // 5. Key Actionable Takeaways (3-4 crisp, high-signal, natural-case bullets)
+  let tldr = '';
   const takeaways: string[] = [];
 
-  // Add substantive extracted sentences first
-  if (extractedSentences[1] && extractedSentences[1] !== leadSentence) {
-    takeaways.push(extractedSentences[1]);
-  }
-  if (extractedSentences[2]) {
-    takeaways.push(extractedSentences[2]);
-  }
-
-  // Add domain-tailored concrete takeaways
-  switch (domain) {
-    case 'MARKETS_FINANCE':
-      if (takeaways.length < 4) takeaways.push(`Direct credit backing and balance-sheet guarantees are increasingly deployed to sustain heavy capital expenditures.`);
-      if (takeaways.length < 4) takeaways.push(`Reflects growing scrutiny on infrastructure debt sustainability and long-term return on AI investment.`);
-      if (takeaways.length < 4) takeaways.push(`Strengthens customer lock-in for hardware and model providers through integrated financing partnerships.`);
-      break;
-    case 'HARDWARE_INFRASTRUCTURE':
-      if (takeaways.length < 4) takeaways.push(`Expands regional high-density compute capacity specifically architected for large-scale enterprise workloads.`);
-      if (takeaways.length < 4) takeaways.push(`Directly addresses critical power grid allocations and advanced thermal management constraints.`);
-      if (takeaways.length < 4) takeaways.push(`Ensures dedicated rack space and optical interconnect availability for next-generation GPU clusters.`);
-      break;
-    case 'FRONTIER_RESEARCH':
-      if (takeaways.length < 4) takeaways.push(`Provides empirical validation and benchmark comparisons against established baseline architectures.`);
-      if (takeaways.length < 4) takeaways.push(`Demonstrates measurable improvements in parameter efficiency and algorithmic throughput.`);
-      if (takeaways.length < 4) takeaways.push(`Offers actionable methodological insights for subsequent model pre-training and distillation pipelines.`);
-      break;
-    case 'CONSUMER_PRODUCT':
-      if (takeaways.length < 4) takeaways.push(`Expands international platform availability and native operating system integration.`);
-      if (takeaways.length < 4) takeaways.push(`Combines responsive on-device execution with secure cloud-based frontier reasoning models.`);
-      if (takeaways.length < 4) takeaways.push(`Strengthens ecosystem stickiness by embedding contextual intelligence into everyday user workflows.`);
-      break;
-    case 'POLICY_REGULATION':
-      if (takeaways.length < 4) takeaways.push(`Establishes clear compliance expectations for enterprise deployment and algorithmic transparency.`);
-      if (takeaways.length < 4) takeaways.push(`Requires robust audit trails, data provenance records, and security verification procedures.`);
-      if (takeaways.length < 4) takeaways.push(`Highlights the increasing strategic focus of sovereign governments on foundational AI infrastructure.`);
-      break;
-    default:
-      if (takeaways.length < 4) takeaways.push(`Milestone verified via ${sourceName} live telemetry feeds.`);
-      if (takeaways.length < 4) takeaways.push(`Reinforces high-throughput execution across multi-tenant production runtime environments.`);
-      if (takeaways.length < 4) takeaways.push(`Applies continuous performance pressure across peer frontier research ecosystems.`);
-      break;
+  if (extractedSentences.length === 0) {
+    tldr = cleanSentence(title);
+  } else if (extractedSentences.length <= 2) {
+    tldr = extractedSentences.join(' ');
+  } else if (extractedSentences.length <= 5) {
+    tldr = extractedSentences.slice(0, 3).join(' ');
+    for (const s of extractedSentences.slice(3, 6)) {
+      takeaways.push(s);
+    }
+  } else {
+    const para1 = extractedSentences.slice(0, 3).join(' ');
+    const para2 = extractedSentences.slice(3, 6).join(' ');
+    tldr = `${para1}\n\n${para2}`;
+    for (const s of extractedSentences.slice(6, 10)) {
+      takeaways.push(s);
+    }
   }
 
-  const words = (title + ' ' + content + ' ' + tldr + ' ' + technicalAnalysis).split(/\s+/).length;
-  const readTimeMinutes = Math.max(2, Math.ceil(words / 140));
+  const wordCount = (title + ' ' + cleanedContent).split(/\s+/).filter(Boolean).length;
+  const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 180));
 
   return {
     tldr,
-    takeaways: takeaways.slice(0, 4),
-    technicalAnalysis,
-    strategicImplications,
-    primaryThesis,
+    takeaways,
     impact,
     readTimeMinutes,
+    generatedWith: 'heuristic',
   };
 }

@@ -6,7 +6,8 @@ import { SingleFlight } from './single-flight';
 import { IngestionReport, DomainArticle, DomainSource, FeedSnapshot } from '../domain/entities';
 import { logger } from '@/lib/logger';
 import { isServerlessOrEdge } from '@/lib/runtime-env';
-import { summarizeWithGemini } from '@/lib/ai-summarizer';
+import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
+import { fetchCleanArticleBody } from '@/lib/article-extractor';
 
 const CONCURRENCY_LIMIT = 6;
 const ROLLING_BATCH_LIMIT = 8;
@@ -172,18 +173,31 @@ export class IngestionService {
         const apiKey = process.env.GEMINI_API_KEY;
         if (apiKey) {
           const candidates = Array.from(batchedToSave.values())
-            .filter(a => a.summary?.generatedWith !== 'gemini')
+            .filter(
+              (a) =>
+                a.summary?.generatedWith !== 'gemini' ||
+                (a.summary?.summaryVersion || 0) < SUMMARY_SCHEMA_VERSION
+            )
             .slice(0, 4);
 
           const GEMINI_CONCURRENCY = 2;
           for (let i = 0; i < candidates.length; i += GEMINI_CONCURRENCY) {
             const chunk = candidates.slice(i, i + GEMINI_CONCURRENCY);
             await Promise.all(
-              chunk.map(async article => {
+              chunk.map(async (article) => {
                 try {
+                  let sourceText = article.contentSnippet || '';
+                  if (sourceText.length < 1800 && article.canonicalUrl) {
+                    const extracted = await fetchCleanArticleBody(article.canonicalUrl);
+                    if (extracted && extracted.length > sourceText.length) {
+                      sourceText = extracted;
+                      article.contentSnippet = extracted.slice(0, 2400);
+                    }
+                  }
+
                   const geminiSummary = await summarizeWithGemini(
                     article.title,
-                    article.contentSnippet || article.title,
+                    sourceText || article.title,
                     apiKey
                   );
                   if (geminiSummary) {

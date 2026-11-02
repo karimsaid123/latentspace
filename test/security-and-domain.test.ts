@@ -8,7 +8,10 @@ import {
   sanitizeXmlForParsing,
 } from '../src/adapters/providers/rss-feed.adapter';
 import { IngestionDiffEngine } from '../src/core/services/diff-engine';
-import { detectFrontierLab } from '../src/lib/intelligence-analyzer';
+import {
+  detectFrontierLab,
+  generateDeepIntelligenceSummary,
+} from '../src/lib/intelligence-analyzer';
 import { checkRateLimit, hasValidAdminSecret } from '../src/lib/rate-limit';
 import {
   readBoundedJson,
@@ -271,6 +274,20 @@ describe('Security & Domain Hardening Suite', () => {
       ),
       'DeepSeek'
     );
+  });
+
+  it('never injects canned buzzword filler into heuristic summaries when RSS snippets are short', () => {
+    const shortSummary = generateDeepIntelligenceSummary(
+      'Mistral releases weights for its trillion-parameter AI model, targeting cybersecurity',
+      "Mistral says its new model can afford organizations a kind of control over its cyber defenses that closed models can't.",
+      'TechCrunch AI'
+    );
+    assert.equal(
+      shortSummary.tldr,
+      "Mistral says its new model can afford organizations a kind of control over its cyber defenses that closed models can't."
+    );
+    assert.deepEqual(shortSummary.takeaways, []);
+    assert.ok(!shortSummary.tldr.includes('capability horizons'));
   });
 
   it('enforces per-IP sliding window rate limits and bounded cache eviction', async () => {

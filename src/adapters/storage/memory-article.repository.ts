@@ -87,11 +87,10 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       pdfUrl = pdfUrl || sanitizeSafeHttpUrl(typeInfo.pdfUrl);
     }
 
-    let summary = item.summary || item.aiSummary;
-    if (!summary || !summary.technicalAnalysis || (summary.takeaways?.length || 0) < 3) {
-      summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
-    } else {
-      const rawImpact = summary.impact;
+    const rawSummary = item.summary || item.aiSummary;
+    let summary;
+    if (rawSummary?.generatedWith === 'gemini' && typeof rawSummary.tldr === 'string' && rawSummary.tldr.trim()) {
+      const rawImpact = rawSummary.impact;
       const normalizedImpact =
         rawImpact === 'Breakthrough' || rawImpact === 'High' || rawImpact === 'Medium' || rawImpact === 'Notable'
           ? rawImpact
@@ -100,15 +99,17 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
           : 'Notable';
 
       summary = {
-        tldr: decodeHtmlEntities(summary.tldr || ''),
-        takeaways: (summary.takeaways || []).map((t: string) => decodeHtmlEntities(t)),
-        technicalAnalysis: summary.technicalAnalysis ? decodeHtmlEntities(summary.technicalAnalysis) : undefined,
-        strategicImplications: summary.strategicImplications ? decodeHtmlEntities(summary.strategicImplications) : undefined,
-        primaryThesis: summary.primaryThesis ? decodeHtmlEntities(summary.primaryThesis) : undefined,
+        tldr: decodeHtmlEntities(rawSummary.tldr),
+        takeaways: Array.isArray(rawSummary.takeaways)
+          ? rawSummary.takeaways.map((t: string) => decodeHtmlEntities(t))
+          : [],
         impact: normalizedImpact,
-        readTimeMinutes: summary.readTimeMinutes || 3,
-        generatedWith: summary.generatedWith,
+        readTimeMinutes: rawSummary.readTimeMinutes || 3,
+        generatedWith: 'gemini' as const,
+        summaryVersion: rawSummary.summaryVersion,
       };
+    } else {
+      summary = generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
     }
 
     return {
@@ -163,9 +164,13 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       for (const raw of cached) {
         if (!raw?.id) continue;
         const existing = this.articles.get(raw.id);
-        const rawSummaryGen = raw.summary?.generatedWith || raw.aiSummary?.generatedWith;
+        const rawSummaryObj = raw.summary || raw.aiSummary;
+        const rawSummaryGen = rawSummaryObj?.generatedWith;
+        const rawSummaryVer = Number(rawSummaryObj?.summaryVersion || 0);
+        const existingSummaryVer = Number(existing?.article.summary?.summaryVersion || 0);
         const upgradedToGemini =
-          rawSummaryGen === 'gemini' && existing?.article.summary?.generatedWith !== 'gemini';
+          (rawSummaryGen === 'gemini' && existing?.article.summary?.generatedWith !== 'gemini') ||
+          (rawSummaryGen === 'gemini' && rawSummaryVer > existingSummaryVer);
         const contentOrTitleChanged =
           Boolean(raw.contentHash && existing && existing.article.contentHash !== raw.contentHash) ||
           Boolean(raw.title && existing && existing.article.title !== raw.title);

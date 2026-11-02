@@ -2,7 +2,11 @@ import React from 'react';
 import FeedClient from '@/components/FeedClient';
 import { Article, ImpactLevel } from '@/types';
 import { decodeHtmlEntities } from '@/lib/sanitize';
-import { detectFrontierLab, detectEntryType } from '@/lib/intelligence-analyzer';
+import {
+  detectFrontierLab,
+  detectEntryType,
+  generateDeepIntelligenceSummary,
+} from '@/lib/intelligence-analyzer';
 import rawArticlesData from '../../data/articles.json';
 
 function normalizeImpact(raw: unknown): ImpactLevel {
@@ -16,7 +20,7 @@ function normalizeImpact(raw: unknown): ImpactLevel {
 }
 
 function getInitialSeedArticles(limit = 30): Article[] {
-  const rawList = Array.isArray(rawArticlesData) ? (rawArticlesData as any[]) : [];
+  const rawList = Array.isArray(rawArticlesData) ? (rawArticlesData as Record<string, any>[]) : [];
   const sorted = [...rawList].sort((a, b) => {
     const tA = Date.parse(a?.publishedAt || a?.pubDate || '') || 0;
     const tB = Date.parse(b?.publishedAt || b?.pubDate || '') || 0;
@@ -30,7 +34,21 @@ function getInitialSeedArticles(limit = 30): Article[] {
     const canonicalUrl = item.canonicalUrl || item.link || '';
     const lab = detectFrontierLab(title, contentSnippet, sourceName);
     const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
-    const rawSummary = item.summary || item.aiSummary || {};
+    const rawSummary = item.summary || item.aiSummary;
+
+    const aiSummary =
+      rawSummary?.generatedWith === 'gemini' && typeof rawSummary.tldr === 'string'
+        ? {
+            tldr: decodeHtmlEntities(rawSummary.tldr),
+            takeaways: Array.isArray(rawSummary.takeaways)
+              ? rawSummary.takeaways.map((t: string) => decodeHtmlEntities(t))
+              : [],
+            impact: normalizeImpact(rawSummary.impact),
+            readTimeMinutes: Number(rawSummary.readTimeMinutes) || 3,
+            generatedWith: 'gemini' as const,
+            summaryVersion: rawSummary.summaryVersion,
+          }
+        : generateDeepIntelligenceSummary(title, contentSnippet, sourceName);
 
     return {
       id: item.id,
@@ -50,24 +68,7 @@ function getInitialSeedArticles(limit = 30): Article[] {
       entryType: item.entryType || typeInfo.entryType,
       arxivId: item.arxivId || typeInfo.arxivId,
       pdfUrl: item.pdfUrl || typeInfo.pdfUrl,
-      aiSummary: {
-        tldr: decodeHtmlEntities(rawSummary.tldr || contentSnippet || title),
-        takeaways: Array.isArray(rawSummary.takeaways)
-          ? rawSummary.takeaways.map((t: string) => decodeHtmlEntities(t))
-          : [],
-        technicalAnalysis: rawSummary.technicalAnalysis
-          ? decodeHtmlEntities(rawSummary.technicalAnalysis)
-          : undefined,
-        strategicImplications: rawSummary.strategicImplications
-          ? decodeHtmlEntities(rawSummary.strategicImplications)
-          : undefined,
-        primaryThesis: rawSummary.primaryThesis
-          ? decodeHtmlEntities(rawSummary.primaryThesis)
-          : undefined,
-        impact: normalizeImpact(rawSummary.impact),
-        readTimeMinutes: Number(rawSummary.readTimeMinutes) || 3,
-        generatedWith: rawSummary.generatedWith,
-      },
+      aiSummary,
     };
   });
 }

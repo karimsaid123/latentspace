@@ -35,7 +35,9 @@ export default function ArticleShareModal({
   const origin = typeof window !== 'undefined' ? window.location.origin : 'https://latentspace.science';
   const shareUrl = `${origin}/?article=${encodeURIComponent(article.id)}`;
 
-  const cleanSummary = (article.aiSummary?.tldr || article.contentSnippet || '').trim();
+  const cleanSummary = (article.aiSummary?.tldr || article.contentSnippet || '')
+    .split(/\n{2,}/)[0]
+    .trim();
   const labText = article.lab || 'Frontier AI';
   const sourceText = article.source?.name || 'LatentSpace';
   

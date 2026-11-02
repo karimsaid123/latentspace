@@ -24,10 +24,8 @@ export interface AISummary {
   takeaways: string[];
   impact: ImpactLevel;
   readTimeMinutes: number;
-  technicalAnalysis?: string;
-  strategicImplications?: string;
-  primaryThesis?: string;
   generatedWith?: 'gemini' | 'heuristic';
+  summaryVersion?: number;
 }
 
 export interface DomainSource {

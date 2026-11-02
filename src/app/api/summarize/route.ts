@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { SingleFlight } from '@/core/services/single-flight';
-import { summarizeWithGemini } from '@/lib/ai-summarizer';
+import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
+import { fetchCleanArticleBody } from '@/lib/article-extractor';
 import {
   checkEdgeRateLimit,
   checkGlobalGeminiBudget,
@@ -116,8 +117,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Fast path: already synthesized by Gemini (zero rate-limit penalty, zero latency)
-    if (article.summary?.generatedWith === 'gemini') {
+    // Fast path: already synthesized by Gemini v2 (zero rate-limit penalty, zero latency)
+    if (
+      article.summary?.generatedWith === 'gemini' &&
+      (article.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
+    ) {
       return NextResponse.json(
         {
           success: true,
@@ -184,13 +188,26 @@ export async function POST(request: NextRequest) {
       `gemini_sum_${targetId}`,
       async () => {
         const freshCheck = await container.articleRepo.findById(targetId);
-        if (freshCheck?.summary?.generatedWith === 'gemini') {
+        if (
+          freshCheck?.summary?.generatedWith === 'gemini' &&
+          (freshCheck.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
+        ) {
           return freshCheck.summary;
+        }
+
+        // Fetch full source article text when RSS snippet is short so Gemini has complete factual context
+        let sourceContent = article.contentSnippet || '';
+        if (sourceContent.length < 1800 && article.canonicalUrl) {
+          const fullBody = await fetchCleanArticleBody(article.canonicalUrl);
+          if (fullBody && fullBody.length > sourceContent.length) {
+            sourceContent = fullBody;
+            article.contentSnippet = fullBody.slice(0, 2400);
+          }
         }
 
         const result = await summarizeWithGemini(
           article.title,
-          article.contentSnippet || article.title,
+          sourceContent || article.title,
           apiKey
         );
 

@@ -89,9 +89,9 @@ const EditorialSpread = memo(function EditorialSpread({
           {(lead.aiSummary?.tldr || lead.contentSnippet) && (
             <p
               onClick={() => onSelectArticle(lead)}
-              className="mt-5 text-sm sm:text-base text-black/75 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-90 transition-opacity"
+              className="mt-5 text-sm sm:text-base text-black/75 font-sans max-w-3xl leading-relaxed line-clamp-4 cursor-pointer hover:opacity-90 transition-opacity"
             >
-              {lead.aiSummary?.tldr || lead.contentSnippet}
+              {(lead.aiSummary?.tldr || lead.contentSnippet).split(/\n{2,}/)[0]}
             </p>
           )}
         </div>
@@ -134,8 +134,8 @@ const EditorialSpread = memo(function EditorialSpread({
               </h2>
 
               {(second.aiSummary?.tldr || second.contentSnippet) && (
-                <p className="mt-3 text-sm text-black/70 font-sans max-w-3xl leading-relaxed">
-                  {second.aiSummary?.tldr || second.contentSnippet}
+                <p className="mt-3 text-sm text-black/70 font-sans max-w-3xl leading-relaxed line-clamp-3">
+                  {(second.aiSummary?.tldr || second.contentSnippet).split(/\n{2,}/)[0]}
                 </p>
               )}
             </div>
@@ -196,9 +196,9 @@ const EditorialSpread = memo(function EditorialSpread({
             {(third.aiSummary?.tldr || third.contentSnippet) && (
               <p
                 onClick={() => onSelectArticle(third)}
-                className="text-sm text-black/70 font-sans max-w-3xl leading-relaxed cursor-pointer hover:opacity-80 transition-opacity"
+                className="text-sm text-black/70 font-sans max-w-3xl leading-relaxed line-clamp-3 cursor-pointer hover:opacity-80 transition-opacity"
               >
-                {third.aiSummary?.tldr || third.contentSnippet}
+                {(third.aiSummary?.tldr || third.contentSnippet).split(/\n{2,}/)[0]}
               </p>
             )}
           </div>

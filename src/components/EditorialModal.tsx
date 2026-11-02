@@ -30,6 +30,23 @@ function toSafeExternalUrl(raw?: string): string | null {
   }
 }
 
+function renderKeyPointText(point: string): React.ReactNode {
+  const cleaned = point.trim();
+  // Match "**Lead Label:** rest" or "**Lead Label** — rest" safely in React without innerHTML
+  const boldPrefixMatch = cleaned.match(/^\*\*([^*]{2,80}?)\*\*:?\s*(.+)$/);
+  if (boldPrefixMatch) {
+    const label = boldPrefixMatch[1].replace(/:$/, '').trim();
+    const rest = boldPrefixMatch[2].trim();
+    return (
+      <>
+        <strong className="font-semibold text-black">{label}:</strong>{' '}
+        <span>{rest}</span>
+      </>
+    );
+  }
+  return <span>{cleaned.replace(/\*\*/g, '')}</span>;
+}
+
 export default function EditorialModal({
   article,
   onClose,
@@ -49,8 +66,11 @@ export default function EditorialModal({
     }
     setSummary(article.aiSummary);
 
-    // If this article only has a heuristic/template summary, enrich it on-demand with Gemini via POST
-    if (article.aiSummary?.generatedWith !== 'gemini') {
+    const needsDeepSynthesis =
+      article.aiSummary?.generatedWith !== 'gemini' ||
+      (article.aiSummary?.summaryVersion || 0) < 2;
+
+    if (needsDeepSynthesis) {
       const controller = new AbortController();
       const targetId = article.id;
       setIsEnriching(true);
@@ -118,6 +138,12 @@ export default function EditorialModal({
   const safePdfUrl = toSafeExternalUrl(article.pdfUrl);
   const enrichedArticle: Article = summary ? { ...article, aiSummary: summary } : article;
 
+  const rawSummaryBody = (summary?.tldr || article.contentSnippet || '').trim();
+  const summaryParagraphs = rawSummaryBody
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
   const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-sm select-none animate-fade-in">
       <div
@@ -128,22 +154,22 @@ export default function EditorialModal({
         }}
       />
 
-      {/* Minimalist Reader Sheet */}
+      {/* Reader Sheet */}
       <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in">
 
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
           <div className="flex items-center gap-2.5">
             <span className="font-bold text-black uppercase">[{article.source?.name || 'LATENTSPACE'}]</span>
-            {summary?.generatedWith === 'gemini' ? (
+            {isEnriching ? (
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-black/5 text-black/70 border border-black/15 text-[9px] font-mono tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] animate-pulse" />
+                EXTRACTING FULL BRIEFING...
+              </span>
+            ) : summary?.generatedWith === 'gemini' ? (
               <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#00aa66]/10 text-[#00aa66] border border-[#00aa66]/30 text-[9px] font-mono font-bold tracking-wider uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00aa66]" />
-                GEMINI FLASH
-              </span>
-            ) : isEnriching ? (
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-black/5 text-black/60 border border-black/10 text-[9px] font-mono tracking-wider uppercase animate-pulse">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] animate-ping" />
-                SYNTHESIZING...
+                VERIFIED BRIEF
               </span>
             ) : null}
           </div>
@@ -207,86 +233,49 @@ export default function EditorialModal({
             </h2>
           </div>
 
-          {/* 01: Executive Intelligence Brief */}
-          <div className="space-y-3">
+          {/* 01: Comprehensive Information-Dense Briefing */}
+          <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                {'01 // EXECUTIVE SUMMARY'}
+                {'01 // SUMMARY'}
               </span>
               <div className="h-px flex-1 bg-black/10" />
             </div>
-            <p className="font-sans text-base sm:text-lg leading-[1.65] text-black/90 font-normal antialiased">
-              {summary?.tldr || article.contentSnippet || ''}
-            </p>
+
+            <div className="space-y-4">
+              {summaryParagraphs.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="font-sans text-base sm:text-[17px] leading-[1.72] text-black/90 font-normal antialiased"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
 
-          {/* 02: Key Actionable Takeaways */}
+          {/* 02: High-Signal Factual Key Points */}
           {summary?.takeaways && summary.takeaways.length > 0 && (
-            <div className="space-y-3 pt-2">
+            <div className="space-y-4 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                  {'02 // KEY TAKEAWAYS'}
+                  {'02 // KEY POINTS'}
                 </span>
                 <div className="h-px flex-1 bg-black/10" />
               </div>
-              <ul className="space-y-2.5">
+              <ul className="space-y-3.5">
                 {summary.takeaways.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 font-sans text-sm sm:text-base leading-relaxed text-black/85">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-3.5 font-sans text-sm sm:text-[15.5px] leading-[1.62] text-black/85"
+                  >
                     <span className="font-mono text-xs font-bold text-[#ff8000] mt-0.5 shrink-0">
                       [{idx + 1}]
                     </span>
-                    <span className="antialiased">{point}</span>
+                    <span className="antialiased">{renderKeyPointText(point)}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
-
-          {/* 03: Analysis & Implications */}
-          {(summary?.technicalAnalysis || summary?.strategicImplications) && (
-            <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                  {'03 // ANALYSIS & IMPLICATIONS'}
-                </span>
-                <div className="h-px flex-1 bg-black/10" />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {summary?.technicalAnalysis && (
-                  <div className="p-4 bg-white border border-black/10 space-y-2">
-                    <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
-                      TECHNICAL ARCHITECTURE
-                    </span>
-                    <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
-                      {summary.technicalAnalysis}
-                    </p>
-                  </div>
-                )}
-
-                {summary?.strategicImplications && (
-                  <div className="p-4 bg-white border border-black/10 space-y-2">
-                    <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
-                      STRATEGIC IMPACT
-                    </span>
-                    <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/80 antialiased">
-                      {summary.strategicImplications}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Source Snippet */}
-          {article.contentSnippet && (
-            <div className="pt-4 border-t border-black/10 space-y-1.5">
-              <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/40 block">
-                PRIMARY SOURCE EXCERPT
-              </span>
-              <p className="font-sans text-xs sm:text-sm leading-relaxed text-black/60 italic antialiased">
-                &ldquo;{article.contentSnippet}&rdquo;
-              </p>
             </div>
           )}
 
@@ -295,7 +284,20 @@ export default function EditorialModal({
         {/* Footer */}
         <div className="px-6 py-4 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[10px]">
           <div className="flex items-center gap-3 text-black/50">
-            <span>RECORDED: {new Date(article.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+            <span>
+              RECORDED:{' '}
+              {new Date(article.pubDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </span>
+            {article.author && article.author !== article.source?.name && (
+              <>
+                <span>•</span>
+                <span>BY {article.author.toUpperCase()}</span>
+              </>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
@@ -317,7 +319,11 @@ export default function EditorialModal({
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 font-bold uppercase text-white bg-black px-4 py-2 hover:bg-[#ff8000] hover:text-black transition-all cursor-pointer shadow-sm text-[11px] tracking-wider"
               >
-                <span>{article.entryType === 'RESEARCH_PAPER' ? 'VIEW ON ARXIV' : `READ ON ${article.source?.name || 'SOURCE'}`}</span>
+                <span>
+                  {article.entryType === 'RESEARCH_PAPER'
+                    ? 'VIEW ON ARXIV'
+                    : `READ ON ${article.source?.name || 'SOURCE'}`}
+                </span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
@@ -335,5 +341,5 @@ export default function EditorialModal({
     </div>
   );
 
-  return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : null;
+  return createPortal(modalContent, document.body);
 }
