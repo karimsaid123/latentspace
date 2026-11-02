@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import MinimalNav, { LAB_FILTERS } from '@/components/MinimalNav';
 import EditorialSpread from '@/components/EditorialSpread';
 import EditorialModal from '@/components/EditorialModal';
-import VectorPulse from '@/components/VectorPulse';
 import Footer from '@/components/Footer';
 import { Article, AISummary, VectorPulseSnapshot } from '@/types';
 import { RefreshCw } from 'lucide-react';
@@ -576,18 +575,12 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
         savedCount={savedCount}
         isSearchOpen={isSearchOpen}
         setIsSearchOpen={setIsSearchOpen}
+        vectorPulse={vectorPulse}
+        selectedVectorId={selectedVector}
+        onSelectVector={handleSelectVector}
       />
 
       <main className="flex-1 w-full">
-        {vectorPulse && selectedLab !== 'SAVED' && (
-          <VectorPulse
-            snapshot={vectorPulse}
-            selectedVectorId={selectedVector}
-            onSelectVector={handleSelectVector}
-            lastSyncedTime={lastSyncedTime}
-          />
-        )}
-
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-40 gap-3 font-mono text-[10px] tracking-widest uppercase text-black/50">
             <RefreshCw className="w-5 h-5 animate-spin text-black" />

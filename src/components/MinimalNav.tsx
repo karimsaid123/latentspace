@@ -1,10 +1,12 @@
 'use client';
 
-import React, { useRef, useEffect, memo } from 'react';
+import React, { useRef, useState, useEffect, memo } from 'react';
 import Link from 'next/link';
 import LiveClock from './LiveClock';
 import { LastSyncedIndicator } from './LastSyncedIndicator';
 import ThemeToggle from './ThemeToggle';
+import VectorPulse from './VectorPulse';
+import type { VectorPulseSnapshot } from '@/types';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -22,6 +24,9 @@ interface MinimalNavProps {
   isSearchOpen: boolean;
   setIsSearchOpen: (open: boolean) => void;
   onOpenBenchmarks?: () => void;
+  vectorPulse?: VectorPulseSnapshot;
+  selectedVectorId?: string | null;
+  onSelectVector?: (vectorId: string | null) => void;
 }
 
 export const LAB_FILTERS = [
@@ -50,8 +55,14 @@ const MinimalNav = memo(function MinimalNav({
   savedCount = 0,
   isSearchOpen,
   setIsSearchOpen,
+  vectorPulse,
+  selectedVectorId = null,
+  onSelectVector,
 }: MinimalNavProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const pulsePopoverRef = useRef<HTMLDivElement>(null);
+  const pulseTriggerRef = useRef<HTMLButtonElement>(null);
+  const [isPulseOpen, setIsPulseOpen] = useState(false);
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -59,8 +70,38 @@ const MinimalNav = memo(function MinimalNav({
     }
   }, [isSearchOpen]);
 
+  useEffect(() => {
+    if (!isPulseOpen) return;
+
+    const handlePointerDown = (e: PointerEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      if (pulsePopoverRef.current?.contains(target)) return;
+      if (pulseTriggerRef.current?.contains(target)) return;
+      setIsPulseOpen(false);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsPulseOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isPulseOpen]);
+
+  const activeVector =
+    selectedVectorId && vectorPulse
+      ? vectorPulse.vectors.find((v) => v.id === selectedVectorId)
+      : undefined;
+
   return (
-    <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
+    <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top minimal line */}
       <div className="relative flex items-center justify-between border-b border-black/15 pb-3 overflow-hidden gap-2 sm:gap-4">
@@ -169,7 +210,7 @@ const MinimalNav = memo(function MinimalNav({
           })}
         </div>
 
-        {/* Publication Format Selector */}
+        {/* Publication Format Selector & Vector Pulse Dropdown Trigger */}
         <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1">
           <span className="text-black font-bold shrink-0">TYPE:</span>
           <button
@@ -196,9 +237,61 @@ const MinimalNav = memo(function MinimalNav({
           >
             <span>[RESEARCH]</span>
           </button>
+
+          {vectorPulse && onSelectVector && (
+            <div className="flex items-center gap-1.5 pl-2.5 sm:pl-3 border-l border-black/20 shrink-0">
+              <button
+                ref={pulseTriggerRef}
+                type="button"
+                aria-expanded={isPulseOpen}
+                onClick={() => setIsPulseOpen((prev) => !prev)}
+                className={`cursor-pointer transition-colors whitespace-nowrap px-2 py-0.5 border flex items-center gap-1.5 font-bold ${
+                  activeVector || isPulseOpen
+                    ? 'bg-black text-[#faf9f6] border-black'
+                    : 'border-black/35 text-black hover:border-black hover:bg-black/[0.04]'
+                }`}
+                title="Open 7-Day Research Vector Pulse momentum radar"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" />
+                <span>
+                  {activeVector
+                    ? `VECTOR: ${activeVector.label.split(' ')[0]}`
+                    : 'VECTOR PULSE'}
+                </span>
+                <span className="text-[9px] opacity-75">{isPulseOpen ? '▴' : '▾'}</span>
+              </button>
+
+              {activeVector && (
+                <button
+                  type="button"
+                  onClick={() => onSelectVector(null)}
+                  className="text-[#ff8000] hover:opacity-75 font-bold cursor-pointer px-1"
+                  title="Clear vector filter"
+                >
+                  [✕]
+                </button>
+              )}
+            </div>
+          )}
         </div>
 
       </div>
+
+      {/* Floating Research Vector Pulse Dropdown */}
+      {isPulseOpen && vectorPulse && onSelectVector && (
+        <div
+          ref={pulsePopoverRef}
+          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[660px] lg:w-[740px] top-full mt-1 z-40"
+        >
+          <VectorPulse
+            snapshot={vectorPulse}
+            selectedVectorId={selectedVectorId}
+            onSelectVector={onSelectVector}
+            onClose={() => setIsPulseOpen(false)}
+            lastSyncedTime={lastSyncedTime}
+          />
+        </div>
+      )}
 
     </header>
   );
