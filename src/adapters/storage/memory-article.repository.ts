@@ -5,7 +5,9 @@ import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
 import { safeJsonParse } from '@/lib/request-security';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
+import { computeVectorPulseFromEntries, detectVectorIds } from '@/lib/vector-pulse';
 import { isServerlessOrEdge } from '@/lib/runtime-env';
+import type { VectorPulseSnapshot } from '@/types';
 import staticArticlesData from '../../../data/articles.json';
 
 const MAX_STORED_ARTICLES = 400;
@@ -30,11 +32,13 @@ interface IndexedArticle {
   publishedAtMs: number;
   fetchedAtMs: number;
   searchBlob: string;
+  vectorIds: Set<string>;
 }
 
 export class MemoryArticleRepository implements ArticleRepositoryPort {
   private articles = new Map<string, IndexedArticle>();
   private sortedCache: IndexedArticle[] | null = null;
+  private vectorPulseCache: VectorPulseSnapshot | null = null;
   private latestFetchedAtMs = 0;
   private lastEdgeSyncCheckMs = 0;
   private lastKnownEdgeVersion = 0;
@@ -53,7 +57,8 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       this.latestFetchedAtMs = fetchedAtMs;
     }
     const searchBlob = `${art.title} ${art.contentSnippet} ${art.summary?.tldr || ''} ${art.sourceName} ${art.lab || ''}`.toLowerCase();
-    return { article: art, publishedAtMs, fetchedAtMs, searchBlob };
+    const vectorIds = detectVectorIds(searchBlob);
+    return { article: art, publishedAtMs, fetchedAtMs, searchBlob, vectorIds };
   }
 
   private getSortedEntries(): IndexedArticle[] {
@@ -63,6 +68,13 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       );
     }
     return this.sortedCache;
+  }
+
+  public getVectorPulse(): VectorPulseSnapshot {
+    if (!this.vectorPulseCache) {
+      this.vectorPulseCache = computeVectorPulseFromEntries(this.getSortedEntries());
+    }
+    return this.vectorPulseCache;
   }
 
   public getLatestFetchedAtMs(): number {
@@ -186,6 +198,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
       if (changed) {
         this.sortedCache = null;
+        this.vectorPulseCache = null;
         this.trimToMax();
       }
       this.lastKnownEdgeVersion = remoteVer || now;
@@ -204,6 +217,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
         this.articles.set(entry.article.id, entry);
       }
       this.sortedCache = trimmed;
+      this.vectorPulseCache = null;
     }
   }
 
@@ -233,6 +247,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
         }
       }
       this.sortedCache = null;
+      this.vectorPulseCache = null;
       this.trimToMax();
 
       // Overlay any newer edge-persisted articles from caches.default
@@ -249,6 +264,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       this.articles.set(art.id, this.indexArticle(art));
     }
     this.sortedCache = null;
+    this.vectorPulseCache = null;
     this.trimToMax();
 
     await this.persist();
@@ -276,6 +292,9 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       return false;
     }
     if (filter?.entryType && filter.entryType !== 'ALL' && a.entryType !== filter.entryType) {
+      return false;
+    }
+    if (filter?.vectorId && !entry.vectorIds.has(filter.vectorId)) {
       return false;
     }
     if (filter?.sourceId && a.sourceId !== filter.sourceId) {

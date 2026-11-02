@@ -4,19 +4,26 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import MinimalNav, { LAB_FILTERS } from '@/components/MinimalNav';
 import EditorialSpread from '@/components/EditorialSpread';
 import EditorialModal from '@/components/EditorialModal';
+import VectorPulse from '@/components/VectorPulse';
 import Footer from '@/components/Footer';
-import { Article, AISummary } from '@/types';
+import { Article, AISummary, VectorPulseSnapshot } from '@/types';
 import { RefreshCw } from 'lucide-react';
 import { useSavedArticles } from '@/lib/saved-storage';
+import { articleMatchesVector, isValidVectorId } from '@/lib/vector-pulse';
 
 interface FeedClientProps {
   initialArticles: Article[];
+  initialVectorPulse?: VectorPulseSnapshot;
 }
 
-export default function FeedClient({ initialArticles }: FeedClientProps) {
+export default function FeedClient({ initialArticles, initialVectorPulse }: FeedClientProps) {
   const [articles, setArticles] = useState<Article[]>(initialArticles);
+  const [vectorPulse, setVectorPulse] = useState<VectorPulseSnapshot | undefined>(
+    initialVectorPulse
+  );
   const [selectedLab, setSelectedLab] = useState<string>('All');
   const [selectedType, setSelectedType] = useState<'ALL' | 'DISPATCH' | 'RESEARCH_PAPER'>('ALL');
+  const [selectedVector, setSelectedVector] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -37,6 +44,8 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
   selectedLabRef.current = selectedLab;
   const selectedTypeRef = useRef(selectedType);
   selectedTypeRef.current = selectedType;
+  const selectedVectorRef = useRef<string | null>(selectedVector);
+  selectedVectorRef.current = selectedVector;
   const searchQueryRef = useRef(searchQuery);
   searchQueryRef.current = searchQuery;
 
@@ -46,10 +55,12 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
       lab?: string,
       entryType?: 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER',
       isSilent = false,
-      bustCache = false
+      bustCache = false,
+      vectorId?: string | null
     ) => {
       const activeLab = lab !== undefined ? lab : selectedLabRef.current;
       const activeType = entryType !== undefined ? entryType : selectedTypeRef.current;
+      const activeVector = vectorId !== undefined ? vectorId : selectedVectorRef.current;
 
       let controller: AbortController | null = null;
       let mySeq = requestSeqRef.current;
@@ -78,6 +89,9 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
         if (activeType && activeType !== 'ALL') {
           params.set('entryType', activeType);
         }
+        if (activeVector) {
+          params.set('vector', activeVector);
+        }
         if (bustCache) {
           params.set('_v', String(Date.now()));
         }
@@ -85,7 +99,10 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
         const res = await fetch(`/api/news?${params.toString()}`, { signal });
         if (!res.ok) {
           if (articlesRef.current.length === 0 && !isSilent && mySeq === requestSeqRef.current) {
-            setTimeout(() => fetchArticles(search, activeLab, activeType, false), 1500);
+            setTimeout(
+              () => fetchArticles(search, activeLab, activeType, false, false, activeVector),
+              1500
+            );
           }
           return;
         }
@@ -99,8 +116,12 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
 
         hasFetchedLiveRef.current = true;
 
+        if (data.vectorPulse && Array.isArray(data.vectorPulse.vectors)) {
+          setVectorPulse(data.vectorPulse);
+        }
+
         if (data.articles && Array.isArray(data.articles)) {
-          if (activeLab === 'All' && activeType === 'ALL' && !search.trim()) {
+          if (activeLab === 'All' && activeType === 'ALL' && !activeVector && !search.trim()) {
             try {
               sessionStorage.setItem(
                 'latentspace_articles_cache',
@@ -171,21 +192,65 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
       setSelectedType(nextType);
       selectedTypeRef.current = nextType;
       if (selectedLabRef.current !== 'SAVED') {
-        fetchArticles(searchQueryRef.current, selectedLabRef.current, nextType, false);
+        fetchArticles(
+          searchQueryRef.current,
+          selectedLabRef.current,
+          nextType,
+          false,
+          false,
+          selectedVectorRef.current
+        );
       }
     },
     [fetchArticles]
   );
 
-  // Hydrate warm session cache & read ?lab= param once on mount
+  const handleSelectVector = useCallback(
+    (nextVectorId: string | null) => {
+      const normalized = isValidVectorId(nextVectorId) ? nextVectorId : null;
+      setSelectedVector(normalized);
+      selectedVectorRef.current = normalized;
+
+      if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href);
+        if (!normalized) {
+          url.searchParams.delete('vector');
+        } else {
+          url.searchParams.set('vector', normalized);
+        }
+        window.history.pushState({}, '', url.toString());
+      }
+
+      if (selectedLabRef.current !== 'SAVED') {
+        fetchArticles(
+          searchQueryRef.current,
+          selectedLabRef.current,
+          selectedTypeRef.current,
+          false,
+          false,
+          normalized
+        );
+      }
+    },
+    [fetchArticles]
+  );
+
+  // Hydrate warm session cache & read ?lab= / ?vector= params once on mount
   useEffect(() => {
     queueMicrotask(() => {
       setLastSyncedTime(Date.now());
 
       const params = new URLSearchParams(window.location.search);
       const labParam = params.get('lab');
+      const vectorParam = params.get('vector');
+      const resolvedVector = isValidVectorId(vectorParam) ? vectorParam : null;
 
-      if (!labParam) {
+      if (resolvedVector) {
+        setSelectedVector(resolvedVector);
+        selectedVectorRef.current = resolvedVector;
+      }
+
+      if (!labParam && !resolvedVector) {
         try {
           const cached = sessionStorage.getItem('latentspace_articles_cache');
           if (cached && !hasFetchedLiveRef.current) {
@@ -215,9 +280,9 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
       if (labParam && LAB_FILTERS.some((l) => l.id === labParam)) {
         setSelectedLab(labParam);
         selectedLabRef.current = labParam;
-        fetchArticles('', labParam, 'ALL', false);
+        fetchArticles('', labParam, 'ALL', false, false, resolvedVector);
       } else {
-        fetchArticles('', 'All', 'ALL', false);
+        fetchArticles('', 'All', 'ALL', false, false, resolvedVector);
       }
     });
 
@@ -295,10 +360,29 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
       const labParam = params.get('lab');
       const resolvedLab =
         labParam && LAB_FILTERS.some((l) => l.id === labParam) ? labParam : 'All';
+      const vectorParam = params.get('vector');
+      const resolvedVector = isValidVectorId(vectorParam) ? vectorParam : null;
+
+      let shouldRefetch = false;
       if (resolvedLab !== selectedLabRef.current) {
         setSelectedLab(resolvedLab);
         selectedLabRef.current = resolvedLab;
-        fetchArticles(searchQueryRef.current, resolvedLab, selectedTypeRef.current, false);
+        shouldRefetch = true;
+      }
+      if (resolvedVector !== selectedVectorRef.current) {
+        setSelectedVector(resolvedVector);
+        selectedVectorRef.current = resolvedVector;
+        shouldRefetch = true;
+      }
+      if (shouldRefetch) {
+        fetchArticles(
+          searchQueryRef.current,
+          resolvedLab,
+          selectedTypeRef.current,
+          false,
+          false,
+          resolvedVector
+        );
       }
 
       const articleId = params.get('article');
@@ -458,8 +542,11 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
     if (selectedType !== 'ALL') {
       list = list.filter((a) => a.entryType === selectedType);
     }
+    if (selectedVector) {
+      list = list.filter((a) => articleMatchesVector(a, selectedVector));
+    }
     return list;
-  }, [articles, selectedLab, selectedType, savedIdSet]);
+  }, [articles, selectedLab, selectedType, selectedVector, savedIdSet]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
@@ -492,6 +579,15 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
       />
 
       <main className="flex-1 w-full">
+        {vectorPulse && selectedLab !== 'SAVED' && (
+          <VectorPulse
+            snapshot={vectorPulse}
+            selectedVectorId={selectedVector}
+            onSelectVector={handleSelectVector}
+            lastSyncedTime={lastSyncedTime}
+          />
+        )}
+
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-40 gap-3 font-mono text-[10px] tracking-widest uppercase text-black/50">
             <RefreshCw className="w-5 h-5 animate-spin text-black" />
@@ -505,14 +601,21 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
             <span className="text-[10px] text-black/40">
               {selectedLab === 'SAVED'
                 ? 'CLICK [+ SAVE] ON ANY ARTICLE OR RESEARCH PAPER TO BOOKMARK IT HERE'
-                : 'TRY ADJUSTING YOUR LAB FILTER, PUBLICATION TYPE OR SEARCH QUERY'}
+                : 'TRY ADJUSTING YOUR LAB FILTER, RESEARCH VECTOR, PUBLICATION TYPE OR SEARCH QUERY'}
             </span>
-            {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL') && (
+            {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL' || selectedVector) && (
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedType('ALL');
                   selectedTypeRef.current = 'ALL';
+                  setSelectedVector(null);
+                  selectedVectorRef.current = null;
+                  if (typeof window !== 'undefined') {
+                    const url = new URL(window.location.href);
+                    url.searchParams.delete('vector');
+                    window.history.replaceState({}, '', url.toString());
+                  }
                   handleSelectLab('All');
                 }}
                 className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
@@ -522,7 +625,7 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
             )}
           </div>
         ) : (
-          <div key={`${selectedLab}_${selectedType}`} className="animate-fade-in">
+          <div key={`${selectedLab}_${selectedType}_${selectedVector || 'ALL'}`} className="animate-fade-in">
             <EditorialSpread
               articles={displayedArticles}
               onSelectArticle={handleOpenArticle}

@@ -19,6 +19,11 @@ import {
   verifyBrowserMutationRequest,
 } from '../src/lib/request-security';
 import { MemoryCacheAdapter } from '../src/adapters/storage/memory-cache.adapter';
+import {
+  articleMatchesVector,
+  computeVectorPulseFromRawRecords,
+  isValidVectorId,
+} from '../src/lib/vector-pulse';
 import type { DomainArticle } from '../src/core/domain/entities';
 
 describe('Security & Domain Hardening Suite', () => {
@@ -305,5 +310,49 @@ describe('Security & Domain Hardening Suite', () => {
     // Oldest keys evicted once 128-entry ceiling is exceeded
     assert.equal(await cache.get('key_0'), null);
     assert.equal(await cache.get('key_149'), 149);
+  });
+
+  it('computes normalized Research Vector Pulse momentum and strictly validates vector IDs', () => {
+    assert.equal(isValidVectorId('test-time-reasoning'), true);
+    assert.equal(isValidVectorId('__proto__'), false);
+    assert.equal(isValidVectorId('unknown-injected-vector'), false);
+
+    const now = Date.parse('2026-11-02T12:00:00.000Z');
+    const records: Array<Record<string, unknown>> = [];
+
+    // 20 recent articles heavily featuring test-time compute & chain-of-thought
+    for (let i = 0; i < 20; i++) {
+      records.push({
+        publishedAt: new Date(now - i * 3_600_000).toISOString(),
+        title: i < 12 ? `Test-time scaling and chain-of-thought verification #${i}` : `General software news #${i}`,
+        contentSnippet: '',
+      });
+    }
+
+    // 40 older baseline articles mostly featuring retrieval / RAG
+    for (let i = 0; i < 40; i++) {
+      records.push({
+        publishedAt: new Date(now - (48 + i * 3) * 3_600_000).toISOString(),
+        title: i < 20 ? `Long-context retrieval and RAG reranker #${i}` : `Baseline news #${i}`,
+        contentSnippet: '',
+      });
+    }
+
+    const pulse = computeVectorPulseFromRawRecords(records);
+    assert.equal(pulse.corpusSize, 60);
+    assert.equal(pulse.vectors[0].id, 'test-time-reasoning');
+    assert.equal(pulse.vectors[0].status, 'SURGING');
+    assert.ok(pulse.vectors[0].deltaPct > 100);
+
+    const ragVec = pulse.vectors.find((v) => v.id === 'rag-memory-context');
+    assert.ok(ragVec && ragVec.deltaPct < 0);
+
+    assert.equal(
+      articleMatchesVector(
+        { title: 'Agentic World Modeling for Agent Test-time Scaling', contentSnippet: '' },
+        'test-time-reasoning'
+      ),
+      true
+    );
   });
 });

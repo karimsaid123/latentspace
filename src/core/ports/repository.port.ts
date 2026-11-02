@@ -4,6 +4,7 @@ export interface ArticleFilter {
   category?: string;
   lab?: string;
   entryType?: string;
+  vectorId?: string;
   searchQuery?: string;
   limit?: number;
   offset?: number;

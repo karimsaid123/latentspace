@@ -7,6 +7,7 @@ import {
   detectEntryType,
   generateDeepIntelligenceSummary,
 } from '@/lib/intelligence-analyzer';
+import { computeVectorPulseFromRawRecords } from '@/lib/vector-pulse';
 import rawArticlesData from '../../data/articles.json';
 
 function normalizeImpact(raw: unknown): ImpactLevel {
@@ -74,7 +75,10 @@ function getInitialSeedArticles(limit = 30): Article[] {
 }
 
 const INITIAL_ARTICLES = getInitialSeedArticles(30);
+const INITIAL_VECTOR_PULSE = computeVectorPulseFromRawRecords(
+  Array.isArray(rawArticlesData) ? (rawArticlesData as Record<string, any>[]) : []
+);
 
 export default function HomePage() {
-  return <FeedClient initialArticles={INITIAL_ARTICLES} />;
+  return <FeedClient initialArticles={INITIAL_ARTICLES} initialVectorPulse={INITIAL_VECTOR_PULSE} />;
 }

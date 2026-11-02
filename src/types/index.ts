@@ -80,3 +80,23 @@ export interface SyncResult {
   errors?: string[];
 }
 
+export type VectorMomentumStatus = 'SURGING' | 'HIGH' | 'ACTIVE' | 'STABLE' | 'COOLING';
+
+export interface VectorPulseItem {
+  id: string;
+  label: string;
+  recentCount: number;
+  baselineCount: number;
+  totalCount: number;
+  deltaPct: number;
+  barBlocks: number;
+  status: VectorMomentumStatus;
+}
+
+export interface VectorPulseSnapshot {
+  vectors: VectorPulseItem[];
+  corpusSize: number;
+  windowDays: number;
+  recentWindowHours: number;
+}
+

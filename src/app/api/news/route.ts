@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
+import { isValidVectorId } from '@/lib/vector-pulse';
 import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -21,11 +22,13 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category')?.trim().slice(0, 64) || undefined;
     const lab = searchParams.get('lab')?.trim().slice(0, 64) || undefined;
     const entryType = searchParams.get('entryType')?.trim().slice(0, 32) || undefined;
+    const rawVector = searchParams.get('vector')?.trim().slice(0, 48) || undefined;
+    const vectorId = isValidVectorId(rawVector) ? rawVector : undefined;
     const search = searchParams.get('search')?.trim().toLowerCase().slice(0, 120) || undefined;
     const rawLimit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!, 10) : 150;
     const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 400) : 150;
 
-    const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${search || 'NONE'}_${limit}`;
+    const cacheKey = `articles_list_${category || 'ALL'}_${lab || 'ALL'}_${entryType || 'ALL'}_${vectorId || 'ALL'}_${search || 'NONE'}_${limit}`;
 
     // Single-Flight Coalesced Query with Cache
     const data = await container.cache.coalesce(cacheKey, async () => {
@@ -33,6 +36,7 @@ export async function GET(request: NextRequest) {
         category: category !== 'All' ? category : undefined,
         lab: lab !== 'All' ? lab : undefined,
         entryType: entryType !== 'ALL' ? entryType : undefined,
+        vectorId,
         searchQuery: search,
         limit,
       });
@@ -68,6 +72,7 @@ export async function GET(request: NextRequest) {
         articles: formatted,
         total,
         categoryCounts,
+        vectorPulse: container.articleRepo.getVectorPulse(),
       };
 
       // Set warm cache for 15 seconds (High-intensity live updates)
