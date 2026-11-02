@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { logger } from '@/lib/logger';
 import { isLocalPersistentDev } from '@/lib/runtime-env';
-import { checkRateLimit, getClientIp, hasValidAdminSecret } from '@/lib/rate-limit';
+import { checkEdgeRateLimit, getClientIp, hasValidAdminSecret } from '@/lib/rate-limit';
+import { verifyBrowserMutationRequest } from '@/lib/request-security';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -14,10 +15,22 @@ export async function POST(request: NextRequest) {
   const requestId = `sync_${Date.now()}`;
   const startTime = Date.now();
   const ip = getClientIp(request);
-  const isAdmin = isLocalPersistentDev() || hasValidAdminSecret(request);
+  const hasBearerAdmin = hasValidAdminSecret(request);
+
+  if (!hasBearerAdmin) {
+    const csrf = verifyBrowserMutationRequest(request);
+    if (!csrf.ok) {
+      return NextResponse.json(
+        { success: false, error: csrf.reason },
+        { status: csrf.status, headers: { 'Cache-Control': 'no-store' } }
+      );
+    }
+  }
+
+  const isAdmin = isLocalPersistentDev() || hasBearerAdmin;
 
   if (!isAdmin) {
-    const rl = checkRateLimit('sync', ip, 4, 60_000);
+    const rl = await checkEdgeRateLimit('sync', ip, 4, 60_000);
     if (!rl.allowed) {
       return NextResponse.json(
         { success: false, throttled: true, error: 'Sync rate limit exceeded' },
@@ -40,14 +53,20 @@ export async function POST(request: NextRequest) {
 
     const lastRunMs = container.ingestionService.getLastRunTimestamp();
     const elapsedMs = Date.now() - lastRunMs;
-    const effectiveCooldownMs = isAdmin && requestedForce
-      ? 0
-      : requestedForce
-      ? PUBLIC_FORCE_COOLDOWN_MS
-      : AUTO_SYNC_COOLDOWN_MS;
+    const effectiveCooldownMs =
+      isAdmin && requestedForce
+        ? 0
+        : requestedForce
+        ? PUBLIC_FORCE_COOLDOWN_MS
+        : AUTO_SYNC_COOLDOWN_MS;
 
     // Multi-tab / multi-visitor protection: skip redundant background batch crawls within cooldown
-    if (effectiveCooldownMs > 0 && lastRunMs > 0 && elapsedMs >= 0 && elapsedMs < effectiveCooldownMs) {
+    if (
+      effectiveCooldownMs > 0 &&
+      lastRunMs > 0 &&
+      elapsedMs >= 0 &&
+      elapsedMs < effectiveCooldownMs
+    ) {
       return NextResponse.json(
         {
           success: true,

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { isLocalPersistentDev } from '@/lib/runtime-env';
-import { checkRateLimit, getClientIp, hasValidAdminSecret } from '@/lib/rate-limit';
+import { checkEdgeRateLimit, getClientIp, hasValidAdminSecret } from '@/lib/rate-limit';
+import { readBoundedJson, verifyBrowserMutationRequest } from '@/lib/request-security';
 import { logger } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -27,43 +28,83 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const hasBearerAdmin = hasValidAdminSecret(request);
+
   // Security: Prevent unauthenticated internet clients from disabling global RSS feeds
-  if (!isLocalPersistentDev() && !hasValidAdminSecret(request)) {
-    return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  if (!isLocalPersistentDev() && !hasBearerAdmin) {
+    return NextResponse.json(
+      { error: 'Forbidden' },
+      { status: 403, headers: { 'Cache-Control': 'no-store' } }
+    );
+  }
+
+  // Protect local developer workstation (`next dev`) against cross-site CSRF
+  if (!hasBearerAdmin) {
+    const csrf = verifyBrowserMutationRequest(request);
+    if (!csrf.ok) {
+      return NextResponse.json(
+        { error: csrf.reason },
+        { status: csrf.status, headers: { 'Cache-Control': 'no-store' } }
+      );
+    }
   }
 
   const ip = getClientIp(request);
-  const rl = checkRateLimit('sources_mutate', ip, 20, 60_000);
+  const rl = await checkEdgeRateLimit('sources_mutate', ip, 20, 60_000);
   if (!rl.allowed) {
     return NextResponse.json(
       { error: 'Too many requests' },
-      { status: 429, headers: { 'Retry-After': String(rl.retryAfterSeconds) } }
+      {
+        status: 429,
+        headers: {
+          'Cache-Control': 'no-store',
+          'Retry-After': String(rl.retryAfterSeconds),
+        },
+      }
     );
   }
 
   try {
-    await container.bootstrap();
-    const body = await request.json().catch(() => null);
+    const parsedBody = await readBoundedJson<{ action?: unknown; id?: unknown }>(request, 2048);
+    if (!parsedBody.ok) {
+      return NextResponse.json(
+        { error: parsedBody.error },
+        { status: parsedBody.status, headers: { 'Cache-Control': 'no-store' } }
+      );
+    }
 
+    const body = parsedBody.data;
     if (
-      body &&
       body.action === 'toggle' &&
       typeof body.id === 'string' &&
       /^[a-zA-Z0-9_-]{1,64}$/.test(body.id)
     ) {
+      await container.bootstrap();
       const source = await container.sourceRepo.findById(body.id);
       if (!source) {
-        return NextResponse.json({ error: 'Source not found' }, { status: 404 });
+        return NextResponse.json(
+          { error: 'Source not found' },
+          { status: 404, headers: { 'Cache-Control': 'no-store' } }
+        );
       }
       const nextEnabled = !source.enabled;
       await container.sourceRepo.toggleSource(body.id, nextEnabled);
       container.cache.clear();
-      return NextResponse.json({ success: true, enabled: nextEnabled });
+      return NextResponse.json(
+        { success: true, enabled: nextEnabled },
+        { headers: { 'Cache-Control': 'no-store' } }
+      );
     }
 
-    return NextResponse.json({ error: 'Invalid action or source ID' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Invalid action or source ID' },
+      { status: 400, headers: { 'Cache-Control': 'no-store' } }
+    );
   } catch (error: any) {
     logger.error('Failed to mutate source', { error: error?.message });
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500, headers: { 'Cache-Control': 'no-store' } }
+    );
   }
 }

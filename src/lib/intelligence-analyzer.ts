@@ -350,20 +350,20 @@ export function generateDeepIntelligenceSummary(
   rawContent: string,
   sourceName = 'Frontier Radar'
 ): AISummary {
-  const title = decodeHtmlEntities(rawTitle).trim();
-  const content = decodeHtmlEntities(rawContent).trim();
+  const title = decodeHtmlEntities((rawTitle || '').slice(0, 500)).trim();
+  const content = decodeHtmlEntities((rawContent || '').slice(0, 4000)).trim();
   const lab = detectFrontierLab(title, content, sourceName);
   const impact = evaluateImpact(title, content);
   const domain = detectArticleDomain(title, content);
 
-  // Clean RSS boilerplate and HTML artifacts
+  // Clean RSS boilerplate and HTML artifacts with linear-time bounded patterns (ReDoS-safe)
   const cleanedContent = content
-    .replace(/The post .* appeared first on .*/gi, '')
-    .replace(/© \d{4} .* All rights reserved\./gi, '')
+    .replace(/The post [^\n]{1,240}? appeared first on [^\n]{1,200}/gi, '')
+    .replace(/© \d{4} [^\n]{1,160}? All rights reserved\./gi, '')
     .replace(/Read more\.\.\./gi, '')
     .replace(/\[&#8230;\]/g, '...')
     .replace(/\[…\]/g, '...')
-    .replace(/<[^>]+>/g, ' ')
+    .replace(/<[^>]{0,1024}>/g, ' ')
     .trim();
 
   const extractedSentences = cleanedContent

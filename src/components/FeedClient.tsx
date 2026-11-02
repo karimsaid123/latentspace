@@ -190,8 +190,21 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
           const cached = sessionStorage.getItem('latentspace_articles_cache');
           if (cached && !hasFetchedLiveRef.current) {
             const parsed = JSON.parse(cached);
-            if (Array.isArray(parsed) && parsed.length > 0) {
-              setArticles(parsed);
+            if (Array.isArray(parsed)) {
+              const validCached = parsed.filter(
+                (item): item is Article =>
+                  Boolean(
+                    item &&
+                      typeof item === 'object' &&
+                      typeof item.id === 'string' &&
+                      typeof item.title === 'string' &&
+                      typeof item.link === 'string' &&
+                      /^https?:\/\//i.test(item.link)
+                  )
+              );
+              if (validCached.length > 0) {
+                setArticles(validCached);
+              }
             }
           }
         } catch {
@@ -374,7 +387,10 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
 
       let hasFresh = false;
       try {
-        const syncRes = await fetch('/api/sync', { method: 'POST' });
+        const syncRes = await fetch('/api/sync', {
+          method: 'POST',
+          headers: { 'x-latentspace-client': '1' },
+        });
         if (syncRes.ok) {
           const syncData = await syncRes.json();
           hasFresh = Boolean(
@@ -403,7 +419,10 @@ export default function FeedClient({ initialArticles }: FeedClientProps) {
   const handleSync = useCallback(async () => {
     setIsSyncing(true);
     try {
-      await fetch('/api/sync?force=1', { method: 'POST' });
+      await fetch('/api/sync?force=1', {
+        method: 'POST',
+        headers: { 'x-latentspace-client': '1' },
+      });
       setLastSyncedTime(Date.now());
       setIncomingArticles(null);
       await fetchArticles(

@@ -8,6 +8,14 @@ interface RateBucket {
 
 const MAX_BUCKETS = 2048;
 const buckets = new Map<string, RateBucket>();
+const EDGE_RL_BASE_URL = 'https://internal.latentspace/ratelimit';
+
+function getEdgeCache(): Cache | null {
+  if (typeof caches !== 'undefined' && 'default' in caches) {
+    return (caches as unknown as { default: Cache }).default;
+  }
+  return null;
+}
 
 /**
  * Extracts client IP safely, prioritizing Cloudflare's verified `cf-connecting-ip` header.
@@ -28,8 +36,23 @@ export function getClientIp(request: NextRequest): string {
   return 'anonymous';
 }
 
+function evictBucketsIfNeeded(now: number): void {
+  if (buckets.size < MAX_BUCKETS) return;
+  for (const [k, b] of buckets.entries()) {
+    if (now >= b.resetAt) {
+      buckets.delete(k);
+    }
+  }
+  if (buckets.size >= MAX_BUCKETS) {
+    const oldestKey = buckets.keys().next().value;
+    if (oldestKey !== undefined) {
+      buckets.delete(oldestKey);
+    }
+  }
+}
+
 /**
- * Bounded in-memory rate limiter safe for Cloudflare Workers and Node.js runtimes.
+ * Synchronous bounded in-memory rate limiter for fast-path checks and Node.js runtimes.
  */
 export function checkRateLimit(
   namespace: string,
@@ -42,22 +65,7 @@ export function checkRateLimit(
   const existing = buckets.get(key);
 
   if (!existing || now >= existing.resetAt) {
-    if (buckets.size >= MAX_BUCKETS) {
-      // 1. Evict expired buckets first
-      for (const [k, b] of buckets.entries()) {
-        if (now >= b.resetAt) {
-          buckets.delete(k);
-        }
-      }
-      // 2. Evict oldest entry if still at capacity
-      if (buckets.size >= MAX_BUCKETS) {
-        const oldestKey = buckets.keys().next().value;
-        if (oldestKey !== undefined) {
-          buckets.delete(oldestKey);
-        }
-      }
-    }
-
+    evictBucketsIfNeeded(now);
     buckets.set(key, {
       count: 1,
       resetAt: now + windowMs,
@@ -87,7 +95,90 @@ export function checkRateLimit(
 }
 
 /**
- * Constant-time bearer secret check against `ADMIN_SYNC_SECRET` when configured.
+ * Multi-isolate rate limiter backed by both isolate memory AND Cloudflare `caches.default`
+ * so sibling Workers in the same edge datacenter share rate-limit state.
+ */
+export async function checkEdgeRateLimit(
+  namespace: string,
+  identifier: string,
+  maxRequests: number,
+  windowMs: number
+): Promise<{ allowed: boolean; remaining: number; retryAfterSeconds: number }> {
+  const now = Date.now();
+  const key = `${namespace}:${identifier}`;
+  const cache = getEdgeCache();
+
+  if (cache) {
+    try {
+      const hashedId = crypto.createHash('sha256').update(key).digest('hex').slice(0, 24);
+      const cacheReq = new Request(`${EDGE_RL_BASE_URL}/${namespace}/${hashedId}`, {
+        method: 'GET',
+      });
+      const match = await cache.match(cacheReq);
+      if (match) {
+        const remote = (await match.json()) as Partial<RateBucket>;
+        if (
+          typeof remote.count === 'number' &&
+          typeof remote.resetAt === 'number' &&
+          remote.resetAt > now
+        ) {
+          const local = buckets.get(key);
+          if (!local || local.resetAt < now || remote.count > local.count) {
+            evictBucketsIfNeeded(now);
+            buckets.set(key, { count: remote.count, resetAt: remote.resetAt });
+          }
+        }
+      }
+
+      const decision = checkRateLimit(namespace, identifier, maxRequests, windowMs);
+      const updated = buckets.get(key);
+      if (updated) {
+        const ttlSeconds = Math.max(1, Math.ceil((updated.resetAt - now) / 1000));
+        await cache.put(
+          cacheReq,
+          new Response(JSON.stringify(updated), {
+            status: 200,
+            headers: {
+              'Content-Type': 'application/json',
+              'Cache-Control': `public, max-age=${ttlSeconds}, s-maxage=${ttlSeconds}`,
+            },
+          })
+        );
+      }
+      return decision;
+    } catch {
+      return checkRateLimit(namespace, identifier, maxRequests, windowMs);
+    }
+  }
+
+  return checkRateLimit(namespace, identifier, maxRequests, windowMs);
+}
+
+/**
+ * Global Denial-of-Wallet circuit breaker across ALL client IPs combined.
+ * Caps total paid on-demand Gemini syntheses per window so distributed IP-rotating
+ * botnets can never exhaust API billing quotas.
+ */
+export async function checkGlobalGeminiBudget(
+  maxSynthesesPerWindow = 40,
+  windowMs = 10 * 60_000
+): Promise<{ allowed: boolean; retryAfterSeconds: number }> {
+  const res = await checkEdgeRateLimit(
+    'global_gemini_budget',
+    'deployment_wide',
+    maxSynthesesPerWindow,
+    windowMs
+  );
+  return {
+    allowed: res.allowed,
+    retryAfterSeconds: res.retryAfterSeconds,
+  };
+}
+
+/**
+ * Length-hiding constant-time bearer secret check against `ADMIN_SYNC_SECRET`.
+ * Hashes both values with SHA-256 before `timingSafeEqual` so neither secret bytes
+ * nor secret length can leak through timing side channels.
  */
 export function hasValidAdminSecret(request: NextRequest): boolean {
   const configured = process.env.ADMIN_SYNC_SECRET?.trim();
@@ -97,9 +188,10 @@ export function hasValidAdminSecret(request: NextRequest): boolean {
   if (!authHeader.startsWith('Bearer ')) return false;
 
   const provided = authHeader.slice(7).trim();
-  const bufA = Buffer.from(configured, 'utf8');
-  const bufB = Buffer.from(provided, 'utf8');
-  if (bufA.length !== bufB.length) return false;
+  if (!provided) return false;
 
-  return crypto.timingSafeEqual(bufA, bufB);
+  const digestConfigured = crypto.createHash('sha256').update(configured, 'utf8').digest();
+  const digestProvided = crypto.createHash('sha256').update(provided, 'utf8').digest();
+
+  return crypto.timingSafeEqual(digestConfigured, digestProvided);
 }

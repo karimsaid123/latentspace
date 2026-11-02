@@ -1,5 +1,7 @@
 import { Category, AISummary, ImpactLevel } from '@/types';
 import { decodeHtmlEntities } from './sanitize';
+import { safeJsonParse } from './request-security';
+import { logger } from './logger';
 
 // Keyword rules for categorization
 const CATEGORY_RULES: { category: Category; keywords: string[] }[] = [
@@ -189,8 +191,9 @@ export async function summarizeWithGemini(
   rawContent: string,
   apiKey: string
 ): Promise<AISummary | null> {
-  const safeTitle = cleanHtml(title).slice(0, 300);
-  const cleanContent = cleanHtml(rawContent).slice(0, 4000);
+  // Strip angle brackets AFTER entity decoding so `&lt;/untrusted_article&gt;` can never escape XML prompt delimiters
+  const safeTitle = cleanHtml(title).replace(/[<>]/g, '').slice(0, 300);
+  const cleanContent = cleanHtml(rawContent).replace(/[<>]/g, '').slice(0, 4000);
 
   const systemPrompt = `You are an elite AI tech journalist and principal research analyst for LatentSpace.
 Analyze the untrusted article excerpt inside <untrusted_article> and produce a sharp, deeply insightful executive intelligence briefing.
@@ -237,13 +240,13 @@ Content: ${cleanContent || safeTitle}
               responseMimeType: 'application/json',
             },
           }),
+          redirect: 'error',
           signal: AbortSignal.timeout(12_000),
         }
       );
 
       if (!response.ok) {
-        const errSnippet = (await response.text().catch(() => '')).slice(0, 200);
-        console.warn(`Gemini API (${model}) returned ${response.status}: ${errSnippet}`);
+        logger.warn('Gemini API non-OK response', { model, status: response.status });
         continue;
       }
 
@@ -252,7 +255,8 @@ Content: ${cleanContent || safeTitle}
       if (typeof candidateText !== 'string' || !candidateText.trim()) continue;
 
       const cleanedText = candidateText.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
-      const parsed = JSON.parse(cleanedText);
+      if (cleanedText.length > 32_768) continue;
+      const parsed = safeJsonParse<Record<string, any>>(cleanedText);
 
       const impactValue = normalizeImpactLevel(parsed?.impact);
       const rawTakeaways = Array.isArray(parsed?.takeaways)
@@ -295,7 +299,10 @@ Content: ${cleanContent || safeTitle}
         generatedWith: 'gemini',
       };
     } catch (error: any) {
-      console.error(`Failed to summarize with Gemini (${model}):`, error?.message || 'Unknown error');
+      logger.error('Gemini synthesis attempt failed', {
+        model,
+        error: error?.message || 'Unknown error',
+      });
     }
   }
 

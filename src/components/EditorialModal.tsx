@@ -57,7 +57,10 @@ export default function EditorialModal({
 
       fetch('/api/summarize', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-latentspace-client': '1',
+        },
         body: JSON.stringify({ articleId: targetId }),
         signal: controller.signal,
       })

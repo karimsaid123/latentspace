@@ -12,20 +12,56 @@ export interface SavedArticleItem {
 const STORAGE_KEY_ITEMS = 'latentspace_saved_items_v2';
 const STORAGE_KEY_LEGACY_IDS = 'latentspace_saved_articles';
 const EVENT_KEY = 'latentspace_saved_changed';
+const MAX_SAVED_ITEMS = 200;
+
+function isSafeHttpUrl(raw: unknown): boolean {
+  if (typeof raw !== 'string' || !raw.trim()) return false;
+  try {
+    const parsed = new URL(raw);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+function sanitizeStoredItem(raw: any): SavedArticleItem | null {
+  if (!raw || typeof raw !== 'object') return null;
+  if (typeof raw.id !== 'string' || !raw.id || raw.id.length > 128) return null;
+  const art = raw.article;
+  if (!art || typeof art !== 'object') return null;
+  if (typeof art.id !== 'string' || typeof art.title !== 'string') return null;
+  if (!isSafeHttpUrl(art.link)) return null;
+  if (art.pdfUrl !== undefined && art.pdfUrl !== null && !isSafeHttpUrl(art.pdfUrl)) {
+    art.pdfUrl = undefined;
+  }
+  const savedAt = typeof raw.savedAt === 'number' && Number.isFinite(raw.savedAt) ? raw.savedAt : Date.now();
+  return {
+    id: raw.id,
+    savedAt,
+    article: art as Article,
+  };
+}
 
 /**
- * Read saved article items from localStorage safely (SSR-guarded).
+ * Read saved article items from localStorage safely (SSR-guarded & schema-validated).
  */
 export function getSavedArticleItems(): SavedArticleItem[] {
   if (typeof window === 'undefined') return [];
   try {
     const raw = localStorage.getItem(STORAGE_KEY_ITEMS);
-    if (!raw) {
+    if (!raw || raw.length > 2 * 1024 * 1024) {
       return [];
     }
-    const parsed = JSON.parse(raw);
+    const parsed = JSON.parse(raw, (key, value) =>
+      key === '__proto__' || key === 'constructor' || key === 'prototype' ? undefined : value
+    );
     if (Array.isArray(parsed)) {
-      return parsed.filter(item => item && item.id && item.article);
+      const valid: SavedArticleItem[] = [];
+      for (const entry of parsed.slice(0, MAX_SAVED_ITEMS)) {
+        const clean = sanitizeStoredItem(entry);
+        if (clean) valid.push(clean);
+      }
+      return valid;
     }
   } catch (err) {
     console.error('Failed to parse saved articles:', err);
@@ -67,7 +103,7 @@ export function saveArticle(article: Article): void {
         article,
       },
       ...filtered,
-    ];
+    ].slice(0, MAX_SAVED_ITEMS);
 
     localStorage.setItem(STORAGE_KEY_ITEMS, JSON.stringify(updated));
     localStorage.setItem(STORAGE_KEY_LEGACY_IDS, JSON.stringify(updated.map(u => u.id)));

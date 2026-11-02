@@ -2,7 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { container } from '@/core/container';
 import { SingleFlight } from '@/core/services/single-flight';
 import { summarizeWithGemini } from '@/lib/ai-summarizer';
-import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
+import {
+  checkEdgeRateLimit,
+  checkGlobalGeminiBudget,
+  getClientIp,
+  hasValidAdminSecret,
+} from '@/lib/rate-limit';
+import { readBoundedJson, verifyBrowserMutationRequest } from '@/lib/request-security';
 import { logger } from '@/lib/logger';
 import type { AISummary } from '@/core/domain/entities';
 
@@ -11,6 +17,7 @@ export const revalidate = 0;
 
 const VALID_ARTICLE_ID = /^[a-zA-Z0-9_-]{4,64}$/;
 const summarizeFlight = new SingleFlight();
+const NO_STORE_HEADERS = { 'Cache-Control': 'no-store' };
 
 function parseValidArticleId(raw: unknown): string | null {
   if (typeof raw !== 'string') return null;
@@ -60,18 +67,42 @@ export async function GET(request: NextRequest) {
 
 /**
  * POST /api/summarize
- * On-demand Gemini synthesis protected by IP rate-limiting and SingleFlight request coalescing.
+ * On-demand Gemini synthesis protected by:
+ * 1. Zero-trust CSRF + Origin + custom header guard
+ * 2. Bounded 2 KB JSON body reader with prototype-pollution stripping
+ * 3. Multi-isolate edge IP rate-limiting
+ * 4. Global deployment-wide Gemini budget circuit breaker (Denial-of-Wallet shield)
+ * 5. SingleFlight request coalescing
  */
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
   let articleId: string | null = null;
 
   try {
-    const body = await request.json().catch(() => ({}));
-    articleId = parseValidArticleId(body?.articleId ?? body?.id);
+    if (!hasValidAdminSecret(request)) {
+      const csrf = verifyBrowserMutationRequest(request);
+      if (!csrf.ok) {
+        return NextResponse.json(
+          { error: csrf.reason },
+          { status: csrf.status, headers: NO_STORE_HEADERS }
+        );
+      }
+    }
 
+    const parsedBody = await readBoundedJson<{ articleId?: unknown; id?: unknown }>(request, 2048);
+    if (!parsedBody.ok) {
+      return NextResponse.json(
+        { error: parsedBody.error },
+        { status: parsedBody.status, headers: NO_STORE_HEADERS }
+      );
+    }
+
+    articleId = parseValidArticleId(parsedBody.data.articleId ?? parsedBody.data.id);
     if (!articleId) {
-      return NextResponse.json({ error: 'Invalid or missing articleId' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Invalid or missing articleId' },
+        { status: 400, headers: NO_STORE_HEADERS }
+      );
     }
 
     await container.bootstrap();
@@ -79,21 +110,27 @@ export async function POST(request: NextRequest) {
 
     const article = await container.articleRepo.findById(articleId);
     if (!article) {
-      return NextResponse.json({ error: 'Article not found' }, { status: 404 });
+      return NextResponse.json(
+        { error: 'Article not found' },
+        { status: 404, headers: NO_STORE_HEADERS }
+      );
     }
 
     // Fast path: already synthesized by Gemini (zero rate-limit penalty, zero latency)
     if (article.summary?.generatedWith === 'gemini') {
-      return NextResponse.json({
-        success: true,
-        summary: article.summary,
-        source: 'cache',
-        durationMs: Date.now() - startTime,
-      });
+      return NextResponse.json(
+        {
+          success: true,
+          summary: article.summary,
+          source: 'cache',
+          durationMs: Date.now() - startTime,
+        },
+        { headers: NO_STORE_HEADERS }
+      );
     }
 
     const ip = getClientIp(request);
-    const rl = checkRateLimit('summarize', ip, 12, 60_000);
+    const rl = await checkEdgeRateLimit('summarize', ip, 12, 60_000);
     if (!rl.allowed) {
       return NextResponse.json(
         {
@@ -104,19 +141,42 @@ export async function POST(request: NextRequest) {
         },
         {
           status: 429,
-          headers: { 'Retry-After': String(rl.retryAfterSeconds) },
+          headers: {
+            ...NO_STORE_HEADERS,
+            'Retry-After': String(rl.retryAfterSeconds),
+          },
         }
       );
     }
 
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      return NextResponse.json({
-        success: true,
-        summary: article.summary,
-        source: 'heuristic',
-        durationMs: Date.now() - startTime,
+      return NextResponse.json(
+        {
+          success: true,
+          summary: article.summary,
+          source: 'heuristic',
+          durationMs: Date.now() - startTime,
+        },
+        { headers: NO_STORE_HEADERS }
+      );
+    }
+
+    // Global Denial-of-Wallet circuit breaker across all IPs combined
+    const globalBudget = await checkGlobalGeminiBudget(40, 10 * 60_000);
+    if (!globalBudget.allowed) {
+      logger.warn('Global Gemini synthesis budget reached; serving heuristic fallback', {
+        articleId,
       });
+      return NextResponse.json(
+        {
+          success: true,
+          summary: article.summary,
+          source: 'budget_protected_fallback',
+          durationMs: Date.now() - startTime,
+        },
+        { headers: NO_STORE_HEADERS }
+      );
     }
 
     const targetId = articleId;
@@ -150,20 +210,26 @@ export async function POST(request: NextRequest) {
         durationMs: Date.now() - startTime,
       });
 
-      return NextResponse.json({
-        success: true,
-        summary: synthesized,
-        source: 'gemini',
-        durationMs: Date.now() - startTime,
-      });
+      return NextResponse.json(
+        {
+          success: true,
+          summary: synthesized,
+          source: 'gemini',
+          durationMs: Date.now() - startTime,
+        },
+        { headers: NO_STORE_HEADERS }
+      );
     }
 
-    return NextResponse.json({
-      success: true,
-      summary: article.summary,
-      source: 'fallback',
-      durationMs: Date.now() - startTime,
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        summary: article.summary,
+        source: 'fallback',
+        durationMs: Date.now() - startTime,
+      },
+      { headers: NO_STORE_HEADERS }
+    );
   } catch (err: any) {
     logger.error('Summarize POST error', {
       articleId,
@@ -172,7 +238,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { error: 'Internal summarization error' },
-      { status: 500 }
+      { status: 500, headers: NO_STORE_HEADERS }
     );
   }
 }

@@ -1,5 +1,7 @@
 import { BenchmarkResponse, ModelBenchmark } from '@/types/benchmark';
 import { FrontierLab } from '@/core/domain/entities';
+import { safeJsonParse } from '@/lib/request-security';
+import { logger } from '@/lib/logger';
 
 // Verified telemetry snapshot directly matching the Artificial Analysis benchmark indices (v5)
 export const VERIFIED_BENCHMARK_SNAPSHOT: ModelBenchmark[] = [
@@ -285,6 +287,12 @@ let cachedBenchmarks: BenchmarkResponse | null = null;
 let lastCacheTime = 0;
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour TTL honoring rate limits
 
+function clampMetric(raw: unknown, fallback: number, min: number, max: number): number {
+  const num = Number(raw);
+  if (!Number.isFinite(num)) return fallback;
+  return Math.min(max, Math.max(min, num));
+}
+
 export async function fetchArtificialAnalysisBenchmarks(): Promise<BenchmarkResponse> {
   const now = Date.now();
   if (cachedBenchmarks && now - lastCacheTime < CACHE_TTL_MS) {
@@ -306,42 +314,67 @@ export async function fetchArtificialAnalysisBenchmarks(): Promise<BenchmarkResp
             headers: {
               'x-api-key': apiKey,
               'User-Agent': 'LatentSpace/2.0 (Frontier Intelligence Terminal)',
-              'Accept': 'application/json',
+              Accept: 'application/json',
             },
+            redirect: 'error',
             signal: AbortSignal.timeout(6000),
           });
 
           if (res.ok) {
-            const json = await res.json();
-            const rawData = json.data || json.models || json;
+            const rawText = await res.text();
+            if (rawText.length > 1_048_576) {
+              continue;
+            }
+            const json = safeJsonParse<Record<string, any>>(rawText);
+            const rawData = json?.data || json?.models || json;
 
             if (Array.isArray(rawData) && rawData.length > 0) {
-              const mapped: ModelBenchmark[] = rawData.map((item: any, idx: number) => {
-                const creatorName = item.model_creator?.name || item.creator?.name || item.creator || 'Frontier Lab';
+              const mapped: ModelBenchmark[] = rawData.slice(0, 100).map((item: any, idx: number) => {
+                const rawCreator =
+                  item?.model_creator?.name || item?.creator?.name || item?.creator || 'Frontier Lab';
+                const creatorName = String(rawCreator).slice(0, 80);
                 const creatorLab = mapCreatorToLab(creatorName);
                 const intelligenceIndex = Math.round(
-                  item.evaluations?.artificial_analysis_intelligence_index ||
-                  item.evaluations?.intelligence_index ||
-                  item.intelligence_index ||
-                  item.score || 50
+                  clampMetric(
+                    item?.evaluations?.artificial_analysis_intelligence_index ??
+                      item?.evaluations?.intelligence_index ??
+                      item?.intelligence_index ??
+                      item?.score,
+                    50,
+                    0,
+                    100
+                  )
                 );
                 const speed = Math.round(
-                  item.performance?.median_output_tokens_per_second ||
-                  item.performance?.output_tokens_per_second ||
-                  item.speed || 80
+                  clampMetric(
+                    item?.performance?.median_output_tokens_per_second ??
+                      item?.performance?.output_tokens_per_second ??
+                      item?.speed,
+                    80,
+                    0,
+                    10_000
+                  )
                 );
                 const price = Number(
-                  item.pricing?.price_1m_blended_tokens ||
-                  item.pricing?.price_1m_output_tokens ||
-                  item.price || 5.0
+                  clampMetric(
+                    item?.pricing?.price_1m_blended_tokens ??
+                      item?.pricing?.price_1m_output_tokens ??
+                      item?.price,
+                    5.0,
+                    0,
+                    10_000
+                  ).toFixed(2)
                 );
+                const safeId = String(item?.id || item?.slug || `model-${idx}`).slice(0, 80);
+                const safeName = String(item?.name || item?.slug || safeId).slice(0, 120);
+                const safeSlug = String(item?.slug || safeId).slice(0, 80);
 
                 return {
-                  id: item.id || item.slug || `model-${idx}`,
-                  name: item.name || item.slug,
-                  slug: item.slug || item.id,
+                  id: safeId,
+                  name: safeName,
+                  slug: safeSlug,
                   creator: {
-                    id: item.model_creator?.id || 'creator',
+                    id: String(item?.model_creator?.id || 'creator').slice(0, 64),
                     name: creatorName,
                     lab: creatorLab,
                   },
@@ -378,8 +411,10 @@ export async function fetchArtificialAnalysisBenchmarks(): Promise<BenchmarkResp
           // Continue to next endpoint or fallback
         }
       }
-    } catch (err) {
-      console.warn('Artificial Analysis API query failed, falling back to verified telemetry snapshot:', err);
+    } catch (err: any) {
+      logger.warn('Artificial Analysis API query failed; falling back to snapshot', {
+        error: err?.message,
+      });
     }
   }
 

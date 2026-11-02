@@ -3,6 +3,7 @@ import path from 'path';
 import { ArticleFilter, ArticleQueryResult, ArticleRepositoryPort } from '@/core/ports/repository.port';
 import { DomainArticle } from '@/core/domain/entities';
 import { decodeHtmlEntities } from '@/lib/sanitize';
+import { safeJsonParse } from '@/lib/request-security';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticArticlesData from '../../../data/articles.json';
@@ -10,6 +11,19 @@ import staticArticlesData from '../../../data/articles.json';
 const MAX_STORED_ARTICLES = 400;
 const EDGE_ARTICLES_STORE_URL = 'https://internal.latentspace/articles-store';
 const EDGE_SYNC_CHECK_TTL_MS = 10_000;
+
+function sanitizeSafeHttpUrl(raw?: unknown): string | undefined {
+  if (typeof raw !== 'string' || !raw.trim()) return undefined;
+  try {
+    const parsed = new URL(raw.trim());
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return parsed.toString();
+    }
+    return undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 interface IndexedArticle {
   article: DomainArticle;
@@ -56,21 +70,21 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
   }
 
   private normalizeRawItem(item: any): DomainArticle | null {
-    if (!item?.id) return null;
+    if (!item?.id || typeof item.id !== 'string') return null;
     const title = decodeHtmlEntities(item.title || '');
     const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
     const sourceName = item.sourceName || item.source?.name || 'Feed';
-    const canonicalUrl = item.canonicalUrl || item.link || '';
+    const canonicalUrl = sanitizeSafeHttpUrl(item.canonicalUrl || item.link) || '';
     const lab = detectFrontierLab(title, contentSnippet, sourceName);
 
     let entryType = item.entryType;
     let arxivId = item.arxivId;
-    let pdfUrl = item.pdfUrl;
+    let pdfUrl = sanitizeSafeHttpUrl(item.pdfUrl);
     if (!entryType || (entryType === 'RESEARCH_PAPER' && !pdfUrl)) {
       const typeInfo = detectEntryType(title, contentSnippet, canonicalUrl, sourceName);
       entryType = entryType || typeInfo.entryType;
       arxivId = arxivId || typeInfo.arxivId;
-      pdfUrl = pdfUrl || typeInfo.pdfUrl;
+      pdfUrl = pdfUrl || sanitizeSafeHttpUrl(typeInfo.pdfUrl);
     }
 
     let summary = item.summary || item.aiSummary;
@@ -197,7 +211,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       } else {
         try {
           const raw = await fs.readFile(this.storageFilePath, 'utf8');
-          loaded = JSON.parse(raw);
+          loaded = safeJsonParse<any[]>(raw);
         } catch {
           loaded = staticArticlesData as any[];
         }
@@ -325,7 +339,7 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
     for (const entry of sorted) {
       const cat = entry.article.category;
-      if (categoryCounts[cat] !== undefined) {
+      if (Object.hasOwn(categoryCounts, cat)) {
         categoryCounts[cat]++;
       }
 

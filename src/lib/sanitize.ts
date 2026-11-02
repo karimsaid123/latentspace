@@ -1,32 +1,34 @@
-const NAMED_ENTITIES: Record<string, string> = {
-  nbsp: ' ',
-  mdash: '—',
-  ndash: '–',
-  hellip: '…',
-  rsquo: '’',
-  lsquo: '‘',
-  ldquo: '“',
-  rdquo: '”',
-  amp: '&',
-  quot: '"',
-  apos: "'",
-  lt: '<',
-  gt: '>',
-  copy: '©',
-  reg: '®',
-  trade: '™',
-  bull: '•',
-  middot: '·',
-  rarr: '→',
-  larr: '←',
-  times: '×',
-  divide: '÷',
-  plusmn: '±',
-  euro: '€',
-  pound: '£',
-  yen: '¥',
-  cent: '¢',
-};
+const NAMED_ENTITIES: Readonly<Record<string, string>> = Object.freeze(
+  Object.assign(Object.create(null) as Record<string, string>, {
+    nbsp: ' ',
+    mdash: '—',
+    ndash: '–',
+    hellip: '…',
+    rsquo: '’',
+    lsquo: '‘',
+    ldquo: '“',
+    rdquo: '”',
+    amp: '&',
+    quot: '"',
+    apos: "'",
+    lt: '<',
+    gt: '>',
+    copy: '©',
+    reg: '®',
+    trade: '™',
+    bull: '•',
+    middot: '·',
+    rarr: '→',
+    larr: '←',
+    times: '×',
+    divide: '÷',
+    plusmn: '±',
+    euro: '€',
+    pound: '£',
+    yen: '¥',
+    cent: '¢',
+  })
+);
 
 const ENTITY_PATTERN = /&(?:#(\d{1,7})|#x([0-9a-fA-F]{1,6})|([a-zA-Z][a-zA-Z0-9]{1,15}));/g;
 
@@ -64,10 +66,13 @@ export function decodeHtmlEntities(text: string): string {
       return decoded ?? fullMatch;
     }
     if (named !== undefined) {
-      const exact = NAMED_ENTITIES[named];
-      if (exact !== undefined) return exact;
-      const lower = NAMED_ENTITIES[named.toLowerCase()];
-      if (lower !== undefined) return lower;
+      if (Object.hasOwn(NAMED_ENTITIES, named)) {
+        return NAMED_ENTITIES[named];
+      }
+      const lowerKey = named.toLowerCase();
+      if (Object.hasOwn(NAMED_ENTITIES, lowerKey)) {
+        return NAMED_ENTITIES[lowerKey];
+      }
     }
     return fullMatch;
   });
