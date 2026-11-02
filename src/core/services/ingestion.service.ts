@@ -5,7 +5,7 @@ import { CircuitBreaker } from './circuit-breaker';
 import { SingleFlight } from './single-flight';
 import { IngestionReport, DomainArticle, DomainSource, FeedSnapshot } from '../domain/entities';
 import { logger } from '@/lib/logger';
-import { isServerlessOrEdge } from '@/lib/runtime-env';
+import { getServerSecret, isServerlessOrEdge } from '@/lib/runtime-env';
 import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
 import { fetchCleanArticleBody } from '@/lib/article-extractor';
 
@@ -170,7 +170,7 @@ export class IngestionService {
 
       // Single atomic persistence write at the end of the run (instead of 34 writes)
       if (batchedToSave.size > 0) {
-        const apiKey = process.env.GEMINI_API_KEY;
+        const apiKey = getServerSecret('GEMINI_API_KEY');
         if (apiKey) {
           const candidates = Array.from(batchedToSave.values())
             .filter(

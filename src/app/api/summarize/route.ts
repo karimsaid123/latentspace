@@ -3,6 +3,7 @@ import { container } from '@/core/container';
 import { SingleFlight } from '@/core/services/single-flight';
 import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
 import { fetchCleanArticleBody } from '@/lib/article-extractor';
+import { generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
 import {
   checkEdgeRateLimit,
   checkGlobalGeminiBudget,
@@ -10,6 +11,7 @@ import {
   hasValidAdminSecret,
 } from '@/lib/rate-limit';
 import { readBoundedJson, verifyBrowserMutationRequest } from '@/lib/request-security';
+import { getServerSecret } from '@/lib/runtime-env';
 import { logger } from '@/lib/logger';
 import type { AISummary } from '@/core/domain/entities';
 
@@ -153,37 +155,57 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json(
-        {
-          success: true,
-          summary: article.summary,
-          source: 'heuristic',
-          durationMs: Date.now() - startTime,
-        },
-        { headers: NO_STORE_HEADERS }
-      );
-    }
-
-    // Global Denial-of-Wallet circuit breaker across all IPs combined
-    const globalBudget = await checkGlobalGeminiBudget(40, 10 * 60_000);
-    if (!globalBudget.allowed) {
-      logger.warn('Global Gemini synthesis budget reached; serving heuristic fallback', {
-        articleId,
-      });
-      return NextResponse.json(
-        {
-          success: true,
-          summary: article.summary,
-          source: 'budget_protected_fallback',
-          durationMs: Date.now() - startTime,
-        },
-        { headers: NO_STORE_HEADERS }
-      );
-    }
-
+    const apiKey = getServerSecret('GEMINI_API_KEY');
     const targetId = articleId;
+
+    // If Gemini is unavailable or global budget is capped, still upgrade legacy truncated snippets
+    // from the real source page once (leaving takeaways empty if the source genuinely lacks depth)
+    if (!apiKey || !(await checkGlobalGeminiBudget(40, 10 * 60_000)).allowed) {
+      if ((article.contentSnippet?.length || 0) < 700 && article.canonicalUrl) {
+        const extracted = await summarizeFlight.execute<AISummary | null>(
+          `extract_sum_${targetId}`,
+          async () => {
+            const fullBody = await fetchCleanArticleBody(article.canonicalUrl);
+            if (!fullBody || fullBody.length <= (article.contentSnippet?.length || 0)) {
+              return null;
+            }
+            article.contentSnippet = fullBody.slice(0, 2400);
+            const upgraded = generateDeepIntelligenceSummary(
+              article.title,
+              fullBody,
+              article.sourceName
+            );
+            article.summary = upgraded;
+            await container.articleRepo.saveMany([article]);
+            container.cache.clear();
+            return upgraded;
+          }
+        );
+
+        if (extracted) {
+          return NextResponse.json(
+            {
+              success: true,
+              summary: extracted,
+              source: 'extracted_heuristic',
+              durationMs: Date.now() - startTime,
+            },
+            { headers: NO_STORE_HEADERS }
+          );
+        }
+      }
+
+      return NextResponse.json(
+        {
+          success: true,
+          summary: article.summary,
+          source: apiKey ? 'budget_protected_fallback' : 'heuristic',
+          durationMs: Date.now() - startTime,
+        },
+        { headers: NO_STORE_HEADERS }
+      );
+    }
+
     const synthesized = await summarizeFlight.execute<AISummary | null>(
       `gemini_sum_${targetId}`,
       async () => {
@@ -213,6 +235,14 @@ export async function POST(request: NextRequest) {
 
         if (result) {
           article.summary = result;
+          await container.articleRepo.saveMany([article]);
+          container.cache.clear();
+        } else if (sourceContent.length > (article.summary?.tldr?.length || 0)) {
+          article.summary = generateDeepIntelligenceSummary(
+            article.title,
+            sourceContent,
+            article.sourceName
+          );
           await container.articleRepo.saveMany([article]);
           container.cache.clear();
         }

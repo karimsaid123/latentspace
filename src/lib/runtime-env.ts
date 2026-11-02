@@ -28,3 +28,29 @@ export function isLocalPersistentDev(): boolean {
   if (isServerlessOrEdge()) return false;
   return typeof process !== 'undefined' && process.env?.NODE_ENV === 'development';
 }
+
+/**
+ * Reads a server-only secret across Node.js (`process.env`) and Cloudflare Workers
+ * (`@opennextjs/cloudflare` context symbol) where runtime secrets may only exist on `env`.
+ */
+export function getServerSecret(name: string): string | undefined {
+  if (typeof process !== 'undefined' && typeof process.env?.[name] === 'string') {
+    const val = process.env[name]?.trim();
+    if (val) return val;
+  }
+
+  try {
+    const cfContextSymbol = Symbol.for('__cloudflare-context__');
+    const cfContext = (globalThis as Record<symbol, { env?: Record<string, unknown> } | undefined>)[
+      cfContextSymbol
+    ];
+    const binding = cfContext?.env?.[name];
+    if (typeof binding === 'string' && binding.trim()) {
+      return binding.trim();
+    }
+  } catch {
+    // Ignore if symbol access is unavailable
+  }
+
+  return undefined;
+}

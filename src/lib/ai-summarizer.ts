@@ -179,6 +179,7 @@ export async function summarizeWithGemini(
     .slice(0, 8500);
 
   const isRichSource = cleanContent.length >= 700;
+  const hasEnoughForKeyPoints = cleanContent.length >= 380;
 
   const systemPrompt = `You are a Principal AI Research & Technology Editor writing comprehensive, high-density article briefings for LatentSpace (think Bloomberg Terminal meets Ars Technica).
 Your goal: Give the reader EVERY concrete fact, number, technical detail, benchmark, model specification, deal figure, quote context, and caveat from <untrusted_article> so thoroughly and clearly that they do NOT need to click through to the original source unless they want to read the full raw paper/transcript.
@@ -191,12 +192,14 @@ STRICT EDITORIAL & ANTI-SLOP RULES:
    ${
      isRichSource
        ? '- Write 2 to 3 substantial, information-dense paragraphs separated by "\\n\\n" (roughly 150 to 250 words total).\n   - Paragraph 1: Lead directly with the core news or paper contribution — exact organization/authors, exact model/product name, parameter counts, funding/pricing figures, license/weights availability, and core purpose.\n   - Paragraph 2: Explain the concrete technical details, methodology, architecture, benchmark scores, comparisons to named competitors, or commercial mechanics reported in the text.\n   - Paragraph 3 (when warranted by source depth): Cover availability, deployment details, notable executive/researcher statements, limitations, or industry context mentioned in the source.'
-       : '- Because the available source excerpt is brief, write 1 crisp, high-signal paragraph (3 to 5 sentences) capturing 100% of the concrete facts without speculative padding.'
+       : '- Because the available source excerpt is brief, write 1 crisp, high-signal paragraph (2 to 4 sentences) capturing 100% of the concrete facts without speculative padding.'
    }
 5. KEY POINTS ("takeaways"):
-   - Provide ${isRichSource ? '4 to 5' : '2 to 4'} distinct, ultra-specific bullet points.
-   - Format EVERY bullet as: "**Short Concrete Label:** Specific factual detail with exact names, metrics, architecture specs, pricing, or findings."
-   - Never repeat the same fact already phrased identically, and never write vague filler bullets.
+   ${
+     hasEnoughForKeyPoints
+       ? `- Provide ${isRichSource ? '4 to 5' : '2 to 4'} distinct, ultra-specific bullet points ONLY if the source contains enough concrete facts without repeating the exact same sentences.\n   - Format EVERY bullet as: "**Short Concrete Label:** Specific factual detail with exact names, metrics, architecture specs, pricing, or findings."\n   - If the source text does not contain enough distinct substance for solid key points, return an empty array [].`
+       : '- Because the source excerpt is very short and lacks enough detail for non-repetitive key points, return an empty array: [].'
+   }
 
 Respond strictly with valid JSON matching this schema:
 {
@@ -270,12 +273,13 @@ ${cleanContent || safeTitle}
       const parsed = safeJsonParse<Record<string, unknown>>(cleanedText);
 
       const impactValue = normalizeImpactLevel(parsed?.impact);
-      const rawTakeaways = Array.isArray(parsed?.takeaways)
-        ? parsed.takeaways
-            .filter((t: unknown): t is string => typeof t === 'string' && t.trim().length > 0)
-            .slice(0, 6)
-            .map((t: string) => t.replace(/\s+/g, ' ').trim().slice(0, 380))
-        : [];
+      const rawTakeaways =
+        hasEnoughForKeyPoints && Array.isArray(parsed?.takeaways)
+          ? parsed.takeaways
+              .filter((t: unknown): t is string => typeof t === 'string' && t.trim().length > 0)
+              .slice(0, 6)
+              .map((t: string) => t.replace(/\s+/g, ' ').trim().slice(0, 380))
+          : [];
 
       const formattedTldr =
         typeof parsed?.tldr === 'string' && parsed.tldr.trim()

@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import type { NextRequest } from 'next/server';
+import { getServerSecret } from './runtime-env';
 
 interface RateBucket {
   count: number;
@@ -181,7 +182,7 @@ export async function checkGlobalGeminiBudget(
  * nor secret length can leak through timing side channels.
  */
 export function hasValidAdminSecret(request: NextRequest): boolean {
-  const configured = process.env.ADMIN_SYNC_SECRET?.trim();
+  const configured = getServerSecret('ADMIN_SYNC_SECRET');
   if (!configured || configured.length < 16) return false;
 
   const authHeader = request.headers.get('authorization') || '';
