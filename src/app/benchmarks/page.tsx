@@ -24,6 +24,7 @@ import { VERIFIED_BENCHMARK_SNAPSHOT } from '@/lib/benchmark-client';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import LiveClock from '@/components/LiveClock';
+import ThemeToggle from '@/components/ThemeToggle';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
 type CategoryFilter = 'ALL' | 'Frontier' | 'Open Weights' | 'Specialized';
@@ -207,6 +208,8 @@ export default function BenchmarksPage() {
             >
               <span>[<span className="text-[#ff8000]">★</span> SAVED]</span>
             </Link>
+
+            <ThemeToggle />
 
             {/* Isolated 1Hz Clock on the far right */}
             <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">

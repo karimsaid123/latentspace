@@ -14,6 +14,7 @@ import EditorialModal from '@/components/EditorialModal';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
 import LiveClock from '@/components/LiveClock';
+import ThemeToggle from '@/components/ThemeToggle';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
 type SortOption = 'NEWEST_SAVED' | 'OLDEST_SAVED' | 'PUBLISHED_DATE' | 'ALPHABETICAL';
@@ -24,6 +25,7 @@ const LAB_FILTER_OPTIONS = [
   'Google DeepMind',
   'Anthropic',
   'SpaceX & xAI',
+  'DeepSeek',
   'Mistral AI',
   'Moonshot AI',
   'Meta AI',
@@ -243,6 +245,8 @@ export default function SavedPage() {
               <span className="sm:hidden">[STATS]</span>
               <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
             </Link>
+
+            <ThemeToggle />
 
             {/* Isolated 1Hz Clock on the right */}
             <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">

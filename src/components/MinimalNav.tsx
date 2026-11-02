@@ -4,6 +4,7 @@ import React, { useRef, useEffect, memo } from 'react';
 import Link from 'next/link';
 import LiveClock from './LiveClock';
 import { LastSyncedIndicator } from './LastSyncedIndicator';
+import ThemeToggle from './ThemeToggle';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -100,6 +101,8 @@ const MinimalNav = memo(function MinimalNav({
             <span className="sm:hidden">[STATS]</span>
             <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
           </Link>
+
+          <ThemeToggle />
 
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}

@@ -4,6 +4,14 @@
   --background: #faf9f6;
   --foreground: #000000;
   --border: rgba(0, 0, 0, 0.08);
+  color-scheme: light;
+}
+
+html.dark {
+  --background: #070709;
+  --foreground: #f4f4f6;
+  --border: rgba(255, 255, 255, 0.12);
+  color-scheme: dark;
 }
 
 html, body {
@@ -13,6 +21,164 @@ html, body {
   overflow-x: hidden;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────
+    HIGH-CONTRAST SWISS DARK MODE PALETTE
+   ───────────────────────────────────────────────────────────── */
+html.dark,
+html.dark body {
+  background-color: #070709 !important;
+  color: #f4f4f6 !important;
+}
+
+/* Page containers & cards */
+html.dark .bg-\[\#faf9f6\] {
+  background-color: #070709 !important;
+}
+
+html.dark .bg-white {
+  background-color: #121215 !important;
+}
+
+html.dark .bg-\[\#faf9f6\]\/60 {
+  background-color: rgba(12, 12, 15, 0.6) !important;
+}
+
+html.dark .bg-\[\#faf9f6\]\/80 {
+  background-color: rgba(12, 12, 15, 0.8) !important;
+}
+
+/* Typography contrast */
+html.dark .text-black {
+  color: #f4f4f6 !important;
+}
+html.dark .text-black\/95,
+html.dark .text-black\/90 {
+  color: rgba(244, 244, 246, 0.92) !important;
+}
+html.dark .text-black\/85,
+html.dark .text-black\/80 {
+  color: rgba(244, 244, 246, 0.82) !important;
+}
+html.dark .text-black\/75,
+html.dark .text-black\/70 {
+  color: rgba(244, 244, 246, 0.72) !important;
+}
+html.dark .text-black\/65,
+html.dark .text-black\/60 {
+  color: rgba(244, 244, 246, 0.62) !important;
+}
+html.dark .text-black\/50 {
+  color: rgba(244, 244, 246, 0.50) !important;
+}
+html.dark .text-black\/40 {
+  color: rgba(244, 244, 246, 0.40) !important;
+}
+html.dark .text-black\/30 {
+  color: rgba(244, 244, 246, 0.30) !important;
+}
+html.dark .text-black\/20 {
+  color: rgba(244, 244, 246, 0.20) !important;
+}
+html.dark .text-black\/10 {
+  color: rgba(244, 244, 246, 0.12) !important;
+}
+
+/* Architectural borders */
+html.dark .border-black {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+html.dark .border-black\/50,
+html.dark .border-black\/40,
+html.dark .border-black\/35,
+html.dark .border-black\/30 {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+html.dark .border-black\/20,
+html.dark .border-black\/15,
+html.dark .border-black\/10,
+html.dark .border-black\/5 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Background tints and overlays */
+html.dark .bg-black\/\[0\.04\],
+html.dark .bg-black\/\[0\.03\],
+html.dark .bg-black\/\[0\.02\],
+html.dark .bg-black\/\[0\.01\],
+html.dark .bg-black\/5 {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+html.dark .bg-black\/10 {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+html.dark .bg-black\/20 {
+  background-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+/* Structural corner marks */
+html.dark .w-2.h-2.bg-black,
+html.dark .w-1\.5.h-1\.5.bg-black {
+  background-color: #f4f4f6 !important;
+}
+
+/* Inverted buttons & badges */
+html.dark button.bg-black,
+html.dark a.bg-black,
+html.dark .bg-black.text-\[\#faf9f6\],
+html.dark .bg-black.text-white {
+  background-color: #f4f4f6 !important;
+  color: #070709 !important;
+  border-color: #f4f4f6 !important;
+}
+html.dark button.bg-black:hover,
+html.dark a.bg-black:hover,
+html.dark .bg-black.text-\[\#faf9f6\]:hover,
+html.dark .bg-black.text-white:hover {
+  background-color: #e2e2e5 !important;
+  color: #070709 !important;
+}
+html.dark .bg-black.hover\:bg-\[\#ff8000\]:hover {
+  background-color: #ff8000 !important;
+  color: #070709 !important;
+}
+
+/* Hover behaviors */
+html.dark .hover\:bg-black:hover {
+  background-color: #f4f4f6 !important;
+  color: #070709 !important;
+}
+html.dark .hover\:text-black:hover {
+  color: #ffffff !important;
+}
+html.dark .hover\:border-black:hover {
+  border-color: rgba(255, 255, 255, 0.55) !important;
+}
+html.dark .hover\:bg-black\/\[0\.04\]:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Form inputs */
+html.dark input::placeholder {
+  color: rgba(244, 244, 246, 0.35) !important;
+}
+
+/* Reader sheet modal */
+html.dark .bg-\[\#faf9f6\].text-black.border.border-black {
+  background-color: #0c0c0f !important;
+  color: #f4f4f6 !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Custom scrollbar & selection */
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+html.dark ::selection {
+  background-color: #f4f4f6 !important;
+  color: #070709 !important;
 }
 
 /* Vertical text layout */
