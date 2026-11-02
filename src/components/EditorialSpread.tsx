@@ -15,18 +15,6 @@ interface EditorialSpreadProps {
   onSelectLab?: (lab: string) => void;
 }
 
-const LAB_SECTORS = [
-  { id: 'OpenAI', name: 'OPENAI', short: 'OPENAI' },
-  { id: 'Google DeepMind', name: 'DEEPMIND', short: 'DEEPMIND' },
-  { id: 'Anthropic', name: 'ANTHROPIC', short: 'ANTHROPIC' },
-  { id: 'SpaceX & xAI', name: 'SPACEX & xAI', short: 'xAI' },
-  { id: 'DeepSeek', name: 'DEEPSEEK', short: 'DEEPSEEK' },
-  { id: 'Mistral AI', name: 'MISTRAL AI', short: 'MISTRAL' },
-  { id: 'Moonshot AI', name: 'MOONSHOT AI & KIMI', short: 'KIMI' },
-  { id: 'Meta AI', name: 'META AI', short: 'META' },
-  { id: 'NVIDIA', name: 'NVIDIA', short: 'NVIDIA' },
-];
-
 const EditorialSpread = memo(function EditorialSpread({
   articles,
   allArticles,
@@ -44,18 +32,6 @@ const EditorialSpread = memo(function EditorialSpread({
   }, [articles]);
 
   const savedIdSet = useMemo(() => new Set(bookmarkedIds), [bookmarkedIds]);
-
-  // Dedicated lab telemetry dossiers always display live sector intelligence across all monitored clusters
-  const articlesByLab = useMemo(() => {
-    const sourceList = (allArticles && allArticles.length > 0) ? allArticles : articles;
-    const grouped: Record<string, Article[]> = {};
-    for (const a of sourceList || []) {
-      const lab = a.lab || 'Independent';
-      if (!grouped[lab]) grouped[lab] = [];
-      grouped[lab].push(a);
-    }
-    return grouped;
-  }, [allArticles, articles]);
 
   if (!articles || articles.length === 0) return null;
 
@@ -415,116 +391,6 @@ const EditorialSpread = memo(function EditorialSpread({
             </ScrollReveal>
           </div>
 
-        </div>
-
-      </section>
-
-      {/* ─────────────────────────────────────────────────────────────
-          SECTION: FRONTIER LABS INTELLIGENCE DOSSIER (Dedicated Lab Sections)
-      ───────────────────────────────────────────────────────────── */}
-      <section className="relative py-16 lg:py-20 border-t border-black/10">
-        
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-10 gap-2">
-          <div>
-            <span className="font-bold text-black text-sm">FRONTIER LABS // INTELLIGENCE DOSSIERS</span>
-            <span className="ml-3 text-[9px] text-black/40">DEDICATED RESEARCH SECTORS</span>
-          </div>
-          <span>ACTIVE MONITORING: 9 ENTERPRISE CLUSTERS</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {LAB_SECTORS.map((lab, idx) => {
-            const labArticles = articlesByLab[lab.id] || [];
-            const leadArt = labArticles[0];
-
-            return (
-              <ScrollReveal
-                key={lab.id}
-                delayMs={(idx % 4) * 60}
-                yOffset={25}
-                className="h-full"
-              >
-                <div 
-                  className="border border-black p-6 flex flex-col justify-between bg-[#faf9f6] relative group hover:shadow-xl transition-all duration-300 h-full"
-                >
-                  <div>
-                    <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/40 uppercase mb-3">
-                      <span className="font-bold text-black">[DOSSIER 00{idx + 1}]</span>
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-black uppercase tracking-[-0.04em] text-black leading-none mb-5 group-hover:translate-x-1 transition-transform">
-                      {lab.name}
-                    </h3>
-
-                    {leadArt ? (
-                      <div className="mb-6">
-                        <div className="flex items-center justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2">
-                          <span className="font-bold text-black">[{leadArt.source.name}]</span>
-                          {onToggleBookmark && (
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                onToggleBookmark(leadArt.id, e);
-                              }}
-                              className={`shrink-0 hover:text-black cursor-pointer transition-colors ${
-                                bookmarkedIds.includes(leadArt.id) ? 'text-black font-bold' : 'text-black/40'
-                              }`}
-                              title={bookmarkedIds.includes(leadArt.id) ? 'Saved' : 'Save article'}
-                            >
-                              [{bookmarkedIds.includes(leadArt.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
-                            </button>
-                          )}
-                        </div>
-
-                        <h4 
-                          onClick={() => onSelectArticle(leadArt)}
-                          className="text-sm sm:text-base font-black uppercase tracking-tight text-black line-clamp-2 hover:opacity-75 transition-opacity cursor-pointer mb-2"
-                        >
-                          {leadArt.title}
-                        </h4>
-
-                        <p className="font-sans text-xs text-black/70 line-clamp-3 leading-relaxed antialiased">
-                          {leadArt.aiSummary?.tldr || leadArt.contentSnippet}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="py-10 text-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
-                        NO DIRECT TELEMETRY IN CURRENT CYCLE
-                      </div>
-                    )}
-
-                    {/* Secondary Lab Headlines */}
-                    {labArticles.slice(1, 3).length > 0 && (
-                      <div className="space-y-2 pt-3 border-t border-black/10 font-mono text-[9px]">
-                        {labArticles.slice(1, 3).map((art, aIdx) => (
-                          <div
-                            key={`${art.id}_lab_${aIdx}`}
-                            onClick={() => onSelectArticle(art)}
-                            className="flex items-start gap-2 text-black/70 hover:text-black cursor-pointer uppercase truncate group/link"
-                          >
-                            <span className="font-bold text-black shrink-0 group-hover/link:translate-x-0.5 transition-transform">→</span>
-                            <span className="truncate">{art.title}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="mt-6 pt-3 border-t border-black/10 flex justify-between items-center font-mono text-[9px]">
-                    <span className="text-black/40 uppercase">STATUS: LIVE</span>
-                    {onSelectLab && (
-                      <button
-                        onClick={() => onSelectLab(lab.id)}
-                        className="font-bold uppercase text-black hover:underline underline-offset-4 cursor-pointer"
-                      >
-                        VIEW ALL {lab.short} →
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </ScrollReveal>
-            );
-          })}
         </div>
 
       </section>

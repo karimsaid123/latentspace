@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { 
-  ArrowLeft, 
   Bookmark, 
   BookmarkCheck, 
   Search
@@ -216,10 +215,7 @@ export default function SavedPage() {
               className="font-black text-base sm:text-lg tracking-tight text-black flex items-center gap-2 hover:opacity-75 transition-opacity"
             >
               LATENT SPACE
-              <span className="relative flex h-1.5 w-1.5" title="Live System">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8000] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#ff8000]"></span>
-              </span>
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
             </Link>
             <span className="text-black/30 hidden sm:inline">//</span>
             <span className="font-bold text-black text-xs hidden sm:inline">
@@ -228,22 +224,23 @@ export default function SavedPage() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-2 sm:gap-4 md:gap-6 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
-            <Link
-              href="/"
-              className="hover:text-black transition-colors font-medium flex items-center gap-1.5 whitespace-nowrap"
-            >
-              <ArrowLeft className="w-3 h-3" />
-              <span className="sm:hidden">[← FEED]</span>
-              <span className="hidden sm:inline">[← EDITORIAL]</span>
-            </Link>
-
+          <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
             <Link
               href="/benchmarks"
-              className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+              title="Independent Artificial Analysis Benchmarks & Stats"
             >
               <span className="sm:hidden">[STATS]</span>
               <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
+            </Link>
+
+            <Link
+              href="/"
+              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+              title="Return to Frontier Feed"
+            >
+              <span className="sm:hidden">[← FEED]</span>
+              <span className="hidden sm:inline">[← RETURN TO FEED]</span>
             </Link>
 
             <ThemeToggle />

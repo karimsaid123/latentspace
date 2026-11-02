@@ -74,18 +74,31 @@ const MinimalNav = memo(function MinimalNav({
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <span className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2">
             LATENT SPACE
-            <span className="relative flex h-1.5 w-1.5" title="Live System">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8000] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#ff8000]"></span>
-            </span>
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
           </span>
         </div>
 
         {/* Minimal Controls */}
-        <div className="flex items-center gap-2 sm:gap-4 md:gap-6 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
+          <div className="hidden md:block shrink-0">
+            <LastSyncedIndicator
+              lastSyncedTime={lastSyncedTime}
+              isSyncing={isSyncing}
+              onSync={onSync}
+            />
+          </div>
+
+          <button
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap h-7 sm:h-8 flex items-center px-1.5"
+            title="Press '/' to search anywhere"
+          >
+            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
+          </button>
+
           <Link
             href="/saved"
-            className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
             title="Open your saved articles dossier"
           >
             <span className="sm:hidden">[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
@@ -95,7 +108,7 @@ const MinimalNav = memo(function MinimalNav({
           <Link
             href="/benchmarks"
             scroll={true}
-            className="border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
             <span className="sm:hidden">[STATS]</span>
@@ -103,22 +116,6 @@ const MinimalNav = memo(function MinimalNav({
           </Link>
 
           <ThemeToggle />
-
-          <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap"
-            title="Press '/' to search anywhere"
-          >
-            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
-          </button>
-
-          <div className="hidden md:block shrink-0">
-            <LastSyncedIndicator
-              lastSyncedTime={lastSyncedTime}
-              isSyncing={isSyncing}
-              onSync={onSync}
-            />
-          </div>
 
           {/* Isolated 1Hz Clock completely on the right */}
           <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">

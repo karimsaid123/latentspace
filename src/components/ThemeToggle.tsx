@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
 const emptySubscribe = () => () => {};
 
@@ -54,11 +55,9 @@ export default function ThemeToggle({ className = '' }: { className?: string }) 
     return (
       <button
         aria-label="Toggle Theme"
-        className={`border border-black/35 px-2 py-0.5 sm:px-2.5 sm:py-1 font-mono font-bold tracking-wider whitespace-nowrap cursor-pointer opacity-70 flex items-center gap-1.5 ${className}`}
+        className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0 border border-black/35 hover:border-black transition-colors cursor-pointer opacity-70 ${className}`}
       >
-        <span className="text-[#ff8000]">☾</span>
-        <span className="sm:hidden">DARK</span>
-        <span className="hidden sm:inline">DARK MODE</span>
+        <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black/70 stroke-[2.2]" />
       </button>
     );
   }
@@ -69,12 +68,14 @@ export default function ThemeToggle({ className = '' }: { className?: string }) 
     <button
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-      className={`border border-black/35 hover:border-black px-2 py-0.5 sm:px-2.5 sm:py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${className}`}
+      className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0 border border-black/35 hover:border-black hover:bg-black/[0.04] transition-colors cursor-pointer select-none ${className}`}
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
-      <span className="text-[#ff8000] text-xs sm:text-sm">{isDark ? '☀' : '☾'}</span>
-      <span className="sm:hidden">{isDark ? 'LIGHT' : 'DARK'}</span>
-      <span className="hidden sm:inline">{isDark ? 'LIGHT MODE' : 'DARK MODE'}</span>
+      {isDark ? (
+        <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ff8000] stroke-[2.2]" />
+      ) : (
+        <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-black stroke-[2.2]" />
+      )}
     </button>
   );
 }
