@@ -239,49 +239,30 @@ const MinimalNav = memo(function MinimalNav({
           </button>
 
           {vectorPulse && onSelectVector && (
-            <div className="flex items-center gap-1.5 pl-2.5 sm:pl-3 border-l border-black/20 shrink-0">
-              <button
-                ref={pulseTriggerRef}
-                type="button"
-                aria-expanded={isPulseOpen}
-                onClick={() => setIsPulseOpen((prev) => !prev)}
-                className={`cursor-pointer transition-colors whitespace-nowrap px-2 py-0.5 border flex items-center gap-1.5 font-bold ${
-                  activeVector || isPulseOpen
-                    ? 'bg-black text-[#faf9f6] border-black'
-                    : 'border-black/35 text-black hover:border-black hover:bg-black/[0.04]'
-                }`}
-                title="Open 7-Day Research Vector Pulse momentum radar"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" />
-                <span>
-                  {activeVector
-                    ? `VECTOR: ${activeVector.label.split(' ')[0]}`
-                    : 'VECTOR PULSE'}
-                </span>
-                <span className="text-[9px] opacity-75">{isPulseOpen ? '▴' : '▾'}</span>
-              </button>
-
-              {activeVector && (
-                <button
-                  type="button"
-                  onClick={() => onSelectVector(null)}
-                  className="text-[#ff8000] hover:opacity-75 font-bold cursor-pointer px-1"
-                  title="Clear vector filter"
-                >
-                  [✕]
-                </button>
-              )}
-            </div>
+            <button
+              ref={pulseTriggerRef}
+              type="button"
+              aria-expanded={isPulseOpen}
+              onClick={() => setIsPulseOpen((prev) => !prev)}
+              className={`hover:text-black transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
+                activeVector || isPulseOpen
+                  ? 'text-black font-black underline underline-offset-4 decoration-2'
+                  : 'text-black/60 hover:text-black'
+              }`}
+              title="Research Vector Pulse"
+            >
+              [PULSE]
+            </button>
           )}
         </div>
 
       </div>
 
-      {/* Floating Research Vector Pulse Dropdown */}
+      {/* Floating Research Vector Pulse Dropdown (always closed by default) */}
       {isPulseOpen && vectorPulse && onSelectVector && (
         <div
           ref={pulsePopoverRef}
-          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[660px] lg:w-[740px] top-full mt-1 z-40"
+          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
         >
           <VectorPulse
             snapshot={vectorPulse}

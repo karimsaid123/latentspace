@@ -72,18 +72,16 @@ const VectorPulse = memo(function VectorPulse({
     <div
       role="dialog"
       aria-label="Research Vector Pulse"
-      className="w-full bg-[#faf9f6] text-black border border-black shadow-2xl px-4 sm:px-6 py-4 font-mono animate-fade-in select-none"
+      className="w-full bg-[#faf9f6] text-black border border-black shadow-2xl px-3.5 sm:px-4 py-3 font-mono animate-fade-in select-none"
     >
       {/* Top Header Line */}
-      <div className="flex items-center justify-between gap-3 pb-3 border-b-2 border-black text-[9.5px] sm:text-[10.5px] tracking-widest uppercase">
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="w-2 h-2 rounded-full bg-[#ff8000] shrink-0" />
+      <div className="flex items-center justify-between gap-2 pb-2 border-b border-black text-[9px] sm:text-[9.5px] tracking-widest uppercase">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" />
           <span className="font-bold text-black truncate">
-            RESEARCH VECTOR PULSE // {snapshot.windowDays}D MOMENTUM
+            VECTOR PULSE // {snapshot.windowDays}D MOMENTUM
           </span>
-          <span className="hidden sm:inline text-black/50 shrink-0">
-            [N={snapshot.corpusSize}]
-          </span>
+          <span className="text-black/45 shrink-0">[N={snapshot.corpusSize}]</span>
         </div>
 
         <button
@@ -91,12 +89,12 @@ const VectorPulse = memo(function VectorPulse({
           onClick={onClose}
           className="text-black/60 hover:text-black transition-colors cursor-pointer font-bold shrink-0"
         >
-          [CLOSE ✕]
+          [✕]
         </button>
       </div>
 
       {/* Vector Rows */}
-      <div className="divide-y divide-black/10 py-1">
+      <div className="divide-y divide-black/10 py-0.5">
         {visibleVectors.map((item, idx) => {
           const rank = String(idx + 1).padStart(2, '0');
           const isSelected = selectedVectorId === item.id;
@@ -104,13 +102,9 @@ const VectorPulse = memo(function VectorPulse({
           const signedDelta = `${isPositive ? '+' : ''}${item.deltaPct}%`;
           const arrow = isPositive ? '▲' : '▼';
 
-          const barCount18 = Math.max(1, Math.min(18, Math.round(item.barBlocks * 0.9)));
-          const barFilled18 = '█'.repeat(barCount18);
-          const fullEmpty = '░'.repeat(18 - barCount18);
-
-          const mobileBlocks = Math.max(1, Math.min(8, Math.round(item.barBlocks * 0.4)));
-          const mobileFilled = '█'.repeat(mobileBlocks);
-          const mobileEmpty = '░'.repeat(8 - mobileBlocks);
+          const barCount12 = Math.max(1, Math.min(12, Math.round(item.barBlocks * 0.6)));
+          const barFilled12 = '█'.repeat(barCount12);
+          const barEmpty12 = '░'.repeat(12 - barCount12);
 
           return (
             <button
@@ -121,12 +115,12 @@ const VectorPulse = memo(function VectorPulse({
                 onClose();
               }}
               aria-pressed={isSelected}
-              className={`w-full text-left py-2 px-2 transition-colors cursor-pointer grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1.35fr)_auto_auto] items-center gap-2 sm:gap-3.5 text-[10px] sm:text-[10.5px] tracking-wider ${
+              className={`w-full text-left py-1.5 px-1.5 transition-colors cursor-pointer grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 sm:gap-2.5 text-[9.5px] sm:text-[10px] tracking-wider ${
                 isSelected ? 'bg-black text-[#faf9f6]' : 'hover:bg-black/[0.04] text-black'
               }`}
             >
               {/* Column 1: Rank + Vector Label + Corpus Hits */}
-              <div className="flex items-center gap-2 min-w-0">
+              <div className="flex items-center gap-1.5 min-w-0">
                 <span
                   className={`shrink-0 ${
                     isSelected ? 'text-[#ff8000] font-bold' : 'text-black/45'
@@ -136,7 +130,7 @@ const VectorPulse = memo(function VectorPulse({
                 </span>
                 <span className="font-bold truncate">{item.label}</span>
                 <span
-                  className={`text-[9px] shrink-0 ${
+                  className={`text-[8.5px] shrink-0 ${
                     isSelected ? 'opacity-70' : 'text-black/40'
                   }`}
                   title={`${item.recentCount} recent / ${item.baselineCount} baseline publications`}
@@ -145,27 +139,25 @@ const VectorPulse = memo(function VectorPulse({
                 </span>
               </div>
 
-              {/* Column 2: ASCII Density Bar */}
-              <div className="hidden sm:flex items-center tracking-normal text-[10px] shrink-0">
+              {/* Column 2: Compact 12-block ASCII Density Bar */}
+              <div className="hidden sm:flex items-center tracking-normal text-[9.5px] shrink-0">
                 <span className={isSelected ? 'opacity-50' : 'text-black/35'}>[</span>
                 <span
                   className={
                     isSelected || item.status === 'SURGING' ? 'text-[#ff8000]' : 'text-black'
                   }
                 >
-                  <span className="hidden md:inline">{barFilled18}</span>
-                  <span className="md:hidden">{mobileFilled}</span>
+                  {barFilled12}
                 </span>
                 <span className={isSelected ? 'opacity-25' : 'text-black/15'}>
-                  <span className="hidden md:inline">{fullEmpty}</span>
-                  <span className="md:hidden">{mobileEmpty}</span>
+                  {barEmpty12}
                 </span>
                 <span className={isSelected ? 'opacity-50' : 'text-black/35'}>]</span>
               </div>
 
               {/* Column 3: Delta % + Direction + Status Tag */}
-              <div className="flex items-center justify-end gap-2 shrink-0 tabular-nums">
-                <span className="font-bold w-[48px] text-right">{signedDelta}</span>
+              <div className="flex items-center justify-end gap-1.5 shrink-0 tabular-nums">
+                <span className="font-bold w-[42px] text-right">{signedDelta}</span>
                 <span
                   className={
                     isPositive
@@ -182,7 +174,7 @@ const VectorPulse = memo(function VectorPulse({
                   {arrow}
                 </span>
                 <span
-                  className={`w-[74px] text-right hidden xs:inline-block sm:inline-block ${getStatusBadgeClass(
+                  className={`w-[66px] text-right hidden sm:inline-block ${getStatusBadgeClass(
                     item.status,
                     isSelected
                   )}`}
@@ -196,7 +188,7 @@ const VectorPulse = memo(function VectorPulse({
       </div>
 
       {/* Footer Control Strip */}
-      <div className="pt-2.5 border-t-2 border-black flex flex-wrap items-center justify-between gap-2 text-[9px] tracking-widest uppercase text-black/55">
+      <div className="pt-2 border-t border-black flex flex-wrap items-center justify-between gap-2 text-[8.5px] sm:text-[9px] tracking-widest uppercase text-black/55">
         <div className="flex flex-wrap items-center gap-3">
           {activeVector ? (
             <button
