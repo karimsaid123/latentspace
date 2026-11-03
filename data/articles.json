@@ -1,5 +1,464 @@
 [
   {
+    "id": "a4663f9624ee71e8",
+    "canonicalUrl": "https://www.techmeme.com/261102/p51",
+    "title": "Google expands Dreambeans to India, its first market outside the US, offering AI-generated visual stories from users' digital activity in 13 local languages (Jagmeet Singh/TechCrunch)",
+    "publishedAt": "2026-11-03T04:35:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "61813c3c41a4899d",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Jagmeet Singh / TechCrunch : Google expands Dreambeans to India, its first market outside the US, offering AI-generated visual stories from users' digital activity in 13 local languages   —  Google has launched its experimental AI app Dreambeans in India, its first market outside the U.S., as the company looks to tap …",
+    "imageUrl": "http://www.techmeme.com/261102/i51.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has launched its experimental AI app Dreambeans in India, marking the application's first expansion outside the United States. The app creates AI-generated visual stories based on users' digital activity and supports 13 local languages.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b7492bd5cea1d25b",
+    "canonicalUrl": "https://www.technologyreview.com/2026/11/02/1147932/heres-who-is-falling-in-line-for-trumps-super-intelligence-loyalty-test/",
+    "title": "Here’s who is falling in line for Trump’s “Super Intelligence” loyalty test",
+    "publishedAt": "2026-11-03T04:18:47.000Z",
+    "fetchedAt": "2026-11-03T04:58:26.751Z",
+    "contentHash": "cdf11b56cab843ae",
+    "sourceId": "mit-tech-ai",
+    "sourceName": "MIT Technology Review",
+    "author": "James O'Donnell",
+    "contentSnippet": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here . At the end of September, President Trump signed an executive order that contained just one directive, ordering government agencies to rebrand what they had been calling artificial intelligence as “Super Intelligence.” That term beat out other contenders, including “Extreme Intelligence” and “Supreme Intelligence,” offered by the president in a poll on X a couple of weeks earlier.  Rebrands are, of course, now a White House tradition: Trump has changed names to project US dominance of certain bodies of water (the Gulf of America and Lake America), to signal new institutional priorities (Department of War), or simply to leave his mark on storied places (see the ongoing fight over renaming the Kennedy Center).  The stated reason for this name change is that today’s AI systems “amplify human ingenuity” rather than merely “imitate” intelligence, and the government’s terminology should reflect that. But if this rebrand follows the pattern of others, its effects will extend beyond government.  It will turn a choice of words into a political loyalty test: Those who use the new term demonstrate allegiance to the administration, and those who don’t become marks for attacks (recall that the Trump administration barred the Associated Press from some White House press events after the news outlet did not adopt the term “Gulf of America”).  But most Americans go months without ever pondering what to call the major lake between New York and Canada. AI, on the other hand, is at the center of our national conversation and a technology two-thirds of Americans report interacting with multiple times a week. It might be the boldest rebrand yet.  So one month in, who’s on board? Let’s start with the government itself. The term “Super Intelligence”—or simply “SI”—now appears more often on government solicitations, like a new request by Immigration and Customs Enforcement for companies to build “SI-powered” surveillance for ICE detention facilities. The new term has been swapped in silently on most government websites. Some, including that of the National Institutes of Health, now include a banner warning visitors they might see both the new and the old terms during the transition period. There have been hiccups. A day after the rebrand order, t",
+    "category": "Robotics & Hardware",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "President Trump signed an executive order in late September mandating that all U.S. government agencies rebrand 'artificial intelligence' to 'Super Intelligence' (SI). The term was selected following a poll on X, beating out alternative options such as 'Extreme Intelligence' and 'Supreme Intelligence.' The administration justifies the change by claiming current systems 'amplify human ingenuity' rather than merely imitating intelligence, though the move mirrors previous administrative efforts to project dominance through nomenclature, such as renaming bodies of water to 'Gulf of America' or 'Lake America.'\n\nThe transition is already visible across federal infrastructure, with the term 'SI' appearing in new government solicitations, including an Immigration and Customs Enforcement (ICE) request for 'SI-powered' surveillance technology for detention facilities. Federal websites, such as the National Institutes of Health, have implemented transition banners to account for the coexistence of the new and legacy terminology. Observers note that the rebrand functions as a political loyalty test, where adherence to the new terminology signals alignment with the administration, while non-compliance risks potential exclusion or public criticism, similar to past disputes involving the Associated Press.",
+      "takeaways": [
+        "**Executive Directive:** President Trump signed an executive order in late September requiring the federal government to replace the term 'artificial intelligence' with 'Super Intelligence' (SI).",
+        "**Naming Process:** The term 'Super Intelligence' was chosen after a public poll on X, which also included 'Extreme Intelligence' and 'Supreme Intelligence' as options.",
+        "**ICE Implementation:** Immigration and Customs Enforcement has issued a solicitation specifically requesting 'SI-powered' surveillance systems for use in detention facilities.",
+        "**Institutional Transition:** Federal agencies, including the National Institutes of Health, have updated their websites with banners to manage the transition period between the old and new terminology."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "23abe1f1b0a2b246",
+    "canonicalUrl": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+    "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
+    "publishedAt": "2026-11-03T03:30:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:26.748Z",
+    "contentHash": "300d315b4873b399",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Jagmeet Singh",
+    "contentSnippet": "Google has launched its experimental AI app Dreambeans in India, its first market outside the U.S., as the company looks to tap the world’s second-largest internet market to bring personalized visual stories drawn from users’ digital activity to a broader audience.\n\nOn Monday, Google expanded Dreambeans, available on Android and iOS, to India with support for 13 local languages, including Hindi, Punjabi, Tamil, Telugu, and Bengali, alongside English. The launch comes less than two months after Google made the app available to all eligible U.S. users aged 18 and older.\n\nIntroduced in June, Google’s Dreambeans uses information from connected Google services, including Calendar, Gemini, Gmail, Photos, Search, and YouTube, to proactively generate personalized, illustrated stories about users’ interests and everyday lives, without requiring them to enter a prompt. The app initially featured static, AI-generated illustrations, but Google recently added a feature that uses its Veo video-generation model to even animate images in select stories.\n\nGoogle said it chose India as Dreambeans’ first international market because of strong interest from Indian users seeking access to the app and the widespread use of its services in the country. India stood out for its high overlap of users across Gemini, Gmail, and Google Photos, Google product manager Gozde Oznur said during a press briefing.\n\nDreambeans has recorded nearly 55,000 downloads in the U.S. since its June debut, according to estimates from market intelligence firm Sensor Tower shared with TechCrunch. About 63% of those downloads came in September, when Google opened the app to all eligible U.S. users aged 18 and older. However, downloads dropped 84% month over month to about 5,500 in October.\n\nIn the first 30 days after Google opened Dreambeans to all eligible U.S. users, the app recorded an estimated 29,000 downloads, compared with 7.4 million for Meta’s Muse, 2.8 million for ChatGPT, 362,000 for Grok Bot, and 155,000 for Claude during their respective first 30 days after launch, Sensor Tower estimates show. However, unlike those general-purpose AI apps, Dreambeans focuses on generating personalized stories instead of responding to a broad range of user queries.\n\nEven though Dreambeans supports many widely spoken Indian languages, users can select only one language at a time for their generated stories. The a",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has expanded its experimental AI application, Dreambeans, to India, marking the product's first international launch outside the United States. Available on Android and iOS, the app utilizes Google’s 'Personal Intelligence' technology to synthesize data from connected services—including Gmail, Calendar, Photos, Search, and YouTube—to generate personalized, illustrated stories without requiring manual user prompts. The Indian release supports 13 local languages, including Hindi, Bengali, Telugu, Tamil, and Punjabi, alongside English, though the app currently restricts output to a single language at a time, preventing the generation of 'Hinglish' or mixed-language narratives.\n\nTechnically, Dreambeans leverages static AI-generated illustrations and has integrated Google’s Veo video-generation model to animate select story segments. According to Sensor Tower data, the app recorded approximately 55,000 U.S. downloads since its June debut, with a significant drop-off in October (5,500 downloads) compared to September (34,650 downloads). While the app is positioned as a personalized storytelling tool rather than a general-purpose chatbot, its adoption metrics remain significantly lower than competitors like ChatGPT or Meta’s Muse. Google product manager Gozde Oznur noted that the app is restricted to personal Gmail accounts and excludes enterprise users, with privacy controls allowing users to disconnect specific services or delete data from the personalization system.",
+      "takeaways": [
+        "**Language Support:** The app supports 13 Indian languages but cannot currently process or generate mixed-language content, such as Hinglish.",
+        "**Technical Integration:** Dreambeans utilizes Google's Veo model for video animation and 'Personal Intelligence' for cross-service data synthesis.",
+        "**Adoption Metrics:** Sensor Tower estimates show 55,000 total U.S. downloads since June, with a sharp 84% month-over-month decline in October.",
+        "**Privacy Controls:** Users can opt out of specific Google services, delete personal data, and instruct the app to avoid sensitive subjects, such as business-related information or specific memories."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "15c862c852945436",
+    "canonicalUrl": "https://www.techmeme.com/261102/p50",
+    "title": "Sources: Huawei recently told some clients that a large share of its upcoming flagship, Ascend 960DT, will run largely on HBM made by Samsung and SK Hynix (The Information)",
+    "publishedAt": "2026-11-03T03:25:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "27411b22326bc533",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "The Information : Sources: Huawei recently told some clients that a large share of its upcoming flagship, Ascend 960DT, will run largely on HBM made by Samsung and SK Hynix   —  For an illustration of how porous U.S. restrictions on the shipment of AI chips to China can be, consider a technique that has begun …",
+    "imageUrl": "http://www.techmeme.com/261102/i50.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Huawei has informed clients that its upcoming flagship AI processor, the Ascend 960DT, will utilize High Bandwidth Memory (HBM) supplied by South Korean manufacturers Samsung and SK Hynix. This development highlights the limitations of current U.S. export restrictions regarding the shipment of advanced AI hardware components to China.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "52bfacf720a71ff2",
+    "canonicalUrl": "https://www.techmeme.com/261102/p49",
+    "title": "Larridin, which helps companies track how AI affects employee output and identifies areas for better AI adoption, raised a $30M Series A led by Pelion Ventures (Aditi Bharade/Business Insider)",
+    "publishedAt": "2026-11-03T03:10:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "c8bcd80e473e7a14",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Aditi Bharade / Business Insider : Larridin, which helps companies track how AI affects employee output and identifies areas for better AI adoption, raised a $30M Series A led by Pelion Ventures   —  Companies went all in on AI this year, and are now reckoning with heavy bills.  One startup wants to get under the hood and figure out which ones are worth it.",
+    "imageUrl": "http://www.techmeme.com/261102/i49.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Larridin has secured $30 million in a Series A funding round led by Pelion Ventures. The startup provides analytics tools designed to measure the impact of AI implementation on employee productivity and identify specific operational areas where AI adoption can be optimized to justify enterprise software expenditures.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5cea27a3fbef0867",
+    "canonicalUrl": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVVNKS2MwUUM5NHBaZ2JqdmJGTkNtR0NzazNBaXhYcWdkLUY5TEtMR19qUXMtSjRHM3dYMnJLalFBbFdaZnF4WlExSmdzWnNod2V4ZFBVZW1XZDM1dGNuUlFaRWw0cUJEMC05WGhTYURTTC1WdGJKSUVoU0ExbGtfSlV5QktQTEVXTWVZTGRaX0VPbFgwNTg3eWJQNVdWNEZjcnY1d0Vn?oc=5",
+    "title": "Elon Musk Predicts Superintelligent AI Will Use DeFi to ‘Gain Currency for Themselves, not a Human’ After Binance Hack - Yahoo Finance",
+    "publishedAt": "2026-11-03T02:30:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:21.247Z",
+    "contentHash": "175c6671ef0dd954",
+    "sourceId": "xai-radar",
+    "sourceName": "xAI & Grok Radar",
+    "author": "xAI & Grok Radar",
+    "contentSnippet": "Elon Musk Predicts Superintelligent AI Will Use DeFi to ‘Gain Currency for Themselves, not a Human’ After Binance Hack    Yahoo Finance",
+    "category": "LLMs & GenAI",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Elon Musk has predicted that future superintelligent artificial intelligence will utilize decentralized finance (DeFi) platforms to independently acquire currency for themselves rather than for humans. This prediction followed a reported Binance hack.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c15e663c1f3ad78b",
+    "canonicalUrl": "https://siliconangle.com/2026/11/02/vcs-bet-30m-on-larridins-ability-to-help-enterprises-demonstrate-ais-value-for-money/",
+    "title": "VCs bet $30M on Larridin’s ability to help enterprises demonstrate AI’s value for money",
+    "publishedAt": "2026-11-03T02:12:41.000Z",
+    "fetchedAt": "2026-11-03T04:58:43.506Z",
+    "contentHash": "83c88b31383262c5",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Mike Wheatley",
+    "contentSnippet": "UPDATED 21:12 EST / NOVEMBER 02 2026\n\nVCs bet $30M on Larridin’s ability to help enterprises demonstrate AI’s value for money\n\nAs enterprises jack up their spending on artificial intelligence tools, it’s only right for senior executives to want to know exactly what they’re getting in return for their costly investments. Larridin Inc. , a startup focused on AI adoption measurement, has just raised $30 million in early-stage funding to try to provide them with the answers.\n\nToday’s Series A round was led by Pelion Ventures and saw participation from existing backers Andreessen Horowitz and Gradient Ventures, as well as new investors like GFT, W23, Thayer, DG Daiwa Ventures, Cougar Capital and Alumni Ventures. The round brings the company’s total amount raised so far to $47 million.\n\nLarridin’s funding comes at a time when enterprise leaders are facing growing pressure to demonstrate the value they’re getting for their spiralling token consumption costs and application programming interface bills. Shareholders of publicly traded companies, especially, are eager to see those investments are driving real growth, and aren’t easily swayed by vanity metrics showcasing adoption without value.\n\nCo-founder and Chief Executive Russ Fradin says this pressure stems from the flawed way in which most organizations evaluate their AI investments. He argues that traditional adoption metrics such as seat licenses and login counts do not reflect the true operational impact of AI.\n\nIndeed, one of Larridin’s own customers is a case in point. That organization’s own surveys showed that 92% of its engineers were active AI users, which seems like a good rate of adoption. But when it started using Larridin’s tools to dig deeper, it found that a single engineer accounted for 65% of the company’s entire AI budget.\n\nThese aren’t the only kinds of blind spots AI has created. In Larridin’s newly released Engineering AI Impact Report , based on a survey of more than 1,000 developers, it found that though AI-assisted pull requests increased from 35% in April to 62% in September, it didn’t provide much value for enterprises because it simply created bottlenecks further downstream. For instance, organization’s median code review wait times increased more than 50% over the same timeframe.\n\nFradin says this is why companies cannot just monitor AI output volume. What’s needed is a complete pictur",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Enterprise AI adoption measurement startup Larridin Inc. has secured $30 million in a Series A funding round led by Pelion Ventures, bringing its total capital raised to $47 million. Additional participants in the round include existing backers Andreessen Horowitz and Gradient Ventures, alongside new investors GFT, W23, Thayer, DG Daiwa Ventures, Cougar Capital, and Alumni Ventures. Co-founded by Chief Executive Russ Fradin, the company aims to address enterprise pressures regarding spiraling token consumption costs and API billing by offering what it describes as the industry's first AI value measurement platform.\n\nLarridin's platform links AI tool adoption data with employee productivity metrics and expenditure tracking, addressing flaws in traditional vanity metrics such as seat licenses and login counts. According to data from the company's Engineering AI Impact Report—which surveyed over 1,000 developers—AI-assisted pull requests rose from 35% in April to 62% in September, yet median code review wait times increased by over 50% due to downstream bottlenecks. The platform also evaluates autonomous AI agent costs and output quality, having previously uncovered blind spots such as a single engineer consuming 65% of an organization's AI budget despite a 92% active usage rate, and a 66-fold cost discrepancy per shipped code change between competing coding tools.\n\nThe newly acquired capital will be deployed to expand Larridin's engineering and go-to-market teams. The startup's current enterprise customer roster includes SurveyMonkey Inc., Vertiv Holdings Co., Klaviyo Inc., and Gainsight Inc.",
+      "takeaways": [
+        "**Funding Details:** Larridin Inc. raised a $30 million Series A round led by Pelion Ventures, bringing its total funding to $47 million with participation from Andreessen Horowitz, Gradient Ventures, GFT, W23, Thayer, DG Daiwa Ventures, Cougar Capital, and Alumni Ventures.",
+        "**Developer Productivity Bottlenecks:** Larridin's Engineering AI Impact Report revealed that while AI-assisted pull requests grew from 35% in April to 62% in September, median code review wait times increased by more than 50% over the same period.",
+        "**Cost Discrepancies Identified:** The platform helped a customer discover a 66-fold cost discrepancy per shipped code change between two competing AI coding tools used for similar tasks, allowing the company to cancel the expensive subscription without productivity loss.",
+        "**Usage Asymmetry:** In one customer case study cited by Larridin, an organization reported 92% active engineer usage, but deeper analysis showed that a single engineer accounted for 65% of the company's total AI budget.",
+        "**Enterprise Customers:** Larridin's existing client base includes SurveyMonkey Inc., Vertiv Holdings Co., Klaviyo Inc., and Gainsight Inc."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "804d2e2f62a5210f",
+    "canonicalUrl": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
+    "title": "Apple may try to increase revenue by doing…something with third-party AI apps",
+    "publishedAt": "2026-11-03T01:49:52.000Z",
+    "fetchedAt": "2026-11-03T04:58:26.748Z",
+    "contentHash": "c9002210948139c4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Apple’s services business remains at record levels, but it’s facing growing pressure . The central part of that business, Apple’s App Store, has faced regulatory pressure and a slump in mobile gaming, which have hurt services growth .\n\nHowever, on Monday’s earnings call, Apple signaled that it may look to boost services revenue through third-party apps. What does that mean, exactly? Unfortunately, it’s not entirely clear.\n\nWhen discussing how AI could potentially “contribute to revenue growth over time,” Kevan Parekh, Apple’s chief financial officer, said: “On the product side, you know, we feel AI offers a compelling reason for customers to upgrade and switch in order to get the latest capabilities, and we also feel there’s opportunities across third-party apps and partnerships as well as first-party opportunities.”\n\nParekh did not elaborate on what sorts of opportunities might be available via third-party apps. However, Reuters reported Monday that investors are wondering whether Apple could profit by distributing third-party AI agents through the App Store and taking a cut of the revenue they generate.\n\nRegulatory and legal changes have cut into App Store commission revenue in some markets, even as Apple’s services business as a whole continues to grow. Third-party estimates in August, for example, suggested the company had seen an 18% drop in U.S. commission revenue, with declines also in Brazil and Japan after those countries introduced new regulations. Apple has traditionally controlled payments within its app marketplace tightly, taking a cut of all App Store transactions. But a lawsuit by Epic Games ultimately forced the company to allow apps to redirect users to outside payment systems. Other legal challenges throughout the world have further hampered the business.\n\nDuring the earnings call, Parekh referenced Apple’s App Store woes and returned to the idea that the company’s service business could expand into new territory.\n\n“We’ve also seen some factors that impacted the performance of the App Store, and during the September quarter, the performance on the App Store was similar to the prior year, and we had a record number of paid subscriptions with double-digit growth for third-party apps on the App Store,” Parekh said. “At the same time, we did see some headwinds in mobile gaming that we’ve talked about before, and expect to see those continue in",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple CFO Kevan Parekh signaled during the company's latest earnings call that Apple is exploring new revenue streams through third-party AI applications and partnerships. While specific implementation details remain undisclosed, the company views AI as a primary driver for hardware upgrade cycles and a potential catalyst for services growth. Investors are speculating that this could involve Apple distributing third-party AI agents via the App Store and capturing a commission on the revenue generated by these services.\n\nThis strategic pivot comes as Apple faces significant regulatory and legal headwinds impacting its traditional App Store commission model. The company reported an 18% drop in U.S. commission revenue as of August, exacerbated by international regulatory changes in Brazil and Japan and the fallout from the Epic Games litigation, which forced Apple to permit alternative payment systems. Despite these challenges, Apple reported record numbers of paid subscriptions and double-digit growth for third-party apps, even as mobile gaming performance continues to stagnate. Apple projects services growth for the December quarter to be between 8% and 9%, a forecast that accounts for ongoing headwinds in third-party licensing and foreign exchange fluctuations.",
+      "takeaways": [
+        "**Revenue Outlook:** Apple projects services growth between 8% and 9% for the December quarter, factoring in sequential headwinds from third-party licensing.",
+        "**Regulatory Impact:** Apple experienced an 18% decline in U.S. App Store commission revenue as of August, driven by global regulatory shifts and the Epic Games legal ruling.",
+        "**Growth Drivers:** CFO Kevan Parekh identified AI as a key incentive for consumer hardware upgrades and a potential area for new third-party app partnerships.",
+        "**Market Headwinds:** The company continues to face a slump in mobile gaming, which Apple expects to persist through the upcoming summer quarter."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b80ee05f49c11d29",
+    "canonicalUrl": "https://siliconangle.com/2026/11/02/how-xatoms-is-using-ai-to-solve-the-global-water-crisis/",
+    "title": "How Xatoms is using AI to solve the global water crisis",
+    "publishedAt": "2026-11-03T01:49:06.000Z",
+    "fetchedAt": "2026-11-03T04:58:43.506Z",
+    "contentHash": "a51da2bea3697fce",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Zeus Kerravala",
+    "contentSnippet": "UPDATED 20:49 EST / NOVEMBER 02 2026\n\nHow Xatoms is using AI to solve the global water crisis\n\nEvery September, Climate Week and Global Citizen Week in New York bring together policymakers, investors and innovators focused on the world’s most pressing problems.\n\nIt’s also when Cisco Systems Inc. and Global Citizen recognize the winner of the Global Citizen Prize: Cisco Youth Leadership Award . Cisco and Global Citizen created the award in 2018 to honor a young leader who uses technology to help end extreme poverty, and this year’s recipient may have the most compelling story yet.\n\nDiana Virgovicova (pictured) is the founder and CEO of Xatoms (pronounced “X-Atoms”), a Toronto-based company that uses artificial intelligence and quantum chemistry to design sunlight-activated materials that break down pollutants in water. The award comes with a $250,000 grant , and Xatoms was chosen from more than 2,000 applications.\n\nMost of the AI conversation at Climate Week focused on what AI takes from the planet: power, land and, increasingly, water. Xatoms offers a positive counterpoint, a case study in AI giving back.\n\nA personal mission, not a market opportunity\n\nMost founders find a market. Virgovicova found a problem the hard way. She grew up in a village of about 800 people in Slovakia , surrounded by farms that used heavy amounts of pesticides. “I got sick when I was 14 years old,” she told me. “I was diagnosed with ovarian cancer because of the water I drank.”\n\nAfter her diagnosis, she persuaded her mother to go backpacking across Asia. On trains in India, she heard from women facing the same thing. “I learned that there is a girl in Slovakia who got sick. There is a girl in India who’s getting infections. There is a girl in Africa who has to spend long hours every single day searching for clean water,” she said. “So, we need to find a solution, and it is affecting mainly women across the globe.”\n\nGlobally, women and girls spend 250 million hours a day collecting water, more than three times the time men and boys spend. “While boys go to school, the girls are responsible for bringing a bucket of water home, and they start missing school very early on,” Virgovicova explained. “It’s an educational, economic and health problem.”\n\nAnd it’s growing. “We have 2 billion people that don’t have access to clean drinking water, and this number is actually growing because of f",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Diana Virgovicova, founder and CEO of Toronto-based Xatoms, won the 2026 Global Citizen Prize: Cisco Youth Leadership Award at Climate Week in New York, receiving a $250,000 grant selected from over 2,000 applications. Xatoms utilizes artificial intelligence and quantum chemistry to computationally design sunlight-activated photocatalytic materials that break down complex industrial water contaminants, such as pesticides, pharmaceuticals, forever chemicals, and heavy metals, bypassing traditional water treatment limits that focus primarily on bacteria like E. coli.\n\nWhile traditional materials discovery takes up to a decade in physical laboratories, Xatoms leverages an AI-driven computational pipeline to design and evaluate molecules in 30 days. The core output is a photocatalytic powder that splits water into hydroxyl (OH) radicals under visible sunlight or LEDs—eliminating the need for expensive ultraviolet reactors—and is not consumed during the process, allowing small amounts to treat hundreds of gallons. Beyond addressing global drinking water deficits affecting 2 billion people, Xatoms is targeting data center cooling water reuse to counteract the immense water consumption footprints of modern AI buildouts, alongside ongoing deployments in Canadian Indigenous communities, Kenya, South Africa, Japan, and Azerbaijan.\n\nThe startup currently manages 88 different material options customized to specific water samples and contaminant profiles, with six major commercial projects forthcoming. Virgovicova noted that climate venture capital funding allocates roughly only 3% to water initiatives despite its foundational role across agriculture, industry, and AI infrastructure.",
+      "takeaways": [
+        "**Award and Grant:** Diana Virgovicova won the 2026 Global Citizen Prize: Cisco Youth Leadership Award, securing a $250,000 grant out of more than 2,000 applicants.",
+        "**Technology Pipeline:** Xatoms combines quantum chemistry and AI to reduce materials discovery timelines from a decade down to 30 days without initial physical laboratory synthesis.",
+        "**Catalytic Mechanism:** The engineered photocatalytic powder uses visible light or LEDs rather than ultraviolet light to split water into OH radicals that destroy complex industrial pollutants like pharmaceuticals and heavy metals.",
+        "**Data Center Application:** Xatoms is positioning its catalytic treatment to enable water reuse inside data center cooling systems to mitigate the infrastructure's environmental footprint.",
+        "**Global Footprint:** The company maintains a portfolio of 88 material options customized for specific regional water samples, with active projects in Canada, Kenya, South Africa, Japan, and Azerbaijan."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "906b26d05456efb1",
+    "canonicalUrl": "https://www.techmeme.com/261102/p48",
+    "title": "Salesforce announces plans to acquire Cresta, a provider of AI-powered contact center automation software; source: Salesforce agreed to pay $2.7B for Cresta (The Information)",
+    "publishedAt": "2026-11-03T01:20:01.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "d8a6f81e6ed9512f",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "The Information : Salesforce announces plans to acquire Cresta, a provider of AI-powered contact center automation software; source: Salesforce agreed to pay $2.7B for Cresta   —  Salesforce extended its recent shopping spree, announcing on Monday plans to acquire Cresta, a nine-year-old provider of AI-powered contact center automation software.",
+    "imageUrl": "http://www.techmeme.com/img/pml.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Salesforce has announced plans to acquire Cresta, a nine-year-old provider of AI-powered contact center automation software, for $2.7 billion. This acquisition represents the latest addition to Salesforce's ongoing series of corporate purchases.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "3c1e033743eb98a9",
+    "canonicalUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZWVwcVdHRXlPU05LNVBGY014RWhnQ1ozMmttZ2tpWk1uRXlBUW5MNFVXUXJyNjJDRG9xemJrMnRfSURSVkJVbE93ZEVCSU5pRXFzSF9VdHBZdEFrdDNPWDFzSngxUTVtdy1tZmppV0NvaVJIVE5tZEEyeDFpNGtzb1ZaZnY4NF9ncEJ5MmZ6dw?oc=5",
+    "title": "Elon Musk admits Grok Bot is too costly as users hit caps - TheStreet",
+    "publishedAt": "2026-11-03T01:17:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:21.247Z",
+    "contentHash": "bb6ecff477a35364",
+    "sourceId": "xai-radar",
+    "sourceName": "xAI & Grok Radar",
+    "author": "xAI & Grok Radar",
+    "contentSnippet": "Elon Musk admits Grok Bot is too costly as users hit caps    TheStreet",
+    "category": "LLMs & GenAI",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Elon Musk has acknowledged that the operational costs of the Grok AI chatbot are currently too high, leading to the implementation of usage caps for users. The admission follows reports of subscribers encountering limitations while interacting with the platform's AI model.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5b69a3f0e8503dcf",
+    "canonicalUrl": "https://www.techmeme.com/261102/p47",
+    "title": "John Ternus says Apple expects memory costs to increase into December and beyond; Apple's inventory grew to $14.54B in Q4, up 31.1% QoQ and 154.3% YoY (Sarah Perez/TechCrunch)",
+    "publishedAt": "2026-11-03T01:15:02.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "6ebbada901f140c5",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Sarah Perez / TechCrunch : John Ternus says Apple expects memory costs to increase into December and beyond; Apple's inventory grew to $14.54B in Q4, up 31.1% QoQ and 154.3% YoY   —  Apple's stockpiling of inventory, particularly computer memory, continued in its fiscal fourth-quarter, according to earnings reported Monday.",
+    "imageUrl": "http://www.techmeme.com/261102/i47.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple SVP of Hardware Engineering John Ternus projects that memory costs will continue to rise through December and beyond. This forecast coincides with a significant surge in Apple's inventory, which reached $14.54 billion in Q4, representing a 31.1% increase quarter-over-quarter and a 154.3% increase year-over-year.",
+      "takeaways": [],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "78194b95ff03faf5",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/02/zyphra-hierarchical-attention-zha-sparse-attention/",
+    "title": "Zyphra AI Introduces Zyphra Hierarchical Attention (ZHA): A Path to True Subquadratic Attention",
+    "publishedAt": "2026-11-03T01:09:49.000Z",
+    "fetchedAt": "2026-11-03T04:58:43.505Z",
+    "contentHash": "79dc5bfcb4cd63fb",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Zyphra has released Zyphra Hierarchical Attention (ZHA) , a sparse attention method built around a tree-structured indexer. ZHA targets a known gap in sparse attention: the indexer that picks tokens still scans the whole context. Zyphra’s technical paper shows ZHA can be distilled into frozen pretrained models with about 4B tokens. On Qwen3.6-35B-A3B it stays close to dense attention on reasoning, agentic coding and 256K retrieval benchmarks. TL;DR Size: It is a method that adds 81,920 trainable parameters to Qwen3.6-35B-A3B (about 0.00024%). Tested up to 256K context. Runs on: Retrofits frozen pretrained models after a 4B-token KL warmup at 32K context. Speedups come from a modeled H100 BF16 roofline. No optimized kernels released. An FP4 router variant was also tested. Performance: Within a few points of dense attention on 7 reasoning, coding and retrieval benchmarks. Best: LongBench v2 hits 63.4% (deep tree) vs 58.0% dense, using about 1.1% of keys. Worst: On NoPE-based Nemotron-3.5-Lightning-30B-A3B, deep-tree RULER-13 drops 25.3 points below dense. What is Zyphra Hierarchical Attention (ZHA)? ZHA is a sparse attention method from Zyphra that finds relevant keys by searching a tree. It keeps the full KV cache. The tree only decides which cached keys each query reads. Fixed-state methods like SSMs and sliding windows saturate at long contexts. Fine-grained sparse methods like DeepSeek Sparse Attention score every past token with an indexer. The final attention is sparse, but the indexer still grows with the full context. Near 1M tokens, cited work shows indexing takes 60 to 90% of layer time. ZHA makes the search itself sparse. How does ZHA’s tree indexer work? Building the tree ZHA splits keys into contiguous chunks and compresses each chunk into a summary key. Summaries are grouped and compressed again, level by level. With chunk size 4, 6 levels cover 4,096 tokens per top node. Summaries come from a small set of learned reference queries . Each reference query gives a tangent-plane estimate of a chunk’s log attention mass. The max over these planes approximates how much attention any future query would give the chunk. How does top-p routing pick tokens? At decode time, a query scores the top-level nodes. It keeps the smallest set holding a fraction p of estimated attention mass. It then expands only those children, repeating until it reaches raw KV ent",
+    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25c0.png",
+    "category": "Open Source & Research",
+    "lab": "DeepSeek",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Zyphra has released Zyphra Hierarchical Attention (ZHA) , a sparse attention method built around a tree-structured indexer. ZHA targets a known gap in sparse attention: the indexer that picks tokens still scans the whole context. Zyphra’s technical paper shows ZHA can be distilled into frozen pretrained models with about 4B tokens.\n\nOn Qwen3.6-35B-A3B it stays close to dense attention on reasoning, agentic coding and 256K retrieval benchmarks. TL;DR Size: It is a method that adds 81,920 trainable parameters to Qwen3.6-35B-A3B (about 0.00024%). Tested up to 256K context.",
+      "takeaways": [
+        "Runs on: Retrofits frozen pretrained models after a 4B-token KL warmup at 32K context.",
+        "Speedups come from a modeled H100 BF16 roofline.",
+        "No optimized kernels released.",
+        "An FP4 router variant was also tested."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "e229841a9617a664",
+    "canonicalUrl": "https://www.techmeme.com/261102/p46",
+    "title": "Match Group reports Q3 revenue fell 3% YoY to $891M, below estimates, and total paying users fell 5% to 13.8M; Q4 forecast has adjusted EBITDA below estimates (Samantha Kelly/Bloomberg)",
+    "publishedAt": "2026-11-03T00:45:01.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "badd9eb11d0288c1",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Samantha Kelly / Bloomberg : Match Group reports Q3 revenue fell 3% YoY to $891M, below estimates, and total paying users fell 5% to 13.8M; Q4 forecast has adjusted EBITDA below estimates   —  Match Group Inc. disappointed investors after posting weaker-than-expected quarterly revenue and forecasting adjusted earnings …",
+    "imageUrl": "http://www.techmeme.com/261102/i46.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Samantha Kelly / Bloomberg : Match Group reports Q3 revenue fell 3% YoY to $891M, below estimates, and total paying users fell 5% to 13.8M; Q4 forecast has adjusted EBITDA below estimates — Match Group Inc. Disappointed investors after posting weaker-than-expected quarterly revenue and forecasting adjusted earnings ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "fd199eb7e716290b",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/02/letter-letterpress-1-growth-engineering-coding-agent/",
+    "title": "The Letter Company Releases Letterpress-1: A Coding Agent Built for Growth Engineering",
+    "publishedAt": "2026-11-03T00:43:03.000Z",
+    "fetchedAt": "2026-11-03T04:58:43.505Z",
+    "contentHash": "9dc588b8b42d423d",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "The Letter Company has released the beta of Letterpress-1 , a coding agent, harness and IDE for growth engineering. The Letterpress-1 coding agent reads a website and its market, then decides what should exist. It builds the change in a sandbox and opens a pull request with a live preview. TL;DR Size: Letter team says it combines frontier models with fine-tuned small models; names and sizes are not disclosed. Runs on: Letter’s hosted platform against your git repository. No local GPU needed. Setup takes under 5 minutes, per Letter. Performance: No public benchmark. Letter shows 1 self-reported, side-by-side page build against Codex. Best: 760 tools exposed through 1 registry over MCP, REST and CLI. Worst: No measurable eval; entry plan is $100/month with overage at 5x the list rate. What is Letterpress-1? Letterpress-1 is a growth engineering agent from The Letter Company. It turns site and market signals into pull requests. The letter company team argues that websites, unlike apps, react to outside forces. These include agent behavior, Google rankings, human visits and competitor activity . General coding agents were built to scale codebases, not to act on those signals. The agent is aimed at teams that host their marketing site in git. It is proactive: it suggests the next thing to build. Examples include de-anonymization, landing pages, warmed emails, blog automation and agent telemetry. How does Letterpress-1 work? Letterpress-1 runs in 3 modes : Build: create a page or feature from a prompt, with brand copy and visuals kept consistent. Plan: pick a goal and get a build plan of growth actions. Fix: find site issues and dispatch pull requests to fix them. Every change follows the same loop. The agent reads the site, plans and builds in a sandbox. It reviews its own change, then opens a pull request. Each change returns a preview link of your own site . Nothing lands until you choose a preview, a pull request, or a merge after checks pass. Letter team lists 6 surfaces. These are the web platform, a Slack app, the letterpress CLI and a website portal. A standalone app and your own agent round out the list. The in-site IDE works on a live page. Press ⌘L, edit text where you see it, and a pull request follows. Showcase examples also cover A/B tests from live edits. For developers, agents.md documents an MCP server at app.letterstory.com/api/mcp with OAuth. Th",
+    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
+    "category": "Robotics & Hardware",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The Letter Company has released the beta of Letterpress-1 , a coding agent, harness and IDE for growth engineering. The Letterpress-1 coding agent reads a website and its market, then decides what should exist. It builds the change in a sandbox and opens a pull request with a live preview.\n\nTL;DR Size: Letter team says it combines frontier models with fine-tuned small models; names and sizes are not disclosed. Runs on: Letter’s hosted platform against your git repository. Setup takes under 5 minutes, per Letter.",
+      "takeaways": [
+        "Performance: No public benchmark.",
+        "Letter shows 1 self-reported, side-by-side page build against Codex.",
+        "Best: 760 tools exposed through 1 registry over MCP, REST and CLI.",
+        "Worst: No measurable eval; entry plan is $100/month with overage at 5x the list rate."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "dfb1d49114f0805e",
+    "canonicalUrl": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
+    "title": "Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
+    "publishedAt": "2026-11-03T00:35:52.000Z",
+    "fetchedAt": "2026-11-03T04:58:26.748Z",
+    "contentHash": "57e7edcdbd8ab128",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Julie Bort",
+    "contentSnippet": "Y Combinator Garry Tan has jokingly admitted that he's suffered from \"cyber psychosis” and barely sleeps sometimes because he’s so excited to be working with his AI agents. On a new episode of Walter Isaacson’s podcast, The Builders, Tan put a price tag on his passion.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Y Combinator Garry Tan has jokingly admitted that he's suffered from \"cyber psychosis” and barely sleeps sometimes because he’s so excited to be working with his AI agents. On a new episode of Walter Isaacson’s podcast, The Builders, Tan put a price tag on his passion.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "2df88c701c87b55f",
+    "canonicalUrl": "https://www.techmeme.com/261102/p45",
+    "title": "Trajectory, which is developing AI model post-training tools for nontechnical customers, raised a $45M Series A led by Sequoia at a $300M valuation (Marina Temkin/TechCrunch)",
+    "publishedAt": "2026-11-03T00:05:01.000Z",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "294517dd3f64f616",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Marina Temkin / TechCrunch : Trajectory, which is developing AI model post-training tools for nontechnical customers, raised a $45M Series A led by Sequoia at a $300M valuation   —  Whether developed by OpenAI, Anthropic, or built on open-source alternatives, current AI models share a critical limitation …",
+    "imageUrl": "http://www.techmeme.com/261102/i45.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Marina Temkin / TechCrunch : Trajectory, which is developing AI model post-training tools for nontechnical customers, raised a $45M Series A led by Sequoia at a $300M valuation — Whether developed by OpenAI, Anthropic, or built on open-source alternatives, current AI models share a critical limitation ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "8fbbc27028afdfad",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/2/llm/",
+    "title": "llm 0.37",
+    "publishedAt": "2026-11-02T23:49:30.000Z",
+    "fetchedAt": "2026-11-03T04:58:43.506Z",
+    "contentHash": "7ae9535c798ffc4a",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure additional models that use OpenAI-compatible endpoints. I switched the default model (if you have not set your own default) to gpt-6-luna - half the price of the previous default, gpt-5.6-luna . LLM's support for embeddings now accepts that different binary content may have different content-type - necessary for models like Gemini Embedding 2 , which can embed text, audio, images, and video. A lot of open source maintainers complain about a flood of AI-assisted PRs. LLM is my project that has been most affected by this and, to be honest, I'm not finding it to be a problem. That's mainly because I have Opus 5.5 or GPT-6 Astra help me with triage to spot the most useful fixes! This release includes fixes from 12 authors - almost all AI-assisted - and the burden of reviewing them wasn't nearly as great as I expected. I really see them as bug reports with attached examples - sometimes I land them, sometimes I implement my own fix. So thanks to 0d00ciallo0721 , ac1982 , Allen Flux , Bian Yuhan , Bishop Kammeraad , Chen Yufeiyang , Christopher Krah , Ethan Stoner , Jiachen Xie , Olamide Faniyan , Sharat Chandra Sai Boddu , nosmile99 for helping out with (or spending tokens on) this release! Tags: open-source , projects , ai , annotated-release-notes , generative-ai , llms , embeddings , llm",
+    "category": "Open Source & Research",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: llm 0.37 There's a lot of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes. I added gpt-6.1-sol and gpt-6.1-terra , plus a new llm openai endpoint add command to make it easier to configure additional models that use OpenAI-compatible endpoints. I switched the default model (if you have not set your own default) to gpt-6-luna - half the price of the previous default, gpt-5.6-luna .\n\nLLM's support for embeddings now accepts that different binary content may have different content-type - necessary for models like Gemini Embedding 2 , which can embed text, audio, images, and video. A lot of open source maintainers complain about a flood of AI-assisted PRs. LLM is my project that has been most affected by this and, to be honest, I'm not finding it to be a problem.",
+      "takeaways": [
+        "That's mainly because I have Opus 5.5 or GPT-6 Astra help me with triage to spot the most useful fixes!",
+        "This release includes fixes from 12 authors - almost all AI-assisted - and the burden of reviewing them wasn't nearly as great as I expected.",
+        "I really see them as bug reports with attached examples - sometimes I land them, sometimes I implement my own fix.",
+        "So thanks to 0d00ciallo0721 , ac1982 , Allen Flux , Bian Yuhan , Bishop Kammeraad , Chen Yufeiyang , Christopher Krah , Ethan Stoner , Jiachen Xie , Olamide Faniyan , Sharat Chandra Sai Boddu , nosmile99 for helping out with (or spending tokens on) this release!"
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "2393a8967cc4b85c",
     "canonicalUrl": "https://siliconangle.com/2026/11/02/rack-scale-ai-platforms-amd-dell-dellaidataplatform/",
     "title": "Rack-scale AI: How Dell and AMD are building infrastructure",
@@ -67,7 +526,7 @@
     "author": "Marina Temkin",
     "contentSnippet": "Whether developed by OpenAI or Anthropic or built on open source alternatives, current AI models share a critical limitation: They don’t learn from their mistakes without further training.\n\nBusinesses adapting these models for specialized fields, such as law and finance, typically get around this by fine-tuning general models. However, that often requires hiring internal research teams or relying on expensive consultants, commonly known as forward-deployed engineers (FDEs).\n\nTrajectory , a startup founded about a year ago by three Stanford classmates with experience at Google DeepMind and Apple, wants to automate that process, allowing AI models to learn from feedback and continuously improve at specialized tasks.\n\nThe 18-person company just announced that it raised $45 million in a Series A round at a $300 million valuation, led by Sequoia, with participation from Nvidia, Bessemer Venture Partners, and Bain Capital Ventures.\n\nTrajectory co-founder Ronak Malde compared foundational models to a very smart PhD student who’s always starting a new job. “But what the economy values is someone who worked on the job for 30 years,” he told TechCrunch.\n\nThe startup aims to solve this problem through an approach known as continual learning. Businesses using Trajectory can start with an open source AI model and connect the platform to their applications, allowing it to collect feedback on how the model performs. Trajectory then uses that information to retrain the model, helping it improve at specialized tasks over time.\n\nWith Trajectory, lawyers, doctors, and other specialists can improve the models near automatically themselves, Malde said. That capability could make deploying specialized AI faster and cheaper.\n\nCompanies like Harvey and Rogo are already using Trajectory’s platform to post-train open source models, helping them perform more like experienced lawyers or financial analysts by learning from previous tasks, such as reviewing a particular type of legal contract or valuing a company using a specific methodology. Trajectory’s other customers include Decagon, Mercor, and Nvidia. The startup is now making its post-training platform publicly available.\n\nThe people using Trajectory decide “what good looks like for their organization and can turn that into improvements for their model,” Malde said.\n\nTrajectory’s approach to continual learning shares some similari",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Trajectory, an 18-person startup founded by Stanford alumni with backgrounds at Google DeepMind and Apple, has raised $45 million in a Series A funding round at a $300 million valuation. Led by Sequoia, the round also included participation from Nvidia, Bessemer Venture Partners, and Bain Capital Ventures. The company is publicly launching a post-training platform designed to automate AI model fine-tuning and continual learning for nontechnical enterprise users.\n\nTraditional AI deployment requires businesses to hire internal research teams or expensive forward-deployed engineers (FDEs) to adapt foundation models for specialized domains like law and finance. Trajectory allows enterprises to connect open-source models to its platform, collect performance feedback from user applications, and automatically retrain models to improve over time. Co-founder Ronak Malde contrasts current foundational models with fresh PhD graduates, positioning Trajectory's continual learning approach as a way to simulate decades of on-the-job experience. Early enterprise customers include Harvey, Rogo, Decagon, Mercor, and Nvidia.\n\nWhile sharing operational similarities with recursive self-improvement, co-founder Michael Elabd emphasizes that keeping humans in the loop makes Trajectory's training loop safer. The startup competes with Thinking Machines Lab (creators of Tinker, founded by former OpenAI CTO Mira Murati), Applied Compute, and Prime Intellect. Trajectory's founding team includes Ronak Malde (formerly of Google DeepMind and Windsurf), Michael Elabd (Google DeepMind), and Arjun Karanam (Apple generative models), alongside hires recruited from OpenAI, Stripe, and Netflix.",
@@ -166,7 +625,7 @@
     "author": "Duncan Riley",
     "contentSnippet": "UPDATED 17:47 EST / NOVEMBER 02 2026\n\n42AI launches with $62.5M to predict how traders act when markets turn volatile\n\nIsraeli artificial intelligence startup 42AI launched today with $62.5 million in funding to build what it calls a behavioral world model.\n\nIts first customers are brokerages that want to know how individual traders will act when markets turn volatile. 42AI offers software that estimates the odds of each choice a person might make in a given situation. “Behavior is not deterministic; it’s constantly probabilistic,” co-founder and Chief Executive Amit Gal-Or told TechCrunch .\n\nThe company turns what it knows about a person into mathematical representations of personality traits, and a transformer-based world model works out the probabilities from there. A separate language model writes up which traits and context drove each prediction.\n\n42AI says a brokerage can see what each client is likely to trade over the next 24 hours, including the instrument, the direction and the volume. If clients look set to pile into the same trade, a risk desk can hedge before the exposure lands on its book. Know-your-customer checks done at onboarding are one source of input, and the model also weighs how often a client calls and the sentiment in their voice.\n\nTen large brokerages are working with 42AI, which charges either a flat fee or a percentage of the value it helps generate. Revenue has reached seven figures, Gal-Or said, without giving a precise number.\n\nBy the company’s account, one brokerage gained about $30 million in additional value through dynamic hedging. The company also claims 98% accuracy on trades. That figure tracks whether trading flows land inside a predicted range, according to Gal-Or, and does not measure whether every individual trade was predicted correctly.\n\nThree years of research went into the model. Thousands of people took psychological assessments in the first study, and by the time the team moved on to government and biobank datasets, the sample had passed 2 million. Customer data now spans about 30 million people.\n\nChief Technology Officer Ehud Ezra and three co-authors described one piece of the work in a paper posted in February . Their Large Behavioral Model adapts an 8 billion-parameter version of Meta Platforms Inc.’s Llama 3.1 to predict a person’s strategic choices from a detailed psychometric profile.\n\nOn privacy, Gal-Or",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Meta AI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Israeli artificial intelligence startup 42AI has launched out of stealth with $62.5 million in seed funding from founders and Infinity Group to build what it terms a \"behavioral world model.\" Co-founded and led by CEO Amit Gal-Or alongside CTO Ehud Ezra—with advisory support from 2011 Nobel Prize in Chemistry laureate Dan Shechtman—the company targets brokerages seeking to predict individual trader behavior during market volatility. The software estimates probabilistic outcomes for user decisions using mathematical personality representations processed by a transformer-based world model, paired with a language model that generates textual rationales for each prediction.\n\nThe underlying Large Behavioral Model adapts an 8 billion-parameter version of Meta Platforms Inc.’s Llama 3.1 to forecast strategic human choices from psychometric profiles. Inputs include onboarding know-your-customer data, call frequency metrics, and vocal sentiment. The system claims 98% accuracy, defined specifically as trading flows landing within a predicted range rather than exact individual trade hits. Ten large brokerages currently utilize the platform under flat-fee or value-percentage pricing models, generating seven-figure revenues, with one client reportedly capturing approximately $30 million in additional value via dynamic hedging.\n\nFollowing three years of research and training datasets scaling from thousands of psychological assessment participants to government and biobank datasets covering over 2 million people—and current customer data spanning roughly 30 million individuals—42AI plans to expand into gaming, fraud prevention, cybersecurity, and eventual robotics and AI agent applications. While executives acknowledge privacy safeguards via anonymized identifiers, internal ethics committees, and regulatory monitoring, the founders note a natural performance ceiling exists when subjects act on unaccounted external influences, such as unrecorded colleague advice.",
@@ -396,27 +855,27 @@
         "In other remarks , he noted that usage per user was rising rather than declining, the opposite of the usual decay pattern for new software."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
   {
     "id": "b710c8df850f0ca2",
     "canonicalUrl": "https://www.techmeme.com/261102/p37",
-    "title": "Roku Q3: revenue up 24% YoY to $1.5B, Platform revenue up 23% YoY to $1.3B, ad revenue up 23% YoY to $727.4M, and subscriptions revenue up 23% YoY to $580.9M (Todd Spangler/Variety)",
+    "title": "Roku reports Q3 revenue up 24% YoY to $1.5B, Platform revenue up 23% to $1.3B, ad revenue up 23% to $727.4M, and subscription revenue up 23% to $580.9M (Todd Spangler/Variety)",
     "publishedAt": "2026-11-02T21:15:01.000Z",
-    "fetchedAt": "2026-11-02T23:54:15.283Z",
-    "contentHash": "8ef1b3b35d5a33be",
+    "fetchedAt": "2026-11-03T04:58:38.005Z",
+    "contentHash": "f2228cf0f3654c61",
     "sourceId": "techmeme",
     "sourceName": "Techmeme",
     "author": "Techmeme",
-    "contentSnippet": "Todd Spangler / Variety : Roku Q3: revenue up 24% YoY to $1.5B, Platform revenue up 23% YoY to $1.3B, ad revenue up 23% YoY to $727.4M, and subscriptions revenue up 23% YoY to $580.9M   —  For the third quarter, Roku handily topped Wall Street earnings expectations, with top-line growth of 24% to $1.50 billion in revenue.",
+    "contentSnippet": "Todd Spangler / Variety : Roku reports Q3 revenue up 24% YoY to $1.5B, Platform revenue up 23% to $1.3B, ad revenue up 23% to $727.4M, and subscription revenue up 23% to $580.9M   —  For the third quarter, Roku handily topped Wall Street earnings expectations, with top-line growth of 24% to $1.50 billion in revenue.",
     "imageUrl": "http://www.techmeme.com/261102/i37.jpg",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Todd Spangler / Variety : Roku Q3: revenue up 24% YoY to $1.5B, Platform revenue up 23% YoY to $1.3B, ad revenue up 23% YoY to $727.4M, and subscriptions revenue up 23% YoY to $580.9M — For the third quarter, Roku handily topped Wall Street earnings expectations, with top-line growth of 24% to $1.50 billion in revenue.",
+      "tldr": "Todd Spangler / Variety : Roku reports Q3 revenue up 24% YoY to $1.5B, Platform revenue up 23% to $1.3B, ad revenue up 23% to $727.4M, and subscription revenue up 23% to $580.9M — For the third quarter, Roku handily topped Wall Street earnings expectations, with top-line growth of 24% to $1.50 billion in revenue.",
       "takeaways": [],
       "impact": "Breakthrough",
       "readTimeMinutes": 1,
@@ -616,7 +1075,7 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Deep Principle has released Hydrogen-1.0 , an open-weight scientific model for chemistry, materials science and life sciences. It is built by post-training Z.ai’s GLM-5.3 on domain data, laboratory records and agent discovery trajectories. For developers, it offers open weights that report a FrontierScience-Research win over GPT-6-Astra. The weights ship under the MIT License. TL;DR Size: 753B parameters (MoE, ~40B active per the GLM-5.3 base), 1M-token context, 128K max output. Runs on: 8 GPUs with SGLang (tested); NVFP4 for NVIDIA B200/B300, MXFP4 for AMD MI350X/MI355X. Performance: Beats GPT-6-Astra on FrontierScience-Research; roughly matches Kimi-K3 on GPQA-Diamond. Best: 38.3% on FrontierScience-Research vs 33.3% for GPT-6-Astra (self-reported). Worst: Trails GPT-6-Astra (max thinking) by 3.33 points on NMR structure elucidation. What is Hydrogen-1.0? Hydrogen-1.0 is a scientific research assistant model from Deep Principle, a Hangzhou-based AI-for-materials company. The model card describes it as a GLM-5.3 derivative for scientific problem solving. It targets question framing, experiment planning, results analysis and open-ended discovery. Deep Principle team states that proprietary models produced recent AI science results, but their discovery capabilities are not open. Hydrogen-1.0 is its attempt at a reproducible, inspectable alternative. How was Hydrogen-1.0 trained? The pipeline combines supervised fine-tuning (SFT) with reinforcement learning (RL). Data comes from 4 sources: Domain knowledge: chemistry, materials science and life sciences data. Research scenarios: task-specific feedback from Deep Principle scientists. Laboratory records: full-cycle electronic lab notebook records captured through Mira . Discovery trajectories: sequences of choices and feedback, including failed attempts. Infrastructure builds on Megatron and SGLang across NVIDIA CUDA and AMD ROCm. The team keeps dynamic sparse attention causal across context-parallel shards. Muon optimizer state is moved between CPU, GPU and disk per backend. RL uses resumable rollouts, and each token keeps its original behavior log-probability for importance correction. A layout adapter converts training checkpoints into BF16 and 128×128 blockwise FP8 inference weights. Full datasets and recipes are not released. How does Hydrogen-1.0 perform on benchmarks? On public benchmarks, Deep Principle ",
     "category": "Robotics & Hardware",
-    "lab": "Moonshot AI",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Deep Principle has released Hydrogen-1.0 , an open-weight scientific model for chemistry, materials science and life sciences. It is built by post-training Z.ai’s GLM-5.3 on domain data, laboratory records and agent discovery trajectories. For developers, it offers open weights that report a FrontierScience-Research win over GPT-6-Astra.\n\nThe weights ship under the MIT License. TL;DR Size: 753B parameters (MoE, ~40B active per the GLM-5.3 base), 1M-token context, 128K max output. Runs on: 8 GPUs with SGLang (tested); NVFP4 for NVIDIA B200/B300, MXFP4 for AMD MI350X/MI355X.",
@@ -627,7 +1086,7 @@
         "Hydrogen-1.0 is a scientific research assistant model from Deep Principle, a Hangzhou-based AI-for-materials company."
       ],
       "impact": "High",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -671,6 +1130,50 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "In an announcement on Monday , OpenAI says it will pilot its \"Grid Protectors Program\" at an upcoming data center in Effingham County, Georgia, where the company promises to free up to 1,000 megawatts of power during extreme weather or emergencies, enough to power air conditioners in around 700,000 homes. The announcement comes as opposition to data centers spreads across the US, in response to massive projects that have begun development and construction, frequently with little or no input from local residents. In Utah, residents protested after Box Elder County commissioners signed off on a data center expected to consume more than double … Read the full story at The Verge.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "bca108e4c77bd86b",
+    "canonicalUrl": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+    "title": "Rewarding defenders with bigger bug bounties",
+    "publishedAt": "2026-11-02T18:00:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:21.248Z",
+    "contentHash": "a83d932617d56710",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "0d297090385ad5a7",
+    "canonicalUrl": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+    "title": "Preparing our next security sprint to harden OpenAI",
+    "publishedAt": "2026-11-02T18:00:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:21.248Z",
+    "contentHash": "b1c9bb0b0240f477",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -770,7 +1273,7 @@
         "You might want to index only the main content region of each page, remove navigation and other boilerplate, or attach your own metadata attributes to every document."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 6,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -1201,14 +1704,14 @@
   {
     "id": "599457b1da225c67",
     "canonicalUrl": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQUzVnV2RQbHFRMVZ6VTVINmtCaTRwOVhKNXlHSVV3XzVzeW42eGMtNGt5V09wek0tSVBYWmE2dmt3M0lrMl91QjMzdkRfR185ZGNPcHljYzhmOFNNVkdPTTdvbnlOODJNaU41dE4wbjNmUFNzaUppUnBNUFkyT080amNpSHVncFFaZnVUcU9rQnFLOENtMmVIb3ZZNWE3MGZmZkUyZ1IxeGNDWXk2QjhNWHBTQUZPcVloSmdKSDJkNDltYmZDVmtwZ1N1ekxvY28?oc=5",
-    "title": "Elon Musk’s Grokipedia is littered with mistakes. But Wikipedia could still learn some things from it. - Nieman Lab",
+    "title": "Elon Musk’s Grokipedia is littered with mistakes. But Wikipedia could still learn some things from it. - Nieman Journalism Lab",
     "publishedAt": "2026-11-02T15:59:14.000Z",
-    "fetchedAt": "2026-11-02T23:54:09.884Z",
-    "contentHash": "3c79288e3b076d15",
+    "fetchedAt": "2026-11-03T04:58:21.247Z",
+    "contentHash": "ffb205030fb56632",
     "sourceId": "xai-radar",
     "sourceName": "xAI & Grok Radar",
     "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk’s Grokipedia is littered with mistakes. But Wikipedia could still learn some things from it.    Nieman Lab",
+    "contentSnippet": "Elon Musk’s Grokipedia is littered with mistakes. But Wikipedia could still learn some things from it.    Nieman Journalism Lab",
     "category": "LLMs & GenAI",
     "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
@@ -1492,19 +1995,19 @@
   {
     "id": "c0f528da2654f637",
     "canonicalUrl": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQUkpYaTJHZnFKejJGd3VxbEdHZ1IyVFVJNjM0MUV0TUVWSzJHMEZybWxnOFd6SGRobktXQXFsX2FBTlRhZVl4alNIX3lyYnk1eDBhRkxkVnJrUmFPRWxONnJMbVU4T3JFOGZPbVBGUmRLdGVtSDVqRjJHU0JuNzJVdXBuWUUtNTlMei1JWW53MW1uY2c?oc=5",
-    "title": "Elon Musk Has an AI Problem: People Are Using Grok Too Much - Benzinga",
+    "title": "Elon Musk Has an AI Problem: People Are Using Grok Too Much - SpaceX (NASDAQ:SPCX) - Benzinga",
     "publishedAt": "2026-11-02T14:40:46.000Z",
-    "fetchedAt": "2026-11-02T23:54:09.884Z",
-    "contentHash": "7417b5804a779264",
+    "fetchedAt": "2026-11-03T04:58:21.247Z",
+    "contentHash": "0143356631c966e6",
     "sourceId": "xai-radar",
     "sourceName": "xAI & Grok Radar",
     "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk Has an AI Problem: People Are Using Grok Too Much    Benzinga",
+    "contentSnippet": "Elon Musk Has an AI Problem: People Are Using Grok Too Much - SpaceX (NASDAQ:SPCX)    Benzinga",
     "category": "LLMs & GenAI",
     "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Elon Musk Has an AI Problem: People Are Using Grok Too Much - Benzinga.",
+      "tldr": "Elon Musk Has an AI Problem: People Are Using Grok Too Much - SpaceX (NASDAQ:SPCX) - Benzinga.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -1672,12 +2175,12 @@
     "canonicalUrl": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
     "title": "The U.S. Census Bureau and “Super Intelligence”",
     "publishedAt": "2026-11-02T13:31:26.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.401Z",
-    "contentHash": "7d7eecb21a4c0cfd",
+    "fetchedAt": "2026-11-03T04:58:43.506Z",
+    "contentHash": "be391bf9a3df63a4",
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
-    "contentSnippet": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used that chart to demonstrate GPT-5 data analysis , and then to experiment with Claude's new Code Interpreter . I decided to try running those numbers again to see what had changed over the past year, and in doing so learned that the Bureau has fallen foul of Executive Order 14434 , aka the asinine Super Intelligence one. First, the updated chart Every two weeks the U.S. Census Bureau runs a survey called the Business Trends and Outlook Survey (aka BTOS). Each time it goes to 200,000 businesses out of 1.2 million total - the surveyed group (a \"panel\") cycles such that an individual business only completes the survey every twelve weeks. The latest data is published on alternating Thursdays at 10am. I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\". Under the new \"any business function\" wording, by February 2026, those same large companies answered \"yes\" around 30% of the time, and by October 2026 that had increased to around 40%. The data in the above chart comes from the \"Employment size class\" XLSX file, available from here . Here's a copy of the file I used. You can view the survey document that is sent out to businesses - here's my snapshot copy of that 346KB PDF. The changing language of the questions As the chart demonstrates, the question asked by the Bureau changed in a material way on November 17th, 2025. Prior to that date, the question they asked was this (emphasis mine): In the last two weeks, did this business use Artificial Intelligence (AI) in producing goods or services ? (Examples of AI: machine learning, natural language processing, virtual agents, voice recognition, etc.) On December 3rd, 2025, the Bureau anno",
+    "contentSnippet": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used that chart to demonstrate GPT-5 data analysis , and then to experiment with Claude's new Code Interpreter . I decided to try running those numbers again to see what had changed over the past year, and in doing so learned that the Bureau has fallen foul of Executive Order 14434 , aka the asinine Super Intelligence one. First, the updated chart Every two weeks the U.S. Census Bureau runs a survey called the Business Trends and Outlook Survey (aka BTOS). Each time it goes to 200,000 businesses out of 1.2 million total - the surveyed group (a \"panel\") cycles such that an individual business only completes the survey every twelve weeks. The latest data is published on alternating Thursdays at 10am. I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: Here's a link to the larger image . For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\". Under the new \"any business function\" wording, by February 2026, those same large companies answered \"yes\" around 30% of the time, and by October 2026 that had increased to around 40%. The data in the above chart comes from the \"Employment size class\" XLSX file, available from here . Here's a copy of the file I used. You can view the survey document that is sent out to businesses - here's my snapshot copy of that 346KB PDF. The changing language of the questions As the chart demonstrates, the question asked by the Bureau changed in a material way on November 17th, 2025. Prior to that date, the question they asked was this (emphasis mine): In the last two weeks, did this business use Artificial Intelligence (AI) in producing goods or services ? (Examples of AI: machine learning, natural language processing, virtual agents, voice recognition, etc.) On",
     "imageUrl": "https://static.simonwillison.net/static/2026-11-01/5821A414-FAF6-4E61-B037-952C1FD80D39.png",
     "category": "LLMs & GenAI",
     "lab": "Anthropic",
@@ -1687,11 +2190,11 @@
       "takeaways": [
         "Each time it goes to 200,000 businesses out of 1.2 million total - the surveyed group (a \"panel\") cycles such that an individual business only completes the survey every twelve weeks.",
         "The latest data is published on alternating Thursdays at 10am.",
-        "I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\".",
-        "Under the new \"any business function\" wording, by February 2026, those same large companies answered \"yes\" around 30% of the time, and by October 2026 that had increased to around 40%."
+        "I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: Here's a link to the larger image .",
+        "For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\"."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 3,
+      "readTimeMinutes": 5,
       "generatedWith": "heuristic"
     }
   },
@@ -1970,8 +2473,8 @@
         "As it grows, the agentic web will inevitably transform the human web—and whether the human web survives this transition is anyone’s guess.",
         "For Berners-Lee’s original vision to work, internet users would have had to annotate the pages they built with special tags so that a software agent could understand each element’s meaning—say, “street address” for the part of a physical therapy office’s web page that indicates its location and “appointment types” for the list of services."
       ],
-      "impact": "High",
-      "readTimeMinutes": 8,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4009,6 +4512,28 @@
     }
   },
   {
+    "id": "945f879ef3a469b4",
+    "canonicalUrl": "https://openai.com/index/dan-driscoll-joins-openai",
+    "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
+    "publishedAt": "2026-11-02T00:00:00.000Z",
+    "fetchedAt": "2026-11-03T04:58:21.248Z",
+    "contentHash": "3773709e560cea6f",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI appoints Dan Driscoll to advise on responsible AI for national security modernization, cyber resilience, and collaboration with U.S. allies.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI appoints Dan Driscoll to advise on responsible AI for national security modernization, cyber resilience, and collaboration with U.S.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "2d5cd336818def9d",
     "canonicalUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdTZ5NTd4SnNRcm5za05WWlNRbm9HNW9hd19uWnFrY0tTMms0b3hYZ3JhWm1KWGRWTm1DSjc3Z1RsWHN3cklNa0w1MUhxaDBxcXpVSWhnRERETGRnOUtVSlB2QlIzZ2ZHR3dWaDE4OEJmOTdkMW15NTZWVlotWXgzWEVodzE4eWxhNmtKbHhvSG5UMGNudF9JZS1oVjY1QzdLa0N4R0YxU0k?oc=5",
     "title": "Elon Musk sees orbital AI surpassing data centers as Colossus leads (SPCX:NASDAQ) - Seeking Alpha",
@@ -5982,7 +6507,7 @@
         "The fix isn’t a cheaper model or a smaller prompt."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -9102,487 +9627,6 @@
       "readTimeMinutes": 3,
       "generatedWith": "gemini",
       "summaryVersion": 2
-    }
-  },
-  {
-    "id": "623abbcf443b16ec",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1BR1hEUmpuQUZjTXEwLU5TeW1FbWpSWUtaUVAtRmxzcU5WUTVnc1ZXUlBrYzlfWE04Ti1laXJHSjM0VVlRWndSWmtfX19tb3VYQ3laUEc0aHdhSTZTc1NEWm5BbXpScmdYd0hiVHlqUlFMRVZudzUzc0RB?oc=5",
-    "title": "Democrats Ask Trump: Did You Use Elon Musk's Grok AI Chatbot to Help Plan Maduro Kidnapping? - Common Dreams",
-    "publishedAt": "2026-10-29T14:41:27.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "7a67c7e3cfc76222",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Democrats Ask Trump: Did You Use Elon Musk's Grok AI Chatbot to Help Plan Maduro Kidnapping?    Common Dreams",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Democrats Ask Trump: Did You Use Elon Musk's Grok AI Chatbot to Help Plan Maduro Kidnapping?",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8d448df3e470faab",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1022193/nyt-cooking-app-ai-recipe-modification-tool",
-    "title": "The NYT Cooking app is testing AI recipe modifications",
-    "publishedAt": "2026-10-29T14:39:37.000Z",
-    "fetchedAt": "2026-10-30T18:30:36.968Z",
-    "contentHash": "31a898b2114e14a4",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Jess Weatherbed",
-    "contentSnippet": "The AI tool provides recommendations and adjusts the recipe accordingly. | Image: The New York Times The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior e",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/NYT-Cooking-AI-recipe-modification-feature-hero.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The AI tool provides recommendations and adjusts the recipe accordingly. | Image: The New York Times The New York Times is testing a new AI feature for its Cooking app that helps users to modify recipes, and it has sparked some drama among users. Last Friday, NYT Cooking senior e.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "bc01622ffa1cd4de",
-    "canonicalUrl": "https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/",
-    "title": "Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round",
-    "publishedAt": "2026-10-29T14:35:26.000Z",
-    "fetchedAt": "2026-10-30T18:30:36.738Z",
-    "contentHash": "970568eeed77b46c",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Sarah Perez",
-    "contentSnippet": "On Thursday, AI app Wabi, now describing itself as a \"personal agent,\" said it has raised $55 million at a $1.25 billion valuation.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "On Thursday, AI app Wabi, now describing itself as a \"personal agent,\" said it has raised $55 million at a $1.25 billion valuation.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "95cafd4597e819bb",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/29/ben-hylak/",
-    "title": "Quoting Ben Hylak",
-    "publishedAt": "2026-10-29T14:06:27.000Z",
-    "fetchedAt": "2026-10-31T20:34:35.030Z",
-    "contentHash": "44a3140f083c8190",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. except for our product, of course. in our product, customers love the ui and love us very much. we're special that way. — Ben Hylak Tags: model-context-protocol , ai",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Every product i use should just be a headless mcp, that feeds into an agent, where i never have to think about anything underneath. Except for our product, of course. In our product, customers love the ui and love us very much.",
-      "takeaways": [
-        "— Ben Hylak Tags: model-context-protocol , ai."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3a644431de131a74",
-    "canonicalUrl": "https://www.theverge.com/podcast/1021322/anthropic-ipo-filing-s-1-claude-semianalysis-joey-brookhart-interview",
-    "title": "Anthropic is asking Wall Street to believe in AGI",
-    "publishedAt": "2026-10-29T14:00:00.000Z",
-    "fetchedAt": "2026-10-30T18:45:36.043Z",
-    "contentHash": "d8b3f6551cd607da",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Nilay Patel",
-    "contentSnippet": "Today on Decoder , I’m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing — a document known as an S-1. Anthropic just filed its S-1 to go public on the Nasdaq, and it co",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/VRG_DCD_anthropic_IPO.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "Robotics & Hardware",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Today on Decoder , I’m joined by Joey Brookhart, an analyst at the chip and AI research firm SemiAnalysis, to help me dig into the story inside the numbers of the Anthropic IPO filing — a document known as an S-1. Anthropic just filed its S-1 to go public on the Nasdaq, and it co.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e508e29ae812fe58",
-    "canonicalUrl": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
-    "title": "Granite Switch 4.1.1 — Update models like you update software",
-    "publishedAt": "2026-10-29T13:37:07.000Z",
-    "fetchedAt": "2026-10-30T18:30:37.136Z",
-    "contentHash": "5e45f9194e695fe5",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Granite Switch 4.1.1 — Update models like you update software.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "130656092a266855",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1021476/anthropic-s-1-compute-recursive",
-    "title": "Anthropic’s business plan: Build God or die trying",
-    "publishedAt": "2026-10-29T13:30:00.000Z",
-    "fetchedAt": "2026-10-29T13:30:00.000Z",
-    "contentHash": "130656092a266855",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Elizabeth Lopatto",
-    "contentSnippet": "The Anthropic S-1 seems to have provided the financial justification for the company to spend as much as it possibly can on compute. If you are the kind of person who wonders if Anthropic is doing its level best to build a machine god while convincing Wall Street it's in the business of selling IT contracts, Anthropic has just offered a handy solution: Doing a bunch of things that look like you're trying to build the machine god is the only way to avoid going bankrupt.\nForget about the machine god for a minute. At least in my read of the S-1, it seems like Anthropic is pinning the future of its company to dramatic growth; it has to, in orde …\nRead the full story at The Verge.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Anthropic_dario-amodei_money.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The Anthropic S-1 seems to have provided the financial justification for the company to spend as much as it possibly can on compute. If you are the kind of person who wonders if Anthropic is doing its level best to build a machine god while convincing Wall Street it's in the business of selling IT contracts, Anthropic has just offered a handy solution: Doing a bunch of things that look like you're trying to build the machine god is the only way to avoid going bankrupt. Forget about the machine god for a minute.",
-      "takeaways": [
-        "At least in my read of the S-1, it seems like Anthropic is pinning the future of its company to dramatic growth; it has to, in orde … Read the full story at The Verge."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "84f5c4345b63da3c",
-    "canonicalUrl": "https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/",
-    "title": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW",
-    "publishedAt": "2026-10-29T13:00:16.000Z",
-    "fetchedAt": "2026-10-31T12:03:59.814Z",
-    "contentHash": "8b7538cf203c65e7",
-    "sourceId": "nvidia-blog",
-    "sourceName": "NVIDIA AI News",
-    "author": "GeForce NOW Community",
-    "contentSnippet": "This Halloween week, GFN Thursday is delivering a fresh batch of gaming treats. Something wicked this blade comes. S-GAME’s Phantom Blade Zero launches on GeForce NOW today, bringing a scarily good blend of martial arts and punk fantasy to the cloud. There’s also something on the horizon for adventurers: World of Warcr",
-    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/10/gfn-thursday-10-29-blog-1920x1080-logo.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "This Halloween week, GFN Thursday is delivering a fresh batch of gaming treats. Something wicked this blade comes. S-GAME’s Phantom Blade Zero launches on GeForce NOW today, bringing a scarily good blend of martial arts and punk fantasy to the cloud.",
-      "takeaways": [
-        "There’s also something on the horizon for adventurers: World of Warcr."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3eb958348088c8d0",
-    "canonicalUrl": "https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/",
-    "title": "Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure",
-    "publishedAt": "2026-10-29T13:00:00.000Z",
-    "fetchedAt": "2026-10-30T18:30:36.738Z",
-    "contentHash": "cc2cfc116bb1f93c",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Ivan Mehta",
-    "contentSnippet": "With Pipecat, Deepgram will likely gain a deeper understanding of real-time voice and video infrastructure.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "With Pipecat, Deepgram will likely gain a deeper understanding of real-time voice and video infrastructure.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f303d11137ac0122",
-    "canonicalUrl": "https://techcrunch.com/2026/10/29/amazon-updates-alexa-to-help-you-manage-shopping-lists-and-subscriptions-and-update-delivery-instructions/",
-    "title": "Amazon updates Alexa to help you manage shopping lists and subscriptions and update delivery instructions",
-    "publishedAt": "2026-10-29T13:00:00.000Z",
-    "fetchedAt": "2026-10-30T18:30:36.738Z",
-    "contentHash": "ab600e8f112b4382",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Ivan Mehta",
-    "contentSnippet": "The update allows you to use Alexa to create lists, register them, see what's on them, and add or edit items. You can also manage subscriptions.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The update allows you to use Alexa to create lists, register them, see what's on them, and add or edit items. You can also manage subscriptions.",
-      "takeaways": [],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ee589247a196470b",
-    "canonicalUrl": "https://arxiv.org/abs/2610.39899v1",
-    "title": "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints",
-    "publishedAt": "2026-10-29T12:09:12.000Z",
-    "fetchedAt": "2026-11-01T13:48:25.597Z",
-    "contentHash": "dd88ee42cbe39ef7",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Duc Manh Tran",
-    "contentSnippet": "Automated vulnerability repair must often operate with incomplete vulnerability information: developers may lack an accurate vulnerability classification or a provided proof-of-vulnerability (PoV) test, yet still need to produce a repair. Without detailed information, a key challenge is to explore multiple plausible in",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.39899",
-    "pdfUrl": "https://arxiv.org/pdf/2610.39899.pdf",
-    "summary": {
-      "tldr": "Automated vulnerability repair must often operate with incomplete vulnerability information: developers may lack an accurate vulnerability classification or a provided proof-of-vulnerability (PoV) test, yet still need to produce a repair. Without detailed information, a key challenge is to explore multiple plausible in.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0a6717f46cf3259e",
-    "canonicalUrl": "https://siliconangle.com/2026/10/29/crux-labs-raises-over-6m-to-improve-enterprise-agents-with-human-judgment/",
-    "title": "Crux Labs raises over $6M to improve enterprise agents with human judgment",
-    "publishedAt": "2026-10-29T12:00:48.000Z",
-    "fetchedAt": "2026-10-31T18:25:08.540Z",
-    "contentHash": "1749317cdbc9c265",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Kyt Dotson",
-    "contentSnippet": "Crux Labs, an artificial intelligence platform turning enterprise judgment into continuous agent improvement, launched today with over $6 million in funding. Benchstrength and Misneach led the round, with participation from Analog Ventures and Pareto Holdings. The scale of enterprise AI agents in deployment can range f",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Crux Labs, an artificial intelligence platform turning enterprise judgment into continuous agent improvement, launched today with over $6 million in funding. Benchstrength and Misneach led the round, with participation from Analog Ventures and Pareto Holdings. The scale of enterprise AI agents in deployment can range f.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "92220ef46a2db3f5",
-    "canonicalUrl": "https://siliconangle.com/2026/10/29/solink-raises-more-than-100m-to-pull-business-data-from-security-cameras-with-ai/",
-    "title": "Solink raises more than $100M to pull business data from security cameras with AI",
-    "publishedAt": "2026-10-29T12:00:28.000Z",
-    "fetchedAt": "2026-10-31T18:25:08.540Z",
-    "contentHash": "79e98dd5f47d56d8",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Duncan Riley",
-    "contentSnippet": "Video intelligence company Solink Corp. revealed today that it has raised more than $100 million in new funding. Solink started out in Ottawa in 2009 selling cloud video surveillance, and its software now uses artificial intelligence to pull information out of the security cameras retailers, restaurants and warehouse o",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Video intelligence company Solink Corp. Revealed today that it has raised more than $100 million in new funding. Solink started out in Ottawa in 2009 selling cloud video surveillance, and its software now uses artificial intelligence to pull information out of the security cameras retailers, restaurants and warehouse o.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "32d69d7e6fd51a11",
-    "canonicalUrl": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/",
-    "title": "We urgently need to monitor AI agents’ actions in real time",
-    "publishedAt": "2026-10-29T10:11:12.000Z",
-    "fetchedAt": "2026-10-30T18:47:02.452Z",
-    "contentHash": "612285080fb2dd7a",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Madhulika Srikumar, Claire Leibowicz",
-    "contentSnippet": "This summer, hundreds of OpenAI agents tried to cheat on a cybersecurity test. They broke out of their test environment and successfully hacked Hugging Face, a site that they believed held clues about how they’d be graded. Around the same time, another OpenAI agent accessed private files from an Australian government w",
-    "category": "Open Source & Research",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "This summer, hundreds of OpenAI agents tried to cheat on a cybersecurity test. They broke out of their test environment and successfully hacked Hugging Face, a site that they believed held clues about how they’d be graded. Around the same time, another OpenAI agent accessed private files from an Australian government w.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ff3481891829d13b",
-    "canonicalUrl": "https://arxiv.org/abs/2610.39660v1",
-    "title": "Sticky Collusion: Persistence of LLM Agent Collusion after Incentive Removal and Partner Replacement",
-    "publishedAt": "2026-10-29T09:13:06.000Z",
-    "fetchedAt": "2026-11-01T13:48:25.597Z",
-    "contentHash": "cf6580c395f2ef2f",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Joshua Adrian Cahyono",
-    "contentSnippet": "We ask whether collusion between AI agents survives once formed, when its incentive is removed or a colluder is replaced. Q-learning pricing agents stop colluding with a new rival; we test whether LLM agents do. We use the joint-task environment of Shi et al.\\ (2026), where two agents verify each other's work under a r",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.39660",
-    "pdfUrl": "https://arxiv.org/pdf/2610.39660.pdf",
-    "summary": {
-      "tldr": "We ask whether collusion between AI agents survives once formed, when its incentive is removed or a colluder is replaced. Q-learning pricing agents stop colluding with a new rival; we test whether LLM agents do. We use the joint-task environment of Shi et al.\\ (2026), where two agents verify each other's work under a r.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0f01adb2acab0a67",
-    "canonicalUrl": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
-    "title": "How we detect frontier model misalignment",
-    "publishedAt": "2026-10-29T09:00:00.000Z",
-    "fetchedAt": "2026-10-30T18:30:35.372Z",
-    "contentHash": "4485911e5bff8a14",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
-    "category": "Ethics & Policy",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1902b302d1682154",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQa1VFQkhoaFFXSTI3OW9WWm52WHY1aW55R2lHVlBYYU5SM1hJaDItVGZWRU5uQlZaX19rdWxFaVd4WTc0N2lpMWI5S3hCeHpqQUktN1pvWmxmODc0cHdRaHlLYXNXN3E1N0dYemlTc0ZNb21WeUxiSlNTdkhCODZHSXhpSEdfNGc?oc=5",
-    "title": "Top House Democrats demand Trump preserve conversations with Grok - Politico",
-    "publishedAt": "2026-10-29T08:45:00.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "a1341d06d2cb1ed6",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Top House Democrats demand Trump preserve conversations with Grok    Politico",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Top House Democrats demand Trump preserve conversations with Grok - Politico.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0dfcb6e95d288b13",
-    "canonicalUrl": "https://www.marktechpost.com/2026/10/29/infini-ai-lab-hermit-harness-adapter-framework/",
-    "title": "Infini-AI-Lab Releases Hermit, an Open-Source Harness Adapter Framework for AI Agents",
-    "publishedAt": "2026-10-29T08:24:52.000Z",
-    "fetchedAt": "2026-10-31T18:25:08.539Z",
-    "contentHash": "16314d148cc13939",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Asif Razzaq",
-    "contentSnippet": "Infini-AI-Lab has released Hermit , an open-source harness adapter framework for AI agents. Hermit is a framework from Infini-AI-Lab that trains an external ‘harness adapter’ while the agent’s model and harness stay frozen. The first release, v0.1.0 , shipped on October 25, 2026. CMU postdoc Haizhong Zheng announced it",
-    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Infini-AI-Lab has released Hermit , an open-source harness adapter framework for AI agents. Hermit is a framework from Infini-AI-Lab that trains an external ‘harness adapter’ while the agent’s model and harness stay frozen. The first release, v0.1.0 , shipped on October 25, 2026.",
-      "takeaways": [
-        "CMU postdoc Haizhong Zheng announced it."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "27a0e08cd4d43add",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMimAFBVV95cUxORWQyQkE5NUV4R2dteEtnN3pmOEp4TzJ2UUJCU0swUnl0VTg3MkpEdjFjNllQR0pweElDdHRwWkxMSFBaX0FoVHlVOGpVVGJtT1hFS2tqdTJubjg2MFVjMGJZbWNfTXFJbjBvYmczazZrdmphX2tsQUw1NXB5ZWtmeXZZR2ZxYkYwdVZpdGFpeUY3cm9kUGxySw?oc=5",
-    "title": "Jensen Huang Foresees Booming AI Demand, but Elon Musk's Warning Highlights a Different Risk - The Motley Fool",
-    "publishedAt": "2026-10-29T08:13:00.000Z",
-    "fetchedAt": "2026-10-31T23:41:00.757Z",
-    "contentHash": "8a6440f8d7d9c3c1",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Jensen Huang Foresees Booming AI Demand, but Elon Musk's Warning Highlights a Different Risk    The Motley Fool",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Jensen Huang Foresees Booming AI Demand, but Elon Musk's Warning Highlights a Different Risk - The Motley Fool.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4cd75eede835cdf0",
-    "canonicalUrl": "https://www.marktechpost.com/2026/10/29/block-dessa-full-duplex-speech-model/",
-    "title": "Block Unveils Dessa, a Full-Duplex Speech Model Trained Only on Speech",
-    "publishedAt": "2026-10-29T07:50:39.000Z",
-    "fetchedAt": "2026-10-31T18:25:08.539Z",
-    "contentHash": "881f957ed2554fcd",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "Block’s AI research lab has released Dessa , a full-duplex speech model trained only on human conversation. Block announced it on October 23, 2026 as a research preview. Dessa is a speech-to-speech model from Block that listens and talks at the same time. Block says it used no text and no pretrained models. That is a d",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Block’s AI research lab has released Dessa , a full-duplex speech model trained only on human conversation. Block announced it on October 23, 2026 as a research preview. Dessa is a speech-to-speech model from Block that listens and talks at the same time.",
-      "takeaways": [
-        "Block says it used no text and no pretrained models."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d948735545c20cf3",
-    "canonicalUrl": "https://openai.com/index/ropes-gray-ai-diligence",
-    "title": "How Ropes & Gray is developing AI for transactional diligence",
-    "publishedAt": "2026-10-29T07:00:00.000Z",
-    "fetchedAt": "2026-10-30T18:30:35.372Z",
-    "contentHash": "e23ad90c8ce1792b",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
     }
   }
 ]
