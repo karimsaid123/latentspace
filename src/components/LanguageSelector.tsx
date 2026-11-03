@@ -74,7 +74,7 @@ export default function LanguageSelector({
       {isOpen && (
         <div
           role="menu"
-          className="absolute right-0 top-full mt-1.5 w-36 bg-[#faf9f6] text-black border border-black shadow-2xl z-50 py-1 font-mono text-[10px] tracking-wider divide-y divide-black/10 animate-fade-in"
+          className="absolute right-0 top-full mt-1.5 w-44 bg-[#faf9f6] text-black border border-black shadow-2xl z-50 py-1 font-mono text-[10px] tracking-wider divide-y divide-black/10 animate-fade-in"
         >
           {Object.values(LOCALES).map((loc) => {
             const isSelected = loc.code === currentLocale;

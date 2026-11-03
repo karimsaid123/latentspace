@@ -111,7 +111,7 @@ const MinimalNav = memo(function MinimalNav({
     <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="relative flex items-center justify-between border-b border-black/15 pb-3 overflow-hidden gap-2 sm:gap-4">
+      <div className="relative z-30 flex items-center justify-between border-b border-black/15 pb-3 gap-2 sm:gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
