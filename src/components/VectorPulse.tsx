@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, memo } from 'react';
 import type { VectorMomentumStatus, VectorPulseSnapshot } from '@/types';
+import { getDictionary, Locale } from '@/lib/i18n';
 
 interface VectorPulseProps {
   snapshot: VectorPulseSnapshot;
@@ -9,6 +10,7 @@ interface VectorPulseProps {
   onSelectVector: (vectorId: string | null) => void;
   onClose: () => void;
   lastSyncedTime?: number;
+  locale?: Locale;
 }
 
 function formatSyncAge(lastSyncedTime?: number, nowMs?: number): string {
@@ -45,9 +47,11 @@ const VectorPulse = memo(function VectorPulse({
   onSelectVector,
   onClose,
   lastSyncedTime,
+  locale = 'en',
 }: VectorPulseProps) {
   const [showAll, setShowAll] = useState(false);
   const [nowMs, setNowMs] = useState<number>(0);
+  const dict = getDictionary(locale);
 
   useEffect(() => {
     const updateNow = () => setNowMs(Date.now());
@@ -79,7 +83,7 @@ const VectorPulse = memo(function VectorPulse({
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" />
           <span className="font-bold text-black truncate">
-            VECTOR PULSE // {snapshot.windowDays}D MOMENTUM
+            {dict.pulse.title} // {snapshot.windowDays}D {dict.pulse.momentum}
           </span>
           <span className="text-black/45 shrink-0">[N={snapshot.corpusSize}]</span>
         </div>
@@ -89,7 +93,7 @@ const VectorPulse = memo(function VectorPulse({
           onClick={onClose}
           className="text-black/60 hover:text-black transition-colors cursor-pointer font-bold shrink-0"
         >
-          [✕]
+          {dict.pulse.close}
         </button>
       </div>
 
@@ -199,10 +203,10 @@ const VectorPulse = memo(function VectorPulse({
               }}
               className="text-[#ff8000] hover:underline font-bold cursor-pointer"
             >
-              [CLEAR ACTIVE FILTER ✕]
+              {dict.pulse.clearActive}
             </button>
           ) : (
-            <span>[SELECT VECTOR TO FILTER FEED]</span>
+            <span>{dict.pulse.selectToFilter}</span>
           )}
 
           {snapshot.vectors.length > 5 && (
@@ -211,7 +215,7 @@ const VectorPulse = memo(function VectorPulse({
               onClick={() => setShowAll((prev) => !prev)}
               className="text-black/75 hover:text-black font-bold cursor-pointer transition-colors"
             >
-              [{showAll ? 'TOP 5 −' : `ALL ${snapshot.vectors.length} +`}]
+              [{showAll ? dict.pulse.top5 : `${dict.pulse.allVectors} ${snapshot.vectors.length} +`}]
             </button>
           )}
         </div>

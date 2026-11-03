@@ -6,6 +6,7 @@ import { Article, AISummary } from '@/types';
 import { ExternalLink, Share2 } from 'lucide-react';
 import ArticleShareModal from './ArticleShareModal';
 import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
+import { getDictionary, isRTL, Locale } from '@/lib/i18n';
 
 interface EditorialModalProps {
   article: Article | null;
@@ -13,6 +14,7 @@ interface EditorialModalProps {
   isBookmarked?: boolean;
   onToggleBookmark?: (id: string) => void;
   onSummaryEnriched?: (articleId: string, summary: AISummary) => void;
+  locale?: Locale;
 }
 
 const emptySubscribe = () => () => {};
@@ -53,11 +55,13 @@ export default function EditorialModal({
   isBookmarked = false,
   onToggleBookmark,
   onSummaryEnriched,
+  locale = 'en',
 }: EditorialModalProps) {
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [summary, setSummary] = useState<AISummary | undefined>(article?.aiSummary);
   const [isEnriching, setIsEnriching] = useState(false);
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const dict = getDictionary(locale);
 
   useEffect(() => {
     if (!article) {
@@ -68,7 +72,8 @@ export default function EditorialModal({
 
     const needsDeepSynthesis =
       article.aiSummary?.generatedWith !== 'gemini' ||
-      (article.aiSummary?.summaryVersion || 0) < 2;
+      (article.aiSummary?.summaryVersion || 0) < 2 ||
+      (locale !== 'en' && article.aiSummary?.locale !== locale);
 
     if (needsDeepSynthesis) {
       const controller = new AbortController();
@@ -81,7 +86,7 @@ export default function EditorialModal({
           'Content-Type': 'application/json',
           'x-latentspace-client': '1',
         },
-        body: JSON.stringify({ articleId: targetId }),
+        body: JSON.stringify({ articleId: targetId, locale }),
         signal: controller.signal,
       })
         .then((res) => (res.ok ? res.json() : null))
@@ -106,7 +111,7 @@ export default function EditorialModal({
     } else {
       setIsEnriching(false);
     }
-  }, [article?.id, article?.aiSummary, onSummaryEnriched]);
+  }, [article?.id, article?.aiSummary, locale, onSummaryEnriched]);
 
   useEffect(() => {
     if (!article) return;
@@ -155,7 +160,10 @@ export default function EditorialModal({
       />
 
       {/* Reader Sheet */}
-      <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in">
+      <div
+        dir={isRTL(locale) ? 'rtl' : 'ltr'}
+        className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in"
+      >
 
         {/* Top Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black/10 font-mono text-[10px] tracking-widest text-black/60">
@@ -164,12 +172,12 @@ export default function EditorialModal({
             {isEnriching ? (
               <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-black/5 text-black/70 border border-black/15 text-[9px] font-mono tracking-wider uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] animate-pulse" />
-                EXTRACTING FULL BRIEFING...
+                {dict.modal.extracting}
               </span>
             ) : summary?.generatedWith === 'gemini' ? (
               <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#00aa66]/10 text-[#00aa66] border border-[#00aa66]/30 text-[9px] font-mono font-bold tracking-wider uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00aa66]" />
-                VERIFIED BRIEF
+                {dict.modal.verifiedBrief}
               </span>
             ) : null}
           </div>
@@ -182,7 +190,7 @@ export default function EditorialModal({
                   isBookmarked ? 'text-black font-bold' : 'text-black/60 hover:text-black'
                 }`}
               >
-                [{isBookmarked ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                [{isBookmarked ? <><span className="text-[#ff8000]">★</span> {dict.modal.saved}</> : dict.modal.save}]
               </button>
             )}
 
@@ -191,7 +199,7 @@ export default function EditorialModal({
               className="text-black/60 hover:text-black cursor-pointer transition-colors uppercase font-mono flex items-center gap-1.5"
             >
               <Share2 className="w-3.5 h-3.5" />
-              <span>[SHARE]</span>
+              <span>{dict.modal.share}</span>
             </button>
 
             <button
@@ -202,7 +210,7 @@ export default function EditorialModal({
               }}
               className="font-bold text-black hover:opacity-60 cursor-pointer uppercase font-mono ml-1"
             >
-              [CLOSE ✕]
+              {dict.modal.closeBtn}
             </button>
           </div>
         </div>
@@ -219,7 +227,7 @@ export default function EditorialModal({
                 <CompanyLogo brandId={brand.id} className="w-2.5 h-2.5" />
               </div>
               <span className="font-bold tracking-wider" style={{ color: brand.textColor }}>
-                {article.lab || 'FRONTIER LAB'}
+                {article.lab || dict.modal.frontierLab}
               </span>
               {article.arxivId && (
                 <span className="font-mono text-[9px] font-semibold text-black/40 ml-1">
@@ -237,7 +245,7 @@ export default function EditorialModal({
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                {'01 // SUMMARY'}
+                {dict.modal.summaryTitle}
               </span>
               <div className="h-px flex-1 bg-black/10" />
             </div>
@@ -259,7 +267,7 @@ export default function EditorialModal({
             <div className="space-y-4 pt-2">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-black/50 shrink-0">
-                  {'02 // KEY POINTS'}
+                  {dict.modal.keyPointsTitle}
                 </span>
                 <div className="h-px flex-1 bg-black/10" />
               </div>
@@ -285,17 +293,20 @@ export default function EditorialModal({
         <div className="px-6 py-4 border-t border-black/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[10px]">
           <div className="flex items-center gap-3 text-black/50">
             <span>
-              RECORDED:{' '}
-              {new Date(article.pubDate).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
+              {dict.modal.recorded}{' '}
+              {new Date(article.pubDate).toLocaleDateString(
+                locale === 'ar' ? 'ar-EG' : locale === 'zh' ? 'zh-CN' : locale === 'es' ? 'es-ES' : 'en-US',
+                {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                }
+              )}
             </span>
             {article.author && article.author !== article.source?.name && (
               <>
                 <span>•</span>
-                <span>BY {article.author.toUpperCase()}</span>
+                <span>{dict.modal.by} {article.author.toUpperCase()}</span>
               </>
             )}
           </div>
@@ -308,7 +319,7 @@ export default function EditorialModal({
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 font-bold uppercase text-black border border-black px-3.5 py-2 hover:bg-black hover:text-white transition-colors cursor-pointer text-[11px] tracking-wider"
               >
-                <span>OPEN PDF ↗</span>
+                <span>{dict.modal.openPdf}</span>
               </a>
             )}
 
@@ -321,8 +332,8 @@ export default function EditorialModal({
               >
                 <span>
                   {article.entryType === 'RESEARCH_PAPER'
-                    ? 'VIEW ON ARXIV'
-                    : `READ ON ${article.source?.name || 'SOURCE'}`}
+                    ? dict.modal.viewOnArxiv
+                    : `${dict.modal.readOn} ${article.source?.name || 'SOURCE'}`}
                 </span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>

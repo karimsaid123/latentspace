@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, memo } from 'react';
 import { Article } from '@/types';
 import ScrollReveal from './ScrollReveal';
+import { getDictionary, Locale } from '@/lib/i18n';
 
 const CATALOG_PAGE_SIZE = 24;
 
@@ -11,6 +12,7 @@ interface EditorialSpreadProps {
   onSelectArticle: (article: Article) => void;
   bookmarkedIds?: string[];
   onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
+  locale?: Locale;
 }
 
 const EditorialSpread = memo(function EditorialSpread({
@@ -18,7 +20,9 @@ const EditorialSpread = memo(function EditorialSpread({
   onSelectArticle,
   bookmarkedIds = [],
   onToggleBookmark,
+  locale = 'en',
 }: EditorialSpreadProps) {
+  const dict = getDictionary(locale);
   const [visibleCatalogCount, setVisibleCatalogCount] = useState(CATALOG_PAGE_SIZE);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
 
@@ -62,12 +66,12 @@ const EditorialSpread = memo(function EditorialSpread({
           </div>
 
           <div className="mt-4 font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3">
-            <span>BY {lead.author || lead.source.name}</span>
+            <span>{dict.modal.by} {lead.author || lead.source.name}</span>
             <span>//</span>
-            <span className="font-bold text-black">LAB: [{lead.lab || 'FRONTIER'}]</span>
+            <span className="font-bold text-black">{dict.feed.lab} [{lead.lab || 'FRONTIER'}]</span>
             <span>//</span>
             <span className={lead.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-              [{lead.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+              [{lead.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}]
             </span>
             {lead.arxivId && <span className="font-bold text-black">[{lead.arxivId}]</span>}
             {onToggleBookmark && (
@@ -80,7 +84,7 @@ const EditorialSpread = memo(function EditorialSpread({
                   }`}
                   title={savedIdSet.has(lead.id) ? 'Saved' : 'Save article'}
                 >
-                  [{savedIdSet.has(lead.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                  [{savedIdSet.has(lead.id) ? <><span className="text-[#ff8000]">★</span> {dict.modal.saved}</> : dict.modal.save}]
                 </button>
               </>
             )}
@@ -107,10 +111,10 @@ const EditorialSpread = memo(function EditorialSpread({
                 <div className="flex items-center gap-3">
                   <span className="font-bold text-black">[{second.source.name}]</span>
                   <span>//</span>
-                  <span className="font-bold text-black">LAB: [{second.lab || 'FRONTIER'}]</span>
+                  <span className="font-bold text-black">{dict.feed.lab} [{second.lab || 'FRONTIER'}]</span>
                   <span>//</span>
                   <span className={second.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-                    [{second.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+                    [{second.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}]
                   </span>
                 </div>
                 {onToggleBookmark && (
@@ -124,7 +128,7 @@ const EditorialSpread = memo(function EditorialSpread({
                     }`}
                     title={savedIdSet.has(second.id) ? 'Saved' : 'Save article'}
                   >
-                    [{savedIdSet.has(second.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                    [{savedIdSet.has(second.id) ? <><span className="text-[#ff8000]">★</span> {dict.modal.saved}</> : dict.modal.save}]
                   </button>
                 )}
               </div>
@@ -151,7 +155,7 @@ const EditorialSpread = memo(function EditorialSpread({
         <section className="relative py-12 lg:py-16 border-t border-black/10">
 
           <div className="flex justify-between font-mono text-[9px] tracking-widest text-black/50 uppercase mb-6">
-            <span>FEATURED DISPATCH</span>
+            <span>{dict.feed.featuredDispatch}</span>
           </div>
 
           <div className="w-full">
@@ -159,7 +163,7 @@ const EditorialSpread = memo(function EditorialSpread({
               <div className="flex items-center gap-3">
                 <span className="font-bold text-black">[{third.source.name}]</span>
                 <span>//</span>
-                <span className="font-bold text-black">LAB: [{third.lab || 'FRONTIER'}]</span>
+                <span className="font-bold text-black">{dict.feed.lab} [{third.lab || 'FRONTIER'}]</span>
               </div>
               {onToggleBookmark && (
                 <button
@@ -172,7 +176,7 @@ const EditorialSpread = memo(function EditorialSpread({
                   }`}
                   title={savedIdSet.has(third.id) ? 'Saved' : 'Save article'}
                 >
-                  [{savedIdSet.has(third.id) ? <><span className="text-[#ff8000]">★</span> SAVED</> : '+ SAVE'}]
+                  [{savedIdSet.has(third.id) ? <><span className="text-[#ff8000]">★</span> {dict.modal.saved}</> : dict.modal.save}]
                 </button>
               )}
             </div>
@@ -185,10 +189,10 @@ const EditorialSpread = memo(function EditorialSpread({
             </h2>
 
             <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase flex flex-wrap items-center gap-3 mb-4">
-              <span>BY {third.author || third.source.name}</span>
+              <span>{dict.modal.by} {third.author || third.source.name}</span>
               <span>//</span>
               <span className={third.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black border border-black px-1.5 py-0.5' : ''}>
-                [{third.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}]
+                [{third.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}]
               </span>
               {third.arxivId && <span className="font-bold text-black">[{third.arxivId}]</span>}
             </div>
@@ -213,8 +217,8 @@ const EditorialSpread = memo(function EditorialSpread({
         <section className="relative py-12 lg:py-16 border-t border-black/10">
 
           <div className="flex justify-between items-baseline font-mono text-[9px] tracking-widest text-black/50 uppercase mb-8">
-            <span>DISPATCH ARCHIVE</span>
-            <span>CURATED SECTOR RADAR</span>
+            <span>{dict.feed.dispatchArchive}</span>
+            <span>{dict.feed.curatedRadar}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
@@ -253,7 +257,7 @@ const EditorialSpread = memo(function EditorialSpread({
                     )}
 
                     <div className="flex items-center justify-between font-mono text-[9px] text-black/40 uppercase pt-2 border-t border-black/10 w-full">
-                      <span>{item.entryType === 'RESEARCH_PAPER' ? 'RESEARCH PAPER' : 'DISPATCH'}</span>
+                      <span>{item.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}</span>
                       {onToggleBookmark && (
                         <button
                           onClick={(e) => {
@@ -264,7 +268,7 @@ const EditorialSpread = memo(function EditorialSpread({
                             isItemSaved ? 'text-black font-bold' : 'text-black/40'
                           }`}
                         >
-                          [{isItemSaved ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                          [{isItemSaved ? <span className="text-[#ff8000]">★</span> : dict.modal.save}]
                         </button>
                       )}
                     </div>
@@ -333,7 +337,7 @@ const EditorialSpread = memo(function EditorialSpread({
                   <div className="mt-4 pt-3 border-t border-black/5 flex justify-between items-center font-mono text-[9px] tracking-widest text-black/40 uppercase">
                     <div className="flex items-center gap-2 truncate">
                       <span className={art.entryType === 'RESEARCH_PAPER' ? 'font-bold text-black underline underline-offset-2' : ''}>
-                        {art.entryType === 'RESEARCH_PAPER' ? 'RESEARCH' : 'NEWS'}
+                        {art.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}
                       </span>
                     </div>
                     <div className="flex items-center gap-3 shrink-0">
@@ -345,7 +349,7 @@ const EditorialSpread = memo(function EditorialSpread({
                           }`}
                           title={savedIdSet.has(art.id) ? 'Saved' : 'Save article'}
                         >
-                          [{savedIdSet.has(art.id) ? <span className="text-[#ff8000]">★</span> : '+ SAVE'}]
+                          [{savedIdSet.has(art.id) ? <span className="text-[#ff8000]">★</span> : dict.modal.save}]
                         </button>
                       )}
                       <span className="font-bold text-black flex items-center gap-1">

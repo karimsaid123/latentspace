@@ -1,3 +1,7 @@
+import type { Locale } from '@/lib/i18n';
+
+export type { Locale };
+
 export type Category = 
   | 'LLMs & GenAI'
   | 'Robotics & Hardware'
@@ -26,6 +30,7 @@ export interface AISummary {
   readTimeMinutes: number;
   generatedWith?: 'gemini' | 'heuristic';
   summaryVersion?: number;
+  locale?: Locale;
 }
 
 export interface DomainSource {

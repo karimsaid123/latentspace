@@ -4,6 +4,7 @@ import { SingleFlight } from '@/core/services/single-flight';
 import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
 import { fetchCleanArticleBody } from '@/lib/article-extractor';
 import { generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
+import { isValidLocale, Locale } from '@/lib/i18n';
 import {
   checkEdgeRateLimit,
   checkGlobalGeminiBudget,
@@ -92,7 +93,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const parsedBody = await readBoundedJson<{ articleId?: unknown; id?: unknown }>(request, 2048);
+    const parsedBody = await readBoundedJson<{ articleId?: unknown; id?: unknown; locale?: unknown }>(request, 2048);
     if (!parsedBody.ok) {
       return NextResponse.json(
         { error: parsedBody.error },
@@ -108,6 +109,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const requestedLocale: Locale = isValidLocale(parsedBody.data.locale)
+      ? parsedBody.data.locale
+      : 'en';
+
     await container.bootstrap();
     await container.syncEdgeState(false);
 
@@ -119,20 +124,38 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Fast path: already synthesized by Gemini v2 (zero rate-limit penalty, zero latency)
-    if (
-      article.summary?.generatedWith === 'gemini' &&
-      (article.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
-    ) {
-      return NextResponse.json(
-        {
-          success: true,
-          summary: article.summary,
-          source: 'cache',
-          durationMs: Date.now() - startTime,
-        },
-        { headers: NO_STORE_HEADERS }
-      );
+    const localeCacheKey = `gemini_sum_${articleId}_${requestedLocale}`;
+
+    // Fast path: already synthesized for requested locale (zero rate-limit penalty, zero latency)
+    if (requestedLocale === 'en') {
+      if (
+        article.summary?.generatedWith === 'gemini' &&
+        (article.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION &&
+        (!article.summary?.locale || article.summary.locale === 'en')
+      ) {
+        return NextResponse.json(
+          {
+            success: true,
+            summary: article.summary,
+            source: 'cache',
+            durationMs: Date.now() - startTime,
+          },
+          { headers: NO_STORE_HEADERS }
+        );
+      }
+    } else {
+      const cachedLocaleSummary = await container.cache.get<AISummary>(localeCacheKey);
+      if (cachedLocaleSummary) {
+        return NextResponse.json(
+          {
+            success: true,
+            summary: cachedLocaleSummary,
+            source: 'cache',
+            durationMs: Date.now() - startTime,
+          },
+          { headers: NO_STORE_HEADERS }
+        );
+      }
     }
 
     const ip = getClientIp(request);
@@ -207,14 +230,22 @@ export async function POST(request: NextRequest) {
     }
 
     const synthesized = await summarizeFlight.execute<AISummary | null>(
-      `gemini_sum_${targetId}`,
+      localeCacheKey,
       async () => {
-        const freshCheck = await container.articleRepo.findById(targetId);
-        if (
-          freshCheck?.summary?.generatedWith === 'gemini' &&
-          (freshCheck.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
-        ) {
-          return freshCheck.summary;
+        if (requestedLocale === 'en') {
+          const freshCheck = await container.articleRepo.findById(targetId);
+          if (
+            freshCheck?.summary?.generatedWith === 'gemini' &&
+            (freshCheck.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION &&
+            (!freshCheck.summary?.locale || freshCheck.summary.locale === 'en')
+          ) {
+            return freshCheck.summary;
+          }
+        } else {
+          const freshCacheCheck = await container.cache.get<AISummary>(localeCacheKey);
+          if (freshCacheCheck) {
+            return freshCacheCheck;
+          }
         }
 
         // Fetch full source article text when RSS snippet is short so Gemini has complete factual context
@@ -230,14 +261,20 @@ export async function POST(request: NextRequest) {
         const result = await summarizeWithGemini(
           article.title,
           sourceContent || article.title,
-          apiKey
+          apiKey,
+          requestedLocale
         );
 
         if (result) {
-          article.summary = result;
-          await container.articleRepo.saveMany([article]);
-          container.cache.clear();
-        } else if (sourceContent.length > (article.summary?.tldr?.length || 0)) {
+          if (requestedLocale === 'en') {
+            article.summary = result;
+            await container.articleRepo.saveMany([article]);
+            container.cache.clear();
+          } else {
+            // Cache localized summary for 14 days
+            await container.cache.set(localeCacheKey, result, 14 * 86_400);
+          }
+        } else if (requestedLocale === 'en' && sourceContent.length > (article.summary?.tldr?.length || 0)) {
           article.summary = generateDeepIntelligenceSummary(
             article.title,
             sourceContent,

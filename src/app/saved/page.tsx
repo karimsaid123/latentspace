@@ -14,6 +14,7 @@ import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
 import LiveClock from '@/components/LiveClock';
 import ThemeToggle from '@/components/ThemeToggle';
+import { Locale, DEFAULT_LOCALE, isValidLocale } from '@/lib/i18n';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
 type SortOption = 'NEWEST_SAVED' | 'OLDEST_SAVED' | 'PUBLISHED_DATE' | 'ALPHABETICAL';
@@ -66,6 +67,18 @@ export default function SavedPage() {
   const [selectedLab, setSelectedLab] = useState<string>('ALL LABS');
   const [selectedSort, setSelectedSort] = useState<SortOption>('NEWEST_SAVED');
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('latentspace-locale');
+      if (stored && isValidLocale(stored)) {
+        setLocale(stored);
+      }
+    } catch {
+      // Ignore
+    }
+  }, []);
 
   const savedItemsRef = useRef(savedItems);
   savedItemsRef.current = savedItems;
@@ -581,6 +594,7 @@ export default function SavedPage() {
             save({ ...existing.article, aiSummary: enrichedSummary });
           }
         }}
+        locale={locale}
       />
 
     </div>
