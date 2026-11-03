@@ -30,6 +30,10 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+  const [visibleSpreadCount, setVisibleSpreadCount] = useState<number>(6);
+  const [translationsByLocale, setTranslationsByLocale] = useState<
+    Record<string, Record<string, { title: string; tldr: string }>>
+  >({});
   const dict = useMemo(() => getDictionary(locale), [locale]);
 
   // Sync locale with localStorage on client mount
@@ -583,6 +587,77 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
     return list;
   }, [articles, selectedLab, selectedType, selectedVector, savedIdSet]);
 
+  // Batch-translate visible feed articles when a non-English locale is selected
+  useEffect(() => {
+    if (locale === 'en' || displayedArticles.length === 0) return;
+
+    const currentMap = translationsByLocale[locale] || {};
+    const targetSlice = displayedArticles.slice(0, Math.min(36, Math.max(12, visibleSpreadCount)));
+    const missing = targetSlice.filter((a) => !currentMap[a.id]);
+
+    if (missing.length === 0) return;
+
+    const controller = new AbortController();
+    const payloadItems = missing.map((a) => ({
+      id: a.id,
+      title: a.title,
+      tldr: (a.aiSummary?.tldr || a.contentSnippet || '').split(/\n{2,}/)[0] || '',
+    }));
+
+    fetch('/api/translate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-latentspace-client': '1',
+      },
+      body: JSON.stringify({ locale, items: payloadItems }),
+      signal: controller.signal,
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!controller.signal.aborted && data?.success && data?.translations) {
+          setTranslationsByLocale((prev) => ({
+            ...prev,
+            [locale]: {
+              ...(prev[locale] || {}),
+              ...data.translations,
+            },
+          }));
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      controller.abort();
+    };
+  }, [locale, displayedArticles, visibleSpreadCount, translationsByLocale]);
+
+  const localizedDisplayedArticles = useMemo(() => {
+    if (locale === 'en') return displayedArticles;
+    const map = translationsByLocale[locale];
+    if (!map) return displayedArticles;
+
+    return displayedArticles.map((art) => {
+      const tr = map[art.id];
+      if (!tr) return art;
+      return {
+        ...art,
+        title: tr.title || art.title,
+        contentSnippet: tr.tldr || art.contentSnippet,
+        aiSummary: {
+          ...art.aiSummary,
+          tldr: tr.tldr || art.aiSummary.tldr,
+        },
+      };
+    });
+  }, [displayedArticles, locale, translationsByLocale]);
+
+  const canonicalSelectedArticle = useMemo(() => {
+    if (!selectedArticle) return null;
+    const found = articles.find((a) => a.id === selectedArticle.id);
+    return found || selectedArticle;
+  }, [selectedArticle, articles]);
+
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
       {incomingArticles && (
@@ -658,11 +733,12 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
         ) : (
           <div key={`${selectedLab}_${selectedType}_${selectedVector || 'ALL'}_${locale}`} className="animate-fade-in">
             <EditorialSpread
-              articles={displayedArticles}
+              articles={localizedDisplayedArticles}
               onSelectArticle={handleOpenArticle}
               bookmarkedIds={savedIds}
               onToggleBookmark={toggleBookmark}
               locale={locale}
+              onVisibleCountChange={setVisibleSpreadCount}
             />
           </div>
         )}
@@ -671,19 +747,19 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 z-40 bg-[#faf9f6] border border-black px-3.5 py-2 font-mono text-[9px] tracking-widest uppercase text-black hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer shadow-lg animate-fade-in"
+          className="fixed bottom-6 end-6 z-40 bg-[#faf9f6] border border-black px-3.5 py-2 font-mono text-[9px] tracking-widest uppercase text-black hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer shadow-lg animate-fade-in"
           title="Back to top"
         >
           {dict.feed.top}
         </button>
       )}
 
-      <Footer />
+      <Footer locale={locale} />
 
       <EditorialModal
-        article={selectedArticle}
+        article={canonicalSelectedArticle}
         onClose={handleCloseArticle}
-        isBookmarked={selectedArticle ? isSaved(selectedArticle.id) : false}
+        isBookmarked={canonicalSelectedArticle ? isSaved(canonicalSelectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
         onSummaryEnriched={handleSummaryEnriched}
         locale={locale}

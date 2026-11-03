@@ -395,7 +395,7 @@ describe('Security & Domain Hardening Suite', () => {
     assert.equal(getDictionary('unknown_locale'), DICTIONARY.en);
 
     // 4. Parity check across dictionaries
-    const sections = ['nav', 'modal', 'feed', 'pulse'] as const;
+    const sections = ['nav', 'modal', 'feed', 'pulse', 'footer', 'savedPage'] as const;
     for (const loc of expectedLocales) {
       const dict = DICTIONARY[loc];
       assert.ok(dict, `Dictionary must exist for locale ${loc}`);
@@ -404,16 +404,28 @@ describe('Security & Domain Hardening Suite', () => {
         assert.ok(dict[sec], `Section ${sec} must exist in dictionary for locale ${loc}`);
         const baseKeys = Object.keys(DICTIONARY.en[sec]);
         for (const key of baseKeys) {
-          const val = (dict[sec] as Record<string, string>)[key];
-          assert.equal(
-            typeof val,
-            'string',
-            `Key ${sec}.${key} must be a string in locale ${loc}`
-          );
-          assert.ok(
-            val.length > 0,
-            `Key ${sec}.${key} must not be empty in locale ${loc}`
-          );
+          const val = (dict[sec] as Record<string, unknown>)[key];
+          if (typeof DICTIONARY.en[sec][key as keyof (typeof DICTIONARY.en)[typeof sec]] === 'object') {
+            assert.equal(typeof val, 'object', `Key ${sec}.${key} must be an object in locale ${loc}`);
+            const nestedBaseKeys = Object.keys(
+              DICTIONARY.en[sec][key as keyof (typeof DICTIONARY.en)[typeof sec]] as Record<string, string>
+            );
+            for (const nKey of nestedBaseKeys) {
+              const nVal = (val as Record<string, string>)[nKey];
+              assert.equal(typeof nVal, 'string', `Key ${sec}.${key}.${nKey} must be a string in locale ${loc}`);
+              assert.ok(nVal.length > 0, `Key ${sec}.${key}.${nKey} must not be empty in locale ${loc}`);
+            }
+          } else {
+            assert.equal(
+              typeof val,
+              'string',
+              `Key ${sec}.${key} must be a string in locale ${loc}`
+            );
+            assert.ok(
+              (val as string).length > 0,
+              `Key ${sec}.${key} must not be empty in locale ${loc}`
+            );
+          }
         }
       }
     }

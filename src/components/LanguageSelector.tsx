@@ -74,7 +74,7 @@ export default function LanguageSelector({
       {isOpen && (
         <div
           role="menu"
-          className="absolute right-0 top-full mt-1.5 w-44 bg-[#faf9f6] text-black border border-black shadow-2xl z-50 py-1 font-mono text-[10px] tracking-wider divide-y divide-black/10 animate-fade-in"
+          className="absolute end-0 top-full mt-1.5 w-44 bg-[#faf9f6] text-black border border-black shadow-2xl z-50 py-1 font-mono text-[10px] tracking-wider divide-y divide-black/10 animate-fade-in"
         >
           {Object.values(LOCALES).map((loc) => {
             const isSelected = loc.code === currentLocale;
@@ -90,7 +90,7 @@ export default function LanguageSelector({
                 className={`w-full px-3 py-2 text-left flex items-center justify-between transition-colors cursor-pointer ${
                   isSelected
                     ? 'bg-black text-[#faf9f6] font-bold'
-                    : 'hover:bg-black/[0.06] text-black'
+                    : 'hover:bg-black/[0.04] text-black'
                 }`}
                 dir={loc.dir}
               >

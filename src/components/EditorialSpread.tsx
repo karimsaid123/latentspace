@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useEffect, memo } from 'react';
 import { Article } from '@/types';
 import ScrollReveal from './ScrollReveal';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary, isRTL, Locale } from '@/lib/i18n';
 
 const CATALOG_PAGE_SIZE = 24;
 
@@ -13,6 +13,7 @@ interface EditorialSpreadProps {
   bookmarkedIds?: string[];
   onToggleBookmark?: (id: string, e: React.MouseEvent) => void;
   locale?: Locale;
+  onVisibleCountChange?: (count: number) => void;
 }
 
 const EditorialSpread = memo(function EditorialSpread({
@@ -21,10 +22,15 @@ const EditorialSpread = memo(function EditorialSpread({
   bookmarkedIds = [],
   onToggleBookmark,
   locale = 'en',
+  onVisibleCountChange,
 }: EditorialSpreadProps) {
   const dict = getDictionary(locale);
   const [visibleCatalogCount, setVisibleCatalogCount] = useState(CATALOG_PAGE_SIZE);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+
+  useEffect(() => {
+    onVisibleCountChange?.(isCatalogOpen ? Math.max(6, visibleCatalogCount) : 6);
+  }, [isCatalogOpen, visibleCatalogCount, onVisibleCountChange]);
 
   // Reset pagination whenever the article list identity changes
   useEffect(() => {
@@ -287,13 +293,13 @@ const EditorialSpread = memo(function EditorialSpread({
       <section className="py-16 lg:py-20 border-t border-black/10">
 
         <div className="flex justify-between items-baseline font-mono text-[10px] tracking-widest text-black/50 uppercase mb-8">
-          <span className="font-bold text-black">CATALOG ARCHIVE</span>
+          <span className="font-bold text-black">{dict.feed.catalogArchive}</span>
           {isCatalogOpen && (
             <button
               onClick={() => setIsCatalogOpen(false)}
               className="text-black/40 hover:text-black cursor-pointer transition-colors"
             >
-              [COLLAPSE ARCHIVE]
+              {dict.feed.collapseArchive}
             </button>
           )}
         </div>
@@ -301,13 +307,14 @@ const EditorialSpread = memo(function EditorialSpread({
         {!isCatalogOpen ? (
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest py-8">
             <span className="text-black/50">
-              SHOWING <strong className="text-black">0</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
+              {dict.feed.showing} <strong className="text-black">0</strong> {dict.feed.of}{' '}
+              <strong className="text-black">{articles.length}</strong> {dict.feed.archivedEntries}
             </span>
             <button
               onClick={() => setIsCatalogOpen(true)}
               className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-all duration-300 hover:scale-[1.01] cursor-pointer"
             >
-              [LOAD ARCHIVE (+{Math.min(CATALOG_PAGE_SIZE, articles.length)})]
+              [{dict.feed.loadArchive} (+{Math.min(CATALOG_PAGE_SIZE, articles.length)})]
             </button>
           </div>
         ) : (
@@ -353,7 +360,10 @@ const EditorialSpread = memo(function EditorialSpread({
                         </button>
                       )}
                       <span className="font-bold text-black flex items-center gap-1">
-                        READ <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">→</span>
+                        {dict.feed.read}{' '}
+                        <span className="inline-block transition-transform duration-200 group-hover:translate-x-1.5">
+                          {isRTL(locale) ? '←' : '→'}
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -364,13 +374,15 @@ const EditorialSpread = memo(function EditorialSpread({
             {remainingCount > 0 && (
               <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest">
                 <span className="text-black/50">
-                  SHOWING <strong className="text-black">{catalogSlice.length}</strong> OF <strong className="text-black">{articles.length}</strong> ARCHIVED ENTRIES
+                  {dict.feed.showing} <strong className="text-black">{catalogSlice.length}</strong>{' '}
+                  {dict.feed.of} <strong className="text-black">{articles.length}</strong>{' '}
+                  {dict.feed.archivedEntries}
                 </span>
                 <button
                   onClick={() => setVisibleCatalogCount((prev) => prev + CATALOG_PAGE_SIZE)}
                   className="px-5 py-2.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-bold transition-colors cursor-pointer"
                 >
-                  [LOAD MORE TELEMETRY (+{Math.min(CATALOG_PAGE_SIZE, remainingCount)})]
+                  [{dict.feed.loadMore} (+{Math.min(CATALOG_PAGE_SIZE, remainingCount)})]
                 </button>
               </div>
             )}

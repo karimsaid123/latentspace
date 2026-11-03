@@ -133,6 +133,7 @@ const MinimalNav = memo(function MinimalNav({
               lastSyncedTime={lastSyncedTime}
               isSyncing={isSyncing}
               onSync={onSync}
+              locale={locale}
             />
           </div>
 
@@ -146,7 +147,7 @@ const MinimalNav = memo(function MinimalNav({
 
           <Link
             href="/saved"
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
+            className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[115px]"
             title="Open your saved articles dossier"
           >
             <span className="sm:hidden">[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
@@ -156,7 +157,7 @@ const MinimalNav = memo(function MinimalNav({
           <Link
             href="/benchmarks"
             scroll={true}
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+            className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[175px]"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
             <span className="sm:hidden">[{dict.nav.statsShort}]</span>
@@ -169,8 +170,8 @@ const MinimalNav = memo(function MinimalNav({
 
           <ThemeToggle />
 
-          {/* Isolated 1Hz Clock completely on the right */}
-          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
+          {/* Isolated 1Hz Clock completely on the inline end */}
+          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider ps-3 border-s border-black/20">
             <LiveClock />
           </div>
         </div>
@@ -274,7 +275,7 @@ const MinimalNav = memo(function MinimalNav({
       {isPulseOpen && vectorPulse && onSelectVector && (
         <div
           ref={pulsePopoverRef}
-          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
+          className="absolute end-6 sm:end-12 start-6 sm:start-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
         >
           <VectorPulse
             snapshot={vectorPulse}

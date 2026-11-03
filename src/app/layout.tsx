@@ -65,6 +65,11 @@ export default function RootLayout({
                   } else {
                     document.documentElement.classList.remove('dark');
                   }
+                  var loc = localStorage.getItem('latentspace-locale');
+                  if (loc === 'en' || loc === 'es' || loc === 'ar' || loc === 'zh') {
+                    document.documentElement.lang = loc;
+                    document.documentElement.dir = loc === 'ar' ? 'rtl' : 'ltr';
+                  }
                 } catch (e) {}
               })();
             `,

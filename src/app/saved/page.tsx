@@ -14,7 +14,8 @@ import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
 import LiveClock from '@/components/LiveClock';
 import ThemeToggle from '@/components/ThemeToggle';
-import { Locale, DEFAULT_LOCALE, isValidLocale } from '@/lib/i18n';
+import LanguageSelector from '@/components/LanguageSelector';
+import { Locale, DEFAULT_LOCALE, isValidLocale, isRTL, getDictionary } from '@/lib/i18n';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
 type SortOption = 'NEWEST_SAVED' | 'OLDEST_SAVED' | 'PUBLISHED_DATE' | 'ALPHABETICAL';
@@ -68,6 +69,10 @@ export default function SavedPage() {
   const [selectedSort, setSelectedSort] = useState<SortOption>('NEWEST_SAVED');
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
+  const [translationsByLocale, setTranslationsByLocale] = useState<
+    Record<string, Record<string, { title: string; tldr: string }>>
+  >({});
+  const dict = useMemo(() => getDictionary(locale), [locale]);
 
   useEffect(() => {
     try {
@@ -79,6 +84,69 @@ export default function SavedPage() {
       // Ignore
     }
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = locale;
+      document.documentElement.dir = isRTL(locale) ? 'rtl' : 'ltr';
+    }
+  }, [locale]);
+
+  const handleSelectLocale = useCallback((nextLocale: Locale) => {
+    setLocale(nextLocale);
+    try {
+      localStorage.setItem('latentspace-locale', nextLocale);
+    } catch {
+      // Ignore
+    }
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = nextLocale;
+      document.documentElement.dir = isRTL(nextLocale) ? 'rtl' : 'ltr';
+    }
+  }, []);
+
+  useEffect(() => {
+    if (locale === 'en' || savedItems.length === 0) return;
+
+    const currentMap = translationsByLocale[locale] || {};
+    const missing = savedItems
+      .slice(0, 36)
+      .filter((item) => !currentMap[item.id]);
+
+    if (missing.length === 0) return;
+
+    const controller = new AbortController();
+    const payloadItems = missing.map(({ article }) => ({
+      id: article.id,
+      title: article.title,
+      tldr: (article.aiSummary?.tldr || article.contentSnippet || '').split(/\n{2,}/)[0] || '',
+    }));
+
+    fetch('/api/translate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-latentspace-client': '1',
+      },
+      body: JSON.stringify({ locale, items: payloadItems }),
+      signal: controller.signal,
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!controller.signal.aborted && data?.success && data?.translations) {
+          setTranslationsByLocale((prev) => ({
+            ...prev,
+            [locale]: {
+              ...(prev[locale] || {}),
+              ...data.translations,
+            },
+          }));
+        }
+      })
+      .catch(() => {});
+
+    return () => controller.abort();
+  }, [locale, savedItems, translationsByLocale]);
 
   const savedItemsRef = useRef(savedItems);
   savedItemsRef.current = savedItems;
@@ -219,7 +287,7 @@ export default function SavedPage() {
           TOP EDITORIAL NAVIGATION HEADER
       ───────────────────────────────────────────────────────────── */}
       <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
-        <div className="flex items-center justify-between border-b border-black/15 pb-3.5 gap-4">
+        <div className="relative z-30 flex items-center justify-between border-b border-black/15 pb-3.5 gap-4">
           
           {/* Brand */}
           <div className="flex items-center gap-3">
@@ -232,7 +300,7 @@ export default function SavedPage() {
             </Link>
             <span className="text-black/30 hidden sm:inline">//</span>
             <span className="font-bold text-black text-xs hidden sm:inline">
-              [<span className="text-[#ff8000]">★</span> SAVED DOSSIER]
+              [<span className="text-[#ff8000]">★</span> {dict.savedPage.dossierBadge}]
             </span>
           </div>
 
@@ -240,26 +308,28 @@ export default function SavedPage() {
           <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
             <Link
               href="/benchmarks"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+              className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[175px]"
               title="Independent Artificial Analysis Benchmarks & Stats"
             >
-              <span className="sm:hidden">[STATS]</span>
-              <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
+              <span className="sm:hidden">[{dict.nav.statsShort}]</span>
+              <span className="hidden sm:inline">[{dict.nav.benchmarks}]</span>
             </Link>
 
             <Link
               href="/"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+              className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[155px]"
               title="Return to Frontier Feed"
             >
-              <span className="sm:hidden">[← FEED]</span>
-              <span className="hidden sm:inline">[← RETURN TO FEED]</span>
+              <span className="sm:hidden">[{dict.nav.feedShort}]</span>
+              <span className="hidden sm:inline">[{dict.nav.returnToFeed}]</span>
             </Link>
+
+            <LanguageSelector currentLocale={locale} onSelectLocale={handleSelectLocale} />
 
             <ThemeToggle />
 
-            {/* Isolated 1Hz Clock on the right */}
-            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
+            {/* Isolated 1Hz Clock on the inline end */}
+            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider ps-3 border-s border-black/20">
               <LiveClock />
             </div>
           </div>
@@ -277,22 +347,22 @@ export default function SavedPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <div className="font-mono text-[9px] tracking-widest text-black/50 uppercase mb-2 flex items-center gap-2">
-                <span>PERSONAL INTELLIGENCE DOSSIER</span>
+                <span>{dict.savedPage.personalDossier}</span>
               </div>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-[-0.045em] leading-[0.88] text-black">
-                SAVED TELEMETRY
+                {dict.savedPage.savedTelemetry}
               </h1>
             </div>
 
             <div className="font-mono text-xs tracking-wider uppercase text-black/60 flex flex-wrap items-center gap-4">
               <div className="border border-black/30 px-3 py-1.5 bg-white">
-                TOTAL ARCHIVED: <span className="font-bold text-black">[{count}]</span>
+                {dict.savedPage.totalArchived} <span className="font-bold text-black">[{count}]</span>
               </div>
               <div className="border border-black/30 px-3 py-1.5 bg-white">
-                NEWS: <span className="font-bold text-black">[{newsCount}]</span>
+                {dict.nav.news}: <span className="font-bold text-black">[{newsCount}]</span>
               </div>
               <div className="border border-black/30 px-3 py-1.5 bg-white">
-                RESEARCH: <span className="font-bold text-black">[{researchCount}]</span>
+                {dict.nav.research}: <span className="font-bold text-black">[{researchCount}]</span>
               </div>
             </div>
           </div>
@@ -305,22 +375,22 @@ export default function SavedPage() {
           
           {/* Search Input Bar */}
           <div className="relative flex items-center border border-black bg-white mb-4">
-            <div className="pl-3.5 pr-2 text-black/40">
+            <div className="ps-3.5 pe-2 text-black/40">
               <Search className="w-4 h-4" />
             </div>
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="SEARCH WITHIN SAVED DOSSIER (TITLE, LAB, ABSTRACT, AUTHOR)..."
-              className="w-full py-3 pr-4 bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
+              placeholder={dict.savedPage.searchPlaceholder}
+              className="w-full py-3 pe-4 bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="pr-3.5 font-mono text-[10px] text-black/60 hover:text-black cursor-pointer font-bold tracking-wider"
+                className="pe-3.5 font-mono text-[10px] text-black/60 hover:text-black cursor-pointer font-bold tracking-wider"
               >
-                [CLEAR]
+                [{dict.nav.clear}]
               </button>
             )}
           </div>
@@ -330,7 +400,7 @@ export default function SavedPage() {
             
             {/* Format Filter (News vs Research) */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-bold text-black shrink-0 text-[11px]">FORMAT:</span>
+              <span className="font-bold text-black shrink-0 text-[11px]">{dict.savedPage.format}</span>
               <button
                 onClick={() => setSelectedFormat('ALL')}
                 className={`px-2.5 py-1 border transition-colors cursor-pointer text-[10px] sm:text-[11px] ${
@@ -339,7 +409,7 @@ export default function SavedPage() {
                     : 'border-black/30 hover:border-black bg-white text-black/70'
                 }`}
               >
-                ALL [{count}]
+                {dict.savedPage.all} [{count}]
               </button>
               <button
                 onClick={() => setSelectedFormat('DISPATCH')}
@@ -349,7 +419,7 @@ export default function SavedPage() {
                     : 'border-black/30 hover:border-black bg-white text-black/70'
                 }`}
               >
-                NEWS / DISPATCH [{newsCount}]
+                {dict.savedPage.newsDispatch} [{newsCount}]
               </button>
               <button
                 onClick={() => setSelectedFormat('RESEARCH_PAPER')}
@@ -359,7 +429,7 @@ export default function SavedPage() {
                     : 'border-black/30 hover:border-black bg-white text-black/70'
                 }`}
               >
-                RESEARCH PAPERS [{researchCount}]
+                {dict.savedPage.researchPapers} [{researchCount}]
               </button>
             </div>
 
@@ -367,7 +437,7 @@ export default function SavedPage() {
             <div className="flex flex-wrap items-center gap-3">
               {/* Lab Sector Dropdown */}
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-black text-[11px]">LAB:</span>
+                <span className="font-bold text-black text-[11px]">{dict.feed.lab}</span>
                 <select
                   value={selectedLab}
                   onChange={(e) => setSelectedLab(e.target.value)}
@@ -375,7 +445,7 @@ export default function SavedPage() {
                 >
                   {LAB_FILTER_OPTIONS.map((lab) => (
                     <option key={lab} value={lab}>
-                      {lab}
+                      {lab === 'ALL LABS' ? dict.nav.allLabs : lab}
                     </option>
                   ))}
                 </select>
@@ -383,16 +453,16 @@ export default function SavedPage() {
 
               {/* Sort Selector */}
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-black text-[11px]">SORT:</span>
+                <span className="font-bold text-black text-[11px]">{dict.savedPage.sort}</span>
                 <select
                   value={selectedSort}
                   onChange={(e) => setSelectedSort(e.target.value as SortOption)}
                   className="bg-white border border-black/30 hover:border-black px-2.5 py-1 font-mono text-[10px] sm:text-[11px] tracking-wider uppercase text-black cursor-pointer focus:outline-none"
                 >
-                  <option value="NEWEST_SAVED">NEWEST SAVED FIRST</option>
-                  <option value="OLDEST_SAVED">OLDEST SAVED FIRST</option>
-                  <option value="PUBLISHED_DATE">PUBLICATION DATE</option>
-                  <option value="ALPHABETICAL">TITLE (A-Z)</option>
+                  <option value="NEWEST_SAVED">{dict.savedPage.newestSaved}</option>
+                  <option value="OLDEST_SAVED">{dict.savedPage.oldestSaved}</option>
+                  <option value="PUBLISHED_DATE">{dict.savedPage.pubDateSort}</option>
+                  <option value="ALPHABETICAL">{dict.savedPage.alphabetical}</option>
                 </select>
               </div>
             </div>
@@ -417,17 +487,17 @@ export default function SavedPage() {
                 <Bookmark className="w-6 h-6 text-black/40" />
               </div>
               <h2 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-black">
-                NO SAVED ENTRIES YET
+                {dict.feed.noSaved}
               </h2>
               <p className="font-mono text-xs uppercase text-black/60 tracking-wider leading-relaxed">
-                Click [+ SAVE] on any news article or research paper while exploring the editorial spread to build your personal intelligence dossier.
+                {dict.feed.noSavedDesc}
               </p>
               <div className="pt-4">
                 <Link
                   href="/"
                   className="inline-block px-5 py-2.5 border border-black bg-black text-[#faf9f6] font-mono text-xs font-bold tracking-widest uppercase hover:bg-black/85 transition-colors"
                 >
-                  [← BROWSE FRONTIER TELEMETRY]
+                  {dict.savedPage.browseTelemetry}
                 </Link>
               </div>
             </div>
@@ -436,10 +506,10 @@ export default function SavedPage() {
           /* Filter Returned 0 Results */
           <div className="border border-black/30 p-12 text-center bg-white font-mono">
             <div className="text-xs uppercase tracking-widest text-black/60 mb-2 font-bold">
-              NO SAVED ENTRIES MATCHING YOUR FILTER
+              {dict.savedPage.noMatchingFilter}
             </div>
             <div className="text-[10px] text-black/40 uppercase mb-4">
-              Search query: &quot;{searchQuery}&quot; | Lab: {selectedLab} | Format: {selectedFormat}
+              &quot;{searchQuery}&quot; | {selectedLab} | {selectedFormat}
             </div>
             <button
               onClick={() => {
@@ -449,7 +519,7 @@ export default function SavedPage() {
               }}
               className="px-3.5 py-1.5 border border-black font-mono text-[10px] font-bold uppercase tracking-wider hover:bg-black hover:text-white transition-colors cursor-pointer"
             >
-              [RESET ALL FILTERS]
+              {dict.feed.resetFilters}
             </button>
           </div>
         ) : (
@@ -458,6 +528,9 @@ export default function SavedPage() {
             {filteredItems.map(({ id, savedAt, article }, index) => {
               const isResearch = article.entryType === 'RESEARCH_PAPER';
               const labBrand = getCompanyBrand(article.lab || article.source?.name);
+              const tr = locale !== 'en' ? translationsByLocale[locale]?.[article.id] : undefined;
+              const displayTitle = tr?.title || article.title;
+              const displaySnippet = tr?.tldr || article.aiSummary?.tldr || article.contentSnippet;
 
               return (
                 <div
@@ -465,7 +538,7 @@ export default function SavedPage() {
                   className="relative border border-black bg-white hover:border-black p-4 sm:p-5 transition-all group flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm hover:shadow-md"
                 >
                   {/* Left Column: Metadata + Title + Snippet */}
-                  <div className="flex-1 min-w-0 pr-0 md:pr-4">
+                  <div className="flex-1 min-w-0 pe-0 md:pe-4">
                     
                     {/* Top Metadata Row: News vs Publication badge + Lab + Source */}
                     <div className="flex flex-wrap items-center gap-2 sm:gap-3 font-mono text-[9px] tracking-widest uppercase text-black/50 mb-2">
@@ -478,7 +551,7 @@ export default function SavedPage() {
                             : 'border-black/50 text-black bg-[#faf9f6]'
                         }`}
                       >
-                        {isResearch ? 'RESEARCH // PAPER' : 'NEWS // DISPATCH'}
+                        {isResearch ? dict.feed.researchBadge : dict.feed.newsBadge}
                       </span>
 
                       {/* Lab Branding with Logo */}
@@ -491,7 +564,7 @@ export default function SavedPage() {
 
                       {/* Source Name */}
                       <span className="truncate max-w-[150px] sm:max-w-none">
-                        SOURCE: {article.source?.name || 'TELEMETRY'}
+                        {dict.savedPage.source} {article.source?.name || 'TELEMETRY'}
                       </span>
 
                       {article.arxivId && (
@@ -504,7 +577,7 @@ export default function SavedPage() {
                       <span className="text-black/30">•</span>
 
                       {/* Original Published Date */}
-                      <span>PUB: {formatPubDate(article.pubDate)}</span>
+                      <span>{dict.savedPage.pub} {formatPubDate(article.pubDate)}</span>
                     </div>
 
                     {/* Article Headline */}
@@ -512,12 +585,12 @@ export default function SavedPage() {
                       onClick={() => handleOpenArticle(article)}
                       className="text-base sm:text-lg md:text-xl font-black uppercase tracking-tight text-black group-hover:underline underline-offset-4 cursor-pointer leading-snug mb-2"
                     >
-                      {article.title}
+                      {displayTitle}
                     </h2>
 
                     {/* Summary / Snippet */}
                     <p className="font-mono text-[10px] text-black/60 line-clamp-1 sm:line-clamp-2 uppercase leading-relaxed">
-                      {article.aiSummary?.tldr || article.contentSnippet}
+                      {displaySnippet}
                     </p>
 
                   </div>
@@ -527,19 +600,22 @@ export default function SavedPage() {
                     
                     {/* When it was saved */}
                     <div 
-                      className="font-mono text-left md:text-right" 
+                      className="font-mono text-start md:text-end" 
                       title={`Archived: ${new Date(savedAt).toLocaleString()}`}
                     >
                       <div className="text-[10px] sm:text-[11px] font-bold text-black tracking-wider flex items-center gap-1.5 md:justify-end">
                         <BookmarkCheck className="w-3.5 h-3.5 text-black" />
-                        <span>SAVED {formatSavedTime(savedAt)}</span>
+                        <span>{dict.modal.saved} {formatSavedTime(savedAt)}</span>
                       </div>
                       <div className="text-[9px] text-black/40 uppercase hidden sm:block">
-                        {new Date(savedAt).toLocaleDateString('en-US', {
-                          month: 'short',
-                          day: 'numeric',
-                          year: 'numeric',
-                        })}
+                        {new Date(savedAt).toLocaleDateString(
+                          locale === 'ar' ? 'ar-EG' : locale === 'zh' ? 'zh-CN' : locale === 'es' ? 'es-ES' : 'en-US',
+                          {
+                            month: 'short',
+                            day: 'numeric',
+                            year: 'numeric',
+                          }
+                        )}
                       </div>
                     </div>
 
@@ -550,7 +626,7 @@ export default function SavedPage() {
                         className="px-3 py-1.5 border border-black bg-white hover:bg-black hover:text-[#faf9f6] font-mono text-[10px] font-bold tracking-wider uppercase transition-colors cursor-pointer"
                         title="Read full article"
                       >
-                        [READ →]
+                        [{dict.feed.read} {isRTL(locale) ? '←' : '→'}]
                       </button>
 
                       <button
@@ -558,7 +634,7 @@ export default function SavedPage() {
                         className="px-2.5 py-1.5 border border-black/30 hover:border-black hover:bg-black hover:text-white font-mono text-[10px] tracking-wider uppercase transition-colors cursor-pointer text-black/50"
                         title="Remove from saved dossier"
                       >
-                        [✕ REMOVE]
+                        [{dict.savedPage.remove}]
                       </button>
                     </div>
 
@@ -573,7 +649,7 @@ export default function SavedPage() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer locale={locale} />
 
       {/* Editorial Reader Modal */}
       <EditorialModal

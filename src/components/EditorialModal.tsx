@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useSyncExternalStore } from 'react';
+import React, { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { Article, AISummary } from '@/types';
 import { ExternalLink, Share2 } from 'lucide-react';
@@ -34,10 +34,10 @@ function toSafeExternalUrl(raw?: string): string | null {
 
 function renderKeyPointText(point: string): React.ReactNode {
   const cleaned = point.trim();
-  // Match "**Lead Label:** rest" or "**Lead Label** — rest" safely in React without innerHTML
-  const boldPrefixMatch = cleaned.match(/^\*\*([^*]{2,80}?)\*\*:?\s*(.+)$/);
+  // Match "**Lead Label:** rest" or "**Lead Label：** rest" safely in React without innerHTML
+  const boldPrefixMatch = cleaned.match(/^\*\*([^*]{2,80}?)\*\*[:：]?\s*(.+)$/);
   if (boldPrefixMatch) {
-    const label = boldPrefixMatch[1].replace(/:$/, '').trim();
+    const label = boldPrefixMatch[1].replace(/[:：]$/, '').trim();
     const rest = boldPrefixMatch[2].trim();
     return (
       <>
@@ -60,6 +60,7 @@ export default function EditorialModal({
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [summary, setSummary] = useState<AISummary | undefined>(article?.aiSummary);
   const [isEnriching, setIsEnriching] = useState(false);
+  const summaryCacheRef = useRef<Map<string, AISummary>>(new Map());
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const dict = getDictionary(locale);
 
@@ -68,12 +69,22 @@ export default function EditorialModal({
       setIsEnriching(false);
       return;
     }
+
+    const cacheKey = `${article.id}_${locale}`;
+    const cachedForLocale = summaryCacheRef.current.get(cacheKey);
+    if (cachedForLocale) {
+      setSummary(cachedForLocale);
+      setIsEnriching(false);
+      return;
+    }
+
     setSummary(article.aiSummary);
 
+    const summaryLocale = article.aiSummary?.locale || 'en';
     const needsDeepSynthesis =
       article.aiSummary?.generatedWith !== 'gemini' ||
       (article.aiSummary?.summaryVersion || 0) < 2 ||
-      (locale !== 'en' && article.aiSummary?.locale !== locale);
+      summaryLocale !== locale;
 
     if (needsDeepSynthesis) {
       const controller = new AbortController();
@@ -92,8 +103,9 @@ export default function EditorialModal({
         .then((res) => (res.ok ? res.json() : null))
         .then((data) => {
           if (!controller.signal.aborted && data?.success && data?.summary) {
+            summaryCacheRef.current.set(cacheKey, data.summary);
             setSummary(data.summary);
-            if (data.summary.generatedWith === 'gemini') {
+            if (locale === 'en' && data.summary.generatedWith === 'gemini') {
               onSummaryEnriched?.(targetId, data.summary);
             }
           }
@@ -109,6 +121,9 @@ export default function EditorialModal({
         controller.abort();
       };
     } else {
+      if (article.aiSummary) {
+        summaryCacheRef.current.set(cacheKey, article.aiSummary);
+      }
       setIsEnriching(false);
     }
   }, [article?.id, article?.aiSummary, locale, onSummaryEnriched]);
@@ -141,7 +156,10 @@ export default function EditorialModal({
   const brand = getCompanyBrand(article.lab || article.source?.name);
   const safeArticleLink = toSafeExternalUrl(article.link);
   const safePdfUrl = toSafeExternalUrl(article.pdfUrl);
-  const enrichedArticle: Article = summary ? { ...article, aiSummary: summary } : article;
+  const displayTitle = summary?.title || article.title;
+  const enrichedArticle: Article = summary
+    ? { ...article, title: displayTitle, aiSummary: summary }
+    : article;
 
   const rawSummaryBody = (summary?.tldr || article.contentSnippet || '').trim();
   const summaryParagraphs = rawSummaryBody
@@ -237,7 +255,7 @@ export default function EditorialModal({
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight leading-snug text-black">
-              {article.title}
+              {displayTitle}
             </h2>
           </div>
 
@@ -348,6 +366,7 @@ export default function EditorialModal({
         article={enrichedArticle}
         isOpen={isShareOpen}
         onClose={() => setIsShareOpen(false)}
+        locale={locale}
       />
     </div>
   );

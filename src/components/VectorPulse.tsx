@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, memo } from 'react';
 import type { VectorMomentumStatus, VectorPulseSnapshot } from '@/types';
-import { getDictionary, Locale } from '@/lib/i18n';
+import { getDictionary, isRTL, Locale } from '@/lib/i18n';
 
 interface VectorPulseProps {
   snapshot: VectorPulseSnapshot;
@@ -13,14 +13,18 @@ interface VectorPulseProps {
   locale?: Locale;
 }
 
-function formatSyncAge(lastSyncedTime?: number, nowMs?: number): string {
-  if (!lastSyncedTime || !nowMs || lastSyncedTime <= 0) return 'LIVE TELEMETRY';
+function formatSyncAge(
+  lastSyncedTime: number | undefined,
+  nowMs: number | undefined,
+  liveLabel: string,
+  justNowLabel: string
+): string {
+  if (!lastSyncedTime || !nowMs || lastSyncedTime <= 0) return liveLabel;
   const diffMin = Math.max(0, Math.floor((nowMs - lastSyncedTime) / 60_000));
-  if (diffMin < 1) return 'UPDATED: JUST NOW';
-  if (diffMin === 1) return 'UPDATED: 1 MIN AGO';
-  if (diffMin < 60) return `UPDATED: ${diffMin} MIN AGO`;
+  if (diffMin < 1) return justNowLabel;
+  if (diffMin < 60) return `${diffMin}M`;
   const hrs = Math.floor(diffMin / 60);
-  return `UPDATED: ${hrs}H AGO`;
+  return `${hrs}H`;
 }
 
 function getStatusBadgeClass(status: VectorMomentumStatus, isSelected: boolean): string {
@@ -67,6 +71,44 @@ const VectorPulse = memo(function VectorPulse({
     return null;
   }
 
+  const getLocalizedVectorLabel = (id: string, fallback: string): string => {
+    switch (id) {
+      case 'test-time-reasoning':
+        return dict.pulse.vecTestTime;
+      case 'agentic-harness':
+        return dict.pulse.vecAgentic;
+      case 'post-training-rl':
+        return dict.pulse.vecRl;
+      case 'safety-evals-cyber':
+        return dict.pulse.vecSafety;
+      case 'open-weights-inference':
+        return dict.pulse.vecOpenWeights;
+      case 'multimodal-embodied':
+        return dict.pulse.vecMultimodal;
+      case 'rag-memory-context':
+        return dict.pulse.vecRag;
+      case 'compute-silicon':
+        return dict.pulse.vecCompute;
+      default:
+        return fallback;
+    }
+  };
+
+  const getLocalizedStatusLabel = (status: VectorMomentumStatus): string => {
+    switch (status) {
+      case 'SURGING':
+        return dict.pulse.statusSurging;
+      case 'HIGH':
+        return dict.pulse.statusHigh;
+      case 'ACTIVE':
+        return dict.pulse.statusActive;
+      case 'STABLE':
+        return dict.pulse.statusStable;
+      case 'COOLING':
+        return dict.pulse.statusCooling;
+    }
+  };
+
   const visibleVectors = showAll ? snapshot.vectors : snapshot.vectors.slice(0, 5);
   const activeVector = selectedVectorId
     ? snapshot.vectors.find((v) => v.id === selectedVectorId)
@@ -76,6 +118,7 @@ const VectorPulse = memo(function VectorPulse({
     <div
       role="dialog"
       aria-label="Research Vector Pulse"
+      dir={isRTL(locale) ? 'rtl' : 'ltr'}
       className="w-full bg-[#faf9f6] text-black border border-black shadow-2xl px-3.5 sm:px-4 py-3 font-mono animate-fade-in select-none"
     >
       {/* Top Header Line */}
@@ -119,7 +162,7 @@ const VectorPulse = memo(function VectorPulse({
                 onClose();
               }}
               aria-pressed={isSelected}
-              className={`w-full text-left py-1.5 px-1.5 transition-colors cursor-pointer grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 sm:gap-2.5 text-[9.5px] sm:text-[10px] tracking-wider ${
+              className={`w-full text-start py-1.5 px-1.5 transition-colors cursor-pointer grid grid-cols-[minmax(0,1fr)_auto] sm:grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-2 sm:gap-2.5 text-[9.5px] sm:text-[10px] tracking-wider ${
                 isSelected ? 'bg-black text-[#faf9f6]' : 'hover:bg-black/[0.04] text-black'
               }`}
             >
@@ -132,7 +175,9 @@ const VectorPulse = memo(function VectorPulse({
                 >
                   {rank}.
                 </span>
-                <span className="font-bold truncate">{item.label}</span>
+                <span className="font-bold truncate">
+                  {getLocalizedVectorLabel(item.id, item.label)}
+                </span>
                 <span
                   className={`text-[8.5px] shrink-0 ${
                     isSelected ? 'opacity-70' : 'text-black/40'
@@ -144,7 +189,7 @@ const VectorPulse = memo(function VectorPulse({
               </div>
 
               {/* Column 2: Compact 12-block ASCII Density Bar */}
-              <div className="hidden sm:flex items-center tracking-normal text-[9.5px] shrink-0">
+              <div className="hidden sm:flex items-center tracking-normal text-[9.5px] shrink-0" dir="ltr">
                 <span className={isSelected ? 'opacity-50' : 'text-black/35'}>[</span>
                 <span
                   className={
@@ -160,7 +205,7 @@ const VectorPulse = memo(function VectorPulse({
               </div>
 
               {/* Column 3: Delta % + Direction + Status Tag */}
-              <div className="flex items-center justify-end gap-1.5 shrink-0 tabular-nums">
+              <div className="flex items-center justify-end gap-1.5 shrink-0 tabular-nums" dir="ltr">
                 <span className="font-bold w-[42px] text-right">{signedDelta}</span>
                 <span
                   className={
@@ -178,12 +223,12 @@ const VectorPulse = memo(function VectorPulse({
                   {arrow}
                 </span>
                 <span
-                  className={`w-[66px] text-right hidden sm:inline-block ${getStatusBadgeClass(
+                  className={`min-w-[66px] text-right hidden sm:inline-block ${getStatusBadgeClass(
                     item.status,
                     isSelected
                   )}`}
                 >
-                  [{isSelected ? 'ACTIVE' : item.status}]
+                  [{isSelected ? dict.pulse.activeFilter : getLocalizedStatusLabel(item.status)}]
                 </span>
               </div>
             </button>
@@ -220,7 +265,14 @@ const VectorPulse = memo(function VectorPulse({
           )}
         </div>
 
-        <div className="text-black/45">{formatSyncAge(lastSyncedTime, nowMs)}</div>
+        <div className="text-black/45">
+          {formatSyncAge(
+            lastSyncedTime,
+            nowMs,
+            dict.pulse.liveTelemetry,
+            dict.pulse.updatedJustNow
+          )}
+        </div>
       </div>
     </div>
   );

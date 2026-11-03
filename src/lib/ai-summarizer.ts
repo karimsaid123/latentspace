@@ -171,13 +171,13 @@ const MODEL_CANDIDATES: ModelAttemptConfig[] = [
 function getLanguageInstruction(locale: Locale): string {
   switch (locale) {
     case 'es':
-      return 'TARGET LANGUAGE: Write the entire JSON output ("tldr" and "takeaways") in fluent, professional ESPAÑOL. Use bold labels in takeaways: "**Etiqueta:** Detalle concreto".';
+      return 'TARGET LANGUAGE: Write the entire JSON output ("title", "tldr", and "takeaways") in fluent, professional ESPAÑOL. Use bold labels in takeaways: "**Etiqueta:** Detalle concreto".';
     case 'ar':
-      return 'TARGET LANGUAGE: Write the entire JSON output ("tldr" and "takeaways") in formal, fluent Modern Standard ARABIC (العربية الفصحى). Use bold labels in takeaways: "**التصنيف:** تفاصيل ملموسة".';
+      return 'TARGET LANGUAGE: Write the entire JSON output ("title", "tldr", and "takeaways") in formal, fluent Modern Standard ARABIC (العربية الفصحى). Use bold labels in takeaways: "**التصنيف:** تفاصيل ملموسة".';
     case 'zh':
-      return 'TARGET LANGUAGE: Write the entire JSON output ("tldr" and "takeaways") in accurate, fluent Simplified CHINESE (简体中文). Use bold labels in takeaways: "**核心标签:** 具体数据与事实".';
+      return 'TARGET LANGUAGE: Write the entire JSON output ("title", "tldr", and "takeaways") in accurate, fluent Simplified CHINESE (简体中文). Use bold labels in takeaways: "**核心标签:** 具体数据与事实".';
     default:
-      return 'TARGET LANGUAGE: Write the entire JSON output ("tldr" and "takeaways") in crisp, high-signal ENGLISH.';
+      return 'TARGET LANGUAGE: Write the entire JSON output ("title", "tldr", and "takeaways") in crisp, high-signal ENGLISH.';
   }
 }
 
@@ -220,6 +220,7 @@ STRICT EDITORIAL & ANTI-SLOP RULES:
 
 Respond strictly with valid JSON matching this schema:
 {
+  "title": "Headline in the target language",
   "tldr": "Multi-paragraph comprehensive summary separated by \\n\\n",
   "takeaways": [
     "**Label:** Concrete fact 1",
@@ -298,6 +299,11 @@ ${cleanContent || safeTitle}
               .map((t: string) => t.replace(/\s+/g, ' ').trim().slice(0, 380))
           : [];
 
+      const formattedTitle =
+        typeof parsed?.title === 'string' && parsed.title.trim()
+          ? parsed.title.replace(/\s+/g, ' ').trim().slice(0, 360)
+          : safeTitle;
+
       const formattedTldr =
         typeof parsed?.tldr === 'string' && parsed.tldr.trim()
           ? normalizeSummaryParagraphs(parsed.tldr)
@@ -312,6 +318,7 @@ ${cleanContent || safeTitle}
           : estimatedReadTime;
 
       return {
+        title: formattedTitle,
         tldr: formattedTldr,
         takeaways: rawTakeaways,
         impact: impactValue,

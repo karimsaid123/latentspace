@@ -24,6 +24,7 @@ export type FrontierLab =
   | 'Independent';
 
 export interface AISummary {
+  title?: string;
   tldr: string;
   takeaways: string[];
   impact: ImpactLevel;
