@@ -4,12 +4,6 @@ import { SingleFlight } from '@/core/services/single-flight';
 import { SUMMARY_SCHEMA_VERSION, summarizeWithGemini } from '@/lib/ai-summarizer';
 import { fetchCleanArticleBody } from '@/lib/article-extractor';
 import { generateDeepIntelligenceSummary } from '@/lib/intelligence-analyzer';
-import { isValidLocale, Locale } from '@/lib/i18n';
-import {
-  getCachedLocalizedSummary,
-  setCachedLocalizedSummary,
-  translateArticleSummary,
-} from '@/lib/translator';
 import {
   checkEdgeRateLimit,
   checkGlobalGeminiBudget,
@@ -68,18 +62,15 @@ export async function GET(request: NextRequest) {
         },
       }
     );
-  } catch (err: unknown) {
-    logger.error('Summarize GET error', {
-      articleId,
-      error: err instanceof Error ? err.message : 'Unknown error',
-    });
+  } catch (err: any) {
+    logger.error('Summarize GET error', { articleId, error: err?.message });
     return NextResponse.json({ error: 'Internal summarization error' }, { status: 500 });
   }
 }
 
 /**
  * POST /api/summarize
- * On-demand Gemini synthesis & localization protected by:
+ * On-demand Gemini synthesis protected by:
  * 1. Zero-trust CSRF + Origin + custom header guard
  * 2. Bounded 2 KB JSON body reader with prototype-pollution stripping
  * 3. Multi-isolate edge IP rate-limiting
@@ -101,11 +92,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const parsedBody = await readBoundedJson<{
-      articleId?: unknown;
-      id?: unknown;
-      locale?: unknown;
-    }>(request, 2048);
+    const parsedBody = await readBoundedJson<{ articleId?: unknown; id?: unknown }>(request, 2048);
     if (!parsedBody.ok) {
       return NextResponse.json(
         { error: parsedBody.error },
@@ -121,10 +108,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const requestedLocale: Locale = isValidLocale(parsedBody.data.locale)
-      ? parsedBody.data.locale
-      : 'en';
-
     await container.bootstrap();
     await container.syncEdgeState(false);
 
@@ -136,17 +119,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const hasVerifiedEnglishSummary =
+    // Fast path: already synthesized by Gemini v2 (zero rate-limit penalty, zero latency)
+    if (
       article.summary?.generatedWith === 'gemini' &&
-      (article.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION &&
-      (!article.summary?.locale || article.summary.locale === 'en');
-
-    // Fast path 1: English summary already synthesized
-    if (requestedLocale === 'en' && hasVerifiedEnglishSummary) {
+      (article.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
+    ) {
       return NextResponse.json(
         {
           success: true,
-          summary: { ...article.summary, title: article.title, locale: 'en' },
+          summary: article.summary,
           source: 'cache',
           durationMs: Date.now() - startTime,
         },
@@ -154,24 +135,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Fast path 2: Localized summary already cached
-    if (requestedLocale !== 'en') {
-      const cachedLocaleSummary = getCachedLocalizedSummary(articleId, requestedLocale);
-      if (cachedLocaleSummary) {
-        return NextResponse.json(
-          {
-            success: true,
-            summary: cachedLocaleSummary,
-            source: 'cache',
-            durationMs: Date.now() - startTime,
-          },
-          { headers: NO_STORE_HEADERS }
-        );
-      }
-    }
-
     const ip = getClientIp(request);
-    const rl = await checkEdgeRateLimit('summarize', ip, 24, 60_000);
+    const rl = await checkEdgeRateLimit('summarize', ip, 12, 60_000);
     if (!rl.allowed) {
       return NextResponse.json(
         {
@@ -190,41 +155,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Fast path 3: If a verified v2 English summary already exists and user requested ES/AR/ZH,
-    // translate the verified summary + title + keypoints directly (~250ms, 0 Gemini quota cost)
-    if (requestedLocale !== 'en' && hasVerifiedEnglishSummary && article.summary) {
-      const localized = await translateArticleSummary(
-        articleId,
-        article.title,
-        article.summary,
-        requestedLocale
-      );
-      return NextResponse.json(
-        {
-          success: true,
-          summary: localized,
-          source: 'translated_verified',
-          durationMs: Date.now() - startTime,
-        },
-        { headers: NO_STORE_HEADERS }
-      );
-    }
-
     const apiKey = getServerSecret('GEMINI_API_KEY');
     const targetId = articleId;
-    const localeCacheKey = `gemini_sum_${targetId}_${requestedLocale}`;
 
-    // If Gemini is unavailable or global budget is capped, upgrade legacy truncated snippets
-    // from the source page once and translate if non-English was requested
+    // If Gemini is unavailable or global budget is capped, still upgrade legacy truncated snippets
+    // from the real source page once (leaving takeaways empty if the source genuinely lacks depth)
     if (!apiKey || !(await checkGlobalGeminiBudget(40, 10 * 60_000)).allowed) {
-      let baseSummary: AISummary =
-        article.summary ||
-        generateDeepIntelligenceSummary(
-          article.title,
-          article.contentSnippet || '',
-          article.sourceName
-        );
-
       if ((article.contentSnippet?.length || 0) < 700 && article.canonicalUrl) {
         const extracted = await summarizeFlight.execute<AISummary | null>(
           `extract_sum_${targetId}`,
@@ -247,19 +183,22 @@ export async function POST(request: NextRequest) {
         );
 
         if (extracted) {
-          baseSummary = extracted;
+          return NextResponse.json(
+            {
+              success: true,
+              summary: extracted,
+              source: 'extracted_heuristic',
+              durationMs: Date.now() - startTime,
+            },
+            { headers: NO_STORE_HEADERS }
+          );
         }
       }
-
-      const finalSummary =
-        requestedLocale !== 'en'
-          ? await translateArticleSummary(targetId, article.title, baseSummary, requestedLocale)
-          : { ...baseSummary, title: article.title, locale: 'en' as const };
 
       return NextResponse.json(
         {
           success: true,
-          summary: finalSummary,
+          summary: article.summary,
           source: apiKey ? 'budget_protected_fallback' : 'heuristic',
           durationMs: Date.now() - startTime,
         },
@@ -268,22 +207,14 @@ export async function POST(request: NextRequest) {
     }
 
     const synthesized = await summarizeFlight.execute<AISummary | null>(
-      localeCacheKey,
+      `gemini_sum_${targetId}`,
       async () => {
-        if (requestedLocale === 'en') {
-          const freshCheck = await container.articleRepo.findById(targetId);
-          if (
-            freshCheck?.summary?.generatedWith === 'gemini' &&
-            (freshCheck.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION &&
-            (!freshCheck.summary?.locale || freshCheck.summary.locale === 'en')
-          ) {
-            return { ...freshCheck.summary, title: freshCheck.title, locale: 'en' };
-          }
-        } else {
-          const freshCacheCheck = getCachedLocalizedSummary(targetId, requestedLocale);
-          if (freshCacheCheck) {
-            return freshCacheCheck;
-          }
+        const freshCheck = await container.articleRepo.findById(targetId);
+        if (
+          freshCheck?.summary?.generatedWith === 'gemini' &&
+          (freshCheck.summary?.summaryVersion || 0) >= SUMMARY_SCHEMA_VERSION
+        ) {
+          return freshCheck.summary;
         }
 
         // Fetch full source article text when RSS snippet is short so Gemini has complete factual context
@@ -299,23 +230,14 @@ export async function POST(request: NextRequest) {
         const result = await summarizeWithGemini(
           article.title,
           sourceContent || article.title,
-          apiKey,
-          requestedLocale
+          apiKey
         );
 
         if (result) {
-          if (requestedLocale === 'en') {
-            article.summary = result;
-            await container.articleRepo.saveMany([article]);
-            container.cache.clear();
-          } else {
-            setCachedLocalizedSummary(targetId, requestedLocale, result);
-          }
-          return result;
-        }
-
-        // Fallback if Gemini call failed: upgrade heuristic and translate if non-English
-        if (sourceContent.length > (article.summary?.tldr?.length || 0)) {
+          article.summary = result;
+          await container.articleRepo.saveMany([article]);
+          container.cache.clear();
+        } else if (sourceContent.length > (article.summary?.tldr?.length || 0)) {
           article.summary = generateDeepIntelligenceSummary(
             article.title,
             sourceContent,
@@ -325,18 +247,13 @@ export async function POST(request: NextRequest) {
           container.cache.clear();
         }
 
-        if (requestedLocale !== 'en' && article.summary) {
-          return translateArticleSummary(targetId, article.title, article.summary, requestedLocale);
-        }
-
-        return null;
+        return result;
       }
     );
 
     if (synthesized) {
-      logger.info('On-demand summary generated', {
+      logger.info('On-demand Gemini summary generated', {
         articleId,
-        locale: requestedLocale,
         durationMs: Date.now() - startTime,
       });
 
@@ -351,24 +268,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const fallbackSummary =
-      requestedLocale !== 'en' && article.summary
-        ? await translateArticleSummary(targetId, article.title, article.summary, requestedLocale)
-        : article.summary;
-
     return NextResponse.json(
       {
         success: true,
-        summary: fallbackSummary,
+        summary: article.summary,
         source: 'fallback',
         durationMs: Date.now() - startTime,
       },
       { headers: NO_STORE_HEADERS }
     );
-  } catch (err: unknown) {
+  } catch (err: any) {
     logger.error('Summarize POST error', {
       articleId,
-      error: err instanceof Error ? err.message : 'Unknown error',
+      error: err?.message,
     });
 
     return NextResponse.json(

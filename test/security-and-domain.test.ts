@@ -24,15 +24,6 @@ import {
   computeVectorPulseFromRawRecords,
   isValidVectorId,
 } from '../src/lib/vector-pulse';
-import {
-  LOCALES,
-  DEFAULT_LOCALE,
-  isRTL,
-  isValidLocale,
-  getDictionary,
-  DICTIONARY,
-  type Locale,
-} from '../src/lib/i18n';
 import type { DomainArticle } from '../src/core/domain/entities';
 
 describe('Security & Domain Hardening Suite', () => {
@@ -363,71 +354,5 @@ describe('Security & Domain Hardening Suite', () => {
       ),
       true
     );
-  });
-
-  it('validates multilingual i18n locales, RTL detection, and dictionary parity across all 4 languages', () => {
-    // 1. Validate locale whitelist
-    const expectedLocales: Locale[] = ['en', 'es', 'ar', 'zh'];
-    for (const loc of expectedLocales) {
-      assert.equal(isValidLocale(loc), true, `Locale ${loc} should be valid`);
-    }
-
-    // Invalid / adversarial inputs
-    assert.equal(isValidLocale('fr'), false);
-    assert.equal(isValidLocale('de'), false);
-    assert.equal(isValidLocale(''), false);
-    assert.equal(isValidLocale(null), false);
-    assert.equal(isValidLocale(undefined), false);
-    assert.equal(isValidLocale('__proto__'), false);
-    assert.equal(isValidLocale('constructor'), false);
-    assert.equal(isValidLocale('toString'), false);
-
-    // 2. Validate RTL detection
-    assert.equal(isRTL('ar'), true);
-    assert.equal(isRTL('en'), false);
-    assert.equal(isRTL('es'), false);
-    assert.equal(isRTL('zh'), false);
-
-    // 3. Fallback resilience
-    assert.equal(DEFAULT_LOCALE, 'en');
-    assert.equal(getDictionary('en'), DICTIONARY.en);
-    // @ts-expect-error test runtime fallback on bad input
-    assert.equal(getDictionary('unknown_locale'), DICTIONARY.en);
-
-    // 4. Parity check across dictionaries
-    const sections = ['nav', 'modal', 'feed', 'pulse', 'footer', 'savedPage'] as const;
-    for (const loc of expectedLocales) {
-      const dict = DICTIONARY[loc];
-      assert.ok(dict, `Dictionary must exist for locale ${loc}`);
-
-      for (const sec of sections) {
-        assert.ok(dict[sec], `Section ${sec} must exist in dictionary for locale ${loc}`);
-        const baseKeys = Object.keys(DICTIONARY.en[sec]);
-        for (const key of baseKeys) {
-          const val = (dict[sec] as Record<string, unknown>)[key];
-          if (typeof DICTIONARY.en[sec][key as keyof (typeof DICTIONARY.en)[typeof sec]] === 'object') {
-            assert.equal(typeof val, 'object', `Key ${sec}.${key} must be an object in locale ${loc}`);
-            const nestedBaseKeys = Object.keys(
-              DICTIONARY.en[sec][key as keyof (typeof DICTIONARY.en)[typeof sec]] as Record<string, string>
-            );
-            for (const nKey of nestedBaseKeys) {
-              const nVal = (val as Record<string, string>)[nKey];
-              assert.equal(typeof nVal, 'string', `Key ${sec}.${key}.${nKey} must be a string in locale ${loc}`);
-              assert.ok(nVal.length > 0, `Key ${sec}.${key}.${nKey} must not be empty in locale ${loc}`);
-            }
-          } else {
-            assert.equal(
-              typeof val,
-              'string',
-              `Key ${sec}.${key} must be a string in locale ${loc}`
-            );
-            assert.ok(
-              (val as string).length > 0,
-              `Key ${sec}.${key} must not be empty in locale ${loc}`
-            );
-          }
-        }
-      }
-    }
   });
 });

@@ -4,7 +4,6 @@ import React, { useState, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { Article } from '@/types';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
-import { getDictionary, isRTL, Locale } from '@/lib/i18n';
 import { 
   X, 
   Copy, 
@@ -17,7 +16,6 @@ interface ArticleShareModalProps {
   article: Article;
   isOpen: boolean;
   onClose: () => void;
-  locale?: Locale;
 }
 
 const emptySubscribe = () => () => {};
@@ -26,12 +24,10 @@ export default function ArticleShareModal({
   article,
   isOpen,
   onClose,
-  locale = 'en',
 }: ArticleShareModalProps) {
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedText, setCopiedText] = useState(false);
   const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
-  const dict = getDictionary(locale);
 
   if (!isOpen || !isMounted) return null;
 
@@ -96,14 +92,11 @@ export default function ArticleShareModal({
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
-  const formattedDate = new Date(article.pubDate).toLocaleDateString(
-    locale === 'ar' ? 'ar-EG' : locale === 'zh' ? 'zh-CN' : locale === 'es' ? 'es-ES' : 'en-US',
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }
-  );
+  const formattedDate = new Date(article.pubDate).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
 
   const modalContent = (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm select-none animate-fade-in">
@@ -111,16 +104,13 @@ export default function ArticleShareModal({
       <div className="fixed inset-0" onClick={onClose} />
 
       {/* Main Container Box in Pure Swiss Monospace Theme */}
-      <div
-        dir={isRTL(locale) ? 'rtl' : 'ltr'}
-        className="relative w-full max-w-2xl bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in flex flex-col"
-      >
+      <div className="relative w-full max-w-2xl bg-[#faf9f6] text-black border border-black z-10 overflow-hidden shadow-2xl animate-modal-in flex flex-col">
 
         {/* Header Row */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-black font-mono text-[9px] uppercase tracking-widest text-black/60 bg-black/[0.02]">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 bg-black inline-block" />
-            <span className="font-bold text-black">{dict.modal.shareTitle}</span>
+            <span className="font-bold text-black">SHARE // ARTICLE TEMPLATE</span>
             <span className="text-black/40">[{article.id.slice(0, 8)}]</span>
           </div>
 
@@ -162,7 +152,7 @@ export default function ArticleShareModal({
                 <span>{formattedDate}</span>
                 <span>•</span>
                 <span className="font-bold text-black">
-                  [{article.entryType === 'RESEARCH_PAPER' ? dict.feed.researchBadge : dict.feed.newsBadge}]
+                  {article.entryType === 'RESEARCH_PAPER' ? '[RESEARCH]' : '[DISPATCH]'}
                 </span>
               </div>
             </div>
@@ -174,11 +164,11 @@ export default function ArticleShareModal({
 
             {/* Template Quote / TL;DR Box */}
             <div 
-              className="p-4 bg-[#faf9f6] border-s-2 font-sans text-xs sm:text-sm leading-relaxed text-black/90 my-4"
-              style={{ borderInlineStartColor: brand.primaryColor }}
+              className="p-4 bg-[#faf9f6] border-l-2 font-sans text-xs sm:text-sm leading-relaxed text-black/90 my-4"
+              style={{ borderLeftColor: brand.primaryColor }}
             >
               <span className="font-mono text-[8px] font-bold uppercase tracking-widest text-black/40 block mb-1">
-                {dict.modal.execSummary}
+                EXECUTIVE SUMMARY:
               </span>
               {cleanSummary}
             </div>
@@ -186,9 +176,9 @@ export default function ArticleShareModal({
             {/* Telemetry Badge Bar */}
             <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-black/10 font-mono text-[9px] uppercase tracking-wider text-black/50">
               <div className="flex items-center gap-3">
-                <span>{dict.modal.impactLabel} <strong className="text-black">{article.aiSummary?.impact || 'NOTABLE'}</strong></span>
+                <span>IMPACT: <strong className="text-black">{article.aiSummary?.impact || 'NOTABLE'}</strong></span>
                 <span>•</span>
-                <span>{dict.modal.sectorLabel} <strong className="text-black">{labText}</strong></span>
+                <span>SECTOR: <strong className="text-black">{labText}</strong></span>
               </div>
 
               <div className="font-bold text-black flex items-center gap-1.5">
@@ -202,7 +192,7 @@ export default function ArticleShareModal({
           {/* QUICK SHARING CONTROLS */}
           <div className="space-y-4">
             <span className="font-mono text-[9px] font-bold uppercase tracking-widest text-black/50 block">
-              {dict.modal.quickShare}
+              QUICK SHARE VIA:
             </span>
 
             {/* Social Share Buttons Grid */}
@@ -244,7 +234,7 @@ export default function ArticleShareModal({
                 className="p-2.5 border border-black bg-white hover:bg-black hover:text-white transition-all cursor-pointer flex items-center justify-center gap-2 text-center"
               >
                 <Share2 className="w-3.5 h-3.5" />
-                <span>{dict.modal.more}</span>
+                <span>MORE...</span>
               </button>
             </div>
 
@@ -259,7 +249,7 @@ export default function ArticleShareModal({
                 }`}
               >
                 {copiedLink ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedLink ? dict.modal.linkCopied : dict.modal.copyLink}</span>
+                <span>{copiedLink ? 'LINK COPIED! ✓' : 'COPY DIRECT ARTICLE LINK'}</span>
               </button>
 
               <button
@@ -272,12 +262,12 @@ export default function ArticleShareModal({
                 title="Copy formatted summary to clipboard"
               >
                 {copiedText ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedText ? dict.modal.textCopied : dict.modal.copySummary}</span>
+                <span>{copiedText ? 'TEXT COPIED! ✓' : 'COPY FORMATTED SUMMARY'}</span>
               </button>
             </div>
 
             {/* Display Direct URL for Transparency */}
-            <div className="p-2.5 bg-black/[0.02] border border-black/10 font-mono text-[9px] text-black/60 truncate select-all flex items-center justify-between" dir="ltr">
+            <div className="p-2.5 bg-black/[0.02] border border-black/10 font-mono text-[9px] text-black/60 truncate select-all flex items-center justify-between">
               <span className="truncate">{shareUrl}</span>
               <span className="font-bold text-black shrink-0 ml-2">[URL]</span>
             </div>
@@ -293,7 +283,7 @@ export default function ArticleShareModal({
             onClick={onClose}
             className="font-bold text-black hover:underline cursor-pointer"
           >
-            [{dict.nav.close}]
+            [CLOSE]
           </button>
         </div>
 

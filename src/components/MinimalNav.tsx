@@ -5,10 +5,8 @@ import Link from 'next/link';
 import LiveClock from './LiveClock';
 import { LastSyncedIndicator } from './LastSyncedIndicator';
 import ThemeToggle from './ThemeToggle';
-import LanguageSelector from './LanguageSelector';
 import VectorPulse from './VectorPulse';
 import type { VectorPulseSnapshot } from '@/types';
-import { getDictionary, Locale } from '@/lib/i18n';
 
 interface MinimalNavProps {
   selectedLab: string;
@@ -29,8 +27,6 @@ interface MinimalNavProps {
   vectorPulse?: VectorPulseSnapshot;
   selectedVectorId?: string | null;
   onSelectVector?: (vectorId: string | null) => void;
-  locale?: Locale;
-  onSelectLocale?: (loc: Locale) => void;
 }
 
 export const LAB_FILTERS = [
@@ -62,14 +58,11 @@ const MinimalNav = memo(function MinimalNav({
   vectorPulse,
   selectedVectorId = null,
   onSelectVector,
-  locale = 'en',
-  onSelectLocale,
 }: MinimalNavProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const pulsePopoverRef = useRef<HTMLDivElement>(null);
   const pulseTriggerRef = useRef<HTMLButtonElement>(null);
   const [isPulseOpen, setIsPulseOpen] = useState(false);
-  const dict = getDictionary(locale);
 
   useEffect(() => {
     if (isSearchOpen && searchInputRef.current) {
@@ -111,7 +104,7 @@ const MinimalNav = memo(function MinimalNav({
     <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top minimal line */}
-      <div className="relative z-30 flex items-center justify-between border-b border-black/15 pb-3 gap-2 sm:gap-4">
+      <div className="relative flex items-center justify-between border-b border-black/15 pb-3 overflow-hidden gap-2 sm:gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
@@ -133,7 +126,6 @@ const MinimalNav = memo(function MinimalNav({
               lastSyncedTime={lastSyncedTime}
               isSyncing={isSyncing}
               onSync={onSync}
-              locale={locale}
             />
           </div>
 
@@ -142,36 +134,32 @@ const MinimalNav = memo(function MinimalNav({
             className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap h-7 sm:h-8 flex items-center px-1.5"
             title="Press '/' to search anywhere"
           >
-            [{isSearchOpen ? dict.nav.close : dict.nav.search}]
+            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
           </button>
 
           <Link
             href="/saved"
-            className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[115px]"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
             title="Open your saved articles dossier"
           >
             <span className="sm:hidden">[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
-            <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> {savedCount > 0 ? `${dict.nav.saved} (${savedCount})` : dict.nav.saved}]</span>
+            <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> SAVED ({savedCount})]</span>
           </Link>
 
           <Link
             href="/benchmarks"
             scroll={true}
-            className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[175px]"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
-            <span className="sm:hidden">[{dict.nav.statsShort}]</span>
-            <span className="hidden sm:inline">[{dict.nav.benchmarks}]</span>
+            <span className="sm:hidden">[STATS]</span>
+            <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
           </Link>
-
-          {onSelectLocale && (
-            <LanguageSelector currentLocale={locale} onSelectLocale={onSelectLocale} />
-          )}
 
           <ThemeToggle />
 
-          {/* Isolated 1Hz Clock completely on the inline end */}
-          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider ps-3 border-s border-black/20">
+          {/* Isolated 1Hz Clock completely on the right */}
+          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
             <LiveClock />
           </div>
         </div>
@@ -186,7 +174,7 @@ const MinimalNav = memo(function MinimalNav({
             type="text"
             value={searchQuery}
             onChange={(e) => onSearch(e.target.value)}
-            placeholder={dict.nav.searchPlaceholder}
+            placeholder="TYPE TO FILTER TELEMETRY (PRESS ESC TO EXIT)..."
             className="w-full bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
           />
           {searchQuery && (
@@ -194,7 +182,7 @@ const MinimalNav = memo(function MinimalNav({
               onClick={() => onSearch('')}
               className="font-mono text-[10px] text-black/50 hover:text-black cursor-pointer font-bold shrink-0"
             >
-              [{dict.nav.clear}]
+              [CLEAR]
             </button>
           )}
         </div>
@@ -205,10 +193,9 @@ const MinimalNav = memo(function MinimalNav({
         
         {/* Lab Sectors */}
         <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-6 px-6 sm:mx-0 sm:px-0">
-          <span className="text-black font-bold shrink-0 tracking-wider">{dict.nav.labSector}</span>
+          <span className="text-black font-bold shrink-0 tracking-wider">LAB SECTOR:</span>
           {LAB_FILTERS.map((lab) => {
             const isSelected = selectedLab === lab.id;
-            const label = lab.id === 'All' ? dict.nav.allLabs : lab.label;
             return (
               <button
                 key={lab.id}
@@ -217,7 +204,7 @@ const MinimalNav = memo(function MinimalNav({
                   isSelected ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
                 }`}
               >
-                [{label}]
+                [{lab.label}]
               </button>
             );
           })}
@@ -225,14 +212,14 @@ const MinimalNav = memo(function MinimalNav({
 
         {/* Publication Format Selector & Vector Pulse Dropdown Trigger */}
         <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1">
-          <span className="text-black font-bold shrink-0">{dict.nav.type}</span>
+          <span className="text-black font-bold shrink-0">TYPE:</span>
           <button
             onClick={() => onSelectType('ALL')}
             className={`hover:text-black transition-colors cursor-pointer shrink-0 whitespace-nowrap ${
               selectedType === 'ALL' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
-            [{dict.nav.allEntries}]
+            [ALL ENTRIES]
           </button>
           <button
             onClick={() => onSelectType('DISPATCH')}
@@ -240,7 +227,7 @@ const MinimalNav = memo(function MinimalNav({
               selectedType === 'DISPATCH' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
-            [{dict.nav.news}]
+            [NEWS]
           </button>
           <button
             onClick={() => onSelectType('RESEARCH_PAPER')}
@@ -248,7 +235,7 @@ const MinimalNav = memo(function MinimalNav({
               selectedType === 'RESEARCH_PAPER' ? 'text-black font-black underline underline-offset-4 decoration-2' : 'text-black/60 hover:text-black'
             }`}
           >
-            <span>[{dict.nav.research}]</span>
+            <span>[RESEARCH]</span>
           </button>
 
           {vectorPulse && onSelectVector && (
@@ -264,7 +251,7 @@ const MinimalNav = memo(function MinimalNav({
               }`}
               title="Research Vector Pulse"
             >
-              [{dict.nav.pulse}]
+              [PULSE]
             </button>
           )}
         </div>
@@ -275,7 +262,7 @@ const MinimalNav = memo(function MinimalNav({
       {isPulseOpen && vectorPulse && onSelectVector && (
         <div
           ref={pulsePopoverRef}
-          className="absolute end-6 sm:end-12 start-6 sm:start-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
+          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
         >
           <VectorPulse
             snapshot={vectorPulse}
@@ -283,7 +270,6 @@ const MinimalNav = memo(function MinimalNav({
             onSelectVector={onSelectVector}
             onClose={() => setIsPulseOpen(false)}
             lastSyncedTime={lastSyncedTime}
-            locale={locale}
           />
         </div>
       )}

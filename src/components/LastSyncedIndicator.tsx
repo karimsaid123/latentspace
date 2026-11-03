@@ -1,25 +1,23 @@
 'use client';
 
 import React, { useState, useEffect, memo } from 'react';
-import { getDictionary, Locale } from '@/lib/i18n';
 
 interface LastSyncedIndicatorProps {
   lastSyncedTime: number;
   isSyncing: boolean;
   onSync: () => void;
-  locale?: Locale;
 }
 
-function formatRelativeTime(timestamp: number, justNowLabel: string): string {
-  if (!timestamp) return justNowLabel;
+function formatRelativeTime(timestamp: number): string {
+  if (!timestamp) return 'JUST NOW';
   const diffSec = Math.max(0, Math.floor((Date.now() - timestamp) / 1000));
-  if (diffSec < 10) return justNowLabel;
-  if (diffSec < 60) return `${diffSec}S`;
+  if (diffSec < 10) return 'JUST NOW';
+  if (diffSec < 60) return `${diffSec}S AGO`;
   const diffMin = Math.floor(diffSec / 60);
-  if (diffMin < 60) return `${diffMin}M`;
+  if (diffMin < 60) return `${diffMin}M AGO`;
   const diffHours = Math.floor(diffMin / 60);
-  if (diffHours < 24) return `${diffHours}H`;
-  return `${Math.floor(diffHours / 24)}D`;
+  if (diffHours < 24) return `${diffHours}H AGO`;
+  return `${Math.floor(diffHours / 24)}D AGO`;
 }
 
 /**
@@ -30,22 +28,19 @@ export const LastSyncedIndicator = memo(function LastSyncedIndicator({
   lastSyncedTime,
   isSyncing,
   onSync,
-  locale = 'en',
 }: LastSyncedIndicatorProps) {
-  const dict = getDictionary(locale);
-  const [timeAgo, setTimeAgo] = useState<string>(() =>
-    formatRelativeTime(lastSyncedTime, dict.nav.justNow)
-  );
+  const [timeAgo, setTimeAgo] = useState<string>(() => formatRelativeTime(lastSyncedTime));
 
   useEffect(() => {
-    setTimeAgo(formatRelativeTime(lastSyncedTime, dict.nav.justNow));
+    // Sync immediately when timestamp updates
+    setTimeAgo(formatRelativeTime(lastSyncedTime));
 
     const interval = setInterval(() => {
-      setTimeAgo(formatRelativeTime(lastSyncedTime, dict.nav.justNow));
+      setTimeAgo(formatRelativeTime(lastSyncedTime));
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [lastSyncedTime, dict.nav.justNow]);
+  }, [lastSyncedTime]);
 
   return (
     <button
@@ -57,12 +52,10 @@ export const LastSyncedIndicator = memo(function LastSyncedIndicator({
       {isSyncing ? (
         <>
           <span className="inline-block w-1.5 h-1.5 bg-black animate-spin" />
-          <span>[{dict.nav.syncing}]</span>
+          <span>[SYNCING...]</span>
         </>
       ) : (
-        <span>
-          [{dict.nav.lastSync} {timeAgo}]
-        </span>
+        <span>[LAST SYNC: {timeAgo}]</span>
       )}
     </button>
   );

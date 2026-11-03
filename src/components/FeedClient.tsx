@@ -9,7 +9,6 @@ import { Article, AISummary, VectorPulseSnapshot } from '@/types';
 import { RefreshCw } from 'lucide-react';
 import { useSavedArticles } from '@/lib/saved-storage';
 import { articleMatchesVector, isValidVectorId } from '@/lib/vector-pulse';
-import { Locale, DEFAULT_LOCALE, isValidLocale, isRTL, getDictionary } from '@/lib/i18n';
 
 interface FeedClientProps {
   initialArticles: Article[];
@@ -29,45 +28,6 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
-  const [visibleSpreadCount, setVisibleSpreadCount] = useState<number>(6);
-  const [translationsByLocale, setTranslationsByLocale] = useState<
-    Record<string, Record<string, { title: string; tldr: string }>>
-  >({});
-  const dict = useMemo(() => getDictionary(locale), [locale]);
-
-  // Sync locale with localStorage on client mount
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem('latentspace-locale');
-      if (stored && isValidLocale(stored)) {
-        setLocale(stored);
-      }
-    } catch {
-      // Ignore storage access errors
-    }
-  }, []);
-
-  // Update html lang and dir attributes whenever locale changes
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = locale;
-      document.documentElement.dir = isRTL(locale) ? 'rtl' : 'ltr';
-    }
-  }, [locale]);
-
-  const handleSelectLocale = useCallback((nextLocale: Locale) => {
-    setLocale(nextLocale);
-    try {
-      localStorage.setItem('latentspace-locale', nextLocale);
-    } catch {
-      // Ignore
-    }
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = nextLocale;
-      document.documentElement.dir = isRTL(nextLocale) ? 'rtl' : 'ltr';
-    }
-  }, []);
 
   const [lastSyncedTime, setLastSyncedTime] = useState<number>(0);
   const { savedIds, count: savedCount, toggleSave, save, isSaved, reconcile } = useSavedArticles();
@@ -587,77 +547,6 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
     return list;
   }, [articles, selectedLab, selectedType, selectedVector, savedIdSet]);
 
-  // Batch-translate visible feed articles when a non-English locale is selected
-  useEffect(() => {
-    if (locale === 'en' || displayedArticles.length === 0) return;
-
-    const currentMap = translationsByLocale[locale] || {};
-    const targetSlice = displayedArticles.slice(0, Math.min(36, Math.max(12, visibleSpreadCount)));
-    const missing = targetSlice.filter((a) => !currentMap[a.id]);
-
-    if (missing.length === 0) return;
-
-    const controller = new AbortController();
-    const payloadItems = missing.map((a) => ({
-      id: a.id,
-      title: a.title,
-      tldr: (a.aiSummary?.tldr || a.contentSnippet || '').split(/\n{2,}/)[0] || '',
-    }));
-
-    fetch('/api/translate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-latentspace-client': '1',
-      },
-      body: JSON.stringify({ locale, items: payloadItems }),
-      signal: controller.signal,
-    })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (!controller.signal.aborted && data?.success && data?.translations) {
-          setTranslationsByLocale((prev) => ({
-            ...prev,
-            [locale]: {
-              ...(prev[locale] || {}),
-              ...data.translations,
-            },
-          }));
-        }
-      })
-      .catch(() => {});
-
-    return () => {
-      controller.abort();
-    };
-  }, [locale, displayedArticles, visibleSpreadCount, translationsByLocale]);
-
-  const localizedDisplayedArticles = useMemo(() => {
-    if (locale === 'en') return displayedArticles;
-    const map = translationsByLocale[locale];
-    if (!map) return displayedArticles;
-
-    return displayedArticles.map((art) => {
-      const tr = map[art.id];
-      if (!tr) return art;
-      return {
-        ...art,
-        title: tr.title || art.title,
-        contentSnippet: tr.tldr || art.contentSnippet,
-        aiSummary: {
-          ...art.aiSummary,
-          tldr: tr.tldr || art.aiSummary.tldr,
-        },
-      };
-    });
-  }, [displayedArticles, locale, translationsByLocale]);
-
-  const canonicalSelectedArticle = useMemo(() => {
-    if (!selectedArticle) return null;
-    const found = articles.find((a) => a.id === selectedArticle.id);
-    return found || selectedArticle;
-  }, [selectedArticle, articles]);
-
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
       {incomingArticles && (
@@ -667,7 +556,7 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
             className="bg-black text-[#faf9f6] border border-black font-mono text-[9px] tracking-widest uppercase px-5 py-2.5 shadow-2xl cursor-pointer hover:bg-black/85 transition-all flex items-center gap-3"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000]" />
-            <span>{dict.feed.newTelemetryNotice}</span>
+            <span>NEW TELEMETRY HARVESTED // CLICK TO VIEW LATEST</span>
           </button>
         </div>
       )}
@@ -689,25 +578,23 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
         vectorPulse={vectorPulse}
         selectedVectorId={selectedVector}
         onSelectVector={handleSelectVector}
-        locale={locale}
-        onSelectLocale={handleSelectLocale}
       />
 
       <main className="flex-1 w-full">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-40 gap-3 font-mono text-[10px] tracking-widest uppercase text-black/50">
             <RefreshCw className="w-5 h-5 animate-spin text-black" />
-            <span>{dict.feed.fetching}</span>
+            <span>FETCHING AUTONOMOUS FEEDS & PUBLICATIONS...</span>
           </div>
         ) : displayedArticles.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-40 px-4 text-center font-mono text-xs uppercase tracking-widest text-black/60">
             <span className="mb-2 font-bold">
-              {selectedLab === 'SAVED' ? dict.feed.noSaved : dict.feed.noTelemetry}
+              {selectedLab === 'SAVED' ? 'NO SAVED ENTRIES YET' : 'NO TELEMETRY FOUND IN THIS SECTOR'}
             </span>
             <span className="text-[10px] text-black/40">
               {selectedLab === 'SAVED'
-                ? dict.feed.noSavedDesc
-                : dict.feed.adjustFilter}
+                ? 'CLICK [+ SAVE] ON ANY ARTICLE OR RESEARCH PAPER TO BOOKMARK IT HERE'
+                : 'TRY ADJUSTING YOUR LAB FILTER, RESEARCH VECTOR, PUBLICATION TYPE OR SEARCH QUERY'}
             </span>
             {(searchQuery || selectedLab !== 'All' || selectedType !== 'ALL' || selectedVector) && (
               <button
@@ -726,19 +613,17 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
                 }}
                 className="mt-4 px-3 py-1 border border-black font-mono text-[10px] cursor-pointer hover:bg-black hover:text-white transition-colors"
               >
-                {dict.feed.resetFilters}
+                [RESET ALL FILTERS]
               </button>
             )}
           </div>
         ) : (
-          <div key={`${selectedLab}_${selectedType}_${selectedVector || 'ALL'}_${locale}`} className="animate-fade-in">
+          <div key={`${selectedLab}_${selectedType}_${selectedVector || 'ALL'}`} className="animate-fade-in">
             <EditorialSpread
-              articles={localizedDisplayedArticles}
+              articles={displayedArticles}
               onSelectArticle={handleOpenArticle}
               bookmarkedIds={savedIds}
               onToggleBookmark={toggleBookmark}
-              locale={locale}
-              onVisibleCountChange={setVisibleSpreadCount}
             />
           </div>
         )}
@@ -747,22 +632,21 @@ export default function FeedClient({ initialArticles, initialVectorPulse }: Feed
       {showBackToTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 end-6 z-40 bg-[#faf9f6] border border-black px-3.5 py-2 font-mono text-[9px] tracking-widest uppercase text-black hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer shadow-lg animate-fade-in"
+          className="fixed bottom-6 right-6 z-40 bg-[#faf9f6] border border-black px-3.5 py-2 font-mono text-[9px] tracking-widest uppercase text-black hover:bg-black hover:text-[#faf9f6] transition-colors cursor-pointer shadow-lg animate-fade-in"
           title="Back to top"
         >
-          {dict.feed.top}
+          [↑ TOP]
         </button>
       )}
 
-      <Footer locale={locale} />
+      <Footer />
 
       <EditorialModal
-        article={canonicalSelectedArticle}
+        article={selectedArticle}
         onClose={handleCloseArticle}
-        isBookmarked={canonicalSelectedArticle ? isSaved(canonicalSelectedArticle.id) : false}
+        isBookmarked={selectedArticle ? isSaved(selectedArticle.id) : false}
         onToggleBookmark={(id) => toggleBookmark(id)}
         onSummaryEnriched={handleSummaryEnriched}
-        locale={locale}
       />
     </div>
   );

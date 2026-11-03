@@ -24,8 +24,6 @@ import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import LiveClock from '@/components/LiveClock';
 import ThemeToggle from '@/components/ThemeToggle';
-import LanguageSelector from '@/components/LanguageSelector';
-import { Locale, DEFAULT_LOCALE, isValidLocale, isRTL, getDictionary } from '@/lib/i18n';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
 type CategoryFilter = 'ALL' | 'Frontier' | 'Open Weights' | 'Specialized';
@@ -39,29 +37,6 @@ export default function BenchmarksPage() {
   const [tableSort, setTableSort] = useState<TableSortField>('rank');
   const [sortAsc, setSortAsc] = useState<boolean>(false);
   const [selectedModelId, setSelectedModelId] = useState<string | null>(null);
-  const [locale, setLocale] = useState<Locale>(DEFAULT_LOCALE);
-
-  useEffect(() => {
-    try {
-      const savedLocale = localStorage.getItem('latentspace-locale');
-      if (isValidLocale(savedLocale)) {
-        setLocale(savedLocale);
-        document.documentElement.dir = isRTL(savedLocale) ? 'rtl' : 'ltr';
-        document.documentElement.lang = savedLocale;
-      }
-    } catch {}
-  }, []);
-
-  const handleLocaleChange = (newLocale: Locale) => {
-    setLocale(newLocale);
-    try {
-      localStorage.setItem('latentspace-locale', newLocale);
-      document.documentElement.dir = isRTL(newLocale) ? 'rtl' : 'ltr';
-      document.documentElement.lang = newLocale;
-    } catch {}
-  };
-
-  const dict = getDictionary(locale);
 
   // Scroll to top on mount
   useEffect(() => {
@@ -222,29 +197,27 @@ export default function BenchmarksPage() {
           <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
             <Link
               href="/saved"
-              className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[115px]"
+              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
               title="View your saved articles dossier"
             >
               <span className="sm:hidden">[<span className="text-[#ff8000]">★</span>]</span>
-              <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> {dict.nav.saved}]</span>
+              <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> SAVED]</span>
             </Link>
 
             <Link
               href="/"
               scroll={true}
-              className="border border-black/35 hover:border-black px-2 sm:px-3 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:min-w-[165px]"
-              title={dict.nav.returnToFeed}
+              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
+              title="Return to Frontier Feed"
             >
-              <span className="sm:hidden">[← {dict.nav.feedShort}]</span>
-              <span className="hidden sm:inline">[← {dict.nav.returnToFeed}]</span>
+              <span className="sm:hidden">[← FEED]</span>
+              <span className="hidden sm:inline">[← RETURN TO FEED]</span>
             </Link>
-
-            <LanguageSelector currentLocale={locale} onSelectLocale={handleLocaleChange} />
 
             <ThemeToggle />
 
             {/* Isolated 1Hz Clock on the far right */}
-            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider ps-3 border-s border-black/20">
+            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
               <LiveClock />
             </div>
           </div>
@@ -960,7 +933,7 @@ export default function BenchmarksPage() {
       </main>
 
       {/* Footer */}
-      <Footer locale={locale} />
+      <Footer />
 
     </div>
   );
