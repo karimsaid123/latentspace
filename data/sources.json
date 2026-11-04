@@ -8,7 +8,7 @@
     "color": "#10a37f",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.413Z"
+    "lastFetchedAt": "2026-11-04T15:06:28.773Z"
   },
   {
     "id": "deepmind",
@@ -19,7 +19,7 @@
     "color": "#3b82f6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.507Z"
+    "lastFetchedAt": "2026-11-04T15:06:34.271Z"
   },
   {
     "id": "google-research",
@@ -30,7 +30,7 @@
     "color": "#4285f4",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.510Z"
+    "lastFetchedAt": "2026-11-04T15:06:34.272Z"
   },
   {
     "id": "nvidia-blog",
@@ -41,7 +41,7 @@
     "color": "#76b900",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.512Z"
+    "lastFetchedAt": "2026-11-04T15:06:34.273Z"
   },
   {
     "id": "huggingface",
@@ -52,7 +52,7 @@
     "color": "#f59e0b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.514Z"
+    "lastFetchedAt": "2026-11-04T15:06:34.274Z"
   },
   {
     "id": "bair-blog",
@@ -63,7 +63,7 @@
     "color": "#0284c7",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T10:14:46.516Z"
+    "lastFetchedAt": "2026-11-04T15:06:34.275Z"
   },
   {
     "id": "aws-ml",
@@ -73,7 +73,8 @@
     "category": "LLMs & GenAI",
     "color": "#ff9900",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.188Z"
   },
   {
     "id": "semianalysis",
@@ -83,7 +84,8 @@
     "category": "Robotics & Hardware",
     "color": "#4f46e5",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1,
+    "lastFetchedAt": "2026-11-04T15:06:27.792Z"
   },
   {
     "id": "the-register-ai",
@@ -93,7 +95,8 @@
     "category": "LLMs & GenAI",
     "color": "#d97706",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.219Z"
   },
   {
     "id": "ieee-spectrum-ai",
@@ -103,7 +106,8 @@
     "category": "Open Source & Research",
     "color": "#2563eb",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.221Z"
   },
   {
     "id": "interconnects-ai",
@@ -113,7 +117,8 @@
     "category": "LLMs & GenAI",
     "color": "#065f46",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.222Z"
   },
   {
     "id": "ahead-of-ai",
@@ -123,7 +128,8 @@
     "category": "Open Source & Research",
     "color": "#7c3aed",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.223Z"
   },
   {
     "id": "the-gradient",
@@ -133,7 +139,8 @@
     "category": "Open Source & Research",
     "color": "#db2777",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.793Z"
   },
   {
     "id": "techcrunch-ai",
@@ -143,7 +150,8 @@
     "category": "Business & Big Tech",
     "color": "#059669",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.795Z"
   },
   {
     "id": "verge-ai",
@@ -153,7 +161,8 @@
     "category": "LLMs & GenAI",
     "color": "#e11d48",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.796Z"
   },
   {
     "id": "mit-tech-ai",
@@ -163,7 +172,8 @@
     "category": "Ethics & Policy",
     "color": "#6366f1",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.797Z"
   },
   {
     "id": "arstechnica-tech",
@@ -173,7 +183,8 @@
     "category": "Robotics & Hardware",
     "color": "#ea580c",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.797Z"
   },
   {
     "id": "siliconangle-ai",
@@ -183,7 +194,8 @@
     "category": "Business & Big Tech",
     "color": "#b45309",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:27.798Z"
   },
   {
     "id": "marktechpost",
@@ -193,7 +205,8 @@
     "category": "Open Source & Research",
     "color": "#10b981",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.254Z"
   },
   {
     "id": "simon-willison",
@@ -203,7 +216,8 @@
     "category": "LLMs & GenAI",
     "color": "#8b5cf6",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.256Z"
   },
   {
     "id": "arxiv-ai",
@@ -213,7 +227,8 @@
     "category": "Open Source & Research",
     "color": "#b31b1b",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.257Z"
   },
   {
     "id": "arxiv-cl",
@@ -223,7 +238,8 @@
     "category": "LLMs & GenAI",
     "color": "#b31b1b",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.257Z"
   },
   {
     "id": "arxiv-lg",
@@ -233,7 +249,8 @@
     "category": "Open Source & Research",
     "color": "#b31b1b",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.258Z"
   },
   {
     "id": "arxiv-deepseek",
@@ -243,7 +260,8 @@
     "category": "Open Source & Research",
     "color": "#1e40af",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.258Z"
   },
   {
     "id": "arxiv-deepmind",
@@ -253,7 +271,8 @@
     "category": "Open Source & Research",
     "color": "#2563eb",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.769Z"
   },
   {
     "id": "arxiv-meta",
@@ -263,7 +282,8 @@
     "category": "Open Source & Research",
     "color": "#0284c7",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 1,
+    "lastFetchedAt": "2026-11-04T15:06:34.271Z"
   },
   {
     "id": "arxiv-mistral",
@@ -273,7 +293,8 @@
     "category": "Open Source & Research",
     "color": "#f97316",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.771Z"
   },
   {
     "id": "arxiv-moonshot",
@@ -283,7 +304,8 @@
     "category": "LLMs & GenAI",
     "color": "#059669",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.772Z"
   },
   {
     "id": "arxiv-xai",
@@ -293,6 +315,7 @@
     "category": "Open Source & Research",
     "color": "#1d9bf0",
     "enabled": true,
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T15:06:28.772Z"
   }
 ]
