@@ -15,11 +15,14 @@ import {
   Sparkles, 
   Cpu,
   ArrowUpDown,
-  Check
+  Check,
+  Trophy,
+  Users
 } from 'lucide-react';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import { ModelBenchmark, BenchmarkResponse } from '@/types/benchmark';
 import { VERIFIED_BENCHMARK_SNAPSHOT } from '@/lib/benchmark-client';
+import { LmsysArenaModel } from '@/lib/lmarena-client';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import LiveClock from '@/components/LiveClock';
@@ -32,6 +35,8 @@ type TableSortField = 'rank' | 'intelligence' | 'speed' | 'cost' | 'name';
 export default function BenchmarksPage() {
   const [data, setData] = useState<BenchmarkResponse | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [arenaModels, setArenaModels] = useState<LmsysArenaModel[]>([]);
+  const [arenaLoading, setArenaLoading] = useState<boolean>(true);
   const [activeMetricTab, setActiveMetricTab] = useState<MetricTab>('intelligence');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('ALL');
   const [tableSort, setTableSort] = useState<TableSortField>('rank');
@@ -83,7 +88,28 @@ export default function BenchmarksPage() {
         }
       }
     }
+
+    async function loadArena() {
+      try {
+        const res = await fetch('/api/benchmarks/arena', { signal: controller.signal });
+        if (res.ok) {
+          const json = await res.json();
+          if (json?.models && Array.isArray(json.models)) {
+            setArenaModels(json.models);
+          }
+        }
+      } catch (err: any) {
+        if (err?.name === 'AbortError') return;
+        console.error('Failed to load LMSYS arena:', err);
+      } finally {
+        if (!controller.signal.aborted) {
+          setArenaLoading(false);
+        }
+      }
+    }
+
     loadBenchmarks();
+    loadArena();
     return () => controller.abort();
   }, []);
 
@@ -894,7 +920,111 @@ export default function BenchmarksPage() {
       </ScrollReveal>
 
         {/* ─────────────────────────────────────────────────────────────
-            SECTION 5: OFFICIAL ARTIFICIAL ANALYSIS ATTRIBUTION
+            SECTION 5: LMSYS CHATBOT ARENA (HUMAN PREFERENCE ELO)
+        ───────────────────────────────────────────────────────────── */}
+        <ScrollReveal yOffset={35} className="mb-16">
+          <section className="border border-black bg-white relative p-6 sm:p-8">
+            <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-black/10 gap-4 mb-6">
+              <div>
+                <div className="flex items-center gap-2 font-mono text-[10px] tracking-widest text-black/60 uppercase">
+                  <Trophy className="w-3.5 h-3.5 text-black" />
+                  <span>HUMAN PREFERENCE EVALUATION</span>
+                  <span className="w-1.5 h-1.5 bg-black" />
+                  <span>LMSYS CHATBOT ARENA</span>
+                </div>
+                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-black mt-1 uppercase font-mono">
+                  Crowdsourced Elo Leaderboard
+                </h2>
+                <p className="font-mono text-xs text-black/60 mt-1 max-w-2xl">
+                  Blind pairwise evaluations from over 1,000,000+ human chat interactions. Synced via Hugging Face Datasets API.
+                </p>
+              </div>
+
+              <a
+                href="https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 border border-black bg-[#faf9f6] hover:bg-black hover:text-white transition-all flex items-center gap-1.5 shrink-0 self-start sm:self-auto cursor-pointer"
+              >
+                <span>HUGGING FACE ARENA</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+
+            {arenaLoading ? (
+              <div className="p-12 text-center font-mono text-xs text-black/40">
+                LOADING LIVE LMSYS ARENA DATA...
+              </div>
+            ) : (
+              <div className="overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                <table className="w-full text-left font-mono text-[10px] uppercase">
+                  <thead>
+                    <tr className="border-b border-black text-black/60">
+                      <th className="p-3 pl-4 w-16">RANK</th>
+                      <th className="p-3">MODEL</th>
+                      <th className="p-3">LAB / ORG</th>
+                      <th className="p-3 w-48">ARENA ELO</th>
+                      <th className="p-3 pr-4 text-right">COMMUNITY VOTES</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-black/10">
+                    {arenaModels.slice(0, 15).map((model) => {
+                      const maxElo = arenaModels[0]?.elo || 1550;
+                      const minElo = 1350;
+                      const pct = Math.max(10, Math.min(100, ((model.elo - minElo) / (maxElo - minElo)) * 100));
+
+                      return (
+                        <tr key={model.modelName} className="hover:bg-black/5 transition-colors">
+                          <td className="p-3 pl-4">
+                            {model.rank <= 3 ? (
+                              <span className="inline-flex items-center justify-center w-5 h-5 bg-black text-white font-black text-[9px]">
+                                {model.rank}
+                              </span>
+                            ) : (
+                              <span className="font-bold text-black/60">#{model.rank}</span>
+                            )}
+                          </td>
+                          <td className="p-3 font-bold text-black text-xs tracking-tight">
+                            {model.modelName}
+                          </td>
+                          <td className="p-3">
+                            <span className="px-2 py-0.5 border border-black/20 text-[9px] font-mono tracking-wider bg-[#faf9f6]">
+                              {model.organization}
+                            </span>
+                          </td>
+                          <td className="p-3">
+                            <div className="flex items-center gap-2">
+                              <span className="font-black text-black text-xs w-10">
+                                {model.elo}
+                              </span>
+                              <div className="flex-1 bg-black/10 h-2 overflow-hidden">
+                                <div 
+                                  className="bg-black h-full transition-all" 
+                                  style={{ width: `${pct}%` }} 
+                                />
+                              </div>
+                            </div>
+                          </td>
+                          <td className="p-3 pr-4 text-right text-black/60 font-bold">
+                            {model.votes.toLocaleString()}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </section>
+        </ScrollReveal>
+
+        {/* ─────────────────────────────────────────────────────────────
+            SECTION 6: OFFICIAL TELEMETRY ATTRIBUTION
         ───────────────────────────────────────────────────────────── */}
         <ScrollReveal yOffset={35} className="mb-16">
           <section className="border border-black p-6 sm:p-8 bg-[#faf9f6] relative">
@@ -910,8 +1040,9 @@ export default function BenchmarksPage() {
                 <span className="font-bold text-black">DATA ATTRIBUTION & METHODOLOGY</span>
               </div>
               <p className="leading-relaxed">
-                Benchmark metrics and intelligence scores are provided through the independent analysis of AI models conducted by{' '}
-                <strong className="text-black">Artificial Analysis</strong> (Free Data API & v5 Index). Evaluations encompass empirical multi-turn tests, automated coding benchmark evaluations, output token speed measurements, and blended token pricing.
+                Empirical benchmark metrics, tokens-per-second throughput, and pricing are powered by{' '}
+                <strong className="text-black">Artificial Analysis</strong>. Human preference Elo ratings and win rates are ingested from{' '}
+                <strong className="text-black">LMSYS Chatbot Arena</strong> via the official Hugging Face Datasets Server API.
               </p>
             </div>
 
@@ -922,7 +1053,16 @@ export default function BenchmarksPage() {
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-black bg-white text-black font-bold hover:bg-black hover:text-white transition-all flex items-center gap-2 cursor-pointer shadow-xs"
               >
-                <span>VISIT ARTIFICIALANALYSIS.AI</span>
+                <span>ARTIFICIAL ANALYSIS</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="https://huggingface.co/spaces/lmarena-ai/chatbot-arena-leaderboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 border border-black bg-white text-black font-bold hover:bg-black hover:text-white transition-all flex items-center gap-2 cursor-pointer shadow-xs"
+              >
+                <span>LMSYS ARENA</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>

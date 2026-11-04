@@ -24,6 +24,8 @@ import {
   computeVectorPulseFromRawRecords,
   isValidVectorId,
 } from '../src/lib/vector-pulse';
+import { normalizeArxivId } from '../src/lib/paper-signals';
+import { getLmsysArenaLeaderboard } from '../src/lib/lmarena-client';
 import type { DomainArticle } from '../src/core/domain/entities';
 
 describe('Security & Domain Hardening Suite', () => {
@@ -354,5 +356,28 @@ describe('Security & Domain Hardening Suite', () => {
       ),
       true
     );
+  });
+
+  it('normalizes arXiv identifiers across URLs, versions, and prefixes', () => {
+    assert.equal(normalizeArxivId('arXiv:2401.12345v2'), '2401.12345');
+    assert.equal(normalizeArxivId('2401.12345'), '2401.12345');
+    assert.equal(normalizeArxivId('https://arxiv.org/abs/2309.10691v1'), '2309.10691');
+    assert.equal(normalizeArxivId('https://arxiv.org/pdf/2309.10691.pdf'), '2309.10691');
+    assert.equal(normalizeArxivId('cs.AI/0101001'), 'cs.AI/0101001');
+    assert.equal(normalizeArxivId('not-a-valid-id'), null);
+    assert.equal(normalizeArxivId(''), null);
+  });
+
+  it('loads LMSYS Chatbot Arena human preference leaderboard with verified schema', async () => {
+    const arena = await getLmsysArenaLeaderboard();
+    assert.ok(Array.isArray(arena));
+    assert.ok(arena.length >= 10);
+
+    const first = arena[0];
+    assert.equal(first.rank, 1);
+    assert.ok(typeof first.modelName === 'string' && first.modelName.length > 0);
+    assert.ok(typeof first.organization === 'string' && first.organization.length > 0);
+    assert.ok(typeof first.elo === 'number' && first.elo > 1000);
+    assert.ok(typeof first.votes === 'number' && first.votes > 0);
   });
 });

@@ -192,7 +192,10 @@ const MinimalNav = memo(function MinimalNav({
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60">
         
         {/* Lab Sectors */}
-        <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-6 px-6 sm:mx-0 sm:px-0">
+        <div 
+          className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-6 px-6 sm:mx-0 sm:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           <span className="text-black font-bold shrink-0 tracking-wider">LAB SECTOR:</span>
           {LAB_FILTERS.map((lab) => {
             const isSelected = selectedLab === lab.id;
@@ -211,7 +214,10 @@ const MinimalNav = memo(function MinimalNav({
         </div>
 
         {/* Publication Format Selector & Vector Pulse Dropdown Trigger */}
-        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1">
+        <div 
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           <span className="text-black font-bold shrink-0">TYPE:</span>
           <button
             onClick={() => onSelectType('ALL')}

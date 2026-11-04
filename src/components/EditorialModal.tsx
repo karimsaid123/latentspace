@@ -6,6 +6,7 @@ import { Article, AISummary } from '@/types';
 import { ExternalLink, Share2 } from 'lucide-react';
 import ArticleShareModal from './ArticleShareModal';
 import { getCompanyBrand, CompanyLogo } from './CompanyBrand';
+import PaperSignalsBar from './PaperSignalsBar';
 
 interface EditorialModalProps {
   article: Article | null;
@@ -231,6 +232,10 @@ export default function EditorialModal({
             <h2 className="text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight leading-snug text-black">
               {article.title}
             </h2>
+
+            {article.entryType === 'RESEARCH_PAPER' && article.arxivId && (
+              <PaperSignalsBar arxivId={article.arxivId} />
+            )}
           </div>
 
           {/* 01: Comprehensive Information-Dense Briefing */}

@@ -4,6 +4,7 @@ import { FeedProviderPort } from '@/core/ports/feed-provider.port';
 import { DomainSource, FeedSnapshot, DomainArticle, Category } from '@/core/domain/entities';
 import { ProviderUnavailableError, RateLimitError } from '@/core/domain/errors';
 import { decodeHtmlEntities } from '@/lib/sanitize';
+import { safeJsonParse } from '@/lib/request-security';
 import { detectFrontierLab, generateDeepIntelligenceSummary, detectEntryType } from '@/lib/intelligence-analyzer';
 
 const MAX_FEED_BYTES = 5 * 1024 * 1024; // 5 MB safety ceiling for Edge Worker RAM
@@ -257,6 +258,12 @@ export class RssFeedAdapter implements FeedProviderPort {
       }
 
       const rawXmlText = await this.readBoundedText(response, MAX_FEED_BYTES);
+
+      // Hugging Face Daily Papers exposes a JSON API instead of RSS
+      if (/^https:\/\/huggingface\.co\/api\/daily_papers/.test(source.feedUrl)) {
+        return this.parseHfDailyPapers(rawXmlText, source, fetchedAt);
+      }
+
       const xmlText = sanitizeXmlForParsing(rawXmlText);
 
       let feed;
@@ -347,6 +354,66 @@ export class RssFeedAdapter implements FeedProviderPort {
       }
       throw new ProviderUnavailableError(source.name, message);
     }
+  }
+
+  /**
+   * Maps the Hugging Face Daily Papers JSON API (community-curated, upvoted arXiv papers)
+   * onto canonical arXiv URLs so entries dedupe against the arXiv RSS feeds.
+   */
+  private parseHfDailyPapers(rawText: string, source: DomainSource, fetchedAt: string): FeedSnapshot {
+    const parsed = safeJsonParse<unknown>(rawText);
+    const rawItems = Array.isArray(parsed) ? parsed : [];
+    const articles: DomainArticle[] = [];
+
+    for (const entry of rawItems.slice(0, 20) as Array<Record<string, any>>) {
+      const paper = entry?.paper;
+      const arxivId = typeof paper?.id === 'string' ? paper.id.trim() : '';
+      if (!/^\d{4}\.\d{4,5}$/.test(arxivId)) continue;
+
+      const title = decodeHtmlEntities(String(paper.title || entry.title || '').trim()).slice(0, 360);
+      if (!title) continue;
+
+      const abstract = this.stripHtml(String(paper.summary || entry.summary || ''));
+      const canonicalUrl = `https://arxiv.org/abs/${arxivId}`;
+      const id = crypto.createHash('sha256').update(canonicalUrl).digest('hex').slice(0, 16);
+      const contentHash = crypto.createHash('sha256').update(abstract || title).digest('hex').slice(0, 16);
+      const authors = Array.isArray(paper.authors)
+        ? paper.authors
+            .map((a: any) => (typeof a?.name === 'string' ? a.name.trim() : ''))
+            .filter(Boolean)
+            .slice(0, 4)
+            .join(', ')
+        : '';
+      const publishedAt = this.safeParseDate(paper.publishedAt || entry.publishedAt, fetchedAt);
+      const lab = detectFrontierLab(title, abstract, source.name);
+
+      articles.push({
+        id,
+        canonicalUrl,
+        title,
+        publishedAt,
+        fetchedAt,
+        contentHash,
+        sourceId: source.id,
+        sourceName: source.name,
+        author: decodeHtmlEntities(authors || source.name),
+        contentSnippet: abstract.slice(0, 2400),
+        category: this.categorizeText(title, abstract, source.category),
+        lab,
+        entryType: 'RESEARCH_PAPER',
+        arxivId,
+        pdfUrl: `https://arxiv.org/pdf/${arxivId}`,
+        summary: generateDeepIntelligenceSummary(title, abstract, source.name),
+      });
+    }
+
+    return {
+      sourceId: source.id,
+      sourceName: source.name,
+      fetchedAt,
+      rawItemCount: rawItems.length,
+      articles,
+    };
   }
 
   /**
