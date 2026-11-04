@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { 
   Search, 
-  BookOpen, 
   Cpu, 
   Layers, 
   Sparkles, 
@@ -112,10 +111,6 @@ function CodexContent() {
       <main className="flex-1 max-w-[1700px] mx-auto w-full px-6 sm:px-12 py-8">
         <ScrollReveal yOffset={20}>
           <div className="pb-8 border-b-2 border-black">
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs text-black/60 uppercase tracking-widest mb-2 font-bold">
-              <BookOpen className="w-4 h-4 text-black" />
-              <span>DETERMINISTIC COMPENDIUM // ZERO-AI // VERIFIED MANUAL</span>
-            </div>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black leading-none">
               LatentSpace Codex
             </h1>
