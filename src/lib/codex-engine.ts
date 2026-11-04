@@ -38,20 +38,34 @@ function computeRelevance(entry: CodexEntry, tokens: string[]): number {
   for (const token of tokens) {
     if (!token) continue;
 
-    // Exact acronym hit (highest priority, e.g. "moe", "cot", "dpo", "rlhf")
-    if (acronymNorm === token || acronymNorm.includes(token)) {
-      score += 50;
+    // Exact ID / Slug match
+    if (entry.id === token || entry.slug === token) {
+      score += 120;
+    } else if (entry.id.startsWith(token + '-') || entry.id.endsWith('-' + token)) {
+      score += 30;
+    }
+
+    // Acronym match (exact vs substring)
+    if (acronymNorm === token) {
+      score += 100;
+    } else if (acronymNorm.split(' ').includes(token)) {
+      score += 60;
+    } else if (acronymNorm.includes(token)) {
+      score += 35;
     }
 
     // Title match
-    if (titleNorm.includes(token)) {
-      score += 30;
-      if (titleNorm.startsWith(token)) score += 20;
+    if (titleNorm === token) {
+      score += 80;
+    } else if (titleNorm.startsWith(token + ' ')) {
+      score += 50;
+    } else if (titleNorm.includes(token)) {
+      score += 25;
     }
 
     // Keywords match
     if (keywordsNorm.some(k => k === token)) {
-      score += 25;
+      score += 35;
     } else if (keywordsNorm.some(k => k.includes(token))) {
       score += 15;
     }
