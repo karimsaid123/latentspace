@@ -1,5 +1,721 @@
 [
   {
+    "id": "4c66b4e5d0d02adc",
+    "canonicalUrl": "https://www.techmeme.com/261103/p42",
+    "title": "How Nvidia uses soft power to influence customers and shape US chip policy; sources: OpenAI took no public stance on China chip exports to avoid angering Nvidia (The Information)",
+    "publishedAt": "2026-11-04T00:20:01.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "f6a3beef398538ab",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "The Information : How Nvidia uses soft power to influence customers and shape US chip policy; sources: OpenAI took no public stance on China chip exports to avoid angering Nvidia   —  Last month, OpenAI Senior Research Scientist Noam Brown posted a link in a company Slack channel to a news story …",
+    "imageUrl": "http://www.techmeme.com/261103/i42.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI reportedly refrained from taking a public stance on U.S. chip export restrictions to China to avoid potential friction with Nvidia. This internal caution was highlighted when OpenAI Senior Research Scientist Noam Brown shared a news story regarding the policy in a company Slack channel, underscoring Nvidia's significant soft power influence over its primary customers.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "eba05ae8eb31553e",
+    "canonicalUrl": "https://www.techmeme.com/261103/p41",
+    "title": "Google says its education updates give schools \"more choice, not less\"; Gemini, Gemini Notebook, and Search are off by default and can be enabled individually (@newsfromgoogle)",
+    "publishedAt": "2026-11-04T00:00:50.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "b035733336f52d42",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "@newsfromgoogle : Google says its education updates give schools “more choice, not less”; Gemini, Gemini Notebook, and Search are off by default and can be enabled individually   —  We want to clarify what we announced today about our education services. Today's announcements give schools more choice, not less. Here's what we announced: - Gemini, Gemini Notebook, and Search will be OFF 🔴 by default. This is based on K-12 schools asking for more control over student use of AI...",
+    "imageUrl": "http://www.techmeme.com/img/pml.png",
+    "category": "Business & Big Tech",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has clarified its latest education service updates, emphasizing that new AI features are designed to provide schools with granular control rather than mandatory integration. Specifically, Gemini, Gemini Notebook, and Search AI features will be disabled by default for K-12 institutions, requiring administrators to manually enable them on an individual basis.",
+      "takeaways": [
+        "**Default Configuration:** Gemini, Gemini Notebook, and Search features are set to 'OFF' by default for K-12 school environments.",
+        "**Administrative Control:** Google implemented this opt-in structure in direct response to requests from K-12 institutions seeking greater oversight regarding student AI usage."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9d97c8271a19f07f",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
+    "title": "Please stop asking me when the AI bubble will pop",
+    "publishedAt": "2026-11-03T23:37:45.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "e10266e713e13dd6",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Elizabeth Lopatto",
+    "contentSnippet": "People, including on this staff, keep asking me with varying degrees of excitement or trepidation when the AI bubble will burst. I’ll tell you what I tell them: If I knew that, I would make a life-changing bet on the market, levered up as far as I could, and then, after I made my money, go retire on a beach somewhere. Maybe run a cat sanctuary, who knows. What I can tell you is that I read with interest a story in Bloomberg this morning: “Wall Street CEOs, Big Money Managers Divided Over AI Risks.” The story itself is a roundup of stuff said at the 2026 Global Financial Leaders’ Investment Summit in Hong Kong. Here’s what caught my attention: The CEO of Pacific Investment Management Co. — that’s PIMCO, the legendary bond firm — told listeners that there’s going to be a downturn in the AI market “and then things are going to break.” The astronomically expensive AI buildout has swamped debt markets — making it harder to raise cash. But there’s still more debt coming, and people still want to buy it. For instance, Meta drew $58 billion in orders for a bond offering that’s expected to be $15 billion to $20 billion, Bloomberg reported today. Oracle said Monday it would need another $20 billion in bonds, on top of its existing steep commitments. Alphabet, Google’s parent company, is selling €6 billion (or about $6.7 billion) of bonds. Even Microsoft recently sold bonds, for the first time in a decade — $25 billion of them. The PIMCO CEO — his name is Emmanuel Roman, but his job is what matters here — has estimated that the AI buildout could create $2 trillion in financing needs over the next five years. The entire total US bond market is about $12 trillion. I am harping on PIMCO because it has been instrumental in the AI trade. It was among the group of financiers that did the first CoreWeave chip-based financing in 2023. It made a quick $2 billion in paper gains from $29 billion in Meta bonds, meant to support the AI buildout, last year. It bought $4 billion of SpaceX bonds last month. If PIMCO’s CEO is publicly sounding the alarm about a bubble popping, that’s a big deal — especially since the company just sold a bunch of its AI debt. It’s not just PIMCO urging caution. Apollo Global Management, which lately had been talking with SpaceX about a $40 billion chip deal, is also warning of AI risk. Apollo president Jim Zelter told analysts today that while he expect",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2302813651.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Emmanuel Roman, CEO of PIMCO, has publicly warned of an impending downturn in the AI market, citing the massive debt load required to sustain the current infrastructure buildout. Roman estimates that AI development will necessitate $2 trillion in financing over the next five years, a significant figure relative to the $12 trillion total US bond market. Despite these warnings, demand for AI-related debt remains high; Meta recently attracted $58 billion in orders for a bond offering expected to range between $15 billion and $20 billion. Other major tech firms are similarly active in debt markets, with Oracle seeking $20 billion, Alphabet issuing €6 billion ($6.7 billion), and Microsoft recently selling $25 billion in bonds.\n\nFinancial institutions are showing signs of divergence regarding AI risk. While PIMCO has been a key financier of the AI trade—including early CoreWeave chip-based financing and significant holdings in Meta and SpaceX debt—its leadership is now signaling caution. Apollo Global Management, which has discussed a potential $40 billion chip deal with SpaceX, has also expressed uncertainty regarding the long-term pricing and economic viability of AI infrastructure. Potential catalysts for a market correction, according to Roman, include US rate hikes, geopolitical conflict, or a eurozone crisis, though the high volume of interest in recent bond offerings suggests the market has not yet reached a definitive peak.",
+      "takeaways": [
+        "**Financing Scale:** PIMCO estimates the AI infrastructure buildout will require $2 trillion in financing over the next five years.",
+        "**Recent Debt Issuances:** Major tech firms have recently tapped debt markets, including Meta ($15B-$20B target), Oracle ($20B), Alphabet (€6B), and Microsoft ($25B).",
+        "**PIMCO's Market Position:** PIMCO previously realized $2 billion in paper gains from $29 billion in Meta bonds and recently purchased $4 billion in SpaceX debt.",
+        "**Institutional Caution:** Apollo Global Management president Jim Zelter cited significant uncertainty regarding how AI pricing and economics will evolve despite long-term demand for computing power.",
+        "**Market Triggers:** PIMCO CEO Emmanuel Roman identified US rate hikes, war, or a eurozone crisis as potential triggers for an AI market correction."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "6eab87348744b9ea",
+    "canonicalUrl": "https://www.techmeme.com/261103/p40",
+    "title": "Valve announces changes to Steam's review process, as a surge in game submissions pushes review times to \"up to 12 business days\", instead of the usual 3-5 days (Jay Peters/The Verge)",
+    "publishedAt": "2026-11-03T23:30:02.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "2124ece235b6bed4",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Jay Peters / The Verge : Valve announces changes to Steam's review process, as a surge in game submissions pushes review times to “up to 12 business days”, instead of the usual 3-5 days   —  Valve admits that it's now taking ‘up to 12 business days’ to game submissions.",
+    "imageUrl": "http://www.techmeme.com/261103/i40.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Valve has officially updated its Steam game submission review timeline, citing a significant surge in new title submissions. The review process, which typically requires 3 to 5 business days, has now extended to up to 12 business days.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4a7d1d737d96a9c8",
+    "canonicalUrl": "https://www.techmeme.com/261103/p39",
+    "title": "Traversal, which provides AI agents for site reliability engineering, raised $120M co-led by Kleiner Perkins, Redpoint, and Khosla at a $1B valuation (Rashi Shrivastava/Forbes)",
+    "publishedAt": "2026-11-03T23:05:01.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "c587983d90bb91d0",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Rashi Shrivastava / Forbes : Traversal, which provides AI agents for site reliability engineering, raised $120M co-led by Kleiner Perkins, Redpoint, and Khosla at a $1B valuation   —  Traversal has raised $120 million in funding to help companies like American Express and Pepsi troubleshoot site outages.  —  for The Prompt",
+    "imageUrl": "http://www.techmeme.com/261103/i39.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Site reliability engineering AI agent provider Traversal has secured $120 million in a funding round co-led by Kleiner Perkins, Redpoint, and Khosla Ventures. The investment values the company at $1 billion, achieving unicorn status.\n\nTraversal's platform is currently utilized by enterprise clients including American Express and Pepsi to automate the troubleshooting of site outages.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "06365f2b44dabe0c",
+    "canonicalUrl": "https://www.techmeme.com/261103/p38",
+    "title": "Block reports Q3 revenue up 10% YoY to $6.7B, above est., Cash App gross profit up 27% to $2.07B, raises its full-year profit outlook; XYZ jumps 5%+ after hours (Reuters)",
+    "publishedAt": "2026-11-03T22:50:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "b73013c4b71eae0f",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Reuters : Block reports Q3 revenue up 10% YoY to $6.7B, above est., Cash App gross profit up 27% to $2.07B, raises its full-year profit outlook; XYZ jumps 5%+ after hours   —  Jack Dorsey-led Block (XYZ.N) raised its full-year gross profit outlook on Tuesday after posting a rise in third-quarter earnings …",
+    "imageUrl": "http://www.techmeme.com/261103/i38.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Block reported Q3 revenue of $6.7 billion, representing a 10% year-over-year increase and exceeding analyst expectations. The company's Cash App division saw gross profit grow 27% to $2.07 billion, prompting the Jack Dorsey-led firm to raise its full-year gross profit outlook. Following the announcement, Block's stock (XYZ.N) rose more than 5% in after-hours trading.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "52eb9ce7b224919a",
+    "canonicalUrl": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+    "title": "Anthropic is working on a system to prove AI models’ identity",
+    "publishedAt": "2026-11-03T22:41:03.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "4be3e67050a2ead4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Russell Brandom",
+    "contentSnippet": "Anthropic is working on an open source system to verify which AI model produced a given output, according to a blog post published Tuesday. The system, called FlashProve , is built to provide what researchers call “provable inference” — a cryptographic proof, essentially a mathematical guarantee, that a given output came from a specific model. It’s meant to let users confirm that the answer they received really came from the model they think they’re using.\n\nSimilar to cryptographic email signatures that let recipients confirm a message really came from its claimed sender, FlashProve would be robust against impostors attempting to disguise one model as another, even when the impostor is the lab that built and runs the model. In particular, the researchers note that the system could be used to prevent an AI company from secretly swapping in a cheaper model to cut costs, or a more expensive model to inflate its performance results.\n\nFlashProve could also be used to verify claims by third parties that a specific task was done by an advanced model. “A developer might claim that their software library was scanned for vulnerabilities by a frontier cybersecurity model, or a company might claim that its business plan was given the go-ahead by an appropriate model,” the researchers write. “How can a user verify these claims?”\n\nTo work, the system requires AI labs to publish a “fingerprint” of each model they release that can later be matched to specific outputs and verified cryptographically. Crucially, the fingerprints don’t reveal a model’s weights, the internal numbers that define how it behaves and which closed-model makers like Anthropic and OpenAI keep private. That means labs could publish the fingerprints without giving up their most valuable asset, enabling the system to work with commercial models, too. The system is also designed to be lightweight, so verification could be performed on a local device.\n\nAs part of the announcement, researchers released a detailed technical specification and working code for various elements of the system, which is publicly available under an open source license on GitHub . Research in the system is ongoing, and there are no plans to deploy it at Anthropic or any other lab.\n\n“This research post is meant to share intermediate progress, and not a completed research agenda,” researchers explain in the announcement post. “We are ",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic has introduced FlashProve, an open-source research project designed to provide \"provable inference\" for AI models. The system utilizes cryptographic proofs to verify that a specific AI model generated a particular output, ensuring that users can confirm the provenance of AI-generated content. By requiring labs to publish a \"fingerprint\" of their models, FlashProve allows for verification without exposing the model's proprietary weights, making it compatible with closed-source commercial models.\n\nThe technical architecture is designed to be lightweight, enabling verification to occur on local devices. The system aims to mitigate \"model swapping,\" where providers might secretly substitute a cheaper or less capable model for a premium one, or falsely claim that a task was performed by a frontier-level model. The researchers have released the technical specification and working code on GitHub under an open-source license.\n\nCurrently, FlashProve is in the intermediate research phase, and Anthropic has no immediate plans to deploy the system within its own production environment. The company is positioning this as a collaborative effort, inviting the broader research community to iterate on the existing codebase and cryptographic framework.",
+      "takeaways": [
+        "**Core Functionality:** FlashProve provides a cryptographic guarantee that a specific output originated from a specific AI model.",
+        "**IP Protection:** The system uses model \"fingerprints\" that allow for verification without revealing the underlying model weights.",
+        "**Use Cases:** The technology is intended to prevent model swapping, verify third-party claims regarding AI-driven tasks, and ensure transparency in AI service delivery.",
+        "**Availability:** Technical specifications and source code are currently available on GitHub under an open-source license.",
+        "**Deployment Status:** The project is an ongoing research initiative with no current plans for integration into Anthropic’s commercial products."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ec86eeaff85457e7",
+    "canonicalUrl": "https://www.techmeme.com/261103/p37",
+    "title": "Canva says it is restructuring, which will impact 1,271 workers, or 22% of its workforce, as it merges its product, growth, and platform teams (David Swan/The Age)",
+    "publishedAt": "2026-11-03T22:35:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "d6b898d791bd7143",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "David Swan / The Age : Canva says it is restructuring, which will impact 1,271 workers, or 22% of its workforce, as it merges its product, growth, and platform teams   —  Canva will cut more than 1000 jobs in a major restructure in response to slowing growth at the design giant.  —  Co-founder and chief executive …",
+    "imageUrl": "http://www.techmeme.com/261103/i37.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Canva is undergoing a major corporate restructuring that will result in the layoff of 1,271 employees, representing 22% of its total workforce. The reduction is a direct response to slowing growth at the company and involves the consolidation of its product, growth, and platform teams.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "717ebf6959a92f20",
+    "canonicalUrl": "https://siliconangle.com/2026/11/03/generative-media-inference-startup-fal-raises-1-3b-at-a-16b-valuation/",
+    "title": "Generative media inference startup fal raises $1.3B at a $16B valuation",
+    "publishedAt": "2026-11-03T22:32:19.000Z",
+    "fetchedAt": "2026-11-04T00:21:34.730Z",
+    "contentHash": "d2db0fd82c3b21ea",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Duncan Riley",
+    "contentSnippet": "UPDATED 17:32 EST / NOVEMBER 03 2026\n\nGenerative media inference startup fal raises $1.3B at a $16B valuation\n\nGenerative media inference startup fal today announced it has raised $1.3 billion in new funding at a valuation of $16 billion, according to Bloomberg.\n\nThe company will spend the money on computing power and on hiring beyond its current 185 employees.\n\nFal provides a cloud platform for running image, video and audio generation models, and developers reach all of them through a single application programming interface. Entertainment studios, advertising agencies and game developers are among the customers using those models in production, according to the company.\n\nIn-house researchers also post-train some of those models to run faster. Over the past year that work has centered on video, in partnership with the open- and closed-source developers that build the models. Some of the deals pay fal licensing fees or a share of revenue, Bloomberg reported.\n\nCo-founder and Chief Executive Burkay Gur told the outlet the round is as large as it is because demand has surged and serving it takes more compute. “We hit a point in summer where we were not able to serve our customers and had to rate-limit them,” he said. Pretraining a model of fal’s own is not on the near-term agenda, said Gur, who did not rule it out for later.\n\nAnnualized revenue at fal passed $800 million earlier this year, a person familiar with the matter told Bloomberg. The valuation puts fal just behind rival inference provider Fireworks AI Inc., which closed $1.5 billion in funding at a $17.5 billion valuation in July . Several people familiar with the finances of inference companies told TechCrunch that gross margins across the sector remain thin because compute is expensive to buy or lease.\n\nGur started the company in 2021 with Chief Technology Officer Gorkem Yurtseven. His resume includes leading machine learning work at Coinbase Global Inc. and an engineering role at Oracle Corp. Yurtseven was previously a developer at Amazon.com Inc.\n\nBessemer Venture Partners led the Series F round, and its partner Talia Goldberg is joining the board of Features & Labels Inc., as fal is formally known. Nvidia Corp., Sound Ventures, HOF Capital and T. Rowe Price Group Inc. also participated. Fal described Nvidia as a strategic investor.\n\nToday’s announcement also covered an April round led by Sequoia ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Generative media inference startup fal (formally Features & Labels Inc.) has raised $1.3 billion in a Series F funding round, bringing its valuation to $16 billion. The company, which provides a cloud platform for running image, video, and audio generation models via a unified API, plans to utilize the capital to expand its 185-person workforce and secure additional computing power. CEO Burkay Gur noted that the funding was necessitated by surging demand that forced the company to implement rate-limiting on its services during the summer.\n\nFal differentiates itself by post-training third-party models to improve inference speed, focusing heavily on video generation over the past year. The company operates under a business model that includes licensing fees and revenue-sharing agreements with model developers. While fal currently does not have immediate plans to pretrain its own foundation models, it has achieved an annualized revenue run rate exceeding $800 million. The company's valuation places it just behind competitor Fireworks AI, which reached a $17.5 billion valuation in July.\n\nThe Series F round was led by Bessemer Venture Partners, with participation from Nvidia Corp., Sound Ventures, HOF Capital, and T. Rowe Price Group Inc. This follows a $350 million Series E round in April at an $8 billion valuation, bringing the company's total capital raised to over $1.9 billion. Talia Goldberg of Bessemer Venture Partners will join the company's board of directors.",
+      "takeaways": [
+        "**Funding & Valuation:** Raised $1.3 billion in Series F funding at a $16 billion valuation, with total lifetime funding exceeding $1.9 billion.",
+        "**Financial Performance:** Reported an annualized revenue run rate of over $800 million as of earlier this year.",
+        "**Operational Scale:** Employs 185 people and serves entertainment studios, advertising agencies, and game developers through a single API.",
+        "**Strategic Backing:** Nvidia participated in the round as a strategic investor; Bessemer Venture Partners led the round.",
+        "**Market Comparison:** Valuation is slightly lower than rival inference provider Fireworks AI, which is valued at $17.5 billion."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "014d0f8ff9b1f411",
+    "canonicalUrl": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
+    "title": "Data centers are turning to old jet engines as the wait for power grows",
+    "publishedAt": "2026-11-03T22:19:53.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "ab6e1d5edb5a0c3e",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Aditya Mehta",
+    "contentSnippet": "Stuck in years-long lines for grid connections and new turbines, some AI data centers are making their own electricity with converted jet engines, the New York Times reported Tuesday.\n\nThe engines, pulled from retired aircraft and rebuilt to burn natural gas, aren’t anyone’s idea of a permanent power plant. But they’re another sign of how far power supply has fallen behind the AI buildout.\n\nFor companies stuck in those lines, the main draw of converted jet engines is how quickly the engines can be up and running. “It’s all about getting power as fast as possible,” Rystad Energy analyst Audun Martinsen told the Times. With jet-powered units, “they can have a data center running in 24 months,” he said.\n\nHooking up 100 megawatts to the grid in Northern Virginia, by comparison, takes about seven years , according to the International Energy Agency. Most power capacity is expected to come on by 2031, an executive at Mitsubishi Power, one of the world’s top makers of power generation equipment, told Bloomberg last week .\n\nIn some cases, these delays are already costing some data center operators business. Last month, Microsoft pulled out as the anchor customer for Nscale’s data center in Loughton, England, after the local utility said it couldn’t deliver enough power until the early to mid-2030s.\n\nElon Musk’s xAI is among the companies already using the engines, having installed eight converted jet-engine turbines in Mississippi to help power its Colossus 2 data center in Memphis, the Times reported, citing state permits and satellite imagery. The units come from ProEnergy, which rebuilds a GE engine commonly found on Boeing jets.\n\nIn 2025, OpenAI followed Musk’s lead with gas turbines at its first Stargate site in Abilene, Texas. Crusoe, a Denver-based startup that builds AI data centers, is constructing that Abilene campus and ordered 13 of ProEnergy’s converted units in April.\n\nIn September, Crusoe walked away from a $1.25 billion deal to buy 29 natural gas turbines from Boom Supersonic, a startup developing a supersonic passenger jet that has also begun selling a version of that jet’s engine as a power plant for data centers. A Crusoe spokesperson told TechCrunch at the time that the company still plans to use turbines.\n\nCurrently the Trump administration is adding to the pressure by encouraging data centers to generate their own electricity.\n\nConverted jet en",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AI data center operators are increasingly deploying converted jet engines to bypass multi-year grid connection delays, according to reports from the New York Times. By utilizing turbines salvaged from retired aircraft and retrofitted to burn natural gas, companies can achieve operational status in approximately 24 months. This timeline contrasts sharply with traditional grid infrastructure, which the International Energy Agency notes can take up to seven years to deliver 100 megawatts of power in regions like Northern Virginia.\n\nMajor industry players are actively adopting this stopgap measure. Elon Musk’s xAI has installed eight ProEnergy-rebuilt GE jet turbines at its Colossus 2 facility in Memphis, Mississippi. Similarly, OpenAI is utilizing gas turbines at its Stargate site in Abilene, Texas, a project managed by Denver-based startup Crusoe. While Crusoe previously considered a $1.25 billion deal for 29 turbines from Boom Supersonic, it ultimately pivoted to an order for 13 ProEnergy units in April 2025. These deployments are being encouraged by the current U.S. administration as a means to circumvent infrastructure bottlenecks.\n\nDespite the speed of deployment, these converted engines present significant trade-offs. They are less fuel-efficient and generate higher emissions than purpose-built power plant turbines. Industry experts suggest that as environmental regulations and efficiency standards tighten, these jet-engine-based power solutions may prove to be a short-term strategy rather than a permanent infrastructure fix.",
+      "takeaways": [
+        "**Deployment Speed:** Converted jet engines allow data centers to become operational in 24 months, compared to the seven-year wait times for standard grid connections.",
+        "**xAI Implementation:** xAI has deployed eight ProEnergy-rebuilt GE jet turbines to support the Colossus 2 data center in Memphis, Mississippi.",
+        "**OpenAI/Crusoe Project:** OpenAI’s Stargate site in Abilene, Texas, utilizes gas turbines, with Crusoe ordering 13 ProEnergy units for the campus in April 2025.",
+        "**Failed Deal:** Crusoe canceled a $1.25 billion agreement to purchase 29 natural gas turbines from Boom Supersonic in September.",
+        "**Operational Risks:** Converted jet engines are less efficient and more polluting than conventional power plant turbines, potentially limiting their long-term viability."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "aed47021d210b893",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/03/anthropic-flashprove-provable-inference-zksnark/",
+    "title": "Anthropic Releases FlashProve: Cryptographic Proofs That a Reply Came From Committed Weights",
+    "publishedAt": "2026-11-03T22:08:22.000Z",
+    "fetchedAt": "2026-11-04T00:21:34.729Z",
+    "contentHash": "0a70b84ed5262eb0",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Anthropic’s Frontier Red Team has released FlashProve , an open-source research prototype for provable inference . FlashProve is a zkSNARK system from Anthropic that proves a reply came from a committed model. The proof reveals nothing about the model weights. On Llama 4 Maverick , a 400B mixture-of-experts model, it proves about 110 tokens/second on 1 H100. For developers, this targets a real gap: today you cannot check which model actually answered your API call. TL;DR Size: Proves a 400B MoE model (~17B active per token); context capped at 1,024 tokens per request. Runs on: Prover needs 1 H100 80 GB, 24 CPU cores and ~290 GB host RAM. Verifier runs on a CPU, no GPU. Performance: Orders of magnitude faster than prior open-source zkML systems on the same 400B model. Best: 110 tokens/second proving on 1 H100, with 18.78 MB proofs checked in 17 seconds. Worst: Proving costs ~70 to 95x the GPU time of plain vLLM inference. What problem does provable inference solve? A user querying a model cannot verify which model produced the response. A routing service could swap in a cheaper model . An attacker could tamper with the token stream. Judging from output quality alone is unreliable. Anthropic lists 4 use cases: Regulators could confirm hardware serves inference, supporting AI pacing rules. Labs could detect tampered inference servers. Users could verify text provenance. Regulators could enforce serving of approved models only. How does FlashProve work? FlashProve has a prover (the model provider) and a verifier (the user). It runs in 2 phases: Offline: The provider publishes a commitment, a short fingerprint binding one exact set of weights. This takes about 39 minutes and covers about 16 million requests. Online: For each request, the GPU produces a proof that the committed model produced those tokens. The proof system compiles an interactive oracle proof into a cryptographic proof using hash functions. Anthropic says this offers post-quantum security. It is the same family used by validity-proof L2 networks such as Starknet. Three engineering choices drive the speed. Prover work scales with the ~17B active parameters, not all 400B. Requests are proved in batches after the fact, like prefill. Weights stream from host memory, so a single 80 GB GPU suffices. How fast is it? Benchmarks Anthropic measured the public 4-bit Maverick weights on 1 H100 with 24 CPU cor",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Anthropic’s Frontier Red Team has introduced FlashProve, an open-source zkSNARK-based research prototype designed to provide cryptographic verification that a specific model generated a given response. By utilizing a commitment scheme, the system allows providers to prove that a reply originated from a specific set of model weights without revealing the weights themselves. This addresses a critical transparency gap in the AI supply chain, where users currently lack the ability to verify if an API provider has swapped a high-performance model for a cheaper, lower-quality alternative or if the token stream has been tampered with.\n\nTechnically, FlashProve is optimized for large-scale models, specifically demonstrating performance on the 400B parameter Llama 4 Maverick mixture-of-experts (MoE) model, which utilizes approximately 17B active parameters per token. The system achieves a proving throughput of 110 tokens per second on a single H100 80GB GPU, with proofs sized at 18.78 MB that can be verified on a standard CPU in 17 seconds. While the proving process incurs a 70x to 95x GPU time overhead compared to standard vLLM inference, it utilizes post-quantum secure hash functions similar to those found in Starknet. The architecture relies on an offline phase—taking roughly 39 minutes to commit to 16 million requests—and an online phase where proofs are generated in batches.\n\nFlashProve is positioned for use cases involving regulatory compliance, such as verifying that hardware is serving approved models, as well as enabling users to confirm text provenance and labs to detect tampered inference servers. The system requires significant host resources, including 24 CPU cores and 290 GB of host RAM, to manage the streaming of weights from host memory to the GPU, allowing the entire process to run on a single H100 node.",
+      "takeaways": [
+        "**Performance Metrics:** Achieves 110 tokens/second proving speed on a 400B MoE model using a single H100 80GB GPU.",
+        "**Resource Requirements:** Prover node requires 1 H100 GPU, 24 CPU cores, and approximately 290 GB of host RAM.",
+        "**Verification Efficiency:** Generates 18.78 MB proofs that are verifiable on a standard CPU in 17 seconds.",
+        "**Operational Overhead:** Proving costs are 70 to 95 times higher in GPU time compared to standard vLLM inference.",
+        "**Security Foundation:** Utilizes post-quantum secure cryptographic proofs based on interactive oracle proofs, similar to L2 validity-proof networks."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7d71ab8e3f721bf2",
+    "canonicalUrl": "https://www.techmeme.com/261103/p36",
+    "title": "Revolut says it cut AI coding inference costs by ~90% in less than a year by making self-hosted GLM models its default over commercial tools like Claude Code (Tobias Mann/The Register)",
+    "publishedAt": "2026-11-03T21:50:01.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "82a56d26f3fedb11",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Tobias Mann / The Register : Revolut says it cut AI coding inference costs by ~90% in less than a year by making self-hosted GLM models its default over commercial tools like Claude Code   —  Revolut says that in less than a year it's managed to slash its AI coding inference costs by roughly 90 percent by making self-hosted models …",
+    "imageUrl": "http://www.techmeme.com/261103/i36.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Revolut reduced its AI coding inference costs by approximately 90 percent in less than a year. The company achieved this by transitioning its default infrastructure to self-hosted GLM models, replacing commercial tools such as Claude Code.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "974b5b99ee961bde",
+    "canonicalUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQUjBnTkRlb0owN0NYU1NMWHV6eG1vZUJKV1dxb3J5bENWTVdTdDNocVVnSFlZSlpsaFlSZFotbjlJSENEVEE0SENpMk9BVnV6QzdhU2FVcG1WbXh1UjRNYnVxckVlZjFXVXAxTVQ5NDZIMGRwVFRRSUo5RERaOXhWMHUyWE5DZms?oc=5",
+    "title": "Elon Musk’s Grok AI Predicts a Monster Move for Ripple XRP - Cryptonews",
+    "publishedAt": "2026-11-03T21:50:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.206Z",
+    "contentHash": "9ec0a89816129583",
+    "sourceId": "xai-radar",
+    "sourceName": "xAI & Grok Radar",
+    "author": "xAI & Grok Radar",
+    "contentSnippet": "Elon Musk’s Grok AI Predicts a Monster Move for Ripple XRP    Cryptonews",
+    "category": "LLMs & GenAI",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Elon Musk’s Grok AI Predicts a Monster Move for Ripple XRP - Cryptonews.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "acb98e9be60a2260",
+    "canonicalUrl": "https://www.techmeme.com/261103/p35",
+    "title": "Super Micro reports Q1 revenue up 298% YoY to $19.95B, vs. $16.39B est., and forecasts Q2 revenue above estimates; SMCI jumps 7%+ after hours (Reuters)",
+    "publishedAt": "2026-11-03T21:45:01.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "70c002a0e3a6eefb",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Reuters : Super Micro reports Q1 revenue up 298% YoY to $19.95B, vs. $16.39B est., and forecasts Q2 revenue above estimates; SMCI jumps 7%+ after hours   —  Super Micro Computer (SMCI.O) forecast second-quarter revenue above Wall Street estimates on Tuesday as strong demand for its AI-optimized servers boosted sales …",
+    "imageUrl": "http://www.techmeme.com/261103/i35.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Reuters : Super Micro reports Q1 revenue up 298% YoY to $19.95B, vs. $16.39B est., and forecasts Q2 revenue above estimates; SMCI jumps 7%+ after hours — Super Micro Computer (SMCI.O) forecast second-quarter revenue above Wall Street estimates on Tuesday as strong demand for its AI-optimized servers boosted sales ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "14409ffa4e7706ac",
+    "canonicalUrl": "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
+    "title": "Ted Schlein’s Ballistic Ventures seeks $490M for new funds amid AI-driven cybersecurity boom",
+    "publishedAt": "2026-11-03T21:43:08.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "7fb04318c253dd88",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Jagmeet Singh",
+    "contentSnippet": "Cybersecurity-focused Ballistic Ventures is seeking to raise $360 million for a new flagship fund and another $130 million for a separate investment vehicle.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Cybersecurity-focused Ballistic Ventures is seeking to raise $360 million for a new flagship fund and another $130 million for a separate investment vehicle.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "104524d602e00a86",
+    "canonicalUrl": "https://www.techmeme.com/261103/p34",
+    "title": "AMD reports Q3 revenue up 45% YoY to $13.38B, vs. $13.09B est., Data Center revenue up 97% to $8.5B, forecasts Q4 revenue above est.; AMD jumps 7%+ after hours (Katie Tarasov/CNBC)",
+    "publishedAt": "2026-11-03T21:30:02.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "711c7b6e60f20284",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Katie Tarasov / CNBC : AMD reports Q3 revenue up 45% YoY to $13.38B, vs. $13.09B est., Data Center revenue up 97% to $8.5B, forecasts Q4 revenue above est.; AMD jumps 7%+ after hours   —  Advanced Micro Devices reported third-quarter earnings on Tuesday that beat Wall Street's expectations, with revenue jump 45% …",
+    "imageUrl": "http://www.techmeme.com/261103/i34.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Katie Tarasov / CNBC : AMD reports Q3 revenue up 45% YoY to $13.38B, vs. $13.09B est., Data Center revenue up 97% to $8.5B, forecasts Q4 revenue above est.; AMD jumps 7%+ after hours — Advanced Micro Devices reported third-quarter earnings on Tuesday that beat Wall Street's expectations, with revenue jump 45% ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "f72751ce15223fc9",
+    "canonicalUrl": "https://siliconangle.com/2026/11/03/salesforce-to-buy-customer-service-automation-startup-cresta-for-reported-2-7b/",
+    "title": "Salesforce to buy customer service automation startup Cresta for reported $2.7B",
+    "publishedAt": "2026-11-03T21:20:22.000Z",
+    "fetchedAt": "2026-11-04T00:21:34.730Z",
+    "contentHash": "990d76084bacfd77",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "Salesforce Inc. has agreed to buy Cresta Intelligence Inc., a venture-backed provider of customer service software. The cloud giant didn’t disclose the financial terms in its late Monday announcement of the deal. The Information reported that Salesforce is paying $2.7 billion. Cresta’s platform uses artificial intelligence to answer customer inquiries. It can also perform more […] The post Salesforce to buy customer service automation startup Cresta for reported $2.7B appeared first on SiliconANGLE .",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Has agreed to buy Cresta Intelligence Inc., a venture-backed provider of customer service software. The cloud giant didn’t disclose the financial terms in its late Monday announcement of the deal. The Information reported that Salesforce is paying $2.7 billion.",
+      "takeaways": [
+        "Cresta’s platform uses artificial intelligence to answer customer inquiries.",
+        "It can also perform more ..."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "c3f36cef30b94315",
+    "canonicalUrl": "https://www.techmeme.com/261103/p33",
+    "title": "Sources: Ubisoft and at least two other gaming companies offered to acquire Arkane Studios from Microsoft, which is exploring options before a December deadline (Jason Schreier/Bloomberg)",
+    "publishedAt": "2026-11-03T21:20:10.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "27a65221176876fb",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Jason Schreier / Bloomberg : Sources: Ubisoft and at least two other gaming companies offered to acquire Arkane Studios from Microsoft, which is exploring options before a December deadline   —  Microsoft's gaming unit is looking to divest the French company behind ‘Dishonored’ and 'Marvel's Blade'",
+    "imageUrl": "http://www.techmeme.com/261103/i33.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jason Schreier / Bloomberg : Sources: Ubisoft and at least two other gaming companies offered to acquire Arkane Studios from Microsoft, which is exploring options before a December deadline — Microsoft's gaming unit is looking to divest the French company behind ‘Dishonored’ and 'Marvel's Blade'.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "0737d068be667b4f",
+    "canonicalUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdEYyRC1zdWVzRGJ2MmhjeXBSaTdoMUQwZkNEQ25Kckw3TFpoMlNUamFUQmZXakVsMGF2Tnc0ME1ERG9HNUxoVjBXeE5IUURBbEw2SXhzNEE2QlhQZ1NzcXhxQUVkVHVCT1ExZlZJX2NrcFg2aTZ4VG5GdWhjT05XcE5TWUM2LVR5dkNzOXNFR2E?oc=5",
+    "title": "Trump Asked Grok AI About Invading Venezuela. Democrats Want His Chat History - CNET",
+    "publishedAt": "2026-11-03T21:15:05.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.206Z",
+    "contentHash": "e24eb2cc58437bb5",
+    "sourceId": "xai-radar",
+    "sourceName": "xAI & Grok Radar",
+    "author": "xAI & Grok Radar",
+    "contentSnippet": "Trump Asked Grok AI About Invading Venezuela. Democrats Want His Chat History    CNET",
+    "category": "LLMs & GenAI",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Trump Asked Grok AI About Invading Venezuela. Democrats Want His Chat History CNET.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "4d30b1cfaae85c86",
+    "canonicalUrl": "https://www.techmeme.com/261103/p32",
+    "title": "Anthropic releases FlashProve, an open-source prototype that cryptographically verifies an AI response came from a given model, not one that a router swapped in (Anthropic)",
+    "publishedAt": "2026-11-03T21:10:03.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "8448f101fd2b4214",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Anthropic : Anthropic releases FlashProve, an open-source prototype that cryptographically verifies an AI response came from a given model, not one that a router swapped in   —  Roy Rinberg (Anthropic), Alex Allain (Anthropic); Alessandro Chiesa (EPFL, StarkWare), Miranda Christ (MIT, RESI), Rahul Dalal …",
+    "imageUrl": "http://www.techmeme.com/261103/i32.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic : Anthropic releases FlashProve, an open-source prototype that cryptographically verifies an AI response came from a given model, not one that a router swapped in — Roy Rinberg (Anthropic), Alex Allain (Anthropic); Alessandro Chiesa (EPFL, StarkWare), Miranda Christ (MIT, RESI), Rahul Dalal ….",
+      "takeaways": [],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "81efc47dc4581bdd",
+    "canonicalUrl": "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
+    "title": "Hiding inside Palantir’s skyrocketing quarter is a foreboding signal",
+    "publishedAt": "2026-11-03T21:05:55.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "0bf1b3387ac1f3b9",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Julie Bort",
+    "contentSnippet": "Palantir's U.S. commercial revenue surpassed U.S. government revenue for the first time ever.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Commercial revenue surpassed U.S. Government revenue for the first time ever.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "8fdb108aaca7ce7d",
+    "canonicalUrl": "https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk",
+    "title": "Those Jeff Bezos hair transplant photos are very fake",
+    "publishedAt": "2026-11-03T21:01:07.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "3f163bae569bf3c3",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Jess Weatherbed",
+    "contentSnippet": "These edits of Jason Statham (left) and Jeff Bezos are a bit jarring, but that’s sort of the point. | Image: The Verge Amazon founder Jeff Bezos and actor Jason Statham have a distinctive feature in common: They're both famously bald, and that definitely hasn't changed in the last few days. However, there are some images of the two men circulating around X , Threads , and Bluesky in which they both have substantially more hair than their usual shaved look, which in Bezos' case appears to be very freshly transplanted. It's all just photo editing fakery, AI or otherwise. It's unclear how viral these posts are , but they're prevalent enough that a few members of the Verge team have encountered them in their social media feeds. Some people who shared them claimed … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Fake-Jeff-Bezos-Jason-Statham-hair-photo-edits.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "These edits of Jason Statham (left) and Jeff Bezos are a bit jarring, but that’s sort of the point. | Image: The Verge Amazon founder Jeff Bezos and actor Jason Statham have a distinctive feature in common: They're both famously bald, and that definitely hasn't changed in the last few days. However, there are some images of the two men circulating around X , Threads , and Bluesky in which they both have substantially more hair than their usual shaved look, which in Bezos' case appears to be very freshly transplanted.\n\nIt's all just photo editing fakery, AI or otherwise. It's unclear how viral these posts are , but they're prevalent enough that a few members of the Verge team have encountered them in their social media feeds. Some people who shared them claimed … Read the full story at The Verge.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "370beb3b4e9b425f",
+    "canonicalUrl": "https://www.techmeme.com/261103/p31",
+    "title": "OpenAI hires Jill Hazelbaker, Uber's president and chief corporate affairs officer, as its new chief corporate affairs officer, reporting to Greg Brockman (Mike Allen/Axios)",
+    "publishedAt": "2026-11-03T21:00:53.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "4c3a7341a60fb3bf",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Mike Allen / Axios : OpenAI hires Jill Hazelbaker, Uber's president and chief corporate affairs officer, as its new chief corporate affairs officer, reporting to Greg Brockman   —  Jill Hazelbaker, Uber's president and chief corporate affairs officer, is moving to OpenAI in the new role of chief corporate affairs officer …",
+    "imageUrl": "http://www.techmeme.com/261103/i31.jpg",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Mike Allen / Axios : OpenAI hires Jill Hazelbaker, Uber's president and chief corporate affairs officer, as its new chief corporate affairs officer, reporting to Greg Brockman — Jill Hazelbaker, Uber's president and chief corporate affairs officer, is moving to OpenAI in the new role of chief corporate affairs officer ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "77f12781026bfd23",
+    "canonicalUrl": "https://www.techmeme.com/261103/p30",
+    "title": "Apple launches iOS 27.3 beta, adding Apple Intelligence in China with an Alibaba-powered content filter, and watchOS 27.3 beta, with Siri Recap and Live Rewind (Bloomberg)",
+    "publishedAt": "2026-11-03T20:50:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "3ef26c20c276c1f1",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Bloomberg : Apple launches iOS 27.3 beta, adding Apple Intelligence in China with an Alibaba-powered content filter, and watchOS 27.3 beta, with Siri Recap and Live Rewind   —  Apple Inc. rolled out the first developer beta versions of iOS 27.3 and watchOS 27.3 on Tuesday, putting new features …",
+    "imageUrl": "http://www.techmeme.com/261103/i30.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Bloomberg : Apple launches iOS 27.3 beta, adding Apple Intelligence in China with an Alibaba-powered content filter, and watchOS 27.3 beta, with Siri Recap and Live Rewind — Apple Inc. Rolled out the first developer beta versions of iOS 27.3 and watchOS 27.3 on Tuesday, putting new features ….",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "37ecc679f097b9b9",
+    "canonicalUrl": "https://www.techmeme.com/261103/p29",
+    "title": "Sources: US officials have held up approval for US chipmaking equipment needed by SK Hynix to expand in China, complicating its plans for new plants in New York (Karen Freifeld/Reuters)",
+    "publishedAt": "2026-11-03T20:45:05.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "59158e6339e32249",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Karen Freifeld / Reuters : Sources: US officials have held up approval for US chipmaking equipment needed by SK Hynix to expand in China, complicating its plans for new plants in New York   —  US officials have held up approval for American chipmaking equipment needed by SK Hynix (000660.KS) to expand production in China …",
+    "imageUrl": "http://www.techmeme.com/261103/i29.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Karen Freifeld / Reuters : Sources: US officials have held up approval for US chipmaking equipment needed by SK Hynix to expand in China, complicating its plans for new plants in New York — US officials have held up approval for American chipmaking equipment needed by SK Hynix (000660.KS) to expand production in China ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "6ec13c758a45b572",
+    "canonicalUrl": "https://www.techmeme.com/261103/p28",
+    "title": "CrowdStrike debuts an AI kill switch in Falcon Guardian to stop internal AI agents that go rogue, and announces a Falcon Guardian integration with Claude Cowork (Samantha Subin/CNBC)",
+    "publishedAt": "2026-11-03T20:30:02.000Z",
+    "fetchedAt": "2026-11-04T00:21:32.459Z",
+    "contentHash": "a63b9dfe54ee5e53",
+    "sourceId": "techmeme",
+    "sourceName": "Techmeme",
+    "author": "Techmeme",
+    "contentSnippet": "Samantha Subin / CNBC : CrowdStrike debuts an AI kill switch in Falcon Guardian to stop internal AI agents that go rogue, and announces a Falcon Guardian integration with Claude Cowork   —  CrowdStrike is betting that it has a solution to rogue artificial intelligence.  —  The cybersecurity vendor on Tuesday launched …",
+    "imageUrl": "http://www.techmeme.com/261103/i28.jpg",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Samantha Subin / CNBC : CrowdStrike debuts an AI kill switch in Falcon Guardian to stop internal AI agents that go rogue, and announces a Falcon Guardian integration with Claude Cowork — CrowdStrike is betting that it has a solution to rogue artificial intelligence. — The cybersecurity vendor on Tuesday launched ….",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "c170fbdba4e585dc",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/",
+    "title": "NVIDIA Shows 3 Ways to Speed Up MoE Inference on DGX Spark, Lifting Ling-3.0-flash Throughput 42.5%",
+    "publishedAt": "2026-11-03T20:28:22.000Z",
+    "fetchedAt": "2026-11-04T00:21:34.729Z",
+    "contentHash": "076a939cec3fea08",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "NVIDIA’s latest technical blog shows how to speed up mixture-of-experts (MoE) inference on one DGX Spark . The test model is Ant Group inclusionAI’s Ling-3.0-flash , a 124B-parameter MoE with 5.1B active parameters. NVIDIA stacked three optimizations: a new MoE kernel backend, an FP8 output layer and built-in speculative decoding. On all 1,319 GSM8K questions, decode throughput rose 42.5% with no statistically detectable accuracy change. So why is it relevant for Devs? DGX Spark is a desktop system, not a data center node. NVIDIA’s results show a 124B MoE serving single-user requests faster on that desk-side box. The technical post also shows where MoE decode time goes, and how to cut it. TL;DR Size: Ling-3.0-flash-fp4: 124B total, 5.1B active per token; 256K native context. Runs on: One NVIDIA DGX Spark (GB10, 128 GB unified memory, 273 GB/s), batch size one. Performance: Three stacked optimizations lift GSM8K decode throughput from 37.81 to 53.89 tokens/s. Best: +42.5% throughput and -24.5% mean latency, with accuracy flat (96.89% vs 96.82%). Lagging: Synthetic gains (+185.1%) shrink on GSM8K as MTP acceptance drops from 3.90 to 2.68. Why is MoE decoding on DGX Spark memory-bound? DGX Spark is NVIDIA’s desktop system built on the GB10 Grace Blackwell Superchip. It offers 128 GB of unified memory and 273 GB/s of memory bandwidth. Peak compute is up to 1 petaFLOP of sparse FP4. NVIDIA rates it for inference on models up to 200B parameters. In the NVIDIA technical post , the NVIDIA team profiled Ling-3.0-flash-fp4 at batch size 1. Decoding was memory-bound: reading model weights drove execution time. Two operations stood out, the MoE computation and the LM head that scores the vocabulary. That points to two levers: move fewer bytes per decode step, and generate more tokens per verification round. The baseline followed the official W4A8 recipe. It used FlashInfer MXFP4 MoE kernels, CUTLASS dense GEMM and an FP32 LM-head path. On a synthetic 32K-input, 2K-output test, it ran at 27.71 ms per token (36.09 tokens per second). What are the 3 optimizations? 1. Humming MXFP4 MoE kernels: NVIDIA swapped FlashInfer’s MoE backend for Humming , an independent kernel library. Humming uses NVRTC to compile kernels at runtime for the actual matrix shapes, data types and GPU. That includes the narrow 768-wide expert layer. Each kernel compiles in seconds. The FlashInfer CUTL",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "NVIDIA’s latest technical blog shows how to speed up mixture-of-experts (MoE) inference on one DGX Spark . The test model is Ant Group inclusionAI’s Ling-3.0-flash , a 124B-parameter MoE with 5.1B active parameters. NVIDIA stacked three optimizations: a new MoE kernel backend, an FP8 output layer and built-in speculative decoding.\n\nOn all 1,319 GSM8K questions, decode throughput rose 42.5% with no statistically detectable accuracy change. So why is it relevant for Devs? DGX Spark is a desktop system, not a data center node.",
+      "takeaways": [
+        "NVIDIA’s results show a 124B MoE serving single-user requests faster on that desk-side box.",
+        "The technical post also shows where MoE decode time goes, and how to cut it.",
+        "TL;DR Size: Ling-3.0-flash-fp4: 124B total, 5.1B active per token; 256K native context.",
+        "Runs on: One NVIDIA DGX Spark (GB10, 128 GB unified memory, 273 GB/s), batch size one."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 6,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "495057abcb9766db",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
+    "title": "Soniox STT v6 Adds Agent Text Input and Echo Filtering for Voice Agents",
+    "publishedAt": "2026-11-03T20:18:22.000Z",
+    "fetchedAt": "2026-11-04T00:21:34.729Z",
+    "contentHash": "ecd5766ce64b2e1f",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Soniox has released Soniox STT v6 , the latest generation of its speech-to-text API. Soniox STT v6 is a speech-to-text model that reads what a voice agent says while hearing the caller. It uses that text to recognize short replies and to drop the agent’s own voice. The release ships as stt-rt-v6 for streaming and stt-async-v6 for files , across 60+ languages. TL;DR Size: Soniox STT v6 is a proprietary hosted model, no parameter count published. Runs on: Soniox cloud API only (WebSocket streaming and async REST). No self-hosted or on-device option disclosed. Performance: Soniox calls it “significantly” more accurate than v5, but publishes no v6 numbers yet. Best: Price. $0.12/hour streaming and $0.10/hour async, with diarization and language ID bundled. Worst: Zero independent v6 results. Its v5 predecessor scored 1.34% semantic WER on Pipecat, behind v4’s 1.25%. What problem does Soniox STT v6 solve? In a cascaded voice agent, STT usually hears only the caller. It never sees the question being answered. Short answers suffer most. In Soniox’s docs , “River Roast” becomes “River Road” and “a tow” becomes “a tour.” The second problem is echo. Agent audio leaks back through speakerphones and laptops, gets transcribed as user speech, and the agent interrupts itself. How does agent text input work? You enable it with one flag in the start request: \"enable_agent_text_input\": true . It is only available on stt-rt-v6 , not the async model. While the agent speaks, you stream its words on the same WebSocket as the caller’s audio. Each message is a small JSON frame: {\"type\": \"agent_text\", \"text\": \"...\", \"end_of_segment\": true} . Timing matters. Messages carry no timestamps, so the model places text where it arrives in the audio stream. Soniox recommends sending each piece 500 ms to 1 second before playback, paced by TTS timestamps. On barge-in, you flush what was already played, send end_of_segment: true , and drop the unplayed rest. The agent’s text never appears in the returned transcript. How does agent voice echo cancellation work? With agent text input on, v6 knows what the agent is saying. It uses that to separate leftover agent audio from caller speech and filter it out. It keeps listening during playback, so callers can still interrupt. It does not replace acoustic echo cancellation. It handles what your existing AEC leaves behind , so keep AEC on. What else cha",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Soniox has released Soniox STT v6 , the latest generation of its speech-to-text API. Soniox STT v6 is a speech-to-text model that reads what a voice agent says while hearing the caller. It uses that text to recognize short replies and to drop the agent’s own voice.\n\nThe release ships as stt-rt-v6 for streaming and stt-async-v6 for files , across 60+ languages. TL;DR Size: Soniox STT v6 is a proprietary hosted model, no parameter count published. Runs on: Soniox cloud API only (WebSocket streaming and async REST).",
+      "takeaways": [
+        "No self-hosted or on-device option disclosed.",
+        "Performance: Soniox calls it “significantly” more accurate than v5, but publishes no v6 numbers yet.",
+        "$0.12/hour streaming and $0.10/hour async, with diarization and language ID bundled.",
+        "Worst: Zero independent v6 results."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 4,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "ec51e351ec2747a2",
+    "canonicalUrl": "https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps",
+    "title": "Apple starts giving Siri AI access to third-party apps",
+    "publishedAt": "2026-11-03T20:16:17.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "769ba74f27253375",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "Apple will now let Siri AI perform actions across third-party apps. As part of the iOS 27.3 update rolling out on Tuesday, Apple announced developers can now integrate Siri AI's new features in \"all apps,\" allowing the voice assistant to draw on a user's personal context, process natural language prompts, and use on-screen awareness to complete requests. The update, which is rolling out as part of a Developer Preview, also adds a new \"app skills\" feature that third-party developers can create to combine several tasks into a single action. In Apple's developer documentation , the company says users won't have to mention an app's name in their … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-6.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple will now let Siri AI perform actions across third-party apps. As part of the iOS 27.3 update rolling out on Tuesday, Apple announced developers can now integrate Siri AI's new features in \"all apps,\" allowing the voice assistant to draw on a user's personal context, process natural language prompts, and use on-screen awareness to complete requests. The update, which is rolling out as part of a Developer Preview, also adds a new \"app skills\" feature that third-party developers can create to combine several tasks into a single action.",
+      "takeaways": [
+        "In Apple's developer documentation , the company says users won't have to mention an app's name in their … Read the full story at The Verge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "bcb50af61fc42d38",
     "canonicalUrl": "https://www.techmeme.com/261103/p26",
     "title": "A look at efforts by OpenAI, Anthropic, and others to prevent anyone from using their AI tools to disrupt midterms, including Anthropic's first-ever \"war room\" (Steven Lee Myers/New York Times)",
@@ -454,7 +1170,7 @@
         "Ask questions that span structured and unstructured sources in a single conversation."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -482,7 +1198,7 @@
         "Solution overview The architecture involves three key components connected through AgentCore Gateway: An AI agent application, protected by Microsoft Entra ID through an OAuth application registration."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -510,7 +1226,7 @@
         "We built Norton Revamp , a generative AI-powered professional reputation management platform."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -538,7 +1254,7 @@
         "How AIDB captures OpenTelemetry traces for every SQL execution as rows in the aidb_otel schema, queryable with ordinary SQL."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -566,7 +1282,7 @@
         "Telehealth: Remote patient consultations demand low-latency voice for accurate, empathetic communication."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -616,7 +1332,7 @@
         "The inference profile ID you invoke controls which destination Regions are eligible: Profile Model ID When to choose it Global global.moonshotai.kimi-k3 Recommended for most use cases: lowest cost and most broadly available India geographic in.moonshotai.kimi-k3 Inference processing must stay within Mumbai and Hyderabad Regions See the Amazon Bedrock Kimi K3 model card for up-to-date information on available inference profiles, which AWS Regions they can be called from, and what destination Regions they can use for inference."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -654,7 +1370,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well! Weight-Space Programming Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term Weight-Space Programming for when LLMs analyze and modify model weights: Just by looking at the raw weights, GPT-6 Astra can tell what a network was trained to do . And without any environment feedback, it has no trouble writing, from scratch, small game-playing networks that outplay networks trained with PPO for 100 million steps. Likewise, asked to make Qwen3.5-0.8B better at math without gradients, Astra identifies an issue in its weights causing reasoning loops that Qwen’s own model card warns about, and fixes this by natively editing 0.016% of the weights . With the same sampling settings, this weight correction raises MATH-500 from 7.9% to 48.1% and generalizes out of the box to instruction following, raising IFEval by 3x. All of this is possible without allowing Astra to write training loops. It uses its reasoning to figure out what each part of a neural network computes, or should compute, and changes the weights accordingly. We call this Weight-Space Programming . The paper combines two topics that I think deserve to be treated separately. The first is what models can do with raw weights without running tools or executing code. The second explores how well models, once armed with code, can run operations to update and improve other models. spaCy author Matthew Honnibal called the paper misleading for conflating the two, and Sean Goedecke deconstructed the Qwen3.5-0.8B update example as taking the same steps that a human ML researcher would use. I'm going to focus on the no-tools question, which I think is the more interesting of the two. The paper presents the first question as Can LLMs understand model ",
     "category": "Open Source & Research",
-    "lab": "Moonshot AI",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well!\n\nWeight-Space Programming Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term Weight-Space Programming for when LLMs analyze and modify model weights: Just by looking at the raw weights, GPT-6 Astra can tell what a network was trained to do . And without any environment feedback, it has no trouble writing, from scratch, small game-playing networks that outplay networks trained with PPO for 100 million steps. Likewise, asked to make Qwen3.5-0.8B better at math without gradients, Astra identifies an issue in its weights causing reasoning loops that Qwen’s own model card warns about, and fixes this by natively editing 0.016% of the weights .",
@@ -665,7 +1381,7 @@
         "We call this Weight-Space Programming ."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -743,7 +1459,7 @@
         "AI agents handle sequences of engineering tasks that once consumed hours."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -752,12 +1468,12 @@
     "canonicalUrl": "https://www.theverge.com/policy/1020640/midterm-elections-2026-all-the-news",
     "title": "Midterm elections 2026: all the news",
     "publishedAt": "2026-11-03T15:58:39.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.688Z",
-    "contentHash": "84714f1b1b31378f",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
+    "contentHash": "cb8e5486832696b1",
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Lauren Feiner",
-    "contentSnippet": "The 2026 midterm elections will determine the scope of President Donald Trump’s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year’s races are expected to be most broadly defined by affordability issues, there are several topics impacting the tech industry that appear to be on voters’ minds. Among them are concerns about data centers, and whether voters will have to bear the burden of higher energy costs, AI safety, and the rapid expansion of surveillance technology through Flock. There’s also the question of how to tax billionaires’ wealth in California, a topic that has driven heavy tech spending and creative stock class structures meant to keep tech executives from fleeing the state should a ballot measure pass. The next Congress is likely to continue grappling with how to regulate AI, and stem the data center backlash, among other issues. How that conversation shapes up, and which tech CEOs are hauled to testify on Capitol Hill, will be shaped by the outcome of November 3rd. This Election Day, remember which party ran against EVs and tethered us all to the gas pump Severe weather is affecting some voters across the country. A ballot scanner issue is impacting a New York suburb. Election protection hotline has received 3,000 calls this morning. DOJ sends 1,000 election monitors to watch polls in every state. Prop 45 in California could be hiding a loophole for data centers Another election year, another tech company war room. Voters in Texas agree: They hate data centers Data center backlash is uniting America Republican politicians have embraced anti-Indian racism — and it’s costing them votes Meta made a deal to keep Mark Zuckerberg from leaving California over its billionaire tax. Trump is giving Nick Shirley $10,000 and launching a $25 million fraud bounty program Democrats think cracking down on AI could give them an edge Tech billionaires have reportedly donated over $340 million to fight a wealth tax in California. Elon Musk has donated over $276 million to Republican midterm efforts The midterms are going to be a data security nightmare Democrats preview how they’d go after the Ticketmaster settlement if they regain power AI backlash is coming for elections",
+    "contentSnippet": "The 2026 midterm elections will determine the scope of President Donald Trump’s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year’s races are expected to be most broadly defined by affordability issues, there are several topics impacting the tech industry that appear to be on voters’ minds. Among them are concerns about data centers, and whether voters will have to bear the burden of higher energy costs, AI safety, and the rapid expansion of surveillance technology through Flock. There’s also the question of how to tax billionaires’ wealth in California, a topic that has driven heavy tech spending and creative stock class structures meant to keep tech executives from fleeing the state should a ballot measure pass. The next Congress is likely to continue grappling with how to regulate AI, and stem the data center backlash, among other issues. How that conversation shapes up, and which tech CEOs are hauled to testify on Capitol Hill, will be shaped by the outcome of November 3rd. Democrats leaned into Big Tech and AI opposition this cycle. Fulton County, GA may need to rescan 1,000 ballots tonight because of scanner malfunctions. Things still seem to be going fairly smoothly. Michigan officials contacted DOJ about reports of election monitors speaking with poll workers. This Election Day, remember which party ran against EVs and tethered us all to the gas pump Severe weather is affecting some voters across the country. A ballot scanner issue is impacting a New York suburb. Election protection hotline has received 3,000 calls this morning. DOJ sends 1,000 election monitors to watch polls in every state. Prop 45 in California could be hiding a loophole for data centers Another election year, another tech company war room. Voters in Texas agree: They hate data centers Data center backlash is uniting America Republican politicians have embraced anti-Indian racism — and it’s costing them votes Meta made a deal to keep Mark Zuckerberg from leaving California over its billionaire tax. Trump is giving Nick Shirley $10,000 and launching a $25 million fraud bounty program Democrats think cracking down on AI could give them an edge Tech billionaires have reportedly donated over $340 million to fight a wealth tax in California. Elon Musk has donated over $276 million to Republican midterm e",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STK423_ELECTIONS2.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "Business & Big Tech",
     "lab": "Meta AI",
@@ -765,10 +1481,10 @@
     "summary": {
       "tldr": "The 2026 midterm elections will determine the scope of President Donald Trump’s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year’s races are expected to be most broadly defined by affordability issues, there are several topics impacting the tech industry that appear to be on voters’ minds. Among them are concerns about data centers, and whether voters will have to bear the burden of higher energy costs, AI safety, and the rapid expansion of surveillance technology through Flock.\n\nThere’s also the question of how to tax billionaires’ wealth in California, a topic that has driven heavy tech spending and creative stock class structures meant to keep tech executives from fleeing the state should a ballot measure pass. The next Congress is likely to continue grappling with how to regulate AI, and stem the data center backlash, among other issues. How that conversation shapes up, and which tech CEOs are hauled to testify on Capitol Hill, will be shaped by the outcome of November 3rd.",
       "takeaways": [
-        "This Election Day, remember which party ran against EVs and tethered us all to the gas pump Severe weather is affecting some voters across the country.",
-        "A ballot scanner issue is impacting a New York suburb.",
-        "Election protection hotline has received 3,000 calls this morning.",
-        "DOJ sends 1,000 election monitors to watch polls in every state."
+        "Democrats leaned into Big Tech and AI opposition this cycle.",
+        "Fulton County, GA may need to rescan 1,000 ballots tonight because of scanner malfunctions.",
+        "Things still seem to be going fairly smoothly.",
+        "Michigan officials contacted DOJ about reports of election monitors speaking with poll workers."
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
@@ -939,9 +1655,9 @@
   {
     "id": "d683890ef6589f42",
     "canonicalUrl": "https://techcrunch.com/2026/11/03/the-techcrunch-founder-summit-agenda-is-only-half-the-reason-to-be-in-boston-on-nov-4/",
-    "title": "The TechCrunch Founder Summit agenda is only half the reason to be in Boston on Nov. 4",
+    "title": "The TechCrunch Founder Summit agenda is only half the reason to be in Boston on November 4",
     "publishedAt": "2026-11-03T14:30:00.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.687Z",
+    "fetchedAt": "2026-11-04T00:21:30.866Z",
     "contentHash": "dd5fb2f73fa9c2ea",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
@@ -1588,6 +2304,28 @@
     }
   },
   {
+    "id": "34e7d62615202d0d",
+    "canonicalUrl": "https://openai.com/index/cisco-cyber",
+    "title": "How Cisco defends at machine speed with OpenAI",
+    "publishedAt": "2026-11-03T08:00:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.207Z",
+    "contentHash": "8a860597a1e47fbf",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "aafb2d2c8fa21079",
     "canonicalUrl": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
     "title": "Apple Watch’s AI features for rewinding and recapping conversations begin beta testing",
@@ -1656,7 +2394,7 @@
         "Vision AI agents can turn existing city camera feeds into operational insights, helping teams identify mobility and safety issues and coordinate emergency responses across city services."
       ],
       "impact": "Medium",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3905,6 +4643,28 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "CWE-bench v2: More coverage, quality, and transparency.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "019edb616369c332",
+    "canonicalUrl": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+    "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+    "publishedAt": "2026-11-03T00:00:00.000Z",
+    "fetchedAt": "2026-11-04T00:21:30.207Z",
+    "contentHash": "ac08cc6d3755bd75",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -9229,755 +9989,6 @@
       "takeaways": [],
       "impact": "High",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2f9a0cf53199e610",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPVEd2NWtEUFRpR2VDYUY3TmRlUTl2c1RLT0V6M094TVpETnZPV05NbUZOeHJTOUhqNXZGRTRfNDN6blVWV2pxZjJuTjBhVzQ5dG1JSjZZRlZ0NzNqUlVOOHhoM0NTcmpvSTBpb2tOdl9WWlZZYU1CbUltcmwyUEN3UU1xNmtsaTB0b0E0RlM4U2dTakFnSGlKc0hkMFBHZHZHa3B2M0sxZU5GTTB3ZHlNZ2ZRQXQ5NHlHa1llRjBJaGllYkV6bXNGZm1vVjdzd283UGg5dHpGNmF1clUzaXNJWXE1NHNVRjlfXzlxSWFfdzY5dFc4dGlPZ1pfQzM3ODVOWENVM3RwaDd6Ulh40gGSAkFVX3lxTE1PTmNBcWtpNzZ4SXFnREhmejNwbDEyTEgyeE5aczk2SWN4MjBKU3RGRW9XMDZ5c2l6TWlyelJVdHN6SmQybU9rSFliUTBPa25lS0xJYVBBNTQxY3FRYjFFWTV2b0hwaTFpLTZ0RFNtckFXMXRnY2NybGNvUHhqN0ZEX1hqRjNuTWIxcW9uTmZzejZvZUZKdGpYZ0RmemcyRlZYc2pGV2RCcW9sSlRMMWhxdFFpSmhYNkdQLUtqSkxCcHJVWVpoODVhNEpRWGE2YUFOU2NhUk5lNjh6UllrVVk5OGZRLTBxaFlyWXk4UHVlSXJGY3VRX2ljY0JkOWNCckVrOFI4OE9PLTJ0T016bG1fdlE?oc=5",
-    "title": "Elon Musk says saving for retirement may become pointless. How AI and robots could change the future of mo - The Economic Times",
-    "publishedAt": "2026-11-01T04:12:19.000Z",
-    "fetchedAt": "2026-11-01T10:58:56.541Z",
-    "contentHash": "ebb062d6bd31e07f",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk says saving for retirement may become pointless. How AI and robots could change the future of mo    The Economic Times",
-    "category": "Robotics & Hardware",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk posits that rapid advancements in artificial intelligence and humanoid robotics will usher in an era of post-scarcity, potentially rendering traditional financial retirement models obsolete. This vision relies on exponential scaling in autonomous compute and physical labor automation to drive marginal costs of goods and services near zero.",
-      "takeaways": [
-        "Projected convergence of LLM/VLM cognitive architectures with bipedal hardware (e.g., Tesla Optimus) to automate physical labor.",
-        "Macroeconomic paradigm shift from scarcity-based capital accumulation to abundance-driven resource distribution.",
-        "Massive scaling requirements in foundational AI infrastructure, edge compute, and energy grids to support ubiquitous robotics."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "40bf83a046b72765",
-    "canonicalUrl": "https://www.techmeme.com/261031/p13",
-    "title": "The FBI attributes the $6.3B Binance hack to North Korea's elite hacking unit TraderTraitor, which the agency has also blamed for the $1.5B Bybit hack in 2025 (Kevin Whitelaw/Bloomberg)",
-    "publishedAt": "2026-11-01T04:10:01.000Z",
-    "fetchedAt": "2026-11-01T13:48:27.601Z",
-    "contentHash": "460d48e0afa88424",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Kevin Whitelaw / Bloomberg : The FBI attributes the $6.3B Binance hack to North Korea's elite hacking unit TraderTraitor, which the agency has also blamed for the $1.5B Bybit hack in 2025   —  The FBI said that North Korea was responsible for stealing more than $6 billion in cryptocurrencies in a brazen hacking attack ",
-    "imageUrl": "http://www.techmeme.com/261031/i13.jpg",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The FBI has formally attributed the historic $6.3 billion Binance hack and the subsequent $1.5 billion Bybit breach to North Korea's state-sponsored TraderTraitor cyber syndicate. This unprecedented capital extraction highlights the critical vulnerabilities at the intersection of high-liquidity decentralized financial infrastructure and advanced nation-state persistent threats.",
-      "takeaways": [
-        "TraderTraitor has successfully orchestrated multi-billion-dollar crypto asset extractions, demonstrating a sophisticated capability to compromise centralized exchange infrastructure at scale.",
-        "The sheer magnitude of these state-sponsored thefts—totaling nearly $8 billion across two major platforms—signals a paradigm shift in how nation-states fund operations through decentralized financial exploits.",
-        "Enterprise-grade crypto platforms must fundamentally re-architect their cold-to-hot wallet isolation, zero-trust perimeter defenses, and behavioral anomaly detection systems to withstand advanced persistent threat campaigns."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "1cf8f670adac6472",
-    "canonicalUrl": "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
-    "title": "Data centers are now a midterm issue, even in Brooklyn",
-    "publishedAt": "2026-11-01T02:22:10.000Z",
-    "fetchedAt": "2026-11-02T23:54:14.169Z",
-    "contentHash": "dec71c9a8fd08e47",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Dominic-Madori Davis",
-    "contentSnippet": "At a Brooklyn midterm party five days before Election Day, every conversation, from a council member’s fireside chat to a debate about the Democratic Party, kept circling back to AI and data centers.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "At a Brooklyn midterm party five days before Election Day, every conversation, from a council member’s fireside chat to a debate about the Democratic Party, kept circling back to AI and data centers.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9caf1fd06303219c",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMEdiUU41aU96U2ZjemFCaE5Ja2doOWpXaGI1dnVsZHNJd25tNFVDUnpodFVhZDVHQ1pEQUFCV0xZQXRSbWJDZUhaaXEwTTlCdVhRdE41X2ZVNW43ZFNhSktCTzh2R1Rnd0hBNWdkYl84VVdLZldORnBheFd2T1hkS1dTdEhZeG9PQVpWSEgydG0?oc=5",
-    "title": "Elon Musk $2T Savings Claim: 5 Facts Checked [2026] - shattered.io",
-    "publishedAt": "2026-11-01T01:31:12.000Z",
-    "fetchedAt": "2026-11-01T10:58:56.541Z",
-    "contentHash": "29a7174ad0292ff3",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk $2T Savings Claim: 5 Facts Checked [2026]    shattered.io",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk's recent $2 trillion federal spending reduction claim highlights the intersection of aggressive automated bureaucracy reduction and large-scale AI deployment. While framed as a macroeconomic administrative overhaul, it signals a broader enterprise paradigm shift toward hyper-automated operational intelligence.",
-      "takeaways": [
-        "Large Language Models and automated data pipelines are increasingly proposed as core drivers for structural macroeconomic and enterprise cost-reduction.",
-        "The feasibility of trillion-scale fiscal optimization relies heavily on deterministic workflow engines rather than probabilistic generative AI alone.",
-        "Public sector adoption of AI-driven optimization frameworks sets a new precedent for private enterprise restructuring and operational telemetry."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "91f334945e1c51e7",
-    "canonicalUrl": "https://www.techmeme.com/261031/p12",
-    "title": "Tests: chatbots rely on three obscure AI-built voter sites for US midterm answers; Copilot cited the error-prone Ballot Brief in 75% of tests and ChatGPT in 22% (Washington Post)",
-    "publishedAt": "2026-11-01T00:00:14.000Z",
-    "fetchedAt": "2026-11-01T03:52:57.125Z",
-    "contentHash": "587bd1edd16c91dd",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Washington Post : Tests: chatbots rely on three obscure AI-built voter sites for US midterm answers; Copilot cited the error-prone Ballot Brief in 75% of tests and ChatGPT in 22%   —  Frustrated with hunting for information on political candidates, Ben Torres Ezrick set out to build a one-stop shop for voters.",
-    "imageUrl": "http://www.techmeme.com/261031/i12.jpg",
-    "category": "Business & Big Tech",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Recent testing reveals that major conversational models like Microsoft Copilot and OpenAI's ChatGPT heavily cite obscure, AI-generated voter information sites for US midterm queries. This phenomenon highlights a severe vulnerability in RAG (Retrieval-Augmented Generation) pipelines, where low-quality, programmatic content successfully exploits search indexing to pollute LLM outputs.",
-      "takeaways": [
-        "Microsoft Copilot cited the error-prone AI-built site 'Ballot Brief' in 75% of test queries, while ChatGPT cited it in 22%.",
-        "This exposes vulnerabilities in web-grounded LLM architectures, proving that programmatic SEO and low-effort generative spam can easily bypass current relevance and authority filters.",
-        "Enterprise and consumer AI deployments urgently need more robust source-verification mechanisms and domain-authority weighting to prevent the propagation of synthetic disinformation."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "a181817ce8345f3a",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
-    "title": "How We Took Over ChatGPT Accounts",
-    "publishedAt": "2026-10-31T23:15:22.000Z",
-    "fetchedAt": "2026-10-31T23:41:03.957Z",
-    "contentHash": "1b51351f6237bad8",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this \"Canvas\" but it looks like the latest revision is called HTML previews ), where interactive custom HTML apps are displayed in a sandboxed iframe. It's impor",
-    "category": "Ethics & Policy",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Parameter Labs uncovered a critical security exploit targeting ChatGPT's HTML previews, formerly known as Canvas, which leverages the artifacts pattern. This vulnerability demonstrates how interactive custom HTML apps rendered in sandboxed iframes can be weaponized for unauthorized account takeovers.",
-      "takeaways": [
-        "Researchers at Parameter Labs successfully identified an attack vector within ChatGPT's sandboxed iframe implementation for interactive HTML apps.",
-        "The exploit targets the artifacts/HTML preview pattern, exposing potential gaps in browser-level isolation and state management within generative UI features.",
-        "Platform providers must rigorously audit dual-use rendering patterns that blend untrusted LLM-generated code with authenticated user sessions."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "5433d48c0a4a7162",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/31/datasette-llm/",
-    "title": "datasette-llm 0.1a9",
-    "publishedAt": "2026-10-31T22:10:01.000Z",
-    "fetchedAt": "2026-11-01T03:52:57.749Z",
-    "contentHash": "28218d4c1a0fc36a",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Release: datasette-llm 0.1a9 I have some big upgrades to Datasette Agent in the pipeline, but in the meantime here's a tiny user experience improvement to the underlying datasette-llm plugin. It now picks up the default model used by LLM , which means you can start using Datasette Agent without needing to explicitly co",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Simon Willison has released datasette-llm 0.1a9, introducing seamless integration with the core LLM CLI tool's default model configuration. This small yet impactful update streamlines the developer experience by eliminating explicit configuration hurdles for Datasette Agent.",
-      "takeaways": [
-        "Datasette-llm 0.1a9 automatically inherits the default model configured in Simon Willison's LLM CLI utility.",
-        "Eliminates friction in bootstrapping Datasette Agent, lowering the cognitive overhead for developers building local AI data applications.",
-        "Signals continued iterative refinement of the local-first AI tooling ecosystem surrounding SQLite and Datasette."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "gemini"
-    }
-  },
-  {
-    "id": "6902ce241897996f",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPdEJBZEQzYU8zODYxRERNQXh6a1VNVGxSU2I5SWFmcGdDVXFHWDhRNXZTZ0FqS1BkYjJqX1MxdUtwajNkblFacTJ6aDJxeG0yN1JHaWZLeWYzYlBrZkE2WFp3SlVBNFdtT05mT1BJcjB3ZmZEbFlITXVOanBveUZ0Q19QaktUakJFUFFKSVdBNWFzamNZQUctNDA2OTR4MFh3ZWc?oc=5",
-    "title": "Judge Greenlights NAACP Suit Against xAI Over Data Center Pollution - The Tech Buzz",
-    "publishedAt": "2026-10-31T22:02:22.000Z",
-    "fetchedAt": "2026-10-31T23:41:00.757Z",
-    "contentHash": "7c7c3ca7adaf36e3",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Judge Greenlights NAACP Suit Against xAI Over Data Center Pollution    The Tech Buzz",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Judge Greenlights NAACP Suit Against xAI Over Data Center Pollution - The Tech Buzz.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b16611b82898ec81",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZzdOZFpoX2VkeWV4OERrejNxTnVLd0RzZXFPc0FLTWRtLXdMNnM0NTFqTEtsOEFJT3JmQVhiaDdPUzNoaXVob2dFeE43aGJfampDZ0tmb2I1Yjd0bmp6RUpMNXJObF9RZXg5dVJ3ZHJJaFpEU1lCTGNwa1VKcXBpUjdPVjJqaG9RWFVVR2NUQ0g2cmV3Ym51Xw?oc=5",
-    "title": "Elon Musk Says Saving for the Future Is Pointless, Without Saying Who Owns the Robots - Martin Cid Magazine",
-    "publishedAt": "2026-10-31T21:41:40.000Z",
-    "fetchedAt": "2026-11-01T10:58:56.541Z",
-    "contentHash": "6a345547cfb8945a",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk Says Saving for the Future Is Pointless, Without Saying Who Owns the Robots    Martin Cid Magazine",
-    "category": "Robotics & Hardware",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk Says Saving for the Future Is Pointless, Without Saying Who Owns the Robots - Martin Cid Magazine.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d9269f49d95d2fae",
-    "canonicalUrl": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
-    "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
-    "publishedAt": "2026-10-31T21:41:00.000Z",
-    "fetchedAt": "2026-10-31T23:41:00.788Z",
-    "contentHash": "16c54ab8e18f231c",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Anthony Ha",
-    "contentSnippet": "Apple's new CEO defended the company's current position in the AI landscape.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Apple's new CEO defended the company's current position in the AI landscape.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2065ffa365f3e4d6",
-    "canonicalUrl": "https://techcrunch.com/2026/10/31/4-days-left-how-techcrunch-founder-summit-helps-you-make-more-useful-connections-to-scale/",
-    "title": "4 days left: How TechCrunch Founder Summit helps you make more useful connections to scale",
-    "publishedAt": "2026-10-31T21:36:07.000Z",
-    "fetchedAt": "2026-10-31T23:41:00.788Z",
-    "contentHash": "7fba392c100c25db",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "TechCrunch Events",
-    "contentSnippet": "On November 4 at Boston’s SoWa Power Station, get ready for a full day packed with meaningful networking opportunities, actionable insights, and connections that could change the trajectory of your idea and startup. Register before all prices go up at the door.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "On November 4 at Boston’s SoWa Power Station, get ready for a full day packed with meaningful networking opportunities, actionable insights, and connections that could change the trajectory of your idea and startup. Register before all prices go up at the door.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "204d5faf405d3242",
-    "canonicalUrl": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
-    "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
-    "publishedAt": "2026-10-31T21:17:03.000Z",
-    "fetchedAt": "2026-10-31T23:41:00.788Z",
-    "contentHash": "f75a8d4fcd519e1b",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Anthony Ha",
-    "contentSnippet": "An NAACP lawsuit accuses the SpaceX-owned AI company of violating the Clean Air Act.",
-    "category": "Business & Big Tech",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "An NAACP lawsuit accuses the SpaceX-owned AI company of violating the Clean Air Act.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ef2b189a515a61ab",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUGJrcVp1WTFKSjNfekYyYmdTRExNMXNLWUZERkRLOWI2ZS1PeW5OaUczNU9yZzBPMnJ2TmVOTjZxZm9QOVRfaWx6THh5VXhCTjAtRXN4UXpqOGJ4M2NIT2EteVRuQmdwRFBXZW1maTItSkdhTWtIbS1Ed0xCOEdYSndiQkdBVFFwRUQyNWRUMHhhTE0yZmR4Ym9VdGRBamp0ZWRvT3ZyTEQtUWtl?oc=5",
-    "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward - TechCrunch",
-    "publishedAt": "2026-10-31T21:17:03.000Z",
-    "fetchedAt": "2026-11-01T03:52:45.110Z",
-    "contentHash": "e3b43f759e2ba51f",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Judge allows NAACP lawsuit over xAI data center pollution to move forward    TechCrunch",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Judge allows NAACP lawsuit over xAI data center pollution to move forward - TechCrunch.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4c66902d2b012e1c",
-    "canonicalUrl": "https://www.techmeme.com/261031/p11",
-    "title": "Researchers are paid $5K for reporting a bug to OpenAI that would let attackers run code in logged-in sessions of all who opened the hacker's ChatGPT share link (Swati Khandelwal/The Hacker News)",
-    "publishedAt": "2026-10-31T19:01:11.000Z",
-    "fetchedAt": "2026-10-31T20:34:33.592Z",
-    "contentHash": "562913360abac592",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Swati Khandelwal / The Hacker News : Researchers are paid $5K for reporting a bug to OpenAI that would let attackers run code in logged-in sessions of all who opened the hacker's ChatGPT share link   —  A malicious ChatGPT share link could run an attacker's code in the logged-in session of anyone who opened it …",
-    "imageUrl": "http://www.techmeme.com/261031/i11.jpg",
-    "category": "Business & Big Tech",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Swati Khandelwal / The Hacker News : Researchers are paid $5K for reporting a bug to OpenAI that would let attackers run code in logged-in sessions of all who opened the hacker's ChatGPT share link — A malicious ChatGPT share link could run an attacker's code in the logged-in session of anyone who opened it ….",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "109ce3b6dd2539fd",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONWZobnlmVnlwbk9rMk1yeUVabnE1QUdtdTVEWGR6UUkwYXEzWk9weVpLMWFtRWF2Ykd6SmpNalgtelBCZ0lBdkd6Vm1xcWhNNkNVM0ZKTW43TmZyUUtMb1pYZVY2V2VuaFh5dHdBakhBYllrQjY5bUhrOHpteVNRUWNaZFrSAYoBQVVfeXFMUHFJcmV4YzZNcTZ4dk5RX2YyQm1TWDhpSS1OemxNdFRkUHhFTEFDNHpueE1QejEzMGVQYUFwQXpNV2JaVmJzdlQ2TWFJNlJOYjFkckE3TFpHVHpMSWt4YlBzMkZUX0hSa295M2tHSkx5aUFDbjMwbDkxQlNhdnp1NlhYd21VOER5ZHZn?oc=5",
-    "title": "SpaceX loses bid to toss NAACP lawsuit over Memphis data center air pollution - CNBC",
-    "publishedAt": "2026-10-31T18:56:21.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "eaa1b3b9aba7ca0f",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "SpaceX loses bid to toss NAACP lawsuit over Memphis data center air pollution    CNBC",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "SpaceX loses bid to toss NAACP lawsuit over Memphis data center air pollution - CNBC.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fa71fa41347dea93",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPek81TUZQSC1BdG5lMC1HVHZTZmlReWVValItX2hpcEVzNTJlaGItVVg2NmRfdjdCYkFsVHVJMDZYRU9uMmR3TGJ5dGNaQURVNS1uckZtQ2xPOXByZExFZlFKWFBReTdiSUFYZ0Y4eG5hb3c3MzFOMjdHSklNa2ZoblpWbTZwenJxNTlrbHFsRzk2ZXJ5b1F2UnVtdDA?oc=5",
-    "title": "Elon Musk Answers Vegetarian AI CEOs OpenAI CEO Sam Altman, Alphabet CEO Sundar Pichai and Anthropic CEO Dario Amodei With Steak and Eggs - Martin Cid Magazine",
-    "publishedAt": "2026-10-31T17:41:46.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "d213266adf46175a",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk Answers Vegetarian AI CEOs OpenAI CEO Sam Altman, Alphabet CEO Sundar Pichai and Anthropic CEO Dario Amodei With Steak and Eggs    Martin Cid Magazine",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk Answers Vegetarian AI CEOs OpenAI CEO Sam Altman, Alphabet CEO Sundar Pichai and Anthropic CEO Dario Amodei With Steak and Eggs - Martin Cid Magazine.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "19f360be17d7edd4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.01126v1",
-    "title": "Do GEO Gains Survive the Live Web? Evaluating In-the-Wild Visibility Gains of Generative Engine Optimization via LIVE-GEO",
-    "publishedAt": "2026-10-31T17:15:02.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "98a7326000045f48",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Runze Kong",
-    "contentSnippet": "Generative engine optimization (GEO) rewrites web content so that LLM-based search systems, also termed generative engines (GEs), rank it higher in their answers and recommendations. However, existing GEO evaluations typically rely on directly supplied text or controlled retrieval pipelines, and whether GEO gains survive the live Web remains unclear, leaving a gap in understanding how GEO strategies affect the visibility of live webpages when accessed and ranked by GEs. To address this gap, we introduce LIVE-GEO, a benchmark for Live, In-the-wild Visibility Evaluation for GEO. LIVE-GEO publishes GEO-rewritten products as live webpages. We use LIVE-GEO to evaluate five existing GEO strategies (CORE, C-SEO, E-GEO, AgenticGEO, and Statistics Addition), applying them to the product descriptions and reviews of 80 fictional brands across 18 product families. We run experiments on three GEs (ChatGPT with GPT-6, Gemini 3.6 Thinking, and Grok in Expert mode), four direct-text API evaluators (GPT-4o, DeepSeek, Kimi, and Claude), and a direct-text local evaluator (Qwen2.5-3B-Instruct). With frozen $\\pm0.2\\%$ prices, most direct-text evaluators and GEs receiving product URLs give CORE the highest Top-1 rate, reaching 66.3%-76.3% on the GEs, yet other strategies vary in relative performance, and the GEs select the same top product for only 48.8%-66.3% of brands. We also find that ChatGPT is sensitive to the order of candidate URLs: CORE's Top-1 rate is 73.8% and 93.8% under two opposite fixed orders, and the randomized order used by LIVE-GEO yields 82.5%, between the two. In the numerical-faithfulness check, the JEV verifier agrees with the reference labels on 90.7% of 194 numerical benchmark cases and with human judgments on all 50 sampled descriptions, and it flags 86 of the 400 rewritten descriptions, including all 80 Statistics Addition descriptions.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.01126",
-    "pdfUrl": "https://arxiv.org/pdf/2611.01126.pdf",
-    "summary": {
-      "tldr": "Generative engine optimization (GEO) rewrites web content so that LLM-based search systems, also termed generative engines (GEs), rank it higher in their answers and recommendations. However, existing GEO evaluations typically rely on directly supplied text or controlled retrieval pipelines, and whether GEO gains survive the live Web remains unclear, leaving a gap in understanding how GEO strategies affect the visibility of live webpages when accessed and ranked by GEs. To address this gap, we introduce LIVE-GEO, a benchmark for Live, In-the-wild Visibility Evaluation for GEO.\n\nLIVE-GEO publishes GEO-rewritten products as live webpages. We use LIVE-GEO to evaluate five existing GEO strategies (CORE, C-SEO, E-GEO, AgenticGEO, and Statistics Addition), applying them to the product descriptions and reviews of 80 fictional brands across 18 product families. We run experiments on three GEs (ChatGPT with GPT-6, Gemini 3.6 Thinking, and Grok in Expert mode), four direct-text API evaluators (GPT-4o, DeepSeek, Kimi, and Claude), and a direct-text local evaluator (Qwen2.5-3B-Instruct).",
-      "takeaways": [
-        "With frozen $\\pm0.2\\%$ prices, most direct-text evaluators and GEs receiving product URLs give CORE the highest Top-1 rate, reaching 66.3%-76.3% on the GEs, yet other strategies vary in relative performance, and the GEs select the same top product for only 48.8%-66.3% of brands.",
-        "We also find that ChatGPT is sensitive to the order of candidate URLs: CORE's Top-1 rate is 73.8% and 93.8% under two opposite fixed orders, and the randomized order used by LIVE-GEO yields 82.5%, between the two.",
-        "In the numerical-faithfulness check, the JEV verifier agrees with the reference labels on 90.7% of 194 numerical benchmark cases and with human judgments on all 50 sampled descriptions, and it flags 86 of the 400 rewritten descriptions, including all 80 Statistics Addition descriptions."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "31f24ef1ce14cdc4",
-    "canonicalUrl": "https://siliconangle.com/2026/10/31/can-enterprise-ai-pay-for-the-boom/",
-    "title": "Can enterprise AI pay for the boom?",
-    "publishedAt": "2026-10-31T17:12:02.000Z",
-    "fetchedAt": "2026-10-31T18:25:08.540Z",
-    "contentHash": "8a7067658e446979",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Dave Vellante",
-    "contentSnippet": "The artificial intelligence buildout is making an enormous bet on what businesses will eventually be willing to pay for intelligence. In our research this summer on forecasting the AI bubble, we argued that a key indicator to watch is productive utilization by enterprise customers. Specifically, we said at the time, if",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The artificial intelligence buildout is making an enormous bet on what businesses will eventually be willing to pay for intelligence. In our research this summer on forecasting the AI bubble, we argued that a key indicator to watch is productive utilization by enterprise customers. Specifically, we said at the time, if.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9f0dc744b7a5c558",
-    "canonicalUrl": "https://arxiv.org/abs/2611.01115v1",
-    "title": "CompSkill: Compiling Execution Experience for Skill Retrieval",
-    "publishedAt": "2026-10-31T17:00:57.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "7372a77189825af3",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Qi Shen",
-    "contentSnippet": "LLM agents increasingly rely on skill documents, yet most retrievers rank them by description alone and ignore what earlier executions revealed, even though a relevant skill can hurt execution. We present CompSkill, which indexes skills with learned 512-d keys and compiles matched same-task comparisons into skill offsets and capped key residuals (KeyOpt), so experience changes which document the executor receives, never its text. Under a logistic outcome model with unknown task difficulty, matched comparisons cancel that difficulty and only discordant ones carry information; on support executions, predictions improve with each discordant task. An experience hypergraph keeps each comparison with its executor and document versions, recalls missed skills and grounds a cited review. Compact keys raise SkillRet NDCG@10 from 64.0 to 70.9 at one eighth of the dimension. With one document, CompSkill completes 256 and 260 of 332 ToolQA tasks with GPT-5.6-luna and DeepSeek-V4.1-Flash, respectively, more than every baseline, and stays on par with the strongest baselines on AppWorld and ALFWorld. On 332 newly generated ToolQA tasks, it completes 256 with GPT-5.6-luna, significantly more than BM25, SkillRet-8B, Tool2Vec and RankGPT; over all 844 ToolQA tasks, it completes 24 more than the strongest baseline. Selection matters beyond relevance: pairing the right guide with a same-database sibling instead of another database's guide costs 8 of 96 tasks. Code, models and support data: https://github.com/satoshinji2992/CompSkill",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.01115",
-    "pdfUrl": "https://arxiv.org/pdf/2611.01115.pdf",
-    "summary": {
-      "tldr": "LLM agents increasingly rely on skill documents, yet most retrievers rank them by description alone and ignore what earlier executions revealed, even though a relevant skill can hurt execution. We present CompSkill, which indexes skills with learned 512-d keys and compiles matched same-task comparisons into skill offsets and capped key residuals (KeyOpt), so experience changes which document the executor receives, never its text. Under a logistic outcome model with unknown task difficulty, matched comparisons cancel that difficulty and only discordant ones carry information; on support executions, predictions improve with each discordant task.\n\nAn experience hypergraph keeps each comparison with its executor and document versions, recalls missed skills and grounds a cited review. Compact keys raise SkillRet NDCG@10 from 64.0 to 70.9 at one eighth of the dimension. With one document, CompSkill completes 256 and 260 of 332 ToolQA tasks with GPT-5.6-luna and DeepSeek-V4.1-Flash, respectively, more than every baseline, and stays on par with the strongest baselines on AppWorld and ALFWorld.",
-      "takeaways": [
-        "On 332 newly generated ToolQA tasks, it completes 256 with GPT-5.6-luna, significantly more than BM25, SkillRet-8B, Tool2Vec and RankGPT; over all 844 ToolQA tasks, it completes 24 more than the strongest baseline.",
-        "Selection matters beyond relevance: pairing the right guide with a same-database sibling instead of another database's guide costs 8 of 96 tasks.",
-        "Code, models and support data: https://github.com/satoshinji2992/CompSkill."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8cc662cda80875ca",
-    "canonicalUrl": "https://www.techmeme.com/261031/p10",
-    "title": "Sources: Meta built a prototype humanoid robot with Chinese firm Fourier in three months and is building a second; Meta says it has no plans to sell these units (Jyoti Mann/The Information)",
-    "publishedAt": "2026-10-31T16:20:02.000Z",
-    "fetchedAt": "2026-10-31T20:34:33.592Z",
-    "contentHash": "152a28b69b9d77ba",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Jyoti Mann / The Information : Sources: Meta built a prototype humanoid robot with Chinese firm Fourier in three months and is building a second; Meta says it has no plans to sell these units   —  Meta Platforms has built a prototype humanoid with Chinese robotics company Fourier and is already working on a second vers",
-    "imageUrl": "http://www.techmeme.com/261031/i10.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Jyoti Mann / The Information : Sources: Meta built a prototype humanoid robot with Chinese firm Fourier in three months and is building a second; Meta says it has no plans to sell these units — Meta Platforms has built a prototype humanoid with Chinese robotics company Fourier and is already working on a second vers.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6ec02213d45abe3d",
-    "canonicalUrl": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
-    "title": "OpenAI reportedly lowers funding target for new round",
-    "publishedAt": "2026-10-31T16:12:55.000Z",
-    "fetchedAt": "2026-10-31T17:11:34.011Z",
-    "contentHash": "8854da565315f597",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Anthony Ha",
-    "contentSnippet": "OpenAI’s latest funding round doesn't seem to be living up to expectations.",
-    "category": "Business & Big Tech",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI’s latest funding round doesn't seem to be living up to expectations.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "95235900cc342af4",
-    "canonicalUrl": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
-    "title": "I built an AI Tamagotchi before Meta could",
-    "publishedAt": "2026-10-31T16:05:00.000Z",
-    "fetchedAt": "2026-10-31T17:11:34.012Z",
-    "contentHash": "ed0dfed3581ebbca",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Sean Hollister",
-    "contentSnippet": "Mark Zuckerberg’s Meta made AI look so stinking cute by giving it a squishy little face — and this holiday season, he wants to sell you a Muse Charm so you can carry your jolly AI helper around like a Tamagotchi. But I won’t be buying one, because we have Muse Charm at home. It cost just $50, and I’ve decided the learning experience was worth it. [Media: https://www.tiktok.com/@verge/video/7702862550014168333] My version doesn’t sport cameras or a 5G cellular radio, but it really talks to Muse and has cute avatars, too! It doubles as a pocket watch and a remote camera viewfinder, and it can (theoretically) control my smart home. Or at least it can if you inject a lot of extra vibe code. Weeks ago, I paid $50 to get a 1.75-inch touchscreen computer pendant drop-shipped from China — specifically the Waveshare ESP32-S3 1.75C. Not only does the push-to-talk AI devkit look a lot like the Muse Charm, but it’s officially sanctioned by Meta. It’s one of the company’s first suggestions if you want to build a “Muse Gadget,” a device that uses Meta’s open-source code and tokens to directly connect to its Muse AI cloud. When the silver metal pocket watch arrived, it felt pretty useless to start. Setup was easy enough — I just plugged it into my PC and pointed Claude at Meta’s GitHub, then paired it to the Muse phone app. But even after I put Meta’s keys on the device, Muse originally thought I was sending it audio clips to transcribe rather than commands. After I cleared that up, Muse’s responses were still slow, and it didn’t answer me out loud. It was hard to tell what it was saying since it only showed a few words onscreen at a time, with no place to read full messages unless I whipped out my phone with its own Muse app. Meta’s build also only came with a single Jolly avatar that mostly just sat there and looked cute, and it wouldn’t automatically discover smart home gadgets like Amazon Echo or Google Home devices do. (This gadget really didn’t do anything useful after my initial install.) And though Meta AI software engineers Anant Narayanan and Jeremy Payne include a neat sample app showing how Muse Gadgets can stream video from your phone camera, the lack of a remote shutter button made it not so useful for taking photos. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/verge-sean-hollister-muse-gadget-331A2570-01-2.jpg?quality=90&strip=all",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/verge-sean-hollister-muse-gadget-331A2564-01-3.jpg?quality=90&#038;strip=all&#038;crop=4,0,96,94.899920311255",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "A tech journalist built a custom AI-powered \"Tamagotchi\" pendant for $50 using the Waveshare ESP32-S3 1.75C developer kit, bypassing Meta's upcoming commercial Muse Charm. The off-the-shelf silver metal pocket watch devkit is officially sanctioned by Meta as a \"Muse Gadget\" for connecting to Meta's open-source Muse AI cloud. Initial deployment via Meta's GitHub and Claude required significant troubleshooting, as the default build suffered from slow transcription, lacked full message display, featured only a single \"Jolly\" avatar, and failed to natively discover smart home devices.\n\nUsing Claude Code without prior coding experience, the author injected custom \"vibe code\" to drastically overhaul the hardware's functionality. Modifications included adding a conversation history page, integrating a British ElevenLabs AI voice for text-to-speech output, building a low-quality Bluetooth camera preview, implementing a remote camera shutter for the phone, and creating a multi-tiered Tamagotchi minigame tracking hunger, boredom, sleep, and hygiene. The device was also programmed with a functional three-hand pocket watch face and a local video player running clips of Mark Zuckerberg introducing the Muse Charm, all completed within minutes of natural language prompting.\n\nThe author deployed the pendant on a guest Wi-Fi network as a security precaution due to privacy concerns, noting that Meta's servers remain the primary source of latency. The experiment raises questions about whether consumers would be better served by programmable developer kits rather than locked-down commercial hardware like Meta's forthcoming Muse Charm.",
-      "takeaways": [
-        "**Hardware Specifications:** The DIY build used the Waveshare ESP32-S3 1.75C, a 1.75-inch touchscreen computer pendant drop-shipped from China that lacks cameras and a 5G cellular radio.",
-        "**Cost & Setup:** The hardware cost $50 and was paired with Meta's open-source Muse AI cloud using code and tokens from Meta's GitHub, facilitated by Claude Code.",
-        "**Audio and Voice Modifications:** Default audio responses were upgraded by plugging in a British AI voice from ElevenLabs' free tier and adding a conversation history swipe feature.",
-        "**Custom Software Features:** Claude Code added a Tamagotchi minigame with four levels of hunger, boredom, and dirt, a working three-hand pocket watch face built in 15 minutes, a remote phone camera shutter, and a local video player.",
-        "**Security Precautions:** The device was placed on a guest Wi-Fi network immediately following reports that Meta's Muse agent leaked a reviewer's home address."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "a0fa4fd87b680650",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYkszZDhTZkgyTmJmekZwcUo0cEJjSFRKWHN4OG9UX1ZLLTRFeGs2Rjg1em5MQktVSmdCWmtjVl9uYmJYd2V2TkhjRVE2YWtMaENaS3NJTXpob3o5Z2hQMEF1ckVpZ3REcEh5TkRKSGEtWEVfVWhQbzdoVmJ5TUZyaUx4VVlpUFV6dkRxcmhqMUtFWTB2bmQ3UlZRNW5tZllt0gGwAUFVX3lxTE5lWVZsSXMzR0NRMFRxc29vQjdCTU43ZHJmZmlFc013WUVjbWlCb214Rlg1RHRTSmtHYVR0UXk4allaaHJJXzZtcFVReEt0Qk1QTGtuQWVhMXh4aURQOWtFZ1FsYnBWU1VySkwxcUNZZVNaeDlQTXIwVlZjWmFiWHdYUk16OHNMUEh6SE41Q19TNnQ0eXlHaUNXWXhYaDBuXzRJSmJ0U3VUNzlEWjBOYjg5?oc=5",
-    "title": "Elon Musk's bold AI prediction: 'Saving money is pointless' - Gulf News",
-    "publishedAt": "2026-10-31T16:03:20.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "d9d75f6f91c5f6f0",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk's bold AI prediction: 'Saving money is pointless'    Gulf News",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk's bold AI prediction: 'Saving money is pointless' - Gulf News.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "385cf330f02a4442",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPeGpOX1dfVzBwRk1IZ0x1a1VrYVJhVG9oWk5GUUNFeFlBTlp4SHNCdUxlMVdCOXNDLVltMjQ5WFdtOEl1dHAwSXJBX2J2bUc0dHo0UmZ5QVE4OUt4cUtaNHYzQ3pmT1ZPVl9qc1VNMVIyWmRYRHFNdHJmQk9QRVpOYXBBcjQ4RzlJajZtU1VCRF9NdmV3VjgzeDBTRjlOd2FX?oc=5",
-    "title": "Elon Musk Has Incredible News for Micron Stock Investors - The Motley Fool",
-    "publishedAt": "2026-10-31T15:54:00.000Z",
-    "fetchedAt": "2026-11-01T10:58:56.541Z",
-    "contentHash": "109d4614f5fca12d",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk Has Incredible News for Micron Stock Investors    The Motley Fool",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk Has Incredible News for Micron Stock Investors - The Motley Fool.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "74986d5164b8b896",
-    "canonicalUrl": "https://www.techmeme.com/261031/p9",
-    "title": "Binance says it has covered 90% of its hack losses, having set aside $6.34B+ of company funds; the remaining 10% is in less liquid tokens (Angela Christy/Reuters)",
-    "publishedAt": "2026-10-31T15:45:01.000Z",
-    "fetchedAt": "2026-10-31T20:34:33.592Z",
-    "contentHash": "c3a2dc460879c5d7",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Angela Christy / Reuters : Binance says it has covered 90% of its hack losses, having set aside $6.34B+ of company funds; the remaining 10% is in less liquid tokens   —  Cryptocurrency exchange Binance said on Saturday that it was able to cover 90% of the amount stolen during its recent hack.",
-    "imageUrl": "http://www.techmeme.com/261031/i9.jpg",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Angela Christy / Reuters : Binance says it has covered 90% of its hack losses, having set aside $6.34B+ of company funds; the remaining 10% is in less liquid tokens — Cryptocurrency exchange Binance said on Saturday that it was able to cover 90% of the amount stolen during its recent hack.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "edb709d34736207d",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNanFXV3VlUXRZZWR1OW9HTUJUREZ4aDRJUC13UXFUVWVwdlU0MFBfTHZ1VHZwZUdGaWl4MXhYb0EtbnFlVTZpUHZPTWN2ZGJHdmtHanNjT2R5UHRRbjRwRTNkcDE0a2JaR0pjOTJXYTVtRmRZYzRZdWZKNmVoX3JKV0JkQXRhaDl2WnVlcTZ0WTdCZVFSSkRwX2hRM1QtaDVuYXNOODg0TlhLWE9HLWxVRFRSWVdtNWdRRHdfaGQ1TFdPdE96ZTVwREotYWxJN0NjMm8zWURNc0lhZmtMUkcxSGJZakpzMzQ4MDhlWm45OFNlYnBaLXdaWldyalVTS2Rsd1djQTYtQW03ZUVxdUpTXzhXVEJFUdIBmwJBVV95cUxNaW9ZeFo0Q2JqaWhzTzZBT2JfVE8zYVJmeU9rSUJHQkFuWTE1akhOUmRtekdVX2doNnZFNEpxa3pDaThJTzZ6bFBIM3NNd1d1UnRSV2cyZEVtLVllb2JaaWtjcGwtMVJIVnJndEN3M00wN1N5YXIyTFllOHJKSUlTTzZDOWNRQjB4UDVsX3NqVHVjaGdwUzVMdU9tdU90SkZwajdSeUpSQlhlWmRBb24yVnVua1JHbVVBRXB3ZkdFeEF2bm13eUhDaVJtUnVEVWtHWVJ3a29wTjhza0tqYU9KTTI2OVhuTnd3R0IwZndzQkZwd2tfajhtaWE1NGFlanZWSnVYN3llSkxvU0NNTU5GX2Q1WUswNGxfVmdB?oc=5",
-    "title": "Elon Musk, who has spent $446 million on US midterms, reposts 2022 prediction on Democrats: 'Now, watch t - The Times of India",
-    "publishedAt": "2026-10-31T15:10:00.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "d7147322676a7eb2",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Elon Musk, who has spent $446 million on US midterms, reposts 2022 prediction on Democrats: 'Now, watch t    The Times of India",
-    "category": "LLMs & GenAI",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Elon Musk, who has spent $446 million on US midterms, reposts 2022 prediction on Democrats: 'Now, watch t - The Times of India.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "cd1479c84372bc82",
-    "canonicalUrl": "https://www.techmeme.com/261031/p8",
-    "title": "How AI detectors like Pangram are changing human writing: authors drop em dashes, \"not X, but Y\" phrasing, and words like \"delve\", or add typos, to look human (Morgan Meaker/Bloomberg)",
-    "publishedAt": "2026-10-31T13:40:53.000Z",
-    "fetchedAt": "2026-10-31T20:34:33.592Z",
-    "contentHash": "f8f5e81943280fc4",
-    "sourceId": "techmeme",
-    "sourceName": "Techmeme",
-    "author": "Techmeme",
-    "contentSnippet": "Morgan Meaker / Bloomberg : How AI detectors like Pangram are changing human writing: authors drop em dashes, “not X, but Y” phrasing, and words like “delve”, or add typos, to look human   —  As AI transforms writing and detectors like Pangram police what counts as machine-generated …",
-    "imageUrl": "http://www.techmeme.com/261031/i8.jpg",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Morgan Meaker / Bloomberg : How AI detectors like Pangram are changing human writing: authors drop em dashes, “not X, but Y” phrasing, and words like “delve”, or add typos, to look human — As AI transforms writing and detectors like Pangram police what counts as machine-generated ….",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f7577d2c267b6214",
-    "canonicalUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1WaEdkUjE4cFJlX1hGUk9qODZTalAyR0hmci1pdXpQaWQzeU1xbmdqSFZBUXdpWXY4VGVMV3BQaFNEcFFOQWpsUk5YenhBLTJDVGl1dUNHOHZIM3F4UTlKVmEyV0dmZm9rcjM4WHhvdDN1dFlU?oc=5",
-    "title": "Wall Street wipes $1 trillion from the stock market as tech’s $828 billion AI spending spree sparks market fears - Fortune",
-    "publishedAt": "2026-10-31T11:44:00.000Z",
-    "fetchedAt": "2026-10-31T20:34:31.446Z",
-    "contentHash": "3fa4b6873f5e0b12",
-    "sourceId": "xai-radar",
-    "sourceName": "xAI & Grok Radar",
-    "author": "xAI & Grok Radar",
-    "contentSnippet": "Wall Street wipes $1 trillion from the stock market as tech’s $828 billion AI spending spree sparks market fears    Fortune",
-    "category": "Business & Big Tech",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Wall Street wipes $1 trillion from the stock market as tech’s $828 billion AI spending spree sparks market fears - Fortune.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4354c681f1fd688c",
-    "canonicalUrl": "https://www.marktechpost.com/2026/10/31/factory-droid-1-0-frontier-harness/",
-    "title": "Meet Factory Droid 1.0: A Model-Independent Coding Agent Harness Built on Script Mode",
-    "publishedAt": "2026-10-31T10:38:14.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.399Z",
-    "contentHash": "521285708911c005",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Asif Razzaq",
-    "contentSnippet": "Factory has released Droid 1.0 , the largest update yet to the Factory Droid agent harness. The main change is programmatic tool calling, now on by default. The model writes a program that runs its tools. One model request can now drive hundreds of tool calls. TL;DR Size: Base prompt is 13,055 input tokens, down 37% from 20,887. Only 2 tool definitions ship up front, down from 11. Runs on: macOS and Windows desktop app, a terminal UI, and the Node SDK @factory/droid-sdk . Works with any supported model, including your own API keys. Performance: Highest pass rate of every harness Factory tested, on the same model, at lower cost. Best: 65.2% on Terminal-Bench 4 with Claude Opus 5.5, at $4.73 per passed task (self-reported). Worst: With GPT-6.1 Sol, Droid takes 10% longer per passed task than Codex. What is Droid 1.0? Droid 1.0 is a model-independent coding agent harness from Factory. Factory defines a harness as everything around the model. That means the prompts, the tools, how tool results return, and the loop . Users pick a model or let Factory Router choose a cost-efficient mix. How does programmatic tool calling work? In a standard loop, every tool output lands in the model’s context. With programmatic tool calling (PTC), the model writes a program instead. Droid implements this as a Script tool . The model writes JavaScript that runs in a sandbox. The sandbox has no file, network, or system access of its own. Raw files, search results, and logs stay inside the program. Only printed output returns to the model. Independent calls run concurrently. The idea builds on CodeAct (Wang et al., 2024) . Factory reports these results from its own sessions: Unit test fix: 15 tool calls took 5 model calls instead of 10. The task finished in 41.6 s instead of 56.8 s. Linear cleanup: 151 issues moved and verified in 312 tool calls. The Script used 2 requests and about 61,000 tokens. Factory models direct calls at 36 requests and about 3.1M tokens. CI sweep: 5,384 jobs across 547 runs, in 2 requests. Under 0.1% of tool results reached the model’s context. On Claude Opus 5.5, Script mode cuts Droid’s cost by 15% versus direct tool calling. It is on by default for 10 models, including GPT-6.1 Sol and Kimi K3. <iframe id=\"fdx-frame\" title=\"Factory Droid 1.0 interactive explainer\" style=\"width:100%;height:600px;border:0;display:block;\" loading=\"lazy\" srcdoc=\"<!doctype html>",
-    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
-    "category": "Robotics & Hardware",
-    "lab": "Moonshot AI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Factory has released Droid 1.0 , the largest update yet to the Factory Droid agent harness. The main change is programmatic tool calling, now on by default. The model writes a program that runs its tools.\n\nOne model request can now drive hundreds of tool calls. TL;DR Size: Base prompt is 13,055 input tokens, down 37% from 20,887. Only 2 tool definitions ship up front, down from 11.",
-      "takeaways": [
-        "Runs on: macOS and Windows desktop app, a terminal UI, and the Node SDK @factory/droid-sdk .",
-        "Works with any supported model, including your own API keys.",
-        "Performance: Highest pass rate of every harness Factory tested, on the same model, at lower cost.",
-        "Best: 65.2% on Terminal-Bench 4 with Claude Opus 5.5, at $4.73 per passed task (self-reported)."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "932ab5af52914591",
-    "canonicalUrl": "https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/",
-    "title": "Vercel Labs Open-Sources agent-desktop for Agent Computer Use",
-    "publishedAt": "2026-10-31T10:10:28.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.399Z",
-    "contentHash": "621347c7fa9e62c9",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "Vercel Labs has released agent-desktop , an open-source CLI for AI agent computer use on macOS, Windows and Linux. agent-desktop reads each app through the operating system’s accessibility tree, not through screenshots. An agent gets a JSON snapshot with a ref for every element it can act on. Version 1.0.2 shipped on October 30, 2026, under Apache-2.0. For developers, any shell-capable coding agent can now drive native apps without a vision model. TL;DR Library: Rust CLI and a C library. 60 command names, 56 operational . Runs on: macOS 13+, Windows 10 1809+ or Server 2019+, Ubuntu 24.04+ , on x64 and ARM64. Plain CPU, no GPU. Performance: Deterministic, retry-safe ref actions. No independent computer-use benchmark yet. Best: 78% to 96% fewer tokens on dense Electron apps via skeleton traversal ( self-reported ). What is agent-desktop? agent-desktop is a Rust CLI and C library from Vercel Labs for reading and operating desktop apps. It is a tool that agents call, not an agent . It embeds no LLM and has no GUI. Every command prints one JSON envelope and exits. The observe, act and verify loop stays in your agent. How does agent-desktop work? Each command flows through a fixed chain. The CLI or C library calls agent-desktop-core , which reaches the OS only through a PlatformAdapter trait. One platform crate then talks to the native accessibility API: macOS: AX API Windows: UI Automation Linux: AT-SPI Core never imports a platform crate. Each binary is compiled to drive exactly one OS. Snapshots and refs A snapshot assigns qualified refs such as @s8f3k2p9:e8 . The snapshot ID inside the ref makes it self-describing. A bare @e8 is rejected with INVALID_ARGS . When the UI changes, an action returns STALE_REF or AMBIGUOUS_TARGET . The agent then takes a fresh snapshot. Every error carries a disposition . Agents should retry only when it says safe . Ref resolution is strict and fails closed rather than guessing. Skeleton and drill-down Dense apps can expose thousands of accessibility nodes. A --skeleton snapshot reads only 3 levels deep . Cut containers report a children_count and get a drill ref. snapshot --root then reads one region into the same snapshot. The builder reported a 78% to 96% token cut versus full-tree dumps in Slack, VS Code and Notion. In Apple Maps, he reported 3,811 tokens per look falling to 273 . A simulated 52-step task dropped from 198k to 3",
-    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Vercel Labs has released agent-desktop , an open-source CLI for AI agent computer use on macOS, Windows and Linux. Agent-desktop reads each app through the operating system’s accessibility tree, not through screenshots. An agent gets a JSON snapshot with a ref for every element it can act on.\n\nVersion 1.0.2 shipped on October 30, 2026, under Apache-2.0. For developers, any shell-capable coding agent can now drive native apps without a vision model. TL;DR Library: Rust CLI and a C library.",
-      "takeaways": [
-        "60 command names, 56 operational .",
-        "Runs on: macOS 13+, Windows 10 1809+ or Server 2019+, Ubuntu 24.04+ , on x64 and ARM64.",
-        "Performance: Deterministic, retry-safe ref actions.",
-        "No independent computer-use benchmark yet."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fca9371ec4dbeb32",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00774v1",
-    "title": "Decision-Centric Research: A Calibrated Decision Model and Benchmark for Scientific Agents",
-    "publishedAt": "2026-10-31T09:34:15.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "916c0e4b9c1b257d",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Shaoning Zeng",
-    "contentSnippet": "Scientific agents make consequential choices about evidence, next actions and research strategy, but choices embedded in generated text are difficult to evaluate independently. Decision-Centric Research (DCR) is introduced to make individual choices the common unit of supervision, prediction and evaluation through typed predictions over an explicit Research State. DCR defines 24 decision types, ten of which are instantiated in the Research Decision Benchmark (RD-Bench) of 2,000 rule-generated cases. The Decision-Centric Research Model (DCRM) shares a candidate-token readout across types to produce answers and option probabilities in one forward pass. Under a held-out research-domain split, a 0.6B DCRM (state-aware) achieves 89.4% Top-1 accuracy, compared with 27.8% for DCRM (question-only) trained with the same recipe and 36.4% for DeepSeek-V4.1-Flash. All 30 type-seed comparisons against DCRM (question-only) are significant after Holm correction. After held-out calibration, the resulting prediction sets contain a mean of 1.515 candidates at 97.1% empirical label coverage, reducing mean set size by 57.4% relative to DCRM (question-only) at similar coverage. These results establish a compact state-aware decision layer with accurate typed prediction and an inspectable uncertainty interface.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00774",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00774.pdf",
-    "summary": {
-      "tldr": "Scientific agents make consequential choices about evidence, next actions and research strategy, but choices embedded in generated text are difficult to evaluate independently. Decision-Centric Research (DCR) is introduced to make individual choices the common unit of supervision, prediction and evaluation through typed predictions over an explicit Research State. DCR defines 24 decision types, ten of which are instantiated in the Research Decision Benchmark (RD-Bench) of 2,000 rule-generated cases.\n\nThe Decision-Centric Research Model (DCRM) shares a candidate-token readout across types to produce answers and option probabilities in one forward pass. Under a held-out research-domain split, a 0.6B DCRM (state-aware) achieves 89.4% Top-1 accuracy, compared with 27.8% for DCRM (question-only) trained with the same recipe and 36.4% for DeepSeek-V4.1-Flash. All 30 type-seed comparisons against DCRM (question-only) are significant after Holm correction.",
-      "takeaways": [
-        "After held-out calibration, the resulting prediction sets contain a mean of 1.515 candidates at 97.1% empirical label coverage, reducing mean set size by 57.4% relative to DCRM (question-only) at similar coverage.",
-        "These results establish a compact state-aware decision layer with accurate typed prediction and an inspectable uncertainty interface."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
