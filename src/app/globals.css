@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+/* KaTeX Dark Mode & Typography Support */
+html.dark .katex {
+  color: #f4f4f6 !important;
+}
+.katex-rendered .katex-display {
+  margin: 0.5em 0 !important;
+}
 
 :root {
   --background: #faf9f6;

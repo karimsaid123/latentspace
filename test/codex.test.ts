@@ -128,3 +128,4 @@ describe('Codex Compendium & Search Engine Suite', () => {
     assert.ok(flashAttn.mentionsCount >= 1);
   });
 });
+

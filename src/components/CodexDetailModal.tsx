@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ExternalLink, X, BookOpen, Cpu, Sparkles, ArrowRight, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { EnrichedCodexEntry } from '@/lib/codex-engine';
 import PaperSignalsBar from './PaperSignalsBar';
+import MathFormula from './MathFormula';
 
 interface CodexDetailModalProps {
   entry: EnrichedCodexEntry | null;
@@ -98,8 +99,8 @@ export default function CodexDetailModal({
               <Cpu className="w-3.5 h-3.5 text-black" />
               <span>MATHEMATICAL FORMULATION & BLUEPRINT</span>
             </div>
-            <div className="py-2 text-center overflow-x-auto text-sm sm:text-base font-bold text-black tracking-wider">
-              <code>{entry.mathematics.formula}</code>
+            <div className="py-2 text-center overflow-x-auto text-base sm:text-lg font-bold text-black tracking-wider">
+              <MathFormula formula={entry.mathematics.formula} />
             </div>
             <p className="mt-2 text-[11px] text-black/70 font-sans leading-normal">
               {entry.mathematics.explanation}
@@ -252,3 +253,4 @@ export default function CodexDetailModal({
     </div>
   );
 }
+

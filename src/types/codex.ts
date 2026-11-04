@@ -43,3 +43,4 @@ export interface CodexSearchFilter {
   category?: CodexCategory | 'ALL';
   level?: CodexLevel | 'ALL';
 }
+
