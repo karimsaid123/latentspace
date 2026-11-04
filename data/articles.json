@@ -1,5 +1,473 @@
 [
   {
+    "id": "95f69b75b62b697e",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/openai-to-acquire-developer-tooling-startup-pierre-computer/",
+    "title": "OpenAI to acquire developer tooling startup Pierre Computer",
+    "publishedAt": "2026-11-04T21:14:48.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "5fe48882b13a1fce",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 16:14 EST / NOVEMBER 04 2026\n\nOpenAI to acquire developer tooling startup Pierre Computer\n\nOpenAI Group PBC today announced plans to acquire Pierre Computer Company Inc., a low-profile developer tooling startup.\n\nThe terms of the deal were not disclosed. Observers pegged it as a shot at Microsoft Corp.’s open-source software repository GitHub.\n\nPierre operates a cloud service that artificial intelligence agents can use to store the code they generate. It can also store related files such as software licenses and interface design elements. According to Pierre, the service provides significantly better performance than competing technologies. It helped one customer, AI startup Lovable Inc., cut code retrieval latency by about 70%.\n\nPierre also develops a collection of popular open-source libraries. Two of those libraries, Trees and Diffs, underpin the interface of OpenAI’s Codex programming tool.\n\nLarge software projects contain upwards of hundreds of code files that are organized in dozens of folders. Many programming tools include a sidebar specifically designed to help developers navigate those folders. Trees, the first Pierre-developed library used by Codex, marks it easier to implement such sidebars.\n\nTrees can equip a folder navigation sidebar with a search feature and drag-and-drop controls for moving subfolders. Additionally, it flags code files that have been recently added or updated. Developers review those files first when performing tasks such as troubleshooting an outage.\n\nDiffs, the other Pierre library that OpenAI has integrated into Codex, is also designed to power programming tool interfaces. In particular, it can be used to implement the main interface that shows the code the user is currently editing. When a code file is updated, Diffs points out the specific lines of code that changed to spare developers the hassle of manually finding them. It can show changes in a separate interface section or in-line.\n\nOpenAI will continue to offer Trees and Diffs under an open-source license after the acquisition closes. Additionally, it plans to integrate the features of Pierre’s paid code hosting service into Codex. In the longer term, the Pierre team will help OpenAI “ship new products and platforms.”\n\nThe effort will place an emphasis on building software that can optimize coding agents. In particular, OpenAI hopes to streamline agent workfl",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI Group PBC has announced plans to acquire developer tooling startup Pierre Computer Company Inc. Financial terms of the deal were not disclosed by the companies. Pierre operates a cloud service designed for AI agents to store generated code, licenses, and interface design elements, which reportedly helped customer Lovable Inc. cut code retrieval latency by approximately 70%. Observers have framed the move as a competitive step against Microsoft Corp.'s GitHub.\n\nAs part of the transaction, OpenAI will absorb Pierre's team to help ship new products and platforms focused on optimizing coding agents, specifically streamlining Git workflows. Pierre already develops open-source libraries named Trees and Diffs, which currently underpin the interface of OpenAI's Codex programming tool. Trees facilitates folder navigation sidebars with search, drag-and-drop controls, and flags for recently added or updated files, while Diffs highlights specific changed lines of code either in-line or in a separate interface section. OpenAI confirmed it will continue offering Trees and Diffs under open-source licenses post-acquisition, while integrating Pierre's paid code hosting service into Codex.\n\nIn parallel with the acquisition announcement, OpenAI disclosed details regarding an internal software engine called Pando, built to optimize its internal Git environment and reduce the time required for coding agents to create and read code files.",
+      "takeaways": [
+        "**Acquisition Target:** OpenAI Group PBC announced plans to acquire developer tooling startup Pierre Computer Company Inc. for an undisclosed sum.",
+        "**Performance Metric:** Pierre's cloud storage service for AI-generated code helped customer Lovable Inc. reduce code retrieval latency by roughly 70%.",
+        "**Open-Source Integration:** Pierre-developed libraries Trees and Diffs currently power the folder navigation and file-diffing interfaces of OpenAI's Codex programming tool and will remain open-source.",
+        "**Internal Infrastructure:** OpenAI uses an internal software engine named Pando to enhance the performance of its Git environment for coding agents."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8d6f6c8bc49c9de3",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/",
+    "title": "Meta acquires AI coding startup Conductor",
+    "publishedAt": "2026-11-04T21:10:56.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.838Z",
+    "contentHash": "73d2e2ae8aa2c2cd",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Meta has acquired Conductor , an AI coding startup that allows users to spin up software projects by deploying multiple agents into parallel workspaces.\n\nThe news was originally reported by Axios, and Conductor shared news of its acquisition on its blog.\n\n“I have big news: Conductor is joining Meta,” wrote the startup’s founder and CEO, Charlie Holtz, on Wednesday. “We have some big, crazy plans for the next interface,” he added, teasing that the company would have “something new” for customers to use by “early next year.”\n\nOn X, Holtz also noted that he was looking forward to working with Alexandr Wang, Meta’s chief AI officer, and Nat Friedman, head of product at the company’s Superintelligence Labs. “They’ve been on an absolute tear, and I’m convinced MSL has the highest talent density of all the labs,” he added.\n\nMeta confirmed the acquisition to TechCrunch but wouldn’t comment further or provide additional details about the deal.\n\nConductor, founded in 2024, only launched its core product just last summer. The company’s agentic teams, which can be deployed in the cloud, locally, or via a user’s phone, are designed to help software engineers work on separate, compartmentalized parts of a project in concert. The agents that the platform deploys aren’t developed in-house but come from major labs like Anthropic and OpenAI.\n\nHoltz said that, until early next year, Conductor’s core features would continue to work as they previously have. The exception is Conductor’s cloud service, which will shut down on November 20, after which the company will begin deleting user cloud data.\n\nMeta, which previously lagged behind in AI services, has spent the last several months trying to catch up. In August, the company launched Muse Code , its own coding agent. Meanwhile, the company’s recently launched Muse agents are seeing significant adoption, with the company recently reporting that the service had surpassed 10 million users. The company has also made a number of AI-related acquisitions over the past year, including Moltbook , the viral agent platform that made headlines.\n\nWhen you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the B",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta has acquired Conductor, an AI coding startup founded in 2024 that specializes in multi-agent software development. The platform allows users to deploy agents from third-party labs, such as OpenAI and Anthropic, into parallel, compartmentalized workspaces to manage complex software projects. Conductor founder and CEO Charlie Holtz announced the acquisition, noting that the team will join Meta’s Superintelligence Labs (MSL) to work on future interface projects, with new developments expected by early next year.\n\nFollowing the acquisition, Conductor’s cloud service is scheduled to shut down on November 20, at which point user cloud data will be deleted. Existing core features will remain operational until early 2025. This acquisition follows Meta’s recent push into AI-assisted coding, including the August launch of its Muse Code agent and the broader expansion of its Muse agent platform, which Meta claims has surpassed 10 million users. The move is part of a series of strategic AI acquisitions by Meta, including the recent purchase of the agent platform Moltbook.",
+      "takeaways": [
+        "**Acquisition Scope:** Meta acquired Conductor, a 2024 startup focused on agentic teams that deploy third-party AI models into parallel software development workspaces.",
+        "**Service Sunset:** Conductor’s cloud service will officially terminate on November 20, with all associated user data slated for deletion.",
+        "**Integration Target:** The Conductor team will join Meta’s Superintelligence Labs (MSL), reporting to leadership including Alexandr Wang and Nat Friedman.",
+        "**Meta AI Growth:** Meta’s internal Muse agent platform has reached over 10 million users, complementing the company's August release of the Muse Code coding agent."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "f87f6451c4d69f0f",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/financial-services-forrester-research-ai-predictions-thecube/",
+    "title": "Research prediction: Shift from digital banking to AI-driven finance will transform financial services in 2027",
+    "publishedAt": "2026-11-04T20:40:44.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "154e297bb6becbca",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Mark Albertson",
+    "contentSnippet": "UPDATED 15:40 EST / NOVEMBER 04 2026\n\nResearch prediction: Shift from digital banking to AI-driven finance will transform financial services in 2027\n\nThe coming year will signal an abrupt transition from digital banking to intelligent finance, as AI agents and operating models reshape the ways that financial firms acquire customers and provide advice.\n\nThis is the central thesis of a new Forrester Research report , “Predictions 2027: Banking and Investing.” The findings were summarized from data involving 915 respondents in the U.S., U.K., and Canada.\n\nForrester identified several key points of transition. These included fundamental changes through automation in financial discovery and guidance journeys, as well as a belief that although one-third of banks will announce an AI transformation program, only 5% will succeed.\n\n“In 2027, financial services will enter a new phase in which intelligence becomes the primary source of value creation,” said Forrester researchers in the report. “AI assistants are reshaping how customers discover, evaluate and act on financial products; investment participation is expanding despite persistent economic anxiety; and banks are racing to determine whether AI will merely enhance existing operations or fundamentally transform them.”\n\nScaling AI for financial services\n\nForrester’s prediction of a 5% success rate is based on a belief that many banks will rebrand existing AI initiatives as AI-native without significant changes in operational infrastructure. Retention of legacy processes and operating models will prevent an ability to scale AI deployment, a fundamental requirement that AI technology providers such as Dell Technologies Inc. are emphasizing to their clients in the financial services world.\n\n“Ultimately, I think we’ve enough proof points now that AI works and it works really well and it gives you speed and efficiency in your company,” according to David Kennedy , chief financial officer of Dell, during a recent interview with theCUBE, SiliconANGLE Media’s livestreaming studio. “The question is, can you do that at scale?”\n\nOne way that financial institutions will pursue scale is through mergers and acquisitions. Forrester predicts that AI banking technology M&A will increase by 50% in 2027. Acquisition of proprietary data assets, governance capabilities, and AI-native orchestration will require an ability to navigate h",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Forrester Research’s \"Predictions 2027: Banking and Investing\" report, based on data from 915 respondents across the U.S., U.K., and Canada, forecasts a transition from digital banking to AI-driven finance. The report predicts that while 33% of banks will announce AI transformation programs in 2027, only 5% are expected to succeed. This low success rate is attributed to the tendency of institutions to rebrand existing initiatives as \"AI-native\" without updating legacy infrastructure or operational models, which Forrester identifies as a critical barrier to scaling AI deployment.\n\nTo achieve scale, Forrester anticipates a 50% increase in AI banking technology mergers and acquisitions in 2027, driven by the need for proprietary data assets and AI-native orchestration. Concurrently, 40% of banks are expected to launch AI assistants next year. Industry leaders from Dell Technologies Inc. and Advanced Micro Devices Inc. emphasize that competitive advantage will not stem from the models themselves, but from the integration of proprietary knowledge and the ability to host open-weight models in hybrid, on-premises environments to maintain data sovereignty.",
+      "takeaways": [
+        "**Success Rate Forecast:** Only 5% of banks announcing AI transformation programs in 2027 are projected to succeed due to reliance on legacy processes.",
+        "**M&A Activity:** AI banking technology mergers and acquisitions are predicted to rise by 50% in 2027 as firms seek proprietary data and governance capabilities.",
+        "**AI Assistant Adoption:** 40% of banks are expected to launch AI assistants in 2027 to facilitate customer discovery and financial guidance.",
+        "**Strategic Moats:** Dell CTO John Roese identifies proprietary institutional knowledge, rather than specific models or tools, as the primary competitive moat for financial firms.",
+        "**Infrastructure Requirements:** AMD and Dell emphasize that scaling AI requires hybrid computing environments capable of hosting open-weight models on-premises."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "97689e4470033f7c",
+    "canonicalUrl": "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system",
+    "title": "Gemini for Home now plugs into AT&T’s smart security system",
+    "publishedAt": "2026-11-04T20:23:24.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.839Z",
+    "contentHash": "94ddc7bdc17ebdb5",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "AT&T’s smart home security system now integrates with Gemini for Home. The company says its Connected Life system is the “first” home security product to integrate with Google Home Premium, enabling a bunch of Gemini-powered features that can summarize home events, search your video history, and more. With the update, Gemini for Home can provide detailed descriptions about events captured by your security cameras, such as who delivered a package and how many items they dropped off. You can also search recorded video footage using natural language questions, like “What dug up the yard last night?” or “Who let the dogs out?”, as well as review daily summaries of activity in and outside your home. These features are only available with AT&T’s professional $29.99 / month Connected Life monitoring plan. AT&T is also adding the ability to automatically arm or disarm your home based on your proximity to your home. AT&T launched its Connected Life system last December in partnership with Google and Abode. It’s now taking advantage of Google’s Gemini-powered Home APIs, which allow smart home brands and developers to build AI-powered features into their devices. ADT has also hinted at bringing Gemini for Home features into its security systems.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/att-connected-life.webp?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AT&T has integrated Google's Gemini for Home into its Connected Life smart home security system, making it the first home security product to incorporate Google Home Premium. The integration leverages Google's Gemini-powered Home APIs, which allow smart home brands and developers to embed AI capabilities directly into their device ecosystems.\n\nThe Gemini integration introduces several natural language and video analysis features, including detailed event descriptions for security cameras—such as identifying package deliveries and item counts—natural language video history searches like \"What dug up the yard last night?\" or \"Who let the dogs out?\", and automated daily activity summaries. Additionally, AT&T is introducing location-based automatic arming and disarming tied to user proximity.\n\nThe new features are restricted to AT&T's professional Connected Life monitoring plan, priced at $29.99 per month. The Connected Life system originally launched in December through a partnership between AT&T, Google, and Abode. Meanwhile, competitor ADT has also hinted at future integration of Gemini for Home features into its own security offerings.",
+      "takeaways": [
+        "**First Integration:** AT&T's Connected Life system is the initial home security product to integrate with Google Home Premium using Google's Gemini-powered Home APIs.",
+        "**Pricing Tier:** The Gemini-powered features require AT&T's professional Connected Life monitoring plan, which costs $29.99 per month.",
+        "**Natural Language Search:** Users can query recorded video footage using conversational prompts such as \"What dug up the yard last night?\" or \"Who let the dogs out?\".",
+        "**Granular Video Analysis:** Gemini for Home provides detailed event descriptions, including specific details like who delivered a package and the exact number of items dropped off.",
+        "**Automated Proximity Control:** AT&T added functionality to automatically arm or disarm the home security system based on the user's physical proximity to the residence."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9079f158fbfa1d9d",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/real-application-testing-keeps-ai-driven-security-patches-safe-oracleaiworld/",
+    "title": "Oracle connects AI-driven testing with a new approach to database security",
+    "publishedAt": "2026-11-04T20:22:54.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "79132e3665d1b894",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Jonathan Anthony",
+    "contentSnippet": "UPDATED 15:22 EST / NOVEMBER 04 2026\n\nOracle connects AI-driven testing with a new approach to database security\n\nFrontier AI models that uncover software flaws by the hundreds are forcing database providers into larger, faster patch cycles, and real application testing is becoming the safeguard that keeps those fixes from breaking production systems. The same AI wave is also undermining security rules written into applications.\n\nOracle Corp. has responded on two fronts, hardening its code against outside attackers while moving agent controls down to the data layer . The first effort began when the company turned an early-access frontier model on its own software, according to Juan Loaiza (pictured), executive vice president of Oracle Database Technologies at Oracle.\n\n“Back in March, we got early access to the Mythos model and we ran it against our code and it started finding all these security vulnerabilities,” Loaiza said. “It’s turning up some very serious security issues. And so we said, ‘Hey, this is a code red moment. The house is on fire.'”\n\nLoaiza spoke with theCUBE Research’s Dave Vellante at Oracle AI World , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed why AI-discovered vulnerabilities, AI-generated code and AI agents require enterprises to treat security as a data problem. (* Disclosure below.)\n\nReal application testing meets bigger, faster patches\n\nMost of Oracle’s response to AI-discovered vulnerabilities is landing in its regular quarterly patches, which have grown much larger as a result, Loaiza explained. A quarterly security update earlier this year addressed more than 1,400 vulnerabilities across the company’s portfolio. Customers must automate patching and stay current, but every large patch raises fears of regression in systems that cannot fail.\n\n“We have something called Real Application Testing where we can capture real workload and run it to make sure that your workload is not affected by these patches,” Loaiza said. “It’s not quite as simple as just apply because the applications that people run are extraordinarily complex. They run entire countries, entire industries.”\n\nPatching handles outside attackers. Internal AI use is a separate threat, because applications have traditionally enforced end-user security, and AI now writes much of that code or goes straight to the data. Orac",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Oracle Corp. executive vice president Juan Loaiza revealed at Oracle AI World that the company used early access to a frontier AI model named \"Mythos\" in March to scan its codebase, uncovering severe security vulnerabilities that triggered a \"code red\" internal response and drastically larger quarterly security updates, such as one patching over 1,400 vulnerabilities.\n\nTo mitigate the risk of regressions caused by massive, rapid patching schedules, Oracle emphasizes its Real Application Testing tool to capture and run production workloads against proposed updates. Simultaneously, the proliferation of AI-generated code and autonomous agents bypassing traditional application-level security has forced Oracle to move access controls and business logic down to the data layer via its Deep Data Security offering, which shipped in April.\n\nDeep Data Security passes an authenticated user's identity as an encrypted token to the database, enforcing authorization controls across remote databases, lakehouse data, and related tables. Additionally, Oracle introduced declarative business rules and SQL Assertions to ensure AI agents cannot bypass core operational constraints like credit limits regardless of the access mechanism.",
+      "takeaways": [
+        "**Mythos Model Impact:** Oracle utilized early access to a frontier AI model called Mythos starting in March, which uncovered serious security vulnerabilities across Oracle's software code.",
+        "**Expanded Patch Sizes:** Accelerated vulnerability discovery led to substantially larger quarterly security patches, with one recent update addressing more than 1,400 vulnerabilities.",
+        "**Real Application Testing:** Oracle relies on its Real Application Testing system to capture real customer workloads and prevent production failures during complex, automated patch cycles.",
+        "**Deep Data Security Deployment:** Launched in April, Oracle's Deep Data Security passes an authenticated user's identity as an encrypted token down to the database layer to restrict AI agents from leaking or seeing unauthorized data.",
+        "**Declarative SQL Assertions:** Oracle implemented declarative business rules and SQL Assertions to enforce operational limits (such as credit card charges) directly within the data layer, preventing AI agents from circumventing application rules."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "adc1173412592d2e",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/vibe-coding-meets-governance-apexlang-abstraction-oracleaiworld/",
+    "title": "As AI takes over coding, Oracle rethinks how applications are built",
+    "publishedAt": "2026-11-04T19:57:50.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "ef1bed3392aad963",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Jonathan Anthony",
+    "contentSnippet": "UPDATED 14:57 EST / NOVEMBER 04 2026\n\nAs AI takes over coding, Oracle rethinks how applications are built\n\nAs vibe coding moves from novelty to everyday practice, enterprises face a new problem: Machine-generated software still has to be maintained, governed and understood by people.\n\nLow-code platforms were built to speed up application development, and AI is now rewriting that mission. Oracle Corp. previewed its answer ahead of its annual conference, and the tipping point for software development has already arrived, according to Mike Hichwa (pictured), senior vice president of software engineering at Oracle.\n\n“In 2025, the majority of code was human-authored, and in 2026 and forever afterwards, the majority of code is going to be machine-generated,” Hichwa said. “We’re probably not going back. What we’ve done to address this change is we invented our own language. We call it APEXlang.”\n\nHichwa spoke with theCUBE Research’s Dave Vellante at Oracle AI World , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed vibe coding and the need to maintain and govern AI-generated code. (* Disclosure below.)\n\nVibe coding meets enterprise governance\n\nAPEXlang is a highly abstracted application definition language that captures intent rather than implementation. Oracle introduced it with the APEX AI Application Generator and is publishing its grammar, skills and documentation in the public domain so coding agents such as Anthropic PBC’s Claude and OpenAI Group PBC’s Codex can generate it. Oracle is also working with OpenAI to train models to generate the language more efficiently, Hichwa explained.\n\n“What you’re generating actually matters, because once you generate it, and you generate it 100 times or 1,000 times within your enterprise, then you’re going to need to maintain it. You’re going to need to look after it,” Hichwa said. “What people want with their portfolio of applications, they want consistency, they want governance, they want ease of understanding.”\n\nGovernance comes from the runtime, too. Generated APEXlang is interpreted by the APEX engine, which Oracle patches and updates monthly, so customers don’t have to revisit what they built. The same design is meant to curb AI slop, since a compact definition is easier to read than sprawling generated code, according to Hichwa.\n\n“What we’re generating is much, much ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "UPDATED 14:57 EST / NOVEMBER 04 2026\n\nAs AI takes over coding, Oracle rethinks how applications are built\n\nAs vibe coding moves from novelty to everyday practice, enterprises face a new problem: Machine-generated software still has to be maintained, governed and understood by people.\n\nLow-code platforms were built to speed up application development, and AI is now rewriting that mission. Oracle Corp. previewed its answer ahead of its annual conference, and the tipping point for software developm",
+      "takeaways": [
+        "**New Application Language:** Oracle invented APEXlang, a highly abstracted application definition language designed to capture intent rather than implementation for machine-generated code.",
+        "**Public Domain Release:** Oracle is publishing APEXlang's grammar, skills, and documentation in the public domain to support coding agents like Anthropic's Claude and OpenAI's Codex.",
+        "**OpenAI Partnership:** Oracle is working directly with OpenAI to train models for more efficient generation of APEXlang code.",
+        "**Runtime Governance:** Generated APEXlang is interpreted by the APEX engine, which Oracle updates and patches on a monthly basis to ensure enterprise consistency and maintenance."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5346abd21f60e616",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/semantic-layer-turns-lakehouses-ai-decision-backbones-oracleaiworld/",
+    "title": "Oracle rethinks the lakehouse as AI agents become data consumers",
+    "publishedAt": "2026-11-04T19:39:13.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "a8a5421e6008de98",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Ryan Stevens",
+    "contentSnippet": "UPDATED 14:39 EST / NOVEMBER 04 2026\n\nOracle rethinks the lakehouse as AI agents become data consumers\n\nA shared semantic layer is fast becoming the dividing line between lakehouses built for reporting and those built for artificial intelligence.\n\nAs AI agents join human analysts in querying corporate data, enterprises need platforms that make sense of information scattered across clouds, formats and rival systems. Oracle Corp. has spent the past year rebuilding its data stack around that shift, part of a broader database modernization push . The company now pitches its Autonomous AI Lakehouse as an open layer that sits across an enterprise’s existing data estate rather than replacing it, according to Nipun Agarwal (pictured), senior vice president of software engineering, Oracle Database, at Oracle.\n\n“Lakehouses were the platform which customers use for running analytics,” Agarwal said. “Now, lakehouses have become the decision backbone for AI.”\n\nAgarwal spoke with theCUBE’s Dave Vellante at Oracle AI World , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how Oracle’s Autonomous AI Lakehouse combines a shared semantic layer with fast, real-time access to data across platforms to support AI agents. (* Disclosure below.)\n\nBuilding an open semantic layer across catalogs\n\nOracle’s approach rests on a catalog that can mount other catalogs, such as Databricks Inc.’s Unity Catalog, along with Postgres and MySQL databases, so data is queried in place rather than copied. The company announced a business semantic layer and broader Apache Iceberg support at the October event, with table and column descriptions the system generates applying to non-Oracle sources as well, according to Agarwal. Crucially, Oracle does not see the offering as competing with other lakehouses, he added.\n\n“We really believe that for any enterprise, they’re gonna have a choice,” he said. “They’re gonna be using multiple data sources. They’ll have multiple lakehouses.”\n\nOracle’s Lake Cache speeds up queries by moving the most-used Iceberg tables into Exadata’s flash cache. Real-time access is also becoming essential as software agents become the main consumers of the data: Scheduled refreshes of copied data can fall short when agents request it on demand, according to Agarwal.\n\n“With AI that’s no longer the case, because for AI, the consumer ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Oracle Corp. has repositioned its data architecture around the emergence of AI agents as primary data consumers, introducing the Autonomous AI Lakehouse at Oracle AI World 2026. According to Nipun Agarwal, senior vice president of software engineering for Oracle Database, the platform acts as an open layer spanning an enterprise's existing data estate rather than forcing data replication or replacement.\n\nThe technical architecture relies on an open catalog capable of mounting external catalogs—such as Databricks Unity Catalog, Postgres, and MySQL databases—to allow in-place querying. Announced features include a business semantic layer and expanded Apache Iceberg support, enabling system-generated table and column descriptions to apply across non-Oracle sources. To handle the high-frequency demands of autonomous software agents, Oracle implemented Lake Cache, which accelerates queries by moving heavily used Iceberg tables directly into Exadata's flash cache.",
+      "takeaways": [
+        "**Open Catalog Integration:** Oracle's catalog can mount external data sources including Databricks Unity Catalog, Postgres, and MySQL databases to query data in place.",
+        "**Lake Cache Architecture:** Oracle's Lake Cache accelerates queries by moving frequently accessed Apache Iceberg tables into Exadata's flash cache.",
+        "**Semantic Layer Automation:** The platform features a business semantic layer and automated table and column descriptions that apply to non-Oracle data sources."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5112f3d519822a57",
+    "canonicalUrl": "https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits/",
+    "title": "Open source AI is booming. Hugging Face explains who profits.",
+    "publishedAt": "2026-11-04T19:30:04.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.838Z",
+    "contentHash": "90591cb2c87c7185",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Theresa Loconsolo",
+    "contentSnippet": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up?\n\nOn this episode of TechCrunch’s Equity podcast, Rebecca Bellan caught up with Irene Solaiman , Chief Policy Officer and SVP of Strategy at Hugging Face, about what startups need to know before building on open models, from choosing the right tools and infrastructure to navigating the trade-offs shaping the future of open AI.\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio November 4 Boston Buy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nNew York City’s Mamdani criticizes Madison Square Garden owner over surveillance tech Zack Whittaker\n\nAnthropic warns that it’s very close to RSI capability, aka self-building AI Julie Bort\n\nNew York Times and other outlets sue web browser Brave over alleged content scraping Rebecca Bellan\n\nAnthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says Lucas Ropek\n\nGoogle’s first data center satellite is online and writing poetry Tim Fernholz\n\nBinance pauses withdrawals as hackers suspected of stealing billions in crypto Zack Whittaker\n\nAs search traffic dries up, Reddit announces it’s shifting to a logged-in experience Sarah Perez\n\nSubscribe for the industry’s biggest tech news\n\n<img width=\"563\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2026/01/TC-All-Stage-2025-Breakout-QA.jpg?w=563\" c",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "In this episode of TechCrunch’s Equity podcast, host Rebecca Bellan interviews Irene Solaiman, Chief Policy Officer and SVP of Strategy at Hugging Face, to discuss the economic and strategic landscape of open-source artificial intelligence. The discussion examines how enterprises, startups, and governments leverage open models for lower costs, greater flexibility, and enhanced control, while addressing how companies capture commercial value in an environment where freely available models are proliferating and Chinese open-source releases are gaining ground.\n\nThe podcast episode covers essential considerations for founders and developers building on open-source infrastructure, including tool selection, managing trade-offs, and navigating the evolving global competitive dynamics between American and international AI developers.",
+      "takeaways": [
+        "**Podcast Source:** The discussion is featured on TechCrunch's Equity podcast, hosted by Rebecca Bellan.",
+        "**Featured Executive:** Irene Solaiman serves as the Chief Policy Officer and SVP of Strategy at Hugging Face.",
+        "**Core Themes:** The episode explores how startups capture value from open-source models, navigate infrastructure choices, and address the rise of competitive Chinese open models."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e582a56b9edebbe8",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/",
+    "title": "DuckDuckGo pitches itself to schools amid backlash over Google’s AI policy",
+    "publishedAt": "2026-11-04T19:29:52.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.838Z",
+    "contentHash": "0cdf4a92744e38cf",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "DuckDuckGo is pitching itself to schools after Google created an opening for the alternative search engine. On Tuesday, Google told schools they could turn off Gemini , but it said shutting off its other AI features would cost schools Google Search , as well.\n\nDuckDuckGo, a company that focuses on user privacy by limiting data collection, clearly sees this as a moment to make inroads in education, where Google has historically dominated. According to figures Google has published in previous years, there are around 50 million Chromebooks in schools, used by students and educators, and its Google Classroom platform serves over 150 million users globally.\n\nOn X , DuckDuckGo’s founder and CEO, Gabriel Weinberg, pointed to the company’s online documentation , explaining how schools can switch their default search engine to DuckDuckGo’s service instead, adding, “get in touch for help.”\n\nMeanwhile, DuckDuckGo’s chief public affairs officer, Kamyl Bazbaz, issued a stronger statement, writing , “Forcing AI on school children: how a monopolist behaves when they think people are powerless. Prove Google wrong.”\n\nForcing AI on school children: how a monopolist behaves when they think people are powerless. Prove Google wrong. https://t.co/Ta6ibmFdb9\n\nIn an email to TechCrunch, DuckDuckGo chastised Google for its decision, adding that Google could easily turn off Search’s AI features for schools if it wanted to.\n\nThe company’s comments come as the American public is weighing how much AI they want to allow into their lives. As Tuesday night’s elections indicate, they don’t want AI data centers built in their towns. But using AI at work and school has become a common practice and requires a more nuanced discussion.\n\nKnowing that educators have struggled with AI, Google developed technology called “ Guided Learning ” that is meant to help kids learn by walking through problem-solving steps rather than just providing them with an answer. But educators are still asking for tools that let them remove AI from the learning process altogether.\n\nAfter the backlash on Tuesday, Google defended its decision, saying it was just responding to schools’ feedback. It said that Gemini, Gemini Notebook, and Search would be off by default, and schools could choose to enable them individually.\n\nWe want to clarify what we announced today about our education services. Today’s announcements give s",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "DuckDuckGo is actively targeting the K-12 education market, positioning its privacy-focused search engine as an alternative to Google Workspace for Education. This push follows Google’s recent policy update, which mandates that schools opting to disable Gemini AI features must also forfeit access to Google Search. DuckDuckGo CEO Gabriel Weinberg and Chief Public Affairs Officer Kamyl Bazbaz have publicly criticized Google’s bundling strategy, framing it as monopolistic behavior that limits administrative control over AI integration in classrooms.\n\nWhile Google maintains that Gemini, Gemini Notebook, and AI-integrated Search are disabled by default for K-12 accounts, the company acknowledges that these features are inextricably linked to the core search experience. In contrast, DuckDuckGo emphasizes its granular control, offering users the ability to disable AI features via browser settings or through its dedicated 'noai.duckduckgo.com' portal. DuckDuckGo reports a 30% increase in app installs earlier this year, which it attributes to user demand for search experiences free from forced AI-generated content.",
+      "takeaways": [
+        "**Google Policy Constraint:** Schools wishing to disable Gemini AI features in Google Workspace are currently unable to retain standard Google Search functionality.",
+        "**DuckDuckGo Deployment:** DuckDuckGo is providing direct technical documentation and support for school administrators to switch default search engines to their platform.",
+        "**Market Scale:** Google’s education ecosystem currently supports approximately 50 million Chromebooks and over 150 million global users on Google Classroom.",
+        "**AI Opt-Out Mechanism:** DuckDuckGo offers a specific domain, noai.duckduckgo.com, which disables AI-assisted answers, image generation, and feature suggestions by default.",
+        "**Growth Metric:** DuckDuckGo reported a 30% increase in app installs earlier this year, citing user rejection of forced AI search integrations as a primary driver."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "988e33cedf7304f8",
+    "canonicalUrl": "https://www.technologyreview.com/2026/11/04/1148043/texas-was-the-new-epicenter-of-the-ai-data-center-buildout-that-might-be-kaput/",
+    "title": "Texas was the new epicenter of the AI data center buildout. That might be kaput.",
+    "publishedAt": "2026-11-04T18:50:55.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.839Z",
+    "contentHash": "1e6aa7f639af52dc",
+    "sourceId": "mit-tech-ai",
+    "sourceName": "MIT Technology Review",
+    "author": "James O'Donnell",
+    "contentSnippet": "Texas is the fastest-growing data center market in the US and ground zero for Big Tech’s largest AI buildouts. But the blue wave that swept the Lone Star State may jeopardize that position. Democrat James Talarico won the US Senate seat against Ken Paxton. Gina Hinojosa won the race for governor against the Republican incumbent, Greg Abbott. At the state level, Democrats will take control of the Texas House for the first time in 24 years. Talarico and Hinojosa made data centers a central issue, discussing them constantly on the campaign trail. Even before the polls closed, insiders in the data center industry noticed that the times were changing. At the industry’s DCD conference in Ashburn, Virginia, on Tuesday, panelists lamented that Texas had been the easiest place to build for years—until September. That’s when Abbott, perhaps seeing the increasingly bipartisan distaste for these facilities , began changing course himself.  Developers said the governor’s office had stopped responding to their emails. On September 21, Abbott directed a key state regulator to halt data center permits. Many panelists at the conference were expecting this to mean that existing projects might be slowed and new ones could be halted altogether.  The governor-elect indeed seems eager to do that. Hinojosa supported tax breaks for data centers in 2023 as a way to boost construction jobs, but during her campaign she began pushing for a full-fledged moratorium. That would be a problem for the hyperscalers of Big Tech, which have ambitious plans for AI training facilities in the state. The scale of projects already underway in Texas is massive. The Stargate Frontier data center in Shackelford County is projected to serve 1,820 megawatts—about as much as the nation’s largest data center, SpaceX’s Colossus 2 in Tennessee, and more than twice as much as the largest data center currently operating in Texas. Nexus Hubbard, also under construction and intended mostly to serve Anthropic, has a planned size of 6,400 megawatts and is the second-largest data center being built in the US, behind only Meta’s Hyperion project in Louisiana.  The potential for Democrats to order delays to these projects or moratoriums on new ones adds to growing anxiety that the AI buildout could stall. Banks and lenders are already getting pickier about the projects they back. And given the extent to which the dat",
+    "category": "Ethics & Policy",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Texas, previously the fastest-growing data center market and primary hub for Big Tech AI buildouts, faces a potential halt to its expansion following a sweeping political shift. Democrats James Talarico and Gina Hinojosa won the US Senate and gubernatorial races respectively, while Democrats took control of the Texas House for the first time in 24 years. Both candidates made data centers a central campaign issue, pushing back against the facilities amid mounting bipartisan distaste that also prompted outgoing Republican Governor Greg Abbott to direct a state regulator to halt data center permits on September 21.\n\nThis political pivot threatens massive hyperscale AI projects currently underway in the state, including the Stargate Frontier data center in Shackelford County projected at 1,820 megawatts—comparable to SpaceX's Colossus 2 in Tennessee—and the Nexus Hubbard data center intended to serve Anthropic at a planned size of 6,400 megawatts, making it the second-largest data center under construction in the US behind Meta's Hyperion project in Louisiana. Governor-elect Hinojosa campaigned on a full-fledged moratorium on data centers, diverging from her prior support for tax breaks in 2023, while lenders and banks simultaneously grow more selective in backing these capital-intensive facilities.",
+      "takeaways": [
+        "**Political Shift:** Democrat Gina Hinojosa won the gubernatorial race against Greg Abbott, James Talarico won the US Senate seat, and Democrats took control of the Texas House for the first time in 24 years.",
+        "**Permit Halt:** Outgoing Governor Greg Abbott directed a key state regulator to halt data center permits on September 21 following growing bipartisan distaste and halted email correspondence with developers.",
+        "**Stargate Frontier Project:** A massive AI facility under construction in Shackelford County, Texas, projected to serve 1,820 megawatts.",
+        "**Nexus Hubbard Project:** A planned 6,400-megawatt data center intended primarily to serve Anthropic, ranking as the second-largest data center under construction in the US behind Meta's Hyperion project."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "235d09d647e4c22a",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/",
+    "title": "Use decision models with Amazon Bedrock AgentCore Evaluations",
+    "publishedAt": "2026-11-04T18:46:36.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.051Z",
+    "contentHash": "f7573d6b53ab82b4",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Sungyeon Kim",
+    "contentSnippet": "Some of the questions you ask when evaluating an agent are narrow and repeatable. Did this response stay on policy? Is this tool call safe to approve? Does this answer match the retrieved context? Decision models answer exactly that kind of question. They take a structured state and a fixed set of allowed answers and return a calibrated probability over them, rather than free-form text whose confidence drifts from run to run. That makes them a strong fit for the scoring step in an agent evaluation, where you want a label and a number you can threshold and trust. Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, scores an agent through its entire lifecycle, on demand during development, in batch jobs against stored sessions, and online against production traffic. Alongside 15 built-in evaluators, AgentCore Evaluations supports custom evaluators that you define as either an LLM-as-a-judge or a code-based evaluator. Custom LLM-as-a-judge evaluators apply your instructions and rating scale with a model in Amazon Bedrock. Code-based evaluators run your own logic in an AWS Lambda function, and that logic can call your choice of external system, model, or API, including a decision model. Decision models suit questions with a fixed set of answers that an informed person could decide at a glance, such as whether the agent refused a request or whether a response stayed on topic. After you validate a question on your own traffic, a decision model can be sufficient for that decision or score, and you can extend the same approach to specific harmfulness or stereotyping categories in your policy. Because both backends can answer several questions about the same state in a single request, you can use them as a screening layer rather than a replacement, running a pass or fail signal across your metrics to select the turns that warrant deeper assessment by the built-in evaluators, whose explanations help you investigate what went wrong. This post shows how to connect two decision model backends to AgentCore Evaluations through code-based evaluators. The first is Jev , a hosted decision model from TypeSafe. The second is Strands Decider 2B , an open-source decision model you run yourself. By the end of this post, you will know how to convert the AgentCore evaluator input into a decision model request, and the model’s probabilities back into an A",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/04/ML-22136-1.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon Bedrock AgentCore Evaluations has introduced support for decision models as a specialized scoring mechanism for agent evaluation. Unlike standard LLM-as-a-judge approaches that generate free-form text, decision models operate on structured states and a fixed set of allowed answers to return calibrated probabilities. This methodology is designed for narrow, repeatable evaluation tasks—such as policy adherence, tool call safety, and context relevance—where consistent, thresholdable numerical scores are required for reliable agent monitoring across development, batch processing, and production traffic.\n\nIntegration is achieved through the platform's custom code-based evaluator framework, which executes logic via AWS Lambda functions. These functions can interface with external decision model backends to process agent turns. The system allows for a tiered evaluation architecture: decision models act as a high-throughput screening layer to filter turns, while built-in evaluators are reserved for deeper analysis of flagged issues. The documentation highlights two specific implementations: Jev, a hosted decision model from TypeSafe, and Strands Decider 2B, an open-source model that can be self-hosted.",
+      "takeaways": [
+        "**Evaluation Architecture:** Amazon Bedrock AgentCore Evaluations supports 15 built-in evaluators alongside custom LLM-as-a-judge and code-based evaluators.",
+        "**Decision Model Utility:** Decision models provide calibrated probabilities over fixed answer sets, replacing variable free-form text outputs for consistent thresholding.",
+        "**Implementation Method:** Custom evaluators utilize AWS Lambda functions to bridge AgentCore inputs with external decision model APIs or self-hosted models.",
+        "**Tiered Screening:** Decision models can function as a pre-filter to identify specific turns requiring further investigation by more complex built-in evaluators.",
+        "**Supported Models:** The framework supports integration with TypeSafe's Jev (hosted) and Strands Decider 2B (open-source)."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "efff75d2c4af86e8",
+    "canonicalUrl": "https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs/",
+    "title": "Building on open source AI? Hugging Face’s policy chief on the costs, risks, and trade-offs",
+    "publishedAt": "2026-11-04T18:44:57.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.838Z",
+    "contentHash": "90591cb2c87c7185",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Theresa Loconsolo, Rebecca Bellan",
+    "contentSnippet": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up?\n\nOn this episode of TechCrunch’s Equity podcast, Rebecca Bellan caught up with Irene Solaiman , Chief Policy Officer and SVP of Strategy at Hugging Face, about what startups need to know before building on open models, from choosing the right tools and infrastructure to navigating the trade-offs shaping the future of open AI.\n\nListen to the full episode to hear about:\n\nWhy startups, enterprises, and governments are switching to open AI models to cut costs, and when it makes less sense to use the most powerful models.\n\nWho makes money when the models are free to use, and whether the companies building them can capture the value they create.\n\nWhy the U.S. may need deep-pocketed players like Nvidia to build an open frontier model that can compete with China’s, and what’s at stake if Chinese models become the global default.\n\nHow recent attacks on open AI platforms are raising a difficult question: how do you keep an open ecosystem secure without closing it off?\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio Rebecca Bellan Senior Reporter\n\nRebecca Bellan is a senior reporter at TechCrunch where she covers the business, policy, and emerging trends shaping artificial intelligence. Her work has also appeared in Forbes, Bloomberg, The Atlantic, The Daily Beast, and other publications.\n\nYou can contact or verify outreach from Rebecca by emailing [email protected] or via encrypted message at rebeccabellan.491 on Signal.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "In an episode of TechCrunch’s Equity podcast, host Rebecca Bellan interviewed Irene Solaiman, Chief Policy Officer and SVP of Strategy at Hugging Face, to discuss the economic realities, security vulnerabilities, and strategic trade-offs of building applications on open-source AI models. The discussion focuses on why enterprises, startups, and governments are pivoting to open-source alternatives to minimize operational costs and retain infrastructure flexibility.\n\nThe conversation examines how open-source creators capture value when core models are provided for free, and highlights growing geopolitical competition as Chinese open-source models gain market share against American alternatives. Solaiman also addresses structural concerns regarding the involvement of capital-dense entities like Nvidia in funding competitive frontier open models, alongside the escalating security challenges of protecting decentralized, open ecosystems without compromising accessibility.",
+      "takeaways": [
+        "**Podcast Participants:** TechCrunch's Equity podcast featured host Rebecca Bellan interviewing Irene Solaiman, Chief Policy Officer and SVP of Strategy at Hugging Face.",
+        "**Adoption Drivers:** Enterprises, startups, and governments are increasingly turning to open-source AI models to lower operational costs, secure greater control, and avoid vendor lock-in.",
+        "**Geopolitical Dynamics:** The discussion highlighted competitive pressures from rising Chinese open-source models and the potential need for deep-pocketed U.S. actors like Nvidia to back domestic open frontier models.",
+        "**Ecosystem Security:** Recent security attacks on open AI platforms have forced the industry to weigh how to maintain open architectures without introducing severe platform vulnerabilities."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "56101ee27feec703",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1026586/nothing-screen-free-ai-device-carl-pei",
+    "title": "Nothing teases a screen-free AI device ahead of launch next month",
+    "publishedAt": "2026-11-04T18:26:07.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.839Z",
+    "contentHash": "6e5fd8ce021b812f",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Stevie Bonifield",
+    "contentSnippet": "Nothing CEO Carl Pei said in a post on X that the company’s launching its first AI device in December. That’s just a little over a year after Pei announced plans for “AI-native” devices and an AI operating system. He didn’t give away much about what exactly the new device is, only that one feature it won’t have is a screen: > “Our first AI-native product ships next month. It’s a tool, but one built with the personality and care that have come to define a Nothing product. It has no new screen, and it couldn’t have been an app.” Pei shared an image with the post that says “NOTHING(R)” in the top left corner, above an ambiguous black rounded corner. Last month, a rumor claimed Nothing is planning to launch two pairs of AI smart glasses, including one without cameras, and an earlier rumor said it’s “repositioning itself as an AI-first company” with a shift to AI accessories. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/nothingr-teaser-image-carl-pei.jpeg?quality=90&strip=all] Nothing’s AI device wouldn’t be the first screen-free AI gadget, following the likes of the Humane AI pin, the Friend, and even AI stuffed animals. OpenAI is also reportedly working on an AI smart speaker with Jony Ive. Pei alluded to earlier AI devices, saying, “the whole industry is hunting for its iPhone moment: the pendant, the pin, the glasses, the companion, some magical consumer device that makes AI part of everyone’s life.” He added, “Looking for the iPhone of AI today is a dead end.”",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/nothing-phone-4a-2.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nothing CEO Carl Pei has announced the company’s first 'AI-native' hardware product, scheduled for a December launch. The device is explicitly designed without a screen and is positioned as a tool that cannot function as a standard mobile application. Pei’s announcement follows a year-long strategic pivot toward AI-integrated hardware and operating systems, moving away from the company's previous focus on smartphone-centric hardware.\n\nWhile specific technical specifications remain undisclosed, the device enters a crowded market of screen-free AI wearables, including the Humane AI Pin, the Friend pendant, and various AI-integrated smart glasses. Pei explicitly rejected the industry-wide search for an 'iPhone of AI,' characterizing the pursuit of a singular, magical consumer device as a 'dead end.' Rumors circulating prior to the announcement suggest the company may be developing AI-enabled smart glasses, potentially including models without integrated cameras.",
+      "takeaways": [
+        "**Launch Timeline:** Nothing’s first AI-native hardware product is confirmed for release in December.",
+        "**Form Factor:** The device is confirmed to be screen-free and is described by CEO Carl Pei as a tool rather than an app-based experience.",
+        "**Strategic Pivot:** The product marks the culmination of a year-long transition for Nothing, which has been repositioning itself as an 'AI-first' company.",
+        "**Market Context:** The device competes in the screen-free AI hardware category, joining existing products like the Humane AI Pin and the Friend wearable."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "09c40cbdb75966e0",
+    "canonicalUrl": "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+    "title": "Agile Deliberation: How AI helps humans define the gray areas",
+    "publishedAt": "2026-11-04T18:07:05.000Z",
+    "fetchedAt": "2026-11-04T21:22:00.765Z",
+    "contentHash": "6bfc09feca3e4acc",
+    "sourceId": "google-research",
+    "sourceName": "Google AI Research Blog",
+    "author": "Google AI Research Blog",
+    "contentSnippet": "Data Mining & Modeling",
+    "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/AgileDeliberation1_Thumbnail.png",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Agile Deliberation: How AI helps humans define the gray areas.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "f762962d4e70678a",
+    "canonicalUrl": "https://www.theverge.com/column/1026464/optimizer-amazon-bee-frontier-ambient-listening-wearables",
+    "title": "My therapist thinks I should chuck the Amazon Bee Frontier out a window",
+    "publishedAt": "2026-11-04T18:00:00.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.839Z",
+    "contentHash": "03283b0283da4e4f",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Victoria Song",
+    "contentSnippet": "Also, can I just say this LED indicator light is way too small and unnoticeable? This is Optimizer , a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here . \"How does that make you feel?\" I get asked this a lot in therapy. Plenty of life events, big and small, have triggered this question. Three weeks ago, it was the fact that I had to ask my therapist for her consent because I was wearing the Amazon Bee Frontier during our session. That first week, I didn't really have an answer. A lot had changed since I first tested Bee , an always-recording AI wearable, early last year. The ele … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/268817_Bee_Frontier_AKrales_0098.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Also, can I just say this LED indicator light is way too small and unnoticeable? This is Optimizer , a weekly newsletter sent from Verge senior reviewer Victoria Song that dissects and discusses the latest gizmos and potions that swear they're going to change your life. Opt in for Optimizer here .\n\n\"How does that make you feel?\" I get asked this a lot in therapy. Plenty of life events, big and small, have triggered this question. Three weeks ago, it was the fact that I had to ask my therapist for her consent because I was wearing the Amazon Bee Frontier during our session.",
+      "takeaways": [
+        "That first week, I didn't really have an answer.",
+        "A lot had changed since I first tested Bee , an always-recording AI wearable, early last year.",
+        "The ele … Read the full story at The Verge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "7e4f7adddfbaac34",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1026474/openai-chatgpt-animated-gifs-images-2-6",
+    "title": "ChatGPT will now make you animated GIFs",
+    "publishedAt": "2026-11-04T18:00:00.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.839Z",
+    "contentHash": "b19d9a0fa0e030ac",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "ChatGPT can now create GIFs using a prompt or a photo uploaded to the AI chatbot. The update, which is rolling out alongside OpenAI's new Images 2.6 model, allows you to adjust the GIF's animation speed, edit individual frames, and share it with others. Before this change, ChatGPT couldn't natively generate GIFs in a single step. An example shared by the company shows how ChatGPT can generate a GIF in response to the prompt, \"can you make a gif of a cat dancing?\" while also providing you with the option to change the playback speed and view it frame by frame. Along with support for GIF-making, the Images 2.6 update also enables faster imag … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/STK155_OPEN_AI_CVirginia__C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "ChatGPT can now create GIFs using a prompt or a photo uploaded to the AI chatbot. The update, which is rolling out alongside OpenAI's new Images 2.6 model, allows you to adjust the GIF's animation speed, edit individual frames, and share it with others. Before this change, ChatGPT couldn't natively generate GIFs in a single step.",
+      "takeaways": [
+        "An example shared by the company shows how ChatGPT can generate a GIF in response to the prompt, \"can you make a gif of a cat dancing?\" while also providing you with the option to change the playback speed and view it frame by frame.",
+        "Along with support for GIF-making, the Images 2.6 update also enables faster imag … Read the full story at The Verge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "32d4e91d243ef07f",
+    "canonicalUrl": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+    "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+    "publishedAt": "2026-11-04T17:50:10.000Z",
+    "fetchedAt": "2026-11-04T21:22:00.766Z",
+    "contentHash": "e8d90eea6d255648",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "ef0e90236814fadb",
     "canonicalUrl": "https://techcrunch.com/2026/11/04/i-tried-apples-siri-recaps-theyre-surprisingly-useful-and-a-little-unsettling/",
     "title": "I tried Apple’s Siri Recaps. They’re surprisingly useful — and a little unsettling",
@@ -72,8 +540,8 @@
         "Security leaders retain control over which actions must always go to a person, while Smart Approvals is designed to reduce unnecessary interruptions in routine work.",
         "Figure 1: Policy determines eligibility."
       ],
-      "impact": "Medium",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -100,7 +568,7 @@
         "Post series Part 1: 5 production challenges in multi-agent systems and how Deep Insight solved them."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -128,7 +596,7 @@
         "Trusted by the world’s top 20 biopharma companies, Indegene helps run complex, highly regulated workflows at global scale."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -155,8 +623,8 @@
         "All of that happens across multiple systems, before drafting a single word of response.",
         "And when that fails, the ticket escalates to backend IT teams and the subscriber waits even longer."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -211,19 +679,19 @@
   {
     "id": "667daba42088dce4",
     "canonicalUrl": "https://siliconangle.com/2026/11/04/tencent-releases-hy4-powerful-frontier-llm-introducing-visual-understanding-and-computer-use/",
-    "title": "Tencent releases Hy4, powerful frontier LLM introducing visual understanding and computer use",
+    "title": "Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use",
     "publishedAt": "2026-11-04T16:05:47.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.993Z",
-    "contentHash": "6a48bd17e4bb40c7",
+    "fetchedAt": "2026-11-04T21:21:59.488Z",
+    "contentHash": "24fc0a2dc8f6cb24",
     "sourceId": "siliconangle-ai",
     "sourceName": "SiliconANGLE AI",
     "author": "Kyt Dotson",
-    "contentSnippet": "Tencent Holdings Ltd. today introduced Hy4, a new large language model that adds computer-use capabilities for the first time, using advanced visual understanding, reasoning and tool-calling to deliver long-horizon agentic performance. The company said the model marks a significant leap in performance over its Hy4 Preview, which arrived August 28, weighing in at 770 billion parameters with 49 […] The post Tencent releases Hy4, powerful frontier LLM introducing visual understanding and computer use appeared first on SiliconANGLE .",
+    "contentSnippet": "Tencent Holdings Ltd. today introduced Hy4, a new large language model that adds computer-use capabilities for the first time, using advanced visual understanding, reasoning and tool-calling to deliver long-horizon agentic performance. The company said the model marks a significant leap in performance over its Hy4 Preview, which arrived Aug. 28, weighing in at 770 billion parameters with 49 […] The post Tencent releases Hy4, a powerful frontier AI model introducing visual understanding and computer use appeared first on SiliconANGLE .",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Today introduced Hy4, a new large language model that adds computer-use capabilities for the first time, using advanced visual understanding, reasoning and tool-calling to deliver long-horizon agentic performance. The company said the model marks a significant leap in performance over its Hy4 Preview, which arrived August 28, weighing in at 770 billion parameters with 49 ...",
+      "tldr": "Today introduced Hy4, a new large language model that adds computer-use capabilities for the first time, using advanced visual understanding, reasoning and tool-calling to deliver long-horizon agentic performance. The company said the model marks a significant leap in performance over its Hy4 Preview, which arrived Aug. 28, weighing in at 770 billion parameters with 49 ...",
       "takeaways": [],
       "impact": "Breakthrough",
       "readTimeMinutes": 1,
@@ -277,6 +745,28 @@
         "This is the first time that Uber has disclosed the number of third-party AI agents that have arranged deliveries or rides on its platform.",
         "With the rise of AI agents like Meta's Muse or OpenAI's Dots, some experts are predictin … Read the full story at The Verge."
       ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "6b1c4708310c50a0",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/4/datasette-llm/",
+    "title": "datasette-llm 0.1a10",
+    "publishedAt": "2026-11-04T15:26:02.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.489Z",
+    "contentHash": "fe8b9fb8b4c14249",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration. Tags: datasette , llm",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: datasette-llm 0.1a10 Fixes a bug that affected my agent.datasette.io demo site, where the set of available LLM models was not correctly restricted to just those in the configuration.",
+      "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
@@ -2160,6 +2650,31 @@
     }
   },
   {
+    "id": "8265b69742e725ba",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/4/datasette-apps/",
+    "title": "datasette-apps 0.3a0",
+    "publishedAt": "2026-11-04T00:29:36.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.489Z",
+    "contentHash": "f5a5f6a9d73ceb47",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be tagged in Datasette Agent chat messages by typing # , which autocompletes from the apps the user has permission to view. New app_add_stored_queries() and app_remove_stored_queries() tools let the agent manage which stored queries an app is allowed to call. Granting a write query requires approval from the user first. app_create() now checks that each requested stored query exists and that the user can view it, and asks the user to approve any write queries before the app is created. The \"View app\" buttons shown by the agent tools, and the links on # app references, now open the app full screen in the Datasette Agent panel. Tags: datasette , datasette-agent , datasette-apps",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: datasette-apps 0.3a0 Datasette Apps adds support for hosting and editing custom HTML applications inside of Datasette. These can be created by hand, but it's easier to create them using LLMs via Datasette Agent . This release improves that integration: Apps can now be tagged in Datasette Agent chat messages by typing # , which autocompletes from the apps the user has permission to view.\n\nNew app_add_stored_queries() and app_remove_stored_queries() tools let the agent manage which stored queries an app is allowed to call. Granting a write query requires approval from the user first. App_create() now checks that each requested stored query exists and that the user can view it, and asks the user to approve any write queries before the app is created.",
+      "takeaways": [
+        "The \"View app\" buttons shown by the agent tools, and the links on # app references, now open the app full screen in the Datasette Agent panel.",
+        "Tags: datasette , datasette-agent , datasette-apps."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "9d97c8271a19f07f",
     "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
     "title": "Please stop asking me when the AI bubble will pop",
@@ -2187,6 +2702,31 @@
       "readTimeMinutes": 3,
       "generatedWith": "gemini",
       "summaryVersion": 2
+    }
+  },
+  {
+    "id": "abbb96cf14716a16",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/3/datasette-agent/",
+    "title": "datasette-agent 0.5a0",
+    "publishedAt": "2026-11-03T23:13:45.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.489Z",
+    "contentHash": "88c093a26e096bc8",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this means you can prompt a database-backed app into existence and then modify it from the chat that sits next to that app. You can try it by signing in with your GitHub account to agent.datasette.io . Tags: projects , datasette , datasette-agent",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: datasette-agent 0.5a0 This is a significant release of Datasette Agent . The most notable new feature is called the panel - it lets the agent chat open and then sit next to pages from Datasette, for example a table or query page. When combined with datasette-apps this means you can prompt a database-backed app into existence and then modify it from the chat that sits next to that app.",
+      "takeaways": [
+        "You can try it by signing in with your GitHub account to agent.datasette.io .",
+        "Tags: projects , datasette , datasette-agent."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
     }
   },
   {
@@ -2321,6 +2861,28 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Cybersecurity-focused Ballistic Ventures is seeking to raise $360 million for a new flagship fund and another $130 million for a separate investment vehicle.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "aac81467646f1d03",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/3/llm/",
+    "title": "llm 0.37.1",
+    "publishedAt": "2026-11-03T21:41:42.000Z",
+    "fetchedAt": "2026-11-04T21:21:59.489Z",
+    "contentHash": "d179206a613aa75c",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ . Tags: llm",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: llm 0.37.1 A bugfix release for LLM , with contributions from Steven Huang , Tao An , Arjan Mossel , and XQ .",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -5826,6 +6388,36 @@
     }
   },
   {
+    "id": "91803e3e1c4f3a85",
+    "canonicalUrl": "https://arxiv.org/abs/2611.04414",
+    "title": "SphereFlow: Missing Modality Imputation via Geometric Transport on Hypersphere",
+    "publishedAt": "2026-11-03T00:00:00.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.027Z",
+    "contentHash": "227d8fa26c4b4ac4",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Huihan Wang, Juncheng Wang, Yuxiang Feng, Wenlong Hou",
+    "contentSnippet": "Authors: Huihan Wang , Juncheng Wang , Yuxiang Feng , Wenlong Hou , Guoqi Yu , Chao Xu , Yang Liu , Baigui Sun , Shujun Wang\n\nAbstract: Missing modality imputation aims to synthesize unobserved modalities from observed ones. Existing methods treat each modality as living on its own latent manifold, forcing the generator to learn a long, unstructured jump between them. We present SphereFlow, which takes a fundamentally different view: by projecting all modalities into a shared hyperspherical latent space via a frozen self-supervised encoder, cross-modal imputation reduces to short-range geometric transport between nearby points on the sphere. Realizing this idea with flow matching, however, exposes two geometric conflicts: the standard Gaussian noise source is catastrophically mismatched with the unit-norm data manifold, and the linear interpolation path departs the sphere surface into a region where the decoder has no training signal. We resolve both with simple, geometry-aware modifications: replacing the noise source with the observed-modality latent so that the velocity field learns only the cross-modal displacement, and training the decoder with a time-weighted loss that extends its domain to the near-surface region traversed by the flow. We prove that this data-as-source formulation reduces the worst-case off-manifold deviation from a quantity that grows with the latent dimension to a small, dimension-independent bound governed by inter-modality similarity. Experiments on BraTS multi-modal MRI imputation and CT-MRI translation demonstrate state-of-the-art generation fidelity across all settings, while downstream brain tumor segmentation with our imputed data closes roughly eighty percent of the gap to the full-modality oracle. Code is available at this https URL .\n\nNotes: Accepted to NeurIPS 2026. 23 pages, 7 figures. Code: this https URL",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.04414",
+    "pdfUrl": "https://arxiv.org/pdf/2611.04414",
+    "summary": {
+      "tldr": "SphereFlow, a new framework for missing modality imputation accepted to NeurIPS 2026, addresses the challenge of synthesizing unobserved modalities by treating cross-modal translation as geometric transport on a hypersphere. Authored by Huihan Wang et al., the method projects modalities into a shared hyperspherical latent space using a frozen self-supervised encoder. Unlike traditional approaches that force generators to learn unstructured jumps between disparate latent manifolds, SphereFlow utilizes flow matching to perform short-range transport between points on the sphere surface.\n\nTo resolve geometric conflicts inherent in flow matching on hyperspheres, the authors replace the standard Gaussian noise source with the observed-modality latent, ensuring the velocity field focuses exclusively on cross-modal displacement. Furthermore, they implement a time-weighted loss function during decoder training to maintain signal integrity in the near-surface regions traversed by the flow. Theoretical analysis demonstrates that this formulation bounds off-manifold deviation independently of latent dimension, relying instead on inter-modality similarity. Empirical validation on BraTS multi-modal MRI imputation and CT-MRI translation tasks shows state-of-the-art fidelity, with downstream brain tumor segmentation performance recovering approximately 80% of the gap compared to a full-modality oracle.",
+      "takeaways": [
+        "**Core Methodology:** Replaces standard Gaussian noise with observed-modality latents to constrain the velocity field to cross-modal displacement.",
+        "**Geometric Innovation:** Utilizes a frozen self-supervised encoder to map modalities to a shared hyperspherical latent space, reducing imputation to short-range geometric transport.",
+        "**Performance Metric:** Achieves state-of-the-art generation fidelity on BraTS MRI and CT-MRI datasets, closing 80% of the performance gap in downstream tumor segmentation tasks.",
+        "**Theoretical Bound:** Reduces worst-case off-manifold deviation from a dimension-dependent quantity to a dimension-independent bound governed by inter-modality similarity."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "8fbbc27028afdfad",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/2/llm/",
     "title": "llm 0.37",
@@ -8196,6 +8788,37 @@
     }
   },
   {
+    "id": "a3e3c05922fb1bcb",
+    "canonicalUrl": "https://arxiv.org/abs/2611.01598",
+    "title": "QFabric: Guarded Cross-Domain Task Recovery and Its Limits on a Linux-RTOS Board",
+    "publishedAt": "2026-11-01T00:00:00.000Z",
+    "fetchedAt": "2026-11-04T21:21:58.027Z",
+    "contentHash": "528081ea1ab559e1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Ayushman Bhattacharya, Anwesha Chakraborty",
+    "contentSnippet": "Authors: Ayushman Bhattacharya , Anwesha Chakraborty\n\nAbstract: Heterogeneous embedded boards pair a Linux application processor with a real-time microcontroller (MCU), which suggests moving a task between the two domains when its timing degrades. We present QFabric, a prototype that treats cross-domain placement as guarded recovery from a violated empirical soft real-time contract: a bounded task is compiled for both domains, monitored in windows with hysteresis, switched only after semantic and capacity admission at a quiescent epoch boundary, and committed or rolled back after probation. On an Arduino UNO Q (Cortex-A53 Linux and a Cortex-M33 running Zephyr), we characterize the stock Bridge RPC interconnect and measure five workloads in both domains under idle, CPU-load, and higher-priority SCHED_FIFO contention, with ordinary and real-time callers. Each MCU invocation costs about 19 ms of dispatch regardless of compute, the MCU runs the heaviest kernel 34x slower, and because every call traverses Linux userspace, Linux contention inflates the MCU path far more than the Linux path (p99 up to 400 ms versus 17.0 ms). Across 30 cells of a four-node chain, Linux meets every contract within 0.8% misses and QFabric correctly never migrates; a controller without hysteresis migrates in 7 cells, raising p95 by up to 177x, and probation rolls back 5 of those moves. On Linux-dispatched heterogeneous boards, migration therefore cannot isolate a task from Linux interference, and recovery guards matter chiefly by preventing harmful moves. This paper supersedes an earlier artifact release whose reported improvement arose from measurement defects that we identify. All source, raw traces, and generators are public.\n\nNotes: 9 pages, 4 figures, 8 tables. Code and data: this https URL",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.01598",
+    "pdfUrl": "https://arxiv.org/pdf/2611.01598",
+    "summary": {
+      "tldr": "Ayushman Bhattacharya and Anwesha Chakraborty introduce QFabric, a framework for cross-domain task migration between Linux application processors and real-time microcontrollers (MCUs) on heterogeneous embedded boards. The system treats task migration as a guarded recovery mechanism, triggered only when a soft real-time contract is violated. QFabric utilizes a dual-compilation strategy, hysteresis-based monitoring, and a probation period to ensure that tasks are only migrated after passing semantic and capacity admission checks at quiescent epoch boundaries.\n\nTesting on an Arduino UNO Q—featuring a Cortex-A53 running Linux and a Cortex-M33 running Zephyr—revealed significant performance overheads in the stock Bridge RPC interconnect. Each MCU invocation incurs a fixed 19 ms dispatch cost, and the MCU executes the heaviest kernel 34x slower than the Linux processor. Because all calls must traverse Linux userspace, Linux-side contention disproportionately impacts the MCU path, with p99 latency reaching 400 ms compared to 17.0 ms on the Linux path. The study demonstrates that migration fails to isolate tasks from Linux interference; instead, QFabric’s primary utility lies in its 'recovery guards,' which prevent performance-degrading migrations that occur in naive controllers lacking hysteresis.",
+      "takeaways": [
+        "**Hardware Architecture:** The study utilizes an Arduino UNO Q board, pairing a Cortex-A53 Linux processor with a Cortex-M33 MCU running the Zephyr RTOS.",
+        "**Performance Metrics:** MCU invocation carries a 19 ms dispatch overhead, and the MCU processes the heaviest kernel 34x slower than the Linux core.",
+        "**Latency Impact:** Under Linux contention, the MCU path p99 latency spikes to 400 ms, significantly higher than the 17.0 ms observed on the Linux path.",
+        "**Migration Efficacy:** A controller without hysteresis migrated tasks in 7 out of 30 test cells, increasing p95 latency by up to 177x, whereas QFabric’s probation mechanism successfully rolled back 5 of those moves.",
+        "**Methodological Correction:** The authors explicitly state this paper supersedes a previous artifact release, identifying and correcting measurement defects that led to erroneous performance claims in the earlier work."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a181817ce8345f3a",
     "canonicalUrl": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
     "title": "How We Took Over ChatGPT Accounts",
@@ -9023,7 +9646,7 @@
         "This is continuous deployment turned up to 11: A loop this tight only works if it never stops, so we treat an hour without a ship as a SEV-0, our most severe kind of incident."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -9625,7 +10248,7 @@
         "I didn't think the models could do it."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -9894,633 +10517,6 @@
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "85fdf95f1fdc5eec",
-    "canonicalUrl": "https://blogs.nvidia.com/blog/open-source-ai-tools-cbrain-dementia/",
-    "title": "How AI Is Changing the Pace of Discovery for Millions Living With Dementia",
-    "publishedAt": "2026-10-27T15:00:20.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "f46fc84b804406df",
-    "sourceId": "nvidia-blog",
-    "sourceName": "NVIDIA AI News",
-    "author": "Anthony Costa",
-    "contentSnippet": "There are 57 million people worldwide living with dementia today. For the researchers working to help them, the obstacle isn’t a lack of effort — it’s too much data, too few experts to synthesize it and a pace of discovery that can’t keep up with the disease. The Consortium for Biomedical Research and AI in Neurodegeneration (C-BRAIN), working with NVIDIA, is using AI to change that. Alzheimer’s disease is one of today’s leading global health challenges, with over 10 million new dementia cases diagnosed each year. Despite a 7x increase in National Institutes of Health funding in the last 15 years — reaching $3.9 billion annually — no treatment has been found to stop, prevent or reverse the disease yet. The bottlenecks are not enough high impact scientific findings, too much data living in institutional silos and too slow a pace of synthesis to keep up with the research that is published. C-BRAIN, led by Dr. Randall Bateman and a consortium of 18 member institutions across academic, philanthropic, pharma and research organizations, launched in November 2025 to help scientists make better, faster discoveries by accelerating the research that makes new treatments possible. “We have a window of opportunity with artificial intelligence to do research fundamentally different than we’ve ever done before, in a way that accelerates discoveries to help patients,” said Bateman, founder and director of C-BRAIN and the Charles F. and Joanne Knight Distinguished Professor of Neurology at the Washington University School of Medicine in St. Louis. He described their work as “AI tools built by scientists, for scientists.” The consortium is building a system that harnesses previously untapped Alzheimer’s research data to support scientists’ work. Speeding Research From Weeks to Hours Essential assets in Alzheimer’s research are datasets that have never been publicly accessible to AI tools or human researchers. This includes unpublished findings, negative results and governed proprietary data from member institutions. “A lot of life sciences data doesn’t make its way into the frontier models,” said Dr. Ade Ojewole, chief technology officer of C-BRAIN. “The consequence of that is we’re leaving a lot of intelligence on the table.” C-BRAIN refers to this as “dark data,” which slows down Alzheimer’s research. Some dark data is directly deposited into secure computer systems for AI",
-    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/10/cbrain-nvidia-1.png",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "There are 57 million people worldwide living with dementia today. For the researchers working to help them, the obstacle isn’t a lack of effort — it’s too much data, too few experts to synthesize it and a pace of discovery that can’t keep up with the disease. The Consortium for Biomedical Research and AI in Neurodegeneration (C-BRAIN), working with NVIDIA, is using AI to change that.\n\nAlzheimer’s disease is one of today’s leading global health challenges, with over 10 million new dementia cases diagnosed each year. Despite a 7x increase in National Institutes of Health funding in the last 15 years — reaching $3.9 billion annually — no treatment has been found to stop, prevent or reverse the disease yet. The bottlenecks are not enough high impact scientific findings, too much data living in institutional silos and too slow a pace of synthesis to keep up with the research that is published.",
-      "takeaways": [
-        "Randall Bateman and a consortium of 18 member institutions across academic, philanthropic, pharma and research organizations, launched in November 2025 to help scientists make better, faster discoveries by accelerating the research that makes new treatments possible.",
-        "“We have a window of opportunity with artificial intelligence to do research fundamentally different than we’ve ever done before, in a way that accelerates discoveries to help patients,” said Bateman, founder and director of C-BRAIN and the Charles F.",
-        "And Joanne Knight Distinguished Professor of Neurology at the Washington University School of Medicine in St.",
-        "He described their work as “AI tools built by scientists, for scientists.” The consortium is building a system that harnesses previously untapped Alzheimer’s research data to support scientists’ work."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "562ada87341186dc",
-    "canonicalUrl": "https://spectrum.ieee.org/ai-generated-scientific-papers",
-    "title": "I Used AI to Fake a Scientific Paper. Here’s What Happened",
-    "publishedAt": "2026-10-27T13:00:03.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "71c8d4c70e275c74",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "Benjamin Skuse",
-    "contentSnippet": "Science has a spam problem. And the spam filter is getting clogged up. According to all reports, academic publishing is drowning in what has come to be called AI slop: low-quality, mass-produced content generated with AI. By 2025, an estimated 57 percent of all published academic articles exhibited detectable evidence of large language model (LLM) influence, a massive jump from 12 percent in 2023. What’s more, over 12 percent of Nature Communications reviews were found to be completely AI-generated in 2025. Given that for every 40 papers showing statistical evidence of AI usage in 2025, only one formally disclosed it , these figures likely grossly underestimate LLM involvement today. Of course, evidence of AI use doesn’t necessarily mean a paper is slop. But some estimates suggest that hundreds of thousands of fake, often AI-generated, publications are now produced annually. “It’s not just the [scientific] record under threat, it’s science as a whole,” warns Amanda Sulicz , IEEE’s research-integrity manager. “AI slop is completely eroding trust in science and every scientific process that we’ve worked for centuries to create.” Yet statistics and statements claiming that the problem is big—perhaps even existential for science—don’t really get the message across. Just how easy is it to use AI to create a convincing but completely fake paper? And without adding even more to the burden on stretched peer reviewers, who do this work on a volunteer basis, do publishers have the tools to keep AI slop out of the scientific record? Borrowing from the idea of “vibe coding,” in which programmers use natural-language prompts to generate code, I decided to “vibe-research” a made-up paper by prompting LLMs to generate hypotheses, code, and text with minimal human input. Then I asked Jenny Mahoney , managing editor of the multidisciplinary and open-access journal IEEE Access , if we could war-game an attempt to sneak my AI-generated monstrosity past her journal’s defenses. She and IEEE kindly agreed. The experiment would become a two-part test. First, whether someone with no special AI expertise could use off-the-shelf AI tools to generate a convincing paper describing research that had never been performed, and do it well enough to fool a publisher’s defenses. Then I would raise the stakes: What happens when more advanced AI systems don’t just write the paper but conduct u",
-    "imageUrl": "https://spectrum.ieee.org/media-library/man-in-glasses-at-night-his-face-reflected-in-a-window-beside-him.jpg?id=68515605&width=980",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "summary": {
-      "tldr": "Science has a spam problem. And the spam filter is getting clogged up. According to all reports, academic publishing is drowning in what has come to be called AI slop: low-quality, mass-produced content generated with AI.\n\nBy 2025, an estimated 57 percent of all published academic articles exhibited detectable evidence of large language model (LLM) influence, a massive jump from 12 percent in 2023. What’s more, over 12 percent of Nature Communications reviews were found to be completely AI-generated in 2025. Given that for every 40 papers showing statistical evidence of AI usage in 2025, only one formally disclosed it , these figures likely grossly underestimate LLM involvement today.",
-      "takeaways": [
-        "Of course, evidence of AI use doesn’t necessarily mean a paper is slop.",
-        "But some estimates suggest that hundreds of thousands of fake, often AI-generated, publications are now produced annually.",
-        "“It’s not just the [scientific] record under threat, it’s science as a whole,” warns Amanda Sulicz , IEEE’s research-integrity manager.",
-        "“AI slop is completely eroding trust in science and every scientific process that we’ve worked for centuries to create.” Yet statistics and statements claiming that the problem is big—perhaps even existential for science—don’t really get the message across."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f7c921b41323850d",
-    "canonicalUrl": "https://arxiv.org/abs/2610.37158v1",
-    "title": "Detection and characterisation of Starlink VHF TT&C emissions at 137.055 MHz with the 21 CentiMeter Array",
-    "publishedAt": "2026-10-27T12:53:05.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "608e906f84e4905c",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Yanbin Yang",
-    "contentSnippet": "Satellite emissions at low frequencies can interfere with astronomical observations. Observations with the EDA2 have revealed recurrent Starlink emissions near 137~MHz, attributed to very high frequency (VHF) telemetry, tracking, and command (TT\\&C) transmissions. We aim to characterise Starlink VHF emissions detected with the 21 CentiMeter Array (21CMA) to better assess their potential impact on future low-frequency radio astronomical observations and inform the development of methods to mitigate the resulting interference. We searched five coordinated VHF channels in observations obtained on 15 April 2025 (UTC) and demodulated and decoded candidate signals. Two valid packets are detected at 137.055~MHz, each lasting 1.027584~s and separated by 99.987~s. A blind comparison with 11\\,305 active satellites identifies STARLINK-32838 (NORAD ID 62827) as the transmitter, with differential Doppler measurements linking both events to the same spacecraft. Orbital analysis shows that the satellite was undergoing orbit raising and that the limited number of detections was partly attributable to its being below the horizon for most of the observing time. Re-analysis of EDA2 detections indicates that such emissions are not confined to orbit raising. The stronger event's estimated flux density is 9.23~MJy at 1000~km, consistent with previous measurements at the order-of-magnitude level. Signal demodulation and decoding, combined with orbital analysis, can improve the identification and characterisation of satellite-related radio frequency interference. The detection of similar VHF emissions across different orbital phases indicates that their potential interference with low-frequency radio astronomy should not be considered solely in the context of orbit raising.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.37158",
-    "pdfUrl": "https://arxiv.org/pdf/2610.37158.pdf",
-    "summary": {
-      "tldr": "Satellite emissions at low frequencies can interfere with astronomical observations. Observations with the EDA2 have revealed recurrent Starlink emissions near 137~MHz, attributed to very high frequency (VHF) telemetry, tracking, and command (TT\\&C) transmissions. We aim to characterise Starlink VHF emissions detected with the 21 CentiMeter Array (21CMA) to better assess their potential impact on future low-frequency radio astronomical observations and inform the development of methods to mitigate the resulting interference.\n\nWe searched five coordinated VHF channels in observations obtained on 15 April 2025 (UTC) and demodulated and decoded candidate signals. Two valid packets are detected at 137.055~MHz, each lasting 1.027584~s and separated by 99.987~s. A blind comparison with 11\\,305 active satellites identifies STARLINK-32838 (NORAD ID 62827) as the transmitter, with differential Doppler measurements linking both events to the same spacecraft.",
-      "takeaways": [
-        "Orbital analysis shows that the satellite was undergoing orbit raising and that the limited number of detections was partly attributable to its being below the horizon for most of the observing time.",
-        "Re-analysis of EDA2 detections indicates that such emissions are not confined to orbit raising.",
-        "The stronger event's estimated flux density is 9.23~MJy at 1000~km, consistent with previous measurements at the order-of-magnitude level.",
-        "Signal demodulation and decoding, combined with orbital analysis, can improve the identification and characterisation of satellite-related radio frequency interference."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5e2d9e6f0fc03de4",
-    "canonicalUrl": "https://www.technologyreview.com/2026/10/27/1147142/industrial-intelligence-the-next-growth-opportunity-for-manufacturing/",
-    "title": "Industrial Intelligence: The next growth opportunity for manufacturing",
-    "publishedAt": "2026-10-27T11:19:18.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.215Z",
-    "contentHash": "477b833352629766",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Michael MacKenzie",
-    "contentSnippet": "Every manufacturer has its own industrial intelligence. Some is documented, and some resides in the knowledge of experienced workers. Consider an experienced operator preparing to restart a line after a changeover. The machine settings matter, but so does knowing how a particular material behaves, what happened during the previous shift, and when an apparently minor variation deserves a closer look. A procedure can describe the sequence, but successful execution depends on the judgment that comes from experience and the organization’s accumulated know-how. That combination is industrial intelligence: a manufacturer’s accumulated know-how, operating practices, production data, and understanding of its own business. The opportunity now is to make more of that intelligence available wherever decisions are made, then connect it to the physical world of manufacturing. The strategic destination is not more agents, but rather to turn the existing business intelligence into an engine for profitable growth. Individual knowledge can be translated into organizational advantage Expertise has limited reach when it stays with one person, inside one system, or within one plant. Leaders now must determine how to extend that reach without stripping away the context that makes the knowledge useful. For example, an engineer evaluating a process change needs more than a production record. They need to understand the circumstances behind it: the equipment configuration, the quality requirements, and the trade-offs an operator made. Connecting those elements can help people apply experience beyond the place where it originated. When individual knowledge becomes widely accessible, innovation can spread to the maintenance workshop, the planning office, the engineering team, and the production floor. More people can contribute because more people can work with what the organization knows. But access to knowledge is only part of the opportunity. Manufacturing ultimately is physical, and it depends on materials, machines, and products. When intelligence participates in action Physical AI describes systems that can perceive conditions, reason about them, and take action within the physical world. By connecting machines and processes, manufacturers get a clearer view of what is happening on the factory floor. Agents can then reason on top of that information to identify patterns, predic",
-    "imageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/10/iStock-1367303200.jpg?w=840",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Every manufacturer has its own industrial intelligence. Some is documented, and some resides in the knowledge of experienced workers. Consider an experienced operator preparing to restart a line after a changeover.\n\nThe machine settings matter, but so does knowing how a particular material behaves, what happened during the previous shift, and when an apparently minor variation deserves a closer look. A procedure can describe the sequence, but successful execution depends on the judgment that comes from experience and the organization’s accumulated know-how. That combination is industrial intelligence: a manufacturer’s accumulated know-how, operating practices, production data, and understanding of its own business.",
-      "takeaways": [
-        "The opportunity now is to make more of that intelligence available wherever decisions are made, then connect it to the physical world of manufacturing.",
-        "The strategic destination is not more agents, but rather to turn the existing business intelligence into an engine for profitable growth.",
-        "Individual knowledge can be translated into organizational advantage Expertise has limited reach when it stays with one person, inside one system, or within one plant.",
-        "Leaders now must determine how to extend that reach without stripping away the context that makes the knowledge useful."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "18d821ce7152c4df",
-    "canonicalUrl": "https://arxiv.org/abs/2610.37046v1",
-    "title": "Learning to Code the World: Harness Evolution for Compositional 3D Reconstruction",
-    "publishedAt": "2026-10-27T11:15:41.000Z",
-    "fetchedAt": "2026-11-04T17:44:18.055Z",
-    "contentHash": "4f7e69bcd436f9d8",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Haoyu Yao",
-    "contentSnippet": "Reconstructing editable and compositional 3D scenes from a real image requires jointly reasoning about geometry, object structure, and spatial relationships. We introduce SceneEvolve, a framework that represents 3D scenes as executable code and improves reconstruction by evolving the harness around a small open-source agent. SceneEvolve combines SceneAct, a compositional semantic action interface built on parameterized primitives, hierarchical composition, and semantic spatial relations, with SceneHarness-RSI, which leverages a stronger teacher agent to iteratively evolve the harness using feedback from development-set reconstructions. Throughout harness evolution, the model parameters, action semantics, and execution backend remain fixed. The resulting harness provides a reusable reconstruction procedure that enables the small open-source model to reconstruct unseen scenes without parameter updates or teacher assistance. Across two in-domain datasets and one out-of-domain dataset, SceneEvolve with the comparatively compact Qwen3.8-27B model improves all four evaluated reconstruction metrics while reducing mean inference time by 47.0% relative to the base model. More notably, despite relying on a substantially smaller model, SceneEvolve achieves 32.3% higher reconstruction quality than the large proprietary GPT-5.6-Sol model, while reducing mean equivalent deployment cost by 59.8%. Furthermore, the harness evolved using Qwen3.8-27B also generalizes to Kimi-K3, achieving comparable reconstruction performance to GPT-6-Astra. The project page is https://haoyu-agent.github.io/SceneEvolve.",
-    "category": "LLMs & GenAI",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.37046",
-    "pdfUrl": "https://arxiv.org/pdf/2610.37046.pdf",
-    "summary": {
-      "tldr": "Reconstructing editable and compositional 3D scenes from a real image requires jointly reasoning about geometry, object structure, and spatial relationships. We introduce SceneEvolve, a framework that represents 3D scenes as executable code and improves reconstruction by evolving the harness around a small open-source agent. SceneEvolve combines SceneAct, a compositional semantic action interface built on parameterized primitives, hierarchical composition, and semantic spatial relations, with SceneHarness-RSI, which leverages a stronger teacher agent to iteratively evolve the harness using feedback from development-set reconstructions.\n\nThroughout harness evolution, the model parameters, action semantics, and execution backend remain fixed. The resulting harness provides a reusable reconstruction procedure that enables the small open-source model to reconstruct unseen scenes without parameter updates or teacher assistance. Across two in-domain datasets and one out-of-domain dataset, SceneEvolve with the comparatively compact Qwen3.8-27B model improves all four evaluated reconstruction metrics while reducing mean inference time by 47.0% relative to the base model.",
-      "takeaways": [
-        "More notably, despite relying on a substantially smaller model, SceneEvolve achieves 32.3% higher reconstruction quality than the large proprietary GPT-5.6-Sol model, while reducing mean equivalent deployment cost by 59.8%.",
-        "Furthermore, the harness evolved using Qwen3.8-27B also generalizes to Kimi-K3, achieving comparable reconstruction performance to GPT-6-Astra.",
-        "The project page is https://haoyu-agent.github.io/SceneEvolve."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "13eb6e15a8fcee1b",
-    "canonicalUrl": "https://arxiv.org/abs/2610.37914",
-    "title": "Muon Makes the First Mixture-of-Experts Layer Harder to Balance",
-    "publishedAt": "2026-10-27T00:00:00.000Z",
-    "fetchedAt": "2026-11-04T17:44:14.877Z",
-    "contentHash": "ab24655f957a36aa",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Marcos Hernanz",
-    "contentSnippet": "Many open mixture-of-experts (MoE) language models train with Muon instead of AdamW. Most balance the load with a bias on each expert's routing score, adjusted after every step. Their recipes disagree on whether Muon should also train the router. In models with 55M and 108M active parameters, we measure how the optimizer changes the span of these biases, the largest minus the smallest in a layer. The span grows when all tokens favor the same experts, so it shows how hard a layer is to balance. At learning rates tuned on shorter runs, Muon raised the span of the first MoE layer at every seed, roughly doubling it on average, while the other layers changed much less. The rise came from Muon on the rest of the network, whichever optimizer trained the router. In those runs, the inputs to the first router shared a direction, and soon after the warmup its busiest expert averaged four to seven times its fair share. Over the first 3,000 steps, subtracting the batch mean from these inputs removed this overload while barely changing the loss. On the smaller model, halving Muon's learning rate removed most of the rise and slightly improved the loss. Moving only the router to AdamW made the loads shift more during the warmup and slightly raised the loss, so at this scale the results favor keeping the router on Muon.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2610.37914",
-    "pdfUrl": "https://arxiv.org/pdf/2610.37914",
-    "summary": {
-      "tldr": "Many open mixture-of-experts (MoE) language models train with Muon instead of AdamW. Most balance the load with a bias on each expert's routing score, adjusted after every step. Their recipes disagree on whether Muon should also train the router.\n\nIn models with 55M and 108M active parameters, we measure how the optimizer changes the span of these biases, the largest minus the smallest in a layer. The span grows when all tokens favor the same experts, so it shows how hard a layer is to balance. At learning rates tuned on shorter runs, Muon raised the span of the first MoE layer at every seed, roughly doubling it on average, while the other layers changed much less.",
-      "takeaways": [
-        "The rise came from Muon on the rest of the network, whichever optimizer trained the router.",
-        "In those runs, the inputs to the first router shared a direction, and soon after the warmup its busiest expert averaged four to seven times its fair share.",
-        "Over the first 3,000 steps, subtracting the batch mean from these inputs removed this overload while barely changing the loss.",
-        "On the smaller model, halving Muon's learning rate removed most of the rise and slightly improved the loss."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c15b1e3c66d84564",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
-    "title": "GPT-6.1 Terra",
-    "publishedAt": "2026-10-26T23:53:07.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "332bf03444db9d59",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detailed visual reasoning and precise computer use alongside clearer, more natural writing. A significant step up from GPT‑5.6 Terra, it excels at the communication and computer-based tasks that fill the workday, from drafting proposals and interpreting technical drawings to filling out forms and editing videos. Terra sits in the same position as Sonnet in the Anthropic model collection - not the cheapest or the most expensive, making it harder to decide when to use it. Computer use is a good example of a task that benefits from a less expensive model, since you might put it to work on automated, repetitive tasks. OpenAI's Ted Sanders provided some useful advice in a comment on Hacker News: In the case of GPT-6.1 Terra, I'd say Terra is probably better than Astra and Sol at technical communication, similar on vision and computer use (but much faster!), and a bit worse on most other things. For API developers, it's a nice midrange option if you want something cheaper than Sol but a lot smarter than Luna (especially for vision / computer use / communication). For subscribers, it's not a bombshell release - if you're hitting usage limits, maybe it helps you go a bit further, and if you want clearer communication or faster computer use, it can be a nice option to select. Here are the pelicans for the different reasoning levels. This pelican for \"max\" cost 11.3161 cents and took 4 minutes and 11 seconds: Here's a new comparison grid showing pelicans for every reasoning level of OpenAI's current frontier lineup: GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna. GPT-6.1 Terra is priced at $1/million input tokens and $5/million output - almost half the price of GPT-5.6 Terra and GPT-6.1 Sol, and around 10x the price of GPT-6 Luna. Via Hacker News Tags: ai , openai , generative-ai , llms , llm-pricing , pelican-riding-a-bicycle , llm-release , gpt , ted-sanders",
-    "imageUrl": "https://static.simonwillison.net/static/2026-10-26/terra-max.webp",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement. In the case of GPT-6.1 Terra, OpenAI went with visual reasoning and computer use: We’re introducing GPT-6.1 Terra , a fast, efficient model that combines detailed visual reasoning and precise computer use alongside clearer, more natural writing. A significant step up from GPT‑5.6 Terra, it excels at the communication and computer-based tasks that fill the workday, from drafting proposals and interpreting technical drawings to filling out forms and editing videos.\n\nTerra sits in the same position as Sonnet in the Anthropic model collection - not the cheapest or the most expensive, making it harder to decide when to use it. Computer use is a good example of a task that benefits from a less expensive model, since you might put it to work on automated, repetitive tasks. OpenAI's Ted Sanders provided some useful advice in a comment on Hacker News: In the case of GPT-6.1 Terra, I'd say Terra is probably better than Astra and Sol at technical communication, similar on vision and computer use (but much faster!), and a bit worse on most other things.",
-      "takeaways": [
-        "For API developers, it's a nice midrange option if you want something cheaper than Sol but a lot smarter than Luna (especially for vision / computer use / communication).",
-        "For subscribers, it's not a bombshell release - if you're hitting usage limits, maybe it helps you go a bit further, and if you want clearer communication or faster computer use, it can be a nice option to select.",
-        "Here are the pelicans for the different reasoning levels.",
-        "This pelican for \"max\" cost 11.3161 cents and took 4 minutes and 11 seconds: Here's a new comparison grid showing pelicans for every reasoning level of OpenAI's current frontier lineup: GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d6c224fb232e3a74",
-    "canonicalUrl": "https://arxiv.org/abs/2610.36200v2",
-    "title": "Propulsion Systems for a Starshade Rendezvous Mission with the Habitable World Observatory",
-    "publishedAt": "2026-10-26T19:38:20.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "35c3edf7c4facf2b",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Mario Damiano",
-    "contentSnippet": "We assess how propulsion and operational constraints affect exo-Earth characterization with a starshade rendezvous mission for a Habitable Worlds Observatory (HWO)-like telescope at Sun-Earth L2. Using end-to-end Monte Carlo simulations with EXOSIMS, we model a 60 m starshade for visible-band spectroscopy (500-1000 nm) and a 35 m starshade for near-ultraviolet characterization (250-550 nm). For the 60 m design, we compare AEPS Hall, NEXT ion, and Starlink-class Hall thrusters and examine sensitivity to propellant capacity, the fraction of each retargeting slew spent accelerating and decelerating, and on-orbit refueling. With 1000-3000 kg of initial propellant and no refueling, NEXT provides the highest characterization yield: 9-13% more characterizations than AEPS and 13-16% more than the Starlink-class option. Its higher specific impulse enables more retargeting slews per kilogram of propellant. With refueling, yields converge across thruster choices to about 120 cumulative characterizations over 10 years, while propulsion choice mainly affects the number of refueling events. For the 35 m starshade with AEPS, yields are less sensitive to fuel and are dominated by mission duration and geometric accessibility. Increasing the minimum solar keepout angle from 40 to 50 degrees has little effect on yield; increases from 50 to 65 degrees have a modest effect, while angles above 65 degrees rapidly reduce yield, with severe degradation near 80 degrees. These results distinguish fuel-limited and time- or keepout-limited regimes and guide propulsion selection, tank sizing, refueling policy, and keepout constraints for HWO starshade missions.",
-    "category": "Ethics & Policy",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.36200",
-    "pdfUrl": "https://arxiv.org/pdf/2610.36200.pdf",
-    "summary": {
-      "tldr": "We assess how propulsion and operational constraints affect exo-Earth characterization with a starshade rendezvous mission for a Habitable Worlds Observatory (HWO)-like telescope at Sun-Earth L2. Using end-to-end Monte Carlo simulations with EXOSIMS, we model a 60 m starshade for visible-band spectroscopy (500-1000 nm) and a 35 m starshade for near-ultraviolet characterization (250-550 nm). For the 60 m design, we compare AEPS Hall, NEXT ion, and Starlink-class Hall thrusters and examine sensitivity to propellant capacity, the fraction of each retargeting slew spent accelerating and decelerating, and on-orbit refueling.\n\nWith 1000-3000 kg of initial propellant and no refueling, NEXT provides the highest characterization yield: 9-13% more characterizations than AEPS and 13-16% more than the Starlink-class option. Its higher specific impulse enables more retargeting slews per kilogram of propellant. With refueling, yields converge across thruster choices to about 120 cumulative characterizations over 10 years, while propulsion choice mainly affects the number of refueling events.",
-      "takeaways": [
-        "For the 35 m starshade with AEPS, yields are less sensitive to fuel and are dominated by mission duration and geometric accessibility.",
-        "Increasing the minimum solar keepout angle from 40 to 50 degrees has little effect on yield; increases from 50 to 65 degrees have a modest effect, while angles above 65 degrees rapidly reduce yield, with severe degradation near 80 degrees.",
-        "These results distinguish fuel-limited and time- or keepout-limited regimes and guide propulsion selection, tank sizing, refueling policy, and keepout constraints for HWO starshade missions."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "de56fb996b09bd29",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/26/jason-koebler/",
-    "title": "Quoting Jason Koebler",
-    "publishedAt": "2026-10-26T19:00:25.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "029ebcf1626911ef",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support problems that they have discovered something journalistically notable and that 404 Media, specifically, can help them. — Jason Koebler , ChatGPT Keeps Telling People 404 Media Can Solve Their Tech Support Problems Tags: jason-koebler , openai , journalism , ai , llms , ai-ethics , ai-misuse , generative-ai , chatgpt , 404-media",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Because big tech platforms essentially do not have customer support and make it impossible for their users to contact a human, many people experiencing run-of-the-mill tech problems have turned to ChatGPT. And, increasingly, ChatGPT is telling people that have normal tech support problems that they have discovered something journalistically notable and that 404 Media, specifically, can help them. — Jason Koebler , ChatGPT Keeps Telling People 404 Media Can Solve Their Tech Support Problems Tags: jason-koebler , openai , journalism , ai , llms , ai-ethics , ai-misuse , generative-ai , chatgpt , 404-media.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "61cbb5feb5ee1afb",
-    "canonicalUrl": "https://arxiv.org/abs/2610.36113v1",
-    "title": "Scaling and Renormalization in Neural Networks: An Effective Renormalization-Group Description of Grokking",
-    "publishedAt": "2026-10-26T18:25:08.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "84cdfc93df898118",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Min Chen",
-    "contentSnippet": "Grokking is a delayed transition from memorization to generalization in deep neural networks (NNs). We examine whether scaling and renormalization group (RG) theories can describe this dynamics, establishing a quantitative physical framework for neural generalization transitions. For modular addition on a two-layer NN, an ensemble of trained models defines an order parameter (the squared weight norm) and fluctuation proxies for the heat capacity and the susceptibility, with training epoch and weight decay serving as thermal and field control coordinates. To bridge neural architectures to real-space RG, we construct an exact coupling matrix via a second-order expansion of the loss with respect to per-neuron norms and use its Fiedler vector to define an effective geometry. This spectral ordering yields a monotonic spatial decay of coupling strength that is absent under random permutations. We then execute real-space RG by block-spin aggregating adjacent neurons and parameterizing the coupling matrix into off-diagonal band strengths. Linearizing this local RG map yields relevant scaling exponents and five derived critical exponents, with direct empirical estimates matching RG predictions within 1-10%. Overall, our framework provides a consistent effective description of grokking, suggesting the scaling and renormalization group formalism as a tool to investigate NN dynamics.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.36113",
-    "pdfUrl": "https://arxiv.org/pdf/2610.36113.pdf",
-    "summary": {
-      "tldr": "Grokking is a delayed transition from memorization to generalization in deep neural networks (NNs). We examine whether scaling and renormalization group (RG) theories can describe this dynamics, establishing a quantitative physical framework for neural generalization transitions. For modular addition on a two-layer NN, an ensemble of trained models defines an order parameter (the squared weight norm) and fluctuation proxies for the heat capacity and the susceptibility, with training epoch and weight decay serving as thermal and field control coordinates.\n\nTo bridge neural architectures to real-space RG, we construct an exact coupling matrix via a second-order expansion of the loss with respect to per-neuron norms and use its Fiedler vector to define an effective geometry. This spectral ordering yields a monotonic spatial decay of coupling strength that is absent under random permutations. We then execute real-space RG by block-spin aggregating adjacent neurons and parameterizing the coupling matrix into off-diagonal band strengths.",
-      "takeaways": [
-        "Linearizing this local RG map yields relevant scaling exponents and five derived critical exponents, with direct empirical estimates matching RG predictions within 1-10%.",
-        "Overall, our framework provides a consistent effective description of grokking, suggesting the scaling and renormalization group formalism as a tool to investigate NN dynamics."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e33b638042c7bcbf",
-    "canonicalUrl": "https://spectrum.ieee.org/ieee-xplore-digital-library-ai",
-    "title": "IEEE Xplore Digital Library Adds AI Assistant",
-    "publishedAt": "2026-10-26T18:00:03.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "de847aa19e9e5458",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "Claire Olini",
-    "contentSnippet": "IEEE recently released the IEEE Xplore AI Research Suite , built on the full text of millions of peer-reviewed publications in the IEEE Xplore Digital Library . The library offers full-text access to IEEE standards , journals, magazines, conference proceedings, and more. Researchers who use the AI suite to search the digital library receive answers grounded in verified scientific results, ensuring a high level of accuracy and trust. The suite is available as an optional subscription upgrade to all IEEE Xplore Digital Library institutional subscribers. Powered by a proprietary AI system optimized for STEM literature, the suite introduces powerful, intelligent features within the digital library. The suite enables users to seamlessly search and discover articles to accelerate their comprehension of complex technical papers. The system surfaces deep insights, replacing the typical keyword queries with natural, conversational research workflows. As AI tools become more common in conducting research, IEEE collaborated to build the suite around a simple principle: Answers should be trustworthy, not just fast, says W. Clem Karl , vice president, IEEE Publication Services and Products . “AI can be a highly effective and beneficial tool that can help researchers accelerate discovery, enhance decision-making, and surface new connections,” Karl says. “However, many AI engines present a great risk of hallucinating answers or introducing bias into otherwise credible research. With this in mind, IEEE has taken a responsible approach in our AI strategy by developing concrete safeguards to ensure our solution is rigorously grounded in scientific evidence that users can trust. “As stewards of the scholarly record , we held the new AI engine to the same standards as the peer-reviewed research we publish: A researcher shouldn’t have to trust an answer; they should be able to verify the work behind it.” Collaboration with the scientific community The IEEE Xplore AI Research Suite was developed in close collaboration with global scientific and library communities. The development process began with research into user needs and the challenges associated with existing AI research assistants. More than 3,000 testers—including engineers, scientists, and library information professionals—provided feedback to refine the AI engine and support research workflows. Capabilities include: S",
-    "imageUrl": "https://spectrum.ieee.org/media-library/illustration-of-an-academic-paper-collaged-with-overlapping-question-marks-and-colorful-arrows.jpg?id=68528679&width=980",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "IEEE recently released the IEEE Xplore AI Research Suite , built on the full text of millions of peer-reviewed publications in the IEEE Xplore Digital Library . The library offers full-text access to IEEE standards , journals, magazines, conference proceedings, and more. Researchers who use the AI suite to search the digital library receive answers grounded in verified scientific results, ensuring a high level of accuracy and trust.\n\nThe suite is available as an optional subscription upgrade to all IEEE Xplore Digital Library institutional subscribers. Powered by a proprietary AI system optimized for STEM literature, the suite introduces powerful, intelligent features within the digital library. The suite enables users to seamlessly search and discover articles to accelerate their comprehension of complex technical papers.",
-      "takeaways": [
-        "The system surfaces deep insights, replacing the typical keyword queries with natural, conversational research workflows.",
-        "As AI tools become more common in conducting research, IEEE collaborated to build the suite around a simple principle: Answers should be trustworthy, not just fast, says W.",
-        "Clem Karl , vice president, IEEE Publication Services and Products .",
-        "“AI can be a highly effective and beneficial tool that can help researchers accelerate discovery, enhance decision-making, and surface new connections,” Karl says."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a7f46c4aaa0095af",
-    "canonicalUrl": "https://www.technologyreview.com/2026/10/26/1147672/will-the-real-anthropic-please-stand-up/",
-    "title": "Will the real Anthropic please stand up",
-    "publishedAt": "2026-10-26T17:45:43.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.215Z",
-    "contentHash": "c0916974b4d975e4",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Will Douglas Heaven",
-    "contentSnippet": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first,  sign up here . After weeks of frenzied speculation, Anthropic has filed its IPO prospectus. The 335-page document (100 pages or so are focused on risks) lays out the company’s unique view of the technology it is building and the ways it believes it will change the world.  It also warns that there’s a fair chance that its tech could “erode trust, harm society and destabilize the geopolitical order” and, if things don’t go to plan, “pose catastrophic or existential risks to humanity.”    “We encourage you, as a prospective owner of our stock, not to think of your purchase in purely transactional terms,” the company writes. “We hope you will see it instead as an opportunity to be part of something greater. The advent of machine intelligence is one of the seminal moments in human history.” This kind of public messaging is a master class in narrative capture. But Anthropic has been honing its storytelling skills for years. Earlier this month, Jack Clark, the company’s cofounder and head of policy, gave a speech at the IMF meeting in Bangkok in which he announced to the assembled economists, bankers, and lawmakers that the singularity is already here. Introduced by the science fiction writer and futurist Vernor Vinge around 40 years ago (and long debated on the nerdier fringes of the internet), the singularity is supposed to be the point at which technology gets so good that it outstrips the abilities of its makers. Humans are left in the dust, the idea goes, no longer able to compete with—or even understand—the fruits of their former creation. And this fictional world that many of us have imagined since we were kids? Apparently we’re already living in it: “I believe that this year we have gained convincing evidence that it has now begun,” Clark told his audience. The company tells a vivid (and in many ways scary) story about a future it portrays as inevitable but one that has not yet happened, often co-opted from well-worn science fiction memes. It presents its technology as mysterious and dangerous, and insists that it is the only company trustworthy enough to tame it. (What investor wouldn’t want in on that?) If you skim through the long sections about risks in the IPO prospectus, it’s clear this is no ordinary offering and no ordinary co",
-    "category": "Ethics & Policy",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here . After weeks of frenzied speculation, Anthropic has filed its IPO prospectus.\n\nThe 335-page document (100 pages or so are focused on risks) lays out the company’s unique view of the technology it is building and the ways it believes it will change the world. It also warns that there’s a fair chance that its tech could “erode trust, harm society and destabilize the geopolitical order” and, if things don’t go to plan, “pose catastrophic or existential risks to humanity.” “We encourage you, as a prospective owner of our stock, not to think of your purchase in purely transactional terms,” the company writes. “We hope you will see it instead as an opportunity to be part of something greater.",
-      "takeaways": [
-        "The advent of machine intelligence is one of the seminal moments in human history.” This kind of public messaging is a master class in narrative capture.",
-        "But Anthropic has been honing its storytelling skills for years.",
-        "Earlier this month, Jack Clark, the company’s cofounder and head of policy, gave a speech at the IMF meeting in Bangkok in which he announced to the assembled economists, bankers, and lawmakers that the singularity is already here.",
-        "Introduced by the science fiction writer and futurist Vernor Vinge around 40 years ago (and long debated on the nerdier fringes of the internet), the singularity is supposed to be the point at which technology gets so good that it outstrips the abilities of its makers."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fd3a47f69f961588",
-    "canonicalUrl": "https://arxiv.org/abs/2610.35703v1",
-    "title": "pbhalo: computing primordial black hole and minihalo populations from a single primordial perturbation spectrum",
-    "publishedAt": "2026-10-26T16:29:05.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "ce6e2c2ad0d3e764",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "B. A. Rudenko",
-    "contentSnippet": "An enhancement of the primordial curvature power spectrum on small scales can give rise to two populations of compact objects: primordial black holes (PBHs), which form during radiation domination, and dark matter minihalos, including ultracompact minihalos (UCMHs), which form from the same modes during matter domination. We present pbhalo, an open-source Python package that computes the PBH mass function, the halo mass function and the UCMH abundance from a single spectrum in a given cosmology and applies observational constraints on the PBH abundance and on the spectrum jointly. The package components are validated against colossus (a code for halo mass functions and cosmological quantities), pbhstat (a code for the PBH mass function from a given spectrum) and published results; joint constraints are illustrated for lognormal peaks. The code is distributed under the MIT license.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.35703",
-    "pdfUrl": "https://arxiv.org/pdf/2610.35703.pdf",
-    "summary": {
-      "tldr": "An enhancement of the primordial curvature power spectrum on small scales can give rise to two populations of compact objects: primordial black holes (PBHs), which form during radiation domination, and dark matter minihalos, including ultracompact minihalos (UCMHs), which form from the same modes during matter domination. We present pbhalo, an open-source Python package that computes the PBH mass function, the halo mass function and the UCMH abundance from a single spectrum in a given cosmology and applies observational constraints on the PBH abundance and on the spectrum jointly. The package components are validated against colossus (a code for halo mass functions and cosmological quantities), pbhstat (a code for the PBH mass function from a given spectrum) and published results; joint constraints are illustrated for lognormal peaks.",
-      "takeaways": [
-        "The code is distributed under the MIT license."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0a23072afa56423e",
-    "canonicalUrl": "https://arxiv.org/abs/2610.35112v1",
-    "title": "Subspace Crystallization in Grokking: Rank Compression Tracks the Phase Transition",
-    "publishedAt": "2026-10-26T09:52:40.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "85258c0c4dd6b88e",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Shlok Mehendale",
-    "contentSnippet": "Grokking describes understanding something deeply and intuitively. In neural networks, it is the phenomenon where a network generalizes long after memorizing its training data. This delay has been linked to a fall in the effective rank of the network's weight matrices, but whether this rank compression drives grokking or follows it is still unresolved. We study a mean-field MLP and a one-layer transformer trained on modular arithmetic and observe that: (i) Compression follows the onset, not memorization. Every transformer memorizes its training data within 250 steps, while the grokking onset (the first step at which test accuracy reaches 95%) varies from 6,500 to 21,000 steps. The steepest fall in effective rank comes about 900 steps after the onset, however late the onset occurs, and networks that memorize without grokking compress far less. (ii) Subspace crystallization. We call the span of the fewest top singular directions of a weight matrix that preserve 99% of test accuracy its sufficient subspace. Its size can shrink as the margin between the correct and the best wrong output grows, so we also count the directions needed to keep the outputs within 10%. In the transformer, this count falls during the transition from a quarter or more of the available directions to about a tenth, which we call subspace crystallization. (iii) Imposing low rank does not speed up grokking. Against a factorized full-rank control, capping the rank of the transformer's MLP input weights delays the onset, and capping the rank of its embedding stops 15 of 20 runs from grokking. Compression is therefore a signature of grokking rather than its cause.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.35112",
-    "pdfUrl": "https://arxiv.org/pdf/2610.35112.pdf",
-    "summary": {
-      "tldr": "Grokking describes understanding something deeply and intuitively. In neural networks, it is the phenomenon where a network generalizes long after memorizing its training data. This delay has been linked to a fall in the effective rank of the network's weight matrices, but whether this rank compression drives grokking or follows it is still unresolved.\n\nWe study a mean-field MLP and a one-layer transformer trained on modular arithmetic and observe that: (i) Compression follows the onset, not memorization. Every transformer memorizes its training data within 250 steps, while the grokking onset (the first step at which test accuracy reaches 95%) varies from 6,500 to 21,000 steps. The steepest fall in effective rank comes about 900 steps after the onset, however late the onset occurs, and networks that memorize without grokking compress far less.",
-      "takeaways": [
-        "(ii) Subspace crystallization.",
-        "We call the span of the fewest top singular directions of a weight matrix that preserve 99% of test accuracy its sufficient subspace.",
-        "Its size can shrink as the margin between the correct and the best wrong output grows, so we also count the directions needed to keep the outputs within 10%.",
-        "In the transformer, this count falls during the transition from a quarter or more of the available directions to about a tenth, which we call subspace crystallization."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f4004a63deea56db",
-    "canonicalUrl": "https://arxiv.org/abs/2610.35036v1",
-    "title": "Mapping the Solution-Set Structure of Grokking on Latin Squares",
-    "publishedAt": "2026-10-26T08:51:44.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "a39dbe4aae874a4e",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Zihan Gu",
-    "contentSnippet": "Grokking is a delayed transition from memorisation to generalisation. A network first fits observed examples while remaining near chance on held-out inputs, then generalises abruptly. Prior work has focused mainly on this delay, finding that the network's main loss becomes weight decay after the fitting phase. We name the solution to this optimization problem as the minimum-norm endpoint, and study which tasks make all minimum-norm endpoints generalise from partial observations. Specifically, we model pairwise input tasks as edge colourings of $K_{q,q}$, with Latin colourings as our structured family, and classify each observed instance as all-good, mixed, or no-good by its endpoint set. Furthermore, we prove two contrasting results: (1) Finite-abelian-group families are asymptotically all-good from partial observations; (2) Under a uniform random Latin square, all-good tasks become asymptotically rare for observation-based learners, leaving mixed or no-good behaviour. Moreover, experiments show that relabellings of addition generalise despite their dense polynomial representations. Finally, on tasks of composite order, finite-training results suggest that predictors learn a coarse part of the output before the full label.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.35036",
-    "pdfUrl": "https://arxiv.org/pdf/2610.35036.pdf",
-    "summary": {
-      "tldr": "Grokking is a delayed transition from memorisation to generalisation. A network first fits observed examples while remaining near chance on held-out inputs, then generalises abruptly. Prior work has focused mainly on this delay, finding that the network's main loss becomes weight decay after the fitting phase.\n\nWe name the solution to this optimization problem as the minimum-norm endpoint, and study which tasks make all minimum-norm endpoints generalise from partial observations. Specifically, we model pairwise input tasks as edge colourings of $K_{q,q}$, with Latin colourings as our structured family, and classify each observed instance as all-good, mixed, or no-good by its endpoint set. Furthermore, we prove two contrasting results: (1) Finite-abelian-group families are asymptotically all-good from partial observations; (2) Under a uniform random Latin square, all-good tasks become asymptotically rare for observation-based learners, leaving mixed or no-good behaviour.",
-      "takeaways": [
-        "Moreover, experiments show that relabellings of addition generalise despite their dense polynomial representations.",
-        "Finally, on tasks of composite order, finite-training results suggest that predictors learn a coarse part of the output before the full label."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "182726555aa8ba03",
-    "canonicalUrl": "https://arxiv.org/abs/2610.34591v1",
-    "title": "Does the Outfit Change the Price? Context Halo in Vision-Language Model Valuation of an Identical Low-Cost Necklace",
-    "publishedAt": "2026-10-25T21:45:15.000Z",
-    "fetchedAt": "2026-11-04T17:44:18.055Z",
-    "contentHash": "2fd1c11453be3b19",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Brianne Lee",
-    "contentSnippet": "A chunky gold-tone chain necklace bought online for 2.43 USD was photographed four ways: worn with formal attire against a wood-panelled wall, worn at a party, worn with casual clothing in a recycling yard, and laid flat with no person present. We asked six frontier language models to estimate its price in 1,164 independent and sequential API sessions (4,604 logged rows) and compared estimates across settings. Among the four models that answered image prompts, the same necklace was priced 1.9 to 3.3 times higher in the formal photograph than in the flat-lay (all p < 0.01). Against the yard photograph, the ratio ranged from 1.23 (Grok 4.5, not significant) to 3.57 (Kimi K3), with Claude Fable 5 at 3.32. A text-only version of the task, in which the setting is described in words, produced formal-to-yard ratios of 2.2 to 3.9 in all six models, so the effect does not require pixels. Flat-lay estimates themselves were 7.8 to 18.7 times the receipt price, so part of any headline \"outfit multiplier\" computed against the receipt is baseline overestimate, not a context effect. A single instruction to ignore clothing and setting significantly reduced the effect in one model (ratio of ratios 0.77, 95% CI 0.65 to 0.91) and not detectably in the others; telling the model the photo came from a company website or a personal account changed nothing significant. Asked afterward whether a different outfit would have changed their number, Claude Fable 5 said yes in 24 of 24 sessions, GPT-5.6 in 69%, and GPT-4o in 18%, while GPT-4o also refused 79% of image estimation prompts. The study isolates a mechanism with one object and one wearer at about 10 sessions per model and condition; we outline the replication needed next, with multiple objects and a human benchmark. Data, code, and raw outputs are released.",
-    "category": "Business & Big Tech",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.34591",
-    "pdfUrl": "https://arxiv.org/pdf/2610.34591.pdf",
-    "summary": {
-      "tldr": "A chunky gold-tone chain necklace bought online for 2.43 USD was photographed four ways: worn with formal attire against a wood-panelled wall, worn at a party, worn with casual clothing in a recycling yard, and laid flat with no person present. We asked six frontier language models to estimate its price in 1,164 independent and sequential API sessions (4,604 logged rows) and compared estimates across settings. Among the four models that answered image prompts, the same necklace was priced 1.9 to 3.3 times higher in the formal photograph than in the flat-lay (all p < 0.01).\n\nAgainst the yard photograph, the ratio ranged from 1.23 (Grok 4.5, not significant) to 3.57 (Kimi K3), with Claude Fable 5 at 3.32. A text-only version of the task, in which the setting is described in words, produced formal-to-yard ratios of 2.2 to 3.9 in all six models, so the effect does not require pixels. Flat-lay estimates themselves were 7.8 to 18.7 times the receipt price, so part of any headline \"outfit multiplier\" computed against the receipt is baseline overestimate, not a context effect.",
-      "takeaways": [
-        "A single instruction to ignore clothing and setting significantly reduced the effect in one model (ratio of ratios 0.77, 95% CI 0.65 to 0.91) and not detectably in the others; telling the model the photo came from a company website or a personal account changed nothing significant.",
-        "Asked afterward whether a different outfit would have changed their number, Claude Fable 5 said yes in 24 of 24 sessions, GPT-5.6 in 69%, and GPT-4o in 18%, while GPT-4o also refused 79% of image estimation prompts.",
-        "The study isolates a mechanism with one object and one wearer at about 10 sessions per model and condition; we outline the replication needed next, with multiple objects and a human benchmark.",
-        "Data, code, and raw outputs are released."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "12a6910c38bf261d",
-    "canonicalUrl": "https://spectrum.ieee.org/poetry-for-engineers-of-code-and-shortleaf-pine",
-    "title": "Poetry for Engineers: Of Code and Shortleaf Pine",
-    "publishedAt": "2026-10-25T12:00:02.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "347f51d268e53a6f",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "Ralph Earle",
-    "contentSnippet": "I step into the warm moist air among the columns of the pines, their net of twigs and roots complex as any lines of code. The trees purify and anchor. Their branches balance my restlessness. Their calling is to be present, mine to develop apps. Our tasks verge toward a common logic: living filaments of root, of interface.",
-    "imageUrl": "https://spectrum.ieee.org/media-library/abstract-illustration-showing-two-beams-of-soft-pink-light-swimming-amidst-rows-of-dark-green-columns-patterned-like-wood-grain.png?id=68487080&width=980",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I step into the warm moist air among the columns of the pines, their net of twigs and roots complex as any lines of code. The trees purify and anchor. Their branches balance my restlessness.",
-      "takeaways": [
-        "Their calling is to be present, mine to develop apps.",
-        "Our tasks verge toward a common logic: living filaments of root, of interface."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9c6009b025f44314",
-    "canonicalUrl": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
-    "title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
-    "publishedAt": "2026-10-25T11:49:00.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.043Z",
-    "contentHash": "f9a4455b9018fa7b",
-    "sourceId": "interconnects-ai",
-    "sourceName": "Interconnects AI",
-    "author": "Nathan Lambert",
-    "contentSnippet": "We — Nathan and Florian — wanted to discuss all the messy trade-offs of a busy week in AI and ask all the pressing questions like: Why did Kimi K3.1 Pro have a mixed reaction with such incredible benchmarks? Will it be adopted? Were we wrong about the risks of open-weight models and cybersecurity? Why do cyber experts discuss recent events so differently than AI experts? What comes next in the few months? What will change our minds? We will write more about this subject, but wanted to bring you behind the curtain as we aspire to quickly learn more about the cybersecurity industry and trends across the last few years that have been leading us today. We conclude the podcast with some lighter topics, from Muse-maxing to excitement in still hiring junior technical talent. Please send us questions and topics, as we plan to record more of these podcasts going forward. Share Listen on Apple Podcasts , Spotify , and wherever you get your podcasts . For other Interconnects podcasts, go here . YouTube ↓ Chapters 00:00 Kimi K3.1 Reaction 08:15 Kimi’s open-weight cyber principles 11:23 You can hack everything era 15:54 PHP2Shell, LiteLLM, and the new internet 24:00 Abliterated APIs, safeguards, and trusted access 31:41 Anthropic not hiring juniors employees 36:16 Florian’s Muse addiction 45:30 Wrap-up Links we discuss My thread with Dean Ball about the “boy who cried wolf” story of the frontier labs Kimi K3.1 Pro announcement blog Kimi K3.1 Pro on Artificial Analysis Intelligence Index Kimi K3.1 on Artificial Analysis defensive cyber benchmarks Program Bench Open-weight Mythos would’ve been fine take PHP “hasn’t caused a disaster yet” update Abliteration.ai serving abliterated models API Morph serving abliterated DeepSeek via API Joshua Saxe’s Substack on AI and cybersecurity Azeem Azhar, “The internet’s Wuhan moment” Anthropic, “How employment is changing at Anthropic” LiteLLM security incident report Transcript 00:00:00 Nathan Lambert: We are back with another Interconnects podcast. We are with Florian, eval guy, recently moved to SF. Florian, is Kimi K3.1 Pro , name is a mouthful, going to live up to the benchmark scores, for example on Artificial Analysis , or where is it going to land? 00:00:17 Florian Brand: In the past, the Kimi models always lived up to the expectations, but this release is kind of weird compared to the others. I think it is also partially becau",
-    "category": "Robotics & Hardware",
-    "lab": "Moonshot AI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "We — Nathan and Florian — wanted to discuss all the messy trade-offs of a busy week in AI and ask all the pressing questions like: Why did Kimi K3.1 Pro have a mixed reaction with such incredible benchmarks? Were we wrong about the risks of open-weight models and cybersecurity? Why do cyber experts discuss recent events so differently than AI experts?\n\nWhat comes next in the few months? What will change our minds? We will write more about this subject, but wanted to bring you behind the curtain as we aspire to quickly learn more about the cybersecurity industry and trends across the last few years that have been leading us today.",
-      "takeaways": [
-        "We conclude the podcast with some lighter topics, from Muse-maxing to excitement in still hiring junior technical talent.",
-        "Please send us questions and topics, as we plan to record more of these podcasts going forward.",
-        "Share Listen on Apple Podcasts , Spotify , and wherever you get your podcasts .",
-        "For other Interconnects podcasts, go here ."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "da8785cc5779f5c9",
-    "canonicalUrl": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
-    "title": "Building Reasoning Models from the Ground Up: A Full Video Course",
-    "publishedAt": "2026-10-24T11:14:32.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.045Z",
-    "contentHash": "76f73f26616af959",
-    "sourceId": "ahead-of-ai",
-    "sourceName": "Ahead of AI",
-    "author": "Sebastian Raschka, PhD",
-    "contentSnippet": "I have written a lot about reasoning models here over the last two years on Ahead of AI, including a recent article on mechanisms to control reasoning effort levels in contemporary LLMs . Reasoning models are still as relevant as ever. In fact, almost all current-generation LLMs today are reasoning models or offer a reasoning mode. For those who are interested in how reasoning models work, including inference scaling, reinforcement learning, and distillation, I wrote my recent Build Reasoning Model (From Scratch), which implements these from the ground up in PyTorch, which, in my experience, is still the best way to understand and learn how things really work. Now, in the last few months, I also sat down and recorded accompanying lectures I wanted to share with you. So, below, you will find eight reasoning model-from-scratch coding videos (11 hours of content). We start with a pre-trained LLM and implement methods to evaluate and improve it in Python and PyTorch. So, if you enjoyed my Coding LLMs from the Ground Up course last year, this is essentially the sequel (but you can also watch it without the prior course as a prerequisite). I’m currently taking a short break and will be back soon with more exciting LLM research roundups next month. In the meantime, I hope you enjoy coding along! How LLMs, reasoning models, and agents relate and fit together As a small side note, and since I often get asked how reasoning models relate to today’s AI agents, here’s a short section on this before getting started with the videos. A reasoning model is essentially an upgrade from a conventional LLM, that is, adding more post-training via reinforcement learning with verifiable rewards (and optionally inference scaling techniques) to make it more capable of solving more challenging problems. Classically, reasoning models are developed for math and code, but the capabilities can generalize to other problem domains as well. A reasoning model then functions as the engine inside an agent harness, where the agent harness is a software or tooling framework around the LLM/reasoning model to tackle even more challenging problems (bigger coding tasks, travel booking, and all other sorts of personal assistant tasks). The task of the harness is sophisticated context management and giving the LLM access to tools. Figure 1: An engine analogy for conventional LLMs, reasoning models, and ",
-    "imageUrl": "https://substack-post-media.s3.amazonaws.com/public/images/519db120-1320-411b-adec-a88865345f2c_4083x2916.jpeg",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I have written a lot about reasoning models here over the last two years on Ahead of AI, including a recent article on mechanisms to control reasoning effort levels in contemporary LLMs . Reasoning models are still as relevant as ever. In fact, almost all current-generation LLMs today are reasoning models or offer a reasoning mode.\n\nFor those who are interested in how reasoning models work, including inference scaling, reinforcement learning, and distillation, I wrote my recent Build Reasoning Model (From Scratch), which implements these from the ground up in PyTorch, which, in my experience, is still the best way to understand and learn how things really work. Now, in the last few months, I also sat down and recorded accompanying lectures I wanted to share with you. So, below, you will find eight reasoning model-from-scratch coding videos (11 hours of content).",
-      "takeaways": [
-        "We start with a pre-trained LLM and implement methods to evaluate and improve it in Python and PyTorch.",
-        "So, if you enjoyed my Coding LLMs from the Ground Up course last year, this is essentially the sequel (but you can also watch it without the prior course as a prerequisite).",
-        "I’m currently taking a short break and will be back soon with more exciting LLM research roundups next month.",
-        "In the meantime, I hope you enjoy coding along!"
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "32ef7801f5802984",
-    "canonicalUrl": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
-    "title": "Bringing foundational models to the front lines of TB screening",
-    "publishedAt": "2026-10-23T18:51:33.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.443Z",
-    "contentHash": "c95abd40e0f3ef3a",
-    "sourceId": "google-research",
-    "sourceName": "Google AI Research Blog",
-    "author": "Google AI Research Blog",
-    "contentSnippet": "Generative AI",
-    "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/AIforTBScreening2_Xray.png",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "summary": {
-      "tldr": "Bringing foundational models to the front lines of TB screening.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "13911baa9d6504b3",
-    "canonicalUrl": "https://arxiv.org/abs/2610.32972v1",
-    "title": "Comprehensive Visible and Near-infrared Keck and Gemini Monitoring and Characterization of Interstellar Comet 3I/ATLAS during its Encounter with the Solar System",
-    "publishedAt": "2026-10-23T17:58:04.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.443Z",
-    "contentHash": "1821254c2598fe23",
-    "sourceId": "arxiv-deepmind",
-    "sourceName": "arXiv Google DeepMind Research",
-    "author": "Bryce T. Bolin",
-    "contentSnippet": "We present 14 optical imaging and eight optical spectroscopic epochs of interstellar comet 3I/ATLAS from Keck/LRIS and Gemini/GMOS, two near-infrared (NIR) imaging epochs from Keck/MOSFIRE, and four NIR spectroscopic epochs from Gemini/Flamingos-2 and GNIRS, obtained between 2025 July and 2026 May. Mean GMOS colors of $g-r=0.732\\pm0.029$, $r-i=0.237\\pm0.025$, and $i-z=0.109\\pm0.022$ mag show no significant change across perihelion. Phase-corrected red-band activity follows $Afρ\\propto r_h^{-2.10\\pm0.14}$ inbound and $r_h^{-3.34\\pm0.43}$ outbound. Transverse-width and sunward-plume speeds imply dust losses of $2.7\\times10^9$ and $1.0\\times10^{10}$ kg over 2025 July 3--2026 May 15 for 1-$μ$m--1-mm grains, equivalent to global layers of 0.26 and 0.99 m under the adopted grain and nucleus assumptions. The concentrated coma, compact sunward feature, and antisolar tail seen on 2025 August 27 broadened by 2025 November 26; extended dust persisted through 2026 February 17. C$_2$/CN nearly doubled from $0.257\\pm0.014$ on 2025 September 14--15 to $0.481\\pm0.080$ on 2025 November 26, while C$_3$/CN fell from $0.327\\pm0.024$ on 2025 August 28 to $0.214\\pm0.009$ on 2025 September 14--15. MOSFIRE NIR imaging on 2025 July 11 gives $Y-J=0.466\\pm0.143$, $J-H=0.239\\pm0.052$, $H-K_s=0.454\\pm0.150$, and $J-K_s=0.693\\pm0.202$ mag. Spectra give $J-H=0.24$ mag on 2025 September 5--6 and $J-H=0.27$--0.28 and $J-K_s=0.21$--0.22 mag on 2025 December 1--2 over the retained passband intervals. Model-calibrated imaging on 2026 February 6 gives near-solar $J-K_s=0.303\\pm0.051$ mag. No water-ice absorption is robust to the tested continuum and calibration choices in the NIR spectra. These observations provide a lasting record of the comet's evolution through the Solar System and a benchmark for studying and monitoring future interstellar objects.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.32972",
-    "pdfUrl": "https://arxiv.org/pdf/2610.32972.pdf",
-    "summary": {
-      "tldr": "We present 14 optical imaging and eight optical spectroscopic epochs of interstellar comet 3I/ATLAS from Keck/LRIS and Gemini/GMOS, two near-infrared (NIR) imaging epochs from Keck/MOSFIRE, and four NIR spectroscopic epochs from Gemini/Flamingos-2 and GNIRS, obtained between 2025 July and 2026 May. Mean GMOS colors of $g-r=0.732\\pm0.029$, $r-i=0.237\\pm0.025$, and $i-z=0.109\\pm0.022$ mag show no significant change across perihelion. Phase-corrected red-band activity follows $Afρ\\propto r_h^{-2.10\\pm0.14}$ inbound and $r_h^{-3.34\\pm0.43}$ outbound.\n\nTransverse-width and sunward-plume speeds imply dust losses of $2.7\\times10^9$ and $1.0\\times10^{10}$ kg over 2025 July 3--2026 May 15 for 1-$μ$m--1-mm grains, equivalent to global layers of 0.26 and 0.99 m under the adopted grain and nucleus assumptions. The concentrated coma, compact sunward feature, and antisolar tail seen on 2025 August 27 broadened by 2025 November 26; extended dust persisted through 2026 February 17. C$_2$/CN nearly doubled from $0.257\\pm0.014$ on 2025 September 14--15 to $0.481\\pm0.080$ on 2025 November 26, while C$_3$/CN fell from $0.327\\pm0.024$ on 2025 August 28 to $0.214\\pm0.009$ on 2025 September 14--15.",
-      "takeaways": [
-        "MOSFIRE NIR imaging on 2025 July 11 gives $Y-J=0.466\\pm0.143$, $J-H=0.239\\pm0.052$, $H-K_s=0.454\\pm0.150$, and $J-K_s=0.693\\pm0.202$ mag.",
-        "Spectra give $J-H=0.24$ mag on 2025 September 5--6 and $J-H=0.27$--0.28 and $J-K_s=0.21$--0.22 mag on 2025 December 1--2 over the retained passband intervals.",
-        "Model-calibrated imaging on 2026 February 6 gives near-solar $J-K_s=0.303\\pm0.051$ mag.",
-        "No water-ice absorption is robust to the tested continuum and calibration choices in the NIR spectra."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2d751435c7e142c0",
-    "canonicalUrl": "https://arxiv.org/abs/2610.32540v1",
-    "title": "StarRTT: An End-to-End Real-Time Framework for Blind Zone-Free RTT Prediction in Starlink LEO Satellite Networks",
-    "publishedAt": "2026-10-23T12:20:09.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "5926a293a15363f7",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Jaeyong Lee",
-    "contentSnippet": "Low Earth Orbit (LEO) satellite mega-constellations such as Starlink require frequent handovers due to high orbital velocities, resulting in substantial Round-Trip Time (RTT) fluctuations. Accurate RTT prediction can mitigate these fluctuations, yet it fundamentally relies on continuously updated serving- satellite information. Existing serving-satellite identification methods typically complete identification only at the end of each scheduling cycle, creating an identification blind zone that limits real-time prediction. To overcome this limitation, we develop StarRTT, an end-to-end real-time framework that eliminates the blind zone by integrating per-second serving-satellite identification with RTT prediction. Within this framework, we propose Real-Time Long Short-Term Memory (RT-LSTM), an LSTM-based RTT prediction model designed to capture both non-stationary RTT evolution and time-varying geometric relationships among the serving satellite, user terminal, and gateways. Specifically, a historical LSTM encodes historical RTT observations and real-time serving-satellite and gateway-relative features, while a future LSTM processes Two-Line Element (TLE)-propagated future features of the identified serving satellite up to the next scheduling instant. Under strict real-time back-testing, RT-LSTM achieves a Mean Absolute Error (MAE) of 1.405 ms averaged over all 15 prediction horizons and 15 reference time-slot indices, reducing the error by 4.3 %, 11.6 %, and 22.1 % compared with the existing baseline models, LSTM, StarNet, and Attention-based Spatiotemporal Model (ASTM), respectively. Notably, the reduction over LSTM reaches 12.5 % at the scheduling instant, highlighting the benefit of real-time serving-satellite information when recent RTT observations are limited.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.32540",
-    "pdfUrl": "https://arxiv.org/pdf/2610.32540.pdf",
-    "summary": {
-      "tldr": "Low Earth Orbit (LEO) satellite mega-constellations such as Starlink require frequent handovers due to high orbital velocities, resulting in substantial Round-Trip Time (RTT) fluctuations. Accurate RTT prediction can mitigate these fluctuations, yet it fundamentally relies on continuously updated serving- satellite information. Existing serving-satellite identification methods typically complete identification only at the end of each scheduling cycle, creating an identification blind zone that limits real-time prediction.\n\nTo overcome this limitation, we develop StarRTT, an end-to-end real-time framework that eliminates the blind zone by integrating per-second serving-satellite identification with RTT prediction. Within this framework, we propose Real-Time Long Short-Term Memory (RT-LSTM), an LSTM-based RTT prediction model designed to capture both non-stationary RTT evolution and time-varying geometric relationships among the serving satellite, user terminal, and gateways. Specifically, a historical LSTM encodes historical RTT observations and real-time serving-satellite and gateway-relative features, while a future LSTM processes Two-Line Element (TLE)-propagated future features of the identified serving satellite up to the next scheduling instant.",
-      "takeaways": [
-        "Under strict real-time back-testing, RT-LSTM achieves a Mean Absolute Error (MAE) of 1.405 ms averaged over all 15 prediction horizons and 15 reference time-slot indices, reducing the error by 4.3 %, 11.6 %, and 22.1 % compared with the existing baseline models, LSTM, StarNet, and Attention-based Spatiotemporal Model (ASTM), respectively.",
-        "Notably, the reduction over LSTM reaches 12.5 % at the scheduling instant, highlighting the benefit of real-time serving-satellite information when recent RTT observations are limited."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b37ddc76c4fe4b38",
-    "canonicalUrl": "https://arxiv.org/abs/2610.32151v2",
-    "title": "The LLENS Platform for On-Premises Large Language Model Agents in a Japanese University Hospital: Development and Evaluation Study",
-    "publishedAt": "2026-10-23T04:34:26.000Z",
-    "fetchedAt": "2026-11-04T17:44:18.055Z",
-    "contentHash": "039ef066f7f14055",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Ken Enda",
-    "contentSnippet": "Large language model agents that use tools could take on part of the electronic health record and desk work that occupies physicians' time, but in many hospitals the medical information systems run inside closed networks, so the model and the agent harness must also be inside the network. We designed, implemented, and deployed LLENS, a clinical support AI agent platform that runs inside the closed network of Hokkaido University Hospital on a single host with 8 NVIDIA H200 GPUs, the open-weight model Kimi K2.6 (~1 trillion parameters), and a web application rebuilt from Open WebUI. The harness has 10 components, including page image reading, full-text attachment input, a path-addressed document tree without a vector index, a network-isolated sandbox, artifact return, self-checking of generated output, subagents, and saved procedures. Kimi K2.6 was chosen from 3 open-weight candidates and scored 480/500 on the 2026 Japanese Medical Licensing Examination; it generated 119 tokens/s for a single user and served 16 concurrent requests at 908 tokens/s in total. On 180 questions over hospital documents (3 seeds each), mean accuracy was 10.7% with no documents, 81.3% with fixed retrieval (top 10 chunks of one lexical search), and 97.2% with interactive access, in which the model reads with document tools and the sandbox (15.9 percentage points above fixed retrieval, 95% CI 10.9-21.3); the difference lay in filtering/counting questions (16.7% vs 87.8%). In an automated test of 13 work scenarios (4 runs each), the expected components were triggered in all runs for 12, and 5 scenarios were run with synthetic data on the deployment host. The platform has run on the hospital network since September 14, 2026.",
-    "category": "Robotics & Hardware",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.32151",
-    "pdfUrl": "https://arxiv.org/pdf/2610.32151.pdf",
-    "summary": {
-      "tldr": "Large language model agents that use tools could take on part of the electronic health record and desk work that occupies physicians' time, but in many hospitals the medical information systems run inside closed networks, so the model and the agent harness must also be inside the network. We designed, implemented, and deployed LLENS, a clinical support AI agent platform that runs inside the closed network of Hokkaido University Hospital on a single host with 8 NVIDIA H200 GPUs, the open-weight model Kimi K2.6 (~1 trillion parameters), and a web application rebuilt from Open WebUI. The harness has 10 components, including page image reading, full-text attachment input, a path-addressed document tree without a vector index, a network-isolated sandbox, artifact return, self-checking of generated output, subagents, and saved procedures.\n\nKimi K2.6 was chosen from 3 open-weight candidates and scored 480/500 on the 2026 Japanese Medical Licensing Examination; it generated 119 tokens/s for a single user and served 16 concurrent requests at 908 tokens/s in total. On 180 questions over hospital documents (3 seeds each), mean accuracy was 10.7% with no documents, 81.3% with fixed retrieval (top 10 chunks of one lexical search), and 97.2% with interactive access, in which the model reads with document tools and the sandbox (15.9 percentage points above fixed retrieval, 95% CI 10.9-21.3); the difference lay in filtering/counting questions (16.7% vs 87.8%). In an automated test of 13 work scenarios (4 runs each), the expected components were triggered in all runs for 12, and 5 scenarios were run with synthetic data on the deployment host.",
-      "takeaways": [
-        "The platform has run on the hospital network since September 14, 2026."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
