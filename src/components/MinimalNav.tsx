@@ -156,6 +156,14 @@ const MinimalNav = memo(function MinimalNav({
             <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
           </Link>
 
+          <Link
+            href="/codex"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[95px]"
+            title="LatentSpace AI & ML Deterministic Codex"
+          >
+            <span>[CODEX]</span>
+          </Link>
+
           <ThemeToggle />
 
           {/* Isolated 1Hz Clock completely on the right */}

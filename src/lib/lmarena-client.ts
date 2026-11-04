@@ -95,3 +95,4 @@ export async function getLmsysArenaLeaderboard(): Promise<LmsysArenaModel[]> {
 
   return arenaCache ? arenaCache.data : FALLBACK_ARENA;
 }
+

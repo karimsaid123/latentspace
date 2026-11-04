@@ -1,0 +1,951 @@
+[
+  {
+    "id": "self-attention",
+    "slug": "self-attention",
+    "acronym": "QKV Attention",
+    "title": "Self-Attention Mechanism",
+    "category": "FOUNDATIONS",
+    "level": "INTERMEDIATE",
+    "summary": "Mechanisme waarmee tokens in een sequentie gelijktijdig relaties en gewichten toekennen aan alle andere tokens zonder recurrente stappen.",
+    "technicalDeepDive": "In plaats van sequentiële verwerking (zoals in RNN's) projecteert self-attention elk invoertoken naar drie vectoren: Query (Q), Key (K) en Value (V). Door het inproduct van de Query met alle Keys te berekenen en te schalen met de wortel van de dimensie (sqrt(d_k)), ontstaat een aandachtsgewicht. De Softmax-functie zet deze om in kansverdelingen die als gewogen som over de Values worden berekend. Hierdoor kan elk token direct communiceren met elk ander token in O(1) sequentiële stappen.",
+    "mathematics": {
+      "formula": "\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V",
+      "explanation": "Q en K zijn matrices van queries en keys met dimensie d_k. De deling door sqrt(d_k) voorkomt dat dot-products bij grote dimensies te groot worden, wat zou leiden tot extreem kleine gradiënten in de softmax."
+    },
+    "keyTakeaways": [
+      "Verving recurrente en convolutionele architecturen voor sequentiemodellering.",
+      "Maakt massieve parallelle training op GPU's mogelijk.",
+      "Heeft een kwadratische computationele complexiteit O(N^2) ten opzichte van de sequentielengte N."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Volledig paralleliseerbaar over de tijd-as tijdens training.",
+        "Geen informatieverlies over lange afstanden (geen vanishing gradients over tijdstappen)."
+      ],
+      "limitations": [
+        "Kwadratisch geheugengebruik O(N^2) voor contextlengte N.",
+        "Geheugenbandbreedte-intensief tijdens autoregressieve generatie."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Attention Is All You Need",
+      "arxivId": "1706.03762",
+      "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, et al.",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1706.03762"
+    },
+    "relatedIds": ["transformer", "kv-cache", "flash-attention"],
+    "searchKeywords": ["attention", "self-attention", "qkv", "query", "key", "value", "dot-product"]
+  },
+  {
+    "id": "transformer",
+    "slug": "transformer",
+    "acronym": "Transformer",
+    "title": "The Transformer Architecture",
+    "category": "ARCHITECTURES",
+    "level": "BEGINNER",
+    "summary": "De universele basisarchitectuur van moderne LLM's, bestaande uit gestapelde multi-head attention lagen en feed-forward netwerken met residual connections.",
+    "technicalDeepDive": "Een Transformer bestaat uit herhaalde blokken. Elk blok bevat twee hoofdsublagen: Multi-Head Self-Attention (MHA) en een puntsgewijs Feed-Forward Network (FFN). Na elke sublaag volgt een residual connection gevolgd door Layer Normalization (tegenwoordig vaak RMSNorm en pre-normalization). Moderne decoders (zoals GPT, Llama, Claude) gebruiken een 'decoder-only' causal maskering om te voorkomen dat tokens naar toekomstige posities kijken.",
+    "mathematics": {
+      "formula": "\\text{LayerOutput} = \\text{LayerNorm}(x + \\text{Sublayer}(x))",
+      "explanation": "Pre-norm varianten voeren normalisatie uit vóór de sublaag: x + Sublayer(LayerNorm(x)), wat leidt tot stabielere trainingsdynamiek bij diepe netwerken."
+    },
+    "keyTakeaways": [
+      "Vormt het fundament onder vrijwel alle moderne taalmodellen, vision-modellen en multimodale systemen.",
+      "Decoder-only architecturen domineren autoregressieve tekstgeneratie.",
+      "Schaalt voorspelbaar volgens de Chinchilla en Kaplan scaling laws."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Uitzonderlijk goed schaalbaar met toenemende compute en datasets.",
+        "Uniforme tensorbewerkingen die optimaal benut worden door moderne accelerators (NVIDIA H100/B200, Google TPU)."
+      ],
+      "limitations": [
+        "Vaste contextvenstergrenzen tenzij gecombineerd met RoPE (Rotary Position Embeddings) of compressietechnieken.",
+        "Hoge geheugenvereisten tijdens inferentie door KV-caching."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Attention Is All You Need",
+      "arxivId": "1706.03762",
+      "authors": "Vaswani et al.",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1706.03762"
+    },
+    "relatedIds": ["self-attention", "moe", "residual-connections", "kv-cache"],
+    "searchKeywords": ["transformer", "decoder-only", "encoder-decoder", "multi-head", "ffn"]
+  },
+  {
+    "id": "embeddings",
+    "slug": "embeddings",
+    "acronym": "Vector Space",
+    "title": "High-Dimensional Latent Embeddings",
+    "category": "FOUNDATIONS",
+    "level": "BEGINNER",
+    "summary": "Continue vectoren in een meerdimensionale ruimte waarin semantische betekenis en conceptuele overeenkomsten wiskundig gemeten worden via afstanden.",
+    "technicalDeepDive": "Woorden, tokens, code en afbeeldingen worden omgezet in dichte numerieke vectoren (meestal tussen 768 en 8192 dimensies). In deze latente ruimte weerspiegelt de geometrische afstand (zoals Cosine Similarity of Euclidische afstand) de semantische verwantschap. Twee concepten met vergelijkbare contexten (zoals 'koning' en 'koningin') liggen dicht bij elkaar en vertonen lineaire relaties (vector('koning') - vector('man') + vector('vrouw') ≈ vector('koningin')).",
+    "mathematics": {
+      "formula": "\\text{CosineSimilarity}(u, v) = \\frac{u \\cdot v}{\\|u\\| \\|v\\|}",
+      "explanation": "Berekent de cosinus van de hoek tussen twee vectoren u en v; een waarde van 1 betekent identieke richting, 0 betekent orthogonale (onafhankelijke) concepten."
+    },
+    "keyTakeaways": [
+      "Vormt de invoerlaag (token embeddings) en de representatielaag in transformers.",
+      "De ruggengraat van RAG (Retrieval-Augmented Generation) en vector databases.",
+      "Zet discrete symbolen om in continue, differentieerbare representaties."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Maakt differentiatie en backpropagation mogelijk voor discrete tekstuele data.",
+        "Vangt subtiele nuances, synoniemen en analogieën op in geometrische structuren."
+      ],
+      "limitations": [
+        "Gevoelig voor dimensionaliteitsvloek (curse of dimensionality).",
+        "Statische embeddings kunnen polysemie (woorden met meerdere betekenissen) moeilijk scheiden zonder context."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Efficient Estimation of Word Representations in Vector Space",
+      "arxivId": "1301.3781",
+      "authors": "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean",
+      "year": 2013,
+      "url": "https://arxiv.org/abs/1301.3781"
+    },
+    "relatedIds": ["transformer", "softmax-temperature"],
+    "searchKeywords": ["embeddings", "vector", "latent space", "cosine similarity", "dense vector", "rag"]
+  },
+  {
+    "id": "softmax-temperature",
+    "slug": "softmax-temperature",
+    "acronym": "Temperature Sampling",
+    "title": "Softmax & Sampling Temperature",
+    "category": "FOUNDATIONS",
+    "level": "BEGINNER",
+    "summary": "Wiskundige transformatie die onbewerkte logits omzet in een kansverdeling, waarbij temperatuur de mate van willekeur en creativiteit reguleert.",
+    "technicalDeepDive": "Het taalmodel berekent voor elk mogelijk volgend token in het vocabulaire een logit (score). De Softmax-functie exponentieert deze logits en normaliseert ze naar een kanssom van 1. Door de logits te delen door een temperatuur T (z_i / T) vóór de softmax, verandert de vorm van de verdeling: bij lage T (T -> 0) domineert het meest waarschijnlijke token (deterministisch / argmax), terwijl bij hoge T (T > 1) de kansen afvlakken (meer diversiteit en creativiteit, maar hoger risico op hallucinaties).",
+    "mathematics": {
+      "formula": "P(y_i) = \\frac{e^{z_i / T}}{\\sum_{j} e^{z_j / T}}",
+      "explanation": "z_i is de logit voor token i, en T is de temperatuurparameter (T > 0)."
+    },
+    "keyTakeaways": [
+      "T = 0 staat bekend als Greedy Decoding (altijd het token met hoogste kans).",
+      "Cruciaal voor het balanceren van feitelijke accuratesse versus creatieve exploratie.",
+      "Vaak gecombineerd met Top-p (Nucleus) en Top-k truncation om onzinnige staartkansen af te snijden."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Eenvoudige eendimensionale parameter om generatiegedrag dynamisch te sturen.",
+        "Differentieerbaar tijdens training."
+      ],
+      "limitations": [
+        "Te hoge temperatuur leidt onvermijdelijk tot onsamenhangende tekst en hallucinaties.",
+        "Te lage temperatuur kan leiden tot herhalende lussen en gebrek aan creativiteit."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Distilling the Knowledge in a Neural Network",
+      "arxivId": "1503.02531",
+      "authors": "Geoffrey Hinton, Oriol Vinyals, Jeff Dean",
+      "year": 2015,
+      "url": "https://arxiv.org/abs/1503.02531"
+    },
+    "relatedIds": ["self-attention", "transformer"],
+    "searchKeywords": ["softmax", "temperature", "sampling", "greedy decoding", "top-p", "top-k", "logits"]
+  },
+  {
+    "id": "backpropagation-autograd",
+    "slug": "backpropagation-autograd",
+    "acronym": "Autograd",
+    "title": "Backpropagation & Automatic Differentiation",
+    "category": "FOUNDATIONS",
+    "level": "INTERMEDIATE",
+    "summary": "Het fundamentele algoritme waarmee neurale netwerken leren door de kettingregel van differentiatie toe te passen om foutgradiënten terug te propageren.",
+    "technicalDeepDive": "Tijdens de forward pass berekent het netwerk voorspellingen en een verliesfunctie (Loss). Tijdens de backward pass berekent backpropagation via de kettingregel de partiële afgeleide van de loss ten opzichte van elk gewicht in het netwerk (de gradiënt). Optimizers (zoals AdamW) gebruiken deze gradiënten om de parameters stapsgewijs aan te passen in de richting die de loss minimaliseert.",
+    "mathematics": {
+      "formula": "\\frac{\\partial L}{\\partial w_i} = \\frac{\\partial L}{\\partial y} \\cdot \\frac{\\partial y}{\\partial z} \\cdot \\frac{\\partial z}{\\partial w_i}",
+      "explanation": "Toepassing van de kettingregel om de gevoeligheid van de uiteindelijke verliesfunctie L ten opzichte van een intern gewicht w_i te bepalen."
+    },
+    "keyTakeaways": [
+      "Maakt het trainen van miljarden parameters via Gradient Descent mogelijk.",
+      "Moderne frameworks (PyTorch, JAX) implementeren dit via dynamische computation graphs (reverse-mode autograd).",
+      "Vereist het opslaan van activaties in GPU-VRAM tijdens de forward pass."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Wiskundig exact en extreem efficiënt: berekent alle gradiënten in één backward pass.",
+        "Schaalt naar honderden miljarden parameters met distributed training (ZeRO, FSDP)."
+      ],
+      "limitations": [
+        "Vereist substantieel geheugen voor activatie-opslag (tenzij activation checkpointing gebruikt wordt).",
+        "Gevoelig voor vanishing of exploding gradients bij diepe netwerken."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Learning representations by back-propagating errors",
+      "authors": "David E. Rumelhart, Geoffrey E. Hinton, Ronald J. Williams",
+      "year": 1986,
+      "url": "https://www.nature.com/articles/323533a0"
+    },
+    "relatedIds": ["transformer", "residual-connections"],
+    "searchKeywords": ["backpropagation", "autograd", "gradients", "chain rule", "gradient descent", "adamw"]
+  },
+  {
+    "id": "moe",
+    "slug": "moe",
+    "acronym": "MoE",
+    "title": "Mixture of Experts",
+    "category": "ARCHITECTURES",
+    "level": "INTERMEDIATE",
+    "summary": "Sparse architectuur waarbij voor elk token slechts een geselecteerde subset van gespecialiseerde feed-forward netwerken ('experts') wordt geactiveerd.",
+    "technicalDeepDive": "In een traditionele 'dense' transformer doorloopt elk token alle parameters. In een MoE-model worden de FFN-lagen vervangen door N parallelle 'experts'. Een routing gate (router network) berekent softmax-kansen over de experts en selecteert alleen de top-k (vaak top-2 of top-8) experts per token. Hierdoor heeft een model bijvoorbeeld 671 miljard totale parameters (zoals DeepSeek-V3), maar worden er per token slechts 37 miljard parameters geactiveerd, wat de rekentijd per token drastisch verlaagt.",
+    "mathematics": {
+      "formula": "y = \\sum_{i \\in \\text{TopK}} G(x)_i E_i(x)",
+      "explanation": "G(x) is de routing gate die de gewichten berekent voor de geselecteerde experts E_i."
+    },
+    "keyTakeaways": [
+      "Maakt enorme modelcapaciteit mogelijk bij lage 'active parameter compute costs'.",
+      "Toegepast in frontier modellen zoals Mixtral 8x7B, GPT-4, Grok en DeepSeek-V3/R1.",
+      "Vereist load balancing loss om te voorkomen dat de router steeds dezelfde experts kiest."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Dramatisch hogere trainings- en inferentiesnelheid per token ten opzichte van dense modellen met dezelfde capaciteit.",
+        "Superieure benchmark-prestaties bij gelijkblijvende FLOPs."
+      ],
+      "limitations": [
+        "Het gehele model (alle experts) moet in VRAM geladen zijn, wat hoge geheugenvereisten stelt.",
+        "Complexiteit bij distributed inference (all-to-all communication overhead tussen GPU's)."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "arxivId": "1701.06538",
+      "authors": "Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, et al.",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1701.06538"
+    },
+    "relatedIds": ["transformer", "kv-cache", "quantization"],
+    "searchKeywords": ["moe", "mixture of experts", "sparse", "router", "gating", "deepseek", "mixtral"]
+  },
+  {
+    "id": "mamba-ssm",
+    "slug": "mamba-ssm",
+    "acronym": "SSM",
+    "title": "State Space Models & Selective Mamba",
+    "category": "ARCHITECTURES",
+    "level": "FRONTIER",
+    "summary": "Lineaire sequentiemodellen die de O(N^2) complexiteit van transformers doorbreken via selectieve toestandsruimtes met O(N) schaalbaarheid.",
+    "technicalDeepDive": "Klassieke State Space Models (SSM's) stammen uit de regeltechniek en transformeren continue systemen naar discrete toestanden via matrices (A, B, C). Mamba voegt een cruciale innovatie toe: selectiviteit. Door de parameters B, C en de tijdstap delta afhankelijk te maken van de invoer, kan het model bepalen welke informatie onthouden of vergeten moet worden. Hierdoor combineert Mamba de snelle parallelle training van CNN's met de O(1) constante geheugeninferentie van RNN's.",
+    "mathematics": {
+      "formula": "h_t = \\bar{A} h_{t-1} + \\bar{B} x_t, \\quad y_t = C h_t",
+      "explanation": "Discrete toestandstransitie waarbij h_t de verborgen toestand is en bar(A), bar(B) gediscretiseerde matrices zijn via de selectieve tijdstap delta."
+    },
+    "keyTakeaways": [
+      "Lineaire rekentijd O(N) ten opzichte van de contextlengte in plaats van O(N^2).",
+      "Geen KV-cache nodig tijdens generatie; constante geheugenvoetafdruk.",
+      "Veelbelovend voor extreem lange contexten (miljoenen tokens) en genomics/audio."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Extreem snelle inferentie bij zeer lange sequenties.",
+        "Geen kwadratische VRAM-explosie."
+      ],
+      "limitations": [
+        "Iets minder effectief in 'needle-in-a-haystack' retrieval en in-context associative recall dan pure attention.",
+        "Minder hardware-geoptimaliseerd ecosysteem dan dense matrix-vermenigvuldigingen op Tensor Cores."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+      "arxivId": "2312.00752",
+      "authors": "Albert Gu, Tri Dao",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2312.00752"
+    },
+    "relatedIds": ["self-attention", "transformer", "flash-attention"],
+    "searchKeywords": ["mamba", "ssm", "state space model", "linear attention", "tri dao", "long context"]
+  },
+  {
+    "id": "residual-connections",
+    "slug": "residual-connections",
+    "acronym": "Skip Connections",
+    "title": "Residual Connections & Highway Gradients",
+    "category": "ARCHITECTURES",
+    "level": "BEGINNER",
+    "summary": "Architectuurpatroon waarbij de invoer van een laag direct bij de uitvoer wordt opgeteld (x + f(x)), waardoor netwerken honderden lagen diep kunnen worden.",
+    "technicalDeepDive": "Vóór residual connections (ResNets, 2015) leden diepe neurale netwerken onder vanishing gradients: gradiënten stierven wiskundig uit na tientallen lagen. Door een 'skip connection' te introduceren leert de laag niet de volledige mapping H(x), maar slechts het residu F(x) = H(x) - x. Tijdens backpropagation stroomt de gradiënt via de identiteitsoperatie direct terug zonder verzwakt te worden door gewichtsmatrices, wat netwerken met honderden lagen stabiel trainbaar maakt.",
+    "mathematics": {
+      "formula": "y = \\mathcal{F}(x, \\{W_i\\}) + x",
+      "explanation": "De uitvoer y is de som van de residuële functie F(x) en de onveranderde invoer x."
+    },
+    "keyTakeaways": [
+      "De ontdekking die het mogelijk maakte om netwerken dieper dan 20-30 lagen te trainen.",
+      "Aanwezig in elk transformerblok tussen attention en feed-forward lagen.",
+      "Garandeert dat een laag minimaal een identiteitsfunctie kan nabootsen als er niets te leren valt."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Elimineert het vanishing gradient probleem in diepe architecturen.",
+        "Verhoogt de trainingssnelheid en convergentie substantieel."
+      ],
+      "limitations": [
+        "Vereist dat de dimensies van invoer en uitvoer identiek zijn (of geprojecteerd moeten worden).",
+        "Kan leiden tot redundante representaties als lagen niet voldoende divergeren."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Deep Residual Learning for Image Recognition",
+      "arxivId": "1512.03385",
+      "authors": "Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun",
+      "year": 2015,
+      "url": "https://arxiv.org/abs/1512.03385"
+    },
+    "relatedIds": ["transformer", "backpropagation-autograd"],
+    "searchKeywords": ["residual", "resnet", "skip connection", "highway", "kaiming he"]
+  },
+  {
+    "id": "diffusion-models",
+    "slug": "diffusion-models",
+    "acronym": "DDPM",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "category": "ARCHITECTURES",
+    "level": "INTERMEDIATE",
+    "summary": "Generatieve modellen die data creëren door stapsgewijs Gaussische ruis om te keren via een getraind neurale netwerk.",
+    "technicalDeepDive": "Diffusion bestaat uit twee fasen: het forward proces (waarin stapsgewijs ruis aan een afbeelding wordt toegevoegd totdat er pure ruis overblijft) en het reverse proces (waarin een U-Net of Diffusion Transformer (DiT) getraind wordt om de toegevoegde ruis op elk tijdstip t te voorspellen en te verwijderen). Door willekeurige ruis te injecteren en stapsgewijs te ontruisen ontstaat een haarscherpe nieuwe afbeelding of video.",
+    "mathematics": {
+      "formula": "L_{\\text{simple}}(\\theta) = \\mathbb{E}_{t, x_0, \\epsilon} \\left[ \\| \\epsilon - \\epsilon_\\theta(x_t, t) \\|^2 \\right]",
+      "explanation": "Het netwerk epsilon_theta leert de werkelijk toegevoegde Gaussische ruis epsilon te voorspellen gegeven het beschadigde signaal x_t op tijdstip t."
+    },
+    "keyTakeaways": [
+      "De technologie achter Stable Diffusion, Midjourney, DALL-E 3 en Sora.",
+      "Diffusion Transformers (DiT) hebben U-Nets grotendeels vervangen voor schaalbare videogeneratie.",
+      "Stabieler te trainen dan GAN's (Generative Adversarial Networks) zonder mode collapse."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Extreem hoge generatiekwaliteit en diversiteit in beeld en video.",
+        "Geen instabiliteiten of mode collapse tijdens training."
+      ],
+      "limitations": [
+        "Trage inferentie: vereist tientallen sequentiële denoising-stappen (tenzij gecombineerd met distillation of flow matching).",
+        "Hoge compute-eisen tijdens zowel training als generatie."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Denoising Diffusion Probabilistic Models",
+      "arxivId": "2006.11239",
+      "authors": "Jonathan Ho, Ajay Jain, Pieter Abbeel",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2006.11239"
+    },
+    "relatedIds": ["transformer", "embeddings"],
+    "searchKeywords": ["diffusion", "ddpm", "denoising", "dit", "stable diffusion", "sora", "generative"]
+  },
+  {
+    "id": "vision-language-models",
+    "slug": "vision-language-models",
+    "acronym": "VLM",
+    "title": "Vision-Language Models & Cross-Modality",
+    "category": "ARCHITECTURES",
+    "level": "INTERMEDIATE",
+    "summary": "Multimodale architecturen die beeldpixels omzetten in visuele tokens die een autoregressief taalmodel naadloos kan begrijpen en redeneren.",
+    "technicalDeepDive": "Een VLM koppelt een visuele encoder (zoals CLIP ViT of SigLIP) aan een LLM-backbone via een projectielaag (zoals een MLP of cross-attention perceiver resampler). Beelden worden opgedeeld in patches (bijv. 14x14 pixels), omgezet in embedding-vectoren ('visuele tokens'), en samen met teksttokens aan het taalmodel aangeboden. Hierdoor kan het model beelden ontleden, diagrammen interpreteren en visueel redeneren.",
+    "mathematics": {
+      "formula": "Z_{\\text{visual}} = \\text{Projector}(\\text{VisionEncoder}(I))",
+      "explanation": "Het beeld I wordt door de vision encoder geleid en via een getrainde projector geprojecteerd in de gedeelde embedding-ruimte van het LLM."
+    },
+    "keyTakeaways": [
+      "Maakt documentbegrip (OCR), diagram-analyse en visuele agents mogelijk.",
+      "Gepionierd door CLIP (OpenAI), LLaVA, Gemini en Claude Vision.",
+      "Native multimodale training integreert audio, video en tekst in één gedeelde transformer."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Unificeert computer vision en NLP binnen één universeel autoregressief framework.",
+        "Rijk semantisch begrip van de fysieke en visuele wereld."
+      ],
+      "limitations": [
+        "Visuele tokens consumeren veel contextruimte (honderden tokens per afbeelding).",
+        "Gevoelig voor ruimtelijke hallucinaties en subtiele meetfouten."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Visual Instruction Tuning (LLaVA)",
+      "arxivId": "2304.08485",
+      "authors": "Haotian Liu, Chunyuan Li, Qingyang Wu, Yong Jae Lee",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2304.08485"
+    },
+    "relatedIds": ["transformer", "embeddings"],
+    "searchKeywords": ["vlm", "multimodal", "llava", "clip", "vision", "siglip", "cross-attention"]
+  },
+  {
+    "id": "rlhf",
+    "slug": "rlhf",
+    "acronym": "RLHF",
+    "title": "Reinforcement Learning from Human Feedback",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "INTERMEDIATE",
+    "summary": "Afstemmingsmethode waarbij een beloningsmodel (Reward Model) menselijke voorkeuren nabootst om het beleid van het LLM te optimaliseren via PPO.",
+    "technicalDeepDive": "Base models voltooien alleen tekst en zijn niet van nature behulpzaam of veilig. RLHF bestaat uit 3 stappen: 1) Supervised Fine-Tuning (SFT) op demonstraties; 2) Trainen van een Reward Model op gepaarde menselijke vergelijkingen (A > B); 3) Optimaliseren van het taalmodel via Proximal Policy Optimization (PPO) tegen het reward model, met een KL-divergentie straf om te voorkomen dat het model te ver afdrijft van de basiskennis.",
+    "mathematics": {
+      "formula": "\\max_\\theta \\mathbb{E} \\left[ r_\\phi(x, y) - \\beta \\mathbb{D}_{\\text{KL}}(\\pi_\\theta(y|x) \\parallel \\pi_{\\text{ref}}(y|x)) \\right]",
+      "explanation": "Maximaliseert de beloning r_phi terwijl de KL-divergentie ten opzichte van het referentiemodel pi_ref binnen de perken blijft via regularisatiefactor beta."
+    },
+    "keyTakeaways": [
+      "De doorbraak die GPT-3 transformeerde in ChatGPT (InstructGPT).",
+      "Zorgt ervoor dat modellen instructies opvolgen, veiligheidsregels respecteren en behulpzaam antwoorden.",
+      "Gevoelig voor 'reward hacking', waarbij het model vleierig of langdradig wordt om het beloningsmodel te misleiden."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Drastische toename in gebruiksvriendelijkheid en instruction-following capaciteit.",
+        "Effectieve filter tegen gevaarlijke of schadelijke outputs."
+      ],
+      "limitations": [
+        "Complex en instabiel trainingsproces (vereist 4 gelijktijdige modellen in VRAM: actor, critic, reference, reward).",
+        "Kan leiden tot 'alignment tax' (lichte degradatie in pure wiskundige of creatieve benchmarks)."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Training language models to follow instructions with human feedback",
+      "arxivId": "2203.02155",
+      "authors": "Long Ouyang, Jeffrey Wu, Xu Jiang, et al.",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2203.02155"
+    },
+    "relatedIds": ["dpo", "grpo", "synthetic-data"],
+    "searchKeywords": ["rlhf", "ppo", "reward model", "alignment", "instructgpt", "preference"]
+  },
+  {
+    "id": "dpo",
+    "slug": "dpo",
+    "acronym": "DPO",
+    "title": "Direct Preference Optimization",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "INTERMEDIATE",
+    "summary": "Elegante alignment-methode die de behoefte aan een expliciet beloningsmodel en PPO-training omzeilt door de loss direct op voorkeursdata te berekenen.",
+    "technicalDeepDive": "DPO bewijst wiskundig dat het impliciete beloningsmodel van een beleid exact kan worden uitgedrukt als de log-ratio tussen het getrainde model en het referentiemodel. Hierdoor kan het complexe RLHF-proces worden gereduceerd tot een eenvoudige binaire classificatie-loss (vergelijkbaar met cross-entropy) direct op voorkeursparen (y_w > y_l). Dit elimineert de noodzaak om een apart reward model of instabiele PPO-loops te draaien.",
+    "mathematics": {
+      "formula": "\\mathcal{L}_{\\text{DPO}}(\\pi_\\theta) = -\\mathbb{E} \\left[ \\log \\sigma \\left( \\beta \\log \\frac{\\pi_\\theta(y_w|x)}{\\pi_{\\text{ref}}(y_w|x)} - \\beta \\log \\frac{\\pi_\\theta(y_l|x)}{\\pi_{\\text{ref}}(y_l|x)} \\right) \\right]",
+      "explanation": "y_w is het geprefereerde antwoord, y_l het afgewezen antwoord. De loss verhoogt direct de waarschijnlijkheid van y_w ten opzichte van y_l."
+    },
+    "keyTakeaways": [
+      "Verving PPO in veel open-source modellen (Llama-3, Zephyr, Mistral) vanwege eenvoud en stabiliteit.",
+      "Geen sampling nodig tijdens de training; direct trainbaar met standaard supervised pipelines.",
+      "Veel lager GPU-geheugengebruik dan traditionele RLHF."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Uitzonderlijk stabiel en eenvoudig te implementeren.",
+        "Geen instabiele RL hyperparameters of actor-critic netwerken nodig."
+      ],
+      "limitations": [
+        "Gevoelig voor overfitting op de statische preferentie-dataset.",
+        "Kan minder effectief zijn bij complexe meerstaps-redeneertaken dan on-policy RL."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "arxivId": "2305.18290",
+      "authors": "Rafael Rafailov, Archit Sharma, Eric Mitchell, et al.",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.18290"
+    },
+    "relatedIds": ["rlhf", "grpo", "lora-peft"],
+    "searchKeywords": ["dpo", "direct preference optimization", "alignment", "rafailov", "preference"]
+  },
+  {
+    "id": "grpo",
+    "slug": "grpo",
+    "acronym": "GRPO",
+    "title": "Group Relative Policy Optimization",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "FRONTIER",
+    "summary": "De doorbraak-RL-methode van DeepSeek die de critic-model overhead elimineert door de beloning relatief te berekenen over groepen gegenereerde antwoorden.",
+    "technicalDeepDive": "In traditionele PPO evalueert een apart 'critic model' (even groot als het taalmodel) de verwachte beloning, wat 50% van het GPU-geheugen opslokt. DeepSeek introduceerde GRPO: voor elke vraag samplet het model een groep van G antwoorden (bijv. G=8 of 16). De beloningen worden genormaliseerd over deze groep (gemiddelde en standaarddeviatie). De advantage van elk antwoord is puur zijn relatieve positie ten opzichte van zijn 'broertjes', waardoor het critic model compleet overbodig is.",
+    "mathematics": {
+      "formula": "A_i = \\frac{r_i - \\text{mean}(\\{r_1, \\dots, r_G\\})}{\\text{std}(\\{r_1, \\dots, r_G\\})}",
+      "explanation": "Genormaliseerde relatieve advantage A_i voor kandidaat i binnen een groep van grootte G."
+    },
+    "keyTakeaways": [
+      "De sleuteltechnologie achter DeepSeek-R1-Zero en DeepSeek-R1.",
+      "Halveert de VRAM-vereisten van reinforcement learning op frontier schaal.",
+      "Stelt modellen in staat om autonoom 'Aha moments' en langere denkpaden te ontwikkelen via pure rule-based verifiers."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Enorme besparing op GPU-geheugen en communicatie-overhead.",
+        "Zeer effectief in combinatie met deterministische verifiers (wiskunde, compilers)."
+      ],
+      "limitations": [
+        "Vereist het genereren van meerdere antwoorden per prompt (hoge sampling-throughput vereist).",
+        "Minder geschikt wanneer er geen objectieve wiskundige of compiler-verificatie mogelijk is."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "arxivId": "2402.03300",
+      "authors": "Zhihong Shao, Peiyi Wang, Qihao Zhu, et al. (DeepSeek)",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2402.03300"
+    },
+    "relatedIds": ["rlhf", "dpo", "test-time-compute"],
+    "searchKeywords": ["grpo", "deepseek", "deepseek-r1", "relative policy", "critic-free", "reasoning"]
+  },
+  {
+    "id": "lora-peft",
+    "slug": "lora-peft",
+    "acronym": "LoRA",
+    "title": "Low-Rank Adaptation & Parameter-Efficient Fine-Tuning",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "BEGINNER",
+    "summary": "Fine-tuning techniek die de gewichtsveranderingen ontbindt in twee laag-dimensionale matrices, waardoor minder dan 1% van de parameters getraind hoeft te worden.",
+    "technicalDeepDive": "In plaats van alle miljarden gewichten W van een model aan te passen, bevriest LoRA de originele gewichten W_0 en traint een parallelle additieve matrix Delta W. Deze verandering wordt gefactoriseerd in twee matrices met lage rang r (W_0 + B * A, waarbij B van dimensie d x r is en A van r x k, met r << d). Hierdoor daalt het aantal trainbare parameters en het optimizer-geheugen met meer dan 95%, zonder prestatieverlies.",
+    "mathematics": {
+      "formula": "h = W_0 x + \\Delta W x = W_0 x + \\frac{\\alpha}{r} B A x",
+      "explanation": "W_0 blijft bevroren; alleen B en A worden geüpdatet. Alpha is een constante schaalfactor."
+    },
+    "keyTakeaways": [
+      "Maakt het fine-tunen van 70B modellen mogelijk op consumenten-GPU's (in combinatie met QLoRA 4-bit).",
+      "LoRA-adapters zijn minuscuul (enkele megabytes) en kunnen 'on-the-fly' gewisseld worden tijdens inferentie.",
+      "Na training kunnen de matrices B*A direct opgeteld worden bij W_0, wat leidt tot 0ms extra inferentie-overhead."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Dramatische reductie in VRAM en opslagruimte.",
+        "Geen extra rekenlatentie na het 'mergen' van de gewichten."
+      ],
+      "limitations": [
+        "Iets minder expressief dan volledige fine-tuning bij massieve domeinverschuivingen.",
+        "Rang r en scaling alpha vereisen empirische tuning."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "arxivId": "2106.09685",
+      "authors": "Edward J. Hu, Yelong Shen, Phillip Wallis, et al.",
+      "year": 2021,
+      "url": "https://arxiv.org/abs/2106.09685"
+    },
+    "relatedIds": ["transformer", "quantization"],
+    "searchKeywords": ["lora", "peft", "qlora", "low-rank", "fine-tuning", "adapters"]
+  },
+  {
+    "id": "synthetic-data",
+    "slug": "synthetic-data",
+    "acronym": "Distillation",
+    "title": "Synthetic Data & Model Distillation",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "INTERMEDIATE",
+    "summary": "Het trainen van modellen op hoogwaardige data gegenereerd door grotere frontier modellen, gecombineerd met geautomatiseerde filters en verifiers.",
+    "technicalDeepDive": "Omdat het menselijke internet vol zit met ruis en de grenzen van menselijke data in zicht komen, genereren grotere 'teacher' modellen (zoals Claude 3.5 Sonnet of GPT-4o) enorme datasets van geverifieerde redeneerpaden, code en uitleg. Door deze data te valideren via syntax-checkers, compilers of unit-tests ontstaat 'synthetische data' van hogere kwaliteit dan gemiddelde menselijke webtekst. Kleinere modellen (zoals Phi-4 of Llama-3 8B) kunnen hierdoor prestaties bereiken die voorheen alleen voor reuzenmodellen waren weggelegd.",
+    "mathematics": {
+      "formula": "\\mathcal{L}_{\\text{distill}} = \\alpha \\mathcal{L}_{\\text{CE}}(y, \\hat{y}) + (1-\\alpha) \\mathbb{D}_{\\text{KL}}(P_{\\text{teacher}} \\parallel P_{\\text{student}})",
+      "explanation": "De student leert zowel de harde labels y te voorspellen als de zachte kansverdeling van de teacher te benaderen."
+    },
+    "keyTakeaways": [
+      "Cruciaal voor compacte 'small language models' (SLM's) met uitzonderlijke benchmarks.",
+      "Helpt bij het 'unlearning' van ongewenste biases en hallucinerende patronen.",
+      "Vereist strenge filters om 'model collapse' (degradatie door herhaaldelijke zelf-generatie) te voorkomen."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Onbeperkte schaalbaarheid van trainingsdata voor gespecialiseerde domeinen.",
+        "Mogelijkheid om redeneerpaden en 'thinking traces' direct over te dragen naar kleinere modellen."
+      ],
+      "limitations": [
+        "Risico op model collapse als data niet strikt gefilterd en geverifieerd wordt.",
+        "Modellen kunnen subtiele blinde vlekken en biases van het teachermodel overerven."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Textbooks Are All You Need",
+      "arxivId": "2306.11644",
+      "authors": "Suriya Gunasekar, Yi Zhang, Jyoti Aneja, et al. (Microsoft Research)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2306.11644"
+    },
+    "relatedIds": ["rlhf", "grpo", "test-time-compute"],
+    "searchKeywords": ["synthetic data", "distillation", "phi", "teacher student", "data curation"]
+  },
+  {
+    "id": "kv-cache",
+    "slug": "kv-cache",
+    "acronym": "KV Caching",
+    "title": "Key-Value (KV) Caching & Memory Overhead",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "INTERMEDIATE",
+    "summary": "Essentiële inferentie-optimalisatie die eerdere Key- en Value-vectoren bewaart in GPU-geheugen om redundante kwadratische herberekeningen te voorkomen.",
+    "technicalDeepDive": "Tijdens autoregressieve tekstgeneratie genereert het model één token per stap. Zonder caching zou het model voor token N alle eerdere N-1 tokens opnieuw door alle attention-lagen moeten berekenen. De KV-cache slaat de Key- en Value-tensors van alle eerdere tokens op in VRAM. Hierdoor hoeft bij elke nieuwe stap alleen de Query van het nieuwste token te worden berekend. Dit verlaagt de per-token complexiteit van O(N^2) naar O(N), maar transformeert inferentie in een geheugengebonden (memory bandwidth bound) proces.",
+    "mathematics": {
+      "formula": "\\text{KV\\_Size} = 2 \\times 2 \\times n_{\\text{layers}} \\times n_{\\text{heads}} \\times d_{\\text{head}} \\times \\text{seq\\_len} \\times \\text{batch\\_size} \\times \\text{precision}",
+      "explanation": "Formule voor de totale omvang in bytes van de KV-cache (de eerste factor 2 staat voor zowel Keys als Values)."
+    },
+    "keyTakeaways": [
+      "Standaard in elke moderne inferentie-engine (vLLM, Ollama, TensorRT-LLM).",
+      "Veroorzaakt de primaire bottleneck bij lange contexten (128K context kan tientallen gigabytes aan KV-cache per gebruiker vereisen).",
+      "Leidde tot de ontwikkeling van Grouped-Query Attention (GQA) en Multi-Head Latent Attention (MLA)."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Enorme versnelling van per-token generatiesnelheid (van O(N) berekening naar O(1) compute-intensiteit per laag).",
+        "Maakt realtime interactieve streaming mogelijk."
+      ],
+      "limitations": [
+        "Enorme VRAM-voetafdruk die lineair groeit met contextlengte en batchgrootte.",
+        "Inferentie wordt zwaar begrensd door geheugenbandbreedte in plaats van rekencapaciteit."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+      "arxivId": "1911.02150",
+      "authors": "Noam Shazeer",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1911.02150"
+    },
+    "relatedIds": ["self-attention", "flash-attention", "paged-attention"],
+    "searchKeywords": ["kv cache", "inference", "memory bandwidth", "gqa", "mha", "decoding"]
+  },
+  {
+    "id": "flash-attention",
+    "slug": "flash-attention",
+    "acronym": "FlashAttention",
+    "title": "FlashAttention & IO-Aware Tiling",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "FRONTIER",
+    "summary": "Hardware-bewust attention-algoritme dat GPU High Bandwidth Memory (HBM) transfers minimaliseert door berekeningen op te knippen in snelle SRAM-tegels.",
+    "technicalDeepDive": "Standaard attention schrijft de enorme N x N aandachtmatrix naar het relatief trage GPU HBM-geheugen en leest deze daarna weer in voor de softmax. FlashAttention herstructureert de berekening via 'tiling': het verdeelt de invoer in blokken die exact passen in het razendsnelle On-Chip SRAM van de GPU (SM's). Door de softmax stapsgewijs online te normaliseren ('online softmax trick'), hoeft de gigantische N x N matrix nooit in zijn geheel naar HBM te worden geschreven.",
+    "mathematics": {
+      "formula": "\\text{HBM Accesses: } O\\left(N d + \\frac{N^2 d^2}{M}\\right) \\quad \\text{vs. Standard: } \\Theta(N d + N^2)",
+      "explanation": "M is de grootte van het snelle SRAM-geheugen. FlashAttention reduceert geheugentransfers van kwadratisch naar bijna lineair afhankelijk van SRAM."
+    },
+    "keyTakeaways": [
+      "Biedt 2x tot 4x versnelling tijdens training en inferentie.",
+      "Exacte wiskundige attention: geen verlies van accuratesse of benaderingsfouten.",
+      "FlashAttention-2 en FlashAttention-3 optimaliseren verder voor Hopper (FP8, Tensor Memory Accelerator)."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Aanzienlijke versnelling van training en inferentie zónder enig kwaliteitsverlies.",
+        "Verlaagt de geheugenpiek van O(N^2) naar O(N)."
+      ],
+      "limitations": [
+        "Vereist hardware-specifieke CUDA/Triton kernels.",
+        "Niet toepasbaar op chips zonder hiërarchische SRAM/HBM-architectuur."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "arxivId": "2205.14135",
+      "authors": "Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2205.14135"
+    },
+    "relatedIds": ["self-attention", "kv-cache", "paged-attention"],
+    "searchKeywords": ["flashattention", "tri dao", "sram", "hbm", "io-aware", "cuda", "tiling"]
+  },
+  {
+    "id": "paged-attention",
+    "slug": "paged-attention",
+    "acronym": "vLLM Paging",
+    "title": "PagedAttention & Virtual Memory Management",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "INTERMEDIATE",
+    "summary": "Geheugenbeheer-algoritme geïnspireerd op virtueel geheugen in operating systems dat interne en externe fragmentatie van de KV-cache elimineert.",
+    "technicalDeepDive": "In conventionele systemen werd voor elke request vooraf een aaneengesloten blok VRAM gereserveerd voor de maximale lengte (bijv. 4096 tokens). Dit leidde tot 60-80% geheugenverspilling door interne fragmentatie. PagedAttention verdeelt de KV-cache van een sequentie in dynamische pagina's (blocks) van vaste grootte (bijv. 16 tokens). Deze hoeven niet aaneengesloten in het fysieke GPU-geheugen te liggen; een block table houdt de mapping bij. Hierdoor kunnen GPU's 2x tot 4x meer gelijktijdige streams verwerken.",
+    "mathematics": {
+      "formula": "\\text{KV Block } B_i = \\{ (K_j, V_j) \\mid j \\in [i \\cdot B, (i+1) \\cdot B - 1] \\}",
+      "explanation": "Elk blok B_i bevat een vast aantal opeenvolgende Key-Value paren die overal in het fysieke geheugen gealloceerd kunnen worden."
+    },
+    "keyTakeaways": [
+      "De kerninnovatie achter vLLM, de populairste open-source inferentie-server.",
+      "Maakt efficiënte 'copy-on-write' mogelijk voor parallel sampling en beam search.",
+      "Verhoogt de GPU-utilisatie en throughput tot wel 400%."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Bijna 0% geheugenverspilling door fragmentatie.",
+        "Dramatisch hogere server throughput bij gelijktijdige multi-user workloads."
+      ],
+      "limitations": [
+        "Kleine pointer-indirection overhead bij het ophalen van geheugenblokken.",
+        "Iets complexere scheduling en kernel-implementatie."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "arxivId": "2309.06180",
+      "authors": "Woosuk Kwon, Zhuohan Li, Siyuan Shen, et al. (UC Berkeley)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2309.06180"
+    },
+    "relatedIds": ["kv-cache", "flash-attention"],
+    "searchKeywords": ["pagedattention", "vllm", "virtual memory", "kv cache", "serving", "throughput"]
+  },
+  {
+    "id": "speculative-decoding",
+    "slug": "speculative-decoding",
+    "acronym": "Speculative Decoding",
+    "title": "Speculative Decoding & Draft Verification",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "FRONTIER",
+    "summary": "Acceleratietechniek waarbij een klein 'draft model' razendsnel kandidaat-tokens genereert, die het grote model in één parallelle stap valideert.",
+    "technicalDeepDive": "Omdat LLM-inferentie 'memory bandwidth bound' is, kost het evenveel tijd om 1 token te evalueren als 5 tokens tegelijk in batch. Speculative decoding laat een klein, snel draft model (bijv. 1B) K tokens vooruit speculeren. Het grote 'target model' (bijv. 70B) verifieert al deze K tokens in één enkele parallelle forward pass. Tokens die voldoen aan de acceptatiecriteria worden direct geaccepteerd. Dit resulteert in een 2x tot 3x versnelling met een wiskundig bewezen identieke kansverdeling als het grote model.",
+    "mathematics": {
+      "formula": "P(\\text{accept}) = \\min\\left(1, \\frac{P_{\\text{target}}(x)}{P_{\\text{draft}}(x)}\\right)",
+      "explanation": "Acceptatiekans volgens modified rejection sampling, wat garandeert dat de uiteindelijke verdeling exact gelijk is aan P_target."
+    },
+    "keyTakeaways": [
+      "Versnelt inferentie met 2x tot 3x zonder enig kwaliteitsverlies.",
+      "Zero degradation: de gegenereerde output is mathematisch niet te onderscheiden van pure target decoding.",
+      "Moderne varianten gebruiken medusa heads of self-speculation zonder apart draft model."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Directe 2x tot 3x lagere latency per gegenereerde token.",
+        "Geen her-training van het hoofdmodel nodig."
+      ],
+      "limitations": [
+        "Vereist dat draft model en target model dezelfde tokenizer delen.",
+        "Minder effectief bij code of wiskunde met hoge entropie waar de draft acceptance rate daalt."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Fast Inference from Transformers via Speculative Decoding",
+      "arxivId": "2211.17192",
+      "authors": "Yaniv Leviathan, Matan Kalman, Yossi Matias (Google Research)",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2211.17192"
+    },
+    "relatedIds": ["kv-cache", "flash-attention"],
+    "searchKeywords": ["speculative decoding", "draft model", "inference speed", "rejection sampling", "latency"]
+  },
+  {
+    "id": "quantization",
+    "slug": "quantization",
+    "acronym": "Quantization (FP8/AWQ/GGUF)",
+    "title": "Weight & Activation Quantization",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "BEGINNER",
+    "summary": "Reductie van de numerieke precisie van gewichten en activaties (bijv. van 16-bit float naar 8-bit of 4-bit) om VRAM-gebruik en geheugenbandbreedte te halveren.",
+    "technicalDeepDive": "Oorspronkelijk worden gewichten opgeslagen in FP16 of BF16 (16 bits per parameter). Quantization comprimeert deze naar lagere bitprecisies: FP8 (8-bit floating point, native ondersteund op NVIDIA Ada/Hopper), INT8 of INT4 (zoals in AWQ, GPTQ en GGUF voor llama.cpp). Door 'outlier activations' (salient weights) te beschermen met geavanceerde schaling (zoals in AWQ: Activation-aware Weight Quantization) blijft het kwaliteitsverlies verwaarloosbaar klein terwijl de VRAM-voetafdruk met 50% tot 75% daalt.",
+    "mathematics": {
+      "formula": "q = \\text{clip}\\left(\\text{round}\\left(\\frac{w}{s}\\right) + z, q_{\\min}, q_{\\max}\\right)",
+      "explanation": "Afbeelding van reëel gewicht w naar discrete integer q met schaalfactor s en zero-point z."
+    },
+    "keyTakeaways": [
+      "Maakt het draaien van een 70B model mogelijk op één enkele consumenten-GPU met 24GB VRAM (in 4-bit).",
+      "FP8 is tegenwoordig de industriestandaard voor zowel training als inferentie op frontier hardware.",
+      "GGUF is het universele formaat voor CPU en Apple Silicon inferentie."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Tot 75% minder VRAM-gebruik.",
+        "Hogere tokens-per-seconde doordat minder data over de geheugenbus gepompt hoeft te worden."
+      ],
+      "limitations": [
+        "Bij zeer agressieve quantisatie (< 3 bits) treedt merkbaar verlies van redeneervermogen en perplexity op.",
+        "Sommige INT4 schema's vereisen 'dequantization' tijdens de berekening, wat lichte compute-overhead kan toevoegen."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration",
+      "arxivId": "2306.00978",
+      "authors": "Ji Lin, Jiaming Tang, Haotian Tang, et al. (MIT)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2306.00978"
+    },
+    "relatedIds": ["transformer", "kv-cache", "lora-peft"],
+    "searchKeywords": ["quantization", "fp8", "int4", "awq", "gguf", "gptq", "bitsandbytes", "compression"]
+  },
+  {
+    "id": "test-time-compute",
+    "slug": "test-time-compute",
+    "acronym": "Test-Time Scaling",
+    "title": "Test-Time Compute Scaling & Reasoning Search",
+    "category": "FRONTIER_REASONING",
+    "level": "FRONTIER",
+    "summary": "Het fundamentele paradigma van reasoning-modellen waarbij extra rekentijd tijdens de inferentiefase wordt ingezet om denkstappen te verkennen en verifiëren.",
+    "technicalDeepDive": "Traditionele scaling laws (Kaplan, Chinchilla) richtten zich puur op méér data en grotere modellen tijdens de trainingsfase. Test-time compute scaling introduceert een derde schaalas: rekentijd tijdens de generatie. Modellen genereren expliciete 'chains of thought', verkennen alternatieve hypotheses, detecteren fouten in hun eigen logica en backtracken indien nodig. OpenAI o1 en DeepSeek-R1 bewijzen dat 1 seconde extra nadenken tijdens inferentie wiskundige en codeerprestaties kan opleveren die vergelijkbaar zijn met een 10x groter model.",
+    "mathematics": {
+      "formula": "\\text{Performance} \\propto f(\\text{Pretrain FLOPs}, \\text{Posttrain FLOPs}, \\text{Test-Time FLOPs})",
+      "explanation": "Modelprestaties zijn niet langer begrensd door trainings-FLOPs alleen, maar groeien logaritmisch met de hoeveelheid compute die per vraag tijdens inferentie wordt besteed."
+    },
+    "keyTakeaways": [
+      "De grootste paradigmaverschuiving in AI sinds de opkomst van transformers (OpenAI o1, DeepSeek-R1).",
+      "Breekt door de 'data wall' waar conventionele pre-training tegenaan begon te lopen.",
+      "Maakt wiskundig en wetenschappelijk redeneren op Olympiade-niveau mogelijk."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Ongekende sprong in complexe wiskunde, cryptografie, architectuur en programmeren.",
+        "Verhoogt de betrouwbaarheid van antwoorden dramatisch."
+      ],
+      "limitations": [
+        "Veel hogere latency per antwoord (seconden tot minuten nadenken).",
+        "Hogere kosten per query vanwege de honderden tot duizenden gegenereerde denk-tokens."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+      "arxivId": "2408.03314",
+      "authors": "Charlie Snell, Jaehoon Lee, Kelvin Xu, Aviral Kumar",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2408.03314"
+    },
+    "relatedIds": ["chain-of-thought", "process-reward-models", "grpo"],
+    "searchKeywords": ["test-time compute", "reasoning", "openai o1", "deepseek-r1", "search", "thinking"]
+  },
+  {
+    "id": "chain-of-thought",
+    "slug": "chain-of-thought",
+    "acronym": "CoT",
+    "title": "Chain-of-Thought (CoT) Prompting & Reasoning",
+    "category": "FRONTIER_REASONING",
+    "level": "BEGINNER",
+    "summary": "Techniek waarbij een model wordt aangezet om tussenstappen expliciet uit te schrijven vóór het geven van het definitieve antwoord.",
+    "technicalDeepDive": "Zonder Chain-of-Thought probeert een taalmodel complexe vragen in één enkele voorwaartse pass op te lossen. Door het model te instrueren (of via RL te trainen) om stapsgewijs te redeneren ('Let's think step by step'), fungeert elk gegenereerd tussentoken als extra werkgeheugen en conditionering voor de volgende berekening. Dit verdeelt een complex meerstapsprobleem in beheersbare deeltaken.",
+    "mathematics": {
+      "formula": "P(A \\mid Q) = \\sum_{C} P(A \\mid Q, C) P(C \\mid Q)",
+      "explanation": "Het uiteindelijke antwoord A wordt geconditioneerd op het redeneerpad (chain) C gegeven de initiële vraag Q."
+    },
+    "keyTakeaways": [
+      "Verhoogt prestaties op wiskunde- en logica-benchmarks drastisch.",
+      "Vormt het fundament onder autonome redeneermodellen.",
+      "Biedt inzicht in de gedachtegang en 'explainability' van het model."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Sterke verbetering van meerstaps-redeneervermogen.",
+        "Eenvoudig toepasbaar via prompting én via post-training RL."
+      ],
+      "limitations": [
+        "Genereert aanzienlijk meer tokens per antwoord (hogere kosten en latency).",
+        "Redeneerpaden kunnen soms post-hoc rationalisaties zijn in plaats van daadwerkelijke causale stappen."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+      "arxivId": "2201.11903",
+      "authors": "Jason Wei, Xuezhi Wang, Dale Schuurmans, et al. (Google Research)",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2201.11903"
+    },
+    "relatedIds": ["test-time-compute", "process-reward-models", "tree-of-thought"],
+    "searchKeywords": ["cot", "chain of thought", "reasoning", "step by step", "jason wei"]
+  },
+  {
+    "id": "process-reward-models",
+    "slug": "process-reward-models",
+    "acronym": "PRM",
+    "title": "Process Reward Models & Step-by-Step Verification",
+    "category": "FRONTIER_REASONING",
+    "level": "FRONTIER",
+    "summary": "Beloningsmodellen die niet alleen het eindresultaat beoordelen (Outcome RM), maar elke individuele tussenstap van een redenering valideren.",
+    "technicalDeepDive": "Een Outcome Reward Model (ORM) geeft pas aan het einde van een oplossing een score (0 of 1). Als een model een foute redenering volgt maar toevallig op het juiste antwoord uitkomt, beloont een ORM dit foute denkpatroon. Een Process Reward Model (PRM) evalueert elke afzonderlijke regel of tussenstap. Hierdoor kan het systeem tijdens boomzoekalgoritmes (zoals MCTS) direct ingrijpen zodra een model een denkfout maakt, en alternatieve takken verkennen.",
+    "mathematics": {
+      "formula": "r_{\\text{PRM}}(y) = \\prod_{t=1}^{T} P(\\text{step } t \\text{ is correct} \\mid x, y_{<t})",
+      "explanation": "De betrouwbaarheid van een oplossing y is het product van de correctheidskansen van elke afzonderlijke stap t."
+    },
+    "keyTakeaways": [
+      "Bewezen superieur aan Outcome Reward Models voor wiskundig redeneren (OpenAI MATH benchmark).",
+      "Cruciaal voor best-of-N sampling en tree search tijdens inferentie.",
+      "Maakt nauwkeurige foutlocalisatie in lange afleidingen mogelijk."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Voorkomt dat modellen leren via 'valse logica met toevallig juist antwoord'.",
+        "Stelt search-algoritmen in staat om vroege fouten direct af te kappen."
+      ],
+      "limitations": [
+        "Vereist gedetailleerde stap-voor-stap annotatie of complexe synthetische verifiers.",
+        "Hogere rekenkracht nodig om na elke stap een evaluatie uit te voeren."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Let's Verify Step by Step",
+      "arxivId": "2305.20050",
+      "authors": "Hunter Lightman, Vineet Kosaraju, Yura Burda, et al. (OpenAI)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.20050"
+    },
+    "relatedIds": ["test-time-compute", "chain-of-thought", "tree-of-thought"],
+    "searchKeywords": ["prm", "process reward", "step by step", "verification", "orm", "lightman"]
+  },
+  {
+    "id": "tree-of-thought",
+    "slug": "tree-of-thought",
+    "acronym": "ToT",
+    "title": "Tree-of-Thought & Tree Search (MCTS)",
+    "category": "FRONTIER_REASONING",
+    "level": "FRONTIER",
+    "summary": "Redeneerframework waarbij het model meerdere gedachtenlijnen vertakt, evalueert en systematisch doorzoekt via algoritmes zoals BFS, DFS of Monte Carlo Tree Search.",
+    "technicalDeepDive": "Waar Chain-of-Thought strikt lineair is, structureert Tree-of-Thought (ToT) het probleem als een zoekboom waarin elke knoop een tussenliggende gedachte voorstelt. Het model genereert meerdere mogelijke vervolgstappen, evalueert de levensvatbaarheid van elke tak (via zelf-reflectie of een PRM), en kan besluiten om doodlopende paden te verlaten (backtracking). Dit brengt klassieke heuristische zoekmethoden (zoals A* en MCTS van AlphaGo) naar natuurlijke taalmodellen.",
+    "mathematics": {
+      "formula": "V(s) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ R(\\tau) \\mid s_0 = s \\right]",
+      "explanation": "Waarde V(s) van toestand s binnen de boom, geëvalueerd over verwachte toekomstige paden tau."
+    },
+    "keyTakeaways": [
+      "Uitzonderlijk sterk bij combinatorische problemen, schaken, planning en moeilijke puzzels.",
+      "Maakt doelbewuste exploratie en backtracking mogelijk.",
+      "Combineert symbolische AI (zoekalgoritmen) met probabilistische LLM's."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Vindt oplossingen waar lineaire greedy generatie onherroepelijk vastloopt.",
+        "Robuuste zelfcorrectie via backtracking."
+      ],
+      "limitations": [
+        "Hoge rekenkracht en tokenconsumptie (tientallen vertakkingen).",
+        "Vereist betrouwbare toestandsevaluators om takken te snoeien."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+      "arxivId": "2305.10601",
+      "authors": "Shunyu Yao, Dian Yu, Jeffrey Zhao, et al. (Princeton / Google DeepMind)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.10601"
+    },
+    "relatedIds": ["test-time-compute", "chain-of-thought", "process-reward-models"],
+    "searchKeywords": ["tree of thought", "tot", "mcts", "tree search", "backtracking", "planning"]
+  },
+  {
+    "id": "react-agent-loop",
+    "slug": "react-agent-loop",
+    "acronym": "ReAct",
+    "title": "ReAct: Synergizing Reasoning and Acting in Autonomous Agents",
+    "category": "FRONTIER_REASONING",
+    "level": "INTERMEDIATE",
+    "summary": "Het fundamentele patroon voor AI-agents waarbij dynamische verbale redenering ('Thought') wordt afgewisseld met gereedschapsaanroepen ('Action' en 'Observation').",
+    "technicalDeepDive": "Zuiver handelen (zoals actie-georiënteerde API-calls) mist overzicht en reflectie, terwijl zuiver redeneren (zoals Chain-of-Thought) geen toegang heeft tot de buitenwereld en vatbaar is voor hallucinaties. ReAct combineert beide in een dynamische lus: 1) Thought (het model analyseert de huidige toestand); 2) Action (het model roept een tool of zoekmachine aan met parameters); 3) Observation (de omgeving geeft het resultaat terug). Deze cyclus herhaalt zich totdat het einddoel is bereikt.",
+    "mathematics": {
+      "formula": "\\tau = (c_1, a_1, o_1, c_2, a_2, o_2, \\dots, c_T, a_T, o_T)",
+      "explanation": "Het agent-traject tau bestaat uit afwisselende denkstappen c_t, acties a_t en externe observaties o_t."
+    },
+    "keyTakeaways": [
+      "De blauwdruk achter alle moderne AI-assistenten, programmeer-agents en autonomous tool-users.",
+      "Vermindert hallucinaties door realtime verificatie via externe tools.",
+      "Maakt complexe meerstaps-workflows (zoals webbrowsing of terminal-automatisering) mogelijk."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Enorme toename in actiegerichtheid en betrouwbaarheid door grounding in externe API's.",
+        "Transparant auditeerbaar traject voor debugging."
+      ],
+      "limitations": [
+        "Gevoelig voor oneindige lussen (infinite loops) als externe tools foutieve data teruggeven.",
+        "Context window kan snel vollopen door lange observaties en logs."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "arxivId": "2210.03629",
+      "authors": "Shunyu Yao, Jeffrey Zhao, Dian Yu, et al. (Princeton / Google Brain)",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    "relatedIds": ["chain-of-thought", "test-time-compute"],
+    "searchKeywords": ["react", "agents", "tool use", "autonomous", "thought action observation", "planning"]
+  }
+]
