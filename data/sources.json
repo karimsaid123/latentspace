@@ -7,10 +7,8 @@
     "category": "LLMs & GenAI",
     "color": "#10a37f",
     "enabled": true,
-    "lastSynced": "2026-10-30T16:04:59.083Z",
-    "articleCount": 15,
-    "lastFetchedAt": "2026-11-04T06:56:50.252Z",
-    "consecutiveFailures": 0
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.413Z"
   },
   {
     "id": "deepmind",
@@ -20,9 +18,121 @@
     "category": "LLMs & GenAI",
     "color": "#3b82f6",
     "enabled": true,
-    "lastSynced": "2026-10-30T16:04:59.208Z",
-    "articleCount": 15,
-    "lastFetchedAt": "2026-11-04T06:56:50.253Z",
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.507Z"
+  },
+  {
+    "id": "google-research",
+    "name": "Google AI Research Blog",
+    "feedUrl": "https://research.google/blog/rss/",
+    "websiteUrl": "https://research.google/blog/",
+    "category": "Open Source & Research",
+    "color": "#4285f4",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.510Z"
+  },
+  {
+    "id": "nvidia-blog",
+    "name": "NVIDIA AI News",
+    "feedUrl": "https://blogs.nvidia.com/feed/",
+    "websiteUrl": "https://blogs.nvidia.com/",
+    "category": "Robotics & Hardware",
+    "color": "#76b900",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.512Z"
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face Blog",
+    "feedUrl": "https://huggingface.co/blog/feed.xml",
+    "websiteUrl": "https://huggingface.co/blog",
+    "category": "Open Source & Research",
+    "color": "#f59e0b",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.514Z"
+  },
+  {
+    "id": "bair-blog",
+    "name": "Berkeley AI Research (BAIR)",
+    "feedUrl": "https://bair.berkeley.edu/blog/feed.xml",
+    "websiteUrl": "https://bair.berkeley.edu/blog/",
+    "category": "Open Source & Research",
+    "color": "#0284c7",
+    "enabled": true,
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-04T10:14:46.516Z"
+  },
+  {
+    "id": "aws-ml",
+    "name": "AWS Machine Learning",
+    "feedUrl": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "websiteUrl": "https://aws.amazon.com/blogs/machine-learning/",
+    "category": "LLMs & GenAI",
+    "color": "#ff9900",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "semianalysis",
+    "name": "SemiAnalysis",
+    "feedUrl": "https://www.semianalysis.com/feed",
+    "websiteUrl": "https://www.semianalysis.com",
+    "category": "Robotics & Hardware",
+    "color": "#4f46e5",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "the-register-ai",
+    "name": "The Register AI",
+    "feedUrl": "https://www.theregister.com/software/ai_ml/headlines.atom",
+    "websiteUrl": "https://www.theregister.com/software/ai_ml/",
+    "category": "LLMs & GenAI",
+    "color": "#d97706",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "ieee-spectrum-ai",
+    "name": "IEEE Spectrum AI",
+    "feedUrl": "https://spectrum.ieee.org/feeds/topic/artificial-intelligence.rss",
+    "websiteUrl": "https://spectrum.ieee.org/topic/artificial-intelligence",
+    "category": "Open Source & Research",
+    "color": "#2563eb",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "interconnects-ai",
+    "name": "Interconnects AI",
+    "feedUrl": "https://www.interconnects.ai/feed",
+    "websiteUrl": "https://www.interconnects.ai",
+    "category": "LLMs & GenAI",
+    "color": "#065f46",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "ahead-of-ai",
+    "name": "Ahead of AI",
+    "feedUrl": "https://magazine.sebastianraschka.com/feed",
+    "websiteUrl": "https://magazine.sebastianraschka.com",
+    "category": "Open Source & Research",
+    "color": "#7c3aed",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "the-gradient",
+    "name": "The Gradient",
+    "feedUrl": "https://thegradient.pub/rss/",
+    "websiteUrl": "https://thegradient.pub",
+    "category": "Open Source & Research",
+    "color": "#db2777",
+    "enabled": true,
     "consecutiveFailures": 0
   },
   {
@@ -33,9 +143,6 @@
     "category": "Business & Big Tech",
     "color": "#059669",
     "enabled": true,
-    "lastSynced": "2026-10-30T16:04:59.818Z",
-    "articleCount": 15,
-    "lastFetchedAt": "2026-11-04T06:56:50.793Z",
     "consecutiveFailures": 0
   },
   {
@@ -46,22 +153,6 @@
     "category": "LLMs & GenAI",
     "color": "#e11d48",
     "enabled": true,
-    "lastSynced": "2026-10-30T16:04:59.924Z",
-    "articleCount": 10,
-    "lastFetchedAt": "2026-11-04T06:56:50.794Z",
-    "consecutiveFailures": 0
-  },
-  {
-    "id": "huggingface",
-    "name": "Hugging Face Blog",
-    "feedUrl": "https://huggingface.co/blog/feed.xml",
-    "websiteUrl": "https://huggingface.co/blog",
-    "category": "Open Source & Research",
-    "color": "#f59e0b",
-    "enabled": true,
-    "lastSynced": "2026-10-30T16:05:00.302Z",
-    "articleCount": 15,
-    "lastFetchedAt": "2026-11-04T06:56:50.795Z",
     "consecutiveFailures": 0
   },
   {
@@ -72,264 +163,7 @@
     "category": "Ethics & Policy",
     "color": "#6366f1",
     "enabled": true,
-    "lastSynced": "2026-10-30T16:05:00.388Z",
-    "articleCount": 10,
-    "lastFetchedAt": "2026-11-04T06:56:50.797Z",
     "consecutiveFailures": 0
-  },
-  {
-    "id": "arxiv-ai",
-    "name": "arXiv cs.AI (Artificial Intelligence)",
-    "feedUrl": "https://rss.arxiv.org/rss/cs.AI",
-    "websiteUrl": "https://arxiv.org/list/cs.AI/recent",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.798Z"
-  },
-  {
-    "id": "arxiv-cl",
-    "name": "arXiv cs.CL (Language & LLMs)",
-    "feedUrl": "https://rss.arxiv.org/rss/cs.CL",
-    "websiteUrl": "https://arxiv.org/list/cs.CL/recent",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.799Z"
-  },
-  {
-    "id": "techcrunch-xai",
-    "name": "TechCrunch xAI & Grok",
-    "feedUrl": "https://techcrunch.com/tag/xai/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/xai/",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.937Z"
-  },
-  {
-    "id": "techcrunch-spacex",
-    "name": "TechCrunch SpaceX & Starlink",
-    "feedUrl": "https://techcrunch.com/tag/spacex/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/spacex/",
-    "category": "Robotics & Hardware",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.937Z"
-  },
-  {
-    "id": "arxiv-xai",
-    "name": "arXiv xAI & Autonomous Systems",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Grok+OR+abs:%22Grok-1%22+OR+abs:%22Colossus%22+OR+ti:%22autonomous+spacecraft%22+OR+abs:%22Starlink%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.940Z"
-  },
-  {
-    "id": "techcrunch-anthropic",
-    "name": "TechCrunch Anthropic & Claude",
-    "feedUrl": "https://techcrunch.com/tag/anthropic/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/anthropic/",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.938Z"
-  },
-  {
-    "id": "arxiv-deepmind",
-    "name": "arXiv Google DeepMind Research",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:DeepMind+OR+ti:Gemini+OR+abs:%22Google+DeepMind%22+OR+ti:AlphaFold&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.617Z"
-  },
-  {
-    "id": "techcrunch-mistral",
-    "name": "TechCrunch Mistral AI",
-    "feedUrl": "https://techcrunch.com/tag/mistral-ai/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/mistral-ai/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.939Z"
-  },
-  {
-    "id": "arxiv-mistral",
-    "name": "arXiv Mistral & Mixtral Research",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Mistral+OR+ti:Mixtral+OR+abs:%22Mistral+AI%22+OR+abs:Codestral&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.618Z"
-  },
-  {
-    "id": "techcrunch-moonshot",
-    "name": "TechCrunch Moonshot AI & Kimi",
-    "feedUrl": "https://techcrunch.com/tag/moonshot-ai/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/moonshot-ai/",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.940Z"
-  },
-  {
-    "id": "arxiv-moonshot",
-    "name": "arXiv Moonshot & Kimi Research",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Kimi+OR+abs:%22Moonshot+AI%22+OR+abs:%22Kimi%22+OR+ti:%22Moonshot%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org/",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.027Z"
-  },
-  {
-    "id": "techcrunch-deepseek",
-    "name": "TechCrunch DeepSeek",
-    "feedUrl": "https://techcrunch.com/tag/deepseek/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/deepseek/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.220Z"
-  },
-  {
-    "id": "arxiv-deepseek",
-    "name": "arXiv DeepSeek & Reasoning Research",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:DeepSeek+OR+abs:%22DeepSeek%22+OR+abs:%22DeepSeek-R1%22+OR+abs:%22DeepSeek-V3%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.254Z"
-  },
-  {
-    "id": "nvidia-blog",
-    "name": "NVIDIA AI News",
-    "feedUrl": "https://blogs.nvidia.com/feed/",
-    "websiteUrl": "https://blogs.nvidia.com/",
-    "category": "Robotics & Hardware",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.615Z"
-  },
-  {
-    "id": "techcrunch-nvidia",
-    "name": "TechCrunch NVIDIA & GPUs",
-    "feedUrl": "https://techcrunch.com/tag/nvidia/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/nvidia/",
-    "category": "Robotics & Hardware",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.616Z"
-  },
-  {
-    "id": "techcrunch-meta",
-    "name": "TechCrunch Meta AI",
-    "feedUrl": "https://techcrunch.com/tag/meta/feed/",
-    "websiteUrl": "https://techcrunch.com/tag/meta/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.617Z"
-  },
-  {
-    "id": "arxiv-meta",
-    "name": "arXiv Meta AI & FAIR Research",
-    "feedUrl": "https://export.arxiv.org/api/query?search_query=all:Meta+AND+all:LLaMA&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
-    "websiteUrl": "https://arxiv.org",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.027Z"
-  },
-  {
-    "id": "google-research",
-    "name": "Google AI Research Blog",
-    "feedUrl": "https://research.google/blog/rss/",
-    "websiteUrl": "https://research.google/blog/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:51.617Z"
-  },
-  {
-    "id": "aws-ml",
-    "name": "AWS Machine Learning",
-    "feedUrl": "https://aws.amazon.com/blogs/machine-learning/feed/",
-    "websiteUrl": "https://aws.amazon.com/blogs/machine-learning/",
-    "category": "LLMs & GenAI",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.024Z"
-  },
-  {
-    "id": "bair-blog",
-    "name": "Berkeley AI Research (BAIR)",
-    "feedUrl": "https://bair.berkeley.edu/blog/feed.xml",
-    "websiteUrl": "https://bair.berkeley.edu/blog/",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.025Z"
-  },
-  {
-    "id": "arxiv-lg",
-    "name": "arXiv cs.LG (Machine Learning)",
-    "feedUrl": "https://rss.arxiv.org/rss/cs.LG",
-    "websiteUrl": "https://arxiv.org/list/cs.LG/recent",
-    "category": "Open Source & Research",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.026Z"
-  },
-  {
-    "id": "techmeme",
-    "name": "Techmeme",
-    "feedUrl": "https://techmeme.com/feed.xml",
-    "websiteUrl": "https://techmeme.com/",
-    "category": "Business & Big Tech",
-    "color": "#2563eb",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.026Z"
-  },
-  {
-    "id": "marktechpost",
-    "name": "MarkTechPost AI",
-    "feedUrl": "https://www.marktechpost.com/feed/",
-    "websiteUrl": "https://www.marktechpost.com/",
-    "category": "Open Source & Research",
-    "color": "#10b981",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.512Z"
-  },
-  {
-    "id": "siliconangle-ai",
-    "name": "SiliconANGLE AI",
-    "feedUrl": "https://siliconangle.com/category/ai/feed/",
-    "websiteUrl": "https://siliconangle.com/category/ai/",
-    "category": "Business & Big Tech",
-    "color": "#d97706",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.513Z"
-  },
-  {
-    "id": "simon-willison",
-    "name": "Simon Willison AI",
-    "feedUrl": "https://simonwillison.net/atom/everything/",
-    "websiteUrl": "https://simonwillison.net/",
-    "category": "LLMs & GenAI",
-    "color": "#8b5cf6",
-    "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.514Z"
   },
   {
     "id": "arstechnica-tech",
@@ -339,29 +173,126 @@
     "category": "Robotics & Hardware",
     "color": "#ea580c",
     "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:52.514Z"
+    "consecutiveFailures": 0
   },
   {
-    "id": "xai-radar",
-    "name": "xAI & Grok Radar",
-    "feedUrl": "https://news.google.com/rss/search?q=xAI+OR+%22Elon+Musk%22+AI+OR+Grok&hl=en-US&gl=US&ceid=US:en",
-    "websiteUrl": "https://x.ai",
-    "category": "LLMs & GenAI",
-    "color": "#1d9bf0",
+    "id": "siliconangle-ai",
+    "name": "SiliconANGLE AI",
+    "feedUrl": "https://siliconangle.com/category/ai/feed/",
+    "websiteUrl": "https://siliconangle.com/category/ai/",
+    "category": "Business & Big Tech",
+    "color": "#b45309",
     "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.250Z"
+    "consecutiveFailures": 0
   },
   {
-    "id": "teslarati-spacex",
-    "name": "Teslarati SpaceX",
-    "feedUrl": "https://www.teslarati.com/category/spacex/feed/",
-    "websiteUrl": "https://www.teslarati.com",
-    "category": "Robotics & Hardware",
+    "id": "marktechpost",
+    "name": "MarkTechPost AI",
+    "feedUrl": "https://www.marktechpost.com/feed/",
+    "websiteUrl": "https://www.marktechpost.com/",
+    "category": "Open Source & Research",
+    "color": "#10b981",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "simon-willison",
+    "name": "Simon Willison AI",
+    "feedUrl": "https://simonwillison.net/atom/everything/",
+    "websiteUrl": "https://simonwillison.net/",
+    "category": "LLMs & GenAI",
+    "color": "#8b5cf6",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-ai",
+    "name": "arXiv cs.AI (Artificial Intelligence)",
+    "feedUrl": "https://rss.arxiv.org/rss/cs.AI",
+    "websiteUrl": "https://arxiv.org/list/cs.AI/recent",
+    "category": "Open Source & Research",
+    "color": "#b31b1b",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-cl",
+    "name": "arXiv cs.CL (Language & LLMs)",
+    "feedUrl": "https://rss.arxiv.org/rss/cs.CL",
+    "websiteUrl": "https://arxiv.org/list/cs.CL/recent",
+    "category": "LLMs & GenAI",
+    "color": "#b31b1b",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-lg",
+    "name": "arXiv cs.LG (Machine Learning)",
+    "feedUrl": "https://rss.arxiv.org/rss/cs.LG",
+    "websiteUrl": "https://arxiv.org/list/cs.LG/recent",
+    "category": "Open Source & Research",
+    "color": "#b31b1b",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-deepseek",
+    "name": "arXiv DeepSeek & Reasoning Research",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:DeepSeek+OR+abs:%22DeepSeek%22+OR+abs:%22DeepSeek-R1%22+OR+abs:%22DeepSeek-V3%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "Open Source & Research",
+    "color": "#1e40af",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-deepmind",
+    "name": "arXiv Google DeepMind Research",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:DeepMind+OR+ti:Gemini+OR+abs:%22Google+DeepMind%22+OR+ti:AlphaFold&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "Open Source & Research",
+    "color": "#2563eb",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-meta",
+    "name": "arXiv Meta AI & FAIR Research",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=all:Meta+AND+all:LLaMA&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org",
+    "category": "Open Source & Research",
     "color": "#0284c7",
     "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-04T06:56:50.256Z"
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-mistral",
+    "name": "arXiv Mistral & Mixtral Research",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Mistral+OR+ti:Mixtral+OR+abs:%22Mistral+AI%22+OR+abs:Codestral&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "Open Source & Research",
+    "color": "#f97316",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-moonshot",
+    "name": "arXiv Moonshot & Kimi Research",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Kimi+OR+abs:%22Moonshot+AI%22+OR+abs:%22Kimi%22+OR+ti:%22Moonshot%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "LLMs & GenAI",
+    "color": "#059669",
+    "enabled": true,
+    "consecutiveFailures": 0
+  },
+  {
+    "id": "arxiv-xai",
+    "name": "arXiv xAI & Autonomous Systems",
+    "feedUrl": "https://export.arxiv.org/api/query?search_query=ti:Grok+OR+abs:%22Grok-1%22+OR+abs:%22Colossus%22+OR+ti:%22autonomous+spacecraft%22+OR+abs:%22Starlink%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+    "websiteUrl": "https://arxiv.org/",
+    "category": "Open Source & Research",
+    "color": "#1d9bf0",
+    "enabled": true,
+    "consecutiveFailures": 0
   }
 ]
