@@ -5,271 +5,23 @@ import { DomainSource } from '@/core/domain/entities';
 import { isServerlessOrEdge } from '@/lib/runtime-env';
 import staticSourcesData from '../../../data/sources.json';
 
-const DEFAULT_SOURCES: DomainSource[] = [
-  {
-    id: 'openai',
-    name: 'OpenAI News',
-    feedUrl: 'https://openai.com/news/rss.xml',
-    websiteUrl: 'https://openai.com/news',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'deepmind',
-    name: 'Google DeepMind',
-    feedUrl: 'https://deepmind.google/blog/rss.xml',
-    websiteUrl: 'https://deepmind.google/discover/blog',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-ai',
-    name: 'TechCrunch AI',
-    feedUrl: 'https://techcrunch.com/category/artificial-intelligence/feed/',
-    websiteUrl: 'https://techcrunch.com/category/artificial-intelligence/',
-    category: 'Business & Big Tech',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'verge-ai',
-    name: 'The Verge AI',
-    feedUrl: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml',
-    websiteUrl: 'https://www.theverge.com/ai-artificial-intelligence',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'huggingface',
-    name: 'Hugging Face Blog',
-    feedUrl: 'https://huggingface.co/blog/feed.xml',
-    websiteUrl: 'https://huggingface.co/blog',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'mit-tech-ai',
-    name: 'MIT Technology Review',
-    feedUrl: 'https://www.technologyreview.com/topic/artificial-intelligence/feed',
-    websiteUrl: 'https://www.technologyreview.com/topic/artificial-intelligence/',
-    category: 'Ethics & Policy',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-ai',
-    name: 'arXiv cs.AI (Artificial Intelligence)',
-    feedUrl: 'https://rss.arxiv.org/rss/cs.AI',
-    websiteUrl: 'https://arxiv.org/list/cs.AI/recent',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-cl',
-    name: 'arXiv cs.CL (Language & LLMs)',
-    feedUrl: 'https://rss.arxiv.org/rss/cs.CL',
-    websiteUrl: 'https://arxiv.org/list/cs.CL/recent',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-xai',
-    name: 'TechCrunch xAI & Grok',
-    feedUrl: 'https://techcrunch.com/tag/xai/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/xai/',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-spacex',
-    name: 'TechCrunch SpaceX & Starlink',
-    feedUrl: 'https://techcrunch.com/tag/spacex/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/spacex/',
-    category: 'Robotics & Hardware',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-xai',
-    name: 'arXiv xAI & Autonomous Systems',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:Grok+OR+abs:%22Grok-1%22+OR+abs:%22Colossus%22+OR+ti:%22autonomous+spacecraft%22+OR+abs:%22Starlink%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-anthropic',
-    name: 'TechCrunch Anthropic & Claude',
-    feedUrl: 'https://techcrunch.com/tag/anthropic/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/anthropic/',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-deepmind',
-    name: 'arXiv Google DeepMind Research',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:DeepMind+OR+ti:Gemini+OR+abs:%22Google+DeepMind%22+OR+ti:AlphaFold&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-mistral',
-    name: 'TechCrunch Mistral AI',
-    feedUrl: 'https://techcrunch.com/tag/mistral-ai/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/mistral-ai/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-mistral',
-    name: 'arXiv Mistral & Mixtral Research',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:Mistral+OR+ti:Mixtral+OR+abs:%22Mistral+AI%22+OR+abs:Codestral&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-moonshot',
-    name: 'TechCrunch Moonshot AI & Kimi',
-    feedUrl: 'https://techcrunch.com/tag/moonshot-ai/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/moonshot-ai/',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-moonshot',
-    name: 'arXiv Moonshot & Kimi Research',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:Kimi+OR+abs:%22Moonshot+AI%22+OR+abs:%22Kimi%22+OR+ti:%22Moonshot%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org/',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-deepseek',
-    name: 'TechCrunch DeepSeek',
-    feedUrl: 'https://techcrunch.com/tag/deepseek/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/deepseek/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-deepseek',
-    name: 'arXiv DeepSeek & Reasoning Research',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=ti:DeepSeek+OR+abs:%22DeepSeek%22+OR+abs:%22DeepSeek-R1%22+OR+abs:%22DeepSeek-V3%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'nvidia-blog',
-    name: 'NVIDIA AI News',
-    feedUrl: 'https://blogs.nvidia.com/feed/',
-    websiteUrl: 'https://blogs.nvidia.com/',
-    category: 'Robotics & Hardware',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-nvidia',
-    name: 'TechCrunch NVIDIA & GPUs',
-    feedUrl: 'https://techcrunch.com/tag/nvidia/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/nvidia/',
-    category: 'Robotics & Hardware',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'techcrunch-meta',
-    name: 'TechCrunch Meta AI',
-    feedUrl: 'https://techcrunch.com/tag/meta/feed/',
-    websiteUrl: 'https://techcrunch.com/tag/meta/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-meta',
-    name: 'arXiv Meta AI & FAIR Research',
-    feedUrl: 'https://export.arxiv.org/api/query?search_query=all:Meta+AND+all:LLaMA&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending',
-    websiteUrl: 'https://arxiv.org',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'google-research',
-    name: 'Google AI Research Blog',
-    feedUrl: 'https://research.google/blog/rss/',
-    websiteUrl: 'https://research.google/blog/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'aws-ml',
-    name: 'AWS Machine Learning',
-    feedUrl: 'https://aws.amazon.com/blogs/machine-learning/feed/',
-    websiteUrl: 'https://aws.amazon.com/blogs/machine-learning/',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'bair-blog',
-    name: 'Berkeley AI Research (BAIR)',
-    feedUrl: 'https://bair.berkeley.edu/blog/feed.xml',
-    websiteUrl: 'https://bair.berkeley.edu/blog/',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'arxiv-lg',
-    name: 'arXiv cs.LG (Machine Learning)',
-    feedUrl: 'https://rss.arxiv.org/rss/cs.LG',
-    websiteUrl: 'https://arxiv.org/list/cs.LG/recent',
-    category: 'Open Source & Research',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'xai-radar',
-    name: 'xAI & Grok Radar',
-    feedUrl: 'https://news.google.com/rss/search?q=xAI+OR+%22Elon+Musk%22+AI+OR+Grok&hl=en-US&gl=US&ceid=US:en',
-    websiteUrl: 'https://x.ai',
-    category: 'LLMs & GenAI',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-  {
-    id: 'teslarati-spacex',
-    name: 'Teslarati SpaceX',
-    feedUrl: 'https://www.teslarati.com/category/spacex/feed/',
-    websiteUrl: 'https://www.teslarati.com',
-    category: 'Robotics & Hardware',
-    enabled: true,
-    consecutiveFailures: 0,
-  },
-];
+const DEFAULT_SOURCES: DomainSource[] = (staticSourcesData as DomainSource[]) || [];
 
-const EDGE_SOURCES_STORE_URL = 'https://internal.latentspace/sources-store';
+const BANNED_SOURCE_IDS = new Set([
+  'techmeme',
+  'xai-radar',
+  'teslarati-spacex',
+  'techcrunch-xai',
+  'techcrunch-spacex',
+  'techcrunch-anthropic',
+  'techcrunch-mistral',
+  'techcrunch-moonshot',
+  'techcrunch-deepseek',
+  'techcrunch-nvidia',
+  'techcrunch-meta',
+]);
+
+const EDGE_SOURCES_STORE_URL = 'https://internal.latentspace/sources-store-v2';
 const EDGE_SYNC_CHECK_TTL_MS = 10_000;
 
 export class MemorySourceRepository implements SourceRepositoryPort {
@@ -325,7 +77,7 @@ export class MemorySourceRepository implements SourceRepositoryPort {
 
       let changed = false;
       for (const remote of cached) {
-        if (!remote?.id) continue;
+        if (!remote?.id || BANNED_SOURCE_IDS.has(remote.id)) continue;
         const local = this.sources.get(remote.id);
         if (!local) {
           this.sources.set(remote.id, remote);
@@ -369,17 +121,29 @@ export class MemorySourceRepository implements SourceRepositoryPort {
       }
 
       for (const s of loaded) {
-        this.sources.set(s.id, { ...s });
+        if (!BANNED_SOURCE_IDS.has(s.id)) {
+          this.sources.set(s.id, { ...s });
+        }
       }
+      for (const banned of BANNED_SOURCE_IDS) {
+        this.sources.delete(banned);
+      }
+
       let addedNew = false;
       for (const s of DEFAULT_SOURCES) {
-        if (!this.sources.has(s.id)) {
+        if (!BANNED_SOURCE_IDS.has(s.id) && !this.sources.has(s.id)) {
           this.sources.set(s.id, { ...s });
           addedNew = true;
         }
       }
 
       if (isServerlessOrEdge()) {
+        try {
+          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+          if (cache) {
+            await cache.delete(new Request('https://internal.latentspace/sources-store', { method: 'GET' }));
+          }
+        } catch {}
         await this.syncFromEdge(true);
       } else if (addedNew) {
         await this.persist();

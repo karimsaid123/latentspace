@@ -11,8 +11,9 @@ import type { VectorPulseSnapshot } from '@/types';
 import staticArticlesData from '../../../data/articles.json';
 
 const MAX_STORED_ARTICLES = 400;
-const EDGE_ARTICLES_STORE_URL = 'https://internal.latentspace/articles-store';
+const EDGE_ARTICLES_STORE_URL = 'https://internal.latentspace/articles-store-v2';
 const EDGE_SYNC_CHECK_TTL_MS = 10_000;
+const BANNED_SOURCE_IDS = new Set(['techmeme', 'xai-radar', 'teslarati-spacex']);
 
 function sanitizeSafeHttpUrl(raw?: unknown): string | undefined {
   if (typeof raw !== 'string' || !raw.trim()) return undefined;
@@ -83,9 +84,14 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
 
   private normalizeRawItem(item: any): DomainArticle | null {
     if (!item?.id || typeof item.id !== 'string') return null;
+    const sourceName = item.sourceName || item.source?.name || 'Feed';
+    const sourceId = item.sourceId || item.source?.id || 'source';
+    if (BANNED_SOURCE_IDS.has(sourceId) || sourceName === 'Techmeme') {
+      return null;
+    }
+
     const title = decodeHtmlEntities(item.title || '');
     const contentSnippet = decodeHtmlEntities(item.contentSnippet || item.fullContent || '');
-    const sourceName = item.sourceName || item.source?.name || 'Feed';
     const canonicalUrl = sanitizeSafeHttpUrl(item.canonicalUrl || item.link) || '';
     const lab = detectFrontierLab(title, contentSnippet, sourceName);
 
@@ -175,6 +181,12 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
       let changed = false;
       for (const raw of cached) {
         if (!raw?.id) continue;
+        const sId = raw.sourceId || raw.source?.id;
+        const sName = raw.sourceName || raw.source?.name;
+        if (BANNED_SOURCE_IDS.has(sId) || sName === 'Techmeme') {
+          continue;
+        }
+
         const existing = this.articles.get(raw.id);
         const rawSummaryObj = raw.summary || raw.aiSummary;
         const rawSummaryGen = rawSummaryObj?.generatedWith;
@@ -246,12 +258,28 @@ export class MemoryArticleRepository implements ArticleRepositoryPort {
           this.articles.set(normalized.id, this.indexArticle(normalized));
         }
       }
+
+      // Purge any lingering banned source articles
+      for (const [id, entry] of this.articles.entries()) {
+        const sId = entry.article.sourceId;
+        const sName = entry.article.sourceName;
+        if (BANNED_SOURCE_IDS.has(sId) || sName === 'Techmeme') {
+          this.articles.delete(id);
+        }
+      }
+
       this.sortedCache = null;
       this.vectorPulseCache = null;
       this.trimToMax();
 
       // Overlay any newer edge-persisted articles from caches.default
       if (isServerlessOrEdge()) {
+        try {
+          const cache = typeof caches !== 'undefined' && 'default' in caches ? (caches as any).default : null;
+          if (cache) {
+            await cache.delete(new Request('https://internal.latentspace/articles-store', { method: 'GET' }));
+          }
+        } catch {}
         await this.syncFromEdge(true);
       }
     } catch {
