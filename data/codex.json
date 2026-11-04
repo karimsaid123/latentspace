@@ -6,25 +6,25 @@
     "title": "Self-Attention Mechanism",
     "category": "FOUNDATIONS",
     "level": "INTERMEDIATE",
-    "summary": "Mechanisme waarmee tokens in een sequentie gelijktijdig relaties en gewichten toekennen aan alle andere tokens zonder recurrente stappen.",
-    "technicalDeepDive": "In plaats van sequentiële verwerking (zoals in RNN's) projecteert self-attention elk invoertoken naar drie vectoren: Query (Q), Key (K) en Value (V). Door het inproduct van de Query met alle Keys te berekenen en te schalen met de wortel van de dimensie (sqrt(d_k)), ontstaat een aandachtsgewicht. De Softmax-functie zet deze om in kansverdelingen die als gewogen som over de Values worden berekend. Hierdoor kan elk token direct communiceren met elk ander token in O(1) sequentiële stappen.",
+    "summary": "Core mechanism enabling tokens in a sequence to dynamically attend to and weigh relationships across all other tokens simultaneously without recurrent steps.",
+    "technicalDeepDive": "Instead of sequential processing (as in RNNs), self-attention projects each input token into three dense vectors: Query (Q), Key (K), and Value (V). By computing the dot product between the Query and all Keys, scaled by the square root of the key dimension (sqrt(d_k)), attention weights are formed. Applying Softmax produces a normalized probability distribution, which is used to calculate a weighted sum across all Value vectors. This grants every token direct O(1) sequential communication with every other token in the sequence.",
     "mathematics": {
       "formula": "\\text{Attention}(Q, K, V) = \\text{softmax}\\left(\\frac{QK^T}{\\sqrt{d_k}}\\right)V",
-      "explanation": "Q en K zijn matrices van queries en keys met dimensie d_k. De deling door sqrt(d_k) voorkomt dat dot-products bij grote dimensies te groot worden, wat zou leiden tot extreem kleine gradiënten in de softmax."
+      "explanation": "Q and K are matrices of queries and keys with dimension d_k. Division by sqrt(d_k) prevents dot products from growing excessively large at high dimensions, which would otherwise push the softmax into regions with vanishing gradients."
     },
     "keyTakeaways": [
-      "Verving recurrente en convolutionele architecturen voor sequentiemodellering.",
-      "Maakt massieve parallelle training op GPU's mogelijk.",
-      "Heeft een kwadratische computationele complexiteit O(N^2) ten opzichte van de sequentielengte N."
+      "Replaced recurrent and convolutional architectures for sequence modeling.",
+      "Enables massive parallel training across modern GPU tensor cores.",
+      "Possesses quadratic computational and memory complexity O(N^2) relative to sequence length N."
     ],
     "tradeoffs": {
       "advantages": [
-        "Volledig paralleliseerbaar over de tijd-as tijdens training.",
-        "Geen informatieverlies over lange afstanden (geen vanishing gradients over tijdstappen)."
+        "Fully parallelizable across the temporal dimension during training.",
+        "Zero distance-based information loss or vanishing gradients across long token spans."
       ],
       "limitations": [
-        "Kwadratisch geheugengebruik O(N^2) voor contextlengte N.",
-        "Geheugenbandbreedte-intensief tijdens autoregressieve generatie."
+        "Quadratic memory complexity O(N^2) with respect to context length N.",
+        "Heavy memory bandwidth demands during autoregressive token generation."
       ]
     },
     "canonicalPaper": {
@@ -34,7 +34,7 @@
       "year": 2017,
       "url": "https://arxiv.org/abs/1706.03762"
     },
-    "relatedIds": ["transformer", "kv-cache", "flash-attention"],
+    "relatedIds": ["transformer", "kv-cache", "flash-attention", "gqa-mqa"],
     "searchKeywords": ["attention", "self-attention", "qkv", "query", "key", "value", "dot-product"]
   },
   {
@@ -44,25 +44,25 @@
     "title": "The Transformer Architecture",
     "category": "ARCHITECTURES",
     "level": "BEGINNER",
-    "summary": "De universele basisarchitectuur van moderne LLM's, bestaande uit gestapelde multi-head attention lagen en feed-forward netwerken met residual connections.",
-    "technicalDeepDive": "Een Transformer bestaat uit herhaalde blokken. Elk blok bevat twee hoofdsublagen: Multi-Head Self-Attention (MHA) en een puntsgewijs Feed-Forward Network (FFN). Na elke sublaag volgt een residual connection gevolgd door Layer Normalization (tegenwoordig vaak RMSNorm en pre-normalization). Moderne decoders (zoals GPT, Llama, Claude) gebruiken een 'decoder-only' causal maskering om te voorkomen dat tokens naar toekomstige posities kijken.",
+    "summary": "The universal backbone architecture of modern frontier LLMs, consisting of stacked multi-head self-attention and feed-forward networks connected via residual streams.",
+    "technicalDeepDive": "A Transformer consists of repeated identical blocks. Each block contains two primary sub-layers: Multi-Head Self-Attention (MHA) and a point-wise Feed-Forward Network (FFN). Each sub-layer incorporates a residual skip connection followed by normalization (typically RMSNorm in pre-norm configuration in modern architectures). Modern autoregressive language models (such as GPT, Llama, and Claude) employ a decoder-only configuration with causal masking to prevent attention from peeking at future token positions.",
     "mathematics": {
-      "formula": "\\text{LayerOutput} = \\text{LayerNorm}(x + \\text{Sublayer}(x))",
-      "explanation": "Pre-norm varianten voeren normalisatie uit vóór de sublaag: x + Sublayer(LayerNorm(x)), wat leidt tot stabielere trainingsdynamiek bij diepe netwerken."
+      "formula": "\\text{LayerOutput} = x + \\text{Sublayer}(\\text{RMSNorm}(x))",
+      "explanation": "Modern pre-normalization applies normalisation prior to sublayer transformation, ensuring stable identity gradient highways throughout deep networks."
     },
     "keyTakeaways": [
-      "Vormt het fundament onder vrijwel alle moderne taalmodellen, vision-modellen en multimodale systemen.",
-      "Decoder-only architecturen domineren autoregressieve tekstgeneratie.",
-      "Schaalt voorspelbaar volgens de Chinchilla en Kaplan scaling laws."
+      "Forms the foundation of virtually all modern frontier language, vision, and multimodal models.",
+      "Decoder-only configurations dominate contemporary generative AI.",
+      "Empirically scales with remarkable predictability according to power-law scaling laws."
     ],
     "tradeoffs": {
       "advantages": [
-        "Uitzonderlijk goed schaalbaar met toenemende compute en datasets.",
-        "Uniforme tensorbewerkingen die optimaal benut worden door moderne accelerators (NVIDIA H100/B200, Google TPU)."
+        "Extraordinary scalability with increased compute, parameter count, and dataset token volume.",
+        "Highly regular matrix multiplications tailored for modern accelerator hardware (H100, B200, TPU)."
       ],
       "limitations": [
-        "Vaste contextvenstergrenzen tenzij gecombineerd met RoPE (Rotary Position Embeddings) of compressietechnieken.",
-        "Hoge geheugenvereisten tijdens inferentie door KV-caching."
+        "Context window boundaries require specialized positional extrapolation (RoPE, YaRN).",
+        "Substantial memory footprint during autoregressive serving due to KV-caching."
       ]
     },
     "canonicalPaper": {
@@ -72,8 +72,8 @@
       "year": 2017,
       "url": "https://arxiv.org/abs/1706.03762"
     },
-    "relatedIds": ["self-attention", "moe", "residual-connections", "kv-cache"],
-    "searchKeywords": ["transformer", "decoder-only", "encoder-decoder", "multi-head", "ffn"]
+    "relatedIds": ["self-attention", "moe", "residual-connections", "kv-cache", "rmsnorm"],
+    "searchKeywords": ["transformer", "decoder-only", "encoder-decoder", "multi-head", "ffn", "deep learning"]
   },
   {
     "id": "embeddings",
@@ -82,25 +82,25 @@
     "title": "High-Dimensional Latent Embeddings",
     "category": "FOUNDATIONS",
     "level": "BEGINNER",
-    "summary": "Continue vectoren in een meerdimensionale ruimte waarin semantische betekenis en conceptuele overeenkomsten wiskundig gemeten worden via afstanden.",
-    "technicalDeepDive": "Woorden, tokens, code en afbeeldingen worden omgezet in dichte numerieke vectoren (meestal tussen 768 en 8192 dimensies). In deze latente ruimte weerspiegelt de geometrische afstand (zoals Cosine Similarity of Euclidische afstand) de semantische verwantschap. Twee concepten met vergelijkbare contexten (zoals 'koning' en 'koningin') liggen dicht bij elkaar en vertonen lineaire relaties (vector('koning') - vector('man') + vector('vrouw') ≈ vector('koningin')).",
+    "summary": "Dense continuous vector representations in high-dimensional space where semantic relationships and conceptual similarities correspond to geometric proximity.",
+    "technicalDeepDive": "Tokens, sentences, images, and audio are projected into continuous numerical vectors (typically between 768 and 8192 dimensions). Within this latent manifold, geometric distances (such as Cosine Similarity or Euclidean distance) quantify conceptual affinity. Tokens occurring in similar semantic contexts cluster together and exhibit linear vector arithmetic (e.g., vector('king') - vector('man') + vector('woman') ≈ vector('queen')).",
     "mathematics": {
       "formula": "\\text{CosineSimilarity}(u, v) = \\frac{u \\cdot v}{\\|u\\| \\|v\\|}",
-      "explanation": "Berekent de cosinus van de hoek tussen twee vectoren u en v; een waarde van 1 betekent identieke richting, 0 betekent orthogonale (onafhankelijke) concepten."
+      "explanation": "Calculates the cosine of the angle between two embedding vectors u and v; a value of 1 denotes identical directional orientation, while 0 denotes orthogonal independence."
     },
     "keyTakeaways": [
-      "Vormt de invoerlaag (token embeddings) en de representatielaag in transformers.",
-      "De ruggengraat van RAG (Retrieval-Augmented Generation) en vector databases.",
-      "Zet discrete symbolen om in continue, differentieerbare representaties."
+      "Serves as the input layer (token embeddings) and representational medium across transformers.",
+      "The foundational backbone of semantic search, dense vector retrieval, and RAG pipelines.",
+      "Converts discrete categorical symbols into continuous, differentiable latent geometries."
     ],
     "tradeoffs": {
       "advantages": [
-        "Maakt differentiatie en backpropagation mogelijk voor discrete tekstuele data.",
-        "Vangt subtiele nuances, synoniemen en analogieën op in geometrische structuren."
+        "Enables end-to-end backpropagation and gradient descent on discrete text data.",
+        "Captures polysemy, syntactic nuance, and hierarchical relationships within geometric subspaces."
       ],
       "limitations": [
-        "Gevoelig voor dimensionaliteitsvloek (curse of dimensionality).",
-        "Statische embeddings kunnen polysemie (woorden met meerdere betekenissen) moeilijk scheiden zonder context."
+        "Subject to the curse of dimensionality and hubness phenomena in extreme dimensions.",
+        "Static token embeddings require multi-head contextualization to disambiguate homonyms."
       ]
     },
     "canonicalPaper": {
@@ -110,35 +110,35 @@
       "year": 2013,
       "url": "https://arxiv.org/abs/1301.3781"
     },
-    "relatedIds": ["transformer", "softmax-temperature"],
+    "relatedIds": ["transformer", "softmax-temperature", "rag-retrieval"],
     "searchKeywords": ["embeddings", "vector", "latent space", "cosine similarity", "dense vector", "rag"]
   },
   {
     "id": "softmax-temperature",
     "slug": "softmax-temperature",
-    "acronym": "Temperature Sampling",
+    "acronym": "Temperature",
     "title": "Softmax & Sampling Temperature",
     "category": "FOUNDATIONS",
     "level": "BEGINNER",
-    "summary": "Wiskundige transformatie die onbewerkte logits omzet in een kansverdeling, waarbij temperatuur de mate van willekeur en creativiteit reguleert.",
-    "technicalDeepDive": "Het taalmodel berekent voor elk mogelijk volgend token in het vocabulaire een logit (score). De Softmax-functie exponentieert deze logits en normaliseert ze naar een kanssom van 1. Door de logits te delen door een temperatuur T (z_i / T) vóór de softmax, verandert de vorm van de verdeling: bij lage T (T -> 0) domineert het meest waarschijnlijke token (deterministisch / argmax), terwijl bij hoge T (T > 1) de kansen afvlakken (meer diversiteit en creativiteit, maar hoger risico op hallucinaties).",
+    "summary": "Mathematical normalization mapping unconstrained output logits into a valid probability distribution, where temperature controls distribution entropy and stochasticity.",
+    "technicalDeepDive": "For each decoding step, the model outputs raw unnormalized logits over the vocabulary. The Softmax function exponentiates these values and normalizes them to sum to 1. By scaling the logits by temperature T (z_i / T) prior to exponentiation, the sharpness of the distribution is modulated: as T approaches 0, the distribution approaches an argmax delta distribution (greedy deterministic decoding); as T increases, probabilities flatten towards uniform distribution, promoting exploratory token selection.",
     "mathematics": {
       "formula": "P(y_i) = \\frac{e^{z_i / T}}{\\sum_{j} e^{z_j / T}}",
-      "explanation": "z_i is de logit voor token i, en T is de temperatuurparameter (T > 0)."
+      "explanation": "z_i represents the raw output logit for token i, and T is the temperature parameter (T > 0)."
     },
     "keyTakeaways": [
-      "T = 0 staat bekend als Greedy Decoding (altijd het token met hoogste kans).",
-      "Cruciaal voor het balanceren van feitelijke accuratesse versus creatieve exploratie.",
-      "Vaak gecombineerd met Top-p (Nucleus) en Top-k truncation om onzinnige staartkansen af te snijden."
+      "T = 0 corresponds to Greedy Decoding (consistently choosing the maximum-likelihood token).",
+      "Critical hyperparameter balancing factual precision against creative hallucination.",
+      "Typically combined with Top-p (Nucleus) and Min-p truncation to eliminate low-probability degenerative tails."
     ],
     "tradeoffs": {
       "advantages": [
-        "Eenvoudige eendimensionale parameter om generatiegedrag dynamisch te sturen.",
-        "Differentieerbaar tijdens training."
+        "Simple scalar parameter providing runtime control over model creativity and entropy.",
+        "Smoothly differentiable throughout training."
       ],
       "limitations": [
-        "Te hoge temperatuur leidt onvermijdelijk tot onsamenhangende tekst en hallucinaties.",
-        "Te lage temperatuur kan leiden tot herhalende lussen en gebrek aan creativiteit."
+        "Excessive temperature inevitably leads to syntactic incoherence and rampant hallucinations.",
+        "Extremely low temperature on creative tasks can induce repetitive loops and degenerative collapse."
       ]
     },
     "canonicalPaper": {
@@ -148,35 +148,35 @@
       "year": 2015,
       "url": "https://arxiv.org/abs/1503.02531"
     },
-    "relatedIds": ["self-attention", "transformer"],
+    "relatedIds": ["self-attention", "transformer", "cross-entropy-loss"],
     "searchKeywords": ["softmax", "temperature", "sampling", "greedy decoding", "top-p", "top-k", "logits"]
   },
   {
     "id": "backpropagation-autograd",
     "slug": "backpropagation-autograd",
     "acronym": "Autograd",
-    "title": "Backpropagation & Automatic Differentiation",
+    "title": "Backpropagation & Reverse-Mode Differentiation",
     "category": "FOUNDATIONS",
     "level": "INTERMEDIATE",
-    "summary": "Het fundamentele algoritme waarmee neurale netwerken leren door de kettingregel van differentiatie toe te passen om foutgradiënten terug te propageren.",
-    "technicalDeepDive": "Tijdens de forward pass berekent het netwerk voorspellingen en een verliesfunctie (Loss). Tijdens de backward pass berekent backpropagation via de kettingregel de partiële afgeleide van de loss ten opzichte van elk gewicht in het netwerk (de gradiënt). Optimizers (zoals AdamW) gebruiken deze gradiënten om de parameters stapsgewijs aan te passen in de richting die de loss minimaliseert.",
+    "summary": "The foundational algorithm of deep learning, applying the mathematical chain rule backwards through computational graphs to compute exact loss gradients.",
+    "technicalDeepDive": "During the forward pass, intermediate activations are computed and stored, culminating in a scalar loss value. During the backward pass, backpropagation computes the partial derivative of the loss with respect to each model parameter via reverse accumulation of the chain rule. Gradient-based optimizers (such as AdamW) utilize these exact gradients to iteratively adjust weights toward loss minima.",
     "mathematics": {
       "formula": "\\frac{\\partial L}{\\partial w_i} = \\frac{\\partial L}{\\partial y} \\cdot \\frac{\\partial y}{\\partial z} \\cdot \\frac{\\partial z}{\\partial w_i}",
-      "explanation": "Toepassing van de kettingregel om de gevoeligheid van de uiteindelijke verliesfunctie L ten opzichte van een intern gewicht w_i te bepalen."
+      "explanation": "Reverse-mode application of the multi-variable calculus chain rule determining sensitivity of scalar loss L to parameter w_i."
     },
     "keyTakeaways": [
-      "Maakt het trainen van miljarden parameters via Gradient Descent mogelijk.",
-      "Moderne frameworks (PyTorch, JAX) implementeren dit via dynamische computation graphs (reverse-mode autograd).",
-      "Vereist het opslaan van activaties in GPU-VRAM tijdens de forward pass."
+      "Enables gradient descent optimization across hundreds of billions of interconnected weights.",
+      "Implemented via dynamic Directed Acyclic Graphs (DAGs) in modern frameworks (PyTorch, JAX).",
+      "Requires retaining intermediate activation tensors in GPU memory during the forward pass."
     ],
     "tradeoffs": {
       "advantages": [
-        "Wiskundig exact en extreem efficiënt: berekent alle gradiënten in één backward pass.",
-        "Schaalt naar honderden miljarden parameters met distributed training (ZeRO, FSDP)."
+        "Calculates exact gradients for all parameters simultaneously in a single backward pass.",
+        "Linearly scales with parameter count through distributed training (FSDP, ZeRO, Megatron)."
       ],
       "limitations": [
-        "Vereist substantieel geheugen voor activatie-opslag (tenzij activation checkpointing gebruikt wordt).",
-        "Gevoelig voor vanishing of exploding gradients bij diepe netwerken."
+        "Demands massive VRAM allocation for forward activations unless activation checkpointing is used.",
+        "Prone to vanishing or exploding gradients in deep networks without normalization and skip connections."
       ]
     },
     "canonicalPaper": {
@@ -185,8 +185,159 @@
       "year": 1986,
       "url": "https://www.nature.com/articles/323533a0"
     },
+    "relatedIds": ["transformer", "residual-connections", "adamw-optimizer", "activation-checkpointing"],
+    "searchKeywords": ["backpropagation", "autograd", "gradients", "chain rule", "gradient descent", "reverse-mode"]
+  },
+  {
+    "id": "rope-positional",
+    "slug": "rope-positional",
+    "acronym": "RoPE",
+    "title": "Rotary Position Embeddings (RoPE)",
+    "category": "FOUNDATIONS",
+    "level": "INTERMEDIATE",
+    "summary": "Geometric positional encoding mechanism multiplying Query and Key representations by rotation matrices to encode relative token distances directly into inner products.",
+    "technicalDeepDive": "Unlike absolute positional embeddings that are simply added to token embeddings, RoPE rotates the Query and Key vectors in complex 2D planes according to their position index. Because the inner product between two rotated vectors depends solely on their relative angular difference (m - n), self-attention naturally acquires relative positional awareness while maintaining absolute coordinate compatibility. This enables smooth context window scaling via frequency interpolation.",
+    "mathematics": {
+      "formula": "\\langle R_{\\Theta, m}^d q, R_{\\Theta, n}^d k \\rangle = g(q, k, m - n)",
+      "explanation": "Rotating query vector q at position m and key vector k at position n results in an inner product that depends purely on the relative distance m - n."
+    },
+    "keyTakeaways": [
+      "Standard positional formulation across modern LLMs (Llama 3, Mistral, DeepSeek, Qwen).",
+      "Naturally decays attention weights as relative distance between tokens increases.",
+      "Enables length extrapolation techniques such as YaRN and NTK-aware scaling."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Seamless relative positional encoding with zero additional trainable parameters.",
+        "Exceptional extrapolation capabilities through frequency adjustments."
+      ],
+      "limitations": [
+        "Requires dedicated custom CUDA kernels to avoid element-wise multiplication overhead.",
+        "Can degrade on extremely long out-of-distribution sequence lengths without frequency retuning."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "arxivId": "2104.09864",
+      "authors": "Jianlin Su, Yu Lu, Shengfeng Pan, Bo Wen, Yunfeng Liu",
+      "year": 2021,
+      "url": "https://arxiv.org/abs/2104.09864"
+    },
+    "relatedIds": ["self-attention", "transformer", "yarn-context"],
+    "searchKeywords": ["rope", "rotary", "positional embedding", "relative position", "su jianlin", "attention"]
+  },
+  {
+    "id": "rmsnorm",
+    "slug": "rmsnorm",
+    "acronym": "RMSNorm",
+    "title": "Root Mean Square Normalization (RMSNorm)",
+    "category": "FOUNDATIONS",
+    "level": "INTERMEDIATE",
+    "summary": "Computational optimization of LayerNorm that enforces scale invariance by dividing by root mean square without subtracting the mean, saving 10-50% normalization runtime.",
+    "technicalDeepDive": "Standard Layer Normalization centers activations around zero (by calculating mean mu) and scales by standard deviation sigma. RMSNorm hypothesizes that the scaling property of LayerNorm is the primary contributor to training stability, rendering the mean-centering step redundant. By computing only the root mean square of activations, it avoids computing and subtracting the mean, significantly reducing memory access overhead on GPU kernels.",
+    "mathematics": {
+      "formula": "\\bar{a}_i = \\frac{a_i}{\\text{RMS}(a)} g_i, \\quad \\text{where } \\text{RMS}(a) = \\sqrt{\\frac{1}{d} \\sum_{i=1}^d a_i^2 + \\epsilon}",
+      "explanation": "Activations a_i are normalized by the root mean square of vector a and scaled by learnable gain parameter g_i."
+    },
+    "keyTakeaways": [
+      "Ubiquitous in modern open-weight and frontier transformers (Llama, Gemma, DeepSeek).",
+      "Improves GPU kernel execution speed by eliminating reduction passes for mean calculation.",
+      "Achieves parity in training stability and perplexity compared to standard LayerNorm."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "10% to 50% faster kernel runtime compared to standard LayerNorm.",
+        "Strictly scale-invariant forward and backward dynamics."
+      ],
+      "limitations": [
+        "Lacks mean-centering offset parameter (beta bias), though empirical impact is negligible.",
+        "Still requires global reductions across the hidden dimension."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Root Mean Square Normalization",
+      "arxivId": "1910.07467",
+      "authors": "Biao Zhang, Rico Sennrich",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1910.07467"
+    },
     "relatedIds": ["transformer", "residual-connections"],
-    "searchKeywords": ["backpropagation", "autograd", "gradients", "chain rule", "gradient descent", "adamw"]
+    "searchKeywords": ["rmsnorm", "layernorm", "normalization", "root mean square", "stability"]
+  },
+  {
+    "id": "cross-entropy-loss",
+    "slug": "cross-entropy-loss",
+    "acronym": "NLL Loss",
+    "title": "Cross-Entropy & Negative Log-Likelihood Loss",
+    "category": "FOUNDATIONS",
+    "level": "BEGINNER",
+    "summary": "The ubiquitous objective function for language modeling measuring the statistical divergence between predicted token probabilities and ground truth next tokens.",
+    "technicalDeepDive": "In autoregressive next-token prediction, the language model outputs a probability distribution over the vocabulary. Cross-entropy loss quantifies the surprise (in nats or bits) of observing the true next token under the model's predictive distribution. Minimizing cross-entropy is mathematically equivalent to minimizing the Kullback-Leibler (KL) divergence from the true data distribution and maximizing the log-likelihood of training corpus tokens.",
+    "mathematics": {
+      "formula": "\\mathcal{L}_{\\text{CE}} = -\\sum_{i=1}^V y_i \\log(P(y_i)) = -\\log(P(y_{\\text{true}}))",
+      "explanation": "Calculates the negative natural logarithm of the model probability assigned to the ground-truth token index y_true."
+    },
+    "keyTakeaways": [
+      "Perplexity (PPL) is directly computed as the exponential of cross-entropy loss: PPL = exp(Loss).",
+      "Forms the loss function for pre-training, supervised fine-tuning, and model distillation.",
+      "Heavily penalizes confident incorrect predictions with asymptotic loss values."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Convex optimization profile relative to output logits.",
+        "Direct information-theoretic interpretation (optimal compression length)."
+      ],
+      "limitations": [
+        "Susceptible to label noise and memorization without regularization.",
+        "Suffers from exposure bias during autoregressive test-time generation."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "A Mathematical Theory of Communication",
+      "authors": "Claude E. Shannon",
+      "year": 1948,
+      "url": "https://ieeexplore.ieee.org/document/6773024"
+    },
+    "relatedIds": ["softmax-temperature", "transformer", "embeddings"],
+    "searchKeywords": ["cross entropy", "loss", "nll", "perplexity", "negative log likelihood", "shannon"]
+  },
+  {
+    "id": "tokenization-bpe",
+    "slug": "tokenization-bpe",
+    "acronym": "BPE / Tokenization",
+    "title": "Byte-Pair Encoding & Subword Tokenization",
+    "category": "FOUNDATIONS",
+    "level": "BEGINNER",
+    "summary": "Algorithmic segmentation compressing raw character bytes into frequency-based subword vocabularies, balancing vocabulary compactness and sequence length.",
+    "technicalDeepDive": "Raw character-level sequences are excessively long for attention mechanisms, while pure word-level vocabularies suffer from out-of-vocabulary (OOV) tokens. Byte-Pair Encoding (BPE) starts with individual byte tokens (256 base bytes) and iteratively merges the most frequently occurring adjacent token pairs until reaching a predefined vocabulary limit (e.g., 32K to 128K tokens). Modern tokenizers (such as Tiktoken) handle arbitrary unicode, code, and whitespace without out-of-vocabulary exceptions.",
+    "mathematics": {
+      "formula": "\\text{Score}(t_A, t_B) = \\text{Count}(t_A, t_B) \\quad \\Rightarrow \\quad t_{\\text{new}} = t_A \\circ t_B",
+      "explanation": "Greedily merges the most frequent adjacent bigram (t_A, t_B) across the training corpus into a unified vocabulary token."
+    },
+    "keyTakeaways": [
+      "Determines the token-to-word ratio (typically ~1.3 tokens per English word, higher for non-Latin scripts).",
+      "Subword fragmentation is the root cause of arithmetic struggles and spelling anomalies in LLMs.",
+      "Byte-level BPE ensures 100% vocabulary coverage with zero unseen token errors."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Eliminates out-of-vocabulary tokens completely.",
+        "Significantly compresses sequence lengths compared to character tokenization."
+      ],
+      "limitations": [
+        "Tokenizer training can introduce language biases and uneven pricing per token for non-English languages.",
+        "Forces language models to learn character-level spelling and arithmetic across fragmented subwords."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Neural Machine Translation of Rare Words with Subword Units",
+      "arxivId": "1508.07909",
+      "authors": "Rico Sennrich, Barry Haddow, Alexandra Birch",
+      "year": 2015,
+      "url": "https://arxiv.org/abs/1508.07909"
+    },
+    "relatedIds": ["transformer", "embeddings"],
+    "searchKeywords": ["tokenization", "bpe", "byte pair encoding", "tiktoken", "subword", "sentencepiece"]
   },
   {
     "id": "moe",
@@ -195,25 +346,25 @@
     "title": "Mixture of Experts",
     "category": "ARCHITECTURES",
     "level": "INTERMEDIATE",
-    "summary": "Sparse architectuur waarbij voor elk token slechts een geselecteerde subset van gespecialiseerde feed-forward netwerken ('experts') wordt geactiveerd.",
-    "technicalDeepDive": "In een traditionele 'dense' transformer doorloopt elk token alle parameters. In een MoE-model worden de FFN-lagen vervangen door N parallelle 'experts'. Een routing gate (router network) berekent softmax-kansen over de experts en selecteert alleen de top-k (vaak top-2 of top-8) experts per token. Hierdoor heeft een model bijvoorbeeld 671 miljard totale parameters (zoals DeepSeek-V3), maar worden er per token slechts 37 miljard parameters geactiveerd, wat de rekentijd per token drastisch verlaagt.",
+    "summary": "Sparse model architecture activating only a dynamically routed subset of specialized feed-forward sub-networks (experts) for each individual token.",
+    "technicalDeepDive": "Unlike dense transformers where every token traverses the entire parameter space, a Mixture of Experts architecture replaces standard FFN layers with N parallel expert networks. A parameterized routing gate computes a softmax distribution over all experts and selects the top-k candidates (e.g., activating 2 out of 8, or 8 out of 256 experts). For example, DeepSeek-V3 possesses 671 billion total parameters, yet activates only 37 billion parameters per token, slashing inference compute while preserving massive representational capacity.",
     "mathematics": {
       "formula": "y = \\sum_{i \\in \\text{TopK}} G(x)_i E_i(x)",
-      "explanation": "G(x) is de routing gate die de gewichten berekent voor de geselecteerde experts E_i."
+      "explanation": "G(x) is the gating router distributing weights across the selected subset of active expert networks E_i."
     },
     "keyTakeaways": [
-      "Maakt enorme modelcapaciteit mogelijk bij lage 'active parameter compute costs'.",
-      "Toegepast in frontier modellen zoals Mixtral 8x7B, GPT-4, Grok en DeepSeek-V3/R1.",
-      "Vereist load balancing loss om te voorkomen dat de router steeds dezelfde experts kiest."
+      "Enables astronomical model parameter capacity at constant per-token inference FLOPs.",
+      "Adopted by premier frontier systems including Mixtral, Grok, GPT-4, and DeepSeek-V3/R1.",
+      "Requires auxiliary routing loss terms to prevent expert collapse (imbalanced routing)."
     ],
     "tradeoffs": {
       "advantages": [
-        "Dramatisch hogere trainings- en inferentiesnelheid per token ten opzichte van dense modellen met dezelfde capaciteit.",
-        "Superieure benchmark-prestaties bij gelijkblijvende FLOPs."
+        "Substantially higher training and inference throughput compared to dense models of equivalent capacity.",
+        "Superior multi-domain benchmark performance per training FLOP."
       ],
       "limitations": [
-        "Het gehele model (alle experts) moet in VRAM geladen zijn, wat hoge geheugenvereisten stelt.",
-        "Complexiteit bij distributed inference (all-to-all communication overhead tussen GPU's)."
+        "All parameters must remain resident in GPU VRAM, requiring substantial memory capacity.",
+        "All-to-all communication overhead across GPUs during distributed expert-parallel inference."
       ]
     },
     "canonicalPaper": {
@@ -223,8 +374,84 @@
       "year": 2017,
       "url": "https://arxiv.org/abs/1701.06538"
     },
-    "relatedIds": ["transformer", "kv-cache", "quantization"],
+    "relatedIds": ["transformer", "kv-cache", "quantization", "mla-attention"],
     "searchKeywords": ["moe", "mixture of experts", "sparse", "router", "gating", "deepseek", "mixtral"]
+  },
+  {
+    "id": "gqa-mqa",
+    "slug": "gqa-mqa",
+    "acronym": "GQA / MQA",
+    "title": "Grouped-Query & Multi-Query Attention",
+    "category": "ARCHITECTURES",
+    "level": "INTERMEDIATE",
+    "summary": "Attention variants reducing KV-cache memory consumption by sharing key and value projection heads across multiple query heads.",
+    "technicalDeepDive": "In standard Multi-Head Attention (MHA), Query, Key, and Value have an identical number of heads H. During autoregressive decoding, storing individual Key and Value states for every head creates massive VRAM pressure. Multi-Query Attention (MQA) collapses this to a single shared Key and Value head across all Query heads. Grouped-Query Attention (GQA) strikes an optimal middle ground by dividing Query heads into G groups, where each group shares one KV head, maintaining 99% of MHA accuracy with an 8x reduction in KV-cache size.",
+    "mathematics": {
+      "formula": "\\text{KV\\_Ratio} = \\frac{H_{\\text{KV}}}{H_Q} \\quad (\\text{e.g., } 8 \\text{ KV heads for } 64 \\text{ Query heads} = \\frac{1}{8})",
+      "explanation": "GQA groups Query heads into clusters sharing a single Key and Value projection, reducing memory bandwidth pressure by a factor of H_Q / H_KV."
+    },
+    "keyTakeaways": [
+      "Standard architectural choice in contemporary LLMs (Llama 2/3, Mistral, Gemma).",
+      "Dramatically reduces per-token memory bandwidth bottlenecks during batch generation.",
+      "Enables longer context windows and larger concurrent serving batch sizes."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Up to 8x reduction in KV-cache memory footprint compared to Multi-Head Attention.",
+        "Significantly higher decoding throughput under high-concurrency serving."
+      ],
+      "limitations": [
+        "Slightly lower parameter representational capacity compared to unconstrained MHA.",
+        "Requires specific grouping hyperparameters tuned during initial pre-training."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+      "arxivId": "2305.13245",
+      "authors": "Joshua Ainslie, James Lee-Thorp, Michiel de Jong, et al. (Google Research)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.13245"
+    },
+    "relatedIds": ["self-attention", "kv-cache", "mla-attention"],
+    "searchKeywords": ["gqa", "mqa", "grouped query", "multi query", "kv cache", "attention heads"]
+  },
+  {
+    "id": "mla-attention",
+    "slug": "mla-attention",
+    "acronym": "MLA",
+    "title": "Multi-Head Latent Attention (DeepSeek MLA)",
+    "category": "ARCHITECTURES",
+    "level": "FRONTIER",
+    "summary": "Low-rank latent projection architecture compressing Keys and Values into compact latent vectors, delivering extreme KV-cache reduction without attention degradation.",
+    "technicalDeepDive": "Introduced by DeepSeek in V2 and V3, Multi-Head Latent Attention compresses Key and Value projections into a shared low-rank latent vector c^{KV} during inference. Instead of caching high-dimensional Key and Value heads, the serving engine caches only the compressed latent vector. During attention computation, keys and values are decompressed via weight absorption directly into the query projections, slashing KV-cache memory consumption by up to 93% compared to standard MHA while outperforming GQA.",
+    "mathematics": {
+      "formula": "c_t^{KV} = W^{DKV} h_t, \\quad k_t^C = W^{UK} c_t^{KV}, \\quad v_t^C = W^{UV} c_t^{KV}",
+      "explanation": "Hidden state h_t is down-projected into compact latent vector c_t^{KV}. During generation, only c_t^{KV} is cached, avoiding caching full uncompressed heads."
+    },
+    "keyTakeaways": [
+      "Core engineering breakthrough behind DeepSeek-V2, V3, and R1.",
+      "Outperforms Grouped-Query Attention (GQA) in empirical modeling capability.",
+      "Reduces KV-cache memory footprint by up to 93%, enabling massive multi-turn concurrency."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Unprecedented KV-cache memory compression with zero loss in multi-head expressiveness.",
+        "Matrix absorption enables computation directly in latent space without decompressing full KV tensors."
+      ],
+      "limitations": [
+        "Requires customized CUDA/Triton decoding kernels to fully exploit weight absorption.",
+        "Higher complexity in positional encoding handling (decoupled RoPE query/key branches)."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
+      "arxivId": "2405.04434",
+      "authors": "DeepSeek-AI",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2405.04434"
+    },
+    "relatedIds": ["self-attention", "kv-cache", "moe", "gqa-mqa"],
+    "searchKeywords": ["mla", "multi-head latent attention", "deepseek", "kv cache compression", "latent"]
   },
   {
     "id": "mamba-ssm",
@@ -233,25 +460,25 @@
     "title": "State Space Models & Selective Mamba",
     "category": "ARCHITECTURES",
     "level": "FRONTIER",
-    "summary": "Lineaire sequentiemodellen die de O(N^2) complexiteit van transformers doorbreken via selectieve toestandsruimtes met O(N) schaalbaarheid.",
-    "technicalDeepDive": "Klassieke State Space Models (SSM's) stammen uit de regeltechniek en transformeren continue systemen naar discrete toestanden via matrices (A, B, C). Mamba voegt een cruciale innovatie toe: selectiviteit. Door de parameters B, C en de tijdstap delta afhankelijk te maken van de invoer, kan het model bepalen welke informatie onthouden of vergeten moet worden. Hierdoor combineert Mamba de snelle parallelle training van CNN's met de O(1) constante geheugeninferentie van RNN's.",
+    "summary": "Linear-time sequence modeling architecture breaking the O(N^2) complexity barrier of transformers through input-dependent selective state transitions.",
+    "technicalDeepDive": "Classical State Space Models (SSMs) originate from control theory, mapping continuous signals through recurrent differential equations (A, B, C). Mamba incorporates input-dependent selectivity: by making transition matrices B, C, and step size delta dynamic functions of the input token, the model dynamically filters relevant versus irrelevant context. Mamba merges the fast parallel training of CNNs with the O(1) constant inference memory footprint of RNNs.",
     "mathematics": {
       "formula": "h_t = \\bar{A} h_{t-1} + \\bar{B} x_t, \\quad y_t = C h_t",
-      "explanation": "Discrete toestandstransitie waarbij h_t de verborgen toestand is en bar(A), bar(B) gediscretiseerde matrices zijn via de selectieve tijdstap delta."
+      "explanation": "Discrete state space transition where h_t is the recurrent state vector, and bar(A), bar(B) are discretized via the selective parameter delta."
     },
     "keyTakeaways": [
-      "Lineaire rekentijd O(N) ten opzichte van de contextlengte in plaats van O(N^2).",
-      "Geen KV-cache nodig tijdens generatie; constante geheugenvoetafdruk.",
-      "Veelbelovend voor extreem lange contexten (miljoenen tokens) en genomics/audio."
+      "Linear computational complexity O(N) relative to sequence length instead of quadratic O(N^2).",
+      "No KV-cache required during generation; constant per-token memory footprint.",
+      "Demonstrates high potential for million-token context lengths, audio, and genomics."
     ],
     "tradeoffs": {
       "advantages": [
-        "Extreem snelle inferentie bij zeer lange sequenties.",
-        "Geen kwadratische VRAM-explosie."
+        "Extremely rapid inference on long sequences with zero memory growth.",
+        "Zero quadratic VRAM explosions during extended generation."
       ],
       "limitations": [
-        "Iets minder effectief in 'needle-in-a-haystack' retrieval en in-context associative recall dan pure attention.",
-        "Minder hardware-geoptimaliseerd ecosysteem dan dense matrix-vermenigvuldigingen op Tensor Cores."
+        "Slightly lower associative in-context recall ('needle-in-a-haystack') compared to full attention.",
+        "Less mature hardware kernel ecosystem compared to dense matrix multiplication on Tensor Cores."
       ]
     },
     "canonicalPaper": {
@@ -271,25 +498,25 @@
     "title": "Residual Connections & Highway Gradients",
     "category": "ARCHITECTURES",
     "level": "BEGINNER",
-    "summary": "Architectuurpatroon waarbij de invoer van een laag direct bij de uitvoer wordt opgeteld (x + f(x)), waardoor netwerken honderden lagen diep kunnen worden.",
-    "technicalDeepDive": "Vóór residual connections (ResNets, 2015) leden diepe neurale netwerken onder vanishing gradients: gradiënten stierven wiskundig uit na tientallen lagen. Door een 'skip connection' te introduceren leert de laag niet de volledige mapping H(x), maar slechts het residu F(x) = H(x) - x. Tijdens backpropagation stroomt de gradiënt via de identiteitsoperatie direct terug zonder verzwakt te worden door gewichtsmatrices, wat netwerken met honderden lagen stabiel trainbaar maakt.",
+    "summary": "Architectural pattern adding a layer's input directly to its transformed output (x + f(x)), allowing unimpeded gradient flow through hundreds of layers.",
+    "technicalDeepDive": "Prior to residual connections (ResNet, 2015), deep neural networks suffered catastrophic degradation from vanishing gradients. Skip connections reframe a layer's objective: instead of fitting an underlying mapping H(x), the layer learns the residual function F(x) = H(x) - x. During backpropagation, the additive identity shortcut allows gradients to propagate directly to earliest layers without attenuation by weight matrices.",
     "mathematics": {
       "formula": "y = \\mathcal{F}(x, \\{W_i\\}) + x",
-      "explanation": "De uitvoer y is de som van de residuële functie F(x) en de onveranderde invoer x."
+      "explanation": "The block output y is the sum of the non-linear transformation F(x) and the undisturbed input identity x."
     },
     "keyTakeaways": [
-      "De ontdekking die het mogelijk maakte om netwerken dieper dan 20-30 lagen te trainen.",
-      "Aanwezig in elk transformerblok tussen attention en feed-forward lagen.",
-      "Garandeert dat een laag minimaal een identiteitsfunctie kan nabootsen als er niets te leren valt."
+      "The pivotal architectural discovery enabling training networks beyond 20-30 layers deep.",
+      "Present in every transformer block spanning attention and feed-forward sub-layers.",
+      "Guarantees that a layer can effortlessly default to identity behavior if no additional transformation is required."
     ],
     "tradeoffs": {
       "advantages": [
-        "Elimineert het vanishing gradient probleem in diepe architecturen.",
-        "Verhoogt de trainingssnelheid en convergentie substantieel."
+        "Eliminates vanishing gradients across arbitrarily deep architectures.",
+        "Dramatically accelerates optimization convergence and training stability."
       ],
       "limitations": [
-        "Vereist dat de dimensies van invoer en uitvoer identiek zijn (of geprojecteerd moeten worden).",
-        "Kan leiden tot redundante representaties als lagen niet voldoende divergeren."
+        "Requires matching tensor dimensions between input and output representations.",
+        "Can encourage representational redundancy across adjacent layers if not properly regularized."
       ]
     },
     "canonicalPaper": {
@@ -299,35 +526,35 @@
       "year": 2015,
       "url": "https://arxiv.org/abs/1512.03385"
     },
-    "relatedIds": ["transformer", "backpropagation-autograd"],
+    "relatedIds": ["transformer", "backpropagation-autograd", "rmsnorm"],
     "searchKeywords": ["residual", "resnet", "skip connection", "highway", "kaiming he"]
   },
   {
     "id": "diffusion-models",
     "slug": "diffusion-models",
-    "acronym": "DDPM",
+    "acronym": "DDPM / DiT",
     "title": "Denoising Diffusion Probabilistic Models",
     "category": "ARCHITECTURES",
     "level": "INTERMEDIATE",
-    "summary": "Generatieve modellen die data creëren door stapsgewijs Gaussische ruis om te keren via een getraind neurale netwerk.",
-    "technicalDeepDive": "Diffusion bestaat uit twee fasen: het forward proces (waarin stapsgewijs ruis aan een afbeelding wordt toegevoegd totdat er pure ruis overblijft) en het reverse proces (waarin een U-Net of Diffusion Transformer (DiT) getraind wordt om de toegevoegde ruis op elk tijdstip t te voorspellen en te verwijderen). Door willekeurige ruis te injecteren en stapsgewijs te ontruisen ontstaat een haarscherpe nieuwe afbeelding of video.",
+    "summary": "Generative modeling paradigm synthesizing high-fidelity samples by iteratively reversing a parameterized Gaussian noise forward process.",
+    "technicalDeepDive": "Diffusion consists of two phases: a forward process that incrementally injects Gaussian noise into data until it collapses into pure noise, and a reverse process where a neural network (typically a U-Net or Diffusion Transformer / DiT) is trained to estimate and subtract the noise added at timestep t. Conditioned on text embeddings, the model guides sample synthesis from pure random noise toward sharp, coherent images and video.",
     "mathematics": {
       "formula": "L_{\\text{simple}}(\\theta) = \\mathbb{E}_{t, x_0, \\epsilon} \\left[ \\| \\epsilon - \\epsilon_\\theta(x_t, t) \\|^2 \\right]",
-      "explanation": "Het netwerk epsilon_theta leert de werkelijk toegevoegde Gaussische ruis epsilon te voorspellen gegeven het beschadigde signaal x_t op tijdstip t."
+      "explanation": "The network epsilon_theta learns to predict the exact Gaussian noise epsilon added to clean sample x_0 at diffusion step t."
     },
     "keyTakeaways": [
-      "De technologie achter Stable Diffusion, Midjourney, DALL-E 3 en Sora.",
-      "Diffusion Transformers (DiT) hebben U-Nets grotendeels vervangen voor schaalbare videogeneratie.",
-      "Stabieler te trainen dan GAN's (Generative Adversarial Networks) zonder mode collapse."
+      "The generative backbone behind Stable Diffusion, Midjourney, DALL-E 3, FLUX, and Sora.",
+      "Diffusion Transformers (DiT) have replaced convolutional U-Nets for state-of-the-art video synthesis.",
+      "Avoids adversarial instabilities and mode collapse common in GANs."
     ],
     "tradeoffs": {
       "advantages": [
-        "Extreem hoge generatiekwaliteit en diversiteit in beeld en video.",
-        "Geen instabiliteiten of mode collapse tijdens training."
+        "Superior sample quality, diversity, and compositional control across visual domains.",
+        "Highly stable training dynamics governed by mean squared error objectives."
       ],
       "limitations": [
-        "Trage inferentie: vereist tientallen sequentiële denoising-stappen (tenzij gecombineerd met distillation of flow matching).",
-        "Hoge compute-eisen tijdens zowel training als generatie."
+        "High inference latency requiring dozens of sequential denoising iterations.",
+        "Substantial computational demands during training and generation without distillation."
       ]
     },
     "canonicalPaper": {
@@ -347,25 +574,25 @@
     "title": "Vision-Language Models & Cross-Modality",
     "category": "ARCHITECTURES",
     "level": "INTERMEDIATE",
-    "summary": "Multimodale architecturen die beeldpixels omzetten in visuele tokens die een autoregressief taalmodel naadloos kan begrijpen en redeneren.",
-    "technicalDeepDive": "Een VLM koppelt een visuele encoder (zoals CLIP ViT of SigLIP) aan een LLM-backbone via een projectielaag (zoals een MLP of cross-attention perceiver resampler). Beelden worden opgedeeld in patches (bijv. 14x14 pixels), omgezet in embedding-vectoren ('visuele tokens'), en samen met teksttokens aan het taalmodel aangeboden. Hierdoor kan het model beelden ontleden, diagrammen interpreteren en visueel redeneren.",
+    "summary": "Multimodal architectures mapping visual pixels into discrete embedding tokens interpretable by autoregressive language backbones.",
+    "technicalDeepDive": "A Vision-Language Model binds an image encoder (such as CLIP ViT or SigLIP) to an LLM backbone through a projection adapter (MLP or cross-attention resampler). Input images are partitioned into spatial grid patches (e.g., 14x14 pixels), mapped into dense visual tokens, and concatenated directly into the LLM's sequence context. This equips the language model to parse document layouts, visual charts, spatial relationships, and scene geometry.",
     "mathematics": {
       "formula": "Z_{\\text{visual}} = \\text{Projector}(\\text{VisionEncoder}(I))",
-      "explanation": "Het beeld I wordt door de vision encoder geleid en via een getrainde projector geprojecteerd in de gedeelde embedding-ruimte van het LLM."
+      "explanation": "Image I is processed by a visual encoder and projected into the language model's latent embedding space."
     },
     "keyTakeaways": [
-      "Maakt documentbegrip (OCR), diagram-analyse en visuele agents mogelijk.",
-      "Gepionierd door CLIP (OpenAI), LLaVA, Gemini en Claude Vision.",
-      "Native multimodale training integreert audio, video en tekst in één gedeelde transformer."
+      "Powers visual reasoning, OCR, chart comprehension, and autonomous GUI agents.",
+      "Pioneered by CLIP (OpenAI), LLaVA, Gemini, and Claude Vision.",
+      "Native multimodal training trains speech, image, and text natively within a shared transformer."
     ],
     "tradeoffs": {
       "advantages": [
-        "Unificeert computer vision en NLP binnen één universeel autoregressief framework.",
-        "Rijk semantisch begrip van de fysieke en visuele wereld."
+        "Unifies computer vision and natural language processing into a single autoregressive framework.",
+        "Rich contextual understanding bridging textual queries and visual environments."
       ],
       "limitations": [
-        "Visuele tokens consumeren veel contextruimte (honderden tokens per afbeelding).",
-        "Gevoelig voor ruimtelijke hallucinaties en subtiele meetfouten."
+        "Visual tokens consume vast context window capacity (hundreds of tokens per image).",
+        "Susceptible to geometric hallucinations and spatial measurement inaccuracies."
       ]
     },
     "canonicalPaper": {
@@ -375,7 +602,7 @@
       "year": 2023,
       "url": "https://arxiv.org/abs/2304.08485"
     },
-    "relatedIds": ["transformer", "embeddings"],
+    "relatedIds": ["transformer", "embeddings", "self-attention"],
     "searchKeywords": ["vlm", "multimodal", "llava", "clip", "vision", "siglip", "cross-attention"]
   },
   {
@@ -385,25 +612,25 @@
     "title": "Reinforcement Learning from Human Feedback",
     "category": "TRAINING_ALIGNMENT",
     "level": "INTERMEDIATE",
-    "summary": "Afstemmingsmethode waarbij een beloningsmodel (Reward Model) menselijke voorkeuren nabootst om het beleid van het LLM te optimaliseren via PPO.",
-    "technicalDeepDive": "Base models voltooien alleen tekst en zijn niet van nature behulpzaam of veilig. RLHF bestaat uit 3 stappen: 1) Supervised Fine-Tuning (SFT) op demonstraties; 2) Trainen van een Reward Model op gepaarde menselijke vergelijkingen (A > B); 3) Optimaliseren van het taalmodel via Proximal Policy Optimization (PPO) tegen het reward model, met een KL-divergentie straf om te voorkomen dat het model te ver afdrijft van de basiskennis.",
+    "summary": "Post-training alignment methodology utilizing a human-preference reward model to optimize an LLM's policy using reinforcement learning (PPO).",
+    "technicalDeepDive": "Base language models simply predict the next token and frequently produce toxic or unhelpful outputs. RLHF addresses this in three steps: 1) Supervised Fine-Tuning (SFT) on curated instruction demonstrations; 2) Training a scalar Reward Model on pairwise human preference comparisons; 3) Optimizing the language model via Proximal Policy Optimization (PPO) against the reward model, incorporating a KL-divergence penalty to prevent policy drift away from original capabilities.",
     "mathematics": {
       "formula": "\\max_\\theta \\mathbb{E} \\left[ r_\\phi(x, y) - \\beta \\mathbb{D}_{\\text{KL}}(\\pi_\\theta(y|x) \\parallel \\pi_{\\text{ref}}(y|x)) \\right]",
-      "explanation": "Maximaliseert de beloning r_phi terwijl de KL-divergentie ten opzichte van het referentiemodel pi_ref binnen de perken blijft via regularisatiefactor beta."
+      "explanation": "Maximizes reward r_phi while regularizing policy drift from baseline reference model pi_ref using KL factor beta."
     },
     "keyTakeaways": [
-      "De doorbraak die GPT-3 transformeerde in ChatGPT (InstructGPT).",
-      "Zorgt ervoor dat modellen instructies opvolgen, veiligheidsregels respecteren en behulpzaam antwoorden.",
-      "Gevoelig voor 'reward hacking', waarbij het model vleierig of langdradig wordt om het beloningsmodel te misleiden."
+      "The critical breakthrough that turned raw GPT-3 into ChatGPT (InstructGPT).",
+      "Aligns models to follow instructions, enforce safety boundaries, and provide structured assistance.",
+      "Vulnerable to 'reward hacking', where models exploit reward model quirks through sycophancy or verbosity."
     ],
     "tradeoffs": {
       "advantages": [
-        "Drastische toename in gebruiksvriendelijkheid en instruction-following capaciteit.",
-        "Effectieve filter tegen gevaarlijke of schadelijke outputs."
+        "Enormous leap in instruction adherence, helpfulness, and conversational safety.",
+        "Effectively filters harmful, dangerous, and inappropriate completions."
       ],
       "limitations": [
-        "Complex en instabiel trainingsproces (vereist 4 gelijktijdige modellen in VRAM: actor, critic, reference, reward).",
-        "Kan leiden tot 'alignment tax' (lichte degradatie in pure wiskundige of creatieve benchmarks)."
+        "Complex and unstable training requiring 4 active models in VRAM (actor, critic, reference, reward).",
+        "Can incur an 'alignment tax', slightly degrading raw mathematical or coding creativity."
       ]
     },
     "canonicalPaper": {
@@ -413,7 +640,7 @@
       "year": 2022,
       "url": "https://arxiv.org/abs/2203.02155"
     },
-    "relatedIds": ["dpo", "grpo", "synthetic-data"],
+    "relatedIds": ["dpo", "grpo", "synthetic-data", "sft-training"],
     "searchKeywords": ["rlhf", "ppo", "reward model", "alignment", "instructgpt", "preference"]
   },
   {
@@ -423,25 +650,25 @@
     "title": "Direct Preference Optimization",
     "category": "TRAINING_ALIGNMENT",
     "level": "INTERMEDIATE",
-    "summary": "Elegante alignment-methode die de behoefte aan een expliciet beloningsmodel en PPO-training omzeilt door de loss direct op voorkeursdata te berekenen.",
-    "technicalDeepDive": "DPO bewijst wiskundig dat het impliciete beloningsmodel van een beleid exact kan worden uitgedrukt als de log-ratio tussen het getrainde model en het referentiemodel. Hierdoor kan het complexe RLHF-proces worden gereduceerd tot een eenvoudige binaire classificatie-loss (vergelijkbaar met cross-entropy) direct op voorkeursparen (y_w > y_l). Dit elimineert de noodzaak om een apart reward model of instabiele PPO-loops te draaien.",
+    "summary": "Alignment protocol bypassing explicit reward models and reinforcement learning loops by optimizing a closed-form loss directly on preference pairs.",
+    "technicalDeepDive": "DPO proves mathematically that an implicit reward function can be analytically parameterized by the log-ratio of the active policy to the reference policy. This collapses the multi-stage RLHF pipeline into a straightforward binary cross-entropy classification objective directly over preferred and rejected completion pairs (y_w > y_l). It eliminates online rollout sampling, separate reward models, and delicate PPO hyperparameter tuning.",
     "mathematics": {
       "formula": "\\mathcal{L}_{\\text{DPO}}(\\pi_\\theta) = -\\mathbb{E} \\left[ \\log \\sigma \\left( \\beta \\log \\frac{\\pi_\\theta(y_w|x)}{\\pi_{\\text{ref}}(y_w|x)} - \\beta \\log \\frac{\\pi_\\theta(y_l|x)}{\\pi_{\\text{ref}}(y_l|x)} \\right) \\right]",
-      "explanation": "y_w is het geprefereerde antwoord, y_l het afgewezen antwoord. De loss verhoogt direct de waarschijnlijkheid van y_w ten opzichte van y_l."
+      "explanation": "Increases the relative likelihood of preferred completion y_w over dispreferred completion y_l, regularized by parameter beta."
     },
     "keyTakeaways": [
-      "Verving PPO in veel open-source modellen (Llama-3, Zephyr, Mistral) vanwege eenvoud en stabiliteit.",
-      "Geen sampling nodig tijdens de training; direct trainbaar met standaard supervised pipelines.",
-      "Veel lager GPU-geheugengebruik dan traditionele RLHF."
+      "Widely adopted across open-weight models (Llama 3, Mistral, Zephyr) due to its simplicity and stability.",
+      "Requires no online generation or reinforcement learning during training.",
+      "Significantly reduces GPU VRAM requirements compared to classic PPO-based RLHF."
     ],
     "tradeoffs": {
       "advantages": [
-        "Uitzonderlijk stabiel en eenvoudig te implementeren.",
-        "Geen instabiele RL hyperparameters of actor-critic netwerken nodig."
+        "Exceptionally stable, deterministic, and straightforward to implement.",
+        "Zero actor-critic instability or complex reinforcement learning dynamics."
       ],
       "limitations": [
-        "Gevoelig voor overfitting op de statische preferentie-dataset.",
-        "Kan minder effectief zijn bij complexe meerstaps-redeneertaken dan on-policy RL."
+        "Prone to overfitting on static preference datasets without on-policy iterative refreshing.",
+        "May underperform on multi-step complex reasoning compared to reward-verified on-policy RL."
       ]
     },
     "canonicalPaper": {
@@ -451,7 +678,7 @@
       "year": 2023,
       "url": "https://arxiv.org/abs/2305.18290"
     },
-    "relatedIds": ["rlhf", "grpo", "lora-peft"],
+    "relatedIds": ["rlhf", "grpo", "lora-peft", "kto-alignment"],
     "searchKeywords": ["dpo", "direct preference optimization", "alignment", "rafailov", "preference"]
   },
   {
@@ -461,25 +688,25 @@
     "title": "Group Relative Policy Optimization",
     "category": "TRAINING_ALIGNMENT",
     "level": "FRONTIER",
-    "summary": "De doorbraak-RL-methode van DeepSeek die de critic-model overhead elimineert door de beloning relatief te berekenen over groepen gegenereerde antwoorden.",
-    "technicalDeepDive": "In traditionele PPO evalueert een apart 'critic model' (even groot als het taalmodel) de verwachte beloning, wat 50% van het GPU-geheugen opslokt. DeepSeek introduceerde GRPO: voor elke vraag samplet het model een groep van G antwoorden (bijv. G=8 of 16). De beloningen worden genormaliseerd over deze groep (gemiddelde en standaarddeviatie). De advantage van elk antwoord is puur zijn relatieve positie ten opzichte van zijn 'broertjes', waardoor het critic model compleet overbodig is.",
+    "summary": "Critic-free reinforcement learning algorithm by DeepSeek computing baseline advantages across grouped sample completions, halving training VRAM.",
+    "technicalDeepDive": "In standard PPO, a separate critic model (equal in size to the policy LLM) estimates state values, consuming 50% of total GPU memory. DeepSeek introduced GRPO: for each query prompt, the model samples a group of G completions (e.g., G=8 or 16). The reward scores across the group are normalized with mean and standard deviation. The advantage of each output is computed purely relative to its peers, completely eliminating the critic model and enabling massive reasoning RL runs.",
     "mathematics": {
       "formula": "A_i = \\frac{r_i - \\text{mean}(\\{r_1, \\dots, r_G\\})}{\\text{std}(\\{r_1, \\dots, r_G\\})}",
-      "explanation": "Genormaliseerde relatieve advantage A_i voor kandidaat i binnen een groep van grootte G."
+      "explanation": "Normalized relative advantage A_i for candidate completion i within a group of G sampled outputs."
     },
     "keyTakeaways": [
-      "De sleuteltechnologie achter DeepSeek-R1-Zero en DeepSeek-R1.",
-      "Halveert de VRAM-vereisten van reinforcement learning op frontier schaal.",
-      "Stelt modellen in staat om autonoom 'Aha moments' en langere denkpaden te ontwikkelen via pure rule-based verifiers."
+      "The pivotal algorithmic engine behind DeepSeek-R1-Zero and DeepSeek-R1.",
+      "Halves GPU memory consumption during large-scale reinforcement learning.",
+      "Catalyzes the autonomous emergence of long thinking chains and self-correction behaviors."
     ],
     "tradeoffs": {
       "advantages": [
-        "Enorme besparing op GPU-geheugen en communicatie-overhead.",
-        "Zeer effectief in combinatie met deterministische verifiers (wiskunde, compilers)."
+        "Dramatic reduction in VRAM overhead and multi-node GPU synchronization.",
+        "Highly potent when paired with deterministic rule-based verifiers (compilers, math checkers)."
       ],
       "limitations": [
-        "Vereist het genereren van meerdere antwoorden per prompt (hoge sampling-throughput vereist).",
-        "Minder geschikt wanneer er geen objectieve wiskundige of compiler-verificatie mogelijk is."
+        "Demands high sampling throughput (generating groups of completions per training step).",
+        "Less effective in subjective domains lacking verifiable truth standards."
       ]
     },
     "canonicalPaper": {
@@ -489,8 +716,46 @@
       "year": 2024,
       "url": "https://arxiv.org/abs/2402.03300"
     },
-    "relatedIds": ["rlhf", "dpo", "test-time-compute"],
+    "relatedIds": ["rlhf", "dpo", "test-time-compute", "process-reward-models"],
     "searchKeywords": ["grpo", "deepseek", "deepseek-r1", "relative policy", "critic-free", "reasoning"]
+  },
+  {
+    "id": "kto-alignment",
+    "slug": "kto-alignment",
+    "acronym": "KTO",
+    "title": "Kahneman-Tversky Optimization (KTO)",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "INTERMEDIATE",
+    "summary": "Alignment method rooted in human behavioral economics that directly aligns models on binary feedback (good/bad) without paired comparisons.",
+    "technicalDeepDive": "While DPO requires paired preference data (prompt x with completion A preferred over B), real-world feedback is often unpaired (e.g., upvote/downvote signals). KTO formalizes alignment via Kahneman and Tversky's Prospect Theory, incorporating loss aversion where negative feedback is weighted more heavily than positive utility. It allows direct optimization on binary signal datasets without requiring paired counterfactual completions.",
+    "mathematics": {
+      "formula": "L_{\\text{KTO}} = \\mathbb{E}_{x, y} \\left[ w(y) \\cdot \\left(1 - v\\left(\\beta \\log \\frac{\\pi_\\theta(y|x)}{\\pi_{\\text{ref}}(y|x)} - z_\\text{ref}\\right)\\right) \\right]",
+      "explanation": "Calculates loss asymmetric utility v where positive and negative outcomes are weighted by behavioral prospect factors w(y)."
+    },
+    "keyTakeaways": [
+      "Operates directly on unpaired upvote/downvote telemetry and thumbs-up signals.",
+      "Reduces dataset curation complexity compared to strict preference pairing.",
+      "Particularly effective for production deployment feedback loops."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "No paired completion requirement; directly ingests binary product telemetry.",
+        "Matches or exceeds DPO performance on open alignment benchmarks."
+      ],
+      "limitations": [
+        "Requires careful calibration of reference utility threshold z_ref.",
+        "Can be sensitive to extreme class imbalances between positive and negative samples."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "KTO: Model Alignment as Prospect Theoretic Optimization",
+      "arxivId": "2402.01306",
+      "authors": "Kawin Ethayarajh, Winnie Xu, Niklas Muennighoff, Dan Jurafsky, Christopher D. Manning",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2402.01306"
+    },
+    "relatedIds": ["dpo", "rlhf", "sft-training"],
+    "searchKeywords": ["kto", "prospect theory", "alignment", "binary feedback", "unpaired"]
   },
   {
     "id": "lora-peft",
@@ -499,25 +764,25 @@
     "title": "Low-Rank Adaptation & Parameter-Efficient Fine-Tuning",
     "category": "TRAINING_ALIGNMENT",
     "level": "BEGINNER",
-    "summary": "Fine-tuning techniek die de gewichtsveranderingen ontbindt in twee laag-dimensionale matrices, waardoor minder dan 1% van de parameters getraind hoeft te worden.",
-    "technicalDeepDive": "In plaats van alle miljarden gewichten W van een model aan te passen, bevriest LoRA de originele gewichten W_0 en traint een parallelle additieve matrix Delta W. Deze verandering wordt gefactoriseerd in twee matrices met lage rang r (W_0 + B * A, waarbij B van dimensie d x r is en A van r x k, met r << d). Hierdoor daalt het aantal trainbare parameters en het optimizer-geheugen met meer dan 95%, zonder prestatieverlies.",
+    "summary": "Parameter-efficient fine-tuning technique decomposing weight updates into two low-rank matrices, freezing base weights and reducing trainable parameters by 99%.",
+    "technicalDeepDive": "Instead of fine-tuning all billions of weights in a foundation model, LoRA freezes the original weights W_0 and injects trainable rank-decomposition matrices A and B (Delta W = B * A, where B is d x r and A is r x k with r << d). This reduces the number of trainable parameters and optimizer memory footprint by over 95%. When combined with 4-bit quantization (QLoRA), 70B models can be fine-tuned on a single consumer GPU.",
     "mathematics": {
       "formula": "h = W_0 x + \\Delta W x = W_0 x + \\frac{\\alpha}{r} B A x",
-      "explanation": "W_0 blijft bevroren; alleen B en A worden geüpdatet. Alpha is een constante schaalfactor."
+      "explanation": "W_0 remains frozen; only low-rank matrices B and A are optimized. Alpha is a constant scaling hyperparameter."
     },
     "keyTakeaways": [
-      "Maakt het fine-tunen van 70B modellen mogelijk op consumenten-GPU's (in combinatie met QLoRA 4-bit).",
-      "LoRA-adapters zijn minuscuul (enkele megabytes) en kunnen 'on-the-fly' gewisseld worden tijdens inferentie.",
-      "Na training kunnen de matrices B*A direct opgeteld worden bij W_0, wat leidt tot 0ms extra inferentie-overhead."
+      "Democratized open-source LLM customization across consumer hardware.",
+      "LoRA adapter weights are tiny (megabytes) and can be dynamically swapped at serving time.",
+      "Post-training, weights merge directly into W_0, adding 0ms inference overhead."
     ],
     "tradeoffs": {
       "advantages": [
-        "Dramatische reductie in VRAM en opslagruimte.",
-        "Geen extra rekenlatentie na het 'mergen' van de gewichten."
+        "Massive reduction in VRAM, storage, and distributed optimizer state overhead.",
+        "Zero latency degradation after merging adapter weights into the base model."
       ],
       "limitations": [
-        "Iets minder expressief dan volledige fine-tuning bij massieve domeinverschuivingen.",
-        "Rang r en scaling alpha vereisen empirische tuning."
+        "Slightly lower expressive capacity than full fine-tuning under drastic domain distribution shifts.",
+        "Rank r and scaling alpha require empirical tuning per task."
       ]
     },
     "canonicalPaper": {
@@ -527,8 +792,46 @@
       "year": 2021,
       "url": "https://arxiv.org/abs/2106.09685"
     },
-    "relatedIds": ["transformer", "quantization"],
+    "relatedIds": ["transformer", "quantization", "sft-training"],
     "searchKeywords": ["lora", "peft", "qlora", "low-rank", "fine-tuning", "adapters"]
+  },
+  {
+    "id": "sft-training",
+    "slug": "sft-training",
+    "acronym": "SFT",
+    "title": "Supervised Fine-Tuning & Instruction Tuning",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "BEGINNER",
+    "summary": "Post-training adaptation teaching foundation base models to behave as structured conversational assistants through curated prompt-response pairs.",
+    "technicalDeepDive": "Base pre-trained models are raw text continuators lacking conversational turn discipline. Supervised Fine-Tuning (SFT) trains the model on curated (instruction, response) dialogues using causal language modeling objectives. During loss computation, prompt tokens are masked out, and cross-entropy loss is evaluated strictly on assistant response tokens, teaching the model dialogue structure, markdown formatting, and tool-use syntax.",
+    "mathematics": {
+      "formula": "\\mathcal{L}_{\\text{SFT}} = -\\sum_{t \\in \\text{Response}} \\log P(y_t \\mid x, y_{<t})",
+      "explanation": "Masked cross-entropy evaluated exclusively across target completion tokens, ignoring prompt instruction tokens."
+    },
+    "keyTakeaways": [
+      "The critical foundational bridge between raw pre-training and alignment algorithms (DPO/RLHF).",
+      "Data quality and formatting consistency vastly outweigh raw dataset token quantity (LIMA hypothesis).",
+      "Teaches conversation formatting, system prompt boundaries, and tool-calling protocols."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Rapid convergence in a fraction of pre-training compute (typically 1-3 epochs on thousands of examples).",
+        "Direct control over model persona, formatting syntax, and domain terminology."
+      ],
+      "limitations": [
+        "Can encourage hallucination if training data contains facts beyond base model knowledge.",
+        "Prone to catastrophic forgetting of non-targeted capabilities if data mixing is skewed."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "LIMA: Less Is More for Alignment",
+      "arxivId": "2305.11206",
+      "authors": "Chunting Zhou, Pengfei Liu, Puxin Xu, et al. (Meta AI)",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2305.11206"
+    },
+    "relatedIds": ["rlhf", "dpo", "lora-peft", "synthetic-data"],
+    "searchKeywords": ["sft", "instruction tuning", "supervised fine-tuning", "lima", "alignment"]
   },
   {
     "id": "synthetic-data",
@@ -537,25 +840,25 @@
     "title": "Synthetic Data & Model Distillation",
     "category": "TRAINING_ALIGNMENT",
     "level": "INTERMEDIATE",
-    "summary": "Het trainen van modellen op hoogwaardige data gegenereerd door grotere frontier modellen, gecombineerd met geautomatiseerde filters en verifiers.",
-    "technicalDeepDive": "Omdat het menselijke internet vol zit met ruis en de grenzen van menselijke data in zicht komen, genereren grotere 'teacher' modellen (zoals Claude 3.5 Sonnet of GPT-4o) enorme datasets van geverifieerde redeneerpaden, code en uitleg. Door deze data te valideren via syntax-checkers, compilers of unit-tests ontstaat 'synthetische data' van hogere kwaliteit dan gemiddelde menselijke webtekst. Kleinere modellen (zoals Phi-4 of Llama-3 8B) kunnen hierdoor prestaties bereiken die voorheen alleen voor reuzenmodellen waren weggelegd.",
+    "summary": "Training neural networks on curated data generated by frontier teacher models, coupled with automated verifiers, compilers, and quality filters.",
+    "technicalDeepDive": "As the volume of human-authored internet text approaches natural limits, frontier models (like Claude 3.5 Sonnet or GPT-4o) generate vast synthetic corpuses of step-by-step reasoning, synthetic code, and explanations. By passing outputs through unit tests, linters, and semantic verifiers, synthetic corpuses can achieve higher purity than organic web text. Distilling this data enables compact small language models (SLMs like Phi-4 or Llama-3 8B) to rival models an order of magnitude larger.",
     "mathematics": {
       "formula": "\\mathcal{L}_{\\text{distill}} = \\alpha \\mathcal{L}_{\\text{CE}}(y, \\hat{y}) + (1-\\alpha) \\mathbb{D}_{\\text{KL}}(P_{\\text{teacher}} \\parallel P_{\\text{student}})",
-      "explanation": "De student leert zowel de harde labels y te voorspellen als de zachte kansverdeling van de teacher te benaderen."
+      "explanation": "Student model minimizes prediction loss while matching soft probability distributions from the teacher model."
     },
     "keyTakeaways": [
-      "Cruciaal voor compacte 'small language models' (SLM's) met uitzonderlijke benchmarks.",
-      "Helpt bij het 'unlearning' van ongewenste biases en hallucinerende patronen.",
-      "Vereist strenge filters om 'model collapse' (degradatie door herhaaldelijke zelf-generatie) te voorkomen."
+      "Core methodology behind high-performing Small Language Models (Microsoft Phi series).",
+      "Eliminates noise, spelling errors, and toxicity common in raw scraped web data.",
+      "Requires rigorous filtering to prevent model collapse (degradation from recursive training on synthetic loops)."
     ],
     "tradeoffs": {
       "advantages": [
-        "Onbeperkte schaalbaarheid van trainingsdata voor gespecialiseerde domeinen.",
-        "Mogelijkheid om redeneerpaden en 'thinking traces' direct over te dragen naar kleinere modellen."
+        "Unlimited training data scalability tailored to specialized technical domains.",
+        "Directly transfers frontier reasoning patterns into lightweight edge-deployable models."
       ],
       "limitations": [
-        "Risico op model collapse als data niet strikt gefilterd en geverifieerd wordt.",
-        "Modellen kunnen subtiele blinde vlekken en biases van het teachermodel overerven."
+        "Risk of model collapse if synthetic data generation is uncurated and recursive.",
+        "Models inherit systemic blind spots and subtle biases from teacher models."
       ]
     },
     "canonicalPaper": {
@@ -565,35 +868,111 @@
       "year": 2023,
       "url": "https://arxiv.org/abs/2306.11644"
     },
-    "relatedIds": ["rlhf", "grpo", "test-time-compute"],
+    "relatedIds": ["rlhf", "grpo", "test-time-compute", "sft-training"],
     "searchKeywords": ["synthetic data", "distillation", "phi", "teacher student", "data curation"]
+  },
+  {
+    "id": "adamw-optimizer",
+    "slug": "adamw-optimizer",
+    "acronym": "AdamW",
+    "title": "AdamW Optimizer & Weight Decay Decoupling",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "INTERMEDIATE",
+    "summary": "The standard optimization algorithm for training modern transformers, decoupling L2 weight decay from gradient momentum updates.",
+    "technicalDeepDive": "Standard Adam combined with L2 regularization inadvertently couples weight decay with moving-average gradient scales: weights with large gradients receive less relative regularization than weights with small gradients. AdamW corrects this by decoupling weight decay directly from gradient updates, applying weight shrinkage independently to parameters at each step. Combined with warm-up schedules and cosine decay, it is the universal optimizer for LLM pre-training.",
+    "mathematics": {
+      "formula": "\\theta_{t+1} = \\theta_t - \\eta_t \\left( \\frac{\\hat{m}_t}{\\sqrt{\\hat{v}_t} + \\epsilon} + \\lambda \\theta_t \\right)",
+      "explanation": "Weight decay factor lambda is subtracted directly, decoupled from moving first (m) and second (v) gradient moments."
+    },
+    "keyTakeaways": [
+      "The undisputed default optimizer across modern language model pre-training and fine-tuning.",
+      "Requires storing first and second gradient moments (consuming 8 bytes per parameter in FP32).",
+      "Coupled with warmup and cosine learning rate decay schedules."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Rapid convergence across diverse deep architectures and non-stationary loss surfaces.",
+        "Proper regularization without gradient-scale distortion."
+      ],
+      "limitations": [
+        "Consumes significant GPU VRAM (requires 8 bytes per parameter for optimizer states alone).",
+        "Sensitive to beta_1, beta_2, and learning rate warmup duration."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Decoupled Weight Decay Regularization",
+      "arxivId": "1711.05101",
+      "authors": "Ilya Loshchilov, Frank Hutter",
+      "year": 2017,
+      "url": "https://arxiv.org/abs/1711.05101"
+    },
+    "relatedIds": ["backpropagation-autograd", "transformer", "distributed-training"],
+    "searchKeywords": ["adamw", "optimizer", "weight decay", "gradient descent", "loshchilov", "momentum"]
+  },
+  {
+    "id": "distributed-training",
+    "slug": "distributed-training",
+    "acronym": "ZeRO / FSDP",
+    "title": "Distributed 3D Parallelism & ZeRO Memory Sharding",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "FRONTIER",
+    "summary": "Multi-GPU distributed training paradigms partitioning model parameters, gradients, and optimizer states across thousands of accelerator clusters.",
+    "technicalDeepDive": "Large language models cannot fit on a single GPU. 3D parallelism combines three axes: Tensor Parallelism (TP, splitting individual matrix multiplications intra-node), Pipeline Parallelism (PP, distributing layers inter-node), and Data Parallelism (DP). The Zero Redundancy Optimizer (ZeRO) partitions optimizer states (Stage 1), gradients (Stage 2), and parameters (Stage 3) across all GPUs, eliminating memory redundancy with minimal all-gather communication overhead.",
+    "mathematics": {
+      "formula": "\\text{Memory\\_Per\\_GPU} = \\frac{2\\Phi + 2\\Phi + 12\\Phi}{N_{\\text{GPUs}}} \\quad (\\text{ZeRO-3 Sharded})",
+      "explanation": "Parameters (2 bytes), gradients (2 bytes), and FP32 AdamW states (12 bytes) are fully sharded across N GPUs."
+    },
+    "keyTakeaways": [
+      "Enables training models exceeding hundreds of billions of parameters (Llama, DeepSeek).",
+      "Implemented via Fully Sharded Data Parallel (FSDP) and DeepSpeed.",
+      "Relies on ultra-high bandwidth interconnects (NVIDIA NVLink and InfiniBand)."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Linear memory reduction allowing arbitrary parameter scaling across cluster sizes.",
+        "High GPU computational utilization (MFU > 50%) under optimized topologies."
+      ],
+      "limitations": [
+        "Requires complex cluster interconnects; network bandwidth becomes a primary bottleneck.",
+        "Non-trivial debugging and recovery protocols for distributed node failures."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+      "arxivId": "1910.02054",
+      "authors": "Samyam Rajbhandari, Jeff Rasley, Olatunji Ruwase, Yuxiong He (Microsoft)",
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1910.02054"
+    },
+    "relatedIds": ["adamw-optimizer", "transformer", "backpropagation-autograd"],
+    "searchKeywords": ["zero", "fsdp", "distributed training", "tensor parallelism", "deepspeed", "pipeline parallelism"]
   },
   {
     "id": "kv-cache",
     "slug": "kv-cache",
     "acronym": "KV Caching",
-    "title": "Key-Value (KV) Caching & Memory Overhead",
+    "title": "Key-Value (KV) Caching & Memory Management",
     "category": "INFERENCE_SYSTEMS",
     "level": "INTERMEDIATE",
-    "summary": "Essentiële inferentie-optimalisatie die eerdere Key- en Value-vectoren bewaart in GPU-geheugen om redundante kwadratische herberekeningen te voorkomen.",
-    "technicalDeepDive": "Tijdens autoregressieve tekstgeneratie genereert het model één token per stap. Zonder caching zou het model voor token N alle eerdere N-1 tokens opnieuw door alle attention-lagen moeten berekenen. De KV-cache slaat de Key- en Value-tensors van alle eerdere tokens op in VRAM. Hierdoor hoeft bij elke nieuwe stap alleen de Query van het nieuwste token te worden berekend. Dit verlaagt de per-token complexiteit van O(N^2) naar O(N), maar transformeert inferentie in een geheugengebonden (memory bandwidth bound) proces.",
+    "summary": "Essential inference optimization storing past Key and Value projection states in GPU memory to eliminate redundant quadratic token recomputation.",
+    "technicalDeepDive": "During autoregressive text generation, models emit tokens sequentially. Without caching, generating token N requires recomputing attention over all prior N-1 tokens across all layers. The KV-cache preserves Key and Value tensors for all processed tokens in VRAM. Each generation step computes Query representations strictly for the newest token, reducing per-token computation from O(N^2) to O(N) operations, while shifting inference into a memory-bandwidth bound regime.",
     "mathematics": {
-      "formula": "\\text{KV\\_Size} = 2 \\times 2 \\times n_{\\text{layers}} \\times n_{\\text{heads}} \\times d_{\\text{head}} \\times \\text{seq\\_len} \\times \\text{batch\\_size} \\times \\text{precision}",
-      "explanation": "Formule voor de totale omvang in bytes van de KV-cache (de eerste factor 2 staat voor zowel Keys als Values)."
+      "formula": "\\text{KV\\_Bytes} = 2 \\times 2 \\times n_{\\text{layers}} \\times n_{\\text{heads}} \\times d_{\\text{head}} \\times \\text{seq\\_len} \\times \\text{batch\\_size} \\times \\text{precision}",
+      "explanation": "Calculates total KV-cache footprint in bytes (the first factor 2 accounts for both Keys and Values)."
     },
     "keyTakeaways": [
-      "Standaard in elke moderne inferentie-engine (vLLM, Ollama, TensorRT-LLM).",
-      "Veroorzaakt de primaire bottleneck bij lange contexten (128K context kan tientallen gigabytes aan KV-cache per gebruiker vereisen).",
-      "Leidde tot de ontwikkeling van Grouped-Query Attention (GQA) en Multi-Head Latent Attention (MLA)."
+      "Standard implementation across every production inference engine (vLLM, TensorRT-LLM, Ollama).",
+      "Primary memory constraint in long-context serving (128K context requires tens of gigabytes per concurrent user).",
+      "Directly spurred innovations like Grouped-Query Attention (GQA) and Multi-Head Latent Attention (MLA)."
     ],
     "tradeoffs": {
       "advantages": [
-        "Enorme versnelling van per-token generatiesnelheid (van O(N) berekening naar O(1) compute-intensiteit per laag).",
-        "Maakt realtime interactieve streaming mogelijk."
+        "Massive speedup in per-token generation latency (shifts token compute to O(1) FLOP intensity).",
+        "Enables interactive, real-time streaming output."
       ],
       "limitations": [
-        "Enorme VRAM-voetafdruk die lineair groeit met contextlengte en batchgrootte.",
-        "Inferentie wordt zwaar begrensd door geheugenbandbreedte in plaats van rekencapaciteit."
+        "Massive VRAM footprint growing linearly with sequence length and batch volume.",
+        "Inference becomes heavily memory bandwidth bound rather than compute bound."
       ]
     },
     "canonicalPaper": {
@@ -603,8 +982,8 @@
       "year": 2019,
       "url": "https://arxiv.org/abs/1911.02150"
     },
-    "relatedIds": ["self-attention", "flash-attention", "paged-attention"],
-    "searchKeywords": ["kv cache", "inference", "memory bandwidth", "gqa", "mha", "decoding"]
+    "relatedIds": ["self-attention", "flash-attention", "paged-attention", "gqa-mqa", "mla-attention"],
+    "searchKeywords": ["kv cache", "inference", "memory bandwidth", "gqa", "decoding", "serving"]
   },
   {
     "id": "flash-attention",
@@ -613,25 +992,25 @@
     "title": "FlashAttention & IO-Aware Tiling",
     "category": "INFERENCE_SYSTEMS",
     "level": "FRONTIER",
-    "summary": "Hardware-bewust attention-algoritme dat GPU High Bandwidth Memory (HBM) transfers minimaliseert door berekeningen op te knippen in snelle SRAM-tegels.",
-    "technicalDeepDive": "Standaard attention schrijft de enorme N x N aandachtmatrix naar het relatief trage GPU HBM-geheugen en leest deze daarna weer in voor de softmax. FlashAttention herstructureert de berekening via 'tiling': het verdeelt de invoer in blokken die exact passen in het razendsnelle On-Chip SRAM van de GPU (SM's). Door de softmax stapsgewijs online te normaliseren ('online softmax trick'), hoeft de gigantische N x N matrix nooit in zijn geheel naar HBM te worden geschreven.",
+    "summary": "Hardware-aware exact attention algorithm minimizing High Bandwidth Memory (HBM) transfers by partitioning matrix operations into on-chip SRAM tiles.",
+    "technicalDeepDive": "Standard attention implementations materialize intermediate N x N attention matrices in slow GPU HBM and re-read them for softmax normalization. FlashAttention restructures computation via tiling: inputs are divided into sub-blocks sized to fit inside fast on-chip GPU SRAM. By incrementally computing softmax normalization using an online running maximum ('online softmax trick'), the N x N attention matrix is never written to slow HBM, accelerating training and inference 2x-4x.",
     "mathematics": {
       "formula": "\\text{HBM Accesses: } O\\left(N d + \\frac{N^2 d^2}{M}\\right) \\quad \\text{vs. Standard: } \\Theta(N d + N^2)",
-      "explanation": "M is de grootte van het snelle SRAM-geheugen. FlashAttention reduceert geheugentransfers van kwadratisch naar bijna lineair afhankelijk van SRAM."
+      "explanation": "M represents GPU SRAM capacity. FlashAttention reduces memory reads/writes from quadratic to near-linear relative to SRAM."
     },
     "keyTakeaways": [
-      "Biedt 2x tot 4x versnelling tijdens training en inferentie.",
-      "Exacte wiskundige attention: geen verlies van accuratesse of benaderingsfouten.",
-      "FlashAttention-2 en FlashAttention-3 optimaliseren verder voor Hopper (FP8, Tensor Memory Accelerator)."
+      "2x to 4x speedup across training and inference with mathematically exact results.",
+      "Zero approximation: produces identical outputs to standard mathematical attention.",
+      "FlashAttention-3 leverages Hopper TMA (Tensor Memory Accelerator) and native FP8 hardware pipelines."
     ],
     "tradeoffs": {
       "advantages": [
-        "Aanzienlijke versnelling van training en inferentie zónder enig kwaliteitsverlies.",
-        "Verlaagt de geheugenpiek van O(N^2) naar O(N)."
+        "Substantial runtime speedup without sacrificing accuracy or numerical precision.",
+        "Reduces peak memory allocation from O(N^2) to O(N)."
       ],
       "limitations": [
-        "Vereist hardware-specifieke CUDA/Triton kernels.",
-        "Niet toepasbaar op chips zonder hiërarchische SRAM/HBM-architectuur."
+        "Requires specialized low-level hardware kernels (CUDA / Triton).",
+        "Inapplicable to hardware architectures lacking fast on-chip SRAM hierarchies."
       ]
     },
     "canonicalPaper": {
@@ -647,29 +1026,29 @@
   {
     "id": "paged-attention",
     "slug": "paged-attention",
-    "acronym": "vLLM Paging",
+    "acronym": "PagedAttention",
     "title": "PagedAttention & Virtual Memory Management",
     "category": "INFERENCE_SYSTEMS",
     "level": "INTERMEDIATE",
-    "summary": "Geheugenbeheer-algoritme geïnspireerd op virtueel geheugen in operating systems dat interne en externe fragmentatie van de KV-cache elimineert.",
-    "technicalDeepDive": "In conventionele systemen werd voor elke request vooraf een aaneengesloten blok VRAM gereserveerd voor de maximale lengte (bijv. 4096 tokens). Dit leidde tot 60-80% geheugenverspilling door interne fragmentatie. PagedAttention verdeelt de KV-cache van een sequentie in dynamische pagina's (blocks) van vaste grootte (bijv. 16 tokens). Deze hoeven niet aaneengesloten in het fysieke GPU-geheugen te liggen; een block table houdt de mapping bij. Hierdoor kunnen GPU's 2x tot 4x meer gelijktijdige streams verwerken.",
+    "summary": "Memory management algorithm inspired by OS virtual memory paging that completely eliminates internal and external KV-cache fragmentation.",
+    "technicalDeepDive": "Legacy inference frameworks pre-allocated contiguous memory blocks based on maximum expected context length (e.g., 4096 tokens), leading to 60-80% VRAM waste due to internal fragmentation. PagedAttention partitions each sequence's KV-cache into discrete fixed-size blocks (e.g., 16 tokens). These blocks do not require contiguous physical memory allocation; an OS-style block table maps logical tokens to physical memory addresses, enabling up to 4x higher serving concurrency.",
     "mathematics": {
       "formula": "\\text{KV Block } B_i = \\{ (K_j, V_j) \\mid j \\in [i \\cdot B, (i+1) \\cdot B - 1] \\}",
-      "explanation": "Elk blok B_i bevat een vast aantal opeenvolgende Key-Value paren die overal in het fysieke geheugen gealloceerd kunnen worden."
+      "explanation": "Allocates Key-Value states in fixed logical blocks B_i mapped to arbitrary physical addresses via a page table."
     },
     "keyTakeaways": [
-      "De kerninnovatie achter vLLM, de populairste open-source inferentie-server.",
-      "Maakt efficiënte 'copy-on-write' mogelijk voor parallel sampling en beam search.",
-      "Verhoogt de GPU-utilisatie en throughput tot wel 400%."
+      "The foundational innovation powering vLLM, the industry standard open-source inference engine.",
+      "Enables near-zero memory waste from memory fragmentation (< 4%).",
+      "Facilitates efficient copy-on-write memory sharing for parallel branch sampling and beam search."
     ],
     "tradeoffs": {
       "advantages": [
-        "Bijna 0% geheugenverspilling door fragmentatie.",
-        "Dramatisch hogere server throughput bij gelijktijdige multi-user workloads."
+        "Near-complete elimination of memory waste from fragmentation.",
+        "2x to 4x increase in concurrent request serving capacity per GPU."
       ],
       "limitations": [
-        "Kleine pointer-indirection overhead bij het ophalen van geheugenblokken.",
-        "Iets complexere scheduling en kernel-implementatie."
+        "Introduces minor address indirection overhead during memory lookups.",
+        "Requires complex scheduling logic to manage asynchronous page allocation."
       ]
     },
     "canonicalPaper": {
@@ -679,7 +1058,7 @@
       "year": 2023,
       "url": "https://arxiv.org/abs/2309.06180"
     },
-    "relatedIds": ["kv-cache", "flash-attention"],
+    "relatedIds": ["kv-cache", "flash-attention", "continuous-batching"],
     "searchKeywords": ["pagedattention", "vllm", "virtual memory", "kv cache", "serving", "throughput"]
   },
   {
@@ -689,25 +1068,25 @@
     "title": "Speculative Decoding & Draft Verification",
     "category": "INFERENCE_SYSTEMS",
     "level": "FRONTIER",
-    "summary": "Acceleratietechniek waarbij een klein 'draft model' razendsnel kandidaat-tokens genereert, die het grote model in één parallelle stap valideert.",
-    "technicalDeepDive": "Omdat LLM-inferentie 'memory bandwidth bound' is, kost het evenveel tijd om 1 token te evalueren als 5 tokens tegelijk in batch. Speculative decoding laat een klein, snel draft model (bijv. 1B) K tokens vooruit speculeren. Het grote 'target model' (bijv. 70B) verifieert al deze K tokens in één enkele parallelle forward pass. Tokens die voldoen aan de acceptatiecriteria worden direct geaccepteerd. Dit resulteert in een 2x tot 3x versnelling met een wiskundig bewezen identieke kansverdeling als het grote model.",
+    "summary": "Inference acceleration technique where a small draft model speculatively generates multiple candidate tokens, verified in parallel by the target model in a single forward pass.",
+    "technicalDeepDive": "Because LLM decoding is memory bandwidth bound, evaluating K tokens in parallel takes nearly identical runtime to evaluating 1 token. Speculative decoding leverages a lightweight draft model (e.g., 1B) to rapidly emit K candidate tokens. The large target model (e.g., 70B) executes a single parallel forward pass over all K tokens. Using modified rejection sampling, valid tokens are accepted simultaneously, achieving 2x-3x speedup with mathematically identical output distribution to pure target model decoding.",
     "mathematics": {
       "formula": "P(\\text{accept}) = \\min\\left(1, \\frac{P_{\\text{target}}(x)}{P_{\\text{draft}}(x)}\\right)",
-      "explanation": "Acceptatiekans volgens modified rejection sampling, wat garandeert dat de uiteindelijke verdeling exact gelijk is aan P_target."
+      "explanation": "Acceptance probability via modified rejection sampling, provably guaranteeing exact target model distribution preservation."
     },
     "keyTakeaways": [
-      "Versnelt inferentie met 2x tot 3x zonder enig kwaliteitsverlies.",
-      "Zero degradation: de gegenereerde output is mathematisch niet te onderscheiden van pure target decoding.",
-      "Moderne varianten gebruiken medusa heads of self-speculation zonder apart draft model."
+      "Accelerates generation latency by 2x to 3x with zero loss in output quality.",
+      "Mathematically lossless: output probabilities are indistinguishable from native target generation.",
+      "Modern extensions use multi-head draft heads (Medusa) or speculative self-drafting."
     ],
     "tradeoffs": {
       "advantages": [
-        "Directe 2x tot 3x lagere latency per gegenereerde token.",
-        "Geen her-training van het hoofdmodel nodig."
+        "Immediate 2x to 3x reduction in per-token generation latency.",
+        "Zero retraining required for the primary foundation model."
       ],
       "limitations": [
-        "Vereist dat draft model en target model dezelfde tokenizer delen.",
-        "Minder effectief bij code of wiskunde met hoge entropie waar de draft acceptance rate daalt."
+        "Requires target and draft models to share an identical tokenizer vocabulary.",
+        "Less effective in high-entropy domains (complex math/code) where draft acceptance rates drop."
       ]
     },
     "canonicalPaper": {
@@ -717,35 +1096,35 @@
       "year": 2022,
       "url": "https://arxiv.org/abs/2211.17192"
     },
-    "relatedIds": ["kv-cache", "flash-attention"],
+    "relatedIds": ["kv-cache", "flash-attention", "continuous-batching"],
     "searchKeywords": ["speculative decoding", "draft model", "inference speed", "rejection sampling", "latency"]
   },
   {
     "id": "quantization",
     "slug": "quantization",
-    "acronym": "Quantization (FP8/AWQ/GGUF)",
-    "title": "Weight & Activation Quantization",
+    "acronym": "Quantization",
+    "title": "Weight & Activation Quantization (FP8 / AWQ / GGUF)",
     "category": "INFERENCE_SYSTEMS",
     "level": "BEGINNER",
-    "summary": "Reductie van de numerieke precisie van gewichten en activaties (bijv. van 16-bit float naar 8-bit of 4-bit) om VRAM-gebruik en geheugenbandbreedte te halveren.",
-    "technicalDeepDive": "Oorspronkelijk worden gewichten opgeslagen in FP16 of BF16 (16 bits per parameter). Quantization comprimeert deze naar lagere bitprecisies: FP8 (8-bit floating point, native ondersteund op NVIDIA Ada/Hopper), INT8 of INT4 (zoals in AWQ, GPTQ en GGUF voor llama.cpp). Door 'outlier activations' (salient weights) te beschermen met geavanceerde schaling (zoals in AWQ: Activation-aware Weight Quantization) blijft het kwaliteitsverlies verwaarloosbaar klein terwijl de VRAM-voetafdruk met 50% tot 75% daalt.",
+    "summary": "Numerical compression reducing weight and activation precision (from 16-bit float to 8-bit or 4-bit integers) to slash VRAM footprint and memory bandwidth bottlenecks.",
+    "technicalDeepDive": "Foundation models are traditionally trained and stored in FP16 or BF16 precision (16 bits per parameter). Quantization maps these values into lower bitwidths: FP8 (native in modern Hopper/Blackwell tensor cores), INT8, or INT4 (AWQ, GPTQ, GGUF). By isolating and protecting salient 'outlier' activation channels (as pioneered in AWQ), 4-bit quantized models retain over 99% of original perplexity while reducing GPU VRAM demands by up to 75%.",
     "mathematics": {
       "formula": "q = \\text{clip}\\left(\\text{round}\\left(\\frac{w}{s}\\right) + z, q_{\\min}, q_{\\max}\\right)",
-      "explanation": "Afbeelding van reëel gewicht w naar discrete integer q met schaalfactor s en zero-point z."
+      "explanation": "Quantization mapping real continuous weight w to discrete integer q via scale factor s and zero-point offset z."
     },
     "keyTakeaways": [
-      "Maakt het draaien van een 70B model mogelijk op één enkele consumenten-GPU met 24GB VRAM (in 4-bit).",
-      "FP8 is tegenwoordig de industriestandaard voor zowel training als inferentie op frontier hardware.",
-      "GGUF is het universele formaat voor CPU en Apple Silicon inferentie."
+      "Enables running 70B parameter models on a single 24GB consumer GPU in INT4.",
+      "FP8 is now standard for both frontier training and high-throughput production serving.",
+      "GGUF is the universal format for unified memory Apple Silicon and CPU inference (llama.cpp)."
     ],
     "tradeoffs": {
       "advantages": [
-        "Tot 75% minder VRAM-gebruik.",
-        "Hogere tokens-per-seconde doordat minder data over de geheugenbus gepompt hoeft te worden."
+        "Up to 75% reduction in GPU VRAM footprint.",
+        "Substantially higher tokens-per-second by alleviating memory bus saturation."
       ],
       "limitations": [
-        "Bij zeer agressieve quantisatie (< 3 bits) treedt merkbaar verlies van redeneervermogen en perplexity op.",
-        "Sommige INT4 schema's vereisen 'dequantization' tijdens de berekening, wat lichte compute-overhead kan toevoegen."
+        "Agressive sub-4-bit quantization (< 3 bits) induces noticeable degradation in mathematical reasoning.",
+        "Some integer schemes require runtime dequantization overhead on unsupported hardware."
       ]
     },
     "canonicalPaper": {
@@ -759,31 +1138,144 @@
     "searchKeywords": ["quantization", "fp8", "int4", "awq", "gguf", "gptq", "bitsandbytes", "compression"]
   },
   {
+    "id": "continuous-batching",
+    "slug": "continuous-batching",
+    "acronym": "Dynamic Batching",
+    "title": "Continuous Batching & Iteration-Level Scheduling",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "INTERMEDIATE",
+    "summary": "Inference scheduling mechanism that inserts and ejects requests at each individual iteration step rather than waiting for an entire batch to finish generating.",
+    "technicalDeepDive": "In naive static batching, an engine groups N requests together. Because generation lengths vary wildly, the entire batch remains locked until the slowest request finishes, leaving GPUs idle during the tail. Continuous batching (or iteration-level scheduling) evaluates requests dynamically at every single forward pass. When a request hits an EOS token, its slot is immediately freed and populated with a new incoming prompt, driving GPU compute utilization close to 100%.",
+    "mathematics": {
+      "formula": "\\text{Throughput} = \\frac{\\sum_{i} T_i}{\\sum_k \\max_{j \\in B_k} (t_{j,k})}",
+      "explanation": "Iteration-level scheduling evicts completed sequences at step k, eliminating idle waiting time induced by sequence length variance."
+    },
+    "keyTakeaways": [
+      "Standard serving protocol across modern production inference systems (vLLM, TensorRT-LLM, TGI).",
+      "Increases enterprise serving throughput by 200% to 400% under real-world workloads.",
+      "Decouples prompt processing (prefill) from autoregressive token generation (decode)."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Near-optimal GPU utilization and dramatic reduction in average request wait times.",
+        "Prevents long outlier requests from bottlenecking short user queries."
+      ],
+      "limitations": [
+        "Requires complex dynamic memory allocation (PagedAttention).",
+        "Interleaving prefill and decode stages can induce latency spikes without chunked prefill."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
+      "authors": "Gyeong-In Yu, Joo Seong Jeong, Geon-Woo Kim, Soojeong Kim, Byung-Gon Chun",
+      "year": 2022,
+      "url": "https://www.usenix.org/conference/osdi22/presentation/yu"
+    },
+    "relatedIds": ["paged-attention", "kv-cache", "speculative-decoding"],
+    "searchKeywords": ["continuous batching", "iteration-level", "orca", "serving", "scheduling", "vllm"]
+  },
+  {
+    "id": "activation-checkpointing",
+    "slug": "activation-checkpointing",
+    "acronym": "Rematerialization",
+    "title": "Activation Checkpointing & Gradient Rematerialization",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "INTERMEDIATE",
+    "summary": "Memory-saving training technique discarding intermediate activations during the forward pass and recomputing them on-the-fly during backpropagation.",
+    "technicalDeepDive": "Standard backpropagation caches every layer's activation tensor during the forward pass so it can compute gradients in the backward pass. For long sequences and deep models, activation memory rapidly exceeds total model weight memory. Activation checkpointing stores activations only at strategic boundary checkpoints (e.g., every N layers). During the backward pass, intermediate activations are recomputed on-demand via a local forward pass, trading ~20-30% extra compute for up to 70% VRAM savings.",
+    "mathematics": {
+      "formula": "\\text{Memory: } O(\\sqrt{L}) \\quad \\text{vs. Standard: } O(L) \\quad (\\text{with } \\sim 33\\% \\text{ recompute overhead})",
+      "explanation": "Checkpointing sqrt(L) layers out of L reduces activation memory from linear to square root scaling with respect to model depth."
+    },
+    "keyTakeaways": [
+      "Essential component for training foundation models with multi-thousand-token context lengths.",
+      "Enables doubling or tripling batch sizes on fixed GPU memory.",
+      "Native in PyTorch via torch.utils.checkpoint and Megatron-LM."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Massive VRAM reduction (up to 70% savings in activation memory).",
+        "Enables training substantially larger models and longer sequence lengths without OOM errors."
+      ],
+      "limitations": [
+        "Introduces approximately 20% to 33% computational overhead due to recomputed forward passes.",
+        "Requires careful placement to avoid recomputing memory-light layers."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Training Deep Nets with Sublinear Memory Cost",
+      "arxivId": "1604.06174",
+      "authors": "Tianqi Chen, Bing Xu, Chiyuan Zhang, Carlos Guestrin",
+      "year": 2016,
+      "url": "https://arxiv.org/abs/1604.06174"
+    },
+    "relatedIds": ["backpropagation-autograd", "transformer", "distributed-training"],
+    "searchKeywords": ["activation checkpointing", "rematerialization", "gradient checkpointing", "memory savings"]
+  },
+  {
+    "id": "yarn-context",
+    "slug": "yarn-context",
+    "acronym": "YaRN",
+    "title": "YaRN: Yet another RoPE Extrapolation Method",
+    "category": "INFERENCE_SYSTEMS",
+    "level": "FRONTIER",
+    "summary": "Frequency interpolation method extending RoPE context windows up to 128K+ tokens with minimal fine-tuning and zero degradation on short sequences.",
+    "technicalDeepDive": "Directly evaluating positional embeddings on sequences longer than the pre-training context induces catastrophic perplexity explosion. Naive Linear RoPE interpolation scales all frequencies uniformly, washing out high-frequency local information. YaRN partitions positional frequencies into three bands: low frequencies are interpolated, high frequencies remain untouched (preserving local grammatical structure), and intermediate frequencies are smoothly blended. This allows expanding a 4K context window to 128K tokens in fewer than 400 training steps.",
+    "mathematics": {
+      "formula": "g(\\theta_i) = (1 - \\alpha_i) \\frac{\\theta_i}{s} + \\alpha_i \\theta_i, \\quad \\alpha_i = \\text{ramp}\\left(\\frac{\\lambda_i - r_L}{r_H - r_L}\\right)",
+      "explanation": "Blends unscaled and interpolated RoPE frequencies according to wavelength boundaries r_L and r_H scaled by factor s."
+    },
+    "keyTakeaways": [
+      "Powers 64K to 128K context window extensions across Llama, Mistral, and Qwen variants.",
+      "Requires less than 0.1% of original pre-training compute to adapt.",
+      "Preserves original short-context performance without entropy distortion."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Exceptional context window expansion with minimal fine-tuning steps.",
+        "Zero degradation on original short-context benchmarks."
+      ],
+      "limitations": [
+        "Still subject to KV-cache memory growth during inference.",
+        "Requires temperature scaling correction factor to preserve attention distribution sharpness."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "YaRN: Efficient Context Window Extension of Large Language Models",
+      "arxivId": "2309.00071",
+      "authors": "Bowen Peng, Jeffrey Quesnelle, Honglu Fan, Enrico Shippole",
+      "year": 2023,
+      "url": "https://arxiv.org/abs/2309.00071"
+    },
+    "relatedIds": ["rope-positional", "kv-cache", "self-attention"],
+    "searchKeywords": ["yarn", "rope", "context extension", "long context", "interpolation", "extrapolation"]
+  },
+  {
     "id": "test-time-compute",
     "slug": "test-time-compute",
     "acronym": "Test-Time Scaling",
     "title": "Test-Time Compute Scaling & Reasoning Search",
     "category": "FRONTIER_REASONING",
     "level": "FRONTIER",
-    "summary": "Het fundamentele paradigma van reasoning-modellen waarbij extra rekentijd tijdens de inferentiefase wordt ingezet om denkstappen te verkennen en verifiëren.",
-    "technicalDeepDive": "Traditionele scaling laws (Kaplan, Chinchilla) richtten zich puur op méér data en grotere modellen tijdens de trainingsfase. Test-time compute scaling introduceert een derde schaalas: rekentijd tijdens de generatie. Modellen genereren expliciete 'chains of thought', verkennen alternatieve hypotheses, detecteren fouten in hun eigen logica en backtracken indien nodig. OpenAI o1 en DeepSeek-R1 bewijzen dat 1 seconde extra nadenken tijdens inferentie wiskundige en codeerprestaties kan opleveren die vergelijkbaar zijn met een 10x groter model.",
+    "summary": "Paradigm shift in AI scaling laws deploying compute during inference (via verification, search, and chain-of-thought exploration) to solve complex problems.",
+    "technicalDeepDive": "Classical scaling laws (Kaplan, Chinchilla) focused strictly on scaling pre-training compute and dataset size. Test-time compute scaling introduces a third orthogonal dimension: compute spent per query during inference. The model autonomously produces extended internal thinking chains, generates alternative hypotheses, performs self-critique, and backtracks upon detecting logical errors. OpenAI o1 and DeepSeek-R1 demonstrate that 10 seconds of test-time search can match the mathematical performance of a 10x larger model.",
     "mathematics": {
       "formula": "\\text{Performance} \\propto f(\\text{Pretrain FLOPs}, \\text{Posttrain FLOPs}, \\text{Test-Time FLOPs})",
-      "explanation": "Modelprestaties zijn niet langer begrensd door trainings-FLOPs alleen, maar groeien logaritmisch met de hoeveelheid compute die per vraag tijdens inferentie wordt besteed."
+      "explanation": "Model problem-solving accuracy scales as a continuous power-law function of compute invested dynamically during inference generation."
     },
     "keyTakeaways": [
-      "De grootste paradigmaverschuiving in AI sinds de opkomst van transformers (OpenAI o1, DeepSeek-R1).",
-      "Breekt door de 'data wall' waar conventionele pre-training tegenaan begon te lopen.",
-      "Maakt wiskundig en wetenschappelijk redeneren op Olympiade-niveau mogelijk."
+      "The definitive frontier paradigm shift in artificial intelligence (OpenAI o1, DeepSeek-R1).",
+      "Transfers reasoning bottlenecks from human data limits to scalable inference compute.",
+      "Enables competitive performance on International Mathematical Olympiad (IMO) and PhD-level benchmarks."
     ],
     "tradeoffs": {
       "advantages": [
-        "Ongekende sprong in complexe wiskunde, cryptografie, architectuur en programmeren.",
-        "Verhoogt de betrouwbaarheid van antwoorden dramatisch."
+        "Unprecedented performance leaps in advanced mathematics, competitive programming, and formal verification.",
+        "Dramatically reduces hallucinations by requiring verified step-by-step logic."
       ],
       "limitations": [
-        "Veel hogere latency per antwoord (seconden tot minuten nadenken).",
-        "Hogere kosten per query vanwege de honderden tot duizenden gegenereerde denk-tokens."
+        "Significantly higher user latency (queries take seconds to minutes to resolve).",
+        "Higher per-query economic cost due to thousands of generated thinking tokens."
       ]
     },
     "canonicalPaper": {
@@ -793,7 +1285,7 @@
       "year": 2024,
       "url": "https://arxiv.org/abs/2408.03314"
     },
-    "relatedIds": ["chain-of-thought", "process-reward-models", "grpo"],
+    "relatedIds": ["chain-of-thought", "process-reward-models", "grpo", "tree-of-thought"],
     "searchKeywords": ["test-time compute", "reasoning", "openai o1", "deepseek-r1", "search", "thinking"]
   },
   {
@@ -803,25 +1295,25 @@
     "title": "Chain-of-Thought (CoT) Prompting & Reasoning",
     "category": "FRONTIER_REASONING",
     "level": "BEGINNER",
-    "summary": "Techniek waarbij een model wordt aangezet om tussenstappen expliciet uit te schrijven vóór het geven van het definitieve antwoord.",
-    "technicalDeepDive": "Zonder Chain-of-Thought probeert een taalmodel complexe vragen in één enkele voorwaartse pass op te lossen. Door het model te instrueren (of via RL te trainen) om stapsgewijs te redeneren ('Let's think step by step'), fungeert elk gegenereerd tussentoken als extra werkgeheugen en conditionering voor de volgende berekening. Dit verdeelt een complex meerstapsprobleem in beheersbare deeltaken.",
+    "summary": "Reasoning technique encouraging models to decompose complex multi-step queries into intermediate explicit natural language deductions prior to answering.",
+    "technicalDeepDive": "Standard language modeling attempts to map complex queries to final answers in a single forward pass. By prompting or fine-tuning models to generate step-by-step derivations ('Let's think step by step'), intermediate output tokens serve as externalized working memory and conditioning context for subsequent calculations. This transforms complex multi-hop algorithmic problems into manageable sequential sub-problems.",
     "mathematics": {
       "formula": "P(A \\mid Q) = \\sum_{C} P(A \\mid Q, C) P(C \\mid Q)",
-      "explanation": "Het uiteindelijke antwoord A wordt geconditioneerd op het redeneerpad (chain) C gegeven de initiële vraag Q."
+      "explanation": "Final answer A is conditioned across intermediate generated reasoning chain C given initial prompt query Q."
     },
     "keyTakeaways": [
-      "Verhoogt prestaties op wiskunde- en logica-benchmarks drastisch.",
-      "Vormt het fundament onder autonome redeneermodellen.",
-      "Biedt inzicht in de gedachtegang en 'explainability' van het model."
+      "Dramatically boosts benchmark accuracy on arithmetic, symbolic logic, and multi-step reasoning.",
+      "The foundational conceptual building block of modern reasoning models.",
+      "Improves interpretability by surfacing internal deduction pathways."
     ],
     "tradeoffs": {
       "advantages": [
-        "Sterke verbetering van meerstaps-redeneervermogen.",
-        "Eenvoudig toepasbaar via prompting én via post-training RL."
+        "Substantial enhancement in symbolic and mathematical reasoning capabilities.",
+        "Universally applicable via prompt engineering as well as reinforcement learning."
       ],
       "limitations": [
-        "Genereert aanzienlijk meer tokens per antwoord (hogere kosten en latency).",
-        "Redeneerpaden kunnen soms post-hoc rationalisaties zijn in plaats van daadwerkelijke causale stappen."
+        "Significantly increases token output volume, raising latency and serving costs.",
+        "Reasoning chains can occasionally represent post-hoc rationalizations rather than true causal steps."
       ]
     },
     "canonicalPaper": {
@@ -841,25 +1333,25 @@
     "title": "Process Reward Models & Step-by-Step Verification",
     "category": "FRONTIER_REASONING",
     "level": "FRONTIER",
-    "summary": "Beloningsmodellen die niet alleen het eindresultaat beoordelen (Outcome RM), maar elke individuele tussenstap van een redenering valideren.",
-    "technicalDeepDive": "Een Outcome Reward Model (ORM) geeft pas aan het einde van een oplossing een score (0 of 1). Als een model een foute redenering volgt maar toevallig op het juiste antwoord uitkomt, beloont een ORM dit foute denkpatroon. Een Process Reward Model (PRM) evalueert elke afzonderlijke regel of tussenstap. Hierdoor kan het systeem tijdens boomzoekalgoritmes (zoals MCTS) direct ingrijpen zodra een model een denkfout maakt, en alternatieve takken verkennen.",
+    "summary": "Verification reward models evaluating and scoring every individual deduction step in a reasoning trace rather than exclusively assessing the final outcome.",
+    "technicalDeepDive": "An Outcome Reward Model (ORM) assigns a scalar score only upon reaching the final conclusion. If a model follows flawed logic but accidentally stumbles onto the correct answer, an ORM rewards the invalid deduction. A Process Reward Model (PRM) evaluates every line of mathematical or logical deduction independently. During inference-time tree search (such as MCTS), a PRM identifies the exact step where an error occurs and prunes invalid search branches immediately.",
     "mathematics": {
       "formula": "r_{\\text{PRM}}(y) = \\prod_{t=1}^{T} P(\\text{step } t \\text{ is correct} \\mid x, y_{<t})",
-      "explanation": "De betrouwbaarheid van een oplossing y is het product van de correctheidskansen van elke afzonderlijke stap t."
+      "explanation": "Calculates solution probability as the product of correctness probabilities across each individual derivation step t."
     },
     "keyTakeaways": [
-      "Bewezen superieur aan Outcome Reward Models voor wiskundig redeneren (OpenAI MATH benchmark).",
-      "Cruciaal voor best-of-N sampling en tree search tijdens inferentie.",
-      "Maakt nauwkeurige foutlocalisatie in lange afleidingen mogelijk."
+      "Proven significantly superior to Outcome Reward Models for mathematical problem solving.",
+      "The critical scoring engine for Best-of-N sampling and tree-search algorithms during inference.",
+      "Enables precise localization of hallucinations in long-horizon proofs."
     ],
     "tradeoffs": {
       "advantages": [
-        "Voorkomt dat modellen leren via 'valse logica met toevallig juist antwoord'.",
-        "Stelt search-algoritmen in staat om vroege fouten direct af te kappen."
+        "Prevents models from learning false logic that coincidentally yields correct final answers.",
+        "Allows search algorithms to prune faulty reasoning branches at the earliest possible step."
       ],
       "limitations": [
-        "Vereist gedetailleerde stap-voor-stap annotatie of complexe synthetische verifiers.",
-        "Hogere rekenkracht nodig om na elke stap een evaluatie uit te voeren."
+        "Requires expensive step-level human annotations or complex synthetic rule verifiers.",
+        "Increases compute demands by evaluating verification passes at every intermediate step."
       ]
     },
     "canonicalPaper": {
@@ -869,7 +1361,7 @@
       "year": 2023,
       "url": "https://arxiv.org/abs/2305.20050"
     },
-    "relatedIds": ["test-time-compute", "chain-of-thought", "tree-of-thought"],
+    "relatedIds": ["test-time-compute", "chain-of-thought", "tree-of-thought", "grpo"],
     "searchKeywords": ["prm", "process reward", "step by step", "verification", "orm", "lightman"]
   },
   {
@@ -879,25 +1371,25 @@
     "title": "Tree-of-Thought & Tree Search (MCTS)",
     "category": "FRONTIER_REASONING",
     "level": "FRONTIER",
-    "summary": "Redeneerframework waarbij het model meerdere gedachtenlijnen vertakt, evalueert en systematisch doorzoekt via algoritmes zoals BFS, DFS of Monte Carlo Tree Search.",
-    "technicalDeepDive": "Waar Chain-of-Thought strikt lineair is, structureert Tree-of-Thought (ToT) het probleem als een zoekboom waarin elke knoop een tussenliggende gedachte voorstelt. Het model genereert meerdere mogelijke vervolgstappen, evalueert de levensvatbaarheid van elke tak (via zelf-reflectie of een PRM), en kan besluiten om doodlopende paden te verlaten (backtracking). Dit brengt klassieke heuristische zoekmethoden (zoals A* en MCTS van AlphaGo) naar natuurlijke taalmodellen.",
+    "summary": "Reasoning framework organizing thought generation as a branching search tree explored and evaluated via BFS, DFS, or Monte Carlo Tree Search.",
+    "technicalDeepDive": "While Chain-of-Thought is strictly linear, Tree-of-Thought (ToT) structures exploration as a search tree where each node represents an intermediate reasoning thought. The model generates multiple candidate next steps, evaluates the viability of each branch (via self-evaluation or a PRM), and backtracks upon reaching dead ends. This bridges symbolic AI heuristics (like A* search and AlphaGo MCTS) with probabilistic neural generation.",
     "mathematics": {
       "formula": "V(s) = \\mathbb{E}_{\\tau \\sim \\pi} \\left[ R(\\tau) \\mid s_0 = s \\right]",
-      "explanation": "Waarde V(s) van toestand s binnen de boom, geëvalueerd over verwachte toekomstige paden tau."
+      "explanation": "Value function V(s) evaluating the strategic potential of intermediate reasoning state s within the search tree."
     },
     "keyTakeaways": [
-      "Uitzonderlijk sterk bij combinatorische problemen, schaken, planning en moeilijke puzzels.",
-      "Maakt doelbewuste exploratie en backtracking mogelijk.",
-      "Combineert symbolische AI (zoekalgoritmen) met probabilistische LLM's."
+      "Exceptional on combinatorial challenges, strategic planning, crossword puzzles, and mathematical proofs.",
+      "Enables deliberate exploration, state evaluation, and automatic backtracking.",
+      "Combines algorithmic classical search with generative language model capabilities."
     ],
     "tradeoffs": {
       "advantages": [
-        "Vindt oplossingen waar lineaire greedy generatie onherroepelijk vastloopt.",
-        "Robuuste zelfcorrectie via backtracking."
+        "Solves complex problems where linear greedy search inevitably fails.",
+        "Robust self-correction through systematic branch backtracking."
       ],
       "limitations": [
-        "Hoge rekenkracht en tokenconsumptie (tientallen vertakkingen).",
-        "Vereist betrouwbare toestandsevaluators om takken te snoeien."
+        "Exponential compute and token expansion under high branching factors.",
+        "Requires accurate heuristic evaluators to prevent search explosion."
       ]
     },
     "canonicalPaper": {
@@ -917,25 +1409,25 @@
     "title": "ReAct: Synergizing Reasoning and Acting in Autonomous Agents",
     "category": "FRONTIER_REASONING",
     "level": "INTERMEDIATE",
-    "summary": "Het fundamentele patroon voor AI-agents waarbij dynamische verbale redenering ('Thought') wordt afgewisseld met gereedschapsaanroepen ('Action' en 'Observation').",
-    "technicalDeepDive": "Zuiver handelen (zoals actie-georiënteerde API-calls) mist overzicht en reflectie, terwijl zuiver redeneren (zoals Chain-of-Thought) geen toegang heeft tot de buitenwereld en vatbaar is voor hallucinaties. ReAct combineert beide in een dynamische lus: 1) Thought (het model analyseert de huidige toestand); 2) Action (het model roept een tool of zoekmachine aan met parameters); 3) Observation (de omgeving geeft het resultaat terug). Deze cyclus herhaalt zich totdat het einddoel is bereikt.",
+    "summary": "Core autonomous agent framework interleaving verbal reasoning ('Thought') with external tool execution ('Action' and 'Observation') in a dynamic feedback loop.",
+    "technicalDeepDive": "Pure acting (invoking API calls without reasoning) lacks long-horizon planning and self-correction, while pure reasoning (Chain-of-Thought) lacks external grounding and is prone to hallucination. ReAct unifies both: 1) Thought (the model analyzes task state and plans); 2) Action (the model emits a structured tool call); 3) Observation (the external environment executes the tool and returns telemetry). This loop repeats iteratively until goal completion.",
     "mathematics": {
       "formula": "\\tau = (c_1, a_1, o_1, c_2, a_2, o_2, \\dots, c_T, a_T, o_T)",
-      "explanation": "Het agent-traject tau bestaat uit afwisselende denkstappen c_t, acties a_t en externe observaties o_t."
+      "explanation": "Agent trajectory tau comprised of alternating thoughts c_t, tool actions a_t, and external observations o_t."
     },
     "keyTakeaways": [
-      "De blauwdruk achter alle moderne AI-assistenten, programmeer-agents en autonomous tool-users.",
-      "Vermindert hallucinaties door realtime verificatie via externe tools.",
-      "Maakt complexe meerstaps-workflows (zoals webbrowsing of terminal-automatisering) mogelijk."
+      "The foundational operational pattern for coding assistants, research agents, and autonomous tool operators.",
+      "Substantially reduces hallucinations by grounding reasoning in real-time execution outputs.",
+      "Enables complex multi-step workflows spanning terminal commands, web browsers, and API integrations."
     ],
     "tradeoffs": {
       "advantages": [
-        "Enorme toename in actiegerichtheid en betrouwbaarheid door grounding in externe API's.",
-        "Transparant auditeerbaar traject voor debugging."
+        "Grounds model logic in deterministic real-world tool execution and external data.",
+        "Transparent, auditable execution trajectory facilitating error analysis and debugging."
       ],
       "limitations": [
-        "Gevoelig voor oneindige lussen (infinite loops) als externe tools foutieve data teruggeven.",
-        "Context window kan snel vollopen door lange observaties en logs."
+        "Susceptible to infinite loops if tools yield ambiguous or unhandled error messages.",
+        "Context window limits can be quickly exhausted by verbose tool logs."
       ]
     },
     "canonicalPaper": {
@@ -945,7 +1437,121 @@
       "year": 2022,
       "url": "https://arxiv.org/abs/2210.03629"
     },
-    "relatedIds": ["chain-of-thought", "test-time-compute"],
+    "relatedIds": ["chain-of-thought", "test-time-compute", "rag-retrieval"],
     "searchKeywords": ["react", "agents", "tool use", "autonomous", "thought action observation", "planning"]
+  },
+  {
+    "id": "rag-retrieval",
+    "slug": "rag-retrieval",
+    "acronym": "RAG",
+    "title": "Retrieval-Augmented Generation (RAG)",
+    "category": "FRONTIER_REASONING",
+    "level": "BEGINNER",
+    "summary": "System architecture dynamically retrieving relevant external documents from a vector index and injecting them into prompt context prior to generation.",
+    "technicalDeepDive": "Rather than relying solely on static parametric memory encoded during training, RAG pairs an LLM with an external knowledge retrieval engine. Documents are chunked, embedded into dense vector space, and indexed. When a user submits a query, dense retrieval (cosine similarity) or hybrid search (BM25 + embeddings) retrieves top-k relevant chunks. These are formatted into the system prompt context, grounding the model's generation in factual external truth.",
+    "mathematics": {
+      "formula": "P(y \\mid x) = \\sum_{z \\in \\text{TopK}} P(y \\mid x, z) P(z \\mid x)",
+      "explanation": "Marginalizes generation probability across retrieved external context passages z given user input x."
+    },
+    "keyTakeaways": [
+      "Primary architecture for enterprise question answering, documentation bots, and private data search.",
+      "Eliminates the need for constant re-training to update knowledge cutoffs.",
+      "Directly provides verifiable citations and provenance for model claims."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Drastically mitigates factual hallucinations by providing direct source ground truth.",
+        "Cost-effective knowledge updates via vector index refreshes without GPU re-training."
+      ],
+      "limitations": [
+        "Quality is strictly bottlenecked by retrieval accuracy (Garbage In, Garbage Out).",
+        "Context stuffing can induce 'lost in the middle' phenomena in long retrieved passages."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "arxivId": "2005.11401",
+      "authors": "Patrick Lewis, Ethan Perez, Aleksandara Piktus, et al. (Meta AI)",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2005.11401"
+    },
+    "relatedIds": ["embeddings", "transformer", "react-agent-loop"],
+    "searchKeywords": ["rag", "retrieval", "vector database", "semantic search", "dense retrieval", "grounding"]
+  },
+  {
+    "id": "self-consistency",
+    "slug": "self-consistency",
+    "acronym": "Self-Consistency",
+    "title": "Self-Consistency & Majority Voting",
+    "category": "FRONTIER_REASONING",
+    "level": "INTERMEDIATE",
+    "summary": "Ensemble decoding strategy sampling diverse reasoning paths for a query at non-zero temperature and selecting the marginal majority answer.",
+    "technicalDeepDive": "Standard greedy decoding can pick an erroneous reasoning step early on and spiral down a faulty logical branch. Self-consistency leverages the observation that complex reasoning problems often admit multiple distinct reasoning paths that all converge on the same correct conclusion. By sampling N parallel reasoning traces (e.g., N=10 to 40) at temperature T=0.7 and performing majority voting over final answer extractions, accuracy increases dramatically across benchmark evaluations.",
+    "mathematics": {
+      "formula": "\\hat{a} = \\arg\\max_a \\sum_{i=1}^N \\mathbb{I}(\\text{extract}(r_i) = a)",
+      "explanation": "Selects the modal candidate answer a receiving the maximum vote count across N independent sampled reasoning trajectories r_i."
+    },
+    "keyTakeaways": [
+      "Substantial performance booster on GSM8K, SVAMP, and MATH benchmarks.",
+      "Requires zero parameter fine-tuning or custom reward model training.",
+      "Paved the way for modern test-time compute scaling techniques."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Major accuracy improvements across mathematical, algorithmic, and commonsense reasoning.",
+        "Completely model-agnostic and straightforward to deploy over API endpoints."
+      ],
+      "limitations": [
+        "Incurs an N-fold increase in inference token generation costs.",
+        "Requires reliable parsing logic to extract clean final answers from open-ended responses."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
+      "arxivId": "2203.11171",
+      "authors": "Xuezhi Wang, Jason Wei, Dale Schuurmans, et al. (Google Research)",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2203.11171"
+    },
+    "relatedIds": ["chain-of-thought", "test-time-compute"],
+    "searchKeywords": ["self-consistency", "majority voting", "sampling", "reasoning", "ensemble"]
+  },
+  {
+    "id": "constitutional-ai",
+    "slug": "constitutional-ai",
+    "acronym": "CAI / RLAIF",
+    "title": "Constitutional AI & Reinforcement Learning from AI Feedback",
+    "category": "TRAINING_ALIGNMENT",
+    "level": "FRONTIER",
+    "summary": "Self-alignment framework training models to critique, revise, and align their own completions according to a written constitution of behavioral principles.",
+    "technicalDeepDive": "Pioneered by Anthropic, Constitutional AI (CAI) minimizes human annotation by having AI self-evaluate using a defined set of principles ('constitution'). The process operates in two stages: 1) Supervised learning: the model generates responses, critiques its own outputs against constitutional principles, and rewrites them until compliant; 2) Reinforcement Learning from AI Feedback (RLAIF): a preference model is trained on AI-generated comparison evaluations, and the policy is fine-tuned against it.",
+    "mathematics": {
+      "formula": "y_{\\text{aligned}} = \\text{Rewrite}\\left(y_{\\text{raw}}, \\text{Critique}(y_{\\text{raw}}, \\text{Principles})\\right)",
+      "explanation": "Iteratively critiques and rewrites model outputs conditioned on explicit constitutional guidelines before reinforcement tuning."
+    },
+    "keyTakeaways": [
+      "The foundational alignment methodology powering Anthropic's Claude series.",
+      "Enables scalable alignment without requiring millions of human contractor labels.",
+      "Allows transparent, modular updates to model safety policies by editing written principles."
+    ],
+    "tradeoffs": {
+      "advantages": [
+        "Highly scalable alignment pipeline independent of expensive human labeling pools.",
+        "Transparent, auditable governance through human-readable constitutional principles."
+      ],
+      "limitations": [
+        "Susceptible to sycophancy or over-refusal if principles are overly restrictive.",
+        "Requires a sufficiently capable baseline model to generate accurate self-critiques."
+      ]
+    },
+    "canonicalPaper": {
+      "title": "Constitutional AI: Harmlessness from AI Feedback",
+      "arxivId": "2212.08073",
+      "authors": "Yuntao Bai, Saurav Kadavath, Sandipan Kundu, et al. (Anthropic)",
+      "year": 2022,
+      "url": "https://arxiv.org/abs/2212.08073"
+    },
+    "relatedIds": ["rlhf", "dpo", "synthetic-data"],
+    "searchKeywords": ["constitutional ai", "rlaif", "anthropic", "claude", "alignment", "critique", "self-correction"]
   }
 ]

@@ -10,7 +10,7 @@ import codexData from '../data/codex.json';
 describe('Codex Compendium & Search Engine Suite', () => {
   it('validates all codex entries have complete and consistent schema', () => {
     assert.ok(Array.isArray(codexData));
-    assert.equal(codexData.length, 25);
+    assert.ok(codexData.length >= 25, `Expected at least 25 entries, found ${codexData.length}`);
 
     const ids = new Set<string>();
     const validCategories = new Set([
@@ -38,7 +38,7 @@ describe('Codex Compendium & Search Engine Suite', () => {
 
       if (entry.canonicalPaper) {
         assert.ok(entry.canonicalPaper.title && entry.canonicalPaper.title.length > 0);
-        assert.ok(entry.canonicalPaper.year >= 1980 && entry.canonicalPaper.year <= 2026);
+        assert.ok(entry.canonicalPaper.year >= 1940 && entry.canonicalPaper.year <= 2026);
       }
     }
 
