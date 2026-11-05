@@ -1,15 +1,408 @@
 [
   {
+    "id": "96905ad40b53b202",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/kyndryl-shares-surge-30-on-hyperscaler-related-revenue-growth/",
+    "title": "Kyndryl shares surge 30% on hyperscaler-related revenue growth",
+    "publishedAt": "2026-11-05T01:33:38.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.546Z",
+    "contentHash": "50692814c5e44e46",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 20:33 EST / NOVEMBER 04 2026\n\nKyndryl shares surge 30% on hyperscaler-related revenue growth\n\nShares of Kyndryl Holdings Inc. jumped 30% today after it reported better-than-expected earnings for the second quarter of its 2027 fiscal year.\n\nKyndryl generated $3.9 billion in sales during the three months ended Sept. 30. That represents a 1.9% decrease from a year earlier, but the company still managed to top the consensus estimate by about $50 million. It attributed the top-line surprise to its Kyndryl Consult business.\n\nKyndryl, a former IBM Corp. unit, once generated nearly all its revenue from managing other companies’ technology infrastructure. In 2022, it launched Kyndryl Consult to take on more strategic, higher-margin professional services deals.\n\nThe unit’s revenue grew 4.2% year-over-year in the second quarter. Kyndryl didn’t share a specific quarterly revenue number, but divulged that the unit earned a total of $3.6 billion over the past 12 months.\n\nKyndryl Consult’s signings, a measure of future revenue, jumped 19% over the past year. That momentum may have contributed to the company’s stock rally today.\n\nMany of the projects that Kyndryl Consult takes on involve artificial intelligence. The unit can help customers build AI agent ensembles and set up training data generation pipelines. Additionally, it can advise clients about business decisions such as how they should allocate their AI budgets.\n\nKyndryl offers a software platform called Bridge to companies that buy its AI services. It enables AI agents to access business data from an organization’s internal systems. Additionally, Bridge monitors those agents to ensure they adhere to safety requirements.\n\nThe public cloud is another major focus of Kyndryl’s growth efforts. The company’s hyperscale-related revenue topped $500 million in the second quarter, which amounts to a 27% year-over-year increase.\n\n“Strong signings and continued growth in Kyndryl Consult and hyperscaler-related revenue reinforce our confidence in our fiscal 2027 outlook,” said Kyndryl Chief Executive Officer Martin Schroeter. “Our performance reflects demand for Kyndryl’s AI-led modernization capabilities and deep mission-critical expertise that help customers evolve their complex technology environments, strengthen cybersecurity and achieve measurable business outcomes.”\n\nThe company delivered an adjusted net income of",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Kyndryl Holdings Inc. shares rose 30% following a second-quarter fiscal 2027 earnings report that exceeded analyst expectations. The company reported $3.9 billion in revenue for the quarter ending September 30, surpassing consensus estimates by $50 million despite a 1.9% year-over-year decline. Adjusted net income reached $92 million, or 42 cents per share, beating the 41-cent forecast. This performance was driven by the company's strategic pivot toward higher-margin professional services and cloud-related growth.\n\nThe Kyndryl Consult unit, launched in 2022 to move beyond legacy infrastructure management, saw revenue grow 4.2% year-over-year, with $3.6 billion in total revenue over the trailing 12 months and a 19% increase in new signings. A significant portion of this growth is attributed to AI-led modernization projects, including the development of AI agent ensembles and data pipelines. The company supports these deployments with its 'Bridge' software platform, which facilitates agent access to internal business data and provides safety monitoring. Additionally, hyperscaler-related revenue grew 27% year-over-year, exceeding $500 million for the quarter.\n\nKyndryl is currently executing a cost-reduction program, which included a $38 million workforce reduction charge in the second quarter. This initiative is projected to generate $500 million in annual savings starting in fiscal year 2028. For the remainder of fiscal 2027, the company forecasts adjusted pretax income between $600 million and $700 million, with revenue expected to remain flat or grow by up to 2%.",
+      "takeaways": [
+        "**Financial Performance:** Kyndryl reported $3.9 billion in Q2 revenue and $92 million in adjusted net income (42 cents per share).",
+        "**Consulting Growth:** The Kyndryl Consult unit recorded a 19% year-over-year increase in signings and $3.6 billion in revenue over the last 12 months.",
+        "**Cloud Expansion:** Hyperscaler-related revenue grew 27% year-over-year, surpassing the $500 million mark for the quarter.",
+        "**Cost Optimization:** A workforce reduction charge of $38 million was taken in Q2 as part of a plan to achieve $500 million in annual savings by fiscal 2028.",
+        "**AI Infrastructure:** The company's 'Bridge' platform is used to manage AI agent access to internal systems and enforce safety compliance."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ad1030df5ce46710",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+    "title": "Apple is reportedly cutting budgets for its internal AI usage",
+    "publishedAt": "2026-11-05T01:26:22.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "fab5218287ba1402",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Posted: 5:26 PM PST · November 4, 2026 Image Credits: STR/NurPhoto / Getty Images Lucas Ropek Apple is reportedly cutting budgets for its internal AI usage Apple is cutting the daily amount its engineering teams can spend on AI, Bloomberg reported Wednesday. It’s a big change for a company that has worked to integrate the technology into its engineering processes.\n\nIn October, Apple lowered the daily AI spending cap for its engineering teams, decreasing it from $300 to $200, the outlet reported. And more cuts are in the works, with some allowances falling to $100 a day, sources tell Bloomberg. Outside engineering, Apple is reportedly weighing a daily limit as low as $25 a day.\n\nTechCrunch has reached out to Apple for comment.\n\nEarlier this year, a tsunami of tokenmaxxing took hold, with companies pushing staff to use AI as much as possible in the name of vaguely defined efficiency gains. The frenzy was short-lived, however, as bills for said tokens came due, and companies decided that token rationing might be a more fiscally sensible approach.\n\nConcerns persist about an apparent gap between what AI costs to build and run and the (often unclear) productivity gains the technology is suppose to generate.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nSubscribe for the industry’s biggest tech news\n\n<img width=\"665\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?w=665\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"A night view of the U.S. Congress building in Washington, D.C.\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg 2400w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=150,85 150w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=300,169 300w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=768,433 768w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=680,383 680w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=1200,677 1200w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=12",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple has begun implementing strict daily spending caps on internal AI usage for its engineering teams, signaling a shift toward fiscal discipline regarding generative AI integration. According to reports, the company reduced the daily AI expenditure limit for engineers from $300 to $200 in October, with further reductions to $100 per day currently in progress.\n\nBeyond the engineering department, Apple is reportedly evaluating even more restrictive measures, considering daily AI spending limits as low as $25 for other internal teams. This move reflects a broader industry trend where companies are moving away from unrestricted \"tokenmaxxing\"—the practice of maximizing AI usage for efficiency gains—as the actual costs of running large-scale AI models become clearer and the measurable productivity returns remain uncertain.",
+      "takeaways": [
+        "**Engineering Spending Cap:** Apple reduced the daily AI budget for engineering teams from $300 to $200 in October.",
+        "**Planned Reductions:** Internal allowances for engineering teams are expected to drop further to $100 per day.",
+        "**Non-Engineering Limits:** Apple is considering implementing daily AI spending caps as low as $25 for staff outside of engineering.",
+        "**Industry Context:** The shift follows a period of aggressive AI adoption, with companies now prioritizing \"token rationing\" due to concerns over the gap between high operational costs and realized productivity gains."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "0ee5115bb8658d79",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/",
+    "title": "After the midterms, a bigger clash over data centers could be coming",
+    "publishedAt": "2026-11-05T01:02:14.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "e086ce17579aaa02",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Dominic-Madori Davis",
+    "contentSnippet": "The November 3 midterm results gave Democrats full control of Congress, setting the stage for what could be one of the most divided U.S. governments this decade, with Republicans in the White House.\n\nTuesday’s results suggest that anger over data centers, the large facilities that house the computers powering AI, is becoming a political force. With Democrats now in control of Congress, that could lead to new limits on where data centers can be built and how much say local communities have.\n\nData centers became a ballot-box issue in various states. An NBC exit poll showed how concerned voters are about AI: More than half of respondents believe that AI will do more harm than good, while almost 80% are against the building of data centers in their neighborhoods. Almost 60%, meanwhile, said data centers were a crucial or major factor in their vote. Nadine Smith, president and CEO of the racial justice organization Color of Change, called Tuesday’s election a referendum on “who this economy is built for.”\n\n“National security matters,” Smith said, referring to a common argument from data center supporters that the infrastructure is essential for the U.S. to stay ahead in war and in its rivalry with China. “And so do the families in South Memphis breathing exhaust from the gas turbines powering an AI supercomputer.” (She was referring to xAI’s data center in Memphis, Tennessee, which uses gas turbines for power.)\n\nVoters in several states pushed back against the AI buildout, even as pro-AI super PACs spent millions hoping to sway them this midterm. The anti-data center backlash was especially felt in states like Ohio, where OpenAI has eyed a $500 billion data center, backed by more than $100 billion in financing from Nvidia. In fact, the Ohio county where Meta had planned a 700,000-square-foot facility just passed a ban on data centers, and local communities across the state overwhelmingly voted against data center buildout measures.\n\nAnalysts at Morgan Stanley predict that Democratic governor-elect Amy Acton will also pose a major risk to Ohio’s data center buildout. Elsewhere, candidates in Texas, Maine, Michigan, Nevada, Georgia, and South Carolina all won seats after taking a stance against the rapid buildout of data centers. “It is clear that money does not buy outcomes,” said Aniketh Koneru, a tech and policy researcher, adding that in modern politics, creati",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Following the November 3 midterm elections, the U.S. political landscape faces a significant shift regarding AI infrastructure, as data centers have emerged as a potent ballot-box issue. With Democrats securing control of Congress, there is increased momentum for legislative restrictions on data center siting, community approval requirements, and grid cost-sharing mandates. Public sentiment, as reflected in NBC exit polling, shows nearly 80% of voters oppose data center construction in their neighborhoods, with nearly 60% citing these facilities as a major factor in their voting decisions. This backlash persists despite significant spending by pro-AI super PACs.\n\nTechnically and economically, the conflict centers on the environmental impact and grid strain caused by high-density AI supercomputers, such as xAI’s Memphis facility, which utilizes gas turbines. Legislative proposals, including those from Sen. Bernie Sanders and Rep. Alexandria Ocasio-Cortez, advocate for a nationwide moratorium on new data centers until federal guardrails are established. Additionally, the GRID Savings Act, proposed by Sen. Martin Heinrich, seeks to prevent the transfer of grid infrastructure costs to local communities. Analysts at Goldman Sachs and Morgan Stanley anticipate construction delays in key states like Texas, Ohio, and Georgia as local governments and incoming officials, such as governor-elect Amy Acton, prioritize stricter oversight and potential moratoriums.",
+      "takeaways": [
+        "**Public Sentiment:** NBC exit polls indicate 80% of voters oppose local data center construction, and 50% believe AI does more harm than good.",
+        "**Legislative Proposals:** Sen. Bernie Sanders and Rep. Alexandria Ocasio-Cortez have proposed a nationwide moratorium on new data centers to ensure environmental compliance and community consent.",
+        "**Economic Impact:** Goldman Sachs predicts construction delays in Georgia and Texas due to Democratic gains, while the GRID Savings Act aims to shift grid upgrade costs from communities to developers.",
+        "**Regional Backlash:** Ohio has seen significant resistance, including a county-level ban on data centers and local opposition to a proposed $500 billion OpenAI facility backed by $100 billion in Nvidia financing.",
+        "**Infrastructure Concerns:** Opposition is driven by the use of gas turbines for power, as seen at xAI’s Memphis site, and the use of NDAs by tech companies to bypass public discourse during the planning phase."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7aa63af445bdd3ac",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
+    "title": "AI PACs spent millions trying to shape Congress — here’s how they fared",
+    "publishedAt": "2026-11-04T22:45:09.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "c79ea61a855b4436",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Rebecca Bellan",
+    "contentSnippet": "Political groups both supporting and opposing the AI industry spent millions of dollars trying to influence Tuesday’s midterm elections and shape the future of AI regulation. That spending produced mixed results, with some of the most heavily backed candidates losing their races.\n\nOn the industry side, two AI-focused political action committees (PACs) that raised and spent money to influence the elections — American Mission and Building the Future — collectively spent $4.8 million to back South Carolina Senate candidate Darline Graham, who lost. American Mission is the Republican spending arm of Leading the Future (LTF), a broader political group backed by OpenAI president Greg Brockman and the VC firm Andreessen Horowitz.\n\nAmerican Mission also spent more than $500,000 apiece supporting Republican House candidates Aaron Flint in Montana and Laurie Buckhout in North Carolina, both of whom lost. LTF’s Democratic spending arm, Think Big, had better luck backing Florida Rep. Jared Moskowitz, who won reelection.\n\nGroups advocating for stronger AI safeguards also saw mixed results. Public First, which is backed by Anthropic, supported several Republicans who lost through its affiliated PAC but had more success backing Democratic candidates. It also contributed $3 million to a PAC supporting California state Sen. Scott Wiener, who was leading his race at the time of publication.\n\nMeanwhile, Guardrails Alliance , a group that has sought to make taking money from AI companies a political liability, spent more than $1 million apiece opposing two candidates who lost: California Rep. Jimmy Gomez and Montana’s Aaron Flint. It also spent $300,000 supporting Angela Gonzales-Torres, who defeated Gomez.\n\nIt’s difficult to separate the impact of AI-related spending from the broader Democratic wave that swept Tuesday’s elections. Elon Musk, who reportedly poured half a billion dollars into supporting Republicans in the midterms, also saw many of his candidates lose . Indeed, LTF also backed some candidates it believed were likely to win, only to see them lose to the Dems.\n\nFor LTF, though, the general election wasn’t the main focus. The group told TechCrunch ahead of Election Day that it thinks primaries (the contests that choose each party’s nominee) are a more effective use of its money, because spending there can build name recognition and help candidates set up AI policy ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Political action committees (PACs) representing both the AI industry and AI-safety advocates saw mixed results in the recent midterm elections, with significant spending failing to guarantee candidate victories. Leading the Future (LTF), a group backed by OpenAI president Greg Brockman and Andreessen Horowitz, spent $4.8 million through its American Mission arm to support South Carolina Senate candidate Darline Graham, who lost. LTF also deployed over $500,000 each for unsuccessful House bids by Aaron Flint (Montana) and Laurie Buckhout (North Carolina), though its Democratic arm, Think Big, successfully supported the reelection of Florida Rep. Jared Moskowitz. LTF prioritized primary elections, spending $27.38 million in those contests, including $8 million to defeat New York Assembly member Alex Bores.\n\nConversely, the Guardrails Alliance, which aims to make AI-industry funding a political liability, spent over $1 million each to oppose candidates Jimmy Gomez and Aaron Flint, while contributing $300,000 to support Angela Gonzales-Torres, who defeated Gomez. Public First, backed by Anthropic, also engaged in the cycle, contributing $3 million to a PAC supporting California state Sen. Scott Wiener. The core legislative conflict driving this spending is the debate over whether Congress should establish a preemptive national AI framework or allow states to maintain independent regulatory authority. Both sides have signaled continued involvement in future election cycles, with LTF planning to participate in 2028 and the Guardrails Alliance continuing its strategy of framing AI-industry donations as toxic.",
+      "takeaways": [
+        "**LTF Primary Spending:** Leading the Future spent $27.38 million during the primary season, significantly more than its general election expenditures.",
+        "**Guardrails Alliance Strategy:** The group spent over $1 million each to oppose Jimmy Gomez and Aaron Flint, specifically targeting candidates who accepted AI-industry funding.",
+        "**Legislative Conflict:** The primary policy divide centers on whether a federal AI framework should override state-level regulations.",
+        "**LTF Backers:** Leading the Future is supported by OpenAI president Greg Brockman and the venture capital firm Andreessen Horowitz.",
+        "**Public First Contribution:** Anthropic-backed Public First contributed $3 million to a PAC supporting California state Sen. Scott Wiener."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b531b56f4ce7687d",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers",
+    "title": "Qualcomm is betting big on data centers as smartphone sales sink",
+    "publishedAt": "2026-11-04T22:42:15.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.122Z",
+    "contentHash": "2da1fe2391f7b0cf",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "With smartphone sales tanking by around 20 percent compared to 2025, Qualcomm is looking to data centers to help boost its bottom line. During its Q4 2026 earnings call, the company laid out its plans to make a splash in the AI data center business, through partnerships with companies like Amazon and Meta announced earlier this year. The company expects that portion of its business to grow quickly, forecasting around $650 million in data center revenue during the first quarter of 2027. But it anticipates that will reach $5 billion by the end of 2027 and $15 billion by 2029. Considering the company’s total revenue for 2026 was $10.4 billion, that would constitute a significant share of its earnings. It confirmed during the call that it expects data centers to eventually account for around 30 percent of its business. That’s not quite as ambitious as AMD, which says that it expects over 80 percent of its revenue will eventually come from data centers. But it suggests there’s plenty of demand that needs to be filled and enough AI money to go around.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24007992/acastro_STK082_qualcomm_02.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Qualcomm is pivoting toward the data center market to offset a 20 percent decline in smartphone sales compared to 2025. During its Q4 2026 earnings call, the company outlined a strategy to capture AI infrastructure market share, leveraging previously announced partnerships with Amazon and Meta. Qualcomm projects rapid growth in this segment, forecasting $650 million in data center revenue for Q1 2027, scaling to $5 billion by year-end 2027, and reaching $15 billion by 2029.\n\nThis transition represents a fundamental shift in Qualcomm's business model, as the company aims for data centers to eventually comprise 30 percent of its total revenue. While this target is less aggressive than AMD’s goal of deriving over 80 percent of its revenue from data centers, it underscores Qualcomm's attempt to diversify away from its 2026 total revenue base of $10.4 billion, which was heavily reliant on mobile hardware.",
+      "takeaways": [
+        "**Revenue Forecasts:** Qualcomm projects data center revenue to hit $650 million in Q1 2027, $5 billion by the end of 2027, and $15 billion by 2029.",
+        "**Market Shift:** The company aims for data center operations to eventually account for 30 percent of its total business.",
+        "**Baseline Performance:** Qualcomm reported total revenue of $10.4 billion for 2026, alongside a 20 percent year-over-year decline in smartphone sales.",
+        "**Strategic Partnerships:** Growth plans are anchored by existing collaborations with Amazon and Meta announced earlier in 2026."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cea25fc8180f8064",
+    "canonicalUrl": "https://arstechnica.com/security/2026/11/hackers-exploited-ios-and-android-flaws-to-infect-phones/",
+    "title": "Hackers exploited iOS and Android flaws to infect phones",
+    "publishedAt": "2026-11-04T22:26:49.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.123Z",
+    "contentHash": "9717233d67a21b72",
+    "sourceId": "arstechnica-tech",
+    "sourceName": "Ars Technica",
+    "author": "\n                    Dan Goodin\n                ",
+    "contentSnippet": "Hackers possibly linked to the Kremlin exploited previously patched iOS and Android flaws in an attempt to hack visitors of multiple websites, including one celebrating the 250th anniversary of American independence, researchers said Wednesday.\n\nThe attackers, which the researchers assessed with “moderate to high confidence” were part of Russia’s Foreign Intelligence Service, targeted other sites, many with links to that country’s ongoing war against Ukraine. The attacks began when iPhone or Android users visited one of potentially hundreds of different sites. JavaScript injected into the traffic then profiled the device. The final payloads, tailored to the type of platform visiting, attempted to steal browser cookies and, in some cases, Wi-Fi passwords and full mobile device data.\n\nOne of the impersonated sites was america250.org, belonging to a non-partisan group of lawmakers, business executives, and at least one former member of the Trump administration. The attackers registered america250[.]holiday and used it as a reverse proxy to america250.org. The imposter website delivered content from the real one that added malicious JavaScript into it.\n\n“We assess that the intrusion set may have deliberately selected this website due to its association with a high-profile national celebration, potentially leveraging the event as a pretext for invitation-themed spear-phishing campaigns,” researchers from security firm Sekoia said .\n\nA second website, theowo[.]club, proxied the website Raffles of London OWO, a luxury hotel physically close to some of the UK’s most sensitive government institutions, including the Ministry of Defence and 10 Downing Street, the official residence and office of the British Prime Minister. Open source reporting indicates that Ukrainian President Volodymyr Zelenskyy stayed there during a visit on October 14.\n\n“By doing this watering hole [impersonating] the Raffles London at The OWO, the intrusion set may have sought to target diplomatic delegations and high-profile guests through targeted spear-phishing campaigns,” the researchers said.\n\nThe attackers also delivered their attacks through compromised websites—including a top Ukrainian gas production company—and a Ukrainian web analytics service that serves thousands of websites. Sekoia said its attribution to the Kremlin is based on the targets’ profiles and similarities to a previous a",
+    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2023/05/malware-1000x648.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Researchers at security firm Sekoia have identified a sophisticated watering hole campaign, attributed with moderate-to-high confidence to Russia’s Foreign Intelligence Service (SVR/APT29), targeting visitors of high-profile websites. The attackers utilized three primary infection vectors: direct JavaScript injection, the use of proxy domains (such as america250[.]holiday), and a supply-chain compromise of a Ukrainian web analytics service. Once a target visited a compromised site, injected JavaScript profiled the device, allowing the attackers to deploy zero-click exploit chains tailored to the specific platform.\n\nThe campaign specifically targeted sites with geopolitical significance, including america250.org and the website for the Raffles London at The OWO, a hotel frequently used by high-profile diplomatic delegations. The attackers leveraged 'n-day' vulnerabilities—flaws that had already been patched—meaning the exploits were only effective against users running outdated versions of iOS or Android. The payloads were designed to exfiltrate browser cookies, Wi-Fi passwords, and comprehensive mobile device data. One of the identified exploit kits, DarkSword, has previously been linked to the Turkish surveillance vendor PARS Defense.",
+      "takeaways": [
+        "**Attribution:** Sekoia researchers attribute the campaign to Russia’s Foreign Intelligence Service (APT29) based on target profiles and technical similarities to previous operations.",
+        "**Infection Vectors:** Attackers employed three methods: direct JavaScript injection, proxy domains (e.g., america250[.]holiday), and a supply-chain compromise of a Ukrainian web analytics service.",
+        "**Exploit Mechanism:** The campaign utilized zero-click exploit chains that required no user interaction, relying on 'n-day' vulnerabilities that only affected unpatched iOS and Android devices.",
+        "**Targeting Strategy:** The campaign focused on high-profile sites, including those related to the 250th anniversary of American independence and the Raffles London at The OWO, to target diplomatic and government-affiliated visitors.",
+        "**Payload Capabilities:** Successful exploits allowed attackers to steal browser cookies, Wi-Fi credentials, and full mobile device data."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b0c94751374cda3b",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/04/webai-twil-8b-reasoning-model/",
+    "title": "webAI Releases TwIL-8B, an 8.8B Reasoning Model Scoring 98.2 on MATH-500",
+    "publishedAt": "2026-11-04T22:25:05.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.547Z",
+    "contentHash": "6e7bf49ae32ddc15",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "webAI has released TwIL-8B , an 8.8B reasoning model for math, code and instruction following. The TwIL-8B reasoning model is post-trained from IBM’s Granite 4.2 8B . Weights are on Hugging Face under a non-commercial license. webAI’s launch post frames the pitch around cost per task, not raw scale. The 4-bit build is 4.98 GiB, sized for CPU or modest-VRAM GPU inference. TL;DR Size: 8.79B parameters, dense. 131,072-token context, inherited from the base model. Runs on: CPU or modest-VRAM GPU via a 4.98 GiB Q4_K_M GGUF. Full bf16 weights are 16.38 GiB. Performance: Leads its size class on math and code, trails on knowledge benchmarks. Best: MATH-500 at 98.2, the top score in webAI’s comparison. Worst: GPQA Diamond at 70.2, 11.5 points behind Qwen3.5-9B. HLE is 12.6 (verbose variant). What is TwIL-8B? TwIL-8B is a dense decoder-only reasoning model from webAI. It has 40 layers, hidden size 4096, and 32 attention heads with 8 KV heads . Input and output are English text only. The model writes a <think> block before each answer. It ships in 2 variants with the same architecture and tokenizer. Balanced is the default and produces shorter reasoning traces. Verbose reasons longer and targets hard contest-style problems. TwIL-8B extends webAI’s TwIL family. The first members were 1.7B and 3B formal-logic models released in August 2026. How was TwIL-8B trained? webAI used 3 post-training stages : Full-parameter SFT on reasoning traces for math, STEM and instruction following. GRPO/DAPO reinforcement learning on math, code, STEM and instruction prompts. This produces the verbose variant. Length-aware RL with a reward that favors shorter traces against per-domain length references. This produces the balanced variant. Training pools were decontaminated with 13-gram matching against AIME, HMMT, MATH-500, GPQA and other evals. How does TwIL-8B perform on benchmarks? All TwIL-8B scores are self-reported, high-effort pass@1 with thinking enabled. Scores marked † were measured on the verbose variant only. Math : TwIL-8B scores 98.2 on MATH-500. Qwen3.5-9B lists 96.6 on a third-party leaderboard . Gemma 4 31B scored 87.9 in Red Hat’s lighteval run . On AIME 2025, TwIL-8B posts 88.3 against 87.1 for Gemma 4 31B. On AIME 2026 it scores 88.3, behind Qwen3.5-9B at 92.5 and Gemma 4 31B at 89.2 . Code : LiveCodeBench† is 81.6, against 65.6 for Qwen3.5-9B and 80.0 for Gemma 4 31B. w",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "webAI has released TwIL-8B, an 8.8B parameter dense reasoning model post-trained from IBM’s Granite 4.2 8B. Designed for math, code, and instruction following, the model is available on Hugging Face under a non-commercial license. It features a 131,072-token context window and is optimized for efficient deployment, with a 4-bit Q4_K_M GGUF version weighing 4.98 GiB, while the full bf16 weights occupy 16.38 GiB. The model architecture consists of 40 layers, a 4096 hidden size, 32 attention heads, and 8 KV heads.\n\nTwIL-8B is offered in two variants: 'Balanced,' which produces shorter reasoning traces, and 'Verbose,' which targets complex contest-style problems. Training involved three stages: full-parameter SFT on STEM and instruction traces, GRPO/DAPO reinforcement learning, and length-aware RL to manage reasoning trace duration. The training data underwent 13-gram decontamination against benchmarks including AIME, HMMT, MATH-500, and GPQA. Performance is highlighted by a 98.2 score on MATH-500 and 88.3 on AIME 2025, though it trails competitors like Qwen3.5-9B on knowledge-heavy benchmarks such as GPQA Diamond, where it scored 70.2.",
+      "takeaways": [
+        "**Model Architecture:** Dense decoder-only model with 8.79B parameters, 40 layers, 4096 hidden size, and 32 attention heads (8 KV heads).",
+        "**Benchmark Performance:** Achieved 98.2 on MATH-500 and 81.6 on LiveCodeBench (Verbose variant), outperforming Gemma 4 31B in these specific categories.",
+        "**Deployment Specs:** Available as a 4.98 GiB 4-bit GGUF for CPU/modest-VRAM inference or 16.38 GiB in full bf16 precision.",
+        "**Training Methodology:** Utilized three-stage post-training including full-parameter SFT, GRPO/DAPO reinforcement learning, and length-aware RL for trace optimization.",
+        "**Decontamination:** Training sets were filtered using 13-gram matching against AIME, HMMT, MATH-500, and GPQA to prevent benchmark leakage."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4b9460937abe589f",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/meta-acquires-ai-coding-startup-conductor-whose-app-runs-several-coding-agents-at-once/",
+    "title": "Meta acquires AI coding startup Conductor, whose app runs several coding agents at once",
+    "publishedAt": "2026-11-04T22:20:12.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.546Z",
+    "contentHash": "d5941b746a1bc14c",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Duncan Riley",
+    "contentSnippet": "UPDATED 17:20 EST / NOVEMBER 04 2026\n\nMeta acquires AI coding startup Conductor, whose app runs several coding agents at once\n\nMeta Platforms Inc. has acquired artificial intelligence coding startup Conductor in a deal first reported today by Axios .\n\nConductor confirmed it’s joining Meta in a post on its website . Terms were not disclosed.\n\nThe company’s software lets a developer run several coding agents at once, each in an isolated copy of the codebase, and then review and merge what they produce. Supported agents include Anthropic PBC’s Claude Code, OpenAI Group PBC’s Codex and Space Exploration Technologies Corp.’s Cursor, and users pay for them through their own subscriptions and keys.\n\nThe desktop app runs on Macs. A hosted version, Conductor Cloud, puts agents in sandboxed virtual machines where they can keep working for hours, and users can check on them from an iPhone app.\n\nEngineers at Meta were using Conductor well before the deal. When the startup announced its Series A in March , it named Meta, Google LLC and Spotify Technology SA among the companies with dozens of engineers on the product. Conductor now says on its website that more than 100,000 people use it.\n\nPeople familiar with the deal told Axios that Meta expects the Conductor team’s speed at shipping products to help it build its next generation of AI coding tools. The acquisition follows two Meta model releases last month that both pitched coding as a strength.\n\nOn Oct. 15 , Meta released Muse Spark Open, an open-weights version of its Muse Spark model aimed at coding and long-running agent work. Meta’s more capable Muse Wonder models stay closed inside its own Muse Code terminal and application programming interface.\n\nThe Conductor deal landed the same day OpenAI said it plans to acquire developer tools startup Pierre Computer. OpenAI had already announced plans in June to buy Ona, which runs coding agents in cloud sandboxes.\n\nConductor’s own products are closing in stages, starting with a halt today to new sign-ups and downloads. Pro subscribers now get their paid features free. The cloud service goes read-only on Nov. 13 and shuts on Nov. 20, after which the company will start deleting the data users stored there. Before that date, users can export their data or move cloud workspaces onto their own machines, and active subscribers will get refunds.\n\nLocal copies of the Mac app keep ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta Platforms Inc. has acquired AI coding startup Conductor (formally Melty Inc., founded in 2024 by CEO Charlie Holtz and CTO Jackson de Campos), with financial terms left undisclosed. Conductor's software allows developers to execute multiple coding agents concurrently—supporting Anthropic's Claude Code, OpenAI's Codex, and Cursor—within isolated codebase copies, reviewing and merging their output. Prior to the acquisition, Conductor had raised a $22 million Series A in March led by Spark Capital and Matrix, with backing from Y Combinator and the founders of Notion and Linear. Meta engineers were already utilizing the product alongside users at Google and Spotify, helping push Conductor's user base past 100,000.\n\nThe acquisition coincides with Meta's recent product expansions in AI coding, following its mid-October release of the open-weights Muse Spark Open model for coding and long-running agents, alongside its closed Muse Wonder models accessible via the Muse Code terminal and API. Conductor's existing services are winding down in stages: new sign-ups halted immediately, Pro features were made free, Conductor Cloud goes read-only on November 13 and shuts down on November 20 (with workspace migration or data export options and subscriber refunds), and local Mac app copies will function until an unspecified new interface arrives in early 2027. Conductor stated it has never sold user data or trained models on user code and will delete stored workspace data after the shutdown dates.",
+      "takeaways": [
+        "**Acquisition Details:** Meta acquired AI coding startup Conductor, whose desktop app runs multiple coding agents simultaneously in isolated codebase copies, with terms undisclosed.",
+        "**Supported Agents & Architecture:** The software integrates external agents including Anthropic Claude Code, OpenAI Codex, and Cursor, while Conductor Cloud utilizes sandboxed virtual machines for multi-hour tasks accessible via an iPhone app.",
+        "**Traction & Funding:** Founded as Melty Inc. in 2024 by Charlie Holtz and Jackson de Campos, Conductor raised a $22 million Series A in March from Spark Capital and Matrix and surpassed 100,000 users, including engineering teams at Meta, Google, and Spotify.",
+        "**Wind-Down Timeline:** Conductor stopped new sign-ups immediately, will transition its cloud service to read-only on November 13 before shutting down entirely on November 20, and plans to retire current local Mac apps in early 2027."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c1e93e47438d89a0",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/",
+    "title": "Nothing CEO says company’s mysterious AI-first device is dropping next month",
+    "publishedAt": "2026-11-04T22:13:16.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "d81ffd7217a93932",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Nothing, the smartphone startup behind the distinctive Nothing Phone , is working on an AI product, but what it is remains unclear.\n\nOn Wednesday, CEO Carl Pei posted on X that the company’s first “AI-native product” ships in December. “It’s a tool, but one built with the personality and care that have come to define a Nothing product. It has no new screen, and it couldn’t have been an app,” Pei wrote.\n\nPei has teased an AI-first device for some time and the company has also said that it plans to release a pair of AI-linked smart glasses, as well as earbuds with AI integrations.\n\nPei’s description adds up to a screenless non-app that uses AI? He also calls it a “productivity tool.” Adding further mystique to the announcement, Pei seems to downplay any link to AI wearables.\n\n“The whole industry is hunting for its iPhone moment: the pendant, the pin, the glasses, the companion, some magical consumer device that makes AI part of everyone’s life,” Pei wrote. “I admire the boldness, but I read this moment differently.”\n\nNo firm release date has been announced, but Nothing fans should know soon enough what the company has in store for them.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related AI I tried Apple’s Siri Recaps. They’re surprisingly useful — and a little unsettling\n\nAI Apple Watch’s AI features for rewinding and recapping conversations begin beta testing Sarah Perez\n\nAI Apple may try to increase revenue by doing…something with third-party AI apps Lucas Ropek\n\nIn Brief Apple is reportedly cutting budgets for its internal AI usage Lucas Ropek\n\nGovernment & Policy AI PACs spent millions trying to shape Congress — here’s how they fared Rebecca Bellan\n\n<img width=\"471\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2024/02/2560x2040_5fe778b6-8919-4143-bf11-8d86af754f52_2192x.webp?w=471\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2024/02/2560x2040_5fe778b6-8919-4143-bf11-8d86af754f52_2192x.webp 2192w, https://techcrunch.com/wp-content/uploads/2024/02/2560x2040_5fe778b6-8919-4143-bf11-8d86af754f52_2192x.webp?resize=150,120 15",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nothing, the consumer electronics startup led by CEO Carl Pei, has announced plans to launch its first \"AI-native product\" in December. While specific technical specifications remain undisclosed, Pei has explicitly stated that the device is a \"productivity tool\" that does not feature a screen and cannot be categorized as a standard mobile application.\n\nPei has distanced the upcoming release from the current industry trend of AI-focused wearables like pendants, pins, or smart glasses, suggesting a different approach to integrating AI into daily life. Although the company has previously expressed interest in developing AI-linked smart glasses and earbuds, this specific December launch is positioned as a distinct, screenless hardware tool.",
+      "takeaways": [
+        "**Launch Window:** The product is scheduled for release in December.",
+        "**Form Factor:** The device is confirmed to be screenless.",
+        "**Product Category:** CEO Carl Pei describes the device as a \"productivity tool\" rather than a traditional app.",
+        "**Strategic Positioning:** The company explicitly differentiates this product from current industry \"AI wearable\" trends like pins or pendants."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b314cbc6665b0c27",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+    "title": "Almost no one uses AI agents to book their Uber, company says",
+    "publishedAt": "2026-11-04T21:56:01.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "30e28a9ecee38491",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "Very few people are using personal AI agents to order Ubers, apparently. On the transportation giant’s third-quarter earnings call on Wednesday, the company said that only four rides were ordered through an AI agent during its busiest week in October: the week of Halloween.\n\nWhile more people used an AI agent to order food through its delivery service, Uber Eats, the volume was still fairly small compared to the overall number of trips.\n\nUber’s chief financial officer, Balaji Krishnamurthy, told Wall Street analysts on the call that the company handled around 320 million trips and orders across Uber and Uber Eats during the week of Halloween, but only 500 Uber Eats orders were placed by an AI agent.\n\n“It is very, very early and very limited traction that we are seeing so far,” said CEO Dara Khosrowshahi, referring to the low number of orders placed by AI agents. “Listen, we hope that there will be more traction.”\n\nThe surprisingly low numbers of AI-initiated transactions come amid growing hype for a new wave of AI agents that don’t just answer questions but also handle tasks on users’ behalf. There’s been an explosion of personal AI startups, including one of the buzziest, Instinct, which was founded last year and raised its most recent round of funding at a $10 billion valuation. Meta’s Muse also became the No. 1 app in Apple’s U.S. App Store last month, topping 10 million users, per Meta’s own reporting . The company said many were using it to shop and transact with businesses.\n\nOpenAI, Anthropic, Google, and SpaceXAI (Grok) are also now offering their own AI agents, as are numerous smaller startups.\n\nStill, early numbers from public companies indicate the agentic web still has a long way to go. DoorDash, for instance, said last week on its earnings call that it has only received a few hundred orders from AI agents so far, as most customers are still placing orders through the DoorDash app.\n\nUber is seeing the same behavior, it seems. Khosrowshahi pointed out that the average time to book a ride is only 50 seconds in the company’s app, and re-ordering a favorite food only takes 90 seconds. That suggests an AI agent isn’t necessarily saving anyone time.\n\nDespite the low number of AI-driven transactions, Khosrowshahi seemed bullish on the idea of agents in general. “We think that is another opportunity to reach our platform. We think it will be a net positiv",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Uber reported minimal consumer adoption of AI agents for ride-hailing and food delivery during its Q3 earnings call. During the week of Halloween, which saw a total of 320 million trips and orders across the Uber platform, only four rides were booked via AI agents. Uber Eats saw slightly higher, yet still negligible, volume with 500 orders placed by AI agents during the same period.\n\nCEO Dara Khosrowshahi attributed the low adoption to the high efficiency of the existing Uber app, noting that booking a ride takes an average of 50 seconds, while re-ordering food takes 90 seconds, leaving little room for AI agents to provide significant time savings. Despite these figures, Uber remains engaged with approximately eight major AI assistant providers and expects that number to exceed 10, viewing the technology as a potential long-term demand driver for the platform.",
+      "takeaways": [
+        "**Q3 Performance Metrics:** Uber processed 320 million total trips and orders during the week of Halloween, with only 4 rides and 500 Uber Eats orders initiated by AI agents.",
+        "**Competitive Context:** DoorDash reported similar trends, noting only a few hundred orders placed via AI agents to date.",
+        "**User Friction Analysis:** Uber leadership argues that current app workflows are already highly optimized, with ride booking averaging 50 seconds and food re-ordering averaging 90 seconds.",
+        "**Market Outlook:** Uber is currently in discussions with roughly eight major AI assistant companies and anticipates the number of available agents to grow beyond 10."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9a75a6ba7e4d2b16",
+    "canonicalUrl": "https://siliconangle.com/2026/11/04/professional-services-ai-agents-certinia/",
+    "title": "AI agents meet billable hours as Certinia rethinks services delivery",
+    "publishedAt": "2026-11-04T21:55:39.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.546Z",
+    "contentHash": "6449239d0ab4e5f9",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Mark Albertson",
+    "contentSnippet": "UPDATED 16:55 EST / NOVEMBER 04 2026\n\nAI agents meet billable hours as Certinia rethinks services delivery\n\nCertinia Inc. is bringing AI into the software firms use to sell projects, assign staff, deliver work and bill clients.\n\nAI’s ability to instantaneously draw from a deep well of information and provide guidance in practically any field of expertise has changed the paradigm for professional services. For Certinia Inc., whose business facilitates 7.1 billion professional services operations per month, AI represents a significant opportunity for its clients.\n\n“I think the only industry that’s probably been more disrupted by AI than the technology industry has probably been the services industry,” Robert Cesafsky , chief operating officer of Certinia, told theCUBE . “Whether you are a software company, a hardware company, a tax and accounting firm [or] management consulting … all of these industries are being directly targeted or impacted by AI. Whatever your strategy is, you need to be able to have the right tools. You need to be able to have control of that services business, and that’s what Certinia provides.”\n\nThis feature is part of SiliconANGLE Media’s exploration of the architectural shifts powering continuous, production-grade AI. Be sure to check out theCUBE’s coverage of the Certinia at Dreamforce event. (* Disclosure below.)\n\nPlatform for professional services\n\nCertinia launched in 2009 as FinancialForce.com Inc., a cloud-based accounting and enterprise resource planning provider built natively on the Salesforce Inc. platform. It rebranded in 2023 as it broadened from accounting and ERP to managing services businesses.\n\nCertinia’s Salesforce-native platform connects a wide range of processes spanning sales, project delivery, financial management and customer success. The company’s approach helps clients transform cost centers into profit centers by improving visibility into customer activities, optimizing resource deployment and maintaining connectivity throughout the customer lifecycle.\n\n“We can take away all the administrative tasks and outsource that to AI in order to help them deliver faster time outcomes, but it also helps them deliver a lower cost to serve that project,” said Mimi Spier , chief marketing officer of Certinia, in an interview with theCUBE. “We can identify expansion opportunities, [and] at-risk customers where we need to opt",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Certinia Inc., formerly known as FinancialForce.com, is integrating AI-driven automation into its professional services platform to manage project delivery, staffing, and billing. The company, which facilitates 7.1 billion professional services operations monthly, has launched 'Veda,' an enterprise-grade intelligent operations engine. Veda is designed to automate administrative tasks, identify expansion opportunities, and manage at-risk customer renewals, aiming to transform services from cost centers into profit centers by lowering the cost-to-serve and accelerating project outcomes.",
+      "takeaways": [
+        "**Veda Agent Expansion:** Certinia launched Veda in April with 10 package agents, grew to 24 by late 2026, and plans to exceed 40 by the end of the year.",
+        "**System of Action Scaling:** In September 2026, Certinia expanded its 'System of Action' for services, increasing its library of Veda Intelligent Actions from 64 to 135.",
+        "**Moonnox Acquisition:** The July 2026 acquisition of Moonnox added knowledge graphs and persistent project memory to Veda, allowing the platform to synthesize unstructured data (emails, chats, calls) with structured records like timecards.",
+        "**Architectural Framework:** The System of Action utilizes a three-tier architecture: data aggregation (structured/unstructured), institutional knowledge application (17+ years of data), and autonomous agent execution within existing workflows.",
+        "**Salesforce Integration:** Certinia remains a Salesforce-native platform and is listed under the AI agents and tools category for Salesforce’s AgentExchange."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "576b3975e72bb4e8",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1026878/not-even-good-at-being-rich",
+    "title": "17 better ways Elon Musk could have wasted $446 million",
+    "publishedAt": "2026-11-04T21:45:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.122Z",
+    "contentHash": "94a45a7c1826128b",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Elizabeth Lopatto",
+    "contentSnippet": "One of the basic problems of spending too much time on social media is that you are cooking your brain by reading posts from a pack of attention-seeking lunatics. If your social media of choice is the site formerly known as Twitter, and it is your main source of contact with the outside world, you may delusionally throw away nearly $500 million dollars on midterm elections, just like Elon Musk. In particular, $47 million of that money from Musk’s America PAC was aimed at defeating Texas Democrat James Talarico, who trounced Musk’s preferred Senate candidate, Ken Paxton, with 55 percent of the vote. Talarico even made Musk’s influence a central part of his campaign ads, with the slogan “Texas is not for sale.” How did Musk get this so wrong? I blame the bubble of X. My former colleague Casey Newton, who has (with some well-earned shame) slunk back to X, explained that he did so because it was the site that was most influential with the AI crowd. In some sense, this is exactly the problem. The agentmaxxing loons of AI influencing are wildly out of touch with normal people. There is, right now, one very important bipartisan position in the United States, and it is: Fuck a data center. It’s pretty obvious that the opposition to data centers is a way of making concrete how pissed off most people are with the tech industry, particularly with the gangster tech regulation of late and the constant stream of threats coming from AI companies. These guys have really tied themselves and their AI aspirations to Donald Trump’s sinking ship, and if you’re hanging out on X all the time, that’s impossible to see, not least because the site’s owner, Musk, is shaping the algorithm in ways that make him feel good. Since Musk seems to have forgotten what it is like to experience joy, or even mild satisfaction, I have taken the liberty to make a list of things he could have bought to get him a better return on his investment. He probably could flip several things on this list for more money, but at minimum he could have gotten a little rush of pleasure from a new purchase: * Larry Ellison’s private island ($300 million in 2012, $440 million in today’s dollars per CPI calculator) (source) * 13 Rolls-Royce La Rose Noire Droptails ($32 million) (source) * 5 The Graff Diamonds Hallucination watches ($55 million, $78 million today) (source) * The Washington Post ($250 million in 2013, ",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/268859_How_the_tech_right_could_have_spent_all_the_money_they_burned_on_the_midterms_CVirginia.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Elon Musk’s America PAC reportedly spent $446 million on midterm election efforts, including a $47 million allocation specifically aimed at defeating Texas Democrat James Talarico. Talarico successfully retained his seat, defeating the Musk-backed candidate with 55% of the vote while utilizing a campaign strategy that explicitly framed Musk’s political influence as a negative factor for Texas voters.\n\nThe article argues that Musk’s political strategy is distorted by an 'X-bubble' effect, where algorithmic curation and insular social media feedback loops obscure broader public sentiment, particularly regarding the tech industry's expansion. The author highlights a growing bipartisan backlash against data center development and AI-related infrastructure as evidence of this disconnect. Furthermore, the piece suggests that the political shift in Texas may lead to increased scrutiny of Musk’s business dealings, including potential efforts to unredact communications between Musk and Governor Greg Abbott.\n\nBeyond the political implications, the text provides a comparative analysis of the $446 million expenditure against various high-value assets and consumer goods. Notable hypothetical alternatives mentioned include the purchase of the Washington Post (estimated at $360 million in today's dollars), the acquisition of 223,000 Nvidia GeForce RTX 5090 GPUs at a $1,999 MSRP, or funding 44 Super Bowl commercials.",
+      "takeaways": [
+        "**Election Spending:** Elon Musk’s America PAC directed $47 million toward defeating Texas Democrat James Talarico.",
+        "**Election Outcome:** James Talarico defeated his opponent with 55% of the vote, running on a platform explicitly opposing Musk’s influence.",
+        "**Hypothetical GPU Purchasing Power:** The $446 million spent could have purchased approximately 223,000 Nvidia GeForce RTX 5090 graphics cards at an MSRP of $1,999.",
+        "**Potential Regulatory Risk:** The shift in Texas political power may lead to the unredaction of emails between Governor Greg Abbott and Musk regarding state-level business deals.",
+        "**Asset Comparison:** The $446 million figure is compared to the inflation-adjusted cost of the Washington Post ($360 million) and Larry Ellison’s private island ($440 million)."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "3a44cd769451fbe4",
+    "canonicalUrl": "https://arstechnica.com/information-technology/2026/11/vmware-releases-vsphere-express-for-virtualization-on-up-to-128-cores/",
+    "title": "VMware releases vSphere Express for virtualization on up to 128 cores",
+    "publishedAt": "2026-11-04T21:38:49.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.123Z",
+    "contentHash": "34d464586cf6b15a",
+    "sourceId": "arstechnica-tech",
+    "sourceName": "Ars Technica",
+    "author": "\n                    Scharon Harding\n                ",
+    "contentSnippet": "After alienating many long-time small- to medium-sized business (SMB) customers, Broadcom’s VMware is trying to appeal to its smaller customers. Today, the virtualization company announced vSphere Express, a lower-end virtualization offering for organizations that require “cost-effective essential virtualization.” vSphere Express comes after many customers reported that VMware was pushing them to VMware Cloud Foundation (VCF), the flagship private cloud bundle that has many features SMBs don’t need and is expensive. Some SMB users have reported that VMware sales representatives previously told them that vSphere Standard, VMware's prior entry-level virtualization offering, wasn’t available anymore. Read full article Comments",
+    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2024/01/GettyImages-474325206-1152x648-1753374517.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "After alienating many long-time small- to medium-sized business (SMB) customers, Broadcom’s VMware is trying to appeal to its smaller customers. Today, the virtualization company announced vSphere Express, a lower-end virtualization offering for organizations that require “cost-effective essential virtualization.” vSphere Express comes after many customers reported that VMware was pushing them to VMware Cloud Foundation (VCF), the flagship private cloud bundle that has many features SMBs don’t need and is expensive. Some SMB users have reported that VMware sales representatives previously told them that vSphere Standard, VMware's prior entry-level virtualization offering, wasn’t available anymore.",
+      "takeaways": [
+        "Read full article Comments."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "bd044bc53c19f14d",
+    "canonicalUrl": "https://techcrunch.com/2026/11/04/openai-is-already-trying-to-shape-the-2028-election/",
+    "title": "OpenAI is already trying to shape the 2028 election",
+    "publishedAt": "2026-11-04T21:25:44.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.121Z",
+    "contentHash": "6e8004481a695ae5",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Rebecca Bellan",
+    "contentSnippet": "OpenAI’s Chris Lehane wants AI to define the 2028 election, proposing a new social contract that could benefit Americans while also advancing the AI giant’s own business interests.",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI’s Chris Lehane wants AI to define the 2028 election, proposing a new social contract that could benefit Americans while also advancing the AI giant’s own business interests.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "95f69b75b62b697e",
     "canonicalUrl": "https://siliconangle.com/2026/11/04/openai-to-acquire-developer-tooling-startup-pierre-computer/",
     "title": "OpenAI to acquire developer tooling startup Pierre Computer",
     "publishedAt": "2026-11-04T21:14:48.000Z",
-    "fetchedAt": "2026-11-04T21:21:59.488Z",
-    "contentHash": "5fe48882b13a1fce",
+    "fetchedAt": "2026-11-05T01:46:21.546Z",
+    "contentHash": "7a612b03c050b584",
     "sourceId": "siliconangle-ai",
     "sourceName": "SiliconANGLE AI",
     "author": "Maria Deutscher",
-    "contentSnippet": "UPDATED 16:14 EST / NOVEMBER 04 2026\n\nOpenAI to acquire developer tooling startup Pierre Computer\n\nOpenAI Group PBC today announced plans to acquire Pierre Computer Company Inc., a low-profile developer tooling startup.\n\nThe terms of the deal were not disclosed. Observers pegged it as a shot at Microsoft Corp.’s open-source software repository GitHub.\n\nPierre operates a cloud service that artificial intelligence agents can use to store the code they generate. It can also store related files such as software licenses and interface design elements. According to Pierre, the service provides significantly better performance than competing technologies. It helped one customer, AI startup Lovable Inc., cut code retrieval latency by about 70%.\n\nPierre also develops a collection of popular open-source libraries. Two of those libraries, Trees and Diffs, underpin the interface of OpenAI’s Codex programming tool.\n\nLarge software projects contain upwards of hundreds of code files that are organized in dozens of folders. Many programming tools include a sidebar specifically designed to help developers navigate those folders. Trees, the first Pierre-developed library used by Codex, marks it easier to implement such sidebars.\n\nTrees can equip a folder navigation sidebar with a search feature and drag-and-drop controls for moving subfolders. Additionally, it flags code files that have been recently added or updated. Developers review those files first when performing tasks such as troubleshooting an outage.\n\nDiffs, the other Pierre library that OpenAI has integrated into Codex, is also designed to power programming tool interfaces. In particular, it can be used to implement the main interface that shows the code the user is currently editing. When a code file is updated, Diffs points out the specific lines of code that changed to spare developers the hassle of manually finding them. It can show changes in a separate interface section or in-line.\n\nOpenAI will continue to offer Trees and Diffs under an open-source license after the acquisition closes. Additionally, it plans to integrate the features of Pierre’s paid code hosting service into Codex. In the longer term, the Pierre team will help OpenAI “ship new products and platforms.”\n\nThe effort will place an emphasis on building software that can optimize coding agents. In particular, OpenAI hopes to streamline agent workfl",
+    "contentSnippet": "OpenAI Group PBC today announced plans to acquire Pierre Computer Company Inc., a low-profile developer tooling startup. The terms of the deal were not disclosed. Observers pegged it as a shot at Microsoft Corp.’s open-source software repository GitHub for the age of artificial intelligence agents. Pierre operates a cloud service that AI agents can use […] The post OpenAI to acquire developer tooling startup Pierre Computer appeared first on SiliconANGLE .",
     "category": "Business & Big Tech",
     "lab": "OpenAI",
     "entryType": "DISPATCH",
@@ -39,7 +432,7 @@
     "author": "Lucas Ropek",
     "contentSnippet": "Meta has acquired Conductor , an AI coding startup that allows users to spin up software projects by deploying multiple agents into parallel workspaces.\n\nThe news was originally reported by Axios, and Conductor shared news of its acquisition on its blog.\n\n“I have big news: Conductor is joining Meta,” wrote the startup’s founder and CEO, Charlie Holtz, on Wednesday. “We have some big, crazy plans for the next interface,” he added, teasing that the company would have “something new” for customers to use by “early next year.”\n\nOn X, Holtz also noted that he was looking forward to working with Alexandr Wang, Meta’s chief AI officer, and Nat Friedman, head of product at the company’s Superintelligence Labs. “They’ve been on an absolute tear, and I’m convinced MSL has the highest talent density of all the labs,” he added.\n\nMeta confirmed the acquisition to TechCrunch but wouldn’t comment further or provide additional details about the deal.\n\nConductor, founded in 2024, only launched its core product just last summer. The company’s agentic teams, which can be deployed in the cloud, locally, or via a user’s phone, are designed to help software engineers work on separate, compartmentalized parts of a project in concert. The agents that the platform deploys aren’t developed in-house but come from major labs like Anthropic and OpenAI.\n\nHoltz said that, until early next year, Conductor’s core features would continue to work as they previously have. The exception is Conductor’s cloud service, which will shut down on November 20, after which the company will begin deleting user cloud data.\n\nMeta, which previously lagged behind in AI services, has spent the last several months trying to catch up. In August, the company launched Muse Code , its own coding agent. Meanwhile, the company’s recently launched Muse agents are seeing significant adoption, with the company recently reporting that the service had surpassed 10 million users. The company has also made a number of AI-related acquisitions over the past year, including Moltbook , the viral agent platform that made headlines.\n\nWhen you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the B",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Meta has acquired Conductor, an AI coding startup founded in 2024 that specializes in multi-agent software development. The platform allows users to deploy agents from third-party labs, such as OpenAI and Anthropic, into parallel, compartmentalized workspaces to manage complex software projects. Conductor founder and CEO Charlie Holtz announced the acquisition, noting that the team will join Meta’s Superintelligence Labs (MSL) to work on future interface projects, with new developments expected by early next year.\n\nFollowing the acquisition, Conductor’s cloud service is scheduled to shut down on November 20, at which point user cloud data will be deleted. Existing core features will remain operational until early 2025. This acquisition follows Meta’s recent push into AI-assisted coding, including the August launch of its Muse Code agent and the broader expansion of its Muse agent platform, which Meta claims has surpassed 10 million users. The move is part of a series of strategic AI acquisitions by Meta, including the recent purchase of the agent platform Moltbook.",
@@ -53,6 +446,33 @@
       "readTimeMinutes": 2,
       "generatedWith": "gemini",
       "summaryVersion": 2
+    }
+  },
+  {
+    "id": "2756e5d155b31941",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/",
+    "title": "Ricursive AI Releases Ripple-65B Preview: A 65B Dense Open-Weight Model Scoring 80.5 on Terminal-Bench 2.1",
+    "publishedAt": "2026-11-04T21:01:06.000Z",
+    "fetchedAt": "2026-11-05T01:46:21.547Z",
+    "contentHash": "acd7feaff6923120",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Ricursive Intelligence just released Ripple-65B Preview . Ripple-65B Preview is a 65B dense open-weight model from Ricursive, pretrained from scratch for agentic coding. It is a general-purpose variant of the proprietary model behind Ricursive’s AI chip design platform. The main claim: 80.52 on Terminal-Bench 2.1 , the top self-reported score among US open-weight models. Every MoE rival it beats on that test carries 501B to 975B total parameters. TL;DR Size: 65B dense (65B active), pretrained on 12T tokens, up to 1M context. Runs on: BF16 on datacenter GPUs (250 tok/s on 2x B200). Experimental NVFP4 build targets NVIDIA DGX Spark. Performance: Frontier-level agentic coding for its size; trails larger MoE models on knowledge and science coding. Best: Terminal-Bench 2.1, 80.5 (self-reported). Worst: SciCode, 39.4, lowest of the 5 models in Ricursive’s own table. What is Ripple-65B Preview? The release includes 3 checkpoints : an instruction-tuned BF16 model, an NVFP4 version , and a BF16 base model . All ship under Apache 2.0. Pretraining used a text-only corpus, mostly English and code, at 8K sequence length. Ricursive team states that the full R&D cost was $32M . That figure covers ladder experiments, data mixing, evals, synthetic data and the final runs. Ricursive team estimates that it is one-tenth the cost of the prior open-weight agentic coding leader. How does the architecture work? Ricursive chose a dense Transformer over Mixture-of-Experts to reduce infrastructure complexity. Training held 40% MFU with simple sharding, no custom kernels and no quantization. The model is thin and deep: a d_model of 5120 across 80 layers. It moves from Olmo 3’s Llama-like layout to a Gemma 3N-like design for stability. Key choices: Overprovisioned attention heads for reasoning, offset by more sliding-window layers and smaller windows. Gated attention , global NoPE and value residuals . FFN activation clipping , a technique also used in gpt-oss . Ricursive team built the recipe through laddering experiments starting from Olmo 3’s ladder . It rejected changes that failed to hold at 4B scale, such as 2-stream mHC. The technical post reports a 16x code compute-efficiency gain at 4B scale. How was it post-trained? Post-training ran midtraining, long context, SFT, long-context SFT and mixed RL. Long-context stages trained at 2M sequence length. Ricursive bought no post-traini",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Ricursive Intelligence just released Ripple-65B Preview . Ripple-65B Preview is a 65B dense open-weight model from Ricursive, pretrained from scratch for agentic coding. It is a general-purpose variant of the proprietary model behind Ricursive’s AI chip design platform.\n\nThe main claim: 80.52 on Terminal-Bench 2.1 , the top self-reported score among US open-weight models. Every MoE rival it beats on that test carries 501B to 975B total parameters. TL;DR Size: 65B dense (65B active), pretrained on 12T tokens, up to 1M context.",
+      "takeaways": [
+        "Runs on: BF16 on datacenter GPUs (250 tok/s on 2x B200).",
+        "Experimental NVFP4 build targets NVIDIA DGX Spark.",
+        "Performance: Frontier-level agentic coding for its size; trails larger MoE models on knowledge and science coding.",
+        "Best: Terminal-Bench 2.1, 80.5 (self-reported)."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "heuristic"
     }
   },
   {
@@ -155,7 +575,7 @@
     "author": "Jonathan Anthony",
     "contentSnippet": "UPDATED 14:57 EST / NOVEMBER 04 2026\n\nAs AI takes over coding, Oracle rethinks how applications are built\n\nAs vibe coding moves from novelty to everyday practice, enterprises face a new problem: Machine-generated software still has to be maintained, governed and understood by people.\n\nLow-code platforms were built to speed up application development, and AI is now rewriting that mission. Oracle Corp. previewed its answer ahead of its annual conference, and the tipping point for software development has already arrived, according to Mike Hichwa (pictured), senior vice president of software engineering at Oracle.\n\n“In 2025, the majority of code was human-authored, and in 2026 and forever afterwards, the majority of code is going to be machine-generated,” Hichwa said. “We’re probably not going back. What we’ve done to address this change is we invented our own language. We call it APEXlang.”\n\nHichwa spoke with theCUBE Research’s Dave Vellante at Oracle AI World , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed vibe coding and the need to maintain and govern AI-generated code. (* Disclosure below.)\n\nVibe coding meets enterprise governance\n\nAPEXlang is a highly abstracted application definition language that captures intent rather than implementation. Oracle introduced it with the APEX AI Application Generator and is publishing its grammar, skills and documentation in the public domain so coding agents such as Anthropic PBC’s Claude and OpenAI Group PBC’s Codex can generate it. Oracle is also working with OpenAI to train models to generate the language more efficiently, Hichwa explained.\n\n“What you’re generating actually matters, because once you generate it, and you generate it 100 times or 1,000 times within your enterprise, then you’re going to need to maintain it. You’re going to need to look after it,” Hichwa said. “What people want with their portfolio of applications, they want consistency, they want governance, they want ease of understanding.”\n\nGovernance comes from the runtime, too. Generated APEXlang is interpreted by the APEX engine, which Oracle patches and updates monthly, so customers don’t have to revisit what they built. The same design is meant to curb AI slop, since a compact definition is easier to read than sprawling generated code, according to Hichwa.\n\n“What we’re generating is much, much ",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "UPDATED 14:57 EST / NOVEMBER 04 2026\n\nAs AI takes over coding, Oracle rethinks how applications are built\n\nAs vibe coding moves from novelty to everyday practice, enterprises face a new problem: Machine-generated software still has to be maintained, governed and understood by people.\n\nLow-code platforms were built to speed up application development, and AI is now rewriting that mission. Oracle Corp. previewed its answer ahead of its annual conference, and the tipping point for software developm",
@@ -210,7 +630,7 @@
     "author": "Theresa Loconsolo",
     "contentSnippet": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up?\n\nOn this episode of TechCrunch’s Equity podcast, Rebecca Bellan caught up with Irene Solaiman , Chief Policy Officer and SVP of Strategy at Hugging Face, about what startups need to know before building on open models, from choosing the right tools and infrastructure to navigating the trade-offs shaping the future of open AI.\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio November 4 Boston Buy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nNew York City’s Mamdani criticizes Madison Square Garden owner over surveillance tech Zack Whittaker\n\nAnthropic warns that it’s very close to RSI capability, aka self-building AI Julie Bort\n\nNew York Times and other outlets sue web browser Brave over alleged content scraping Rebecca Bellan\n\nAnthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says Lucas Ropek\n\nGoogle’s first data center satellite is online and writing poetry Tim Fernholz\n\nBinance pauses withdrawals as hackers suspected of stealing billions in crypto Zack Whittaker\n\nAs search traffic dries up, Reddit announces it’s shifting to a logged-in experience Sarah Perez\n\nSubscribe for the industry’s biggest tech news\n\n<img width=\"563\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2026/01/TC-All-Stage-2025-Breakout-QA.jpg?w=563\" c",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "In this episode of TechCrunch’s Equity podcast, host Rebecca Bellan interviews Irene Solaiman, Chief Policy Officer and SVP of Strategy at Hugging Face, to discuss the economic and strategic landscape of open-source artificial intelligence. The discussion examines how enterprises, startups, and governments leverage open models for lower costs, greater flexibility, and enhanced control, while addressing how companies capture commercial value in an environment where freely available models are proliferating and Chinese open-source releases are gaining ground.\n\nThe podcast episode covers essential considerations for founders and developers building on open-source infrastructure, including tool selection, managing trade-offs, and navigating the evolving global competitive dynamics between American and international AI developers.",
@@ -237,7 +657,7 @@
     "author": "Sarah Perez",
     "contentSnippet": "DuckDuckGo is pitching itself to schools after Google created an opening for the alternative search engine. On Tuesday, Google told schools they could turn off Gemini , but it said shutting off its other AI features would cost schools Google Search , as well.\n\nDuckDuckGo, a company that focuses on user privacy by limiting data collection, clearly sees this as a moment to make inroads in education, where Google has historically dominated. According to figures Google has published in previous years, there are around 50 million Chromebooks in schools, used by students and educators, and its Google Classroom platform serves over 150 million users globally.\n\nOn X , DuckDuckGo’s founder and CEO, Gabriel Weinberg, pointed to the company’s online documentation , explaining how schools can switch their default search engine to DuckDuckGo’s service instead, adding, “get in touch for help.”\n\nMeanwhile, DuckDuckGo’s chief public affairs officer, Kamyl Bazbaz, issued a stronger statement, writing , “Forcing AI on school children: how a monopolist behaves when they think people are powerless. Prove Google wrong.”\n\nForcing AI on school children: how a monopolist behaves when they think people are powerless. Prove Google wrong. https://t.co/Ta6ibmFdb9\n\nIn an email to TechCrunch, DuckDuckGo chastised Google for its decision, adding that Google could easily turn off Search’s AI features for schools if it wanted to.\n\nThe company’s comments come as the American public is weighing how much AI they want to allow into their lives. As Tuesday night’s elections indicate, they don’t want AI data centers built in their towns. But using AI at work and school has become a common practice and requires a more nuanced discussion.\n\nKnowing that educators have struggled with AI, Google developed technology called “ Guided Learning ” that is meant to help kids learn by walking through problem-solving steps rather than just providing them with an answer. But educators are still asking for tools that let them remove AI from the learning process altogether.\n\nAfter the backlash on Tuesday, Google defended its decision, saying it was just responding to schools’ feedback. It said that Gemini, Gemini Notebook, and Search would be off by default, and schools could choose to enable them individually.\n\nWe want to clarify what we announced today about our education services. Today’s announcements give s",
     "category": "Ethics & Policy",
-    "lab": "Independent",
+    "lab": "Google DeepMind",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "DuckDuckGo is actively targeting the K-12 education market, positioning its privacy-focused search engine as an alternative to Google Workspace for Education. This push follows Google’s recent policy update, which mandates that schools opting to disable Gemini AI features must also forfeit access to Google Search. DuckDuckGo CEO Gabriel Weinberg and Chief Public Affairs Officer Kamyl Bazbaz have publicly criticized Google’s bundling strategy, framing it as monopolistic behavior that limits administrative control over AI integration in classrooms.\n\nWhile Google maintains that Gemini, Gemini Notebook, and AI-integrated Search are disabled by default for K-12 accounts, the company acknowledges that these features are inextricably linked to the core search experience. In contrast, DuckDuckGo emphasizes its granular control, offering users the ability to disable AI features via browser settings or through its dedicated 'noai.duckduckgo.com' portal. DuckDuckGo reports a 30% increase in app installs earlier this year, which it attributes to user demand for search experiences free from forced AI-generated content.",
@@ -324,7 +744,7 @@
     "author": "Theresa Loconsolo, Rebecca Bellan",
     "contentSnippet": "Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up?\n\nOn this episode of TechCrunch’s Equity podcast, Rebecca Bellan caught up with Irene Solaiman , Chief Policy Officer and SVP of Strategy at Hugging Face, about what startups need to know before building on open models, from choosing the right tools and infrastructure to navigating the trade-offs shaping the future of open AI.\n\nListen to the full episode to hear about:\n\nWhy startups, enterprises, and governments are switching to open AI models to cut costs, and when it makes less sense to use the most powerful models.\n\nWho makes money when the models are free to use, and whether the companies building them can capture the value they create.\n\nWhy the U.S. may need deep-pocketed players like Nvidia to build an open frontier model that can compete with China’s, and what’s at stake if Chinese models become the global default.\n\nHow recent attacks on open AI platforms are raising a difficult question: how do you keep an open ecosystem secure without closing it off?\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio Rebecca Bellan Senior Reporter\n\nRebecca Bellan is a senior reporter at TechCrunch where she covers the business, policy, and emerging trends shaping artificial intelligence. Her work has also appeared in Forbes, Bloomberg, The Atlantic, The Daily Beast, and other publications.\n\nYou can contact or verify outreach from Rebecca by emailing [email protected] or via encrypted message at rebeccabellan.491 on Signal.",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "In an episode of TechCrunch’s Equity podcast, host Rebecca Bellan interviewed Irene Solaiman, Chief Policy Officer and SVP of Strategy at Hugging Face, to discuss the economic realities, security vulnerabilities, and strategic trade-offs of building applications on open-source AI models. The discussion focuses on why enterprises, startups, and governments are pivoting to open-source alternatives to minimize operational costs and retain infrastructure flexibility.\n\nThe conversation examines how open-source creators capture value when core models are provided for free, and highlights growing geopolitical competition as Chinese open-source models gain market share against American alternatives. Solaiman also addresses structural concerns regarding the involvement of capital-dense entities like Nvidia in funding competitive frontier open models, alongside the escalating security challenges of protecting decentralized, open ecosystems without compromising accessibility.",
@@ -353,7 +773,7 @@
     "contentSnippet": "Nothing CEO Carl Pei said in a post on X that the company’s launching its first AI device in December. That’s just a little over a year after Pei announced plans for “AI-native” devices and an AI operating system. He didn’t give away much about what exactly the new device is, only that one feature it won’t have is a screen: > “Our first AI-native product ships next month. It’s a tool, but one built with the personality and care that have come to define a Nothing product. It has no new screen, and it couldn’t have been an app.” Pei shared an image with the post that says “NOTHING(R)” in the top left corner, above an ambiguous black rounded corner. Last month, a rumor claimed Nothing is planning to launch two pairs of AI smart glasses, including one without cameras, and an earlier rumor said it’s “repositioning itself as an AI-first company” with a shift to AI accessories. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/nothingr-teaser-image-carl-pei.jpeg?quality=90&strip=all] Nothing’s AI device wouldn’t be the first screen-free AI gadget, following the likes of the Humane AI pin, the Friend, and even AI stuffed animals. OpenAI is also reportedly working on an AI smart speaker with Jony Ive. Pei alluded to earlier AI devices, saying, “the whole industry is hunting for its iPhone moment: the pendant, the pin, the glasses, the companion, some magical consumer device that makes AI part of everyone’s life.” He added, “Looking for the iPhone of AI today is a dead end.”",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/nothing-phone-4a-2.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Nothing CEO Carl Pei has announced the company’s first 'AI-native' hardware product, scheduled for a December launch. The device is explicitly designed without a screen and is positioned as a tool that cannot function as a standard mobile application. Pei’s announcement follows a year-long strategic pivot toward AI-integrated hardware and operating systems, moving away from the company's previous focus on smartphone-centric hardware.\n\nWhile specific technical specifications remain undisclosed, the device enters a crowded market of screen-free AI wearables, including the Humane AI Pin, the Friend pendant, and various AI-integrated smart glasses. Pei explicitly rejected the industry-wide search for an 'iPhone of AI,' characterizing the pursuit of a singular, magical consumer device as a 'dead end.' Rumors circulating prior to the announcement suggest the company may be developing AI-enabled smart glasses, potentially including models without integrated cameras.",
@@ -908,6 +1328,28 @@
       "tldr": "Google Chief Business Officer Philipp Schindler. | Bloomberg via Getty Images Search queries are growing at their fastest rate in five years, Google parent Alphabet said in its earnings report last week. However, Google's Search revenue growth slowed to 12 percent year over year in the third quarter, down from roughly 17 percent in the previous quarter.\n\nMeanwhile, growth in paid clicks - clicks on ads that generate revenue for Google - slowed from 13 percent to 8 percent. That's still substantial growth, but not the direction investors were hoping for from a company planning to spend about $200 billion this year on infrastructure, largely to support AI. Alphabet shares have fallen about 14 percent since it reported e … Read the full story at The Verge.",
       "takeaways": [],
       "impact": "Breakthrough",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "fbaa86a829ad59fd",
+    "canonicalUrl": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+    "title": "A thousand fewer paths to root",
+    "publishedAt": "2026-11-04T08:00:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:23.235Z",
+    "contentHash": "3ef898e58e738e8f",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
+      "takeaways": [],
+      "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
@@ -2675,6 +3117,50 @@
     }
   },
   {
+    "id": "295354ff422b0d4d",
+    "canonicalUrl": "https://openai.com/index/introducing-images-2-6",
+    "title": "Introducing Images 2.6",
+    "publishedAt": "2026-11-04T00:00:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:23.235Z",
+    "contentHash": "ca132ab622250535",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Images 2.6 brings faster image generation, GIF creation, more precise editing, and new API controls across ChatGPT, Codex, and the API.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "981785a01550309d",
+    "canonicalUrl": "https://openai.com/index/devrev-enterprise-self-service",
+    "title": "DevRev delivers autonomous self-service with GPT-6.1 Sol",
+    "publishedAt": "2026-11-04T00:00:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:23.235Z",
+    "contentHash": "de3e1b54247f89cf",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "DevRev uses GPT-6.1 Sol to power Computer and Operator, balancing reasoning, speed, and cost for enterprise service.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "9d97c8271a19f07f",
     "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1025826/ai-bubble-pimco-apollo-bonds",
     "title": "Please stop asking me when the AI bubble will pop",
@@ -3575,12 +4061,12 @@
     "canonicalUrl": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
     "title": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
     "publishedAt": "2026-11-03T16:00:45.000Z",
-    "fetchedAt": "2026-11-03T19:56:00.608Z",
-    "contentHash": "5d8fbbf3c13a6658",
+    "fetchedAt": "2026-11-05T01:46:23.238Z",
+    "contentHash": "ec3bf5689badeee2",
     "sourceId": "nvidia-blog",
     "sourceName": "NVIDIA AI News",
     "author": "Timothy Costa",
-    "contentSnippet": "Demand for advanced chips is rising. The processes to build them are getting more complex. And the margin for error is shrinking. For engineers, understanding how a process change will behave, how a material will interact with a new step, how a defect maps back to a root cause are critical, challenging steps in semiconductor manufacturing — and these analyses can take days. Physical experiments on a fab line are slow and expensive. A wrong call on yield or process quality has real consequences. AI is transforming semiconductor manufacturing, impacting what engineers can do — and how fast. Accelerated computing shortens simulation time, allowing engineers to evaluate more alternatives before committing to physical trials. Physics-based AI helps engineers predict process behavior without running a full simulation every time. AI agents handle sequences of engineering tasks that once consumed hours. And digital twins let teams test changes in a virtual environment before committing to physical trials. Together, these capabilities describe an AI-defined fab: a semiconductor manufacturing factory where AI helps engineers optimize processes, catch problems earlier and make better decisions across the full manufacturing chip lifecycle. Engineers direct the work and make decisions based on their expertise while spending less time waiting for answers. Shorter Simulation Cycles Change What Engineers Can Explore Accelerated computing doesn’t just speed up individual calculations — it changes how many alternatives engineers can test before committing. Multiphysics simulations model interactions among physical effects, such as heat transfer, electrical behavior and mechanical stress. Using the NVIDIA cuDSS library, multiphysics software provider COMSOL is accelerating such simulations for semiconductor manufacturing by up to 10x. This helps engineers optimize equipment and processes, compare alternatives and decide which changes to test physically. Applied Materials and NVIDIA are collaborating to accelerate atomic-scale materials discovery and process development. By integrating NVIDIA cuDSS, Applied’s Ginestra simulation platform runs up to 10x faster than CPU-only approaches. And with NVIDIA PhysicsNeMo, Applied’s ACE+ multiphysics platform delivers topography simulations up to 35x faster. In some cases, acceleration doesn’t just shorten the calculation — it enables it",
+    "contentSnippet": "Demand for advanced chips is rising. The processes to build them are getting more complex. And the margin for error is shrinking. For engineers, understanding how a process change will behave, how a material will interact with a new step, how a defect maps back to a root cause are critical, challenging steps in semiconductor manufacturing — and these analyses can take days. Physical experiments on a fab line are slow and expensive. A wrong call on yield or process quality has real consequences. AI is transforming semiconductor manufacturing, impacting what engineers can do — and how fast. Accelerated computing shortens simulation time, allowing engineers to evaluate more alternatives before committing to physical trials. Physics-based AI helps engineers predict process behavior without running a full simulation every time. AI agents handle sequences of engineering tasks that once consumed hours. And digital twins let teams test changes in a virtual environment before committing to physical trials. Together, these capabilities describe an AI-defined fab: a semiconductor manufacturing factory where AI helps engineers optimize processes, catch problems earlier and make better decisions across the full manufacturing chip lifecycle. Engineers direct the work and make decisions based on their expertise while spending less time waiting for answers. Shorter Simulation Cycles Change What Engineers Can Explore Accelerated computing doesn’t just speed up individual calculations — it changes how many alternatives engineers can test before committing. Multiphysics simulations model interactions among physical effects, such as heat transfer, electrical behavior and mechanical stress. Using the NVIDIA cuDSS library, multiphysics simulation software provider COMSOL is accelerating such simulations for semiconductor manufacturing by up to 10x. This helps engineers optimize equipment and processes, compare alternatives and decide which changes to test physically. Applied Materials and NVIDIA are collaborating to accelerate atomic-scale materials discovery and process development. By integrating NVIDIA cuDSS, Applied’s Ginestra simulation platform runs up to 10x faster than CPU-only approaches. And with NVIDIA PhysicsNeMo, Applied’s ACE+ multiphysics platform delivers topography simulations up to 35x faster. In some cases, acceleration doesn’t just shorten the calculation — it",
     "category": "Robotics & Hardware",
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
@@ -3593,7 +4079,7 @@
         "AI agents handle sequences of engineering tasks that once consumed hours."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 2,
+      "readTimeMinutes": 5,
       "generatedWith": "heuristic"
     }
   },
@@ -6418,6 +6904,36 @@
     }
   },
   {
+    "id": "991c5dfdacdd3af6",
+    "canonicalUrl": "https://arxiv.org/abs/2611.04166",
+    "title": "Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs",
+    "publishedAt": "2026-11-03T00:00:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:19.711Z",
+    "contentHash": "374ccd1447e4d5a5",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zihao Feng, Qingzhao Zhang, Chunyu Xia, Bo Yu",
+    "contentSnippet": "Authors: Zihao Feng , Qingzhao Zhang , Chunyu Xia , Bo Yu , Z. Morley Mao , Ramesh Govindan\n\nAbstract: Reasoning vision-language-action (VLA) models pair physical control with natural-language rationales that supervisors can read to monitor embodied safety. Prior attacks on VLA reasoning corrupt the rationale itself and leave visible evidence in the text. We show that visual perturbations can instead alter the physical action while keeping the generated rationale word-for-word identical. At the shared text/action interface of Alpamayo for driving and InstructVLA for manipulation, our text-neutral action-subspace (TNAS) diagnostic shows that the locally most action-sensitive direction is nearly orthogonal to the active text-loss gradients, with 1.87% and 5.28% norm overlap. At equal hidden-state perturbation norms across both models, interventions along this text-neutral residual shift actions 4.64x to 47.8x more than text-gradient perturbations, whereas text-gradient perturbations induce 21.2x to 277x more text drift. Steering visual perturbations along this direction reaches the same decoupling from the image. Across 154 obstacle-annotated driving scenes in Alpamayo, TNAS-guided attacks induce a new collision under a word-for-word identical rationale in 52.6% of scenes under full-image perturbations and 35.1% under a localized forward-camera patch, compared with 4.55% for unguided action attacks. Relative to a text-preserving baseline, TNAS guidance raises exact rationale preservation from 83.0% to 89.5% and cuts teacher-forced text drift by 68.4% at a comparable collision rate. In InstructVLA, TNAS guidance cuts text drift by 40.5% and preserves the exact response on 85.0% of examples alongside a 1.73-unit action-chunk shift. An unchanged rationale therefore cannot certify a safe action, so monitors for reasoning VLAs must verify the predicted action channel directly.\n\nNotes: Accepted to NeurIPS 2026. 23 pages, 3 figures, 8 tables",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.04166",
+    "pdfUrl": "https://arxiv.org/pdf/2611.04166",
+    "summary": {
+      "tldr": "Researchers Zihao Feng, Qingzhao Zhang, Chunyu Xia, Bo Yu, Z. Morley Mao, and Ramesh Govindan have identified a critical vulnerability in reasoning vision-language-action (VLA) models where visual perturbations can alter physical actions while keeping the generated text rationale identical. The study, accepted to NeurIPS 2026, introduces the text-neutral action-subspace (TNAS) diagnostic to demonstrate that the model's action-sensitive directions are nearly orthogonal to text-loss gradients. This decoupling allows for adversarial attacks that manipulate robot or vehicle behavior without triggering text-based safety monitors.\n\nTesting on Alpamayo (driving) and InstructVLA (manipulation), the authors found that TNAS-guided interventions shift actions 4.64x to 47.8x more effectively than text-gradient perturbations, while simultaneously inducing 21.2x to 277x less text drift. In Alpamayo driving simulations, TNAS-guided attacks caused collisions in 52.6% of scenes using full-image perturbations and 35.1% using localized camera patches, all while maintaining a word-for-word identical rationale. The researchers conclude that because rationale preservation does not guarantee safe action, safety monitors must verify the action channel directly rather than relying on text-based reasoning logs.",
+      "takeaways": [
+        "**Orthogonality Metric:** The locally most action-sensitive direction in the models is nearly orthogonal to active text-loss gradients, with a norm overlap of only 1.87% in Alpamayo and 5.28% in InstructVLA.",
+        "**Collision Efficacy:** TNAS-guided attacks on Alpamayo induced collisions in 52.6% of 154 annotated scenes, significantly outperforming unguided action attacks which only achieved a 4.55% collision rate.",
+        "**Rationale Preservation:** TNAS guidance improves exact rationale preservation to 89.5% in Alpamayo (up from 83.0%) and 85.0% in InstructVLA, while reducing teacher-forced text drift by up to 68.4%.",
+        "**Intervention Impact:** At equal hidden-state perturbation norms, TNAS-guided shifts produce 4.64x to 47.8x greater action changes than text-gradient perturbations, proving that action and text channels can be effectively decoupled."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "8fbbc27028afdfad",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/2/llm/",
     "title": "llm 0.37",
@@ -8819,6 +9335,37 @@
     }
   },
   {
+    "id": "2074139ba1cd3e88",
+    "canonicalUrl": "https://arxiv.org/abs/2611.01621",
+    "title": "FinForesight: A Diagnostic Backtesting Benchmark for Deep Research Systems in Financial Forecasting",
+    "publishedAt": "2026-11-01T00:00:00.000Z",
+    "fetchedAt": "2026-11-05T01:46:19.711Z",
+    "contentHash": "6f351eca9d7fef61",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Fengyuan Liu, Mukai Li, Jieshun You, Yilin Zheng",
+    "contentSnippet": "Authors: Fengyuan Liu , Mukai Li , Jieshun You , Yilin Zheng , Chenjia Min , Yizhou Zhang , Harper Chen , Qi Liu\n\nAbstract: Anticipating financial outcomes requires synthesizing evolving evidence and reasoning under uncertainty, making deep research systems promising tools for forecasting. Yet evaluating forecasting ability is challenging because historical backtests may reward memorized outcomes or information retrieved after the forecast date. Live forecasting avoids direct access to realized outcomes, but feedback arrives only after events resolve. To obtain timely feedback and assess historical scores, we introduce FinForesight, a diagnostic backtesting benchmark for financial deep research systems. Across the Chinese, U.S., and Hong Kong markets, the benchmark evaluates four forecasting tasks: valuation, return ranking, event direction, and future financial fundamentals. Two capability diagnostic tasks assess counterfactual reasoning and financial calculation, scored separately from forecasting performance. Our harness-compatible framework restricts retrieved evidence to information available at the forecast date. We compare pretraining-era, resolved post-cutoff, and live evaluations to test whether controlled backtests approximate future performance. Pretraining-era scores exceed post-cutoff scores in most temporal comparisons, and stronger retrieval controls narrow the gap between post-cutoff backtests and live results. Forecasting attribution and robustness analyses reveal how scores respond to retrieval policy and how predictions respond to prompt rewrites and numerical perturbations. The code and benchmark data are publicly available.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.01621",
+    "pdfUrl": "https://arxiv.org/pdf/2611.01621",
+    "summary": {
+      "tldr": "FinForesight is a new diagnostic backtesting benchmark designed to evaluate deep research systems in financial forecasting, developed by a team of researchers including Fengyuan Liu, Mukai Li, and Jieshun You. The benchmark addresses the critical challenge of data leakage in financial backtesting by enforcing strict temporal constraints, ensuring that retrieved evidence is limited to information available at the specific forecast date. It covers four primary forecasting tasks—valuation, return ranking, event direction, and future financial fundamentals—across the Chinese, U.S., and Hong Kong stock markets.\n\nBeyond standard forecasting, FinForesight incorporates two diagnostic modules focused on counterfactual reasoning and financial calculation to isolate specific model capabilities. The framework compares performance across three evaluation modes: pretraining-era, resolved post-cutoff, and live forecasting. Findings indicate that pretraining-era scores consistently overestimate performance compared to post-cutoff results, while rigorous retrieval controls significantly improve the alignment between backtested scores and live deployment outcomes. The benchmark also includes attribution and robustness analyses to measure model sensitivity to prompt variations and numerical perturbations.",
+      "takeaways": [
+        "**Benchmark Scope:** Evaluates four distinct tasks: valuation, return ranking, event direction, and future financial fundamentals across U.S., Chinese, and Hong Kong markets.",
+        "**Diagnostic Modules:** Includes two specialized tasks for assessing counterfactual reasoning and financial calculation capabilities independent of forecasting accuracy.",
+        "**Leakage Mitigation:** Implements a harness-compatible framework that restricts retrieved evidence to data available strictly before the forecast date to prevent look-ahead bias.",
+        "**Performance Gap:** Research indicates that pretraining-era evaluations typically yield higher scores than post-cutoff backtests, confirming the necessity of controlled temporal testing.",
+        "**Robustness Testing:** Provides tools for analyzing model sensitivity to prompt rewrites and numerical perturbations to ensure prediction stability."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a181817ce8345f3a",
     "canonicalUrl": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
     "title": "How We Took Over ChatGPT Accounts",
@@ -10010,510 +10557,6 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Introducing AnySpeechRecognizer and AnyDecisionModel: Open Models for Speech and Decisions on Apple Platforms.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "62c87da6c730bf4f",
-    "canonicalUrl": "https://arxiv.org/abs/2610.40574",
-    "title": "Every Token Needs Its Own Teacher: Multi-teacher Adaptive On-policy Self-distillation",
-    "publishedAt": "2026-10-29T00:00:00.000Z",
-    "fetchedAt": "2026-11-04T17:44:14.877Z",
-    "contentHash": "111634d90dd0a4bc",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Yifu Luo, Chuang Ma, Zeyu Chen, Enkelejda Kasneci",
-    "contentSnippet": "On-policy Self-distillation (OPSD) has proven effective for post-training large language models by constructing a teacher conditioned on privileged references. However, existing approaches keep the teacher fixed either throughout training by consistently exposing it to the full reference, or within each response by adaptively varying partial reference exposure only across responses. In this paper, we argue that neither of them is sufficient. Instead, every token needs its own teacher, as the teacher preference can vary token by token within the same response. Through a teacher-intervention pilot study, we validate that the teacher preference differs across tokens, and reveal that a preferred teacher can be identified for each token through majority voting and KL-based selection. Motivated by these findings, we propose Multi-teacher Adaptive On-policy Self-Distillation (MTA-OPSD), the first token-level adaptive OPSD method. Our method constructs a multi-teacher pool consisting of candidate teachers, and enables every token to adaptively select its preferred teacher during training. Experiments with Qwen3 models on mathematical reasoning tasks show that MTA-OPSD consistently outperforms existing OPSD approaches with an average gain of up to +5.9 over the base model, highlighting the importance of adapting teacher supervision at the token level. The code is available at https://github.com/xingzhejun/MTA-OPSD.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2610.40574",
-    "pdfUrl": "https://arxiv.org/pdf/2610.40574",
-    "summary": {
-      "tldr": "On-policy Self-distillation (OPSD) has proven effective for post-training large language models by constructing a teacher conditioned on privileged references. However, existing approaches keep the teacher fixed either throughout training by consistently exposing it to the full reference, or within each response by adaptively varying partial reference exposure only across responses. In this paper, we argue that neither of them is sufficient.\n\nInstead, every token needs its own teacher, as the teacher preference can vary token by token within the same response. Through a teacher-intervention pilot study, we validate that the teacher preference differs across tokens, and reveal that a preferred teacher can be identified for each token through majority voting and KL-based selection. Motivated by these findings, we propose Multi-teacher Adaptive On-policy Self-Distillation (MTA-OPSD), the first token-level adaptive OPSD method.",
-      "takeaways": [
-        "Our method constructs a multi-teacher pool consisting of candidate teachers, and enables every token to adaptively select its preferred teacher during training.",
-        "Experiments with Qwen3 models on mathematical reasoning tasks show that MTA-OPSD consistently outperforms existing OPSD approaches with an average gain of up to +5.9 over the base model, highlighting the importance of adapting teacher supervision at the token level.",
-        "The code is available at https://github.com/xingzhejun/MTA-OPSD."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "da9c62c52f6c35e6",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
-    "title": "Quoting Ted Sanders",
-    "publishedAt": "2026-10-28T23:23:21.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "899b17ae45f6765c",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: model size. In general, models that are bigger will (a) be more performant / reliable, (b) cost more per token, and (c) have better recall of esoteric facts. As you note, our models are ordered: Luna < Terra < Sol < Astra [ ... ] These days, version number signifies a few things at once: the order of release, the relationship to other releases, and the magnitude of improvement. So something like 6.1 would indicate it was launched after 5.6, may share some similarities to other 6.1 models in terms of training data / personality (which is why it's not 5.7), and isn't a giant enough leap to merit the headlines and expectations that would come with a 7. — Ted Sanders , explaining OpenAI's model naming conventions Tags: generative-ai , gpt , openai , ai , llms , ted-sanders",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "In general, LLM performance is incredibly multidimensional. There's no guarantee of a fixed ordering where the model that is best at math is also the model that's best at jokes. Despite that complexity, much of the variation in performance is explained by just a single variable: model size.\n\nIn general, models that are bigger will (a) be more performant / reliable, (b) cost more per token, and (c) have better recall of esoteric facts. As you note, our models are ordered: Luna < Terra < Sol < Astra [ ... ] These days, version number signifies a few things at once: the order of release, the relationship to other releases, and the magnitude of improvement.",
-      "takeaways": [
-        "So something like 6.1 would indicate it was launched after 5.6, may share some similarities to other 6.1 models in terms of training data / personality (which is why it's not 5.7), and isn't a giant enough leap to merit the headlines and expectations that would come with a 7.",
-        "— Ted Sanders , explaining OpenAI's model naming conventions Tags: generative-ai , gpt , openai , ai , llms , ted-sanders."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9957645d2f759c41",
-    "canonicalUrl": "https://www.technologyreview.com/2026/10/28/1147709/creating-ai-value-with-enterprise-context/",
-    "title": "Creating AI value with enterprise context",
-    "publishedAt": "2026-10-28T20:32:02.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.215Z",
-    "contentHash": "9f4a5c5f30287c09",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "MIT Technology Review Insights",
-    "contentSnippet": "Across a business, any number of AI platforms, systems, and tools may be at work simultaneously—for example, AI-powered customer platforms, conversational assistants, and workflow and process automation tools. Each one is sophisticated, advanced, and quick to respond. But, when set to work, the outcomes and actions that emerge may be wrong, confused, or lacking a proper understanding of the business. Many organizations find themselves in this situation—and it could be one of key reasons they struggle to extract returns on their AI investments. DOWNLOAD THE REPORT An MIT Technology Review Insights poll finds that while every organization surveyed is using AI today to some degree, fewer than one in five (16%) are extracting transformative value from their deployments. The largest percentage of respondents (40%) say they are seeing moderate gains in specific tasks or teams, while 21% report meaningful gains, leaving 23% that are seeing minimal returns or none at all. Companies are mostly still piloting AI use cases (according to 38% of respondents) or using it to assist employees’ work with tools like co-pilots or chat assistants (35%). Just 12% of enterprises have AI agents in production and 3% say they are using AI to do most of the work in key processes. “There’s a big gap between what the models are capable of and how the models are actually being useful inside organizations,” says Prukalpa Sankar, co-founder of Atlan. “For every real-life intent and purpose, artificial general intelligence is already here. It’s just not really useful in most companies today.” The missing layer, Sankar says, is context, or how well AI understands a business. A context layer is the architectural infrastructure that sits between an organization’s business systems (for example, systems of record and data, and its AI platforms). It translates enterprise intelligence into governed, machine-usable context for AI agents or models and helps knowledge compound. “Without a context layer for AI, it’s almost like you’re hiring the smartest intern in the world, blindfolding them, and throwing them into your organization,” Sankar says. Download the report This content was produced by Insights, MIT Technology Review’s custom content arm, not its editorial staff. It was researched and written by humans, with any AI tools that may have been used limited to production processes under human o",
-    "imageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/10/MIT_Atlan-Cover-28-26.png?w=840",
-    "category": "Ethics & Policy",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Across a business, any number of AI platforms, systems, and tools may be at work simultaneously—for example, AI-powered customer platforms, conversational assistants, and workflow and process automation tools. Each one is sophisticated, advanced, and quick to respond. But, when set to work, the outcomes and actions that emerge may be wrong, confused, or lacking a proper understanding of the business.\n\nMany organizations find themselves in this situation—and it could be one of key reasons they struggle to extract returns on their AI investments. DOWNLOAD THE REPORT An MIT Technology Review Insights poll finds that while every organization surveyed is using AI today to some degree, fewer than one in five (16%) are extracting transformative value from their deployments. The largest percentage of respondents (40%) say they are seeing moderate gains in specific tasks or teams, while 21% report meaningful gains, leaving 23% that are seeing minimal returns or none at all.",
-      "takeaways": [
-        "Companies are mostly still piloting AI use cases (according to 38% of respondents) or using it to assist employees’ work with tools like co-pilots or chat assistants (35%).",
-        "Just 12% of enterprises have AI agents in production and 3% say they are using AI to do most of the work in key processes.",
-        "“There’s a big gap between what the models are capable of and how the models are actually being useful inside organizations,” says Prukalpa Sankar, co-founder of Atlan.",
-        "“For every real-life intent and purpose, artificial general intelligence is already here."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "16681fd606d5f699",
-    "canonicalUrl": "https://openai.com/ads/customers/evernote",
-    "title": "Evernote turns AI-driven discovery into paid subscriptions",
-    "publishedAt": "2026-10-28T19:40:49.000Z",
-    "fetchedAt": "2026-11-04T10:13:27.119Z",
-    "contentHash": "785ce77839b0781f",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Evernote used ChatGPT Ads to introduce its note-taking app to people working with AI. The team tracked how often free trials led to paid subscriptions.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Evernote used ChatGPT Ads to introduce its note-taking app to people working with AI. The team tracked how often free trials led to paid subscriptions.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3fb2562cb49b6ddb",
-    "canonicalUrl": "https://spectrum.ieee.org/systems-thinking-vital-in-ai",
-    "title": "Systems Thinking Is Vital in the Age of AI",
-    "publishedAt": "2026-10-28T18:00:02.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "837a8aab4bc0ded4",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "Sufian Aldogom",
-    "contentSnippet": "Modern engineering projects increasingly combine human judgment with machine capability. An engineer can define a problem, then ask an artificial intelligence tool to search relevant research and technical standards, generate design options, test them in simulation, and compare the results. The engineer can then bring the results to specialists who understand the parts AI cannot judge on its own, such as whether a design can be built safely, whether it makes sense in a particular setting, or how it might affect its users. The final decision about whether and how to move forward remains a human responsibility. AI can help engineers do early project steps that once required several people with different technical skills. The engineer’s role is therefore expanding from performing each technical step to deciding how people, machines, and specialists’ knowledge should work together on the project. The problem, not the title Engineering has always been divided into disciplines, and for good reasons. Electrical, mechanical, civil, software, and other engineering fields require deep knowledge that takes years to develop. AI does not replace that need. It simply changes how easily engineers can explore the parts of a problem that sit outside their own specialty. Consider a software engineer working on a medical device . AI can help the engineer review relevant biomedical research, understand unfamiliar terms, analyze data, and build an early model. That does not make the engineer a physician or biomedical expert. It allows the engineer to ask better questions before working with the experts. The same is true in energy , transportation, manufacturing, and many other fields. A problem might begin as a software issue and then quickly involve hardware, safety measures, economics, human behavior, and regulations. Engineers do not need to master every field; they need to recognize which expertise the problem requires and bring the right people and tools together. The importance of systems thinking Systems thinking thus becomes especially important. It requires looking at the whole problem: understanding how its parts affect one another, identifying constraints and failure points, and making trade-offs. AI adds a new element to the process. Engineers must decide not only how the technical parts fit together but also what work to give to AI, what a person must check, when a ",
-    "imageUrl": "https://spectrum.ieee.org/media-library/illustration-of-a-robotic-and-a-human-hand-with-different-color-bands-wrapped-around-both-hands.jpg?id=68528703&width=980",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Modern engineering projects increasingly combine human judgment with machine capability. An engineer can define a problem, then ask an artificial intelligence tool to search relevant research and technical standards, generate design options, test them in simulation, and compare the results. The engineer can then bring the results to specialists who understand the parts AI cannot judge on its own, such as whether a design can be built safely, whether it makes sense in a particular setting, or how it might affect its users.\n\nThe final decision about whether and how to move forward remains a human responsibility. AI can help engineers do early project steps that once required several people with different technical skills. The engineer’s role is therefore expanding from performing each technical step to deciding how people, machines, and specialists’ knowledge should work together on the project.",
-      "takeaways": [
-        "The problem, not the title Engineering has always been divided into disciplines, and for good reasons.",
-        "Electrical, mechanical, civil, software, and other engineering fields require deep knowledge that takes years to develop.",
-        "AI does not replace that need.",
-        "It simply changes how easily engineers can explore the parts of a problem that sit outside their own specialty."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e8e0cb1d0e685ced",
-    "canonicalUrl": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
-    "title": "Gemini 4 Carbon: Our next frontier model",
-    "publishedAt": "2026-10-28T17:00:58.000Z",
-    "fetchedAt": "2026-11-04T10:13:27.121Z",
-    "contentHash": "998d44faa6bf8860",
-    "sourceId": "deepmind",
-    "sourceName": "Google DeepMind",
-    "author": "Google DeepMind",
-    "contentSnippet": "",
-    "category": "LLMs & GenAI",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Gemini 4 Carbon: Our next frontier model.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e9a7a10b5a66f3aa",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
-    "title": "GitHub Octoverse 2026",
-    "publishedAt": "2026-10-28T16:45:23.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "7db00bc2a5b56c3e",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their \"GitHub Stars\" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of agentic engineering on GitHub. In 2026, merged pull requests tripled in less than a year to 220 million per month. Commits more than tripled to 7.38 billion per month, with most of that increase in the second half of this year. New repository rate doubled this year, to 30.3 million per month. The report includes new numbers by industry, and breaks out numbers for repositories that involve \"interoperability or reverse engineering\". The methodology section includes notes about how they did this: Top countries by pushes to public repositories, adjusted by profile location . Pushes from each country were summed across the Octoverse year. To adjust for biases caused by VPN usage, LLM classification was used to extract the ISO 3166-1 alpha-2 code from the profiles of GitHub users who contributed pushes during this period [...] Industry . Public repositories created 2022 to 2026 were sorted into NAICS sectors by a fine-tuned multilingual embedding model using name, description, topics, and README, from random samples per year. [...] Interoperability . Counts public repositories created each year whose name, description, topics, or README mention interoperability or reverse engineering, or related terms, such as clean room implementation, drop-in replacement, or protocol re-implementation. Tags: github , ai , generative-ai , llms , coding-agents , disclosures , agentic-engineering",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "GitHub Octoverse 2026 I'm at GitHub Universe today (GitHub gave me a free ticket through their \"GitHub Stars\" program). EVP Jay Parikh just announced this year's Octoverse report, and highlighted these numbers in particular: This is a pretty stark representation of the impact of agentic engineering on GitHub. In 2026, merged pull requests tripled in less than a year to 220 million per month.\n\nCommits more than tripled to 7.38 billion per month, with most of that increase in the second half of this year. New repository rate doubled this year, to 30.3 million per month. The report includes new numbers by industry, and breaks out numbers for repositories that involve \"interoperability or reverse engineering\".",
-      "takeaways": [
-        "The methodology section includes notes about how they did this: Top countries by pushes to public repositories, adjusted by profile location .",
-        "Pushes from each country were summed across the Octoverse year.",
-        "To adjust for biases caused by VPN usage, LLM classification was used to extract the ISO 3166-1 alpha-2 code from the profiles of GitHub users who contributed pushes during this period [...] Industry .",
-        "Public repositories created 2022 to 2026 were sorted into NAICS sectors by a fine-tuned multilingual embedding model using name, description, topics, and README, from random samples per year."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9fa8e4999dc54776",
-    "canonicalUrl": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-updates-models-agents-games/",
-    "title": "Thin, Light and Built for Everything: NVIDIA RTX Spark Windows Laptops Gain New Models, Agent Tools and Games",
-    "publishedAt": "2026-10-28T15:00:46.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.441Z",
-    "contentHash": "92ec7e3d5b47d126",
-    "sourceId": "nvidia-blog",
-    "sourceName": "NVIDIA AI News",
-    "author": "Shreevar Rastogi",
-    "contentSnippet": "NVIDIA RTX Spark powers thin and light laptops built for everything that developers, creators and gamers do. RTX Spark laptops are now available from ASUS, Dell, HP, Lenovo, Microsoft and MSI. These powerful systems combine an NVIDIA Blackwell RTX GPU and an NVIDIA Grace CPU in a single superchip with up to 128GB of unified memory and up to 1 petaflop of FP4 AI performance. That puts the NVIDIA CUDA platform, RTX graphics and the capabilities of a personal AI supercomputer inside premium Windows laptops built to go anywhere. New and expected RTX Spark updates, coming soon, include: NVIDIA Nemotron 3.5 Transcribe, an open weight speech model for transcription, speaker attribution and translation is available on RTX Spark. The LFM3 family of open models with day-zero support. Resource management controls in NVIDIA App to allocate GPU resources between foreground apps and background agents. Phantom Blade Zero , S-GAME’s highly-anticipated action role-playing game, launches with ray tracing and NVIDIA DLSS 4.5. Experience Minecraft with path tracing and DLSS with RTX Remix1.6, available now for RTX Spark. Turn Recorded Audio Into Useful Information With NVIDIA Nemotron 3.5 Transcribe Introduced today, NVIDIA Nemotron 3.5 Transcribe is a new, open weight speech model that turns recorded conversations into useful information. Instead of needing multiple models for transcription, speaker labels and translation, developers can use one promptable model that handles all three, plus questions about the audio. It transcribes 40 languages, including seven Indic languages. Developers guide the model with plain-language prompts. For example, for a single recorded meeting, users can ask it to: “Transcribe this recording and label each speaker.” “Translate this audio into English.” “List what decisions were made in this meeting.” Prompts can also include product terms and formatting conventions, which helps the model handle specialized vocabulary in fields like healthcare, financial services and customer service. Because the weights are open, developers can choose where audio is processed, from a desktop to the cloud. Nemotron 3.5 Transcribe ranks No. 1 on the Hugging Face Open ASR and No. 2 among open weight models on Artificial Analysis — delivering leading accuracy with approximately 4.3 billion active parameters, 80% fewer than the No. 1 open weight model, making high-qu",
-    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nv-blog-1280x680-2-1.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "NVIDIA RTX Spark powers thin and light laptops built for everything that developers, creators and gamers do. RTX Spark laptops are now available from ASUS, Dell, HP, Lenovo, Microsoft and MSI. These powerful systems combine an NVIDIA Blackwell RTX GPU and an NVIDIA Grace CPU in a single superchip with up to 128GB of unified memory and up to 1 petaflop of FP4 AI performance.\n\nThat puts the NVIDIA CUDA platform, RTX graphics and the capabilities of a personal AI supercomputer inside premium Windows laptops built to go anywhere. New and expected RTX Spark updates, coming soon, include: NVIDIA Nemotron 3.5 Transcribe, an open weight speech model for transcription, speaker attribution and translation is available on RTX Spark. The LFM3 family of open models with day-zero support.",
-      "takeaways": [
-        "Resource management controls in NVIDIA App to allocate GPU resources between foreground apps and background agents.",
-        "Phantom Blade Zero , S-GAME’s highly-anticipated action role-playing game, launches with ray tracing and NVIDIA DLSS 4.5.",
-        "Experience Minecraft with path tracing and DLSS with RTX Remix1.6, available now for RTX Spark.",
-        "Turn Recorded Audio Into Useful Information With NVIDIA Nemotron 3.5 Transcribe Introduced today, NVIDIA Nemotron 3.5 Transcribe is a new, open weight speech model that turns recorded conversations into useful information."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "7f577f4b01c6fc58",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
-    "title": "The October inflection point for vibe game development",
-    "publishedAt": "2026-10-28T13:55:15.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "abdc8eeb160b4742",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflection point in October 2026, and this time it's for vibe coding computer games . Tree Appreciator Emberwick Battle Drones Pumpkin Farmer, aka Quarter Sun Cove Four times as insulting What happens if someone actually puts the work in? You should build a game! Claude Opus 5.5 in particular exhibits meaningful improvements in several areas needed to build a compelling game: 3D modeling Music generation (see Scrimshaw Jukebox ) Game design (!) That last one is particularly important. Models have been able to create something that looks like a game for quite a while now, as seen in my previous experiments . The challenge has been getting to a game that's actually fun to play . Game design is a deep subject area. I won't pretend to be well versed in it - I know enough to have respect for it as a craft. Creating a novel, compelling gameplay loop which challenges players at the right level and provides a satisfying learning curve is a fine art. I didn't think the models could do it. Then I tried telling Claude Opus 5.5 to \"Make it a LOT more fun\"... and it did . In the past few weeks I've vibe coded (in the classic sense of the term - no looking at the code at all) four games that I've genuinely enjoyed playing. I attended Foo Camp in Berkeley over the weekend and met several people who were having similar experiences. Building games that play well is shockingly easy now. The new challenge is coming up with concepts for games that are novel and delightful and that wouldn't exist without AI assistance. I haven't done an exhaustive study, but my current impression is that GPT-6 Astra isn't quite there yet. It can absolutely build a game, but its sense of fun doesn't match that of Opus 5.5. I expect OpenAI will get there by the end of the year. Here are the four game projects that have convinced me that the models are now capable of producing fun games with very little guidance. All four are built in HTML and JavaScript and run entirely in the browser. Tree Appreciator The smallest game I found to be genuinely delightful is Tree Appreciator . I used the regular Claude chat interface for this - it",
-    "imageUrl": "https://static.simonwillison.net/static/2026/tree-appreciator.webp",
-    "category": "Robotics & Hardware",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers. I think we've reached a new inflection point in October 2026, and this time it's for vibe coding computer games . Tree Appreciator Emberwick Battle Drones Pumpkin Farmer, aka Quarter Sun Cove Four times as insulting What happens if someone actually puts the work in?\n\nClaude Opus 5.5 in particular exhibits meaningful improvements in several areas needed to build a compelling game: 3D modeling Music generation (see Scrimshaw Jukebox ) Game design (!) That last one is particularly important. Models have been able to create something that looks like a game for quite a while now, as seen in my previous experiments . The challenge has been getting to a game that's actually fun to play .",
-      "takeaways": [
-        "Game design is a deep subject area.",
-        "I won't pretend to be well versed in it - I know enough to have respect for it as a craft.",
-        "Creating a novel, compelling gameplay loop which challenges players at the right level and provides a satisfying learning curve is a fine art.",
-        "I didn't think the models could do it."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a395c7da350b5086",
-    "canonicalUrl": "https://openai.com/index/openai-servicenow-partnership-expansion",
-    "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
-    "publishedAt": "2026-10-28T13:15:00.000Z",
-    "fetchedAt": "2026-11-04T10:13:27.119Z",
-    "contentHash": "b930a50cd2499581",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
-      "takeaways": [],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "887c59818f68e469",
-    "canonicalUrl": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
-    "title": "Artificial Analysis v5 and the benchmarker's dilemma",
-    "publishedAt": "2026-10-28T12:58:39.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.043Z",
-    "contentHash": "aad8a2a0f51a8caa",
-    "sourceId": "interconnects-ai",
-    "sourceName": "Interconnects AI",
-    "author": "Nathan Lambert",
-    "contentSnippet": "Hill-climbing is easy, knowing what to hill-climb is hard. Making scores go up is expensive , but we have a much clearer playbook for it than we do for creating meaningful benchmarks at the true frontier of AI today. Independent evaluation of language models is under-appreciated in how hard of a task it is. These groups are not just taking current models and certifying their scores, which is a technically involved task. This is their job if AI progress is slow. When AI progress is as fast as it is, the technical details of the job are the routine work part of trying to put a single number on what makes for a good AI model today. The goal is to have a single number that is representative of current models, matching vibe checks, community sentiment, and scientific analysis, while being forward looking enough so that it’s not outdated in 3 months. Everyone building a benchmark faces a sort of paradox. You need your benchmark to reduce to one single number, so that it is easy to discuss, use in reports, and compare models, but every method of aggregating scores comes with meaningful trade-offs. The best scientists need to do this, everyone does. It’s a matter of creating aggregation metrics that you think are most fair, knowing there will always be imperfections. With the amount of money in the AI ecosystem today, the weight of independent evaluation is even higher – you dictate the winners and losers of a trillion dollar market. You also influence some of the models themselves, steering the shape of progress. This is a lot of pressure! My prompt for this article is Artificial Analysis’s recent update to their Intelligence Index, v5 . The AA index is the most prominent independent intelligence metric for the latest frontier models, followed in a distant second by Epoch AI’s Capabilities Index (ECI) . To date, all of these have been incredibly useful for the community and massively flawed! Interconnects AI is a reader-supported publication. Consider becoming a subscriber. Language models are capable of so much today, and this scope of capabilities is growing quickly. Our era of singular intelligence indices should be phased out soon, but it will take a long time. A summary of AAv5 is below, from their blog post, where they describe it as “reflecting real-world usage today:” Intelligence Index v5 weights: ➤ Knowledge Work (25%): AA-Briefcase (15%), AutomationBench",
-    "imageUrl": "https://substack-post-media.s3.amazonaws.com/public/images/6a847075-78be-45e9-b554-ae9abc6f9296_3182x1790.png",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Hill-climbing is easy, knowing what to hill-climb is hard. Making scores go up is expensive , but we have a much clearer playbook for it than we do for creating meaningful benchmarks at the true frontier of AI today. Independent evaluation of language models is under-appreciated in how hard of a task it is.\n\nThese groups are not just taking current models and certifying their scores, which is a technically involved task. This is their job if AI progress is slow. When AI progress is as fast as it is, the technical details of the job are the routine work part of trying to put a single number on what makes for a good AI model today.",
-      "takeaways": [
-        "The goal is to have a single number that is representative of current models, matching vibe checks, community sentiment, and scientific analysis, while being forward looking enough so that it’s not outdated in 3 months.",
-        "Everyone building a benchmark faces a sort of paradox.",
-        "You need your benchmark to reduce to one single number, so that it is easy to discuss, use in reports, and compare models, but every method of aggregating scores comes with meaningful trade-offs.",
-        "The best scientists need to do this, everyone does."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e59a3c9fb64c2656",
-    "canonicalUrl": "https://www.technologyreview.com/2026/10/28/1147637/pairing-industrial-ai-autonomy-and-human-control/",
-    "title": "Pairing industrial AI autonomy and human control",
-    "publishedAt": "2026-10-28T12:00:00.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.215Z",
-    "contentHash": "53ff0e92693b52d1",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "MIT Technology Review Insights",
-    "contentSnippet": "",
-    "category": "Ethics & Policy",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Pairing industrial AI autonomy and human control.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4dfbcc3237efbce3",
-    "canonicalUrl": "https://arxiv.org/abs/2610.38578v1",
-    "title": "Dual DeltaNet: Value-Side Memory Reorganization for Linear Attention",
-    "publishedAt": "2026-10-28T10:09:14.000Z",
-    "fetchedAt": "2026-11-04T17:44:18.055Z",
-    "contentHash": "39d4ba078c647972",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Yixiao Qian",
-    "contentSnippet": "Linear attention and state space models (SSMs) offer efficient alternatives to softmax attention by maintaining a fixed-size recurrent state, but this design requires careful management to preserve useful historical associations and limit interference. The delta rule helps reduce interference through correction of the value associated with each key, but it does not explicitly account for how related value features are distributed across the state. We observe that a state $\\boldsymbol{S}\\in\\mathbb{R}^{d_k\\times d_v}$ can be viewed as a bank of $d_k$ addresses storing $d_v$-dimensional values. While a key-side read $\\boldsymbol{S}^\\top\\boldsymbol{k}$ retrieves the value associated with $\\boldsymbol{k}$, a value-side read $\\boldsymbol{S}\\boldsymbol{e}$ aggregates addresses whose stored value features match the selector $\\boldsymbol{e}$. Based on this observation, we propose Dual DeltaNet (DDN), which extends Kimi Delta Attention (KDA) with a two-sided delta rule. The key-side delta rule reads with the current key to correct its associated value, while the complementary value-side delta rule reads with selected features of the current value to reorganize the addresses it occupies. We derive a chunkwise parallel training algorithm and a rank-2 recurrence that increases arithmetic intensity during inference. Compared with KDA, GDN-2, and Mamba-3, DDN achieves the strongest overall performance across language modeling, zero-shot downstream tasks, and retrieval, while incurring modest training and inference overhead relative to KDA. Code: https://github.com/ReichtumQian/DualDeltaNet",
-    "category": "LLMs & GenAI",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2610.38578",
-    "pdfUrl": "https://arxiv.org/pdf/2610.38578.pdf",
-    "summary": {
-      "tldr": "Linear attention and state space models (SSMs) offer efficient alternatives to softmax attention by maintaining a fixed-size recurrent state, but this design requires careful management to preserve useful historical associations and limit interference. The delta rule helps reduce interference through correction of the value associated with each key, but it does not explicitly account for how related value features are distributed across the state. We observe that a state $\\boldsymbol{S}\\in\\mathbb{R}^{d_k\\times d_v}$ can be viewed as a bank of $d_k$ addresses storing $d_v$-dimensional values.\n\nWhile a key-side read $\\boldsymbol{S}^\\top\\boldsymbol{k}$ retrieves the value associated with $\\boldsymbol{k}$, a value-side read $\\boldsymbol{S}\\boldsymbol{e}$ aggregates addresses whose stored value features match the selector $\\boldsymbol{e}$. Based on this observation, we propose Dual DeltaNet (DDN), which extends Kimi Delta Attention (KDA) with a two-sided delta rule. The key-side delta rule reads with the current key to correct its associated value, while the complementary value-side delta rule reads with selected features of the current value to reorganize the addresses it occupies.",
-      "takeaways": [
-        "We derive a chunkwise parallel training algorithm and a rank-2 recurrence that increases arithmetic intensity during inference.",
-        "Compared with KDA, GDN-2, and Mamba-3, DDN achieves the strongest overall performance across language modeling, zero-shot downstream tasks, and retrieval, while incurring modest training and inference overhead relative to KDA.",
-        "Code: https://github.com/ReichtumQian/DualDeltaNet."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2cf23206607f40da",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/28/terk-terkowitz/",
-    "title": "Quoting Terk Terkowitz",
-    "publishedAt": "2026-10-28T10:09:07.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "e459007fed3b41c1",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating the judgement we are asking for. — Terk Terkowitz , An update from Amazon engineering leadership on the role of the developer in the age of AI Tags: amazon , generative-ai , agentic-engineering , ai , llms",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "If your work does not benefit from current AI tooling, that is a finding, not a failing. Document why, share it with your community of peers, bring it to your manager, and work to find solutions. An engineer who can explain where AI does not yet help their work is demonstrating the judgement we are asking for.",
-      "takeaways": [
-        "— Terk Terkowitz , An update from Amazon engineering leadership on the role of the developer in the age of AI Tags: amazon , generative-ai , agentic-engineering , ai , llms."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "041404daf6ce6d0b",
-    "canonicalUrl": "https://arstechnica.com/security/2026/10/code-execution-flaw-in-uefi-firmware-threatens-most-servers-on-planet-earth/",
-    "title": "Code-execution flaw in UEFI firmware affects most servers on planet Earth",
-    "publishedAt": "2026-10-27T20:25:55.000Z",
-    "fetchedAt": "2026-11-04T17:44:15.482Z",
-    "contentHash": "e79cd42f1f045aa8",
-    "sourceId": "arstechnica-tech",
-    "sourceName": "Ars Technica",
-    "author": "\n                    Dan Goodin\n                ",
-    "contentSnippet": "Defenders across the world face the burden of responding to yet another botched code-execution vulnerability, this time in boot-time firmware used by most of the world’s server vendors and data centers. The vulnerability, with a severity rating of 9.5 out of 10, resides in the TianoCore EDK II , an open source codebase that hardware makers and cloud providers use to create the UEFI firmware that runs during the boot-up sequence. Last year, a representative of the UEFI Forum called EDK2 the \"preeminent solution / implementation of the UEFI specifications.\" Virtually all UEFI suppliers (sometimes still called IBVs or independent BIOS vendors), including AMI, Insyde, and Phoenix, use the reference code extensively. Project Mu, Microsoft's hardened EDK2 fork, used the code containing the vulnerable component as well. The vulnerability, tracked as CVE-2026-97631, is a memory-corruption flaw in an ICMP component that attackers can exploit to execute malicious code that runs before the operating system and firmware can implement defenses like Secure Boot , which establishes a chain of trust for all code, including the Trusted Platform Module (TPM), loaded during boot. While final payloads delivered by CVE-2026-97631 have no persistence—meaning they run only once—they can give attackers a wide opening to install other payloads that also run each time early in the boot process. Read full article Comments",
-    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2024/04/malware.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Defenders across the world face the burden of responding to yet another botched code-execution vulnerability, this time in boot-time firmware used by most of the world’s server vendors and data centers. The vulnerability, with a severity rating of 9.5 out of 10, resides in the TianoCore EDK II , an open source codebase that hardware makers and cloud providers use to create the UEFI firmware that runs during the boot-up sequence. Last year, a representative of the UEFI Forum called EDK2 the \"preeminent solution / implementation of the UEFI specifications.\" Virtually all UEFI suppliers (sometimes still called IBVs or independent BIOS vendors), including AMI, Insyde, and Phoenix, use the reference code extensively.\n\nProject Mu, Microsoft's hardened EDK2 fork, used the code containing the vulnerable component as well. The vulnerability, tracked as CVE-2026-97631, is a memory-corruption flaw in an ICMP component that attackers can exploit to execute malicious code that runs before the operating system and firmware can implement defenses like Secure Boot , which establishes a chain of trust for all code, including the Trusted Platform Module (TPM), loaded during boot. While final payloads delivered by CVE-2026-97631 have no persistence—meaning they run only once—they can give attackers a wide opening to install other payloads that also run each time early in the boot process.",
-      "takeaways": [
-        "Read full article Comments."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8333c89d9d7c203a",
-    "canonicalUrl": "https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/",
-    "title": "Game Boy Color on My Conference Badge",
-    "publishedAt": "2026-10-27T19:34:18.000Z",
-    "fetchedAt": "2026-11-04T17:44:16.994Z",
-    "contentHash": "4bfe917aebd95a13",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... who worked with Gemini to get a full NES emulator working on it, and then went a step further and deployed an emulator for both the Game Boy and the Game Boy Color. Which means, if you can obtain the ROM, you can run The Legend of Zelda: Link's Awakening on your conference badge! A neat feature of the badge is that you can turn it upside down and then use game controller touch buttons that are built into the badge body. Tags: games , github , hardware-hacking , ai , generative-ai , llms , gemini , steve-francia",
-    "imageUrl": "https://static.simonwillison.net/static/2026-10-27/IMG_9339.jpeg",
-    "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Game Boy Color on My Conference Badge I'm at GitHub Universe this week and, similar to last year , the conference badge is a full-blown color screen computer. I've been hacking around with it again, and then I ran into with Steve Francia... Who worked with Gemini to get a full NES emulator working on it, and then went a step further and deployed an emulator for both the Game Boy and the Game Boy Color.\n\nWhich means, if you can obtain the ROM, you can run The Legend of Zelda: Link's Awakening on your conference badge! A neat feature of the badge is that you can turn it upside down and then use game controller touch buttons that are built into the badge body. Tags: games , github , hardware-hacking , ai , generative-ai , llms , gemini , steve-francia.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b49ec3bd8394c6fb",
-    "canonicalUrl": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
-    "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
-    "publishedAt": "2026-10-27T17:35:00.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.443Z",
-    "contentHash": "a9d24ada1cc839d6",
-    "sourceId": "google-research",
-    "sourceName": "Google AI Research Blog",
-    "author": "Google AI Research Blog",
-    "contentSnippet": "Education Innovation",
-    "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/LLMSleep_Cover.jpg",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "summary": {
-      "tldr": "The sleep framework: A new way for LLMs to retain knowledge in continual learning.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1c5b51464767c2ad",
-    "canonicalUrl": "https://huggingface.co/blog/LiquidAI/lfm3",
-    "title": "Build specialized multimodal models with LFM3",
-    "publishedAt": "2026-10-27T17:16:52.000Z",
-    "fetchedAt": "2026-11-04T10:13:28.214Z",
-    "contentHash": "e46496ffc591054e",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Build specialized multimodal models with LFM3.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "37742d3845ce7f7b",
-    "canonicalUrl": "https://spectrum.ieee.org/ai-robot-safety-cybersecurity-vicone",
-    "title": "Your Robot’s Safety Functions Already Work. What If the Input Lies?",
-    "publishedAt": "2026-10-27T16:14:39.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "1609af93f33e40a3",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "VicOne",
-    "contentSnippet": "This article is brought to you by VicOne . A mobile robot slows for someone in a hallway. A collaborative arm eases its movement as a worker approaches. A humanoid pauses to let a person pass. Each response depends on information about the robot or its surroundings: a distance reading, a position estimate, or a stop signal. But what happens when one of those inputs is wrong, and the robot still responds exactly as designed? The mobile robot reads the hallway as clear while someone is still there. The arm estimates that the worker is farther away. The humanoid does not receive a stop signal as a person crosses its path. In each case, a fault could cause that mismatch. So could deliberate manipulation . At VicOne LAB R7 , we examine how manipulated inputs can change robot behavior — and what that means for the systems meant to keep people safe. How an untrusted input can change a robot’s behavior A robot does more than measure its surroundings. It may interpret what it sees and hears to decide what to do next. Information placed in its environment can therefore influence its actions. Published research shows how this can happen. In a study of vision-language-action (VLA) models , a patch in a camera’s view reduced task success in simulated robot tests. FreezeVLA found that an adversarial image could cause tested models to ignore later instructions. Although the studies used different methods, both demonstrate how visual input can interfere with a robot’s intended task. In a robot-dog test using Gemma 4 E4B, text on a poster was treated as an instruction and changed the robot’s movement. VicOne LAB R7 also tested how untrusted inputs could change robot behavior. In a robot-dog test using Gemma 4 E4B, text on a poster was treated as an instruction and changed the robot’s movement. In a separate hospital-service-robot simulation using Nemotron on NVIDIA Jetson AGX Orin, crafted audio that is inaudible to people changed the robot’s simulated behavior. The assigned tasks did not change; the inputs did. In a VicOne LAB R7 test, text on a poster changed a robot dog’s movement, illustrating how a crafted input can turn an unlikely outcome into a repeatable attack. VicOne Safety-related decisions have inputs too An independent protective system may still stop a dangerous action. But that system also depends on information: readings, estimates, and messages that tell it",
-    "imageUrl": "https://spectrum.ieee.org/media-library/humanoid-robot-and-robot-dog-meet-a-woman-on-a-sunny-terrace-at-sunset.jpg?id=68002098&width=980",
-    "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "This article is brought to you by VicOne . A mobile robot slows for someone in a hallway. A collaborative arm eases its movement as a worker approaches.\n\nA humanoid pauses to let a person pass. Each response depends on information about the robot or its surroundings: a distance reading, a position estimate, or a stop signal. But what happens when one of those inputs is wrong, and the robot still responds exactly as designed?",
-      "takeaways": [
-        "The mobile robot reads the hallway as clear while someone is still there.",
-        "The arm estimates that the worker is farther away.",
-        "The humanoid does not receive a stop signal as a person crosses its path.",
-        "In each case, a fault could cause that mismatch."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "393575ee7d83ff0a",
-    "canonicalUrl": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
-    "title": "Genie 4: A new generation of world simulation",
-    "publishedAt": "2026-10-27T16:01:38.000Z",
-    "fetchedAt": "2026-11-04T10:13:27.121Z",
-    "contentHash": "aa5f925184dfd384",
-    "sourceId": "deepmind",
-    "sourceName": "Google DeepMind",
-    "author": "Google DeepMind",
-    "contentSnippet": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation.",
-    "imageUrl": "https://lh3.googleusercontent.com/i7iotPkcMbMubxRzAdriO5wsIsowROonBvjLNnmPbOaRgEb1k4LKTBqay5VrcPpZi0R4il_bYCCsPYQ0Gy_-XbAw66azAGEfE-E6_9Izz5apP0BMJVE=w528-h297-n-nu-rw-lo",
-    "category": "LLMs & GenAI",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
