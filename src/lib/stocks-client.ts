@@ -194,15 +194,24 @@ async function fetchSingleTickerQuote(symbol: TickerSymbol): Promise<{
     }
 
     const price = meta.regularMarketPrice;
-    const prevClose = meta.chartPreviousClose || fallback.price;
-    const changeAmount = price - prevClose;
-    const changePercent = (changeAmount / prevClose) * 100;
+    const validQuotes = rawQuotes.filter((p: any): p is number => typeof p === 'number' && !isNaN(p) && p > 0);
+
+    // Yahoo Finance /chart endpoint: meta.chartPreviousClose is the 30-day baseline start price!
+    // For the actual 24h market move, we use meta.regularMarketChangePercent (or compute from the penultimate daily quote).
+    const yesterday = validQuotes.length >= 2
+      ? validQuotes[validQuotes.length - 2]
+      : (typeof meta.previousClose === 'number' ? meta.previousClose : fallback.price);
+
+    const changePercent = typeof meta.regularMarketChangePercent === 'number'
+      ? meta.regularMarketChangePercent
+      : (yesterday > 0 ? ((price - yesterday) / yesterday) * 100 : fallback.changePercent);
+
+    const changeAmount = typeof meta.regularMarketChange === 'number'
+      ? meta.regularMarketChange
+      : (price - yesterday);
 
     // Filter nulls or NaN in sparkline
-    const validSparkline = rawQuotes
-      .filter((p: any): p is number => typeof p === 'number' && !isNaN(p) && p > 0)
-      .slice(-15); // Last 15 trading days
-
+    const validSparkline = validQuotes.slice(-15); // Last 15 trading days
     const sparkline = validSparkline.length >= 5 ? validSparkline : fallback.sparkline;
 
     return {
@@ -304,3 +313,4 @@ export async function getMarketOverview(forceFresh = false): Promise<MarketOverv
 
   return overview;
 }
+

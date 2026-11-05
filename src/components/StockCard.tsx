@@ -189,3 +189,4 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
     </div>
   );
 }
+

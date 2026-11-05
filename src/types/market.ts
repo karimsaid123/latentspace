@@ -80,3 +80,4 @@ export interface MarketOverviewResponse {
   stocks: StockAnalysis[];
   disclaimer: string;
 }
+

@@ -268,3 +268,4 @@ export default function StockDetailModal({ stock, onClose }: StockDetailModalPro
     </div>
   );
 }
+

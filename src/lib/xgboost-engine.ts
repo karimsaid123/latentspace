@@ -215,93 +215,142 @@ export function runXGBoostQuantModel(
       : 0.05;
 
   const momentum = priceChangePercent24h;
-  const highSentiment = avgSentiment > 0.25;
-  const lowSentiment = avgSentiment < -0.2;
-  const strongMomentum = momentum > 2.0;
-  const negativeMomentum = momentum < -1.5;
 
   // Decision Tree Ensemble Simulation (Trained GBDT Trees)
   const decisionPath: string[] = [];
   let treeSum = 0.0;
 
-  // Tree 1: News Catalyst Signal
+  // Tree 1: News Catalyst Signal (Alpha from Research / News)
   if (dispatchCount >= 2) {
-    if (highSentiment) {
-      treeSum += 0.85;
-      decisionPath.push(`Tree_1: High news volume (${dispatchCount} dispatches) with positive sentiment (+${avgSentiment.toFixed(2)}) → Node_L1 (+0.85)`);
-    } else if (lowSentiment) {
-      treeSum -= 0.9;
-      decisionPath.push(`Tree_1: High news volume with negative regulatory/efficiency friction (${avgSentiment.toFixed(2)}) → Node_R1 (-0.90)`);
+    if (avgSentiment > 0.20) {
+      treeSum += 0.55;
+      decisionPath.push(`Tree_1: High news volume (${dispatchCount} dispatches) with positive sentiment (+${avgSentiment.toFixed(2)}) → Node_L1 (+0.55)`);
+    } else if (avgSentiment < -0.10) {
+      treeSum -= 0.60;
+      decisionPath.push(`Tree_1: Regulatory friction or efficiency substitution detected (${avgSentiment.toFixed(2)}) → Node_R1 (-0.60)`);
     } else {
-      treeSum += 0.15;
-      decisionPath.push(`Tree_1: Moderate neutral news volume → Node_M1 (+0.15)`);
+      if (dispatchCount >= 4) {
+        treeSum += 0.10;
+        decisionPath.push(`Tree_1: High dispatch coverage with neutral sentiment balance → Node_M1 (+0.10)`);
+      } else {
+        decisionPath.push(`Tree_1: Moderate neutral news volume → Node_M0 (+0.00)`);
+      }
     }
   } else {
-    treeSum += 0.0;
     decisionPath.push(`Tree_1: Baseline news volume → Zero signal split (+0.00)`);
   }
 
-  // Tree 2: Price Momentum & Volatility Split
-  if (strongMomentum) {
-    if (avgSentiment >= 0) {
+  // Tree 2: Price Momentum & Sentiment Interaction (Technical-Fundamental Alignment)
+  if (momentum >= 2.0) {
+    if (avgSentiment >= 0.10) {
       treeSum += 0.75;
-      decisionPath.push(`Tree_2: Upward price momentum (+${momentum.toFixed(2)}%) confirmed by non-negative news → Node_L2 (+0.75)`);
+      decisionPath.push(`Tree_2: Upward price momentum (+${momentum.toFixed(2)}%) confirmed by positive sentiment → Node_L2 (+0.75)`);
+    } else if (avgSentiment < -0.10) {
+      treeSum -= 0.20;
+      decisionPath.push(`Tree_2: Upward price (+${momentum.toFixed(2)}%) with negative news divergence → Node_R2 (-0.20)`);
     } else {
-      treeSum -= 0.35; // Divergence risk
-      decisionPath.push(`Tree_2: Price up (+${momentum.toFixed(2)}%) but negative news sentiment divergence detected → Node_R2 (-0.35)`);
+      treeSum += 0.45;
+      decisionPath.push(`Tree_2: Technical breakout (+${momentum.toFixed(2)}%) with neutral news baseline → Node_M2 (+0.45)`);
     }
-  } else if (negativeMomentum) {
-    if (lowSentiment) {
-      treeSum -= 0.85;
-      decisionPath.push(`Tree_2: Downward price momentum (${momentum.toFixed(2)}%) amplified by negative sentiment → Node_R3 (-0.85)`);
+  } else if (momentum >= 0.5) {
+    if (avgSentiment >= 0.10) {
+      treeSum += 0.40;
+      decisionPath.push(`Tree_2: Moderate upward momentum (+${momentum.toFixed(2)}%) aligned with positive catalysts → Node_L3 (+0.40)`);
     } else {
-      treeSum += 0.3; // Mean reversion potential
-      decisionPath.push(`Tree_2: Technical pullback (${momentum.toFixed(2)}%) with positive fundamental sentiment (oversold rebound) → Node_L3 (+0.30)`);
+      treeSum += 0.20;
+      decisionPath.push(`Tree_2: Modest upward drift (+${momentum.toFixed(2)}%) → Node_M3 (+0.20)`);
+    }
+  } else if (momentum >= -0.5) {
+    if (avgSentiment > 0.20) {
+      treeSum += 0.15;
+      decisionPath.push(`Tree_2: Flat price action (${momentum.toFixed(2)}%) with coiling positive sentiment → Node_L4 (+0.15)`);
+    } else if (avgSentiment < -0.10) {
+      treeSum -= 0.20;
+      decisionPath.push(`Tree_2: Flat price action (${momentum.toFixed(2)}%) under negative distribution → Node_R4 (-0.20)`);
+    } else {
+      decisionPath.push(`Tree_2: Equilibrium consolidation (${momentum.toFixed(2)}%) → Node_M4 (+0.00)`);
+    }
+  } else if (momentum >= -2.0) {
+    if (avgSentiment > 0.30) {
+      treeSum -= 0.15;
+      decisionPath.push(`Tree_2: Technical pullback (${momentum.toFixed(2)}%) absorbed by strong fundamental news → Node_L5 (-0.15)`);
+    } else if (avgSentiment < -0.10) {
+      treeSum -= 0.55;
+      decisionPath.push(`Tree_2: Downward price drift (${momentum.toFixed(2)}%) confirmed by negative catalysts → Node_R5 (-0.55)`);
+    } else {
+      treeSum -= 0.35;
+      decisionPath.push(`Tree_2: Routine technical drift downward (${momentum.toFixed(2)}%) → Node_M5 (-0.35)`);
     }
   } else {
-    treeSum += (momentum * 0.1);
-    decisionPath.push(`Tree_2: Range-bound momentum consolidation → Linear scale (+${(momentum * 0.1).toFixed(2)})`);
+    // momentum < -2.0 (Significant technical breakdown)
+    if (avgSentiment < -0.10) {
+      treeSum -= 0.90;
+      decisionPath.push(`Tree_2: Severe selloff (${momentum.toFixed(2)}%) amplified by negative sentiment → Node_R6 (-0.90)`);
+    } else if (avgSentiment > 0.25) {
+      treeSum -= 0.40;
+      decisionPath.push(`Tree_2: High-beta selloff (${momentum.toFixed(2)}%) diverging from positive dispatch news → Node_L6 (-0.40)`);
+    } else {
+      treeSum -= 0.65;
+      decisionPath.push(`Tree_2: Sharp technical breakdown (${momentum.toFixed(2)}%) overriding neutral news → Node_M6 (-0.65)`);
+    }
   }
 
-  // Tree 3: Sector Specific Substitution Moat
+  // Tree 3: Sector Moat & Cyclical Sensitivity
   if (symbol === 'NVDA' || symbol === 'TSM' || symbol === 'ASML') {
-    // Hardware monopoly weight
-    treeSum += 0.4;
-    decisionPath.push(`Tree_3: Silicon fabrication monopoly factor applied (+0.40)`);
-  } else if (symbol === 'MSFT' || symbol === 'GOOGL') {
-    // Hyperscaler capital expenditure moats
-    treeSum += 0.25;
-    decisionPath.push(`Tree_3: Hyperscaler enterprise compute scale moat applied (+0.25)`);
+    if (momentum >= 0) {
+      treeSum += 0.20;
+      decisionPath.push(`Tree_3: Silicon fabrication monopoly factor tailwind applied (+0.20)`);
+    } else {
+      treeSum -= 0.15;
+      decisionPath.push(`Tree_3: High-beta semiconductor cyclical drawdown applied (-0.15)`);
+    }
+  } else if (symbol === 'MSFT' || symbol === 'GOOGL' || symbol === 'AMZN') {
+    if (momentum >= 0) {
+      treeSum += 0.15;
+      decisionPath.push(`Tree_3: Hyperscaler enterprise compute scale moat applied (+0.15)`);
+    } else {
+      treeSum -= 0.05;
+      decisionPath.push(`Tree_3: Hyperscaler defensive balance sheet cushioning applied (-0.05)`);
+    }
   } else {
-    treeSum += 0.1;
-    decisionPath.push(`Tree_3: Enterprise software margin stability applied (+0.10)`);
+    if (momentum >= 0) {
+      treeSum += 0.10;
+      decisionPath.push(`Tree_3: Enterprise software margin expansion applied (+0.10)`);
+    } else {
+      treeSum -= 0.10;
+      decisionPath.push(`Tree_3: Enterprise multiple compression & execution friction applied (-0.10)`);
+    }
   }
 
-  // Calibrate final signal via Sigmoid mapping
+  // Calibrate final signal via hyperbolic tangent (bounded [-1.0, +1.0])
   const normalizedSignal = Math.tanh(treeSum);
-  const confidencePercent = Math.min(95, Math.max(55, Math.round(50 + Math.abs(normalizedSignal) * 45)));
+  const confidencePercent = Math.min(96, Math.max(52, Math.round(50 + Math.abs(normalizedSignal) * 46)));
 
   // Determine Trajectory
   let trajectory: ModelTrajectory = 'RANGE_BOUND_ACCUMULATION';
   let thesis = '';
   let riskLevel: RiskLevel = 'MEDIUM';
 
-  if (normalizedSignal > 0.45) {
-    trajectory = 'BULLISH_EXPANSION';
-    riskLevel = momentum > 5 ? 'HIGH' : 'MEDIUM';
-    thesis = `The GBDT model identifies algorithmic positive reinforcement between recent frontier research developments and capital deployment for ${companyName}. Upward momentum is backed by sustained dispatch volume.`;
-  } else if (normalizedSignal < -0.4) {
-    trajectory = 'BEARISH_CONTRACTION';
-    riskLevel = momentum < -5 ? 'EXTREME' : 'HIGH';
-    thesis = `The model flags technical divergence and regulatory or architectural efficiency substitution risks. Dispatches highlight margin pressures or compute optimization that may compress hardware premium.`;
-  } else if (Math.abs(momentum) > 3.5) {
+  const isHighVolatility = Math.abs(momentum) >= 4.0 || 
+    (momentum < -1.5 && avgSentiment > 0.25) || 
+    (momentum > 2.5 && avgSentiment < -0.15);
+
+  if (isHighVolatility) {
     trajectory = 'HIGH_VOLATILITY_CHURN';
     riskLevel = 'EXTREME';
-    thesis = `High technical volatility detected without clear multi-day sentiment convergence. Elevated gamma risk suggests wide trading range and sudden mean-reversion spikes.`;
+    thesis = `The GBDT model detects elevated gamma risk and sharp volatility for ${companyName}. Significant price swings (${momentum >= 0 ? '+' : ''}${momentum.toFixed(2)}%) diverge from or exceed underlying dispatch sentiment, suggesting rapid institutional positioning and turnover.`;
+  } else if (normalizedSignal > 0.25 && momentum > 0.2) {
+    trajectory = 'BULLISH_EXPANSION';
+    riskLevel = momentum > 3.0 ? 'HIGH' : 'MEDIUM';
+    thesis = `The GBDT model identifies algorithmic positive reinforcement between recent frontier research developments and capital deployment for ${companyName}. Upward momentum (+${momentum.toFixed(2)}%) is confirmed by sustained dispatch volume.`;
+  } else if (normalizedSignal < -0.25 || (momentum < -2.0 && normalizedSignal < 0.10)) {
+    trajectory = 'BEARISH_CONTRACTION';
+    riskLevel = momentum < -4.0 ? 'EXTREME' : 'HIGH';
+    thesis = `The model flags technical contraction and capital reallocation pressures for ${companyName}. Downward momentum (${momentum.toFixed(2)}%) overrides sentiment, with dispatches reflecting efficiency substitution or valuation compression.`;
   } else {
     trajectory = 'RANGE_BOUND_ACCUMULATION';
     riskLevel = 'LOW';
-    thesis = `Model indicates balanced liquidity and neutral sentiment parity. Price is consolidating within current technical bounds awaiting next major frontier model benchmark catalyst.`;
+    thesis = `Model indicates balanced liquidity and neutral sentiment parity for ${companyName}. Price is consolidating (${momentum >= 0 ? '+' : ''}${momentum.toFixed(2)}%) within current technical bounds awaiting next major frontier model benchmark catalyst.`;
   }
 
   return {
@@ -320,3 +369,4 @@ export function runXGBoostQuantModel(
     decisionPath
   };
 }
+

@@ -127,6 +127,34 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     // Feature weights sum to 1.0
     const sumWeights = Object.values(prediction.featureImportance).reduce((a, b) => a + b, 0);
     assert.ok(Math.abs(sumWeights - 1.0) < 0.01, `Feature weights should sum to 1.0, got ${sumWeights}`);
+
+    // Verify Bearish Contraction when momentum is down with negative catalysts
+    const bearCatalysts = [
+      {
+        articleId: '3',
+        title: 'Antitrust probe targets enterprise cloud licensing',
+        sourceName: 'FT',
+        publishedAt: '2026-11-05T00:00:00Z',
+        sentiment: -0.6,
+        correlationWeight: 0.9,
+        catalystType: 'Regulatory & Export Dynamics',
+        summarySnippet: 'Friction.',
+        url: 'https://example.com'
+      }
+    ];
+    const bearPred = runXGBoostQuantModel('MSFT', 'Microsoft Corporation', -2.8, bearCatalysts);
+    assert.equal(bearPred.trajectory, 'BEARISH_CONTRACTION');
+    assert.ok(bearPred.signalScore < 0);
+
+    // Verify High Volatility Churn on extreme swings
+    const churnPred = runXGBoostQuantModel('NVDA', 'NVIDIA Corporation', -6.5, catalysts);
+    assert.equal(churnPred.trajectory, 'HIGH_VOLATILITY_CHURN');
+    assert.equal(churnPred.riskLevel, 'EXTREME');
+
+    // Verify Range-Bound Accumulation on neutral flat action
+    const flatPred = runXGBoostQuantModel('PLTR', 'Palantir Technologies', 0.1, []);
+    assert.equal(flatPred.trajectory, 'RANGE_BOUND_ACCUMULATION');
+    assert.equal(flatPred.riskLevel, 'LOW');
   });
 
   it('resolves market overview with full stock roster and macro sentiment', async () => {
@@ -142,3 +170,4 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     assert.ok(nvda.prediction);
   });
 });
+
