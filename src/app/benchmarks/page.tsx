@@ -26,6 +26,7 @@ import { LmsysArenaModel } from '@/lib/lmarena-client';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import LiveClock from '@/components/LiveClock';
+import MobileHeader from '@/components/MobileHeader';
 import ThemeToggle from '@/components/ThemeToggle';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
@@ -201,7 +202,7 @@ export default function BenchmarksPage() {
       ───────────────────────────────────────────────────────────── */}
       <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase border-b border-black/15">
         {/* Top line: Brand and Desktop Controls / Mobile Utilities */}
-        <div className="flex items-center justify-between pb-2.5 sm:pb-3.5 gap-2 sm:gap-4">
+        <div className="hidden sm:flex items-center justify-between pb-3.5 gap-4">
           
           {/* Brand & Breadcrumb */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
@@ -255,41 +256,10 @@ export default function BenchmarksPage() {
             </div>
           </div>
 
-          {/* Mobile Utilities (below sm) */}
-          <div className="flex sm:hidden items-center gap-2 text-[10px] text-black/70 shrink-0">
-            <Link
-              href="/saved"
-              className="border border-black/35 hover:border-black px-2 py-1 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 flex items-center justify-center"
-              title="View your saved articles dossier"
-            >
-              <span>[<span className="text-[#ff8000]">★</span>]</span>
-            </Link>
-
-            <ThemeToggle />
-          </div>
 
         </div>
 
-        {/* Mobile Primary Section Navigation Tabs (< sm only) */}
-        <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2 pb-0.5 text-[10px] border-t border-black/10 font-mono tracking-wider font-bold">
-          <Link
-            href="/"
-            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-          >
-            [DISPATCHES]
-          </Link>
-
-          <span className="text-black font-black border-b-2 border-black pb-0.5">
-            [BENCHMARKS]
-          </span>
-
-          <Link
-            href="/codex"
-            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-          >
-            [CODEX]
-          </Link>
-        </nav>
+        <MobileHeader active="benchmarks" />
       </header>
 
       {/* ─────────────────────────────────────────────────────────────

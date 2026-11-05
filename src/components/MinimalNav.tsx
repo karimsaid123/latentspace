@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect, memo } from 'react';
 import Link from 'next/link';
 import LiveClock from './LiveClock';
 import { LastSyncedIndicator } from './LastSyncedIndicator';
+import MobileHeader from './MobileHeader';
 import ThemeToggle from './ThemeToggle';
 import VectorPulse from './VectorPulse';
 import type { VectorPulseSnapshot } from '@/types';
@@ -104,7 +105,7 @@ const MinimalNav = memo(function MinimalNav({
     <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
       {/* Top line: Responsive Brand & Utilities */}
-      <div className="relative flex items-center justify-between border-b sm:border-b border-black/15 pb-2.5 sm:pb-3 gap-2 sm:gap-4">
+      <div className="relative hidden sm:flex items-center justify-between border-b border-black/15 pb-3 gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
@@ -170,49 +171,13 @@ const MinimalNav = memo(function MinimalNav({
           </div>
         </div>
 
-        {/* Mobile Quick Actions (Search, Saved, Theme Toggle) */}
-        <div className="flex sm:hidden items-center gap-1.5 text-[10px] text-black/70 shrink-0">
-          <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap h-7 flex items-center px-1"
-            title="Search dispatches"
-          >
-            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
-          </button>
-
-          <Link
-            href="/saved"
-            className="border border-black/35 hover:border-black px-1.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 flex items-center justify-center"
-            title="Saved articles"
-          >
-            <span>[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
-          </Link>
-
-          <ThemeToggle />
-        </div>
-
       </div>
 
-      {/* Mobile Primary Section Navigation Tabs (< sm only) */}
-      <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2.5 pb-2 text-[10px] border-b border-black/15 font-mono tracking-wider font-bold">
-        <span className="text-black font-black border-b-2 border-black pb-0.5">
-          [DISPATCHES]
-        </span>
-
-        <Link
-          href="/benchmarks"
-          className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-        >
-          [BENCHMARKS]
-        </Link>
-
-        <Link
-          href="/codex"
-          className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-        >
-          [CODEX]
-        </Link>
-      </nav>
+      <MobileHeader
+        active="feed"
+        onToggleSearch={() => setIsSearchOpen(!isSearchOpen)}
+        isSearchOpen={isSearchOpen}
+      />
 
       {/* Inline Search Bar if toggled */}
       {isSearchOpen && (
@@ -237,7 +202,7 @@ const MinimalNav = memo(function MinimalNav({
       )}
 
       {/* Frontier Labs & Publications Filter Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 mt-3 sm:mt-0 border-t sm:border-t-0 border-black/15 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60">
         
         {/* Lab Sectors */}
         <div 

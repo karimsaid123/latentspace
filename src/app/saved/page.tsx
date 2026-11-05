@@ -13,6 +13,7 @@ import EditorialModal from '@/components/EditorialModal';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
 import LiveClock from '@/components/LiveClock';
+import MobileHeader from '@/components/MobileHeader';
 import ThemeToggle from '@/components/ThemeToggle';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
@@ -260,43 +261,7 @@ export default function SavedPage() {
 
         </div>
 
-        {/* Mobile Header Line 1: Brand & Theme Toggle (< sm only) */}
-        <div className="flex sm:hidden items-center justify-between pb-2.5 gap-2">
-          <Link href="/" className="font-black text-sm tracking-tight text-black flex items-center gap-1.5 hover:opacity-75 transition-opacity">
-            LATENT SPACE
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
-          </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold text-black border border-black/30 px-1.5 py-0.5">
-              [<span className="text-[#ff8000]">★</span> SAVED]
-            </span>
-            <ThemeToggle />
-          </div>
-        </div>
-
-        {/* Mobile Primary Section Navigation Tabs (< sm only) */}
-        <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2 pb-0.5 text-[10px] border-t border-black/10 font-mono tracking-wider font-bold">
-          <Link
-            href="/"
-            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-          >
-            [DISPATCHES]
-          </Link>
-
-          <Link
-            href="/benchmarks"
-            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-          >
-            [BENCHMARKS]
-          </Link>
-
-          <Link
-            href="/codex"
-            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
-          >
-            [CODEX]
-          </Link>
-        </nav>
+        <MobileHeader active="saved" />
       </header>
 
       {/* ─────────────────────────────────────────────────────────────
