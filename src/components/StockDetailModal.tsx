@@ -49,12 +49,6 @@ export default function StockDetailModal({ stock, onClose }: StockDetailModalPro
         onClick={(e) => e.stopPropagation()}
         style={{ scrollbarWidth: 'thin' }}
       >
-        {/* Geometric Corner Accents */}
-        <div className="absolute -top-1.5 -left-1.5 w-3 h-3 bg-black" />
-        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-black" />
-        <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-black" />
-        <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-black" />
-
         {/* Top Control Bar */}
         <div className="flex items-center justify-between pb-4 border-b border-black/15 gap-3">
           <div className="flex items-center gap-2 text-[10px] sm:text-xs uppercase tracking-wider flex-wrap">

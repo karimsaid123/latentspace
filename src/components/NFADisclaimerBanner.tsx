@@ -29,12 +29,6 @@ export default function NFADisclaimerBanner({ className = '' }: NFADisclaimerBan
 
   return (
     <div className={`relative mb-8 p-4 sm:p-5 border-2 border-black bg-white shadow-xs font-mono select-none ${className}`}>
-      {/* Corner geometric accents */}
-      <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-      <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-black/15">
         <div className="flex items-center gap-2.5">
           <div className="p-1 bg-[#ff8000] text-black">

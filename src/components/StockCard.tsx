@@ -62,12 +62,6 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
 
   return (
     <div className="relative border-2 border-black bg-white p-5 sm:p-6 font-mono select-none flex flex-col justify-between hover:shadow-md transition-shadow">
-      {/* Corner geometric accents */}
-      <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-      <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-      <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-      <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
       {/* Top Header */}
       <div>
         <div className="flex items-start justify-between gap-3 pb-3 border-b border-black/15">
@@ -211,11 +205,7 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
       </div>
 
       {/* Action Footer */}
-      <div className="pt-4 mt-2 border-t border-black/15 flex items-center justify-between">
-        <span className="text-[10px] text-black/50 font-bold">
-          RISK: [{stock.prediction.riskLevel}]
-        </span>
-
+      <div className="pt-4 mt-2 border-t border-black/15 flex items-center justify-end">
         <button
           onClick={() => onOpenDetails(stock)}
           className="border border-black px-3 py-1.5 text-xs font-bold tracking-wider hover:bg-black hover:text-white transition-colors cursor-pointer flex items-center gap-1"
