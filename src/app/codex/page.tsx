@@ -80,7 +80,8 @@ function CodexContent() {
     <div className="min-h-screen bg-[#faf9f6] text-black font-mono selection:bg-black selection:text-white flex flex-col">
       {/* Top Header */}
       <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto uppercase tracking-widest text-xs border-b border-black/15">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Desktop Header Line (sm and up) */}
+        <div className="hidden sm:flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Link 
               href="/"
@@ -105,6 +106,36 @@ function CodexContent() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Header Line 1: Brand & Theme Toggle (< sm only) */}
+        <div className="flex sm:hidden items-center justify-between pb-2.5 gap-2">
+          <Link href="/" className="font-black text-sm tracking-tight text-black flex items-center gap-1.5 hover:opacity-75 transition-opacity">
+            LATENT SPACE
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
+          </Link>
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile Primary Section Navigation Tabs (< sm only) */}
+        <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2 pb-0.5 text-[10px] border-t border-black/10 font-mono tracking-wider font-bold">
+          <Link
+            href="/"
+            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+          >
+            [DISPATCHES]
+          </Link>
+
+          <Link
+            href="/benchmarks"
+            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+          >
+            [BENCHMARKS]
+          </Link>
+
+          <span className="text-black font-black border-b-2 border-black pb-0.5">
+            [CODEX]
+          </span>
+        </nav>
       </header>
 
       {/* Main Terminal Header */}

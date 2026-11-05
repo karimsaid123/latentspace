@@ -103,8 +103,8 @@ const MinimalNav = memo(function MinimalNav({
   return (
     <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
       
-      {/* Top minimal line */}
-      <div className="relative flex items-center justify-between border-b border-black/15 pb-3 overflow-hidden gap-2 sm:gap-4">
+      {/* Top line: Responsive Brand & Utilities */}
+      <div className="relative flex items-center justify-between border-b sm:border-b border-black/15 pb-2.5 sm:pb-3 gap-2 sm:gap-4">
         {isSyncing && (
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
             <div className="h-full bg-black w-1/3 animate-scanline" />
@@ -113,14 +113,14 @@ const MinimalNav = memo(function MinimalNav({
 
         {/* Brand */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <span className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2">
+          <Link href="/" className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2 hover:opacity-85 transition-opacity">
             LATENT SPACE
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
-          </span>
+          </Link>
         </div>
 
-        {/* Minimal Controls */}
-        <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
+        {/* Desktop Controls (sm and up) */}
+        <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
           <div className="hidden md:block shrink-0">
             <LastSyncedIndicator
               lastSyncedTime={lastSyncedTime}
@@ -142,8 +142,7 @@ const MinimalNav = memo(function MinimalNav({
             className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
             title="Open your saved articles dossier"
           >
-            <span className="sm:hidden">[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
-            <span className="hidden sm:inline">[<span className="text-[#ff8000]">★</span> SAVED ({savedCount})]</span>
+            <span>[<span className="text-[#ff8000]">★</span> SAVED ({savedCount})]</span>
           </Link>
 
           <Link
@@ -152,8 +151,7 @@ const MinimalNav = memo(function MinimalNav({
             className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
             title="Independent Artificial Analysis Benchmarks & Stats"
           >
-            <span className="sm:hidden">[STATS]</span>
-            <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
+            <span>[BENCHMARKS & STATS]</span>
           </Link>
 
           <Link
@@ -172,7 +170,49 @@ const MinimalNav = memo(function MinimalNav({
           </div>
         </div>
 
+        {/* Mobile Quick Actions (Search, Saved, Theme Toggle) */}
+        <div className="flex sm:hidden items-center gap-1.5 text-[10px] text-black/70 shrink-0">
+          <button
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap h-7 flex items-center px-1"
+            title="Search dispatches"
+          >
+            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
+          </button>
+
+          <Link
+            href="/saved"
+            className="border border-black/35 hover:border-black px-1.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 flex items-center justify-center"
+            title="Saved articles"
+          >
+            <span>[<span className="text-[#ff8000]">★</span> {savedCount}]</span>
+          </Link>
+
+          <ThemeToggle />
+        </div>
+
       </div>
+
+      {/* Mobile Primary Section Navigation Tabs (< sm only) */}
+      <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2.5 pb-2 text-[10px] border-b border-black/15 font-mono tracking-wider font-bold">
+        <span className="text-black font-black border-b-2 border-black pb-0.5">
+          [DISPATCHES]
+        </span>
+
+        <Link
+          href="/benchmarks"
+          className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+        >
+          [BENCHMARKS]
+        </Link>
+
+        <Link
+          href="/codex"
+          className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+        >
+          [CODEX]
+        </Link>
+      </nav>
 
       {/* Inline Search Bar if toggled */}
       {isSearchOpen && (
@@ -223,7 +263,7 @@ const MinimalNav = memo(function MinimalNav({
 
         {/* Publication Format Selector & Vector Pulse Dropdown Trigger */}
         <div 
-          className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1"
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1 -mx-6 px-6 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <span className="text-black font-bold shrink-0">TYPE:</span>

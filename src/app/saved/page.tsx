@@ -205,8 +205,9 @@ export default function SavedPage() {
       {/* ─────────────────────────────────────────────────────────────
           TOP EDITORIAL NAVIGATION HEADER
       ───────────────────────────────────────────────────────────── */}
-      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
-        <div className="flex items-center justify-between border-b border-black/15 pb-3.5 gap-4">
+      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase border-b border-black/15">
+        {/* Desktop Header Line (sm and up) */}
+        <div className="hidden sm:flex items-center justify-between pb-3.5 gap-4">
           
           {/* Brand */}
           <div className="flex items-center gap-3">
@@ -230,8 +231,15 @@ export default function SavedPage() {
               className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
               title="Independent Artificial Analysis Benchmarks & Stats"
             >
-              <span className="sm:hidden">[STATS]</span>
-              <span className="hidden sm:inline">[BENCHMARKS & STATS]</span>
+              <span>[BENCHMARKS & STATS]</span>
+            </Link>
+
+            <Link
+              href="/codex"
+              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[95px]"
+              title="LatentSpace AI & ML Deterministic Codex"
+            >
+              <span>[CODEX]</span>
             </Link>
 
             <Link
@@ -239,8 +247,7 @@ export default function SavedPage() {
               className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
               title="Return to Frontier Feed"
             >
-              <span className="sm:hidden">[← FEED]</span>
-              <span className="hidden sm:inline">[← RETURN TO FEED]</span>
+              <span>[← RETURN TO FEED]</span>
             </Link>
 
             <ThemeToggle />
@@ -252,6 +259,44 @@ export default function SavedPage() {
           </div>
 
         </div>
+
+        {/* Mobile Header Line 1: Brand & Theme Toggle (< sm only) */}
+        <div className="flex sm:hidden items-center justify-between pb-2.5 gap-2">
+          <Link href="/" className="font-black text-sm tracking-tight text-black flex items-center gap-1.5 hover:opacity-75 transition-opacity">
+            LATENT SPACE
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
+          </Link>
+          <div className="flex items-center gap-2">
+            <span className="text-[10px] font-bold text-black border border-black/30 px-1.5 py-0.5">
+              [<span className="text-[#ff8000]">★</span> SAVED]
+            </span>
+            <ThemeToggle />
+          </div>
+        </div>
+
+        {/* Mobile Primary Section Navigation Tabs (< sm only) */}
+        <nav aria-label="Mobile Navigation" className="flex sm:hidden items-center justify-between pt-2 pb-0.5 text-[10px] border-t border-black/10 font-mono tracking-wider font-bold">
+          <Link
+            href="/"
+            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+          >
+            [DISPATCHES]
+          </Link>
+
+          <Link
+            href="/benchmarks"
+            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+          >
+            [BENCHMARKS]
+          </Link>
+
+          <Link
+            href="/codex"
+            className="border border-black/30 hover:border-black px-2 py-0.5 text-black/70 hover:text-black hover:bg-black/5 transition-colors"
+          >
+            [CODEX]
+          </Link>
+        </nav>
       </header>
 
       {/* ─────────────────────────────────────────────────────────────

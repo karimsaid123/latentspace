@@ -2051,3 +2051,4 @@ if (errors > 0) {
 // Write atomically to data/codex.json
 fs.writeFileSync(codexPath, JSON.stringify(allEntries, null, 2), 'utf8');
 console.log(`[SUCCESS] data/codex.json updated with ${allEntries.length} verified specifications!`);
+
