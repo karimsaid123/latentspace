@@ -58,6 +58,12 @@ export interface NewsCatalyst {
   url: string;
 }
 
+export interface PriceChannel30d {
+  low: number;
+  base: number;
+  high: number;
+}
+
 export interface XGBoostPrediction {
   trajectory: ModelTrajectory;
   confidencePercent: number; // 0 to 100
@@ -72,6 +78,14 @@ export interface XGBoostPrediction {
     volatility: number;
   };
   decisionPath: string[];
+  rsi14?: number;
+  smaTrend?: 'UPWARD_EXPANSION' | 'NEUTRAL_FLAT' | 'DOWNWARD_DRIFT';
+  sma5?: number;
+  sma15?: number;
+  relativeAlpha?: number;
+  volatilityAnnualized?: number;
+  expected30dChannel?: PriceChannel30d;
+  paperVelocityScore?: number;
 }
 
 export interface StockQuote {

@@ -4,7 +4,11 @@ import {
   TICKER_DEFINITIONS, 
   calculateArticleSentiment, 
   correlateArticlesForTicker, 
-  runXGBoostQuantModel 
+  runXGBoostQuantModel,
+  calculateRSI14,
+  calculateSMA,
+  calculateVolatility,
+  calculate30dChannel
 } from '../src/lib/xgboost-engine';
 import { 
   VERIFIED_MARKET_SNAPSHOT, 
@@ -165,6 +169,24 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     assert.equal(flatPred.riskLevel, 'LOW');
   });
 
+  it('computes accurate multi-horizon technical indicators and 30-day target channels', () => {
+    const quotes = [100, 102, 105, 103, 108, 112, 110, 115, 120, 122];
+    const rsi = calculateRSI14(quotes);
+    assert.ok(rsi >= 0 && rsi <= 100);
+    assert.ok(rsi > 60, 'Consecutive gains should yield high RSI');
+
+    const sma5 = calculateSMA(quotes, 5);
+    assert.ok(sma5 > 100);
+
+    const vol = calculateVolatility(quotes);
+    assert.ok(vol.annualizedVol > 0);
+
+    const channel = calculate30dChannel(122, vol.dailyVol, 0.5);
+    assert.ok(channel.low < channel.base);
+    assert.ok(channel.base < channel.high);
+    assert.ok(channel.low > 0);
+  });
+
   it('resolves market overview with full stock roster and macro sentiment', async () => {
     const overview = await getMarketOverview();
     assert.ok(overview);
@@ -176,6 +198,9 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     assert.ok(nvda);
     assert.ok(nvda.currentPrice > 0);
     assert.ok(nvda.prediction);
+    assert.ok(typeof nvda.prediction.rsi14 === 'number');
+    assert.ok(nvda.prediction.expected30dChannel);
+    assert.ok(nvda.prediction.expected30dChannel.low < nvda.prediction.expected30dChannel.high);
 
     const tsla = overview.stocks.find(s => s.symbol === 'TSLA');
     assert.ok(tsla);

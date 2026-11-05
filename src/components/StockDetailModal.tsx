@@ -145,6 +145,94 @@ export default function StockDetailModal({ stock, onClose }: StockDetailModalPro
             </p>
           </div>
 
+          {/* Multi-Horizon Technical & Volatility Telemetry Grid */}
+          <div className="my-4 p-4 border border-black/20 bg-black/[0.02]">
+            <span className="text-[10px] text-black/60 uppercase block font-bold mb-3 tracking-wider">
+              [MULTI-HORIZON QUANT INDICATORS]
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+              <div className="p-2 border border-black/15 bg-white">
+                <span className="text-[9px] text-black/50 block">RSI (14-DAY)</span>
+                <span className={`text-base font-black ${
+                  (stock.prediction.rsi14 || 50) < 30 ? 'text-amber-700 dark:text-amber-400' :
+                  (stock.prediction.rsi14 || 50) > 70 ? 'text-rose-700 dark:text-rose-400' : 'text-black'
+                }`}>
+                  {stock.prediction.rsi14?.toFixed(1) || '50.0'}
+                </span>
+                <span className="text-[8px] text-black/50 block mt-0.5">
+                  {(stock.prediction.rsi14 || 50) < 30 ? '[OVERSOLD REBOUND]' :
+                   (stock.prediction.rsi14 || 50) > 70 ? '[OVERBOUGHT PULLBACK]' : '[NEUTRAL CHANNEL]'}
+                </span>
+              </div>
+
+              <div className="p-2 border border-black/15 bg-white">
+                <span className="text-[9px] text-black/50 block">SMA TREND</span>
+                <span className="text-base font-black text-black">
+                  {stock.prediction.smaTrend === 'UPWARD_EXPANSION' ? 'EXPANSION' :
+                   stock.prediction.smaTrend === 'DOWNWARD_DRIFT' ? 'DRIFT' : 'FLAT'}
+                </span>
+                <span className="text-[8px] text-black/50 block mt-0.5">
+                  SMA-5: ${stock.prediction.sma5?.toFixed(1) || '—'} // 15: ${stock.prediction.sma15?.toFixed(1) || '—'}
+                </span>
+              </div>
+
+              <div className="p-2 border border-black/15 bg-white">
+                <span className="text-[9px] text-black/50 block">RELATIVE ALPHA</span>
+                <span className={`text-base font-black ${
+                  (stock.prediction.relativeAlpha || 0) >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'
+                }`}>
+                  {(stock.prediction.relativeAlpha || 0) >= 0 ? '+' : ''}{stock.prediction.relativeAlpha?.toFixed(2) || '0.00'}%
+                </span>
+                <span className="text-[8px] text-black/50 block mt-0.5">
+                  VS TECH COMPOSITE
+                </span>
+              </div>
+
+              <div className="p-2 border border-black/15 bg-white">
+                <span className="text-[9px] text-black/50 block">HIST. VOLATILITY</span>
+                <span className="text-base font-black text-black">
+                  {stock.prediction.volatilityAnnualized?.toFixed(1) || '30.0'}%
+                </span>
+                <span className="text-[8px] text-black/50 block mt-0.5">
+                  ANNUALIZED SIGMA
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* 30-Day Quant Channel Target Box */}
+          {stock.prediction.expected30dChannel && (
+            <div className="my-4 p-4 border border-black/20 bg-white">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] text-black/60 uppercase font-bold tracking-wider">
+                  [ESTIMATED 30-DAY PRICE CHANNEL]
+                </span>
+                <span className="text-[10px] text-[#ff8000] font-bold">
+                  BASE TARGET: ${stock.prediction.expected30dChannel.base.toFixed(2)}
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between text-xs font-mono font-bold py-2 border-y border-black/10">
+                <div className="text-rose-700 dark:text-rose-400">
+                  <span className="text-[9px] block text-black/50 font-normal">LOWER BOUND</span>
+                  <span>${stock.prediction.expected30dChannel.low.toFixed(2)}</span>
+                </div>
+                <div className="text-center font-black text-black text-sm">
+                  <span className="text-[9px] block text-black/50 font-normal">CURRENT</span>
+                  <span>${stock.currentPrice.toFixed(2)}</span>
+                </div>
+                <div className="text-right text-emerald-700 dark:text-emerald-400">
+                  <span className="text-[9px] block text-black/50 font-normal">UPPER BOUND</span>
+                  <span>${stock.prediction.expected30dChannel.high.toFixed(2)}</span>
+                </div>
+              </div>
+
+              <p className="mt-2 text-[10px] font-sans text-black/60 leading-relaxed">
+                Channel calculated via 21-day diffusion model integrating historical price volatility (σ), directional model drift, and time-decayed research alpha.
+              </p>
+            </div>
+          )}
+
           {/* Feature Importance Bars */}
           <div className="pt-4 border-t border-black/10">
             <span className="text-[10px] text-black/60 uppercase block font-bold mb-3">

@@ -430,44 +430,57 @@ export async function getMarketOverview(forceFresh = false): Promise<MarketOverv
   const stocks: StockAnalysis[] = [];
   let aggregateSentiment = 0;
 
-  // Process all 12 tickers in parallel
-  const tickerPromises = TICKER_DEFINITIONS.map(async (def) => {
-    const liveData = await fetchSingleTickerQuote(def.symbol);
-    const fallback = VERIFIED_MARKET_SNAPSHOT[def.symbol];
-    const correlated = correlateArticlesForTicker(articles, def);
+  // 1. Fetch live quotes and correlated articles for all tickers in parallel
+  const rawTickerData = await Promise.all(
+    TICKER_DEFINITIONS.map(async (def) => {
+      const liveData = await fetchSingleTickerQuote(def.symbol);
+      const fallback = VERIFIED_MARKET_SNAPSHOT[def.symbol];
+      const correlated = correlateArticlesForTicker(articles, def);
+      return { def, liveData, fallback, correlated };
+    })
+  );
 
+  // 2. Compute tech sector composite mean return for Relative Alpha calculations
+  const totalChange = rawTickerData.reduce((acc, item) => acc + item.liveData.changePercent, 0);
+  const techSectorMeanChange = rawTickerData.length > 0 ? totalChange / rawTickerData.length : 0;
+
+  // 3. Execute 6-Tree GBDT Quant Model with Multi-Horizon Indicators
+  const resolvedStocks: StockAnalysis[] = [];
+
+  for (const item of rawTickerData) {
     const prediction = runXGBoostQuantModel(
-      def.symbol,
-      def.companyName,
-      liveData.changePercent,
-      correlated
+      item.def.symbol,
+      item.def.companyName,
+      item.liveData.changePercent,
+      item.correlated,
+      item.liveData.sparkline,
+      techSectorMeanChange,
+      item.liveData.price
     );
 
     aggregateSentiment += prediction.signalScore;
 
     const analysis: StockAnalysis = {
-      symbol: def.symbol,
-      companyName: def.companyName,
-      category: def.category,
-      sectorLabel: def.sectorLabel,
-      currentPrice: liveData.price,
-      changeAmount: liveData.changeAmount,
-      changePercent: liveData.changePercent,
+      symbol: item.def.symbol,
+      companyName: item.def.companyName,
+      category: item.def.category,
+      sectorLabel: item.def.sectorLabel,
+      currentPrice: item.liveData.price,
+      changeAmount: item.liveData.changeAmount,
+      changePercent: item.liveData.changePercent,
       currency: 'USD',
-      marketCapFormatted: fallback.marketCap,
-      volumeFormatted: fallback.volume,
-      sparkline: liveData.sparkline,
-      high52w: liveData.high52w,
-      low52w: liveData.low52w,
+      marketCapFormatted: item.fallback.marketCap,
+      volumeFormatted: item.fallback.volume,
+      sparkline: item.liveData.sparkline,
+      high52w: item.liveData.high52w,
+      low52w: item.liveData.low52w,
       prediction,
-      correlatedArticles: correlated,
+      correlatedArticles: item.correlated,
       lastModelRun: new Date().toISOString()
     };
 
-    return analysis;
-  });
-
-  const resolvedStocks = await Promise.all(tickerPromises);
+    resolvedStocks.push(analysis);
+  }
 
   const meanSentiment = resolvedStocks.length > 0 
     ? aggregateSentiment / resolvedStocks.length 

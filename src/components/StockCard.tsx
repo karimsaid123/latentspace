@@ -138,9 +138,47 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
             {traj.label}
           </div>
 
-          <p className="mt-2 text-[11px] font-sans text-black/75 leading-relaxed line-clamp-2">
+          {/* Technical Telemetry Pill Row (RSI, Trend, Relative Alpha) */}
+          <div className="grid grid-cols-3 gap-1.5 my-2.5 font-mono text-[9px]">
+            <div className="border border-black/15 bg-white p-1 text-center">
+              <span className="text-black/50 block text-[8px]">RSI-14</span>
+              <span className={`font-bold ${
+                (stock.prediction.rsi14 || 50) < 30 ? 'text-amber-700 dark:text-amber-400' :
+                (stock.prediction.rsi14 || 50) > 70 ? 'text-rose-700 dark:text-rose-400' : 'text-black'
+              }`}>
+                {stock.prediction.rsi14?.toFixed(1) || '50.0'}
+              </span>
+            </div>
+            <div className="border border-black/15 bg-white p-1 text-center">
+              <span className="text-black/50 block text-[8px]">SMA TREND</span>
+              <span className="font-bold text-black truncate block">
+                {stock.prediction.smaTrend === 'UPWARD_EXPANSION' ? 'EXPANSION ↑' : 
+                 stock.prediction.smaTrend === 'DOWNWARD_DRIFT' ? 'DRIFT ↓' : 'FLAT —'}
+              </span>
+            </div>
+            <div className="border border-black/15 bg-white p-1 text-center">
+              <span className="text-black/50 block text-[8px]">REL. ALPHA</span>
+              <span className={`font-bold ${
+                (stock.prediction.relativeAlpha || 0) >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'
+              }`}>
+                {(stock.prediction.relativeAlpha || 0) >= 0 ? '+' : ''}{stock.prediction.relativeAlpha?.toFixed(1) || '0.0'}%
+              </span>
+            </div>
+          </div>
+
+          <p className="mt-1 text-[11px] font-sans text-black/75 leading-relaxed line-clamp-2">
             {stock.prediction.thesis}
           </p>
+
+          {/* 30-Day Channel Range */}
+          {stock.prediction.expected30dChannel && (
+            <div className="mt-2.5 pt-2 border-t border-black/10 flex items-center justify-between text-[10px] font-mono">
+              <span className="text-black/50">EST. 30D CHANNEL:</span>
+              <span className="font-bold text-black tracking-tight">
+                ${stock.prediction.expected30dChannel.low.toFixed(2)} — ${stock.prediction.expected30dChannel.high.toFixed(2)}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Top Correlated AI Dispatch */}
