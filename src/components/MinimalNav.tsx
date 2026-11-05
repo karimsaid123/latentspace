@@ -163,6 +163,14 @@ const MinimalNav = memo(function MinimalNav({
             <span>[CODEX]</span>
           </Link>
 
+          <Link
+            href="/markets"
+            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[105px]"
+            title="LatentSpace AI & Semiconductor Quant Markets"
+          >
+            <span>[MARKETS]</span>
+          </Link>
+
           <ThemeToggle />
 
           {/* Isolated 1Hz Clock completely on the right */}

@@ -20,6 +20,10 @@ const Footer = memo(function Footer() {
           <Link href="/benchmarks" className="hover:text-black transition-colors">
             BENCHMARKS & ARENA
           </Link>
+          <span className="text-black/20">/</span>
+          <Link href="/markets" className="hover:text-black transition-colors font-bold text-[#ff8000]">
+            AI & SILICON MARKETS
+          </Link>
         </div>
 
         <span className="flex items-center gap-2 text-black/80 font-bold">

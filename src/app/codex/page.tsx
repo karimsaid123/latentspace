@@ -101,6 +101,12 @@ function CodexContent() {
             >
               [BENCHMARKS]
             </Link>
+            <Link
+              href="/markets"
+              className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-bold hover:bg-black/5 transition-colors"
+            >
+              [MARKETS]
+            </Link>
             <ThemeToggle />
             <div className="pl-3 border-l border-black/20 text-[#ff8000] font-bold">
               <LiveClock />

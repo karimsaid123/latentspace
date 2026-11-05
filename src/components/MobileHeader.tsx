@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { useSavedArticles } from '@/lib/saved-storage';
 
-export type MobileSection = 'feed' | 'benchmarks' | 'codex' | 'saved';
+export type MobileSection = 'feed' | 'benchmarks' | 'codex' | 'markets' | 'saved';
 
 interface MobileHeaderProps {
   active: MobileSection;
@@ -15,9 +15,10 @@ interface MobileHeaderProps {
 }
 
 const TABS: { id: Exclude<MobileSection, 'saved'>; href: string; label: string }[] = [
-  { id: 'feed', href: '/', label: 'DISPATCHES' },
-  { id: 'benchmarks', href: '/benchmarks', label: 'BENCHMARKS' },
+  { id: 'feed', href: '/', label: 'DISPATCH' },
+  { id: 'benchmarks', href: '/benchmarks', label: 'BENCH' },
   { id: 'codex', href: '/codex', label: 'CODEX' },
+  { id: 'markets', href: '/markets', label: 'MARKETS' },
 ];
 
 /**
@@ -65,8 +66,8 @@ export default function MobileHeader({ active, onToggleSearch, isSearchOpen }: M
         </div>
       </div>
 
-      {/* Row 2: equal-width section tabs — fixed grid so nothing ever shifts */}
-      <nav aria-label="Sections" className="grid grid-cols-3 gap-1.5 mt-3">
+      {/* Row 2: equal-width section tabs — 4-column grid so nothing ever shifts */}
+      <nav aria-label="Sections" className="grid grid-cols-4 gap-1 mt-3">
         {TABS.map((tab) => {
           const isActive = active === tab.id;
           return (
@@ -74,7 +75,7 @@ export default function MobileHeader({ active, onToggleSearch, isSearchOpen }: M
               key={tab.id}
               href={tab.href}
               aria-current={isActive ? 'page' : undefined}
-              className={`h-8 flex items-center justify-center border text-[10px] font-bold tracking-wider transition-colors ${
+              className={`h-8 flex items-center justify-center border text-[9px] font-bold tracking-wider transition-colors ${
                 isActive
                   ? 'border-black bg-black text-[#faf9f6]'
                   : 'border-black/30 text-black/70 active:bg-black/5'
@@ -88,3 +89,4 @@ export default function MobileHeader({ active, onToggleSearch, isSearchOpen }: M
     </div>
   );
 }
+
