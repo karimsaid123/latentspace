@@ -25,9 +25,7 @@ import { VERIFIED_BENCHMARK_SNAPSHOT } from '@/lib/benchmark-client';
 import { LmsysArenaModel } from '@/lib/lmarena-client';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
-import LiveClock from '@/components/LiveClock';
-import MobileHeader from '@/components/MobileHeader';
-import ThemeToggle from '@/components/ThemeToggle';
+import GlobalHeader from '@/components/GlobalHeader';
 
 type MetricTab = 'intelligence' | 'speed' | 'cost';
 type CategoryFilter = 'ALL' | 'Frontier' | 'Open Weights' | 'Specialized';
@@ -200,75 +198,8 @@ export default function BenchmarksPage() {
       {/* ─────────────────────────────────────────────────────────────
           MINIMAL HEADER / TOP NAVIGATION
       ───────────────────────────────────────────────────────────── */}
-      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase border-b border-black/15">
-        {/* Top line: Brand and Desktop Controls / Mobile Utilities */}
-        <div className="hidden sm:flex items-center justify-between pb-3.5 gap-4">
-          
-          {/* Brand & Breadcrumb */}
-          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-            <Link
-              href="/"
-              className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2 hover:opacity-75 transition-opacity"
-            >
-              LATENT SPACE
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
-            </Link>
-
-            <span className="text-black/30 hidden md:inline text-sm">/</span>
-
-            <span className="text-black/60 font-mono text-[11px] sm:text-xs hidden sm:inline tracking-wider">
-              ARTIFICIAL ANALYSIS BENCHMARKS
-            </span>
-          </div>
-
-          {/* Desktop Controls (sm and up) */}
-          <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
-            <Link
-              href="/saved"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
-              title="View your saved articles dossier"
-            >
-              <span>[<span className="text-[#ff8000]">★</span> SAVED]</span>
-            </Link>
-
-            <Link
-              href="/codex"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[95px]"
-              title="LatentSpace AI & ML Deterministic Codex"
-            >
-              <span>[CODEX]</span>
-            </Link>
-
-            <Link
-              href="/markets"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[105px]"
-              title="LatentSpace AI & Semiconductor Quant Markets"
-            >
-              <span>[MARKETS]</span>
-            </Link>
-
-            <Link
-              href="/"
-              scroll={true}
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
-              title="Return to Frontier Feed"
-            >
-              <span>[← RETURN TO FEED]</span>
-            </Link>
-
-            <ThemeToggle />
-
-            {/* Isolated 1Hz Clock on the far right */}
-            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-              <LiveClock />
-            </div>
-          </div>
-
-
-        </div>
-
-        <MobileHeader active="benchmarks" />
-      </header>
+      {/* Unified Zero-Shift Global Navigation */}
+      <GlobalHeader active="benchmarks" />
 
       {/* ─────────────────────────────────────────────────────────────
           HERO & KPI METRICS SUMMARY
@@ -308,11 +239,6 @@ export default function BenchmarksPage() {
             
             {/* Card 1: Intelligence Leader */}
             <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-1">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
               <div className="flex justify-between items-center font-mono text-[9px] uppercase tracking-widest text-black/40 mb-3">
                 <span className="flex items-center gap-1.5 font-bold text-black">
                   <BarChart3 className="w-3.5 h-3.5 text-blue-600" />
@@ -333,11 +259,6 @@ export default function BenchmarksPage() {
 
             {/* Card 2: Speed Leader */}
             <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-2">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
               <div className="flex justify-between items-center font-mono text-[9px] uppercase tracking-widest text-black/40 mb-3">
                 <span className="flex items-center gap-1.5 font-bold text-black">
                   <Zap className="w-3.5 h-3.5 text-amber-500" />
@@ -358,11 +279,6 @@ export default function BenchmarksPage() {
 
             {/* Card 3: Cost Efficiency Leader */}
             <div className="relative border border-black p-6 bg-white shadow-sm animate-fade-up-3">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
-
               <div className="flex justify-between items-center font-mono text-[9px] uppercase tracking-widest text-black/40 mb-3">
                 <span className="flex items-center gap-1.5 font-bold text-black">
                   <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
@@ -405,10 +321,6 @@ export default function BenchmarksPage() {
               
               {/* ──── GRAPH 1: INTELLIGENCE ──── */}
               <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
@@ -464,10 +376,6 @@ export default function BenchmarksPage() {
 
               {/* ──── GRAPH 2: SPEED (TOKENS / SEC) ──── */}
               <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
@@ -523,10 +431,6 @@ export default function BenchmarksPage() {
 
               {/* ──── GRAPH 3: COST PER TASK (USD) ──── */}
               <div className="border border-black p-6 bg-white relative flex flex-col justify-between">
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-black/10 font-mono text-[10px] uppercase">
@@ -602,10 +506,6 @@ export default function BenchmarksPage() {
           </div>
 
           <div className="border border-black p-6 sm:p-8 bg-white relative">
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
             {/* Matrix Container */}
             <div className="relative w-full h-[400px] border border-black/20 bg-[#faf9f6]/60 p-4 overflow-hidden">
@@ -726,10 +626,6 @@ export default function BenchmarksPage() {
                   key={lab.id}
                   className="border border-black p-6 bg-white relative flex flex-col justify-between group hover:shadow-lg transition-all"
                 >
-                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-                  <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
                   <div>
                     {/* Lab Header */}
@@ -832,10 +728,6 @@ export default function BenchmarksPage() {
           </div>
 
           <div className="border border-black bg-white overflow-x-auto relative">
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
             <table className="w-full text-left font-mono text-[10px] uppercase">
               <thead>
@@ -943,10 +835,6 @@ export default function BenchmarksPage() {
         ───────────────────────────────────────────────────────────── */}
         <ScrollReveal yOffset={35} className="mb-16">
           <section className="border border-black bg-white relative p-6 sm:p-8">
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-black/10 gap-4 mb-6">
               <div>
@@ -1047,10 +935,6 @@ export default function BenchmarksPage() {
         ───────────────────────────────────────────────────────────── */}
         <ScrollReveal yOffset={35} className="mb-16">
           <section className="border border-black p-6 sm:p-8 bg-[#faf9f6] relative">
-          <div className="absolute -top-1 -left-1 w-2 h-2 bg-black" />
-          <div className="absolute -top-1 -right-1 w-2 h-2 bg-black" />
-          <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-black" />
-          <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-black" />
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 font-mono text-[9px] uppercase tracking-wider text-black/60">
             <div className="space-y-2 max-w-2xl">

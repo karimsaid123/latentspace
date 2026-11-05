@@ -1,11 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect, memo } from 'react';
-import Link from 'next/link';
-import LiveClock from './LiveClock';
-import { LastSyncedIndicator } from './LastSyncedIndicator';
-import MobileHeader from './MobileHeader';
-import ThemeToggle from './ThemeToggle';
+import GlobalHeader from './GlobalHeader';
 import VectorPulse from './VectorPulse';
 import type { VectorPulseSnapshot } from '@/types';
 
@@ -53,23 +49,15 @@ const MinimalNav = memo(function MinimalNav({
   onSync,
   isSyncing,
   lastSyncedTime = 0,
-  savedCount = 0,
   isSearchOpen,
   setIsSearchOpen,
   vectorPulse,
   selectedVectorId = null,
   onSelectVector,
 }: MinimalNavProps) {
-  const searchInputRef = useRef<HTMLInputElement>(null);
   const pulsePopoverRef = useRef<HTMLDivElement>(null);
   const pulseTriggerRef = useRef<HTMLButtonElement>(null);
   const [isPulseOpen, setIsPulseOpen] = useState(false);
-
-  useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [isSearchOpen]);
 
   useEffect(() => {
     if (!isPulseOpen) return;
@@ -102,119 +90,22 @@ const MinimalNav = memo(function MinimalNav({
       : undefined;
 
   return (
-    <header className="relative w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase">
-      
-      {/* Top line: Responsive Brand & Utilities */}
-      <div className="relative hidden sm:flex items-center justify-between border-b border-black/15 pb-3 gap-4">
-        {isSyncing && (
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-black/10 overflow-hidden">
-            <div className="h-full bg-black w-1/3 animate-scanline" />
-          </div>
-        )}
-
-        {/* Brand */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <Link href="/" className="font-black text-sm sm:text-base md:text-lg tracking-tight text-black flex items-center gap-1.5 sm:gap-2 hover:opacity-85 transition-opacity">
-            LATENT SPACE
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
-          </Link>
-        </div>
-
-        {/* Desktop Controls (sm and up) */}
-        <div className="hidden sm:flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
-          <div className="hidden md:block shrink-0">
-            <LastSyncedIndicator
-              lastSyncedTime={lastSyncedTime}
-              isSyncing={isSyncing}
-              onSync={onSync}
-            />
-          </div>
-
-          <button
-            onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hover:text-black cursor-pointer transition-colors font-medium whitespace-nowrap h-7 sm:h-8 flex items-center px-1.5"
-            title="Press '/' to search anywhere"
-          >
-            [{isSearchOpen ? 'CLOSE' : 'SEARCH'}]
-          </button>
-
-          <Link
-            href="/saved"
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[130px]"
-            title="Open your saved articles dossier"
-          >
-            <span>[<span className="text-[#ff8000]">★</span> SAVED ({savedCount})]</span>
-          </Link>
-
-          <Link
-            href="/benchmarks"
-            scroll={true}
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
-            title="Independent Artificial Analysis Benchmarks & Stats"
-          >
-            <span>[BENCHMARKS & STATS]</span>
-          </Link>
-
-          <Link
-            href="/codex"
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[95px]"
-            title="LatentSpace AI & ML Deterministic Codex"
-          >
-            <span>[CODEX]</span>
-          </Link>
-
-          <Link
-            href="/markets"
-            className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[105px]"
-            title="LatentSpace AI & Semiconductor Quant Markets"
-          >
-            <span>[MARKETS]</span>
-          </Link>
-
-          <ThemeToggle />
-
-          {/* Isolated 1Hz Clock completely on the right */}
-          <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-            <LiveClock />
-          </div>
-        </div>
-
-      </div>
-
-      <MobileHeader
-        active="feed"
-        onToggleSearch={() => setIsSearchOpen(!isSearchOpen)}
-        isSearchOpen={isSearchOpen}
-      />
-
-      {/* Inline Search Bar if toggled */}
-      {isSearchOpen && (
-        <div className="pt-3.5 pb-2.5 border-b border-black animate-fade-in flex items-center justify-between gap-4">
-          <input
-            ref={searchInputRef}
-            type="text"
-            value={searchQuery}
-            onChange={(e) => onSearch(e.target.value)}
-            placeholder="TYPE TO FILTER TELEMETRY (PRESS ESC TO EXIT)..."
-            className="w-full bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/30 focus:outline-none"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => onSearch('')}
-              className="font-mono text-[10px] text-black/50 hover:text-black cursor-pointer font-bold shrink-0"
-            >
-              [CLEAR]
-            </button>
-          )}
-        </div>
-      )}
-
+    <GlobalHeader
+      active="feed"
+      onToggleSearch={() => setIsSearchOpen(!isSearchOpen)}
+      isSearchOpen={isSearchOpen}
+      searchQuery={searchQuery}
+      onSearch={onSearch}
+      isSyncing={isSyncing}
+      lastSyncedTime={lastSyncedTime}
+      onSync={onSync}
+    >
       {/* Frontier Labs & Publications Filter Row */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 mt-3 sm:mt-0 border-t sm:border-t-0 border-black/15 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 sm:gap-3.5 mt-3 sm:mt-3.5 pt-3 pb-0.5 text-[10px] sm:text-[11px] md:text-xs text-black/60 border-t border-black/10">
         
         {/* Lab Sectors */}
         <div 
-          className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-6 px-6 sm:mx-0 sm:px-0"
+          className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain pb-1 -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <span className="text-black font-bold shrink-0 tracking-wider">LAB SECTOR:</span>
@@ -236,7 +127,7 @@ const MinimalNav = memo(function MinimalNav({
 
         {/* Publication Format Selector & Vector Pulse Dropdown Trigger */}
         <div 
-          className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1 -mx-6 px-6 sm:mx-0 sm:px-0"
+          className="flex items-center gap-2.5 sm:gap-3 shrink-0 pt-2 lg:pt-0 border-t lg:border-t-0 border-black/10 font-mono tracking-wider overflow-x-auto no-scrollbar pb-1 -mx-4 px-4 sm:mx-0 sm:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <span className="text-black font-bold shrink-0">TYPE:</span>
@@ -285,11 +176,11 @@ const MinimalNav = memo(function MinimalNav({
 
       </div>
 
-      {/* Floating Research Vector Pulse Dropdown (always closed by default) */}
+      {/* Floating Research Vector Pulse Dropdown */}
       {isPulseOpen && vectorPulse && onSelectVector && (
         <div
           ref={pulsePopoverRef}
-          className="absolute right-6 sm:right-12 left-6 sm:left-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
+          className="absolute right-4 sm:right-8 lg:right-12 left-4 sm:left-auto sm:w-[520px] lg:w-[560px] top-full mt-1 z-40"
         >
           <VectorPulse
             snapshot={vectorPulse}
@@ -300,8 +191,7 @@ const MinimalNav = memo(function MinimalNav({
           />
         </div>
       )}
-
-    </header>
+    </GlobalHeader>
   );
 });
 

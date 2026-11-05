@@ -19,10 +19,8 @@ import NFADisclaimerBanner from '@/components/NFADisclaimerBanner';
 import TickerTape from '@/components/TickerTape';
 import StockCard from '@/components/StockCard';
 import StockDetailModal from '@/components/StockDetailModal';
-import MobileHeader from '@/components/MobileHeader';
+import GlobalHeader from '@/components/GlobalHeader';
 import Footer from '@/components/Footer';
-import LiveClock from '@/components/LiveClock';
-import ThemeToggle from '@/components/ThemeToggle';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export default function MarketsPage() {
@@ -82,44 +80,8 @@ export default function MarketsPage() {
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-black font-mono selection:bg-black selection:text-white flex flex-col">
-      {/* Top Header */}
-      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto uppercase tracking-widest text-xs border-b border-black/15">
-        {/* Desktop Header Line (sm and up) */}
-        <div className="hidden sm:flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link 
-              href="/"
-              className="font-bold text-black/60 hover:text-black transition-colors flex items-center gap-1.5"
-            >
-              <span>[← LIVE DISPATCHES]</span>
-            </Link>
-            <span className="text-black/30">/</span>
-            <span className="font-black text-black">AI & SILICON MARKETS</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-black/70 text-[10px] sm:text-xs">
-            <Link
-              href="/benchmarks"
-              className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-bold hover:bg-black/5 transition-colors"
-            >
-              [BENCHMARKS]
-            </Link>
-            <Link
-              href="/codex"
-              className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-bold hover:bg-black/5 transition-colors"
-            >
-              [CODEX]
-            </Link>
-            <ThemeToggle />
-            <div className="pl-3 border-l border-black/20 text-[#ff8000] font-bold">
-              <LiveClock />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Header via Shared MobileHeader */}
-        <MobileHeader active="markets" />
-      </header>
+      {/* Unified Zero-Shift Global Navigation */}
+      <GlobalHeader active="markets" />
 
       {/* Ticker Tape Strip */}
       {marketData && (
@@ -210,7 +172,10 @@ export default function MarketsPage() {
             </div>
 
             {/* Category / Sector Filter */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div 
+              className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               <span className="text-[10px] text-black font-bold shrink-0 tracking-wider">
                 SECTOR:
               </span>
@@ -226,10 +191,10 @@ export default function MarketsPage() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id as any)}
-                  className={`px-2.5 py-1 border text-[10px] sm:text-[11px] tracking-wider shrink-0 cursor-pointer transition-colors ${
+                  className={`h-7.5 sm:h-8 px-2.5 sm:px-3 border text-[10px] sm:text-[11px] font-bold tracking-wider shrink-0 cursor-pointer transition-colors flex items-center justify-center ${
                     selectedCategory === cat.id
-                      ? 'border-black bg-black text-white font-bold'
-                      : 'border-black/25 bg-white text-black/70 hover:border-black hover:text-black'
+                      ? 'border-black bg-black text-[#faf9f6]'
+                      : 'border-black/25 bg-white text-black/75 hover:border-black hover:text-black hover:bg-black/5'
                   }`}
                 >
                   [{cat.label}]

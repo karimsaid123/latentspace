@@ -19,9 +19,7 @@ import { searchCodex, getCodexEntryById, EnrichedCodexEntry } from '@/lib/codex-
 import articlesData from '../../../data/articles.json';
 import CodexDetailModal from '@/components/CodexDetailModal';
 import Footer from '@/components/Footer';
-import LiveClock from '@/components/LiveClock';
-import MobileHeader from '@/components/MobileHeader';
-import ThemeToggle from '@/components/ThemeToggle';
+import GlobalHeader from '@/components/GlobalHeader';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const CATEGORIES: { id: CodexCategory | 'ALL'; label: string }[] = [
@@ -79,43 +77,8 @@ function CodexContent() {
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-black font-mono selection:bg-black selection:text-white flex flex-col">
-      {/* Top Header */}
-      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto uppercase tracking-widest text-xs border-b border-black/15">
-        {/* Desktop Header Line (sm and up) */}
-        <div className="hidden sm:flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Link 
-              href="/"
-              className="font-bold text-black/60 hover:text-black transition-colors flex items-center gap-1.5"
-            >
-              <span>[← LIVE DISPATCHES]</span>
-            </Link>
-            <span className="text-black/30">/</span>
-            <span className="font-black text-black">CODEX</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-black/70 text-[10px] sm:text-xs">
-            <Link
-              href="/benchmarks"
-              className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-bold hover:bg-black/5 transition-colors"
-            >
-              [BENCHMARKS]
-            </Link>
-            <Link
-              href="/markets"
-              className="border border-black/30 hover:border-black px-2.5 py-1 text-black font-bold hover:bg-black/5 transition-colors"
-            >
-              [MARKETS]
-            </Link>
-            <ThemeToggle />
-            <div className="pl-3 border-l border-black/20 text-[#ff8000] font-bold">
-              <LiveClock />
-            </div>
-          </div>
-        </div>
-
-        <MobileHeader active="codex" />
-      </header>
+      {/* Unified Zero-Shift Global Navigation */}
+      <GlobalHeader active="codex" />
 
       {/* Main Terminal Header */}
       <main className="flex-1 max-w-[1700px] mx-auto w-full px-6 sm:px-12 py-8">
@@ -153,7 +116,7 @@ function CodexContent() {
             </div>
 
             {/* Category Filter Pills */}
-            <div className="mt-4 flex items-center gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="mt-4 flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               <span className="text-[10px] text-black font-bold shrink-0 mr-1 tracking-wider">
                 CATEGORY:
               </span>
@@ -163,10 +126,10 @@ function CodexContent() {
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategory(cat.id)}
-                    className={`px-2.5 py-1 border text-[10px] sm:text-[11px] font-mono tracking-wider shrink-0 cursor-pointer transition-colors ${
+                    className={`h-7.5 sm:h-8 px-2.5 sm:px-3 border text-[10px] sm:text-[11px] font-mono tracking-wider shrink-0 cursor-pointer transition-colors flex items-center justify-center ${
                       isSelected
-                        ? 'border-black bg-black text-white font-bold'
-                        : 'border-black/25 bg-white text-black/70 hover:border-black hover:text-black'
+                        ? 'border-black bg-black text-[#faf9f6] font-bold'
+                        : 'border-black/25 bg-white text-black/75 hover:border-black hover:text-black hover:bg-black/5'
                     }`}
                   >
                     [{cat.label}]
@@ -176,7 +139,7 @@ function CodexContent() {
             </div>
 
             {/* Level Filter Pills */}
-            <div className="mt-2.5 flex items-center gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="mt-2.5 flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               <span className="text-[10px] text-black font-bold shrink-0 mr-1 tracking-wider">
                 COMPLEXITY:
               </span>
@@ -186,10 +149,10 @@ function CodexContent() {
                   <button
                     key={lvl.id}
                     onClick={() => setSelectedLevel(lvl.id)}
-                    className={`px-2 py-0.5 border text-[9px] sm:text-[10px] font-mono tracking-wider shrink-0 cursor-pointer transition-colors ${
+                    className={`h-7 sm:h-7.5 px-2.5 py-0.5 border text-[9px] sm:text-[10px] font-mono tracking-wider shrink-0 cursor-pointer transition-colors flex items-center justify-center ${
                       isSelected
-                        ? 'border-black bg-black text-white font-bold'
-                        : 'border-black/20 bg-white text-black/60 hover:border-black hover:text-black'
+                        ? 'border-black bg-black text-[#faf9f6] font-bold'
+                        : 'border-black/20 bg-white text-black/65 hover:border-black hover:text-black hover:bg-black/5'
                     }`}
                   >
                     [{lvl.label}]

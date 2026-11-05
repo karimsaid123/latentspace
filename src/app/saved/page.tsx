@@ -12,9 +12,7 @@ import { useSavedArticles } from '@/lib/saved-storage';
 import EditorialModal from '@/components/EditorialModal';
 import { getCompanyBrand, CompanyLogo } from '@/components/CompanyBrand';
 import Footer from '@/components/Footer';
-import LiveClock from '@/components/LiveClock';
-import MobileHeader from '@/components/MobileHeader';
-import ThemeToggle from '@/components/ThemeToggle';
+import GlobalHeader from '@/components/GlobalHeader';
 
 type FormatFilter = 'ALL' | 'DISPATCH' | 'RESEARCH_PAPER';
 type SortOption = 'NEWEST_SAVED' | 'OLDEST_SAVED' | 'PUBLISHED_DATE' | 'ALPHABETICAL';
@@ -203,74 +201,8 @@ export default function SavedPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6] text-black">
       
-      {/* ─────────────────────────────────────────────────────────────
-          TOP EDITORIAL NAVIGATION HEADER
-      ───────────────────────────────────────────────────────────── */}
-      <header className="w-full pt-6 pb-4 px-6 sm:px-12 max-w-[1700px] mx-auto select-none font-mono tracking-widest uppercase border-b border-black/15">
-        {/* Desktop Header Line (sm and up) */}
-        <div className="hidden sm:flex items-center justify-between pb-3.5 gap-4">
-          
-          {/* Brand */}
-          <div className="flex items-center gap-3">
-            <Link 
-              href="/"
-              className="font-black text-base sm:text-lg tracking-tight text-black flex items-center gap-2 hover:opacity-75 transition-opacity"
-            >
-              LATENT SPACE
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#ff8000] shrink-0" title="Live System" />
-            </Link>
-            <span className="text-black/30 hidden sm:inline">//</span>
-            <span className="font-bold text-black text-xs hidden sm:inline">
-              [<span className="text-[#ff8000]">★</span> SAVED DOSSIER]
-            </span>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="flex items-center gap-2 sm:gap-3 text-black/70 text-[10px] sm:text-[11px] md:text-xs shrink-0">
-            <Link
-              href="/benchmarks"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
-              title="Independent Artificial Analysis Benchmarks & Stats"
-            >
-              <span>[BENCHMARKS & STATS]</span>
-            </Link>
-
-            <Link
-              href="/codex"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[95px]"
-              title="LatentSpace AI & ML Deterministic Codex"
-            >
-              <span>[CODEX]</span>
-            </Link>
-
-            <Link
-              href="/markets"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[105px]"
-              title="LatentSpace AI & Semiconductor Quant Markets"
-            >
-              <span>[MARKETS]</span>
-            </Link>
-
-            <Link
-              href="/"
-              className="border border-black/35 hover:border-black px-2 sm:px-2.5 text-black font-mono font-bold tracking-wider hover:bg-black/[0.04] transition-colors whitespace-nowrap h-7 sm:h-8 flex items-center justify-center w-auto sm:w-[195px]"
-              title="Return to Frontier Feed"
-            >
-              <span>[← RETURN TO FEED]</span>
-            </Link>
-
-            <ThemeToggle />
-
-            {/* Isolated 1Hz Clock on the right */}
-            <div className="text-right hidden sm:block font-bold text-[#ff8000] font-mono text-xs sm:text-[13px] tracking-wider pl-3 border-l border-black/20">
-              <LiveClock />
-            </div>
-          </div>
-
-        </div>
-
-        <MobileHeader active="saved" />
-      </header>
+      {/* Unified Zero-Shift Global Navigation */}
+      <GlobalHeader active="saved" />
 
       {/* ─────────────────────────────────────────────────────────────
           MAIN SAVED CONTENT
@@ -412,11 +344,6 @@ export default function SavedPage() {
         {savedItems.length === 0 ? (
           /* Completely Empty State */
           <div className="border border-black p-12 sm:p-20 text-center bg-white relative">
-            <div className="absolute top-0 left-0 w-2 h-2 bg-black" />
-            <div className="absolute top-0 right-0 w-2 h-2 bg-black" />
-            <div className="absolute bottom-0 left-0 w-2 h-2 bg-black" />
-            <div className="absolute bottom-0 right-0 w-2 h-2 bg-black" />
-
             <div className="max-w-md mx-auto space-y-4">
               <div className="w-12 h-12 mx-auto border border-black flex items-center justify-center bg-[#faf9f6]">
                 <Bookmark className="w-6 h-6 text-black/40" />

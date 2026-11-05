@@ -16,9 +16,9 @@ interface MobileHeaderProps {
 
 const TABS: { id: Exclude<MobileSection, 'saved'>; href: string; label: string }[] = [
   { id: 'feed', href: '/', label: 'DISPATCH' },
+  { id: 'markets', href: '/markets', label: 'MARKETS' },
   { id: 'benchmarks', href: '/benchmarks', label: 'BENCH' },
   { id: 'codex', href: '/codex', label: 'CODEX' },
-  { id: 'markets', href: '/markets', label: 'MARKETS' },
 ];
 
 /**
