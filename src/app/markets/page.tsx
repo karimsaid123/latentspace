@@ -14,7 +14,7 @@ import {
   Layers,
   ArrowRight
 } from 'lucide-react';
-import { StockAnalysis, MarketOverviewResponse, MarketCategory, ModelTrajectory } from '@/types/market';
+import { StockAnalysis, MarketOverviewResponse, MarketCategory } from '@/types/market';
 import NFADisclaimerBanner from '@/components/NFADisclaimerBanner';
 import TickerTape from '@/components/TickerTape';
 import StockCard from '@/components/StockCard';
@@ -31,7 +31,6 @@ export default function MarketsPage() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<MarketCategory | 'ALL'>('ALL');
-  const [selectedTrajectory, setSelectedTrajectory] = useState<ModelTrajectory | 'ALL'>('ALL');
   const [selectedStock, setSelectedStock] = useState<StockAnalysis | null>(null);
 
   // Fetch telemetry from /api/markets
@@ -65,11 +64,6 @@ export default function MarketsPage() {
         return false;
       }
 
-      // Trajectory filter
-      if (selectedTrajectory !== 'ALL' && stock.prediction.trajectory !== selectedTrajectory) {
-        return false;
-      }
-
       // Search query filter
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
@@ -84,7 +78,7 @@ export default function MarketsPage() {
 
       return true;
     });
-  }, [marketData, selectedCategory, selectedTrajectory, searchQuery]);
+  }, [marketData, selectedCategory, searchQuery]);
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-black font-mono selection:bg-black selection:text-white flex flex-col">
@@ -215,61 +209,32 @@ export default function MarketsPage() {
               )}
             </div>
 
-            {/* Category and Trajectory Filters */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs pt-1">
-              {/* Category Pills */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                <span className="text-[10px] text-black font-bold shrink-0 tracking-wider">
-                  SECTOR:
-                </span>
-                {[
-                  { id: 'ALL', label: 'ALL TECH' },
-                  { id: 'CHIPS_HARDWARE', label: 'CHIPS & SILICON' },
-                  { id: 'HYPERSCALERS', label: 'HYPERSCALERS' },
-                  { id: 'AUTONOMOUS_ROBOTICS', label: 'AUTONOMOUS & ROBOTICS' },
-                  { id: 'CONSUMER_PLATFORMS', label: 'CONSUMER & PLATFORMS' },
-                  { id: 'AI_ENTERPRISE', label: 'ENTERPRISE & SAAS' },
-                  { id: 'CLOUD_CYBER', label: 'CLOUD & CYBER' }
-                ].map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id as any)}
-                    className={`px-2.5 py-1 border text-[10px] sm:text-[11px] tracking-wider shrink-0 cursor-pointer transition-colors ${
-                      selectedCategory === cat.id
-                        ? 'border-black bg-black text-white font-bold'
-                        : 'border-black/25 bg-white text-black/70 hover:border-black hover:text-black'
-                    }`}
-                  >
-                    [{cat.label}]
-                  </button>
-                ))}
-              </div>
-
-              {/* Trajectory Pills */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                <span className="text-[10px] text-black font-bold shrink-0 tracking-wider">
-                  SIGNAL:
-                </span>
-                {[
-                  { id: 'ALL', label: 'ALL SIGNALS' },
-                  { id: 'BULLISH_EXPANSION', label: 'BULLISH' },
-                  { id: 'BEARISH_CONTRACTION', label: 'BEARISH' },
-                  { id: 'HIGH_VOLATILITY_CHURN', label: 'VOLATILITY' },
-                  { id: 'RANGE_BOUND_ACCUMULATION', label: 'RANGE-BOUND' }
-                ].map((traj) => (
-                  <button
-                    key={traj.id}
-                    onClick={() => setSelectedTrajectory(traj.id as any)}
-                    className={`px-2 py-0.5 border text-[9px] sm:text-[10px] tracking-wider shrink-0 cursor-pointer transition-colors ${
-                      selectedTrajectory === traj.id
-                        ? 'border-black bg-black text-white font-bold'
-                        : 'border-black/20 bg-white text-black/60 hover:border-black hover:text-black'
-                    }`}
-                  >
-                    [{traj.label}]
-                  </button>
-                ))}
-              </div>
+            {/* Category / Sector Filter */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <span className="text-[10px] text-black font-bold shrink-0 tracking-wider">
+                SECTOR:
+              </span>
+              {[
+                { id: 'ALL', label: 'ALL TECH' },
+                { id: 'CHIPS_HARDWARE', label: 'CHIPS & SILICON' },
+                { id: 'HYPERSCALERS', label: 'HYPERSCALERS' },
+                { id: 'AUTONOMOUS_ROBOTICS', label: 'AUTONOMOUS & ROBOTICS' },
+                { id: 'CONSUMER_PLATFORMS', label: 'CONSUMER & PLATFORMS' },
+                { id: 'AI_ENTERPRISE', label: 'ENTERPRISE & SAAS' },
+                { id: 'CLOUD_CYBER', label: 'CLOUD & CYBER' }
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id as any)}
+                  className={`px-2.5 py-1 border text-[10px] sm:text-[11px] tracking-wider shrink-0 cursor-pointer transition-colors ${
+                    selectedCategory === cat.id
+                      ? 'border-black bg-black text-white font-bold'
+                      : 'border-black/25 bg-white text-black/70 hover:border-black hover:text-black'
+                  }`}
+                >
+                  [{cat.label}]
+                </button>
+              ))}
             </div>
           </div>
         </ScrollReveal>
@@ -289,7 +254,6 @@ export default function MarketsPage() {
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('ALL');
-                  setSelectedTrajectory('ALL');
                 }}
                 className="mt-3 px-3 py-1.5 border border-black text-xs font-bold hover:bg-black hover:text-white transition-colors cursor-pointer"
               >
