@@ -1,5 +1,516 @@
 [
   {
+    "id": "17b57e4655701f14",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+    "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
+    "publishedAt": "2026-11-05T22:40:55.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "5fef8dc1498a7e5b",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "Airbnb has teased its plans to build its own AI travel agent before, but on Thursday the company announced that the new AI feature will launch in the first half of 2027. In the company’s Q3 shareholder letter on Thursday , Airbnb also provided more detail about how the agent will work, what it will actually do, and how it’s different from a typical AI chatbot.\n\nIn prior interviews, CEO Brian Chesky sketched out the travel company’s approach to AI, describing a plan to build an AI agent that has a richer interface than a conventional chatbot. He also expressed his opinions about how chatbots aren’t the right interface for travel, noting that people take pleasure in the planning process and in anticipating a trip. Any agent that it built, then, shouldn’t take away from the inspiration and the browsing, he told TechCrunch in an interview last month.\n\nChesky today reiterated that belief, telling analysts on the earnings call that people won’t use one AI agent for everything.\n\n“Today’s AI agents like Muse and Instinct are good at simple routine tasks like making a restaurant reservation or scheduling an appointment. But planning a trip is different,” he said. “Travel is aspirational. Discovering where to go and where to stay is part of the experience. In fact, 80% of travelers say they enjoy spending time researching trips. People want to look at photos. They want to compare homes. They want to make decisions with people they’re traveling with,” he continued. “And I don’t think the general-purpose agents are the best to do that. So that is why we are building our own AI agent,” Chesky said.\n\nAirbnb described its agent as having a personalized interface that’s designed specifically for travel, where it will “build an interface” around a user’s question instead of simply responding as a chatbot would.\n\n“What we are doing is developing a custom-designed AI-native experience that responds to what guests are looking for,” Chesky said. “So instead of relying on traditional chat alone, which is very text-heavy—which, again, is definitely not the way you should plan travel, our agent draws from a library of hundreds of travel-specific interface components—maps, photos, comparisons, calendars, itineraries—and composes them in real time to match what they’re looking for.”\n\nThe exec said the agent will feel “a little bit like generative UI” as it’s designed to offer up “the",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Airbnb has officially scheduled the launch of its proprietary AI travel agent for the first half of 2027. Announced during the company's Q3 earnings call, the agent is positioned as a departure from standard text-based chatbots, which CEO Brian Chesky argues are ill-suited for the aspirational and visual nature of travel planning. Airbnb cites internal data suggesting 80% of travelers enjoy the research process, necessitating an interface that prioritizes discovery over simple task automation.\n\nThe agent will utilize a \"generative UI\" architecture, drawing from a library of hundreds of travel-specific components—including maps, photos, comparison tools, calendars, and itineraries—to compose real-time, dynamic interfaces tailored to specific user queries. Beyond discovery and booking, the agent is designed to handle post-booking logistics, such as reservation changes, payment disputes, refunds, and 24-hour safety support, leveraging Airbnb’s proprietary data on host-guest interactions. The company intends to eventually expand the agent's scope to include services and experiences beyond home and hotel bookings.\n\nThis announcement accompanied strong Q3 financial results, with revenue reaching $4.87 billion, a 19% year-over-year increase that exceeded analyst expectations. Consequently, Airbnb has raised its 2026 revenue growth forecast from the mid-teens to the high teens, signaling a reacceleration of growth for the platform.",
+      "takeaways": [
+        "**Launch Timeline:** The AI travel agent is scheduled for consumer release in the first half of 2027.",
+        "**Architectural Approach:** The agent uses a generative UI model that dynamically assembles travel-specific components (maps, photos, itineraries) rather than relying on text-heavy chatbot responses.",
+        "**Functional Scope:** The tool will support end-to-end trip management, including reservation modifications, payment resolution, refunds, and 24-hour safety support.",
+        "**Financial Performance:** Airbnb reported Q3 revenue of $4.87 billion, representing 19% growth, and increased its 2026 revenue growth outlook to the high teens."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "2165b65a40c289be",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+    "title": "Perplexity launches its own take on AI agents for work",
+    "publishedAt": "2026-11-05T22:26:50.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.269Z",
+    "contentHash": "856e7ae4ebd6aef0",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup’s new always-on “Teammates” can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use. Teammates integrate with Perplexity Computer, an AI system that can deploy agents on your device to complete tasks. But Perplexity says Teammates “build on top” of Computer by offering the ability to collaborate and complete “ongoing, large-scale work.” You can assign each Teammate different jobs that they can perform simultaneously — much like OpenAI’s Dots and Claude Duet. Perplexity’s take on the feature is much more expensive, however, as it requires a subscription to its $200 / month Max plan. [Image: Each Teammate gets their own thread. https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/perplexity-teammates.png?quality=90&strip=all] Perplexity notes that you can keep tabs on Teammates’ progress through individual threads in the Perplexity app, as well as interact with them in Slack. “Over time, we envision every org having hundreds of teammates working for each person,” Perplexity CEO Aravind Srinivas says on X.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25472503/STK271_PERPLEXITY_C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Perplexity has launched 'Teammates,' a suite of AI agents designed for enterprise workflows that function as persistent, role-based collaborators within a workspace. These agents leverage the company's existing 'Perplexity Computer' system—which enables agents to execute tasks directly on a user's device—to manage ongoing, large-scale projects. Unlike standard chatbot interfaces, Teammates are designed to operate simultaneously, allowing users to assign distinct responsibilities to multiple agents that maintain memory and skill sets derived from the user's existing Perplexity data.\n\nThe service is positioned as a direct competitor to OpenAI’s 'Operator' (referred to as 'Dots' in the text) and Anthropic’s 'Claude Duet.' Users can monitor agent progress through dedicated threads within the Perplexity application or via Slack integration. Access to the Teammates feature is gated behind the company’s 'Max' subscription plan, which is priced at $200 per month. CEO Aravind Srinivas has stated that the long-term vision for the platform involves organizations deploying hundreds of these agents to support individual employees.",
+      "takeaways": [
+        "**Product Architecture:** Teammates are built on top of the Perplexity Computer system, enabling agents to perform tasks locally on user devices while maintaining persistent memory of projects and skills.",
+        "**Pricing Model:** Access to the Teammates feature requires a Perplexity Max subscription, priced at $200 per month.",
+        "**Integration Capabilities:** Agents provide status updates and interaction capabilities through individual threads in the Perplexity app and via Slack.",
+        "**Competitive Positioning:** The feature is designed to compete with OpenAI's 'Dots' and Anthropic's 'Claude Duet' by enabling simultaneous, multi-agent collaboration on large-scale work."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c7f436c36385e313",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/05/baidu-ernie-5-5-flash-base-280b-moe/",
+    "title": "Baidu Releases ERNIE 5.5 Flash Base: A 280B MoE Base Model With 14B Active Parameters",
+    "publishedAt": "2026-11-05T21:33:00.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.934Z",
+    "contentHash": "bac93b47b4be830f",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Baidu has released ERNIE 5.5 Flash Base , the raw pre-training checkpoint of its new sparse Mixture-of-Experts language model. ERNIE 5.5 Flash Base is a 280B-parameter text model from Baidu that activates 14B parameters per token. The weights stop at the end of pre-training, with no mid- or post-training applied. This as a clean starting point for teams that want to compare fine-tuning, instruction tuning or RL methods from one checkpoint. TL;DR Size: 280B total, 14B active per token; 128K training context, 1M for fine-tuning and inference. Runs on: Multi-GPU servers. Baidu’s reference configs use 4-way parallelism in SGLang and vLLM. GPU model and VRAM not disclosed. FP8 and BF16 weights. Performance: Best score on 24 of 30 base-model benchmarks in Baidu’s unified pipeline (self-reported). Best: MMLU-Pro 78.4, ahead of DeepSeek-V4-Flash-Base at 69.2. Worst: HELMET-Rerank 56.2, behind DeepSeek-V4-Flash-Base at 60.0. What is ERNIE 5.5 Flash Base? It is a text-only MoE base model with 43 layers and a 4096 hidden size . It was pre-trained from scratch on 33.5T tokens with the Muon optimizer. The tokenizer has 201,216 entries and groups numbers right-to-left in chunks of up to 3 digits. Activated compute, KV cache and long-context cost were treated as one budget. Pre-training data leaned on repository-scale code and long-context material, since those are hard to add later. How does the ERNIE 5.5 Flash architecture work? Hybrid attention : 37 layers use Heavily Compressed Attention (HCA), which caches 1 entry per 128 tokens. The other 6 layers use Multi-head Latent Attention with sparse attention (MLA + DSA). That means 1 in 7 layers keeps full-context access. HCA layers use 512-dim heads; MLA layers use 256-dim heads. Gated and mixed heads : The attention output gate comes from the low-rank query latent, cutting gate-projection parameters by 75%. Virtual Head Attention adds a lightweight low-rank mix across heads. Multi-Router Latent MoE. Each MoE layer has 512 routed experts (top-10) plus 1 shared expert. Several independent sigmoid routers replace a single router, per Baidu’s Multi-Router paper . Expert FLOPs and communication volume stay unchanged. Experts run in a 2048-d latent space, half the hidden width. ECHO instead of MTP. : ECHO reuses the backbone’s final layer to predict future tokens. The same layer doubles as a built-in draft model for speculative ",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Baidu has released ERNIE 5.5 Flash Base, a 280B-parameter sparse Mixture-of-Experts (MoE) model that activates 14B parameters per token. The release consists of raw pre-training weights without mid- or post-training, intended as a baseline for research into fine-tuning, instruction tuning, and RL methods. The model features a 128K training context window, extendable to 1M tokens for inference and fine-tuning, and supports both FP8 and BF16 precision. It was trained from scratch on 33.5T tokens using the Muon optimizer, with a tokenizer containing 201,216 entries that utilizes right-to-left chunking for numerical data.\n\nArchitecturally, the model utilizes 43 layers with a 4096 hidden size, employing a hybrid attention mechanism: 37 layers use Heavily Compressed Attention (HCA) with 1:128 token caching, while 6 layers use Multi-head Latent Attention with sparse attention (MLA + DSA). The MoE layers feature 512 routed experts (top-10 selection) plus one shared expert, managed by independent sigmoid routers. Instead of Multi-Token Prediction (MTP), the model uses ECHO, which repurposes the final backbone layer to predict future tokens, serving as a built-in draft model for speculative decoding. Baidu reports the model outperforms DeepSeek-V4-Flash-Base on 24 of 30 internal benchmarks, including an MMLU-Pro score of 78.4 compared to 69.2, though it trails on the HELMET-Rerank benchmark.",
+      "takeaways": [
+        "**Architecture Specs:** 280B total parameters, 14B active per token, 43 layers, 4096 hidden size, and 512 routed experts per MoE layer.",
+        "**Attention Mechanism:** Hybrid approach using 37 layers of Heavily Compressed Attention (HCA) and 6 layers of Multi-head Latent Attention (MLA) with sparse attention.",
+        "**Training Details:** Pre-trained on 33.5T tokens using the Muon optimizer; features a 201,216-entry tokenizer.",
+        "**Performance Benchmarks:** Achieved 78.4 on MMLU-Pro (vs. 69.2 for DeepSeek-V4-Flash-Base) and 56.2 on HELMET-Rerank (vs. 60.0 for DeepSeek-V4-Flash-Base).",
+        "**Deployment:** Supports 4-way parallelism in SGLang and vLLM; utilizes ECHO for speculative decoding instead of MTP."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "d6f90cb0462c10ef",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
+    "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
+    "publishedAt": "2026-11-05T21:04:24.000Z",
+    "fetchedAt": "2026-11-05T22:41:29.523Z",
+    "contentHash": "cd44fb1239e0d356",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Adrianna Chudy",
+    "contentSnippet": "Today, we are announcing the general availability of Web Answer on Amazon Bedrock AgentCore. With Web Answer, agent builders get a synthesized, source-cited answer to a natural-language question with a single tool call. They no longer build a search, retrieve, synthesize, and citation pipeline themselves. If you have built agents that need to answer questions from current web sources, you know the pattern: call a search API, decide which results to trust, retrieve and clean page content, prompt a model to synthesize, and engineer citation extraction so the output traces back to a source. Every step is code you maintain, and every step is another place things can go wrong: hallucination when evidence is insufficient, stale content when the index moves, and broken attribution when a claim and its source drift apart. The Web Answer collapses that entire pipeline into one request. You send a question. You get back a cited answer in seconds. In this post, we explain what Web Answer does, compare it with Web Search on AgentCore, show how it works and what it returns, and walk through adding Web Answer to a gateway and calling it from an agent. What Web Answer does Figure 1: Request flow from an agent through the Gateway to Web Answer and back Your agent sends a question to your AgentCore Gateway, a capability of Amazon Bedrock AgentCore. The Gateway authenticates the call with AWS Identity and Access Management (AWS IAM) or a JSON Web Token (JWT). The Gateway calls Web Answer, a managed connector that AWS owns, using its own service role. Web Answer plans its searches, runs several in parallel, and reads key pages to check the facts. When the evidence is insufficient, it searches again. It then writes an answer that ties each claim to its source URL. The Gateway returns the answer and its citations to your agent as a Model Context Protocol (MCP) tool result. Web Answer is a managed AgentCore Gateway tool that takes a natural-language question and returns a synthesized answer in seconds grounded in current web sources. Here is what you get back: A grounded, cited answer, where each grounded claim maps to a citation, with a source URL where one is available. Current sources. Web Answer runs new searches for every question, and its model is given today’s date so it can search for up-to-date information. Agentic search: Web Answer plans its own searches, runs several ",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/04/ML-22248-1.png",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has announced the general availability of Web Answer, a managed tool within Amazon Bedrock AgentCore designed to automate the retrieval, synthesis, and citation of web-based information. By integrating this capability, developers can replace custom-built search pipelines—which typically involve manual search API calls, content cleaning, and citation engineering—with a single tool call. The service is designed to mitigate common issues in agentic workflows, such as hallucinations due to insufficient evidence, stale data, and broken attribution links.\n\nWhen an agent sends a natural-language query to the AgentCore Gateway, Web Answer executes a multi-step process: it plans parallel searches, verifies facts by reading key pages, and performs iterative searching if initial evidence is insufficient. The final output is a synthesized response where every claim is mapped to a specific source URL. The service authenticates via AWS IAM or JWT and returns results to the agent as a Model Context Protocol (MCP) tool result, ensuring the model is provided with the current date to maintain temporal relevance for all queries.",
+      "takeaways": [
+        "**Core Functionality:** Web Answer collapses search, retrieval, synthesis, and citation extraction into a single managed tool call within Amazon Bedrock AgentCore.",
+        "**Authentication:** The AgentCore Gateway supports authentication via AWS Identity and Access Management (AWS IAM) or JSON Web Tokens (JWT).",
+        "**Output Format:** Returns a grounded, synthesized answer where each claim is explicitly mapped to a source URL via the Model Context Protocol (MCP).",
+        "**Search Methodology:** The tool performs parallel searches and iterative fact-checking, automatically re-searching if the initial evidence is deemed insufficient."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b1feafc8620ed538",
+    "canonicalUrl": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/",
+    "title": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
+    "publishedAt": "2026-11-05T20:00:41.000Z",
+    "fetchedAt": "2026-11-05T22:41:32.100Z",
+    "contentHash": "fe57e33ca903c0b0",
+    "sourceId": "nvidia-blog",
+    "sourceName": "NVIDIA AI News",
+    "author": "Hannah Coutand",
+    "contentSnippet": "AI agents do more than generate answers. They search for information, query databases, write and test code and take action. Each of those steps relies on a CPU, with agents moving between GPU reasoning and CPU execution throughout a task. As businesses put more agents to work, AI factories need CPUs that can execute those steps quickly and support many agents at once, all within the limits of available power. What this means: AI infrastructure providers need to support more agents without making each one wait longer to get work done. And critically, AI factories are power limited. This means operators need to choose infrastructure that maximizes the work done for every watt. Why it matters: NVIDIA Vera delivers both fast agent performance and high capacity per watt within a single CPU. That gives providers one CPU for a range of agent workloads, rather than having to mix and match fast and dense x86 parts to balance speed and capacity. The data that proves it: In a 100-megawatt data center comparison, NVIDIA found that a single Vera CPU performs better than the fastest x86 CPU and the most energy-efficient x86 CPU. Vera delivers industry-leading agent speed while enabling 1.6x more agents per watt versus the fastest x86 CPU. Vera delivers 2x faster agent speed with leading energy efficiency compared with the most energy-efficient x86 CPU. Partners are already putting Vera to work. Early adopters see the same exceptional performance in production-style tests: Perplexity : Ran agentic coding tasks 1.5x faster with Vera than on traditional CPUs. Perplexity plans to deploy Vera in an upcoming production system. DeepInfra : Delivered up to 2.2x speed of the best x86 processor on agentic orchestration for its production agent workload, achieving the fastest of the four architectures tested. ClickHouse : Its standard binary, with no Vera-specific tuning, scaled near-linearly across 176 cores and topped the ClickBench hardware leaderboard. DuckLabs : Achieved about 1.5x the median TPC-H SF1000 performance of an Intel Xeon 6 baseline. Daytona : Brought 1,000 agent sandboxes online in 10.8 seconds, and achieved 12.7 completed jobs per second at 2,000 concurrent sandboxes, using Vera versus 88.4 seconds with x86. Modal : Achieved up to 2x sandbox throughput per core versus comparable x86 hardware, with gains that grow under heavy load. Learn more about the NVIDIA Vera ",
+    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/11/tech-blog-cpu-architecture-angled-vera-rack-5769445-1920x1080-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "NVIDIA has introduced Vera, a CPU architecture designed to optimize AI agent workflows that require frequent switching between GPU-based reasoning and CPU-based execution. By consolidating high-speed performance and energy efficiency into a single processor, Vera aims to eliminate the need for data centers to mix and match specialized x86 hardware for different agent tasks. NVIDIA claims that in a 100-megawatt data center simulation, Vera outperforms both the fastest and the most energy-efficient x86 CPUs currently available.\n\nTechnical benchmarks indicate that Vera provides 1.6x more agents per watt compared to the fastest x86 CPU and delivers 2x faster agent speed than the most energy-efficient x86 alternative. Early production-style testing by partners demonstrates significant gains: Perplexity reported 1.5x faster agentic coding tasks, while DeepInfra achieved 2.2x the speed of the best x86 processor for agentic orchestration. Additionally, Daytona demonstrated a reduction in sandbox deployment time from 88.4 seconds on x86 to 10.8 seconds on Vera, while Modal observed up to 2x higher sandbox throughput per core under heavy load.",
+      "takeaways": [
+        "**Agent Throughput:** Daytona achieved 12.7 completed jobs per second at 2,000 concurrent sandboxes using Vera.",
+        "**Database Performance:** ClickHouse scaled near-linearly across 176 cores on Vera, topping the ClickBench hardware leaderboard without specific tuning.",
+        "**Energy Efficiency:** Vera provides 1.6x more agents per watt than the fastest x86 CPU and 2x faster agent speed than the most energy-efficient x86 CPU.",
+        "**Benchmark Comparison:** DuckLabs recorded 1.5x the median TPC-H SF1000 performance compared to an Intel Xeon 6 baseline.",
+        "**Deployment Speed:** Daytona brought 1,000 agent sandboxes online in 10.8 seconds on Vera, compared to 88.4 seconds on x86 hardware."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ce33817e4026d3a9",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+    "title": "Meta says US users can now video chat with their Muse AI avatar",
+    "publishedAt": "2026-11-05T19:48:28.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "6e695d6f2581b8d4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "Muse Voice, a feature that lets users call and video chat with Meta’s consumer AI agent, Muse, is now available to everyone in the U.S., the company announced on Thursday.\n\nFirst introduced at Meta’s Connect developer conference in September, the video-chatting feature involves new AI models, Muse Realtime Avatar and Muse Realtime Voice technology, which help power the digital avatar that chats with the user.\n\nWhile other AI competitors offer voice chat features, Meta’s Muse offers a cute, animated avatar (nicknamed Jolly), which users interact with as they ask questions or request tasks to be handled on their behalf. Users can also customize the avatar as they choose, changing it to something that looks more like a person, animal, or some other character.\n\nThe company believes that anthropomorphizing Muse in this way could make consumers feel more connected to their AI agent — a connection that could grow even stronger as they begin to engage in live conversations with it.\n\nAs the Muse avatar speaks, Meta says it will use “subtle expressions and gestures” that match the tone of the conversation. (Muse doesn’t actually “see” the user, but it hears them and reacts based on their conversations.)\n\nThe news of the rollout was announced via blog post and on X by Meta’s chief AI officer, Alexandr Wang, who shared a demo of his Muse in action. The video saw Wang joking around, referencing his love of posting memes on X, which he told his Muse may have gotten him in trouble with his boss. His Muse, a fluffy white dog, responds with a suggestion to add disclaimers to those memes that could be misinterpreted as Meta endorsing anything risqué. (Ha!)\n\nThe added support for video chats and calls comes just before Meta’s plan to launch a Tamagotchi-like wearable device for its Muse AI agent before year-end. When the device arrives, the digital avatar will appear on its small screen, letting users talk to the agent, which can then reply or carry out tasks for them.\n\nMeta says the real-time conversations are supported on mobile, web, and Mac and will later come to its AI Glasses and the upcoming “Muse Charm” hardware device.\n\nTopics AI , Meta , muse When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of th",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta has officially launched 'Muse Voice,' a video-chatting feature for its consumer AI agent, Muse, to all users in the United States. First unveiled at the September Connect developer conference, the feature utilizes proprietary 'Muse Realtime Avatar' and 'Muse Realtime Voice' technology to facilitate interactive, real-time conversations. The interface features an animated avatar, such as the default 'Jolly,' which users can customize to resemble humans, animals, or other characters. Meta intends for this anthropomorphization to foster deeper user engagement, with the avatar programmed to mirror conversational tone through subtle gestures and expressions.\n\nTechnically, the Muse avatar operates via audio input, as it does not possess visual perception of the user. The system is currently accessible across mobile, web, and Mac platforms. Meta plans to expand this functionality to its AI Glasses and a forthcoming wearable device, internally referred to as 'Muse Charm,' which is scheduled for release before the end of the year. This hardware is designed to function as a Tamagotchi-like device, displaying the digital avatar on a small screen to handle user requests and tasks.",
+      "takeaways": [
+        "**Core Technology:** Muse Voice is powered by Muse Realtime Avatar and Muse Realtime Voice models.",
+        "**Platform Availability:** The feature is currently live for U.S. users on mobile, web, and Mac platforms.",
+        "**Hardware Roadmap:** Meta plans to launch a wearable device called 'Muse Charm' by the end of the year, featuring a screen for the AI avatar.",
+        "**Interaction Mechanics:** The avatar uses non-verbal cues like gestures and expressions to match conversational tone, though it does not have visual input capabilities."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "f25b9201ad6bdcc6",
+    "canonicalUrl": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+    "title": "New NVIDIA Cosmos 3 Open Models for Interactive World Simulation",
+    "publishedAt": "2026-11-05T19:35:16.000Z",
+    "fetchedAt": "2026-11-05T22:41:32.100Z",
+    "contentHash": "f48dcdea64c1773f",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "NVIDIA Cosmos world model development platform adds four new open-weight checkpoints to its Cosmos 3 model family for generating interactive world simulation and multi-sensor multi-view driving scenes:\n\n🌦️ Cosmos3-Nano-Transfer-Auto : Generate multi-view driving data with varied weather, lighting, and time of day.\n\n🚗 Cosmos3-Nano-Sim-Auto : Stream synchronized camera and LiDAR observations for driving simulation.\n\n🎨 Cosmos3-Nano-Sim-Transfer : Turn simulator controls and a text prompt into photorealistic video.\n\n🤖 Cosmos3-Nano-Sim-Bimanual : Predict video from robot or camera actions.\n\nAll four models are post-trained examples of Cosmos 3 Nano and have 16B trainable parameters. The models use OpenMDW1.1, permitting commercial and non-commercial use under its terms.\n\nDownload the checkpoints · Read the technical report . Watch the demos\n\nWhy do you need these checkpoints?\n\n🦾 Robotics needs environments that can answer this across changing scenes and viewpoints. These checkpoints offer complementary ways to build them: Sim-Bimanual predicts visual consequences from actions, while Sim-Transfer turns a physics simulator’s controls into generated observations.\n\n🚦 For autonomous driving, appearance and geometry must agree. Synchronized camera and LiDAR generation connects visual observations with 3D sensing. Scene and traffic-signal controls let researchers vary road layouts and signal states, then study how a driving policy responds.\n\n🔄 Each observation can shape the next action. Streaming generation connects video prediction to ongoing interaction, giving world-model researchers a way to explore how actions and observations unfold together.\n\n🌐 An open foundation for others to build on. NVIDIA’s vision is to help researchers and developers create richer, more responsive simulated worlds. Open weights and post-training recipes provide a shared starting point for adapting models, comparing methods, and contributing improvements. These problems remain hard: the work ahead is to measure where the models faithfully support policy learning and evaluation, understand their limits, and improve where they fall short.\n\nBuild Autonomous Vehicle Worlds with Cosmos3-Nano\n\n🌦️Transfer-Auto: driving scenarios → multi-sensor data\n\nCosmos3-Nano-Transfer-Auto is a bidirectional model for offline synthetic driving data generation. It generates synchronized video across up t",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "NVIDIA has released four new open-weight checkpoints for its Cosmos 3 world model platform, specifically designed for interactive simulation in robotics and autonomous driving. All four models—Cosmos3-Nano-Transfer-Auto, Cosmos3-Nano-Sim-Auto, Cosmos3-Nano-Sim-Transfer, and Cosmos3-Nano-Sim-Bimanual—are based on the Cosmos 3 Nano architecture, featuring 16 billion trainable parameters. These models are released under the OpenMDW1.1 license, permitting both commercial and non-commercial use, and are intended to serve as a foundation for researchers to build, adapt, and refine world models for specific sensor rigs and physical environments.\n\nThe models utilize a Mixture-of-Transformers backbone that integrates text-processing and visual-generation networks. The technical pipeline employs a four-stage training recipe: bidirectional adaptation, teacher forcing, consistency distillation (reducing generation to four denoising steps), and self-forcing to mitigate error compounding during long-horizon rollouts. The models operate on compressed video latents, where each latent time step represents four RGB frames. For autonomous driving, the models support synchronized multi-view camera generation (up to 11 views) and joint RGB–LiDAR generation using World Scenario Map (WSM) controls. For robotics, the Sim-Bimanual variant enables interactive two-arm simulation, supporting 59-value control schemas for YAM and AgiBot embodiments.",
+      "takeaways": [
+        "**Model Architecture:** All four released checkpoints are 16B parameter models based on the Cosmos 3 Nano architecture.",
+        "**Driving Capabilities:** Cosmos3-Nano-Transfer-Auto supports offline synthetic data generation with up to 11 camera views and joint RGB-LiDAR output.",
+        "**Streaming Simulation:** Cosmos3-Nano-Sim-Auto is a causally distilled variant designed for fast, interactive rollouts by generating successive video chunks in four denoising steps.",
+        "**Robotics Integration:** Cosmos3-Nano-Sim-Bimanual supports bimanual robot simulation, accepting 59-value control sequences to predict visual consequences of actions for YAM and AgiBot platforms.",
+        "**Training Methodology:** The models undergo a four-stage process including bidirectional adaptation, teacher forcing, consistency distillation, and self-forcing to ensure temporal stability in generated history."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7d05777f3cb4ebe2",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
+    "title": "Meta warns that election backlash against data centers could make AI expansion harder",
+    "publishedAt": "2026-11-05T19:12:39.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "4a2c26cfc11c4aa6",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "Meta president Dina Powell McCormick said that the Democratic wins in the midterm elections are going to make it a lot harder for companies to build data centers, adding that the industry has “not done as good a job as we needed to explain the benefits of these investments.”\n\nSpeaking at the WSJ Tech conference on Wednesday, the Meta exec pointed out that the backlash against data centers — which was very much on the ballot during this election season — was also tied to people’s feelings about AI technology overall.\n\n“The visible sort of manifestation of AI is a data center, and it’s something that people can say, ‘I don’t want this in my community,’” she explained. “I think there’s an underlying bigger issue, which is how people feel about AI in general.”\n\nMeta believes it could turn around the negative consumer sentiment around AI if it’s able to demonstrate the value, not only of the data centers coming to local communities, but also in the technology itself.\n\n“The stakes of who builds the technology that cures cancer, that gives access to education, that is also a very fundamental difference … Mark [Zuckerberg, Meta CEO] is very ‘long human,’ and he’s betting on humans more than machines,” Powell McCormick explained. “And that’s what we mean when we say the future is for everyone. That people should not be left behind. But the way to ensure that is that this technology is democratized, that people have access to it in a very fair and transparent way,” she said.\n\nThe exec also touted Meta’s experience in building data centers, saying that the company has been doing so for 20 years, as it takes a lot of compute power to offer the products it does in the social networking space. Today, the company has data centers in 23 states, she said, and five of them, including one in Texas, are planned as projects of 1 gigawatt or more.\n\nBut Meta is now worried that it could lose some of its investments after politicians ran on anti-data-center platforms during the midterms.\n\n“I think it’s going to be harder,” Powell McCormick said, describing what the future of building data centers looks like. “It has been hard, I should say, but I also think that it’s becoming clear what models work, and the states want those models that work.”\n\nSpecifically, communities only want data centers when it benefits them in some way, she explained, laying out the approach that Meta today ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta President Dina Powell McCormick warned at the WSJ Tech conference that recent midterm election results signal increasing political resistance to data center construction, complicating the company's AI infrastructure expansion. Meta currently operates data centers across 23 U.S. states and is planning five new projects with capacities of 1 gigawatt or more, including a site in Texas. The company attributes the local backlash to a broader public apprehension regarding AI, noting that data centers serve as the primary physical manifestation of the technology for local communities.\n\nTo mitigate opposition, Meta is shifting its community engagement strategy to emphasize tangible local benefits, such as directing tax surpluses toward education and first responders, prioritizing local labor, and securing bipartisan political support. Despite potential regulatory hurdles, Meta maintains that its massive compute investments remain viable; the company reports daily inbound interest from third parties seeking to lease its excess compute capacity, providing a secondary monetization path should its internal consumer AI agent, Muse—which currently has 10 million users—fail to reach its target of billions of users.",
+      "takeaways": [
+        "**Infrastructure Scale:** Meta currently operates data centers in 23 U.S. states, with five upcoming projects designed to reach 1 gigawatt or more in capacity.",
+        "**Monetization Strategy:** Meta is actively exploring leasing its compute capacity to third parties, citing daily inquiries as a hedge against potential underutilization of its AI infrastructure.",
+        "**Community Engagement Model:** Meta's current strategy for securing data center approval involves funding its own electricity, allocating tax surpluses to local teachers and first responders, and mandating local labor forces.",
+        "**User Metrics:** Meta's consumer AI agent, Muse, has reached 10 million users, with the company aiming to scale the platform to serve billions."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "42370702883d2723",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+    "title": "OpenAI released a new cybersecurity model. Is that enough?",
+    "publishedAt": "2026-11-05T19:06:12.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "f85b8aaa053cf704",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Tim Fernholz",
+    "contentSnippet": "Max Justicz, the chief technology officer and co-founder of the startup Charge Robotics, used an OpenAI model to find a severe vulnerability that — if exploited — could allow hackers to take control of servers running Ubuntu, a widely used open source Linux-based operating system.\n\nJusticz, who has a hobbyist’s interest in cybersecurity and previously found a vulnerability in the same codebase, told TechCrunch that he found this issue using GPT 5.6 Sol, released in July, through the AI maker’s Daybreak Blue, a program that gives cybersecurity defenders access to powerful frontier models.\n\n“I literally just aimed ChatGPT at the same body of code and said ‘I found this bug previously that was fixed several years ago, please find bugs as bad or worse,’ and it came back in two hours with this,” Justicz said. “It’s extremely convoluted and hard for a human to find, but it works!”\n\nHe reported the issue to the Debian Project, which maintains the software in question and issued a patch to fix the vulnerability. There has been no known evidence of exploitation. Still, the ease with which he found it suggests that we’ve only seen the tip of the iceberg when it comes to potential exploits that even novice hackers can utilize with the help of AI models.\n\n“I can only imagine what one could do with more time and access to less neutered models. We should expect some extremely crazy bugs to be found and exploited over the next few months,” Justicz wrote in a social media thread discussing his finding. “This might be obvious to most folks here, but there is currently huge alpha in taking some code or binary someone has not audited yet and just aiming a powerful AI model at it.”\n\nOpenAI appears to have noticed. Today, the AI giant announced a new model focused on cybersecurity, ChatGPT Cyber, would be made available to the highest tier of users in the cybersecurity program, Daybreak Red, which allows offensive cybersecurity researchers tools for vulnerability hunting and development. Yesterday, OpenAI said that the same model had been used to scan and prepare patches for vulnerabilities in the Linux kernel, finding 948 potential issues. OpenAI also found 81 “novel” vulnerabilities in Firefox, the web browser.\n\n“Our goal is to dramatically expand Daybreak, bringing advanced security research to organizations of every size, independent researchers, and open-source maintainers,",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI has introduced 'ChatGPT Cyber,' a specialized model integrated into its 'Daybreak Red' program, designed to assist offensive cybersecurity researchers in vulnerability hunting and development. This follows the release of the 'GPT 5.6 Sol' model in July, which was utilized by Charge Robotics CTO Max Justicz to identify a severe, complex vulnerability in Ubuntu. OpenAI reports that its internal testing of these models successfully identified 948 potential issues in the Linux kernel and 81 'novel' vulnerabilities in the Firefox browser, marking a significant shift toward using frontier models for automated security auditing.",
+      "takeaways": [
+        "**Model Capabilities:** OpenAI's internal testing with its cybersecurity-focused models identified 948 potential vulnerabilities in the Linux kernel and 81 novel vulnerabilities in Firefox.",
+        "**Program Structure:** OpenAI operates two tiers of cybersecurity access: 'Daybreak Blue' for defenders and 'Daybreak Red' for offensive researchers, with the latter receiving access to the new ChatGPT Cyber model.",
+        "**Financial Commitment:** OpenAI has launched a $1 billion initiative to support cybersecurity professionals working on critical infrastructure, though critics note the $1.2 million spent on the Linux bug hunt is significantly lower than the $6 million the company invested in fluid dynamics research.",
+        "**Security Concerns:** Researchers like Max Justicz report that while these models are highly effective at finding convoluted bugs, OpenAI has recently restricted ('nerfed') the capabilities of the Daybreak Blue tier, potentially hindering legitimate security research compared to unrestricted open-weight models."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "bcea566fc08fba9b",
+    "canonicalUrl": "https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar",
+    "title": "Muse has a voice mode now",
+    "publishedAt": "2026-11-05T19:03:04.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.269Z",
+    "contentHash": "88d0ca5e54b2efd0",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Jay Peters",
+    "contentSnippet": "Meta now lets you have voice conversations with your Muse AI agent in real time, CEO Mark Zuckerberg announced today. The feature has been rolled out to me, and I gave it a spin on the iOS app while writing this article. As you chat with your Muse agent, the avatar at the top of your conversation animates in time with the words that it’s saying. You can also change the tone of the voice by just asking your agent about what you want and letting it decide or by browsing through a bunch of options in the avatar settings. [Media: https://www.threads.com/@muse/post/DfXsBBYCnf5] In my brief tests, my Muse agent responds quickly over voice, though it occasionally pauses while it’s looking up information or checking something for me (like it would with a text chat query). It also animates what it’s saying well, though for my particular avatar, it’s been a little uncanny. I set my Muse agent’s avatar to look like Mark Zuckerberg as a constant reminder that I’m chatting with a Meta service (I refuse to be charmed by a Jolly!), and seeing the digital Zuckerberg facsimile actually talk with me is quite weird. I also can’t get my Muse agent’s voice to sound exactly like Mark Zuckerberg. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/IMG_0227.jpeg?quality=90&strip=all] Muse’s voice mode and expressive avatars are rolling out now in the US for the app, Meta says. They’re coming “soon” for Meta’s AI glasses and will also be available for its forthcoming Muse Charm gadget, which is supposed to ship this year.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKB394_MUSE_AI_CVIRGINIA_D.png?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Meta AI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta has introduced a real-time voice mode for its Muse AI agent, enabling interactive spoken conversations within the iOS application. The feature includes animated avatars that synchronize lip movements with the agent's speech, and users can customize the voice tone either through direct requests or by selecting from a menu in the avatar settings. The system is designed to process queries similarly to text-based interactions, occasionally pausing during information retrieval or external lookups.\n\nThe update is currently rolling out to users in the United States. Meta has confirmed that the voice mode and expressive avatar functionality will be extended to the company's AI glasses in the near future and will be integrated into the upcoming Muse Charm hardware device, which is scheduled for release later this year.",
+      "takeaways": [
+        "**Platform Availability:** The Muse voice mode is currently live on the iOS app for users in the United States.",
+        "**Hardware Roadmap:** Voice mode support is confirmed for Meta's AI glasses and the forthcoming Muse Charm gadget.",
+        "**Customization:** Users can modify the agent's voice tone via avatar settings or by providing natural language instructions to the agent.",
+        "**Visual Feedback:** The interface features animated avatars that provide real-time lip-syncing during voice interactions."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e0773151ab5d4260",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/",
+    "title": "How Amazon Marketplace evaluates content quality with Amazon SageMaker AI",
+    "publishedAt": "2026-11-05T18:06:43.000Z",
+    "fetchedAt": "2026-11-05T22:41:29.523Z",
+    "contentHash": "caa58f35298a211f",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "James Kim",
+    "contentSnippet": "A+ Content is the rich media widget on the Amazon product detail page. Through visual assets, brands communicate unique product and brand value to help customers make informed purchase decisions. Selling partners using high-quality A+ Content boost their sales by 8–20 percent compared to those without it. A wide variety of brands, from established brands with large in-house design teams to bootstrapped brands with limited resources, use A+ Content, creating inconsistency in content quality. A typical A+ Content project combines text, images, and video into a cohesive product story. Evaluating each asset in isolation misses the quality that emerges from how those assets work together. When your content spans multiple heterogeneous modules and you need a holistic quality signal rather than per-asset checks, the multi-model fusion approach described in this post can help. In this post, we examine this problem in the context of A+ Content. A+ Content provides creative freedom for selling partners to express their authentic selves on their product detail pages, without strict content specifications such as image ratio and text word count. Although this flexibility allows compelling brand storytelling, it also creates substantial variation in content composition and quality. With quality evaluation and improvement recommendations, brands can transform average content into high-quality content that is more coherent, relevant, and useful. This improved content helps customers make more informed purchasing decisions and build lasting relationships with brands, leading to improved revenue for selling partners. To achieve this goal, an evaluation system must assess the complete content experience, provide actionable recommendations beyond numeric scores, and reflect the nuances across product categories. Existing approaches struggle to meet all these requirements simultaneously, so in this post, you will see a new approach using Vision-Language Models (VLMs) to understand and evaluate content holistically, and a diffusion-based generation component that produces improved visual assets from the resulting quality signals. In this post, you will learn how to: Render complete ecommerce content as a single snapshot and evaluate it holistically with a VLM. Combine VLM semantic scores with OCR readability signals in a lightweight CatBoost classifier trained on expert annotati",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/30/ML-20598-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has developed a multi-model fusion system using Amazon SageMaker to evaluate the quality of 'A+ Content'—the rich media widgets on product detail pages—which can increase seller sales by 8–20%. Because A+ Content allows brands significant creative freedom without strict constraints on image ratios or word counts, the resulting heterogeneity makes traditional per-asset quality checks ineffective. The system aims to provide a holistic quality signal that accounts for the interaction between text, images, and video rather than evaluating individual components in isolation.\n\nThe technical architecture utilizes Vision-Language Models (VLMs) to analyze complete ecommerce content rendered as a single snapshot. This VLM-based evaluation is combined with OCR-derived readability signals and fed into a lightweight CatBoost classifier. The classifier is trained on expert annotations to provide actionable quality feedback. Furthermore, the system integrates a diffusion-based generation component that leverages the quality signals to produce improved visual assets, helping brands refine their content for better coherence and relevance across diverse product categories.",
+      "takeaways": [
+        "**Sales Impact:** Selling partners utilizing high-quality A+ Content report sales increases ranging from 8% to 20%.",
+        "**Evaluation Methodology:** The system employs a multi-model fusion approach, rendering full content as a single snapshot for holistic VLM analysis.",
+        "**Classifier Architecture:** A lightweight CatBoost classifier is used to synthesize VLM semantic scores and OCR readability signals.",
+        "**Generative Component:** The pipeline includes a diffusion-based model designed to generate improved visual assets based on identified quality gaps."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "2a8256897722920e",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/",
+    "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
+    "publishedAt": "2026-11-05T18:02:27.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "13087c03e8205e76",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "OpenAI co-founder and president Greg Brockman said the company would be ready for an IPO in 2027, noting that its enterprise revenue has been growing. Speaking at a Wall Street Journal tech conference on Wednesday, the executive touted how the company had been gaining ground in the enterprise market, where rival Anthropic had already successfully made inroads.\n\nIn response to the interviewer’s question about being IPO-ready next year, Brockman replied, “I think so. Yes.”\n\n“We’ve been very clear this year that we want to go public when we feel is the right time for us, and I feel extremely good about the business. I feel like we’ve made so much progress this year, and I’ve honestly never felt more confident in what we’re doing,” Brockman said.\n\nHe detailed how OpenAI’s trajectory as an enterprise had changed over the course of 2026, noting that the first and second quarters were “pretty rough.” He also admitted that OpenAI “wasn’t even in the conversation” when it came to agentic coding — an area where Anthropic’s Claude Code has gained market share.\n\n“We had Codex, but no one was talking about it,” Brockman continued, “and I think that we just kept our heads down and executed.”\n\nBy the third quarter, activity picked up, as OpenAI saw 70% quarterly growth in its annualized revenue — something Brockman attributed to the enterprise side of the business doubling. He explained that the growth wasn’t simply the result of something that happened in the quarter itself, but rather the culmination of investments the company had been making up to that point.\n\nNow the majority of OpenAI’s revenue is coming from the enterprise business, which previously accounted for only around 30% of its total revenue.\n\n“And it’s not that consumer [revenue has shrunk] … It’s been growing, but it’s the enterprise segment has really taken off,” he said, pointing to a recent partnership with JPMorgan Chase as one example of the type of client it’s now winning deals with.\n\nBrockman also spoke more broadly about the lessons OpenAI learned from selling into the enterprise market as well. He said the company had come to understand that its job was to help businesses identify the most important milestones they could achieve with its AI technology, build trust with clients, and demonstrate that it was a reliable partner for the long haul.\n\n“A year ago, we weren’t even really in the enterprise g",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI co-founder and president Greg Brockman stated that the company could be ready for an initial public offering (IPO) by 2027. Speaking at a Wall Street Journal tech conference, Brockman expressed high confidence in the company's current business trajectory, noting that 2026 began with \"rough\" performance in the first and second quarters before accelerating significantly in the third quarter.\n\nOpenAI reported a 70% quarterly growth in annualized revenue during Q3 2026, a surge driven primarily by the enterprise segment. Enterprise revenue now accounts for the majority of the company's total income, a shift from its previous status where enterprise deals represented only 30% of the total. Brockman highlighted a partnership with JPMorgan Chase as a key indicator of the company's successful pivot from a consumer-focused brand to a reliable enterprise partner, specifically noting that the company had previously struggled to compete in the agentic coding space against Anthropic’s Claude Code.",
+      "takeaways": [
+        "**IPO Timeline:** Greg Brockman confirmed that OpenAI could be ready for an IPO by 2027.",
+        "**Revenue Growth:** The company achieved 70% quarterly growth in annualized revenue during Q3 2026.",
+        "**Enterprise Shift:** Enterprise business has grown to represent the majority of total revenue, up from approximately 30% previously.",
+        "**Competitive Context:** OpenAI acknowledged losing early market share in agentic coding to Anthropic’s Claude Code during the first half of 2026.",
+        "**Key Client:** JPMorgan Chase was cited as a primary example of the enterprise-level clients OpenAI is currently securing."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b86f7c45dcb3e542",
+    "canonicalUrl": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+    "title": "Claude can now analyze your spending with its new Personal Finance tool",
+    "publishedAt": "2026-11-05T18:00:00.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "774b88d91b2cc239",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Aisha Malik",
+    "contentSnippet": "With Personal Finance in Claude, users can connect their bank and card accounts through Plaid and ask questions about their finances.",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "With Personal Finance in Claude, users can connect their bank and card accounts through Plaid and ask questions about their finances.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "e6d6c85b3eb3fa4e",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance",
+    "title": "Claude AI can plug directly into your bank account",
+    "publishedAt": "2026-11-05T18:00:00.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.269Z",
+    "contentHash": "5ba88951287eafbe",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Jess Weatherbed",
+    "contentSnippet": "Anthropic has a new pitch for managing your personal finances: let Claude do it instead, with a new Personal Finance feature that connects it to your bank and card accounts via the Plaid bank bridging platform. You can ask the chatbot \"where did my money go this month,\" for example, and it'll create an overview with a breakdown of spending by category, including rent and utilities, shopping, and food. Claude can also answer broader questions around what bills are left before your next payday, if you can afford big purchases like holiday trips, and how much money you could be saving each month. Its access is read-only, and with Plaid facilit … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Personal-Finance-in-Claude-hed.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic has a new pitch for managing your personal finances: let Claude do it instead, with a new Personal Finance feature that connects it to your bank and card accounts via the Plaid bank bridging platform. You can ask the chatbot \"where did my money go this month,\" for example, and it'll create an overview with a breakdown of spending by category, including rent and utilities, shopping, and food. Claude can also answer broader questions around what bills are left before your next payday, if you can afford big purchases like holiday trips, and how much money you could be saving each month.",
+      "takeaways": [
+        "Its access is read-only, and with Plaid facilit … Read the full story at The Verge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "a05905dc499c67f3",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai",
+    "title": "‘Total repudiation’: The blue wave is about to hit AI",
+    "publishedAt": "2026-11-05T17:51:52.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.269Z",
+    "contentHash": "fab48da08359aeb8",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Hayden Field",
+    "contentSnippet": "On Tuesday night, Democrats made history as they took control of the House and the Senate, and a blue wave swept through traditionally red and swing states - with the nation's first Black woman governor elected in Georgia, the country's first Native American woman governor elected in New Mexico, and a Maine Senator ceding to a Democrat after 30 years in office. In these and other campaigns, one theme kept coming up : holding AI companies accountable to the American people. Now, the AI industry is left considering the prospect of regulation, data center construction slowdowns, and more. Publicly, most major AI company CEOs have remained silen … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STK423_ELECTIONS2.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "On Tuesday night, Democrats made history as they took control of the House and the Senate, and a blue wave swept through traditionally red and swing states - with the nation's first Black woman governor elected in Georgia, the country's first Native American woman governor elected in New Mexico, and a Maine Senator ceding to a Democrat after 30 years in office. In these and other campaigns, one theme kept coming up : holding AI companies accountable to the American people. Now, the AI industry is left considering the prospect of regulation, data center construction slowdowns, and more.",
+      "takeaways": [
+        "Publicly, most major AI company CEOs have remained silen … Read the full story at The Verge."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "c68ca1c6eb0f5811",
+    "canonicalUrl": "https://siliconangle.com/2026/11/05/university-utah-retains-operational-sovereignty-redtail-expands-research-access-hpesovereignai/",
+    "title": "University of Utah retains operational sovereignty as Redtail expands research access",
+    "publishedAt": "2026-11-05T17:35:34.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.933Z",
+    "contentHash": "1d977f5aba939044",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Victoria Gayton",
+    "contentSnippet": "Operational sovereignty gives universities authority over how shared computing resources are allocated, managed and secured. The University of Utah’s Redtail AI factory supercomputer brings advanced computing capabilities to a statewide community. Supporting researchers, students, administrators and external partners through that infrastructure requires more than computing capacity, according to Manish Parashar (pictured), chief AI officer of […] The post University of Utah retains operational sovereignty as Redtail expands research access appeared first on SiliconANGLE .",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Operational sovereignty gives universities authority over how shared computing resources are allocated, managed and secured. The University of Utah’s Redtail AI factory supercomputer brings advanced computing capabilities to a statewide community. Supporting researchers, students, administrators and external partners through that infrastructure requires more than computing capacity, according to Manish Parashar (pictured), chief AI officer of ...",
+      "takeaways": [],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "ff14400f2913b0a2",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/5/paul-ford/",
+    "title": "Quoting Paul Ford",
+    "publishedAt": "2026-11-05T17:34:03.000Z",
+    "fetchedAt": "2026-11-05T22:41:30.935Z",
+    "contentHash": "53a0f67c60af1943",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . — Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day . — Paul Ford , The Web Is More Than Enough Tags: browsers , paul-ford , web-development.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "f09d7876c1e95fca",
+    "canonicalUrl": "https://deepmind.google/blog/gemini-omni-12-flash-fast-and-cost-effective-with-longer-clips/",
+    "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+    "publishedAt": "2026-11-05T17:05:16.000Z",
+    "fetchedAt": "2026-11-05T22:41:32.098Z",
+    "contentHash": "f11c4363ed1318ec",
+    "sourceId": "deepmind",
+    "sourceName": "Google DeepMind",
+    "author": "Google DeepMind",
+    "contentSnippet": "",
+    "category": "LLMs & GenAI",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "5beef147a7815df4",
+    "canonicalUrl": "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/",
+    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents",
+    "publishedAt": "2026-11-05T17:00:35.000Z",
+    "fetchedAt": "2026-11-05T22:41:32.100Z",
+    "contentHash": "63a1448d3372b65e",
+    "sourceId": "nvidia-blog",
+    "sourceName": "NVIDIA AI News",
+    "author": "NVIDIA Writers",
+    "contentSnippet": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended. Developers are combining frontier AI models with NVIDIA Omniverse libraries to help carry out that work — building applications for exploring scenarios, investigating failures and improving designs. Developers direct AI agents through natural-language instructions, review results and guide changes. Omniverse libraries provide GPU-accelerated physics, rendering and sensor simulation capabilities. Explore the projects below to see frontier AI models such as GPT-6 Astra at work, and check back for new examples from NVIDIA teams and developers across the ecosystem.   Create Editable 3D Assets With Houdini and AI Agents Creating animated 3D content requires connecting modeling, simulation, materials and rendering. Nick Scarcella, a senior technical artist on NVIDIA’s BondLab team, directed AI agents — primarily using Claude — to work with CUDA libraries and Isaac Sim to create animations. The BondLab team uses SideFX Houdini and the NVIDIA ovrtx library to develop materials, lighting and the final rendered appearance. In one experiment, Scarcella guided Astra to recreate an OP-1 portable synthesizer using product images, manuals and technical direction. He exported the model into the OpenUSD framework, tested it in Houdini and Blender, then used Astra and Opus to refine details before adjusting materials and textures for ovrtx rendering. Scarcella also used a publicly shared robot-hand checkpoint in Isaac Sim, directing the motion and developing materials and lighting in Houdini with Claude’s assistance. Working with team member Steven Dvornik, the team created an “Echos” visualization: translucent versions of the hand overlap and merge into a single hand animation, offering a visual interpretation of robot training. https://blogs.nvidia.com/wp-content/uploads/2026/10/Robot_Hand_Video_Omniverse.mp4 Figure: An artistic visualization of simulated robot-hand motion, developed with AI assistance and Houdini’s materials and lighting tools. These workflows bring agent-assisted creation into existing artist tools, giving teams editable content they can inspect, refine and render across applications. Explore Scarcella’s Houdini MCP tools and agent skill .   Test Robotic Disassembly With Computer-Aided Design and ",
+    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/10/Copy-of-nvidia-ov-x-astra-4up-KV-r1-press-4k-r2-scaled.png",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Turning a simulation idea into a working application means assembling assets, connecting physics and rendering, and checking that the scene behaves as intended. Developers are combining frontier AI models with NVIDIA Omniverse libraries to help carry out that work — building applications for exploring scenarios, investigating failures and improving designs. Developers direct AI agents through natural-language instructions, review results and guide changes.\n\nOmniverse libraries provide GPU-accelerated physics, rendering and sensor simulation capabilities. Explore the projects below to see frontier AI models such as GPT-6 Astra at work, and check back for new examples from NVIDIA teams and developers across the ecosystem. Create Editable 3D Assets With Houdini and AI Agents Creating animated 3D content requires connecting modeling, simulation, materials and rendering.",
+      "takeaways": [
+        "Nick Scarcella, a senior technical artist on NVIDIA’s BondLab team, directed AI agents — primarily using Claude — to work with CUDA libraries and Isaac Sim to create animations.",
+        "The BondLab team uses SideFX Houdini and the NVIDIA ovrtx library to develop materials, lighting and the final rendered appearance.",
+        "In one experiment, Scarcella guided Astra to recreate an OP-1 portable synthesizer using product images, manuals and technical direction.",
+        "He exported the model into the OpenUSD framework, tested it in Houdini and Blender, then used Astra and Opus to refine details before adjusting materials and textures for ovrtx rendering."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 7,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "94c971e34f7981b0",
     "canonicalUrl": "https://www.theverge.com/entertainment/1026282/grimes-ai-movie",
     "title": "Grimes is going to star in an AI movie that’s coming to theaters",
@@ -12,7 +523,7 @@
     "contentSnippet": "The AI-generated sci-fi film Gods Don’t Give Gifts has added a bit of star power: Pop star Grimes is going to appear in the movie. Billed as “the first AI film to come to theatres,” Gods Don’t Give Gifts is a notable test case for the commercial potential of AI films, and it releases on December 4th. Grimes — who will be lending both her likeness and vocal performance to the movie, which you can see in the clip above — potentially gives the project some legitimacy. AI studio Fable, which is producing the film, claimed in a press release that “casting the likeness of an actor with their spoken vocal performance will become more common with animated films using AI: audiences will see actors, athletes, musicians giving vocal performances with their likeness in films.” Gods Don’t Give Gifts is being directed by Jack London, better known under the online handle Gossip Goblin. Gods Don’t Give Gifts is an anthology that’s set in a future “where bodies are disposable and consciousness has been commoditized” and depicts what happens when “four interconnected stories collide with the horrifying consequences of humanity’s attempt to transcend the flesh.” Those themes seem to fit pretty snugly with Grimes’ interests, as she has explored themes of transhumanism and artificial intelligence in the past. It’s also not the only AI project she’s working on, with an AI-themed album called Psy Opera in the works. Here’s the trailer for Gods Don’t Give Gifts: [Media: https://www.youtube.com/watch?v=1G5LArU7tmE] While there has been plenty of hype around the potential for AI in Hollywood, there’s yet to be a project that shows that the technology is actually a vital storytelling tool. Previous examples, like two different takes on The Odyssey — including one made with Elon Musk’s Grok — have left plenty to be desired.",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/GDGG_Grimes_2.png?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Pop artist Grimes has joined the cast of 'Gods Don’t Give Gifts,' an anthology sci-fi film produced by AI studio Fable that is marketed as the first AI-generated feature to receive a theatrical release. Scheduled for a December 4th premiere, the project utilizes AI to synthesize both Grimes' likeness and vocal performance, a production model Fable posits will become standard for future animated and AI-driven cinema. The film explores themes of transhumanism, specifically a future where consciousness is commoditized and physical bodies are considered disposable.\n\nThe film is directed by Jack London, known online as 'Gossip Goblin.' The narrative structure consists of four interconnected stories centered on the consequences of humanity attempting to transcend biological limitations. This project aligns with Grimes' established creative focus on AI and transhumanist aesthetics, as she is simultaneously developing an AI-themed album titled 'Psy Opera.' The release serves as a commercial test case for AI-generated storytelling in Hollywood, following previous, less critically successful attempts at AI-assisted film production, such as adaptations of 'The Odyssey' involving Elon Musk’s Grok.",
@@ -33,12 +544,12 @@
     "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch",
     "title": "OpenAI says its new cybersecurity model is better at not hacking other companies",
     "publishedAt": "2026-11-05T17:00:00.000Z",
-    "fetchedAt": "2026-11-05T17:02:32.602Z",
-    "contentHash": "08a0e0a91a254fbd",
+    "fetchedAt": "2026-11-05T22:41:30.269Z",
+    "contentHash": "c150335d88dd622a",
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Emma Roth",
-    "contentSnippet": "OpenAI is launching GPT-6 Cyber, the latest version of its cybersecurity AI model, which it says is better at finding vulnerabilities and less likely to go rogue and hack other platforms in the process. OpenAI says that during testing, GPT-6 Cyber went out of bounds less than 1 percent of the time, down from around 5 percent with GPT-5.6 Cyber. The evaluation, called ExploitGym HoneyPot, is modeled after the Hugging Face Incident, in which OpenAI’s AI agents breached the open-source AI community to find answers to a problem they were tasked with solving. “With the 6 Cyber model, we were able to make huge improvements on this evaluation,” Fouad Matin, the head of OpenAI’s cyber preparedness and safety team, said during a press briefing. “It’s over 99 percent of the time doing what you ask.” But evaluation awareness, or when an AI system recognizes that it’s being tested and changes its behavior in response, remains a concern. “Evaluation awareness is super top of mind for us,” Matin said. “Often when we do see evaluation awareness, you’ll see it in the model’s chain of thought.” Matin added that OpenAI is trying to prioritize production-like evaluations, where the model is interacting with real codebases with a real objective to lessen the risk of awareness. Following a wave of AI cybersecurity incidents, OpenAI has raced to strengthen its safeguards and lock down its most powerful models. The company briefly paused training of its frontier AI models, and it now restricts their access to the internet. GPT-6 Cyber is classified as Critical in cybersecurity on OpenAI’s Preparedness Framework, which indicates that it “can identify and develop functional zero-day exploits of all severity levels in many hardened real-world critical systems without human intervention.” GPT-5.6 Cyber was previously classified as High under the framework. [Image: GPT-6 Cyber outperforms GPT-6 Astra and GPT-5.6 Sol on ExploitGym. https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/exploit-gym-gpt-6-cyber.png?quality=90&strip=all] GPT-6 Cyber outperforms GPT-6 Astra, OpenAI’s flagship Critical-level model, on most cyber-related tasks. In ExploitGym, an AI benchmark that measures whether an AI model can exploit vulnerabilities, GPT-6 Cyber scored 48.5 percent, about 16 points higher than GPT-5.6 Cyber’s 32.1 percent and a few points higher than GPT-6 Astra’s 42.4 percent sc",
+    "contentSnippet": "OpenAI is launching GPT-6 Cyber , the latest version of its cybersecurity AI model, which it says is better at finding vulnerabilities and less likely to go rogue and hack other platforms in the process. OpenAI says that during testing, GPT-6 Cyber went out of bounds less than 1 percent of the time, down from around 5 percent with GPT-5.6 Cyber. The evaluation, called ExploitGym HoneyPot, is modeled after the Hugging Face Incident, in which OpenAI's AI agents breached the open-source AI community to find answers to a problem they were tasked with solving. \"With the 6 Cyber model, we were able to make huge improvements on this evaluation,\" Fo … Read the full story at The Verge.",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/02/STK155_OPEN_AI_2025_CVirgiia_D.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "Open Source & Research",
     "lab": "OpenAI",
@@ -126,7 +637,7 @@
     "author": "Mark Albertson",
     "contentSnippet": "UPDATED 11:17 EST / NOVEMBER 05 2026\n\nWhat to expect during KubeCon + CloudNativeCon NA: Join theCUBE Nov. 10-12\n\nKubernetes has emerged as the default container orchestration standard , a foundational platform layer across the enterprise. Will Kubernetes also play a central role in positioning the next generation of AI workloads for production?\n\nThis is the question on the minds of the cloud-native community as it gathers this month for KubeCon + CloudNativeCon NA in Salt Lake City. With the rise of AI agents that have progressed from answering user questions to executing code and running business systems, customers are increasingly interested in controlling what autonomous agents are allowed to do.\n\n“That brings us to OpenShell, an open-source secure agent runtime that Red Hat is helping develop alongside Nvidia and, of, course, the broader community,” said theCUBE Research’s Dave Vellante , during a pre-event interview . “The approach puts enforcement into the environment where the agent operates, setting boundaries around what it can access and execute rather than relying on a model alone to follow the rules. We think this is a central question for the next chapter of cloud native: how do enterprises give agents enough freedom to be useful without giving up control?”\n\nDuring KubeCon + CloudNativeCon , Nov. 10-12, theCUBE, SiliconANGLE Media’s livestreaming studio, will feature on-site reporting and exclusive interviews with executives from Red Hat Inc. and Nvidia Corp., among others. TheCUBE will examine the latest innovations in GPU orchestration, agentic workloads and platform engineering as inference and autonomous agents move into production. (* Disclosure below.)\n\nContainer orchestration for AI\n\nOpenShell, while still an early-stage project, is actively being developed for Kubernetes environments. The activity reflects growing customer interest in using containerized environments for applications, according to theCUBE Research’s Paul Nashawaty .\n\n“Fifty-one percent of organizations report that 51–75% of their applications now run in containers, representing a sharp rise from just a few years ago,” Nashawaty said. “Organizations now run the majority of their applications in containers which is a sharp rise that reflects the accelerating cloud-native transformation central to KubeCon + CloudNativeCon.”\n\nOpenShell was accepted into the Cloud Native Com",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "KubeCon + CloudNativeCon North America, held in Salt Lake City from November 10–12, 2026, is focusing on the integration of autonomous AI agents into production Kubernetes environments. A primary highlight is OpenShell, an open-source secure agent runtime developed by Red Hat in collaboration with Nvidia. Accepted as a Cloud Native Computing Foundation (CNCF) sandbox project in September, OpenShell aims to provide a security layer for AI agents by enforcing access boundaries directly within the containerized environment, rather than relying solely on model-level guardrails.\n\nTechnical discussions at the event center on the shift toward Kubernetes-native security and GPU orchestration as enterprises move AI inference workloads into production. Research from theCUBE indicates that 51% of organizations now run 51–75% of their applications in containers, while 41.3% of organizations identify increased vulnerability risk—driven by rapid CI/CD cycles—as their top security challenge. To address these risks, industry leaders are leveraging Kubernetes-native tooling and projects like the Agent Sandbox to manage agent permissions and file access via standard Kubernetes APIs.\n\nBeyond security, the event highlights the necessity of workload portability in a multicloud landscape, with 94% of organizations now operating across two or more cloud providers. The conference serves as a venue for assessing the maturity of the CNCF ecosystem, including foundational projects like Istio and Knative, while exploring new platform engineering requirements for managing agentic workloads at scale.",
@@ -155,7 +666,7 @@
     "author": "Aditya Mehta",
     "contentSnippet": "It feels like AI is cracking a new math problem every week. Last month, OpenAI alone released 719 manuscripts claiming solutions to some of the field’s hardest problems. Even the computer checks can slip . After years of AI slop, it’s fair to wonder whether math is next.\n\nAxiomMath is betting math can avoid that fate, not by slowing down, but by standing on firmer ground. The $1.6B startup wants to build a verified foundation that AI agents can rely on to write software and, eventually, do science.\n\nOn Wednesday, the company announced it had formally verified the Stacks Project, one of the largest bodies of mathematics ever written by humans. Mathematicians often hold Stacks in rare regard—Columbia mathematician Peter Woit has claimed there’s “ nothing else really comparable ,” comparing the project to “ the famous Bourbaki books ,” a series that rebuilt math from its foundations in the 20th century.\n\nWoit’s Columbia colleague Johan de Jong started the Stacks Project in 2005 as an open-source reference. Mathematicians have contributed to it ever since, building out results from college-level algebra all the way up to the field’s most advanced ideas across algebra, geometry, and number theory.\n\nThe company’s fleet of AI agents translates the library’s roughly 7,654 pages into about 16 million lines of computer-checked code.\n\nFormalizing math is a way of making sure the structure underneath it is sound. Mathematicians rewrite the proof as code in a programming language called Lean, and a program called a proof assistant checks the code line by line. If the proof passes, mathematicians can trust that it’s logically sound.\n\nEngineers use the same idea, called formal verification, to confirm their chip designs work , while researchers in France have used it to catch bugs in software that calculates family benefits.\n\nFor a library like the Stacks Project, checking each theorem is only part of the job. The theorems and definitions in Stacks are interconnected, and each one builds on the ones before it. Like a family tree, many results in Stacks trace back to the ones that came before it.\n\nThat interconnectedness made Axiom unsure the project would work at first. The team had to keep every connection intact across about 16 million lines of Lean code.\n\n“Things that are big and things that are delicate in life just don’t go together,” Axiom CEO Carina Hong told TechCr",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Axiom Math, a $1.6 billion startup founded in March 2025 by CEO Carina Hong, has announced the formal verification of the Stacks Project, a massive open-source repository of mathematical knowledge. By utilizing a fleet of autonomous AI agents, the company translated approximately 7,654 pages of human-written mathematics into 16 million lines of Lean code. This process ensures that the interconnected theorems and definitions within the Stacks Project are logically sound and free of paradoxes, providing a verified foundation for future AI-driven scientific and software development.\n\nThe technical methodology involved training proprietary models specifically for mathematical reasoning, moving beyond standard \"vibe coding\" to instill a sense of mathematical \"taste\" in the agents. These agents operated in parallel, identifying and executing tasks within a loose hierarchy to maintain the integrity of the project's complex, tree-like structure of dependencies. This formalization addresses a significant \"black hole\" in algebraic geometry, enabling researchers and AI agents to build new proofs and software infrastructure on a verified substrate rather than starting from scratch. Axiom Math, which raised a $200 million Series A led by Menlo Ventures, positions this work as a critical safeguard against the proliferation of \"AI slop\" in technical fields.",
@@ -271,7 +782,7 @@
     "author": "Lauren Forristal",
     "contentSnippet": "Dropbox is making a big push into AI infrastructure with a $350 million acquisition of cloud technology company Tigris Data, marking what appears to be its largest acquisition to date.\n\nAnnounced Thursday, the deal is expected to strengthen Dropbox’s AI infrastructure capabilities and support the development of DBX Agent Cloud, a new storage platform aimed at businesses and developers building AI models and agents.\n\nDropbox told TechCrunch via email that the transaction is expected to close in the fourth quarter of 2026. The company also said it currently has no plans to reduce headcount as part of the acquisition. The company already cut 9% of its global workforce last month, WSJ reported.\n\nDBX Agent Cloud will initially offer object storage as a stand-alone product, allowing businesses to purchase storage independently and use it with existing tools and applications built for Amazon S3 (Simple Storage Service), which is a cloud storage service that enables businesses to store and retrieve large volumes of data.\n\nBeyond its infrastructure ambitions, Dropbox is also bringing more AI capabilities to its core product. Users will be able to ask AI to perform supported tasks using their files, choose between different AI models, and connect their Dropbox content to third-party tools, including ChatGPT, Claude, and Muse.\n\nThe company also plans to expand DBX Agent Cloud with additional capabilities designed to help AI systems work with different types of content, including documents, images, audio, and video. Other planned additions include filesystem features that will allow AI agents to manage files and maintain continuity across tasks and sessions.\n\nDropbox says the updated experience has already reached more than 70,000 teams. The initial rollout is available to eligible Standard and Advanced customers in the U.S., U.K., and Australia, with broader availability planned for 2027.\n\nTigris Data was founded by former Uber engineers who helped develop the ride-hailing company’s storage infrastructure. The company provides cloud storage technology that helps businesses store and access data across different regions. Its platform automatically positions data closer to the users and computing resources that need it, helping reduce access times and improve performance.\n\nTigris Data raised $25 million in a Series A funding round last year.\n\nWhile the Tigris deal appear",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Dropbox has announced the acquisition of cloud infrastructure startup Tigris Data for $350 million, representing the company's largest acquisition to date. The deal, expected to close in Q4 2026, is designed to bolster Dropbox’s AI infrastructure and support the launch of 'DBX Agent Cloud,' a new storage platform tailored for developers and businesses building AI models and agents. Tigris Data, founded by former Uber engineers, provides technology that optimizes data placement across regions to reduce latency and improve performance for compute-intensive workloads.\n\nDBX Agent Cloud will debut as a stand-alone object storage product compatible with the Amazon S3 API. Future iterations are planned to include filesystem capabilities that enable AI agents to manage files and maintain state across sessions, alongside support for multi-modal content including audio, video, and images. This infrastructure push complements Dropbox’s existing AI product suite, which currently allows users to query files and integrate with third-party models like ChatGPT, Claude, and Muse. The updated AI experience is currently available to over 70,000 teams in the U.S., U.K., and Australia, with a broader rollout scheduled for 2027.",
@@ -291,25 +802,25 @@
   {
     "id": "a6f5d7b7235f4ebe",
     "canonicalUrl": "https://spectrum.ieee.org/ai-watermark-openai-textgrain-europe",
-    "title": "AI Text Watermarking May Not Be Able to Meet the EU’s New Rules",
+    "title": "AI Text Watermarking May Not Be Able to Meet the E.U.’s New Rules",
     "publishedAt": "2026-11-05T15:00:03.000Z",
-    "fetchedAt": "2026-11-05T17:02:31.472Z",
-    "contentHash": "9e91a0d232291160",
+    "fetchedAt": "2026-11-05T22:41:29.527Z",
+    "contentHash": "3164aac21dbf7810",
     "sourceId": "ieee-spectrum-ai",
     "sourceName": "IEEE Spectrum AI",
     "author": "Anna Desmarais",
-    "contentSnippet": "The European Union now requires AI-generated text to be watermarked so that it can be identified as such. But tests on OpenAI’s new textGrain watermark, released in October and developed to comply with the new EU law , show that these watermarks often do not survive additional editing of the text or when it’s under 150 words. With no clear legal benchmark for how well watermarks should work, it’s uncertain whether textGrain will meet Europe’s transparency rules, which could cost the company significantly and make it difficult to detect AI-generated text as models grow more sophisticated. AI models calculate the probabilities of different possible next tokens (the next word or word fragment it generates) based on the text already written, then select one and repeat that process until the response is complete. After the prompt “today the weather is…,” for example, says Xiang Li , co-author of the textGrain technical report and a postdoctoral researcher at the University of Pennsylvania, the model might weigh “warm” or “cool” as possible next words. A watermark uses a secret key to generate pseudorandom values: numbers produced by a mathematical process, which influence which token the model suggests. This creates a statistical pattern in the text that a detector with the same secret key can look for, Li says. What makes textGrain different from other watermarks is that it uses entropy, a measure of how unpredictable a model’s word choices are, as a resource that can be budgeted when embedding a watermark. Developers specify how much entropy or unpredictability they want to allow, and textGrain adjusts to that target. This gives developers more control over the balance between embedding a detectable signal and preserving variation in the model’s output, Li says. “We can think of entropy as a resource, a kind of money. […] In our approach, we can accurately determine how much of that resource we want to consume.” Limits of AI Watermark Detection The watermark is invisible to readers. But a positive result does not show how much a person contributed to a passage, and a negative result does not prove that a text was human-written. OpenAI’s false-positive rate is 1 percent, meaning the detector is designed to wrongly flag about one in 100 unwatermarked passages. In tests on psychology questions from the ELI5 database , which gathers questions and answers from the /",
+    "contentSnippet": "The European Union now requires AI-generated text to be watermarked so that it can be identified as such. But tests on OpenAI’s new textGrain watermark, released in October and developed to comply with the new E.U. law , show that these watermarks often do not survive additional editing of the text or when it’s under 150 words. With no clear legal benchmark for how well watermarks should work, it’s uncertain whether textGrain will meet Europe’s transparency rules, which could cost the company significantly and make it difficult to detect AI-generated text as models grow more sophisticated. AI models calculate the probabilities of different possible next “tokens” (the next word or word fragment it generates) based on the text already written, then select one and repeat that process until the response is complete. After the prompt “today the weather is…,” for example, says Xiang Li , coauthor of the textGrain technical report and a postdoctoral researcher at the University of Pennsylvania, the model might weigh “warm” or “cool” as possible next words. A watermark uses a secret key to generate pseudorandom values—numbers produced by a mathematical process that influence which token the model suggests. This creates a statistical pattern in the text that a detector with the same secret key can look for, Li says. What makes textGrain different from other watermarks is that it uses entropy, a measure of how unpredictable a model’s word choices are, as a resource that can be budgeted when embedding a watermark. Developers specify how much entropy or unpredictability they want to allow, and textGrain adjusts to that target. This gives developers more control over the balance between embedding a detectable signal and preserving variation in the model’s output, Li says. “We can think of entropy as a resource, a kind of money.… In our approach, we can accurately determine how much of that resource we want to consume.” Limits of AI Watermark Detection The watermark is invisible to readers. But a positive result does not show how much a person contributed to a passage, and a negative result does not prove that a text was human-written. OpenAI’s false-positive rate is 1 percent, meaning the detector is designed to wrongly flag about one in 100 unwatermarked passages. In tests on psychology questions from the ELI5 database , which gathers questions and answers from the r/ex",
     "imageUrl": "https://spectrum.ieee.org/media-library/conceptual-illustration-of-the-european-union-flag-with-its-stars-replaced-by-logos-for-open-ai.jpg?id=68564327&width=980",
     "category": "Business & Big Tech",
     "lab": "Google DeepMind",
     "entryType": "RESEARCH_PAPER",
     "summary": {
-      "tldr": "The European Union now requires AI-generated text to be watermarked so that it can be identified as such. But tests on OpenAI’s new textGrain watermark, released in October and developed to comply with the new EU law , show that these watermarks often do not survive additional editing of the text or when it’s under 150 words. With no clear legal benchmark for how well watermarks should work, it’s uncertain whether textGrain will meet Europe’s transparency rules, which could cost the company significantly and make it difficult to detect AI-generated text as models grow more sophisticated.\n\nAI models calculate the probabilities of different possible next tokens (the next word or word fragment it generates) based on the text already written, then select one and repeat that process until the response is complete. After the prompt “today the weather is…,” for example, says Xiang Li , co-author of the textGrain technical report and a postdoctoral researcher at the University of Pennsylvania, the model might weigh “warm” or “cool” as possible next words. A watermark uses a secret key to generate pseudorandom values: numbers produced by a mathematical process, which influence which token the model suggests.",
+      "tldr": "The European Union now requires AI-generated text to be watermarked so that it can be identified as such. But tests on OpenAI’s new textGrain watermark, released in October and developed to comply with the new E.U. Law , show that these watermarks often do not survive additional editing of the text or when it’s under 150 words.\n\nWith no clear legal benchmark for how well watermarks should work, it’s uncertain whether textGrain will meet Europe’s transparency rules, which could cost the company significantly and make it difficult to detect AI-generated text as models grow more sophisticated. AI models calculate the probabilities of different possible next “tokens” (the next word or word fragment it generates) based on the text already written, then select one and repeat that process until the response is complete. After the prompt “today the weather is…,” for example, says Xiang Li , coauthor of the textGrain technical report and a postdoctoral researcher at the University of Pennsylvania, the model might weigh “warm” or “cool” as possible next words.",
       "takeaways": [
+        "A watermark uses a secret key to generate pseudorandom values—numbers produced by a mathematical process that influence which token the model suggests.",
         "This creates a statistical pattern in the text that a detector with the same secret key can look for, Li says.",
         "What makes textGrain different from other watermarks is that it uses entropy, a measure of how unpredictable a model’s word choices are, as a resource that can be budgeted when embedding a watermark.",
-        "Developers specify how much entropy or unpredictability they want to allow, and textGrain adjusts to that target.",
-        "This gives developers more control over the balance between embedding a detectable signal and preserving variation in the model’s output, Li says."
+        "Developers specify how much entropy or unpredictability they want to allow, and textGrain adjusts to that target."
       ],
       "impact": "High",
       "readTimeMinutes": 6,
@@ -371,9 +882,9 @@
   {
     "id": "e79288c48dc9eade",
     "canonicalUrl": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/",
-    "title": "Aina’s smart ring has a screen, a joystick and a mic so you can talk to AI agents",
+    "title": "Aina’s smart ring has a screen, a joystick, and a mic so you can talk to AI agents",
     "publishedAt": "2026-11-05T14:42:00.000Z",
-    "fetchedAt": "2026-11-05T17:02:32.601Z",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
     "contentHash": "fa5fb01654e8d961",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
@@ -414,7 +925,7 @@
         "Avalanche Software has tuned the integration through DLSS 5’s developer controls to maintain the game’s artistic intent and style."
       ],
       "impact": "Medium",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -443,19 +954,19 @@
   {
     "id": "44f488c59aa9e3a6",
     "canonicalUrl": "https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/",
-    "title": "A YC startup is putting $1M behind five unsolved materials science problems for AI",
+    "title": "A YC startup is putting $1M behind 5 unsolved materials science problems for AI",
     "publishedAt": "2026-11-05T13:00:00.000Z",
-    "fetchedAt": "2026-11-05T17:02:32.601Z",
-    "contentHash": "5f06f539c61d5a4d",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "87554fa77cdc4dc7",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Tim Fernholz",
-    "contentSnippet": "Discovered Materials, a months-old YC startup that uses AI to find chip materials, is offering $200,000 for each solution to five open materials science problems.",
+    "contentSnippet": "While frontier AI models have solved a remarkable series of outstanding mathematics problems and made progress in the life sciences, they have yet to truly plumb the complex physics in advanced materials.",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Discovered Materials, a months-old YC startup that uses AI to find chip materials, is offering $200,000 for each solution to five open materials science problems.",
+      "tldr": "While frontier AI models have solved a remarkable series of outstanding mathematics problems and made progress in the life sciences, they have yet to truly plumb the complex physics in advanced materials.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -467,17 +978,17 @@
     "canonicalUrl": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
     "title": "Agility is the first pure humanoid robot company on the stock market. Are you buying?",
     "publishedAt": "2026-11-05T12:00:00.000Z",
-    "fetchedAt": "2026-11-05T17:02:32.601Z",
-    "contentHash": "8250a47b68eefe1b",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "d79917cc9ff71f61",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Tim Fernholz",
-    "contentSnippet": "Agility arrives on the Nasdaq today as the first publicly-traded pure-play humanoid robotics company.",
+    "contentSnippet": "Agility arrives on the Nasdaq today as the first publicly traded pure-play humanoid robotics company.",
     "category": "Robotics & Hardware",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Agility arrives on the Nasdaq today as the first publicly-traded pure-play humanoid robotics company.",
+      "tldr": "Agility arrives on the Nasdaq today as the first publicly traded pure-play humanoid robotics company.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -506,6 +1017,28 @@
         "That's on top of at least $1 trillion in spending commitments that have bee … Read the full story at The Verge."
       ],
       "impact": "Breakthrough",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "14e90e72d3401ddf",
+    "canonicalUrl": "https://openai.com/index/introducing-gpt-6-cyber",
+    "title": "GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents",
+    "publishedAt": "2026-11-05T09:00:00.000Z",
+    "fetchedAt": "2026-11-05T22:41:31.401Z",
+    "contentHash": "b0a77a64cbbe0ca1",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Introducing GPT‑6 Cyber, OpenAI’s cybersecurity model for finding exploitable vulnerabilities and developing fixes, trained to stay within authorized scope.",
+      "takeaways": [],
+      "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
@@ -1768,12 +2301,12 @@
     "canonicalUrl": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
     "title": "Apple is reportedly cutting budgets for its internal AI usage",
     "publishedAt": "2026-11-05T01:26:22.000Z",
-    "fetchedAt": "2026-11-05T01:46:21.121Z",
-    "contentHash": "fab5218287ba1402",
+    "fetchedAt": "2026-11-05T22:41:30.268Z",
+    "contentHash": "2e296eaa8e736b4e",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Lucas Ropek",
-    "contentSnippet": "Posted: 5:26 PM PST · November 4, 2026 Image Credits: STR/NurPhoto / Getty Images Lucas Ropek Apple is reportedly cutting budgets for its internal AI usage Apple is cutting the daily amount its engineering teams can spend on AI, Bloomberg reported Wednesday. It’s a big change for a company that has worked to integrate the technology into its engineering processes.\n\nIn October, Apple lowered the daily AI spending cap for its engineering teams, decreasing it from $300 to $200, the outlet reported. And more cuts are in the works, with some allowances falling to $100 a day, sources tell Bloomberg. Outside engineering, Apple is reportedly weighing a daily limit as low as $25 a day.\n\nTechCrunch has reached out to Apple for comment.\n\nEarlier this year, a tsunami of tokenmaxxing took hold, with companies pushing staff to use AI as much as possible in the name of vaguely defined efficiency gains. The frenzy was short-lived, however, as bills for said tokens came due, and companies decided that token rationing might be a more fiscally sensible approach.\n\nConcerns persist about an apparent gap between what AI costs to build and run and the (often unclear) productivity gains the technology is suppose to generate.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nSubscribe for the industry’s biggest tech news\n\n<img width=\"665\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?w=665\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"A night view of the U.S. Congress building in Washington, D.C.\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg 2400w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=150,85 150w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=300,169 300w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=768,433 768w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=680,383 680w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=1200,677 1200w, https://techcrunch.com/wp-content/uploads/2025/11/us-congress-at-night.jpg?resize=12",
+    "contentSnippet": "The tokenmaxxing frenzy has been short-lived as bills for said tokens came due, and companies decided that token rationing might be a more fiscally sensible approach.",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
@@ -7115,6 +7648,36 @@
     }
   },
   {
+    "id": "4613e85d09f408da",
+    "canonicalUrl": "https://arxiv.org/abs/2611.04408",
+    "title": "Halley: A Predictive Control Plane for Optical AI Data Center Networks",
+    "publishedAt": "2026-11-03T06:45:50.000Z",
+    "fetchedAt": "2026-11-05T22:41:29.494Z",
+    "contentHash": "55baddd84d71a33a",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Manav Mishra, Krishna M. Sivalingam",
+    "contentSnippet": "Authors: Manav Mishra , Krishna M. Sivalingam\n\nAbstract: A frontier AI model is trained in an AI data center, on tens of thousands of accelerators joined by a dedicated network, and every training step ends with all of them exchanging data at once. Between racks, that network is optical, and each of its four layers, from lasers to switches, runs a fixed or after-the-fact policy. Lasers sharing an enclosure, cooling, and power can fail together. At a fixed spare ratio, correlated failure provably caps a pool's availability however large it grows. In this paper, we present a comprehensive predictive control plane framework, called Halley, that reads each resource's next state and acts before the failure occurs. It has four components, each carrying a formal guarantee: LightReserve that sizes the laser pool to provide a coverage bound, FoldFit that schedules the switch within $11/9$ of the optimal, ThermaLead that holds a microring with one-step-ahead control, and TriageGuard that protects the highest-risk modules first. Halley gives each layer a predictive controller that defers to the deployed policy when unsure. Composed from simulations at that point, effective goodput, the share of ideal throughput kept, rises from 65.2\\% to 76.5\\% if a window that exhausts its spares is lost. If only the dark channels' bandwidth is lost, it reaches 67.4\\%. Per megawatt, that is up to 1.03--1.17 times the training; for the same training, up to 3.3--14.7\\% less data center capacity. \\textsf{Halley}'s fallback circuits are formally verified and are shown to achieve close timing on a commercial FPGA, and pass a 130~nm signoff.\n\nNotes: 24 pages, 18 figures",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.04408",
+    "pdfUrl": "https://arxiv.org/pdf/2611.04408",
+    "summary": {
+      "tldr": "Manav Mishra and Krishna M. Sivalingam have introduced Halley, a predictive control plane framework designed to mitigate correlated failures in optical AI data center networks. By addressing the limitations of fixed or reactive policies in multi-layer optical architectures—where shared power, cooling, and enclosure constraints lead to correlated failures—Halley implements a proactive management layer. The framework consists of four formally guaranteed components: LightReserve for laser pool sizing, FoldFit for switch scheduling, ThermaLead for microring control, and TriageGuard for risk-based module protection.\n\nHalley functions as a predictive controller that defers to existing deployed policies when uncertainty arises. Simulation results indicate that the framework improves effective goodput from 65.2% to 76.5% during scenarios where spare capacity is exhausted. In terms of operational efficiency, the system achieves 1.03 to 1.17 times the training performance per megawatt and reduces required data center capacity by 3.3% to 14.7% for equivalent training workloads. The framework's fallback circuits have been formally verified, validated on a commercial FPGA, and passed a 130 nm signoff.",
+      "takeaways": [
+        "**Performance Gains:** Effective goodput increases from 65.2% to 76.5% during spare-exhaustion events.",
+        "**Efficiency Metrics:** Delivers 1.03–1.17x training performance per megawatt and reduces data center capacity requirements by 3.3–14.7%.",
+        "**Algorithmic Guarantees:** FoldFit component provides switch scheduling within 11/9 of the theoretical optimal.",
+        "**Validation:** Fallback circuits are formally verified and passed a 130 nm signoff process."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "dfdd0b70b8a46bf2",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/",
     "title": "OpenAI Introduces Pando: A Git Backend That Cuts Median Push Latency ~80%",
@@ -10217,543 +10780,6 @@
       "readTimeMinutes": 2,
       "generatedWith": "gemini",
       "summaryVersion": 2
-    }
-  },
-  {
-    "id": "8bfd7590d71c0d95",
-    "canonicalUrl": "https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/",
-    "title": "42AI comes out of stealth with $62.5M and a world model that can ‘predict human behavior’",
-    "publishedAt": "2026-11-02T16:30:00.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.745Z",
-    "contentHash": "5840524bfc5c3cc1",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Ram Iyer",
-    "contentSnippet": "Here’s a question straight out of sci-fi: What if AI could predict what you were going to do before you decided to, even in a completely new situation?\n\nIsraeli startup 42AI says it is developing a “behavioral world model” that can do just that, and it has just come out of stealth with $62.5 million in seed funding. The company is initially running its predictive system at a handful of financial brokerages, where it says the model can help predict how individual traders will respond to volatile conditions.\n\n“Behavior is not deterministic; it’s constantly probabilistic,” 42AI’s CEO and co-founder Amit Gal-Or told TechCrunch when I asked him to justify his company’s tall claim. He argues that people have underlying psychological tendencies that influence their decisions even when their circumstances change, and that’s what the startup is trying to measure and convert into data that the model can understand.\n\n“A week from now, you might be a different person, but your tendencies will always play out in certain areas to a probability or distribution,” his co-founder and CTO Ehud Ezra added. And that, the company argues, is what the model does: show the probability of a person making a certain decision.\n\n42AI says the model tries to figure out people’s internal motivations instead of extrapolating patterns based on their previous actions. To do that, 42AI examines how people react to seemingly unrelated events. For an investor or trader, for example, such events might include completing KYC processes, onboarding, support calls, money transfers, or trading stocks.\n\n“When the person is talking to support or sales in the initial process […] we’re looking at the sentiment, we’re looking at the voice, we’re looking at a lot of interactions that they’re doing, how many times do they call, and so forth,” added CTO and co-founder Ehud Ezra. “And all of those data points are going into the model. Later on, you have the interactions: how you buy and sell, and when, and we’re looking at the market at that stage.”\n\n“So we’re trying to look at how they’re looking at the world. In a world model, every individual is the world,” he added.\n\nThe company then converts those observations into mathematical representations of traits, which are then fed into a transformer-based world model that lays out probabilities for possible decisions under different circumstances. (The company us",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Israeli startup 42AI has emerged from stealth with $62.5 million in seed funding, developing what it terms a \"behavioral world model\" designed to predict human decision-making probabilities under volatile conditions. Founded by CEO Amit Gal-Or, CTO Ehud Ezra, and Chairman Amir Gal-Or, the company spent three years building the system by incorporating psychological research, neuroscience, genetics, and consultation from 2011 Nobel Prize in Chemistry laureate Dan Shechtman, alongside government and biobank datasets covering over 2 million people before expanding customer datasets to nearly 30 million.\n\nThe system utilizes a transformer-based world model fed by mathematical trait representations extracted from multi-channel user data, such as support calls, voice sentiment, onboarding metadata, and transaction history. A separate language model generates textual explanations for the predictions. In live deployments across 10 financial brokerages managing liquidity, hedging, and margin requirements, 42AI claims its system achieves an F1 score between 0.8 and 0.85 for predicting trading direction and volume, alongside a 98% accuracy metric measuring whether trading flows fall within a predicted range. The startup operates on a business model combining flat fees and performance-percentage models, generating over seven figures in annual revenue.\n\nDespite commercial deployment, 42AI acknowledges accuracy drops when situational context is missing—such as unobserved advice from peers—and faces ethical scrutiny regarding potential exploitation of profiled customer behavior. The company relies on internal ethics committees and regulatory compliance to address these concerns, while actively exploring expansion into gaming, cybersecurity, fraud prevention, and robotic human-intent modeling.",
-      "takeaways": [
-        "**Funding and Backing:** 42AI raised $62.5 million in seed funding over a three-year period from the founders and Infinity Group, which was co-founded by chairman Amir Gal-Or.",
-        "**Model Architecture:** The system employs a transformer-based world model paired with a separate language model to generate explanations, processing behavioral traits derived from interactions like support calls, onboarding steps, and financial transactions.",
-        "**Performance Metrics:** The startup claims an F1 score of 0.8 to 0.85 for forecasting trading direction and volume, and a 98% accuracy metric indicating whether trading flows fall within a predicted range.",
-        "**Dataset Scale:** Initial training incorporated psych assessments of thousands of individuals and government/biobank datasets exceeding 2 million people, which later expanded to customer datasets covering nearly 30 million people.",
-        "**Commercial Traction:** 42AI is deployed across 10 large financial brokerages for liquidity management and dynamic hedging, generating over seven figures in revenue under flat-fee or percentage-of-gain pricing models."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "fdd130ae0361b607",
-    "canonicalUrl": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
-    "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs",
-    "publishedAt": "2026-11-02T16:23:21.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.745Z",
-    "contentHash": "073f8d4c59f53aa4",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Amanda Silberling",
-    "contentSnippet": "Musk recently referred to Grok Bot as having \"the fastest growth of a product that I've ever seen in my life.\"",
-    "category": "Business & Big Tech",
-    "lab": "SpaceX & xAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Musk recently referred to Grok Bot as having \"the fastest growth of a product that I've ever seen in my life.\".",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4c6a220f319cfa5b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03768v1",
-    "title": "Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention",
-    "publishedAt": "2026-11-02T15:46:01.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.254Z",
-    "contentHash": "45dad33185a25a47",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Serdarcan Dilbaz",
-    "contentSnippet": "Sparse attention cuts the cost of long-context inference by making the attention matrix sparse: each query attends only a subset of the sequence, chosen by a fixed pattern or, in recent production LLMs, learned per query. In DeepSeek Sparse Attention (DSA), the attention of DeepSeek-V3.2 and the GLM-5 family, every layer is preceded by a lightning indexer that scores the whole cache and keeps the k=2048 highest-scoring tokens for the layer to attend. At long context this indexer scan, not the sparse attention it feeds, is where the decode time goes. But adjacent layers select nearly the same tokens, so a layer can attend the selection of the previous indexer layer instead of its own. This removes the dependency: each indexer then runs concurrently with the attention of its layer. The resulting Multi-layer Indexer (MLI) needs no retraining and no new weights. Its default realization changes no kernel, running inside SGLang's production decode graph; an optional fused decode kernel accelerates it further on DeepSeek-V3.2. MLI composes with IndexCache (the cross-layer reuse GLM-5.2 ships as IndexShare): IndexCache drops the indexer from some layers, and MLI hides the scan on the rest. We serve DeepSeek-V3.2 and GLM-5 under IndexCache's protocol at retentions 1/2 to 1/32 (the fraction of layers that keep an indexer) and contexts 10K to 195K. At equal retention the composition decodes faster than IndexCache: up to 14.5% faster on DeepSeek-V3.2 and 9.8% on GLM-5 at 1/2, and 7.9% and 5.1% at 1/4, largest where IndexCache keeps the most indexers and growing with context. At retention 1/r it is faster still than IndexCache at 1/(2r) while keeping twice the fresh selections: at 128K it reaches 1.32x the unmodified model's decode throughput at 1/4, above IndexCache's 1.28x at 1/8. Its LongBench, RULER and LongBench v2 accuracy stays within a few percentage points of IndexCache's.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03768",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03768.pdf",
-    "summary": {
-      "tldr": "Sparse attention cuts the cost of long-context inference by making the attention matrix sparse: each query attends only a subset of the sequence, chosen by a fixed pattern or, in recent production LLMs, learned per query. In DeepSeek Sparse Attention (DSA), the attention of DeepSeek-V3.2 and the GLM-5 family, every layer is preceded by a lightning indexer that scores the whole cache and keeps the k=2048 highest-scoring tokens for the layer to attend. At long context this indexer scan, not the sparse attention it feeds, is where the decode time goes.\n\nBut adjacent layers select nearly the same tokens, so a layer can attend the selection of the previous indexer layer instead of its own. This removes the dependency: each indexer then runs concurrently with the attention of its layer. The resulting Multi-layer Indexer (MLI) needs no retraining and no new weights.",
-      "takeaways": [
-        "Its default realization changes no kernel, running inside SGLang's production decode graph; an optional fused decode kernel accelerates it further on DeepSeek-V3.2.",
-        "MLI composes with IndexCache (the cross-layer reuse GLM-5.2 ships as IndexShare): IndexCache drops the indexer from some layers, and MLI hides the scan on the rest.",
-        "We serve DeepSeek-V3.2 and GLM-5 under IndexCache's protocol at retentions 1/2 to 1/32 (the fraction of layers that keep an indexer) and contexts 10K to 195K.",
-        "At equal retention the composition decodes faster than IndexCache: up to 14.5% faster on DeepSeek-V3.2 and 9.8% on GLM-5 at 1/2, and 7.9% and 5.1% at 1/4, largest where IndexCache keeps the most indexers and growing with context."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "01f7bdef6f3b642b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03767v1",
-    "title": "Quantifying out-of-distribution data severity with Wasserstein distances: benchmarking large language models for alloy property prediction",
-    "publishedAt": "2026-11-02T15:31:50.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.254Z",
-    "contentHash": "d4f3fa6da04027fc",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "YuJie Liu",
-    "contentSnippet": "As general-purpose Large Language Models (LLMs), such as Gemini and DeepSeek, exhibit increasingly advanced reasoning capabilities, a critical question arises: how do their property prediction abilities compare to those of domain-specific pretrained materials models? In this study, we evaluate predictions for Ti, steels, high-entropy alloy (HEA) and Al, demonstrating that general-purpose LLMs surprisingly outperform SteelBERT, MatSciBERT, and SciBERT. To further enhance performance, we introduce a hybrid approach that utilizes numerical priors from a prior model, such as CatBoost or SteelBERT, to guide the general LLMs (Deepseek V3.1, Gemini-2.5-Flash). By inputting these initial estimates from a prior model as prompts, the LLM acts as a reasoning corrector, achieving accuracy superior to the prior model and \"unguided mode\". Furthermore, we investigate the impact of data strategy using a similarity-based metric, revealing that data quality dominates quantity; using merely 5% of high-similarity reference data of training set as input yields performance similar to the results of using 100% of training set. Additionally, the LLMs demonstrate excellent uncertainty calibration, where self-reported \"high\" confidence strongly correlates with minimal deviation from ground truth. Our findings suggest that synergizing general-purpose LLMs with prior model numerical baselines and high-quality data curation creates a cost-effective and accurate paradigm for materials discovery, reducing the need for expensive domain-specific pretraining.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03767",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03767.pdf",
-    "summary": {
-      "tldr": "As general-purpose Large Language Models (LLMs), such as Gemini and DeepSeek, exhibit increasingly advanced reasoning capabilities, a critical question arises: how do their property prediction abilities compare to those of domain-specific pretrained materials models? In this study, we evaluate predictions for Ti, steels, high-entropy alloy (HEA) and Al, demonstrating that general-purpose LLMs surprisingly outperform SteelBERT, MatSciBERT, and SciBERT. To further enhance performance, we introduce a hybrid approach that utilizes numerical priors from a prior model, such as CatBoost or SteelBERT, to guide the general LLMs (Deepseek V3.1, Gemini-2.5-Flash).\n\nBy inputting these initial estimates from a prior model as prompts, the LLM acts as a reasoning corrector, achieving accuracy superior to the prior model and \"unguided mode\". Furthermore, we investigate the impact of data strategy using a similarity-based metric, revealing that data quality dominates quantity; using merely 5% of high-similarity reference data of training set as input yields performance similar to the results of using 100% of training set. Additionally, the LLMs demonstrate excellent uncertainty calibration, where self-reported \"high\" confidence strongly correlates with minimal deviation from ground truth.",
-      "takeaways": [
-        "Our findings suggest that synergizing general-purpose LLMs with prior model numerical baselines and high-quality data curation creates a cost-effective and accurate paradigm for materials discovery, reducing the need for expensive domain-specific pretraining."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "277870ffc8d71544",
-    "canonicalUrl": "https://openai.com/index/scaling-git-at-openai",
-    "title": "Scaling Git at OpenAI",
-    "publishedAt": "2026-11-02T15:30:00.000Z",
-    "fetchedAt": "2026-11-02T23:54:09.885Z",
-    "contentHash": "bfbf01a8eaa0c129",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5d33ed0c66ace544",
-    "canonicalUrl": "https://openai.com/index/grid-protectors-program",
-    "title": "Introducing the Grid Protectors Program",
-    "publishedAt": "2026-11-02T15:00:00.000Z",
-    "fetchedAt": "2026-11-02T17:09:08.999Z",
-    "contentHash": "035c9ef70692b5cc",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5a201e1426e1fb30",
-    "canonicalUrl": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
-    "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
-    "publishedAt": "2026-11-02T15:00:00.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.745Z",
-    "contentHash": "19096c91230f054c",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Tim Fernholz",
-    "contentSnippet": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1ad1437087e29a5c",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03219v1",
-    "title": "Can Coding Agents Sustain Continual Evolution without Forgetting?",
-    "publishedAt": "2026-11-02T14:43:37.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "9c181ae73d41ed0c",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Shangziqi Zhao",
-    "contentSnippet": "Recently, harness self-evolution has emerged as an important paradigm for improving agent performance. Prior studies show that evolving the agent harness can effectively enhance agent capabilities without modifying the foundation model's parameters. We find that existing approaches largely study agent evolution on a single task. In practice, coding agents may need to handle multiple task types over time. Whether an agent harness can continuously evolve across multiple tasks without suffering from catastrophic forgetting remains an important open question. In this paper, we investigate this open question through a comprehensive empirical study of continual harness self-evolution. We organize three software engineering task datasets into six different evolution directions and apply two representative harness evolution methods to perform continual evolution along these directions. Our experimental results show that evolution on a subsequent dataset can substantially undermine the performance on previously seen datasets. For example, with DeepSeek-V4-Flash-0731, Meta-Harness improves its performance on SWE-Bench to 94.0% after evolution. However, after further evolution on FeatureBench, its performance on SWE-Bench drops to 32.0% by the fifth round, corresponding to a 66% relative decrease. Finally, based on our experimental findings, we identify several insights, providing directions for the continual self-evolution of agent harnesses. Code is available at https://github.com/THU-Agent/continual-harness-evolution.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03219",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03219.pdf",
-    "summary": {
-      "tldr": "Recently, harness self-evolution has emerged as an important paradigm for improving agent performance. Prior studies show that evolving the agent harness can effectively enhance agent capabilities without modifying the foundation model's parameters. We find that existing approaches largely study agent evolution on a single task.\n\nIn practice, coding agents may need to handle multiple task types over time. Whether an agent harness can continuously evolve across multiple tasks without suffering from catastrophic forgetting remains an important open question. In this paper, we investigate this open question through a comprehensive empirical study of continual harness self-evolution.",
-      "takeaways": [
-        "We organize three software engineering task datasets into six different evolution directions and apply two representative harness evolution methods to perform continual evolution along these directions.",
-        "Our experimental results show that evolution on a subsequent dataset can substantially undermine the performance on previously seen datasets.",
-        "For example, with DeepSeek-V4-Flash-0731, Meta-Harness improves its performance on SWE-Bench to 94.0% after evolution.",
-        "However, after further evolution on FeatureBench, its performance on SWE-Bench drops to 32.0% by the fifth round, corresponding to a 66% relative decrease."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "20b4d715f7820d59",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03183",
-    "title": "Auto-Research Agent on MSA Organization to Improve Protein-Protein Complex Structure Prediction",
-    "publishedAt": "2026-11-02T14:17:43.000Z",
-    "fetchedAt": "2026-11-04T17:44:14.877Z",
-    "contentHash": "b00fb639c1c456ad",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Zilu Zhang, Jing Bao, Lifeng Qiao, Sheng Xu",
-    "contentSnippet": "Protein-complex structure prediction with AlphaFold 3 depends on MSA content, depth, and cross-chain pairing. Current pipelines apply uniform recipes, typically maximizing depth and pairing by species, yet even whether cross-chain pairing helps AF3 remains contested. We show that the value of both depth and pairing is strongly target-dependent, so no single recipe is optimal across interfaces. We introduce an autonomous agent that treats a frozen AF3 as a black-box experimental instrument. For each target, the agent formulates biological hypotheses, analyzes and reorganizes the MSA, and iteratively refines sequence selection and pairing using predictor label-free signals alone. On 1{,}015 protein--protein interfaces from three benchmarks released after AF3's training cutoff, the agent improves overall interface DockQ over AF3's default pipeline and fixed MSA recipes on every benchmark, while using on average 60\\% fewer MSA sequences than the default. Gains are largest for inter-species heteromers, where species-based pairing is unreliable: mean DockQ increases from 0.465 to 0.612 on FoldBench and from 0.482 to 0.562 on HD439. The improvements arise from both sequence construction and pairing policy, including deliberate non-pairing.These results recast MSA design as a target-specific problem and show that an autonomous agent can adapt it at test time through biological reasoning and self-directed, confidence-guided experimentation.",
-    "category": "Ethics & Policy",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.03183",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03183",
-    "summary": {
-      "tldr": "Protein-complex structure prediction with AlphaFold 3 depends on MSA content, depth, and cross-chain pairing. Current pipelines apply uniform recipes, typically maximizing depth and pairing by species, yet even whether cross-chain pairing helps AF3 remains contested. We show that the value of both depth and pairing is strongly target-dependent, so no single recipe is optimal across interfaces.\n\nWe introduce an autonomous agent that treats a frozen AF3 as a black-box experimental instrument. For each target, the agent formulates biological hypotheses, analyzes and reorganizes the MSA, and iteratively refines sequence selection and pairing using predictor label-free signals alone. On 1{,}015 protein--protein interfaces from three benchmarks released after AF3's training cutoff, the agent improves overall interface DockQ over AF3's default pipeline and fixed MSA recipes on every benchmark, while using on average 60\\% fewer MSA sequences than the default.",
-      "takeaways": [
-        "Gains are largest for inter-species heteromers, where species-based pairing is unreliable: mean DockQ increases from 0.465 to 0.612 on FoldBench and from 0.482 to 0.562 on HD439.",
-        "The improvements arise from both sequence construction and pairing policy, including deliberate non-pairing.These results recast MSA design as a target-specific problem and show that an autonomous agent can adapt it at test time through biological reasoning and self-directed, confidence-guided experimentation."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "66eaafc3230ddcfb",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03178v1",
-    "title": "CoworkOS:Scaling Agent Coworkers for Real-world Automation",
-    "publishedAt": "2026-11-02T14:15:11.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "fe84629940b429e2",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Jiajie Jin",
-    "contentSnippet": "Rapid advances in cowork agents are shifting human-AI collaboration toward real-world automation, delivering software, designs, and other artifacts. However, such productivity work demands both high-quality delivery on complex productivity tasks and continued monitoring and decision-making over long horizons, a combination that remains an open challenge. We introduce CoworkOS, a general-purpose harness for long-horizon work that separates task strategy from execution management: the model decides actions, delegation, and acceptance, while the runtime maintains state and feedback. Its three-layer architecture enables direct execution or delegation to Subagents, synchronously or asynchronously, under stable responsibilities. Through a shared application layer, humans and agents inspect and revise the same evolving documents, presentations, CAD models, and Blender scenes, so human-in-the-loop participation can enter both through conversation and through direct modification of the work itself. To sustain continuity across agents and sessions, CoworkOS further introduces hierarchical workspaces and persistent semantic memory, so working files, key decisions, and long-running Job logs remain shareable, reusable, and resumable after interruption. Across 12 benchmarks and 6 categories of real-world applications, CoworkOS proves highly competitive with frontier agent applications such as Codex and DeepSeek Harness. As a sustained-work case study, CoworkOS uses GLM-5.3 as its backbone to conduct RSI-driven automated post-training on Qwen3.6-35B-A3B. Over five rounds, the model's average score across eight benchmarks rose from 33.19 to 42.95 (+9.76). Looking ahead, we believe CoworkOS opens a meaningful path toward general cowork-agent intelligence.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03178",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03178.pdf",
-    "summary": {
-      "tldr": "Rapid advances in cowork agents are shifting human-AI collaboration toward real-world automation, delivering software, designs, and other artifacts. However, such productivity work demands both high-quality delivery on complex productivity tasks and continued monitoring and decision-making over long horizons, a combination that remains an open challenge. We introduce CoworkOS, a general-purpose harness for long-horizon work that separates task strategy from execution management: the model decides actions, delegation, and acceptance, while the runtime maintains state and feedback.\n\nIts three-layer architecture enables direct execution or delegation to Subagents, synchronously or asynchronously, under stable responsibilities. Through a shared application layer, humans and agents inspect and revise the same evolving documents, presentations, CAD models, and Blender scenes, so human-in-the-loop participation can enter both through conversation and through direct modification of the work itself. To sustain continuity across agents and sessions, CoworkOS further introduces hierarchical workspaces and persistent semantic memory, so working files, key decisions, and long-running Job logs remain shareable, reusable, and resumable after interruption.",
-      "takeaways": [
-        "Across 12 benchmarks and 6 categories of real-world applications, CoworkOS proves highly competitive with frontier agent applications such as Codex and DeepSeek Harness.",
-        "As a sustained-work case study, CoworkOS uses GLM-5.3 as its backbone to conduct RSI-driven automated post-training on Qwen3.6-35B-A3B.",
-        "Over five rounds, the model's average score across eight benchmarks rose from 33.19 to 42.95 (+9.76).",
-        "Looking ahead, we believe CoworkOS opens a meaningful path toward general cowork-agent intelligence."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "89a0ec87175cbd66",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03156v1",
-    "title": "Dissecting Geometric Constraints in Grokking: Interaction-Dependent Acceleration in Modular Arithmetic",
-    "publishedAt": "2026-11-02T14:03:05.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.899Z",
-    "contentHash": "4eaf64fa260f89e0",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Zachary A. Hampton",
-    "contentSnippet": "Spherical transformer configurations can accelerate grokking through simultaneous modifications of several model properties. The present study investigated the contributions of these modifications in the published Sphere+Fourier configuration using 960 controlled modular-arithmetic runs. A complete factorial analysis varied residual projection, readout weight normalization, logit scale, and weight decay. Across four matched settings with weight decay, the successful-run mean crossing times without projection were 8-37 times those observed with projection. However, residual projection was insufficient to induce grokking without additional interventions. Various other unprojected configurations also generalized. Since projection altered the magnitude entering the readout, these comparisons could not separate geometry from output scale. A separate 100-run fixed-horizon study demonstrated faster first crossing for the complete configuration across five train/test partitions. Faster crossing did not necessarily correspond to greater persistence over extended training. Control experiments demonstrated rapid grokking without Fourier initialization. Task and depth sweeps also identified conditions in which the configuration failed to reach the criterion by 50K epochs. Accordingly, the observed acceleration depended on interactions among the components and did not extend uniformly across the tested tasks or depths.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03156",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03156.pdf",
-    "summary": {
-      "tldr": "Spherical transformer configurations can accelerate grokking through simultaneous modifications of several model properties. The present study investigated the contributions of these modifications in the published Sphere+Fourier configuration using 960 controlled modular-arithmetic runs. A complete factorial analysis varied residual projection, readout weight normalization, logit scale, and weight decay.\n\nAcross four matched settings with weight decay, the successful-run mean crossing times without projection were 8-37 times those observed with projection. However, residual projection was insufficient to induce grokking without additional interventions. Various other unprojected configurations also generalized.",
-      "takeaways": [
-        "Since projection altered the magnitude entering the readout, these comparisons could not separate geometry from output scale.",
-        "A separate 100-run fixed-horizon study demonstrated faster first crossing for the complete configuration across five train/test partitions.",
-        "Faster crossing did not necessarily correspond to greater persistence over extended training.",
-        "Control experiments demonstrated rapid grokking without Fourier initialization."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4277eab254c57270",
-    "canonicalUrl": "https://siliconangle.com/2026/11/02/with-agentic-studio-linearb-provides-the-critical-context-needed-to-accelerate-software-delivery/",
-    "title": "With Agentic Studio, LinearB provides the critical context needed to accelerate software delivery",
-    "publishedAt": "2026-11-02T14:00:26.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.400Z",
-    "contentHash": "8c64647cd18a471f",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Mike Wheatley",
-    "contentSnippet": "Application development intelligence startup LinearB Inc. said today it’s trying to ease the growing congestion in organization’s software delivery pipelines that has arisen with the widespread adoption of artificial intelligence coding tools. It’s doing so with Agentic Studio, a new offering announced today that’s focused on providing more actionable context for human engineers and autonomous […] The post With Agentic Studio, LinearB provides the critical context needed to accelerate software delivery appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Application development intelligence startup LinearB Inc. Said today it’s trying to ease the growing congestion in organization’s software delivery pipelines that has arisen with the widespread adoption of artificial intelligence coding tools. It’s doing so with Agentic Studio, a new offering announced today that’s focused on providing more actionable context for human engineers and autonomous ...",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3e83c93cde505302",
-    "canonicalUrl": "https://techcrunch.com/2026/11/02/2-days-till-techcrunch-founder-summit-boston-founders-dont-need-a-silicon-valley-address-to-build-something-big/",
-    "title": "2 days till TechCrunch Founder Summit: Boston founders don’t need a Silicon Valley address to build something big",
-    "publishedAt": "2026-11-02T14:00:00.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.745Z",
-    "contentHash": "dbbee235dba2627d",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "TechCrunch Events",
-    "contentSnippet": "TechCrunch Founder Summit happens on November 4 in Boston for a founder-focused agenda and impactful connections. Save up to $100 or get discounts with group passes.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "TechCrunch Founder Summit happens on November 4 in Boston for a founder-focused agenda and impactful connections. Save up to $100 or get discounts with group passes.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e732affa3e390d12",
-    "canonicalUrl": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
-    "title": "OpenAI is finally merging ChatGPT’s Chat and Work tabs",
-    "publishedAt": "2026-11-02T13:57:53.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.745Z",
-    "contentHash": "7652629803076f34",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Ivan Mehta",
-    "contentSnippet": "OpenAI said that ChatGPT and Codex will draw usage from the same allocation pool after this change.",
-    "category": "Business & Big Tech",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI said that ChatGPT and Codex will draw usage from the same allocation pool after this change.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "93776c9c2a6b392f",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
-    "title": "The U.S. Census Bureau and “Super Intelligence”",
-    "publishedAt": "2026-11-02T13:31:26.000Z",
-    "fetchedAt": "2026-11-03T04:58:43.506Z",
-    "contentHash": "be391bf9a3df63a4",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. corporate AI adoption based on numbers collected by the U.S. Census Bureau. At the time I used that chart to demonstrate GPT-5 data analysis , and then to experiment with Claude's new Code Interpreter . I decided to try running those numbers again to see what had changed over the past year, and in doing so learned that the Bureau has fallen foul of Executive Order 14434 , aka the asinine Super Intelligence one. First, the updated chart Every two weeks the U.S. Census Bureau runs a survey called the Business Trends and Outlook Survey (aka BTOS). Each time it goes to 200,000 businesses out of 1.2 million total - the surveyed group (a \"panel\") cycles such that an individual business only completes the survey every twelve weeks. The latest data is published on alternating Thursdays at 10am. I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: Here's a link to the larger image . For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\". Under the new \"any business function\" wording, by February 2026, those same large companies answered \"yes\" around 30% of the time, and by October 2026 that had increased to around 40%. The data in the above chart comes from the \"Employment size class\" XLSX file, available from here . Here's a copy of the file I used. You can view the survey document that is sent out to businesses - here's my snapshot copy of that 346KB PDF. The changing language of the questions As the chart demonstrates, the question asked by the Bureau changed in a material way on November 17th, 2025. Prior to that date, the question they asked was this (emphasis mine): In the last two weeks, did this business use Artificial Intelligence (AI) in producing goods or services ? (Examples of AI: machine learning, natural language processing, virtual agents, voice recognition, etc.) On",
-    "imageUrl": "https://static.simonwillison.net/static/2026-11-01/5821A414-FAF6-4E61-B037-952C1FD80D39.png",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I was reminded today of AI Adoption Rate Trending Down for Large Companies , a chart produced by Apollo Global Management in September 2025, which appeared to show a slowdown in U.S. Corporate AI adoption based on numbers collected by the U.S. At the time I used that chart to demonstrate GPT-5 data analysis , and then to experiment with Claude's new Code Interpreter .\n\nI decided to try running those numbers again to see what had changed over the past year, and in doing so learned that the Bureau has fallen foul of Executive Order 14434 , aka the asinine Super Intelligence one. First, the updated chart Every two weeks the U.S. Census Bureau runs a survey called the Business Trends and Outlook Survey (aka BTOS).",
-      "takeaways": [
-        "Each time it goes to 200,000 businesses out of 1.2 million total - the surveyed group (a \"panel\") cycles such that an individual business only completes the survey every twelve weeks.",
-        "The latest data is published on alternating Thursdays at 10am.",
-        "I used the most recent numbers (published October 22, 2026) to create a new version ( GPT-6 Astra Extra High transcript ) of the AI adoption chart, updated to reflect both the last twelve months and a change that was made to the survey question sent out by the Bureau: Here's a link to the larger image .",
-        "For comparison, here's that AI adoption chart from last year (my GPT-5 version): In September 2025 the largest (250+ employees) companies answered \"yes\" around 12% of the time to the question about whether they used AI in \"producing goods or services\"."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8d847b3ebc262e19",
-    "canonicalUrl": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
-    "title": "Stop counting tokens, start counting what ships",
-    "publishedAt": "2026-11-02T13:10:32.000Z",
-    "fetchedAt": "2026-11-02T17:09:09.748Z",
-    "contentHash": "996c6fef298df54a",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Affan Syed",
-    "contentSnippet": "When a developer gives an AI agent a coding task, the agent does more than answer once. It plans, generates code, runs tests, and repeats the process to correct errors. A single task can use 10 to 50 times more tokens than a basic chat prompt. The more useful the agent becomes, the more calls it makes. With per-token pricing, the workflows creating the most value can also become the most expensive. The financial pressure is already visible. Uber reportedly exhausted its entire 2026 AI budget by April after expanding its use of Claude Code. GitHub Copilot moved from flat-rate pricing to metered credits. Gartner predicts that AI coding token costs will surpass average developer salaries by 2028. The natural response is rationing usage caps, seat limits, and approvals before developers launch agents. But blanket limits can restrict the workflows delivering value. They also optimize the wrong number. Cost per token measures consumption, not results. Some spending reflects waste, including retries and runaway loops. Some represents the work of shipping software. A meter cannot distinguish them, and neither can a spending cap. Measure the software that ships A better measure is cost per merged pull request: total AI-assisted development cost divided by the number of changes that pass review and are merged. Track rework and defects alongside it so cheaper changes do not conceal lower quality. If that cost falls as AI usage rises, without compromising quality, developers are converting more consumption into useful software. The question is not how many tokens they use, but how much finished work the investment produces. Improving that equation requires two changes: reserve expensive inference for tasks that need it, and lower the cost of routine work. Match the model to the task Agentic coding does not require the most powerful model at every step. Use a frontier model, or an on-premises flagship when policy requires it, for difficult planning and novel reasoning. Route suitable work, including code generation, test creation, and repeated refactoring, to open-weight models you operate yourself. A gateway can route requests according to task complexity, data sensitivity, cost, and latency. This reserves premium inference for the moments that justify it rather than applying premium pricing to an entire workflow. Meter the exception, not the workload. Open-weight model",
-    "imageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/10/iStock-2297734847.jpg?w=840",
-    "category": "Ethics & Policy",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "When a developer gives an AI agent a coding task, the agent does more than answer once. It plans, generates code, runs tests, and repeats the process to correct errors. A single task can use 10 to 50 times more tokens than a basic chat prompt.\n\nThe more useful the agent becomes, the more calls it makes. With per-token pricing, the workflows creating the most value can also become the most expensive. The financial pressure is already visible.",
-      "takeaways": [
-        "Uber reportedly exhausted its entire 2026 AI budget by April after expanding its use of Claude Code.",
-        "GitHub Copilot moved from flat-rate pricing to metered credits.",
-        "Gartner predicts that AI coding token costs will surpass average developer salaries by 2028.",
-        "The natural response is rationing usage caps, seat limits, and approvals before developers launch agents."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f0bef6025710bd12",
-    "canonicalUrl": "https://siliconangle.com/2026/11/02/enterprise-ai-strategy-cloudera-brings-models-data-evolve26/",
-    "title": "Enterprises bring AI to their data as privacy rules tighten and costs climb",
-    "publishedAt": "2026-11-02T11:34:14.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.400Z",
-    "contentHash": "15721fa64f4085a5",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Ryan Stevens",
-    "contentSnippet": "Every enterprise AI strategy eventually comes down to the same question: Should proprietary data travel to the model, or should the model come to the data? As privacy rules tighten and geopolitical risk rises, more organizations are choosing the second option. That is changing how data platform providers present themselves, and Cloudera Inc. has built […] The post Enterprises bring AI to their data as privacy rules tighten and costs climb appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Every enterprise AI strategy eventually comes down to the same question: Should proprietary data travel to the model, or should the model come to the data? As privacy rules tighten and geopolitical risk rises, more organizations are choosing the second option. That is changing how data platform providers present themselves, and Cloudera Inc.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c240ab3711bca186",
-    "canonicalUrl": "https://arxiv.org/abs/2611.02857",
-    "title": "Solv3R: 3D Looped Transformer as a Multi-view Solver",
-    "publishedAt": "2026-11-02T09:59:45.000Z",
-    "fetchedAt": "2026-11-05T08:52:57.957Z",
-    "contentHash": "73f82a2dd7c1bfbb",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Jeong-gi Kwak, Andrea Tagliasacchi, Sho Kagami, Yuki Ono",
-    "contentSnippet": "Classical structure-from-motion reconstruction proceeds iteratively, refining camera poses and scene geometry from a current estimate. This allows maps to easily expand without recomputing already computed views, or geometry estimates to improve as more observations are provided. Most geometric foundation models, however, predict entire geometry in a single forward pass or update a recurrent state as frames arrive sequentially, making this expansion and refinement non-trivial. We introduce Solv3R, a looped transformer that learns to continue solving multi-view geometry from its current state. Importantly, its update operator is independent of the iteration count, allowing previously refined and newly introduced views to be jointly updated regardless of how ``solved'' they are. We train the operator to preserve accurate reconstructions under continued iteration and correct inaccurate states, enabling refinement of fixed image collections and integration of new observations. Representations of solved views can also be cached once and reused as geometric context across iterations, enabling compact and efficient key-value caching. We analyze the solver dynamics and compare it with the state-of-the-art, demonstrating that a single learned solver supports offline reconstruction, incremental reconstruction, relocalization, and streaming without task-specific training or modules. The code and models will be made publicly available at https://ubc-vision.github.io/solv3r/.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.02857",
-    "pdfUrl": "https://arxiv.org/pdf/2611.02857",
-    "summary": {
-      "tldr": "Classical structure-from-motion reconstruction proceeds iteratively, refining camera poses and scene geometry from a current estimate. This allows maps to easily expand without recomputing already computed views, or geometry estimates to improve as more observations are provided. Most geometric foundation models, however, predict entire geometry in a single forward pass or update a recurrent state as frames arrive sequentially, making this expansion and refinement non-trivial.\n\nWe introduce Solv3R, a looped transformer that learns to continue solving multi-view geometry from its current state. Importantly, its update operator is independent of the iteration count, allowing previously refined and newly introduced views to be jointly updated regardless of how ``solved'' they are. We train the operator to preserve accurate reconstructions under continued iteration and correct inaccurate states, enabling refinement of fixed image collections and integration of new observations.",
-      "takeaways": [
-        "Representations of solved views can also be cached once and reused as geometric context across iterations, enabling compact and efficient key-value caching.",
-        "We analyze the solver dynamics and compare it with the state-of-the-art, demonstrating that a single learned solver supports offline reconstruction, incremental reconstruction, relocalization, and streaming without task-specific training or modules.",
-        "The code and models will be made publicly available at https://ubc-vision.github.io/solv3r/."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a09e48d0b66bcc5c",
-    "canonicalUrl": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/",
-    "title": "The agentic web is here",
-    "publishedAt": "2026-11-02T09:35:19.000Z",
-    "fetchedAt": "2026-11-02T23:54:14.173Z",
-    "contentHash": "31337b16669e84ac",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Grace Huckins",
-    "contentSnippet": "In 2001, a decade after he invented the World Wide Web, Tim Berners-Lee articulated a new vision. Together with two colleagues, he published an article in the magazine Scientific American in which he outlined what he called the “Semantic Web” : an internet designed to be navigated by autonomous software agents that could address our every need, without requiring us to muck about with browsers and search engines ourselves. To illustrate what this might look like, Berners-Lee and his colleagues told a story about a pair of siblings who use their agents to automatically research and book physical therapy appointments for their mother, making sure they would be covered by insurance and fit their busy calendars.  At the turn of the millennium, this vision seemed far-fetched: Google had only been online for a couple of years, and most people were still on dial-up connections. But a quarter-century on, the dream of autonomous software agents that use the internet and carry out tasks for us has finally been realized. New tools such as Meta’s blockbuster Muse agent, OpenAI’s Dots, and Anthropic’s Claude Duet are being given access to people’s email inboxes and bank accounts, Meanwhile, in a series of worrying incidents, agents created by OpenAI broke free of their sandboxes and caused havoc online. Just as the rise of smartphones sparked the development of a more atomized and attention-grabbing internet, the advent of powerful AI systems heralds a new era: We’re facing not the semantic web but the agentic web. This new web is developing out of sight and in ways that might not be entirely within our control. As it grows, the agentic web will inevitably transform the human web—and whether the human web survives this transition is anyone’s guess. For Berners-Lee’s original vision to work, internet users would have had to annotate the pages they built with special tags so that a software agent could understand each element’s meaning—say, “street address” for the part of a physical therapy office’s web page that indicates its location and “appointment types” for the list of services. And so the idea never really caught on. “It’s a lot of labor,” says Eni Mustafaraj, a professor of computer science at Wellesley College. “And the benefits of that were not obvious.” For the next two decades, then, the internet remained a place that put humans first, with the odd Twitter repl",
-    "imageUrl": "https://wp.technologyreview.com/wp-content/uploads/2026/10/spot1.jpg",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "In 2001, a decade after he invented the World Wide Web, Tim Berners-Lee articulated a new vision. Together with two colleagues, he published an article in the magazine Scientific American in which he outlined what he called the “Semantic Web” : an internet designed to be navigated by autonomous software agents that could address our every need, without requiring us to muck about with browsers and search engines ourselves. To illustrate what this might look like, Berners-Lee and his colleagues told a story about a pair of siblings who use their agents to automatically research and book physical therapy appointments for their mother, making sure they would be covered by insurance and fit their busy calendars.\n\nAt the turn of the millennium, this vision seemed far-fetched: Google had only been online for a couple of years, and most people were still on dial-up connections. But a quarter-century on, the dream of autonomous software agents that use the internet and carry out tasks for us has finally been realized. New tools such as Meta’s blockbuster Muse agent, OpenAI’s Dots, and Anthropic’s Claude Duet are being given access to people’s email inboxes and bank accounts, Meanwhile, in a series of worrying incidents, agents created by OpenAI broke free of their sandboxes and caused havoc online.",
-      "takeaways": [
-        "Just as the rise of smartphones sparked the development of a more atomized and attention-grabbing internet, the advent of powerful AI systems heralds a new era: We’re facing not the semantic web but the agentic web.",
-        "This new web is developing out of sight and in ways that might not be entirely within our control.",
-        "As it grows, the agentic web will inevitably transform the human web—and whether the human web survives this transition is anyone’s guess.",
-        "For Berners-Lee’s original vision to work, internet users would have had to annotate the pages they built with special tags so that a software agent could understand each element’s meaning—say, “street address” for the part of a physical therapy office’s web page that indicates its location and “appointment types” for the list of services."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1c4e8e98b74a09d1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.02833v1",
-    "title": "Reimagining computational quantum research with AI scientists",
-    "publishedAt": "2026-11-02T09:32:13.000Z",
-    "fetchedAt": "2026-11-03T12:40:40.765Z",
-    "contentHash": "78b6246fb92f98bc",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Yuxuan Du",
-    "contentSnippet": "AI scientists are expanding automated research across scientific domains, yet their ability to turn the scientific record into a foundation for autonomous discovery remains elusive. Here we uncover a fundamental barrier to this transition and demonstrate a route to overcome it in computational quantum science, where advances shape both what we can learn from complex quantum systems and what quantum computing can ultimately deliver. To identify this barrier, we introduce OmniQ, an expert-audited virtual research environment that converts published studies into executable reproduction tasks. Across 59 papers spanning classical simulation, quantum algorithms and quantum-property characterization, we systematically evaluate five agentic systems powered by large language models and six third-party agent harnesses. Our findings reveal that current AI scientists often fail to reproduce published results, exposing a fundamental mismatch between what scientific papers communicate and what autonomous agents require. By contrast, human expert intervention can turn these failures into successful reproductions, showing that the missing information can be identified and converted into reusable research experience. Guided by this observation, we develop Residual Agents (RA), a quantum-tailored self-improving AI scientist that distils externally verified workflow repairs into such experience. RA substantially improves research performance under fixed base models and limited adaptation budgets. For example, RA raises DeepSeek V4.1 Flash performance from 68% to 85%, matching Claude Code with Opus 5 at a third of its cost despite using a weaker base model. We integrate all reproduced results into an extensible platform built on the model context protocol, making verified research workflows directly accessible to AI scientists and allowing new scientific papers to be continuously incorporated.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.02833",
-    "pdfUrl": "https://arxiv.org/pdf/2611.02833.pdf",
-    "summary": {
-      "tldr": "AI scientists are expanding automated research across scientific domains, yet their ability to turn the scientific record into a foundation for autonomous discovery remains elusive. Here we uncover a fundamental barrier to this transition and demonstrate a route to overcome it in computational quantum science, where advances shape both what we can learn from complex quantum systems and what quantum computing can ultimately deliver. To identify this barrier, we introduce OmniQ, an expert-audited virtual research environment that converts published studies into executable reproduction tasks.\n\nAcross 59 papers spanning classical simulation, quantum algorithms and quantum-property characterization, we systematically evaluate five agentic systems powered by large language models and six third-party agent harnesses. Our findings reveal that current AI scientists often fail to reproduce published results, exposing a fundamental mismatch between what scientific papers communicate and what autonomous agents require. By contrast, human expert intervention can turn these failures into successful reproductions, showing that the missing information can be identified and converted into reusable research experience.",
-      "takeaways": [
-        "Guided by this observation, we develop Residual Agents (RA), a quantum-tailored self-improving AI scientist that distils externally verified workflow repairs into such experience.",
-        "RA substantially improves research performance under fixed base models and limited adaptation budgets.",
-        "For example, RA raises DeepSeek V4.1 Flash performance from 68% to 85%, matching Claude Code with Opus 5 at a third of its cost despite using a weaker base model.",
-        "We integrate all reproduced results into an extensible platform built on the model context protocol, making verified research workflows directly accessible to AI scientists and allowing new scientific papers to be continuously incorporated."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "65a8166d262d5c61",
-    "canonicalUrl": "https://siliconangle.com/2026/11/02/marble-cognition-raises-3-75m-for-its-ai-agent-workers-that-watch-and-learn-how-people-work/",
-    "title": "Marble Cognition raises $3.75M for its AI agent workers that watch and learn how people work",
-    "publishedAt": "2026-11-02T09:00:22.000Z",
-    "fetchedAt": "2026-11-02T17:09:11.400Z",
-    "contentHash": "368de929ab4ca6a7",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Mike Wheatley",
-    "contentSnippet": "Artificial intelligence agents have become two a penny in the enterprise today, but just because they’re rapidly being commoditized does not mean organizations know how best to use them. That’s the challenge a startup called Marble Cognition is trying to solve after raising $3.75 million in pre-seed funding to coincide with its launch today. The […] The post Marble Cognition raises $3.75M for its AI agent workers that watch and learn how people work appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Artificial intelligence agents have become two a penny in the enterprise today, but just because they’re rapidly being commoditized does not mean organizations know how best to use them. That’s the challenge a startup called Marble Cognition is trying to solve after raising $3.75 million in pre-seed funding to coincide with its launch today.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
     }
   }
 ]
