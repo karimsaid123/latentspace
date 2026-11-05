@@ -41,8 +41,8 @@ export default function ArticleShareModal({
   const labText = article.lab || 'Frontier AI';
   const sourceText = article.source?.name || 'LatentSpace';
   
-  // Clean formatted template text for clipboard / social sharing
-  const formattedPostText = `⚡ LATENTSPACE // AI DISPATCH\n\n${article.title.toUpperCase()}\n\nLAB: [${labText}] // SOURCE: [${sourceText}]\nIMPACT: [${article.aiSummary?.impact || 'NOTABLE'}]\n\n"${cleanSummary}"\n\nRead the full dossier on LatentSpace:\n${shareUrl}`;
+  // Clean, minimal formatted template text for clipboard / social sharing
+  const formattedPostText = `${article.title}\n\n${cleanSummary}\n\nRead on LatentSpace:\n${shareUrl}`;
 
   const handleCopyLink = async () => {
     try {
@@ -64,8 +64,8 @@ export default function ArticleShareModal({
     if (typeof navigator !== 'undefined' && navigator.share) {
       try {
         await navigator.share({
-          title: `[LatentSpace] ${article.title}`,
-          text: `"${cleanSummary}"`,
+          title: article.title,
+          text: cleanSummary,
           url: shareUrl,
         });
       } catch (_) {}
@@ -76,7 +76,7 @@ export default function ArticleShareModal({
 
   const handleShareX = () => {
     const text = encodeURIComponent(
-      `⚡ [${labText}] ${article.title}\n\n"${cleanSummary.slice(0, 160)}${cleanSummary.length > 160 ? '...' : ''}"`
+      `${article.title}\n\n${cleanSummary.slice(0, 180)}${cleanSummary.length > 180 ? '...' : ''}`
     );
     const url = encodeURIComponent(shareUrl);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'noopener,noreferrer');
@@ -88,7 +88,7 @@ export default function ArticleShareModal({
   };
 
   const handleShareWhatsApp = () => {
-    const text = encodeURIComponent(`*${article.title}*\n\n${cleanSummary}\n\n${shareUrl}`);
+    const text = encodeURIComponent(`*${article.title}*\n\n${cleanSummary}\n\nRead on LatentSpace:\n${shareUrl}`);
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -259,10 +259,10 @@ export default function ArticleShareModal({
                     ? 'bg-black text-white'
                     : 'bg-white text-black hover:bg-black hover:text-white'
                 }`}
-                title="Copy formatted summary to clipboard"
+                title="Copy summary to clipboard"
               >
                 {copiedText ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
-                <span>{copiedText ? 'TEXT COPIED! ✓' : 'COPY FORMATTED SUMMARY'}</span>
+                <span>{copiedText ? 'SUMMARY COPIED! ✓' : 'COPY SUMMARY'}</span>
               </button>
             </div>
 
