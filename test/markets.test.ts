@@ -15,11 +15,19 @@ import { TickerSymbol } from '../src/types/market';
 describe('AI & Silicon Markets Quant Engine Suite', () => {
   it('validates all ticker definitions and market categories', () => {
     assert.ok(Array.isArray(TICKER_DEFINITIONS));
-    assert.equal(TICKER_DEFINITIONS.length, 12);
+    assert.equal(TICKER_DEFINITIONS.length, 30);
 
-    const validCategories = new Set(['CHIPS_HARDWARE', 'HYPERSCALERS', 'AI_ENTERPRISE']);
+    const validCategories = new Set([
+      'CHIPS_HARDWARE',
+      'HYPERSCALERS',
+      'AUTONOMOUS_ROBOTICS',
+      'CONSUMER_PLATFORMS',
+      'AI_ENTERPRISE',
+      'CLOUD_CYBER'
+    ]);
     const expectedSymbols: TickerSymbol[] = [
-      'NVDA', 'MSFT', 'GOOGL', 'META', 'TSM', 'AMD', 'AMZN', 'AAPL', 'PLTR', 'AVGO', 'ASML', 'ARM'
+      'NVDA', 'MSFT', 'GOOGL', 'META', 'TSM', 'AMD', 'AMZN', 'AAPL', 'PLTR', 'AVGO', 'ASML', 'ARM',
+      'TSLA', 'QCOM', 'INTC', 'MU', 'ORCL', 'CRM', 'NOW', 'ADBE', 'IBM', 'SNOW', 'CRWD', 'PANW', 'NET', 'DDOG', 'NFLX', 'UBER', 'COIN', 'SHOP'
     ];
 
     for (const def of TICKER_DEFINITIONS) {
@@ -33,7 +41,7 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
 
   it('validates verified market snapshot fallback data integrity', () => {
     const symbols = Object.keys(VERIFIED_MARKET_SNAPSHOT) as TickerSymbol[];
-    assert.equal(symbols.length, 12);
+    assert.equal(symbols.length, 30);
 
     for (const sym of symbols) {
       const snap = VERIFIED_MARKET_SNAPSHOT[sym];
@@ -160,7 +168,7 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
   it('resolves market overview with full stock roster and macro sentiment', async () => {
     const overview = await getMarketOverview();
     assert.ok(overview);
-    assert.equal(overview.stocks.length, 12);
+    assert.equal(overview.stocks.length, 30);
     assert.ok(typeof overview.macroSentimentScore === 'number');
     assert.ok(overview.disclaimer.includes('NOT FINANCIAL ADVICE'));
     
@@ -168,6 +176,10 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     assert.ok(nvda);
     assert.ok(nvda.currentPrice > 0);
     assert.ok(nvda.prediction);
+
+    const tsla = overview.stocks.find(s => s.symbol === 'TSLA');
+    assert.ok(tsla);
+    assert.equal(tsla.category, 'AUTONOMOUS_ROBOTICS');
   });
 });
 

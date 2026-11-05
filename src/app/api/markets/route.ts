@@ -22,11 +22,15 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  const isFreshRequested = request.nextUrl.searchParams.get('fresh') === '1';
+
   try {
-    const data = await getMarketOverview();
+    const data = await getMarketOverview(isFreshRequested);
     return NextResponse.json(data, {
       headers: {
-        'Cache-Control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400',
+        'Cache-Control': isFreshRequested 
+          ? 'no-cache, no-store, must-revalidate' 
+          : 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400',
       },
     });
   } catch (err: any) {

@@ -1,23 +1,90 @@
-import { TickerSymbol, NewsCatalyst, XGBoostPrediction, ModelTrajectory, RiskLevel } from '@/types/market';
+import { TickerSymbol, MarketCategory, NewsCatalyst, XGBoostPrediction, ModelTrajectory, RiskLevel } from '@/types/market';
 
 export interface TickerMapping {
   symbol: TickerSymbol;
   companyName: string;
   keywords: string[];
   labs: string[];
-  category: 'CHIPS_HARDWARE' | 'HYPERSCALERS' | 'AI_ENTERPRISE';
+  category: MarketCategory;
   sectorLabel: string;
 }
 
 export const TICKER_DEFINITIONS: TickerMapping[] = [
+  // 1. CHIPS & SILICON HARDWARE
   {
     symbol: 'NVDA',
     companyName: 'NVIDIA Corporation',
-    keywords: ['nvidia', 'blackwell', 'hopper', 'b200', 'h100', 'cuda', 'dgx', 'tensor core', 'jensen'],
+    keywords: ['nvidia', 'blackwell', 'hopper', 'b200', 'h100', 'cuda', 'dgx', 'tensor core', 'jensen', 'geforce'],
     labs: ['NVIDIA'],
     category: 'CHIPS_HARDWARE',
     sectorLabel: 'AI Compute & GPU Acceleration'
   },
+  {
+    symbol: 'TSM',
+    companyName: 'Taiwan Semiconductor Mfg.',
+    keywords: ['tsmc', 'taiwan semi', 'foundry', 'n3', 'n2', 'cowos', 'advanced packaging', 'wafer', 'semiconductor'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'Advanced Semiconductor Fabrication'
+  },
+  {
+    symbol: 'AMD',
+    companyName: 'Advanced Micro Devices',
+    keywords: ['amd', 'instinct', 'mi300', 'mi325', 'rocm', 'lisa su', 'epyc', 'ryzen'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'GPU Acceleration & Server Silicon'
+  },
+  {
+    symbol: 'ASML',
+    companyName: 'ASML Holding N.V.',
+    keywords: ['asml', 'euv', 'lithography', 'high-na', 'veldhoven', 'duv', 'semiconductor equipment'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'Extreme Ultraviolet Lithography'
+  },
+  {
+    symbol: 'AVGO',
+    companyName: 'Broadcom Inc.',
+    keywords: ['broadcom', 'avgo', 'custom asic', 'tpu silicon', 'ethernet fabric', 'tomahawk', 'hock tan', 'vmware'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'Custom AI ASICs & Networking Fabrics'
+  },
+  {
+    symbol: 'ARM',
+    companyName: 'Arm Holdings plc',
+    keywords: ['arm', 'neoverse', 'armv9', 'cortex', 'rene haas', 'grace cpu', 'edge architecture'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'Energy-Efficient Silicon Architecture'
+  },
+  {
+    symbol: 'QCOM',
+    companyName: 'Qualcomm Inc.',
+    keywords: ['qualcomm', 'snapdragon', 'npu', 'edge ai', 'oryon', 'mobile chip', '5g', 'cristiano amon'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'Edge NPU & Mobile Compute'
+  },
+  {
+    symbol: 'INTC',
+    companyName: 'Intel Corporation',
+    keywords: ['intel', 'pat gelsinger', 'gaudi', 'xeon', 'intel foundry', '18a', 'x86', 'core ultra'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'x86 Compute & Silicon Foundry'
+  },
+  {
+    symbol: 'MU',
+    companyName: 'Micron Technology',
+    keywords: ['micron', 'hbm', 'hbm3e', 'dram', 'nand', 'memory bandwidth', 'sanjay mehrotra'],
+    labs: [],
+    category: 'CHIPS_HARDWARE',
+    sectorLabel: 'High-Bandwidth Memory (HBM) & Storage'
+  },
+
+  // 2. HYPERSCALERS & BIG TECH
   {
     symbol: 'MSFT',
     companyName: 'Microsoft Corporation',
@@ -29,7 +96,7 @@ export const TICKER_DEFINITIONS: TickerMapping[] = [
   {
     symbol: 'GOOGL',
     companyName: 'Alphabet Inc.',
-    keywords: ['google', 'deepmind', 'gemini', 'tpu', 'trillium', 'pichai', 'demis', 'hassabis', 'gemma'],
+    keywords: ['google', 'deepmind', 'gemini', 'tpu', 'trillium', 'pichai', 'demis', 'hassabis', 'gemma', 'waymo'],
     labs: ['Google DeepMind', 'Google AI'],
     category: 'HYPERSCALERS',
     sectorLabel: 'Frontier Models & Search Ecosystem'
@@ -37,26 +104,10 @@ export const TICKER_DEFINITIONS: TickerMapping[] = [
   {
     symbol: 'META',
     companyName: 'Meta Platforms Inc.',
-    keywords: ['meta', 'llama', 'zuckerberg', 'fair', 'pytorch', 'open source ai', 'llama 3', 'llama 4'],
+    keywords: ['meta', 'llama', 'zuckerberg', 'fair', 'pytorch', 'open source ai', 'llama 3', 'llama 4', 'reality labs'],
     labs: ['Meta AI', 'FAIR'],
     category: 'HYPERSCALERS',
     sectorLabel: 'Open Foundation Models & Social Graph'
-  },
-  {
-    symbol: 'TSM',
-    companyName: 'Taiwan Semiconductor Mfg.',
-    keywords: ['tsmc', 'taiwan semi', 'foundry', 'n3', 'n2', 'cowos', 'advanced packaging', 'wafer'],
-    labs: [],
-    category: 'CHIPS_HARDWARE',
-    sectorLabel: 'Advanced Semiconductor Fabrication'
-  },
-  {
-    symbol: 'AMD',
-    companyName: 'Advanced Micro Devices',
-    keywords: ['amd', 'instinct', 'mi300', 'mi325', 'rocm', 'lisa su', 'epyc'],
-    labs: [],
-    category: 'CHIPS_HARDWARE',
-    sectorLabel: 'GPU Acceleration & Server Silicon'
   },
   {
     symbol: 'AMZN',
@@ -67,44 +118,148 @@ export const TICKER_DEFINITIONS: TickerMapping[] = [
     sectorLabel: 'Cloud Infrastructure & Custom Silicon'
   },
   {
+    symbol: 'ORCL',
+    companyName: 'Oracle Corporation',
+    keywords: ['oracle', 'larry ellison', 'oci', 'oracle cloud', 'exadata', 'database', 'gpu cluster', 'safra catz'],
+    labs: [],
+    category: 'HYPERSCALERS',
+    sectorLabel: 'Autonomous Cloud Database & GPU Clusters'
+  },
+
+  // 3. AUTONOMOUS & ROBOTICS
+  {
+    symbol: 'TSLA',
+    companyName: 'Tesla, Inc. / xAI Ecosystem',
+    keywords: ['tesla', 'elon musk', 'fsd', 'optimus', 'robotaxi', 'dojo', 'xai', 'grok', 'cybertruck', 'autonomous driving'],
+    labs: ['xAI', 'Tesla'],
+    category: 'AUTONOMOUS_ROBOTICS',
+    sectorLabel: 'Autonomous Mobility, Robotics & FSD'
+  },
+  {
+    symbol: 'UBER',
+    companyName: 'Uber Technologies',
+    keywords: ['uber', 'dara khosrowshahi', 'autonomous vehicle', 'robotaxi', 'routing algorithm', 'mobility'],
+    labs: [],
+    category: 'AUTONOMOUS_ROBOTICS',
+    sectorLabel: 'Autonomous Fleet Network & Logistics'
+  },
+
+  // 4. CONSUMER TECH & PLATFORMS
+  {
     symbol: 'AAPL',
     companyName: 'Apple Inc.',
-    keywords: ['apple', 'apple intelligence', 'neural engine', 'm4', 'm5', 'private cloud compute', 'tim cook'],
+    keywords: ['apple', 'apple intelligence', 'neural engine', 'm4', 'm5', 'private cloud compute', 'tim cook', 'iphone'],
     labs: ['Apple'],
-    category: 'HYPERSCALERS',
+    category: 'CONSUMER_PLATFORMS',
     sectorLabel: 'Edge AI Silicon & Consumer Ecosystem'
   },
   {
+    symbol: 'NFLX',
+    companyName: 'Netflix Inc.',
+    keywords: ['netflix', 'streaming', 'recommendation algorithm', 'content delivery', 'media platform'],
+    labs: [],
+    category: 'CONSUMER_PLATFORMS',
+    sectorLabel: 'Algorithmic Content & Streaming Infrastructure'
+  },
+  {
+    symbol: 'COIN',
+    companyName: 'Coinbase Global',
+    keywords: ['coinbase', 'brian armstrong', 'base l2', 'crypto', 'blockchain', 'ethereum', 'bitcoin', 'web3'],
+    labs: [],
+    category: 'CONSUMER_PLATFORMS',
+    sectorLabel: 'Decentralized Protocol & Crypto Infrastructure'
+  },
+  {
+    symbol: 'SHOP',
+    companyName: 'Shopify Inc.',
+    keywords: ['shopify', 'tobi lutke', 'e-commerce', 'merchant ai', 'shopify magic', 'checkout'],
+    labs: [],
+    category: 'CONSUMER_PLATFORMS',
+    sectorLabel: 'Global Merchant AI & Digital Commerce'
+  },
+
+  // 5. ENTERPRISE SOFTWARE & AI AGENTS
+  {
     symbol: 'PLTR',
     companyName: 'Palantir Technologies',
-    keywords: ['palantir', 'aip', 'ontology', 'karp', 'defense ai', 'enterprise ontology', 'bootcamp'],
+    keywords: ['palantir', 'aip', 'ontology', 'karp', 'defense ai', 'enterprise ontology', 'bootcamp', 'gotham'],
     labs: [],
     category: 'AI_ENTERPRISE',
     sectorLabel: 'Enterprise AI & Defense Analytics'
   },
   {
-    symbol: 'AVGO',
-    companyName: 'Broadcom Inc.',
-    keywords: ['broadcom', 'avgo', 'custom asic', 'tpu silicon', 'ethernet fabric', 'tomahawk', 'hock tan'],
+    symbol: 'SNOW',
+    companyName: 'Snowflake Inc.',
+    keywords: ['snowflake', 'data cloud', 'cortex', 'data warehouse', 'sridhar ramaswamy', 'iceberg'],
     labs: [],
-    category: 'CHIPS_HARDWARE',
-    sectorLabel: 'Custom AI ASICs & Networking Fabrics'
+    category: 'AI_ENTERPRISE',
+    sectorLabel: 'Enterprise Data Cloud & Cortex AI'
   },
   {
-    symbol: 'ASML',
-    companyName: 'ASML Holding N.V.',
-    keywords: ['asml', 'euv', 'lithography', 'high-na', 'veldhoven', 'duv', 'semiconductor equipment'],
+    symbol: 'CRM',
+    companyName: 'Salesforce Inc.',
+    keywords: ['salesforce', 'marc benioff', 'agentforce', 'einstein', 'slack', 'crm'],
     labs: [],
-    category: 'CHIPS_HARDWARE',
-    sectorLabel: 'Extreme Ultraviolet Lithography'
+    category: 'AI_ENTERPRISE',
+    sectorLabel: 'Autonomous Enterprise Agentforce & CRM'
   },
   {
-    symbol: 'ARM',
-    companyName: 'Arm Holdings plc',
-    keywords: ['arm', 'neoverse', 'armv9', 'cortex', 'rene haas', 'grace cpu', 'edge architecture'],
+    symbol: 'NOW',
+    companyName: 'ServiceNow Inc.',
+    keywords: ['servicenow', 'bill mcdermott', 'now platform', 'workflow', 'enterprise it'],
     labs: [],
-    category: 'CHIPS_HARDWARE',
-    sectorLabel: 'Energy-Efficient Silicon Architecture'
+    category: 'AI_ENTERPRISE',
+    sectorLabel: 'Enterprise Workflow Automation & Generative IT'
+  },
+  {
+    symbol: 'ADBE',
+    companyName: 'Adobe Inc.',
+    keywords: ['adobe', 'firefly', 'photoshop', 'creative cloud', 'generative fill', 'shantanu narayen'],
+    labs: [],
+    category: 'AI_ENTERPRISE',
+    sectorLabel: 'Creative Generative Models & Media Tools'
+  },
+  {
+    symbol: 'IBM',
+    companyName: 'International Business Machines',
+    keywords: ['ibm', 'watsonx', 'quantum computing', 'granite', 'red hat', 'arvind krishna'],
+    labs: ['IBM Research'],
+    category: 'AI_ENTERPRISE',
+    sectorLabel: 'Enterprise Foundation Models & Quantum'
+  },
+
+  // 6. CLOUD & CYBERSECURITY
+  {
+    symbol: 'CRWD',
+    companyName: 'CrowdStrike Holdings',
+    keywords: ['crowdstrike', 'george kurtz', 'falcon', 'endpoint security', 'xdr', 'cyberattack', 'malware', 'threat intel'],
+    labs: [],
+    category: 'CLOUD_CYBER',
+    sectorLabel: 'AI Endpoint Defense & Threat Intelligence'
+  },
+  {
+    symbol: 'PANW',
+    companyName: 'Palo Alto Networks',
+    keywords: ['palo alto networks', 'nikesh arora', 'prisma', 'strata', 'cortex xdr', 'firewall', 'zero trust'],
+    labs: [],
+    category: 'CLOUD_CYBER',
+    sectorLabel: 'Next-Generation Enterprise Cybersecurity'
+  },
+  {
+    symbol: 'NET',
+    companyName: 'Cloudflare Inc.',
+    keywords: ['cloudflare', 'matthew prince', 'workers', 'workers ai', 'edge compute', 'ddos', 'cdn'],
+    labs: [],
+    category: 'CLOUD_CYBER',
+    sectorLabel: 'Edge Cloud Compute & Workers AI'
+  },
+  {
+    symbol: 'DDOG',
+    companyName: 'Datadog Inc.',
+    keywords: ['datadog', 'observability', 'apm', 'cloud monitoring', 'infrastructure metrics'],
+    labs: [],
+    category: 'CLOUD_CYBER',
+    sectorLabel: 'Cloud Infrastructure Observability & Telemetry'
   }
 ];
 
@@ -296,15 +451,15 @@ export function runXGBoostQuantModel(
   }
 
   // Tree 3: Sector Moat & Cyclical Sensitivity
-  if (symbol === 'NVDA' || symbol === 'TSM' || symbol === 'ASML') {
+  if (['NVDA', 'TSM', 'ASML', 'AMD', 'AVGO', 'QCOM', 'INTC', 'MU', 'ARM'].includes(symbol)) {
     if (momentum >= 0) {
       treeSum += 0.20;
-      decisionPath.push(`Tree_3: Silicon fabrication monopoly factor tailwind applied (+0.20)`);
+      decisionPath.push(`Tree_3: Silicon fabrication & compute hardware tailwind applied (+0.20)`);
     } else {
       treeSum -= 0.15;
       decisionPath.push(`Tree_3: High-beta semiconductor cyclical drawdown applied (-0.15)`);
     }
-  } else if (symbol === 'MSFT' || symbol === 'GOOGL' || symbol === 'AMZN') {
+  } else if (['MSFT', 'GOOGL', 'AMZN', 'META', 'ORCL'].includes(symbol)) {
     if (momentum >= 0) {
       treeSum += 0.15;
       decisionPath.push(`Tree_3: Hyperscaler enterprise compute scale moat applied (+0.15)`);
@@ -312,13 +467,30 @@ export function runXGBoostQuantModel(
       treeSum -= 0.05;
       decisionPath.push(`Tree_3: Hyperscaler defensive balance sheet cushioning applied (-0.05)`);
     }
-  } else {
+  } else if (['TSLA', 'UBER'].includes(symbol)) {
     if (momentum >= 0) {
-      treeSum += 0.10;
-      decisionPath.push(`Tree_3: Enterprise software margin expansion applied (+0.10)`);
+      treeSum += 0.20;
+      decisionPath.push(`Tree_3: Autonomous robotics & AI compute deployment expansion (+0.20)`);
+    } else {
+      treeSum -= 0.15;
+      decisionPath.push(`Tree_3: High-beta physical AI & autonomy execution friction applied (-0.15)`);
+    }
+  } else if (['CRWD', 'PANW', 'NET', 'DDOG'].includes(symbol)) {
+    if (momentum >= 0) {
+      treeSum += 0.15;
+      decisionPath.push(`Tree_3: Mission-critical cybersecurity & cloud infrastructure moat (+0.15)`);
     } else {
       treeSum -= 0.10;
-      decisionPath.push(`Tree_3: Enterprise multiple compression & execution friction applied (-0.10)`);
+      decisionPath.push(`Tree_3: Enterprise software budget scrutiny applied (-0.10)`);
+    }
+  } else {
+    // AAPL, PLTR, CRM, NOW, ADBE, IBM, SNOW, NFLX, COIN, SHOP
+    if (momentum >= 0) {
+      treeSum += 0.10;
+      decisionPath.push(`Tree_3: Platform ecosystem network effects & margin expansion (+0.10)`);
+    } else {
+      treeSum -= 0.10;
+      decisionPath.push(`Tree_3: Multiple compression & competitive platform displacement (-0.10)`);
     }
   }
 

@@ -10,9 +10,33 @@ export type TickerSymbol =
   | 'PLTR'
   | 'AVGO'
   | 'ASML'
-  | 'ARM';
+  | 'ARM'
+  | 'TSLA'
+  | 'QCOM'
+  | 'INTC'
+  | 'MU'
+  | 'ORCL'
+  | 'CRM'
+  | 'NOW'
+  | 'ADBE'
+  | 'IBM'
+  | 'SNOW'
+  | 'CRWD'
+  | 'PANW'
+  | 'NET'
+  | 'DDOG'
+  | 'NFLX'
+  | 'UBER'
+  | 'COIN'
+  | 'SHOP';
 
-export type MarketCategory = 'CHIPS_HARDWARE' | 'HYPERSCALERS' | 'AI_ENTERPRISE';
+export type MarketCategory =
+  | 'CHIPS_HARDWARE'
+  | 'HYPERSCALERS'
+  | 'AUTONOMOUS_ROBOTICS'
+  | 'CONSUMER_PLATFORMS'
+  | 'AI_ENTERPRISE'
+  | 'CLOUD_CYBER';
 
 export type ModelTrajectory =
   | 'BULLISH_EXPANSION'

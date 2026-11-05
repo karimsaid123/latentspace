@@ -38,7 +38,8 @@ export default function MarketsPage() {
   const fetchMarketTelemetry = async (isManual = false) => {
     if (isManual) setIsRefreshing(true);
     try {
-      const res = await fetch('/api/markets');
+      const url = isManual ? `/api/markets?fresh=1&t=${Date.now()}` : '/api/markets';
+      const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
       const data: MarketOverviewResponse = await res.json();
       setMarketData(data);
@@ -146,13 +147,13 @@ export default function MarketsPage() {
             <div>
               <div className="flex items-center gap-2 text-[10px] sm:text-xs text-black/60 uppercase tracking-widest mb-2 font-bold">
                 <Cpu className="w-4 h-4 text-black" />
-                <span>EQUITY VOLATILITY // ARXIV DISPATCH SYNTHESIS // XGBOOST GBDT</span>
+                <span>GLOBAL TECH & SILICON // RESEARCH CORRELATION // XGBOOST GBDT</span>
               </div>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black leading-none">
-                AI & Silicon Markets
+                Global Tech Markets
               </h1>
               <p className="mt-3 text-xs sm:text-sm font-sans font-medium text-black/70 max-w-3xl leading-relaxed">
-                Algorithmic synthesis correlating real-time frontier research breakthroughs, compute efficiency gains, and model scaling laws with semiconductor and hyperscaler equity price action.
+                Comprehensive algorithmic synthesis correlating frontier AI research, compute scaling laws, and technological catalysts with 30 leading tech equities across semiconductors, hyperscalers, autonomous robotics, cybersecurity, and enterprise cloud platforms.
               </p>
             </div>
 
@@ -222,10 +223,13 @@ export default function MarketsPage() {
                   SECTOR:
                 </span>
                 {[
-                  { id: 'ALL', label: 'ALL SECTORS' },
+                  { id: 'ALL', label: 'ALL TECH' },
                   { id: 'CHIPS_HARDWARE', label: 'CHIPS & SILICON' },
                   { id: 'HYPERSCALERS', label: 'HYPERSCALERS' },
-                  { id: 'AI_ENTERPRISE', label: 'AI ENTERPRISE' }
+                  { id: 'AUTONOMOUS_ROBOTICS', label: 'AUTONOMOUS & ROBOTICS' },
+                  { id: 'CONSUMER_PLATFORMS', label: 'CONSUMER & PLATFORMS' },
+                  { id: 'AI_ENTERPRISE', label: 'ENTERPRISE & SAAS' },
+                  { id: 'CLOUD_CYBER', label: 'CLOUD & CYBER' }
                 ].map((cat) => (
                   <button
                     key={cat.id}
