@@ -1,5 +1,265 @@
 [
   {
+    "id": "29589b3caabc67b1",
+    "canonicalUrl": "https://siliconangle.com/2026/11/06/thinking-machines-debuts-inkling-2-small-amid-reported-5b-fundraising-push/",
+    "title": "Thinking Machines debuts Inkling 2 Small amid reported $5B fundraising push",
+    "publishedAt": "2026-11-06T21:27:42.000Z",
+    "fetchedAt": "2026-11-06T22:38:13.598Z",
+    "contentHash": "067b8de41e985e91",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 16:27 EST / NOVEMBER 06 2026\n\nThinking Machines debuts Inkling 2 Small amid reported $5B fundraising push\n\nThinking Machines Labs Inc. has released a new large language model that can automate artificial intelligence training tasks.\n\nThe algorithm, Inkling 2 Small, made its debut late Thursday. Around the same time, Business Insider reported that Thinking Machine is in the process of raising a $5 billion funding round led by Accel. The company, which was founded last year by former OpenAI Group PBC Chief Technology Officer Mira Murati, is expected to receive a $40 billion valuation.\n\nThinking Machines trained Inkling 2 Small on a cluster of GB300 NVL72 racks. Each system contains 72 Blackwell Ultra graphics cards and half as many central processing units. The company completed the initial pre-training phase in 68 hours and subsequently refined the model through a nine-day reinforcement learning workflow. There were also a number of intermediate training steps.\n\nThinking Machines honed Inkling 2 Small’s programming capabilities by giving it hundreds of thousands of long-horizon coding challenges. The task collection included a number of particularly complicated “autoresearch” exercises. They required the model to post-train neural networks, optimize LLM components called kernels and perform other AI research work.\n\nThinking Machines put Inkling 2 Small’s machine learning skills to the test by asking it to fine-tune Qwen3.5-4B. The goal was to improve the open-source LLM’s ability to make predictions such as weather forecasts. According to the company, Inking 2 Small doubled the model’s forecasting score in 4.5 hours.\n\nThe LLM is also adapt at automating business tasks. It outperformed Spark Open, Kimi K3 and several other open-source models on three popular knowledge work benchmarks. Additionally, it earned higher scores across several financial task datasets.\n\nInkling 2 Small includes a vision encoder that can analyze images. Moreover, it enables the LLM to visually verify the quality of the graphics that it generates. If a user asks the model to create an e-commerce store, it can not only check the website’s code for bugs but also visually inspect product pages to check that they render correctly.\n\nThe vision encoder accounts for 292 million of Inking 2 Small’s 594 billion parameters. About 17 billion of those parameters activate when a user enters ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Thinking Machines Labs Inc., founded by former OpenAI CTO Mira Murati, has launched Inkling 2 Small, a large language model designed to automate AI training and research tasks. The company is reportedly seeking a $5 billion funding round led by Accel, which would value the firm at $40 billion. The model is currently available via the company's Tinker cloud service, with open-source weights scheduled for release next week.\n\nInkling 2 Small features 594 billion total parameters, with a 292-million-parameter vision encoder that enables visual verification of generated code and graphics. The model utilizes a dynamic compute architecture where approximately 17 billion parameters are activated per prompt, allowing users to adjust compute intensity for cost-efficiency. Training was conducted on GB300 NVL72 racks, requiring 68 hours for pre-training and nine days for reinforcement learning. The model was specifically honed on hundreds of thousands of \"autoresearch\" coding challenges, including kernel optimization and neural network post-training.\n\nIn performance testing, Inkling 2 Small reportedly doubled the forecasting score of the Qwen3.5-4B model in 4.5 hours. It also outperformed competitors such as Spark Open and Kimi K3 on various knowledge work and financial task benchmarks. The model supports user-led post-training for customization, with the company claiming faster learning rates compared to its previous iterations.",
+      "takeaways": [
+        "**Model Architecture:** Inkling 2 Small contains 594 billion total parameters, with a 292-million-parameter vision encoder and 17 billion active parameters per prompt.",
+        "**Training Infrastructure:** The model was trained on GB300 NVL72 racks, with a 68-hour pre-training phase followed by a nine-day reinforcement learning workflow.",
+        "**Performance Benchmark:** The model successfully fine-tuned Qwen3.5-4B to double its weather forecasting score in 4.5 hours.",
+        "**Funding Context:** Thinking Machines is reportedly in talks for a $5 billion funding round led by Accel at a $40 billion valuation.",
+        "**Availability:** The model is accessible via the Tinker cloud service, with open-source weights expected to be released by mid-November 2026."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "0d0fe76a48838123",
+    "canonicalUrl": "https://arstechnica.com/security/2026/11/chainalysis-says-hackers-stole-credentials-and-tokens-for-all-of-its-customers/",
+    "title": "Chainalysis says hackers stole credentials and tokens for all of its customers",
+    "publishedAt": "2026-11-06T20:56:41.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.915Z",
+    "contentHash": "ffb51a6b1fc30f4f",
+    "sourceId": "arstechnica-tech",
+    "sourceName": "Ars Technica",
+    "author": "\n                    Dan Goodin\n                ",
+    "contentSnippet": "Blockchain analysis firm Chainalysis said that hackers have obtained sensitive personal information—including names, usernames, password hashes, and live tokens—for all of its users following a breach of its network security.\n\nThe accomplishment could be a major coup for the attackers. Both Chainalysis and public sources have revealed a long list of high-profile customers, including government agencies such as the FBI, US Immigration and Customs Enforcement agency, and the US Air Force, as well as private companies such as Microsoft, Coinbase, and Barclays. It’s unclear if the data theft exposed customers to additional threats.\n\nWe regret to inform you…\n\nLast Friday, Chainalysis said it had been the target of a cybersecurity incident in October that was similar to the hacks of other platforms during the same month. The external actor used AI agent-assisted offensive techniques to gain unauthorized access to Chainalysis systems and internal tools. An email the company sent to affected customers said some “non-sensitive customer data, such as user IDs, full names, email addresses, and organization role labels for users provisioned on our platform were accessed.” It’s not clear why the company considered such information “non-sensitive.”\n\nIn a Wednesday update, the company said that part of the “ongoing multifront cyberattack” involved an “on-path attack” that exposed a subset of customer passwords, and that the attack vector had been identified and fixed. Also known as an adversary-in-the-middle attack, on-path attacks happen when a hacker gains access to a piece of infrastructure sending traffic back and forth between two parties. Chainalysis has yet to say where the infrastructure compromise occurred and if the data obtained from it was TLS encrypted.\n\nThe company said later that day that an investigation two days earlier (on Monday) had revealed that “certain customer information including names, usernames, password hashes and live tokens for all Chainalysis users were exposed to a malicious actor.” It also said it had detected “abnormal activity” and, in response, took down its login page and know-your-transaction service, which monitors threats to cryptocurrency holdings in real time. The company has also removed access to its Reactor and Data Solutions services.\n\nIn an update on Friday, Chainalysis said it had begun phasing in customer access to KYT and ",
+    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/chainalysis-1152x648.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Blockchain analysis firm Chainalysis confirmed a significant security breach occurring in October, involving an 'on-path' (adversary-in-the-middle) attack that compromised sensitive data for its entire user base. The stolen information includes names, usernames, password hashes, and live tokens. Affected clients include high-profile government entities such as the FBI, the US Air Force, and US Immigration and Customs Enforcement, alongside private sector firms like Microsoft, Coinbase, and Barclays.\n\nThe breach was facilitated by AI agent-assisted offensive techniques, allowing unauthorized access to internal tools and infrastructure. Following the discovery of the full scope of the exposure on Monday, Chainalysis took its login page, Know-Your-Transaction (KYT) service, Reactor, and Data Solutions services offline. The company has since begun a phased restoration of services, requiring customers to provide trusted IP addresses for allow-listing and mandating a full credential reset for all users.\n\nDespite the severity of the incident, Chainalysis maintains that there is no evidence that investigation data was accessed or that its attribution data was manipulated. The company has not disclosed the specific infrastructure point where the on-path attack occurred, whether the intercepted traffic was TLS-encrypted, or the specific mechanics of the AI agents utilized by the attackers. Chainalysis has declined to provide further comment beyond its official blog updates.",
+      "takeaways": [
+        "**Compromised Data:** Attackers obtained names, usernames, password hashes, and live tokens for all Chainalysis users.",
+        "**Attack Vector:** The breach utilized AI agent-assisted offensive techniques and an 'on-path' (adversary-in-the-middle) attack to intercept traffic.",
+        "**Service Impact:** Chainalysis suspended its login page, KYT, Address Screening, Reactor, and Data Solutions services in response to the incident.",
+        "**Remediation:** The company is implementing a mandatory credential rotation and requiring customers to submit trusted IP addresses for access restoration.",
+        "**Unanswered Questions:** The firm has not clarified why there was a two-day delay between discovering the full scope of the data theft and public disclosure, nor has it detailed the capabilities of the AI agents involved."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "f8fe21ba7f368ed1",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+    "title": "All the latest updates on AI data centers",
+    "publishedAt": "2026-11-06T20:02:22.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.913Z",
+    "contentHash": "47e769e1cd02b47a",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Verge Staff",
+    "contentSnippet": "Massive new data centers are the physical foundation for tech companies’ hopes and dreams for AI. But the rush to expand warehouses full of energy-hungry servers has also kicked up fights across the world over their impact on power grids, utility bills, nearby communities, and the environment. Data centers were a major bipartisan issue ahead of the 2026 midterms , and voters largely opposed data center expansion at the polls. Tech giants like OpenAI and Amazon are promising to work more closely with local communities and cover their data center energy costs. But following the election, Democratic leaders are calling for further data center restrictions and slowdowns that the AI companies will have to grapple with. From audacious plans about data centers into space , heated local battles over buildouts , and potential environmental impacts , here’s The Verge ’s news, coverage, and reporting surrounding data centers and the companies that are building them. Lame-duck Congress might actually do something: speed up energy projects “We are a data center first company,” AMD CEO Lisa Su says. OpenAI is stepping back from NDAs for data center projects This week in the big AI data center buildout. Data centers lost the midterms Maine Republican Susan Collins concedes Senate seat in a tech-fueled race. Democrat projected to win Ohio seat that Republicans warned could spell trouble for data centers. Data center-dense Texas turns blue. OpenAI is quietly renaming data centers ‘compute campuses’ OpenAI pitches data center power plants as a way to protect nearby areas Could data center backlash flip Florida? Prop 45 in California could be hiding a loophole for data centers Maine’s data center revolt will decide who controls the Senate Data centers could send US climate pollution skyrocketing AI has come for Arizona’s water This week in the big AI data center buildout. Voters in Texas agree: They hate data centers Highway robbers are targeting trucks carrying data center components. Data center backlash is uniting America Anthropic is burning gas to feed the AI boom It’s a good time to sell gray paint. Data centers could erase decades of air quality gains This week in the big AI data center buildout. Trump says paying communities a “dividend” could make data centers more popular. Texas is still permitting data centers despite a supposed statewide moratorium. The fossil fuel",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STKS528_DATA_CENTERS_C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The rapid expansion of AI-focused data centers has emerged as a significant political and environmental flashpoint, influencing the 2026 midterm elections and drawing scrutiny from both Democratic and Republican leadership. Tech companies, including OpenAI and Amazon, are facing mounting pressure to mitigate the impact of energy-intensive infrastructure on local power grids, water supplies, and air quality. In response to public opposition, OpenAI has begun rebranding its facilities as 'compute campuses' and is exploring the integration of dedicated power plants to offset local energy burdens, while AMD CEO Lisa Su has publicly characterized her firm as a 'data center first company.'\n\nLegislative and regulatory challenges are intensifying, with Democratic leaders advocating for stricter development controls and potential slowdowns in data center construction. Despite reports of a supposed statewide moratorium in Texas, permitting for new facilities continues, while other regions like Arizona face specific concerns regarding water consumption. The industry is also grappling with logistical security issues, including reports of highway thefts targeting high-value data center components. As the political landscape shifts, proposals such as Donald Trump’s suggestion of a community 'dividend' payment system are being floated to improve public perception and facilitate continued infrastructure growth.",
+      "takeaways": [
+        "**Corporate Rebranding:** OpenAI is transitioning its terminology for data centers to 'compute campuses' as part of a strategy to manage public perception.",
+        "**Industry Stance:** AMD CEO Lisa Su has explicitly defined AMD as a 'data center first company,' highlighting the strategic importance of this infrastructure to the chipmaker.",
+        "**Political Impact:** Data center expansion became a significant bipartisan issue in the 2026 midterms, with voter opposition influencing outcomes in key states like Texas, Ohio, and Maine.",
+        "**Operational Risks:** The industry is facing unconventional security threats, specifically the targeting of trucks transporting critical data center hardware components.",
+        "**Regulatory Environment:** Despite reported moratoriums in states like Texas, permitting processes remain active, while federal lawmakers are considering legislation to accelerate energy projects despite calls for stricter environmental oversight."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "efdd17d6939ced7e",
+    "canonicalUrl": "https://siliconangle.com/2026/11/06/aws-colleen-aubrey-stop-inventing-new-ai-metrics-its-your-business-metrics-that-matter/",
+    "title": "AWS’ Colleen Aubrey: Stop inventing new AI metrics — it’s your business metrics that matter",
+    "publishedAt": "2026-11-06T18:56:52.000Z",
+    "fetchedAt": "2026-11-06T22:38:13.598Z",
+    "contentHash": "146a8c17df3c1f37",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Zeus Kerravala",
+    "contentSnippet": "UPDATED 13:56 EST / NOVEMBER 06 2026\n\nAWS’ Colleen Aubrey: Stop inventing new AI metrics — it’s your business metrics that matter\n\nThere isn’t a business or information technology leader today who doesn’t have artificial intelligence at the top of their priority list. The challenge for most organizations is deciding what to measure and how to determine whether an AI initiative was successful.\n\nTo better understand how customers should approach AI metrics, I spoke with Colleen Aubrey from Amazon Web Services Inc ,, who has some deep experience in this area.\n\nAs senior vice president of Applied AI Solutions at AWS and a member of Amazon’s S-team, she builds on that foundation with lessons from 20-plus years at Amazon, where she built customer-facing products for millions of sellers and advertisers. The playbook she drew from that experience gives enterprises a practical path to move out of AI pilot purgatory, and it starts with throwing out the AI return-on-investment slide.\n\nShe argues that understanding AI ROI requires thinking in terms of business metrics. “I worry that people start trying to come up with new metrics to measure the impact of AI, but it’s the same metrics,” she explained. “It’s your business metrics that matter.” AWS has spent 20 years building cloud infrastructure. AI business applications are a much newer opportunity.\n\nWhen Aubrey joined AWS, she inherited 35 application-layer programs. “I would say Connect for the contact center was probably our most successful example,” she told me in a recent interview ahead of AWS re:Invent Nov. 30-Dec. 4.\n\nShe studied what made it work: The team had deep operational experience running Amazon’s customer service function; it chose a sharp wedge (outstanding voice quality on the AWS backbone rather than chasing feature parity; and the team knew its customers. The lessons from that success are now the blueprint for the expanded Amazon Connect family : Connect Customer, Connect Talent, Connect Health and Connect Decisions.\n\nThe playbook Aubrey built for the Connect family closely mirrors what IT leaders need to move their own AI programs out of pilot mode. Here are my five takeaways that should matter to IT leaders:\n\nFeature parity is a trap\n\nThe first lesson Aubrey drew from her assessment was about where to start. Nobody runs a better supply chain than Amazon, which is exactly why the early version of AW",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Colleen Aubrey, Senior Vice President of Applied AI Solutions at AWS, argues that enterprises must abandon specialized 'AI ROI' metrics—such as token counts or prompt volume—in favor of traditional business KPIs. Drawing on her experience managing 35 application-layer programs, including the Amazon Connect suite, Aubrey emphasizes that successful AI initiatives require a 'wedge' strategy: identifying a specific, high-pain decision point rather than attempting to replicate entire workflows or chasing feature parity with legacy vendors.\n\nTechnically, Aubrey highlights that AI often acts as a catalyst for exposing downstream operational inefficiencies rather than simply removing bottlenecks. For instance, Amazon’s internal deployment of coding assistants resulted in a twofold increase in production velocity only after the team addressed underlying issues in test coverage and pipeline health. She advocates for a 'humorphism' design philosophy, where AI interfaces are built to integrate into existing human workflows, and warns that shipping high-quality models with poor user experience will inevitably fail. Current AWS deployments, such as Connect Decisions, demonstrate this by scaling to 2,000 planners at Wells Vehicle Electronics, resulting in a 7% inventory reduction over three months.",
+      "takeaways": [
+        "**Business Metric Alignment:** Projects must be tied to existing CFO-tracked metrics like working capital or cycle time; if a project cannot be measured against these, it remains an experiment rather than an investment.",
+        "**The Wedge Strategy:** Success in AI products like Amazon Connect came from focusing on a narrow, high-pain wedge (e.g., voice quality) rather than attempting to achieve feature parity with established ERP incumbents.",
+        "**Downstream Bottleneck Management:** AI deployment often exposes existing infrastructure weaknesses; Amazon achieved a 2x increase in production velocity by fixing test coverage and pipeline health rather than relying solely on coding assistants.",
+        "**Outcome-Based Roles:** Aubrey advises shifting job descriptions from task-based to outcome-based, noting that roles like 'UX tech' are emerging as AI automates traditional task-heavy responsibilities.",
+        "**Usability Philosophy:** AWS prioritizes 'humorphism,' designing AI to fit existing human work patterns, with a specific focus on closing the gap between internal prototypes and production-ready UX."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c262b9961ff71dc3",
+    "canonicalUrl": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+    "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+    "publishedAt": "2026-11-06T18:44:38.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.912Z",
+    "contentHash": "1dff98c6b86d116e",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Zack Whittaker",
+    "contentSnippet": "Security researchers have discovered hundreds of copies of a Chinese-made AI hacking tool publicly exposed to the internet for anyone to access, potentially allowing outsiders to launch cyberattacks against unsuspecting targets.\n\nThe hacking software, called Artex, is an open source autonomous penetration testing tool, meaning software that automatically probes computer systems for weaknesses, and it’s been linked to several cyberattacks since its public release in July. As open source software, it’s free for anyone to download and run on their own servers, making it a popular tool for those who cannot access Anthropic or OpenAI’s most advanced cybersecurity AI models for discovering security vulnerabilities. Microsoft has previously described Artex as a system of AI agents that can conduct cyberattacks “from reconnaissance through data exfiltration with little needed human interaction.”\n\nIn a blog post , cybersecurity firm Censys, which scans the internet for exposed or vulnerable systems, said that it identified more than 800 distinct deployments of Artex that were accessible from the web without needing a password to log in.\n\nSilas Cutler, principal security researcher at Censys who wrote the blog post, said that not every instance of Artex is operated maliciously and many are used for authorized testers. But it’s unclear why hundreds of these Artex systems are exposed to the web, as the software does not require them to be accessible from the internet.\n\nThe findings underscore how even powerful hacking tools can be misconfigured to be publicly accessible by anyone, increasing the chance that someone will find and misuse them. The publicly accessible systems also expose attack tools, such as implants (hidden malicious software) used to compromise and maintain persistent access to a victim’s network.\n\nSecurity companies have linked the use of Artex to several broad-scale cyberattacks, including against the Korean finance industry in September . Cybersecurity giant CrowdStrike attributed the attacks to a Chinese-speaking hacker who used an Artex instance in the attacks, in part because the hacker had left an “open directory” hosting the system. Censys said that its data showed the Artex instance in question had been publicly exposed for months, and appeared to contain more attack data that extended “well beyond South Korean banks,” including payment and gam",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Security researchers at Censys have identified over 800 instances of Artex—a Chinese-developed, open-source autonomous penetration testing tool—publicly exposed to the internet without password protection. Originally released in July, Artex functions as a system of AI agents capable of executing end-to-end cyberattacks, including reconnaissance and data exfiltration, with minimal human intervention. While intended for authorized security testing, the software's accessibility has enabled threat actors to leverage it for malicious operations, prompting the developers to transition the project to a closed-source model for paid customers only.\n\nMicrosoft and CrowdStrike have linked Artex to several high-profile cyberattacks, including a September campaign against the Korean finance industry and an October breach of IT support giant ConnectWise. In the latter, attackers utilized the tool to infiltrate cloud environments and exfiltrate data at speeds that hindered traditional defensive response times. Despite the shift to closed-source distribution, numerous copies of the Artex codebase remain available on public repositories, and the existing exposed instances continue to host sensitive attack data, including implants used for persistent network access.",
+      "takeaways": [
+        "**Exposure Scale:** Censys identified more than 800 distinct, password-less deployments of Artex accessible via the public internet.",
+        "**Attack Capabilities:** Microsoft characterizes Artex as an autonomous agent system capable of performing the full cyberattack lifecycle, from initial reconnaissance to final data exfiltration.",
+        "**Documented Incidents:** The tool was used in a September attack against the Korean finance sector and an October breach of ConnectWise, which impacted thousands of organizations using Microsoft cloud services.",
+        "**Operational Vulnerabilities:** Many attacks involving Artex exploited basic security failures, specifically weak or known passwords and the absence of multi-factor authentication.",
+        "**Distribution Change:** Following widespread misuse, the Artex developers have moved the project to a closed-source, paid-access model, though legacy code remains available on public platforms."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "2d23850120e57d6c",
+    "canonicalUrl": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+    "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+    "publishedAt": "2026-11-06T18:44:20.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.912Z",
+    "contentHash": "ab05a7ff3ece7308",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Meta recently launched its Muse agents — a new generation of cuddly agentic helpers. Now, the company has launched Spaces, a new way to communicate and collaborate with them.\n\nAs far as I can tell, Spaces are basically breakout conversations that revolve around a particular topic — although Meta refers to them as “custom experiences.” They live in the sidebar of the interface where you interact with your Muse agent. Clicking on the Space brings up the conversation, where Muse works toward a particular goal on your behalf.\n\nFor instance, if you wanted to plan a vacation, you could open a new Space focused on that particular project, and whenever you want to work on it with Muse, you would click to open that particular tab. Or, if you’re focused on collecting recipes for an upcoming family event, you’d open a new Space for that particular project. Other examples Meta gives are a holiday gift tracker, a wedding planner, or a space for DIY projects.\n\n“Describe an idea in chat, and Muse builds a space for you, whether that’s a tracker, a planner or a project board,” Meta says.\n\nSpaces can also be easily integrated with third-party apps and information, Meta says.\n\n“Connect the apps you use, and your spaces keep themselves up to date in the background, so new concert dates, price changes, or savings progress show up without you having to ask,” the company says.\n\nOn Friday, Mark Zuckerberg, Meta’s founder and CEO, posted about the new feature on X: “Playing around with spaces in Muse lately — tell Muse what you need and it builds it. I’ve made a BBQ game, an event tracker, and a home control dashboard. Excited to see what you build.”\n\nMuse agents — and the cuddly avatars that enclose them — have been greeted with a relatively warm reception over the past few months. During its earnings call in October, Zuckerberg said that its agents had 10 million users in the U.S. and Canada — less than two months after the agents debuted.\n\nThe company is obviously busy building out the user experience around the agents. Spaces is actually the second new Muse feature that Meta has debuted over the last week. On Thursday, the company also announced Muse Voice , which allows users to video chat with their agent and give it commands verbally.\n\nThe company is in competition with other cute and cuddly AI agents — including OpenAI’s dots and SpaceXAI’s Grokbot , which were debuted with",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta has introduced 'Spaces,' a new feature for its Muse AI agents designed to facilitate project-based collaboration. Spaces function as dedicated, persistent breakout conversations or 'custom experiences' accessible via the Muse interface sidebar. Users can initiate a Space by describing a goal—such as a wedding planner, holiday gift tracker, or DIY project board—which the Muse agent then constructs as a specialized project environment.\n\nTechnically, Spaces are designed to integrate with third-party applications, allowing the agent to pull external data and maintain real-time updates in the background. This enables the tracking of dynamic information like concert dates, price fluctuations, or savings progress without requiring manual user prompts. CEO Mark Zuckerberg noted the utility of these spaces for creating functional interfaces, citing personal examples including a BBQ game and a home control dashboard.\n\nThis launch follows the recent introduction of 'Muse Voice,' which enables verbal commands and video chat interactions with agents. Meta’s agent ecosystem, characterized by its 'cuddly' avatar design, reached 10 million users in the U.S. and Canada within two months of its debut, as reported during the company's October earnings call. Meta is positioning Muse within a competitive landscape of anthropomorphic AI agents, including OpenAI’s 'dots' and SpaceXAI’s 'Grokbot.'",
+      "takeaways": [
+        "**Functional Scope:** Spaces act as persistent project boards or trackers that Muse agents build based on natural language descriptions.",
+        "**Third-Party Integration:** Spaces support background data synchronization with external apps to automatically update project information like pricing or scheduling.",
+        "**User Adoption:** Meta reported 10 million users for its Muse agents in the U.S. and Canada as of October, less than two months post-launch.",
+        "**Recent Feature Expansion:** Spaces is the second major Muse update in one week, following the release of Muse Voice for verbal and video-based interaction."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9aeac73058ac351b",
+    "canonicalUrl": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+    "title": "Meta’s Muse AI can create custom ‘spaces’ for the version of the app you need right now",
+    "publishedAt": "2026-11-06T18:10:10.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.913Z",
+    "contentHash": "a7ded8a7996f59cc",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Emma Roth",
+    "contentSnippet": "Meta will now allow you to build customized, app-like experiences within Muse. The new feature, called “spaces,” allows its AI assistant to build things like a shopping hub, school dashboard, music tracker, trivia game, and more, which you can interact with directly in the Muse app. Meta says you can create a new space by describing it. If you connect an outside app to Muse — like Gmail, Google Calendar, OpenTable, Notion, and others Muse works with — the AI assistant will continuously pull information from them, allowing it to update pricing, dates, and other information in your space in the background. You can also interact with elements inside your spaces by checking things off, adding notes, and making edits. [Media: https://www.threads.com/@muse/post/DfaNbz4CMU8] You can also change the placement of your spaces in the Muse app, too, as Meta lets you keep them in the sidebar, move them into your main tab, or schedule when you see them. “For example, keep your weekly planner up front during the workweek, then swap it for your weekend plans on Saturday,” Meta says. Meta also announced that it’s bringing new “Active Memory” and “Active Focus” capabilities from its Muse Wonder AI model into the Muse app and its Meta AI chatbot. This will allow Muse to understand when past information becomes relevant during conversations, as well as make it better at working toward goals. Meta is rolling out spaces to all Muse users. The company is also looking into ways to share your spaces with other users and collaborate with them.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/meta-muse-spaces.png?quality=90&strip=all&crop=8.0752843063528%2C0%2C91.924715693647%2C74.471659887186",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta has introduced 'Spaces' for its Muse AI application, a feature enabling users to generate custom, app-like interfaces through natural language prompts. These spaces function as specialized hubs—such as shopping dashboards, trivia games, or academic trackers—that integrate directly with third-party services including Gmail, Google Calendar, OpenTable, and Notion. By connecting these external accounts, the AI performs background data synchronization, automatically updating pricing, scheduling, and task information within the user's custom interface.\n\nBeyond creation, Meta has implemented granular UI controls, allowing users to pin spaces to a sidebar, move them to a main tab, or schedule their visibility based on the day of the week. Additionally, Meta is integrating 'Active Memory' and 'Active Focus' capabilities—derived from its Muse Wonder AI model—into both the Muse app and the broader Meta AI chatbot. These updates are designed to improve the model's contextual awareness of past interactions and its ability to execute multi-step goal-oriented tasks. The company is currently rolling out Spaces to all Muse users and is exploring future functionality for collaborative, shared spaces.",
+      "takeaways": [
+        "**Integration Ecosystem:** Muse supports real-time data pulling from Gmail, Google Calendar, OpenTable, and Notion to populate custom user dashboards.",
+        "**Model Upgrades:** The Muse app and Meta AI chatbot are incorporating 'Active Memory' and 'Active Focus' features from the Muse Wonder model to enhance contextual relevance and goal tracking.",
+        "**UI Customization:** Users can manage space visibility via sidebar pinning, main tab placement, and time-based scheduling.",
+        "**Deployment Status:** The Spaces feature is currently available to all Muse users, with collaborative sharing features under development."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "189563f1d6f7d0a3",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
+    "title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints",
+    "publishedAt": "2026-11-06T18:01:00.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.326Z",
+    "contentHash": "cb942547b1cf5137",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Shantanu Tripathi",
+    "contentSnippet": "When you deploy a model to a GPU endpoint, the smallest unit of GPU you can request is one whole accelerator. This constraint can cost you twice. First, you can’t host more models on an instance than it has accelerators. An ml.p4d.24xlarge has eight A100s, so it holds eight models, whether each one needs 40 GB or 14 GB. Second, and less obvious, it makes every deployment come down to a choice of which full GPU to deploy to. As your concurrency and prompt lengths grow, a full GPU on an older instance stops being enough, but a full GPU on a newer one is more than your model can use. You end up either under-served or paying for capability you never reach. Today, Amazon SageMaker Inference supports GPU partitioning, which uses NVIDIA Multi-Instance GPU (MIG) to divide a physical GPU into independent partitions. Each partition receives a fixed share of the GPU’s compute units and a dedicated block of its memory, with isolation enforced in hardware. That changes both constraints: you can place a different model in each partition, and you can choose a fraction of a newer accelerator instead of a whole one of either generation. This post covers both. The first part is the direct benefit: deploy more models than you have GPUs, with isolation between them. The second is the one customers ask about when the question turns to cost: how the granularity of partitioning helps you pick the right-sized unit, and what we measured when we did. One thing to know before you read further: GPU partitioning works on endpoints that use inference components , the construct you use to deploy several models to one endpoint and set the compute each model gets. Partitioning builds directly on it. A partition is a resource a component asks for, in the same place it already asks for CPU and memory. If you haven’t used inference components, this post introduces them. Single-model endpoints, serverless endpoints, and heterogeneous instance pools cannot be partitioned. What customers do today, and why each option falls short If you have more models than accelerators, you have had three choices. Run fewer, larger endpoints and batch harder – This raises utilization, but only when the models are interchangeable. A portfolio of fine-tuned variants or per-tenant models is not. Use multi-model endpoints –  These load and unload models from a shared GPU on demand, which fits sparse, bursty traffic.",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon SageMaker Inference has introduced support for NVIDIA Multi-Instance GPU (MIG) technology, allowing users to partition a single physical GPU into multiple independent hardware-isolated instances. Previously, SageMaker required a minimum allocation of one full accelerator per model, which often led to underutilization on instances like the ml.p4d.24xlarge, where eight A100 GPUs could only host eight models regardless of individual memory requirements. By enabling hardware-enforced isolation of compute units and memory blocks, this update allows developers to deploy multiple models on a single GPU or select fractional GPU resources to better match specific model performance needs.\n\nThis feature is integrated directly into SageMaker's 'inference components' construct, which allows users to define compute and memory requirements for individual models within a single endpoint. The partitioning capability is specifically restricted to endpoints utilizing inference components; it is not supported for single-model endpoints, serverless endpoints, or heterogeneous instance pools. This shift aims to resolve the previous trade-off between over-provisioning expensive hardware for small models and the latency overhead associated with loading and unloading models in multi-model endpoints.",
+      "takeaways": [
+        "**Hardware Isolation:** NVIDIA MIG technology provides dedicated compute and memory blocks for each partition, enforced at the hardware level.",
+        "**Deployment Constraint:** GPU partitioning is exclusively available for endpoints using inference components and is incompatible with serverless or single-model endpoints.",
+        "**Resource Efficiency:** The update allows users to deploy more models than there are physical GPUs and select fractional GPU resources rather than full accelerators.",
+        "**Legacy Limitation:** Prior to this update, instances like the ml.p4d.24xlarge were limited to a maximum of eight models, regardless of whether the models required 14 GB or 40 GB of VRAM."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "98f2cdcbd9596f7b",
+    "canonicalUrl": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
+    "title": "How a Blue Wave midterm might reshape the AI industry",
+    "publishedAt": "2026-11-06T18:00:00.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.912Z",
+    "contentHash": "3f079204d9bbe6c0",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Theresa Loconsolo, Anthony Ha, Sean O'Kane, Kirsten Korosec",
+    "contentSnippet": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry.\n\nThe public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to impose more restrictions on data center development. And even when data centers weren’t on the ballot directly, they were a major talking point, with newly-elected Democratic governors and congressmembers likely to support additional regulation .\n\nOn the latest episode of TechCrunch’s Equity podcast, Kirsten Korosec, Sean O’Kane, and Anthony Ha discuss what the election will mean for the tech industry moving forward — not just when it comes to data centers (which OpenAI is already trying to rebrand ), but also increased government scrutiny of Big Tech.\n\nListen to the full episode to hear more about:\n\nWhether Google first satellite data center is ushering our orbital data center future\n\nIf major layoffs at design software company Canva and website builder Squarespace can be blamed on AI\n\nMarvell’s $115 billion acquisition of Lumentum , in one of the largest deals in history\n\nWhy CrowdStrike just acquired of two AI security startups\n\nWhat NBCUniversal’s investment in Indian microdrama startup Elo Elo means for the media landscape\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio Anthony Ha Anthony Ha is TechCrunch’s weekend editor. Previously, he worked as a tech reporter at Adweek, a senior editor at VentureBeat, a local government reporter at the Hollister Free Lance, and vice president of content at a VC firm. He lives in New York City.\n\nYou can contact or verify outreach from Anthony by emailing [email protected] .\n\nSean O’Kane is a reporter who has spent a decade covering the rapidly-evolving business and technology of the tran",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Recent U.S. midterm election results indicate a significant shift in the regulatory landscape for the AI and data center industries. Voters approved restrictive measures on data center development in 40 out of 41 ballot initiatives, signaling a growing public and political mandate for increased oversight. Newly elected Democratic governors and congressmembers are expected to prioritize stricter regulations, potentially impacting the infrastructure expansion plans of major AI firms.\n\nTechCrunch’s 'Equity' podcast highlights that these political shifts coincide with broader industry scrutiny of Big Tech. The discussion covers several major market developments, including Marvell’s $115 billion acquisition of Lumentum, CrowdStrike’s recent purchase of two AI security startups, and NBCUniversal’s investment in the Indian microdrama startup Elo Elo. The episode also examines the potential correlation between AI adoption and recent layoffs at companies like Canva and Squarespace, alongside emerging technical trends such as the feasibility of orbital data centers.",
+      "takeaways": [
+        "**Data Center Regulation:** Voters passed restrictive development measures in 40 of 41 ballot initiatives during the recent midterm elections.",
+        "**M&A Activity:** Marvell has entered into a $115 billion acquisition agreement for Lumentum, marking one of the largest deals in history.",
+        "**Security Consolidation:** CrowdStrike has expanded its capabilities through the acquisition of two AI security startups.",
+        "**Media Investment:** NBCUniversal has completed an investment in the Indian microdrama startup Elo Elo."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "d4ce973489ce0c41",
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/",
     "title": "Taxonomy of agentic primitives in Amazon Quick",
@@ -40,7 +300,7 @@
     "author": "Michal Sutter",
     "contentSnippet": "Zyphra has released ZYFA (Zyphra FlashAttention on AMD) , a set of FP8 and BF16 prefill attention kernels for AMD Instinct MI355X GPUs. ZYFA is Zyphra’s FP8 attention engine for long-context prefill, and the code is open source under Apache 2.0 . On real model activations, its FP8 kernels run 1.16-1.76x faster than AITER , AMD’s default kernel library. At head dimension 128, ZYFA’s FP8 error is 62-78% lower than AITER’s. TL;DR Framework: It is a kernel library. Causal forward (prefill) attention in FP8 e4m3 and BF16, head dim 128 and MLA shape (192/128). Runs on: AMD Instinct MI355X only (CDNA4, gfx950), ROCm 7.2.3, PyTorch 2.12. Drop-in flash_attn_func interface. Performance: 1.16-1.76x AITER’s FP8 throughput on real activations; BF16 roughly ties (1.01-1.02x). Best: 2,672 TFLOP/s FP8 at 32K tokens, 53% of the FP8 datasheet peak (AITER: 39%). Worst: Only 1.16x on Mistral-7B activations; FP8 clock drops to 1,628 MHz vs AITER’s 2,108 MHz. What is ZYFA? ZYFA is shipped in the form of a technical paper along with code from Zyphra. It powers the attention engine of the Zyphra Optimization Engine (ZOE) , which runs Zyphra Cloud. The BF16 kernels are written in HIP. The FP8 kernels are hand-scheduled assembly emitted by a Python generator. Why does FP8 attention underperform on MI355X? FP8 matrix instructions run at 2x the BF16 peak. But FP8 only speeds up the 2 matrix products, QKᵀ and PV. The softmax between them runs on the vector unit at the same speed in both precisions. For 32 queries against 128 keys, FP8 matrix work takes 1,024 cycles. The exact FP8 softmax takes 896 vector cycles. So the kernel needs near-perfect overlap to keep matrix units busy. Zyphra’s thread traces show AITER’s matrix pipe idle for 31.7% of cycles. The MI355X does not track matrix instruction completion in hardware, so instruction order must create that overlap. How does ZYFA work? ZYFA uses 3 techniques : Lean P: one multiply-add instead of an exponential An e4m3 bit pattern, read as an integer, grows by 8 each time the value doubles. So the code of 2^x is roughly 8x plus a constant. Lean P writes each FP8 probability with 1 multiply-add and 1 integer conversion. This cuts softmax vector cycles per block from 896 to 384. Two-wave ping-pong schedule 2 waves share each SIMD. One issues matrix instructions while the other computes probabilities, then they swap. With lean P, the matrix ",
     "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
+    "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "summary": {
       "tldr": "Zyphra has released ZYFA (Zyphra FlashAttention on AMD), an open-source (Apache 2.0) kernel library designed to optimize long-context prefill attention for AMD Instinct MI355X (CDNA4, gfx950) GPUs. The library provides drop-in compatibility with the flash_attn_func interface and supports FP8 (e4m3) and BF16 precisions, specifically targeting head dimensions of 128 and MLA shapes (192/128). ZYFA is built on ROCm 7.2.3 and PyTorch 2.12, serving as the attention engine for the Zyphra Optimization Engine (ZOE) used in Zyphra Cloud.\n\nTechnically, ZYFA addresses the bottleneck where FP8 matrix instructions (QKᵀ and PV) are limited by the vector-unit-bound softmax operation. By implementing 'Lean P'—a technique that approximates the exponential function using a single multiply-add and integer conversion—Zyphra reduces softmax vector cycles per block from 896 to 384. Combined with a two-wave ping-pong scheduling strategy that overlaps matrix instruction issuance with probability computation, ZYFA achieves 1.16-1.76x the throughput of AMD’s default AITER library on real model activations. At 32K tokens, ZYFA reaches 2,672 TFLOP/s (53% of FP8 datasheet peak), compared to AITER’s 39%.",
@@ -69,7 +329,7 @@
     "author": "Theresa Loconsolo, Anthony Ha",
     "contentSnippet": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry.\n\nThe public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to impose more restrictions on data center development. And even when data centers weren’t on the ballot directly, they were a major talking point, with newly-elected Democratic governors and congressmembers likely to support additional regulation .\n\nOn the latest episode of TechCrunch’s Equity podcast, Kirsten Korosec, Sean O’Kane, and Anthony Ha discuss what the election will mean for the tech industry moving forward — not just when it comes to data centers (which OpenAI is already trying to rebrand ), but also increased government scrutiny of Big Tech.\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio Anthony Ha Anthony Ha is TechCrunch’s weekend editor. Previously, he worked as a tech reporter at Adweek, a senior editor at VentureBeat, a local government reporter at the Hollister Free Lance, and vice president of content at a VC firm. He lives in New York City.\n\nYou can contact or verify outreach from Anthony by emailing [email protected] .\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free Book before the BOGO deal expires\n\nClaude can now analyze your spending with its new Personal Finance tool Aisha Malik\n\nData centers are turning to old jet engines as the wait for power grows Aditya Mehta\n\nNew York City’s Mamdani criticizes Madison Square Garden owner over surveillance tech Zack Whittaker\n\nY Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens Julie Bort\n\nAnthropic warns that it’s very close to",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Following the November 2026 U.S. midterm elections, the AI and tech industries face a potential shift in regulatory oversight. Voters in the recent cycle approved restrictive measures on data center development in 40 out of 41 ballot initiatives, signaling a growing public and political mandate for increased oversight of infrastructure expansion.\n\nIndustry analysts suggest that the combination of these local ballot results and the election of new Democratic governors and congressmembers will likely lead to heightened scrutiny of Big Tech and AI-related operations. OpenAI is reportedly attempting to rebrand the perception of data centers to mitigate these regulatory pressures, while broader industry trends indicate a potential cooling in AI spending, as evidenced by recent Ramp data.",
@@ -119,12 +379,12 @@
     "canonicalUrl": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
     "title": "Quoting Nilay Patel",
     "publishedAt": "2026-11-06T17:13:12.000Z",
-    "fetchedAt": "2026-11-06T17:53:07.773Z",
-    "contentHash": "870783e3de026e96",
+    "fetchedAt": "2026-11-06T22:38:13.600Z",
+    "contentHash": "8e750d6b5c112260",
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
-    "contentSnippet": "6th November 2026 The products aren't good enough to sell people on the costs.\n\nYou cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history.\n\nIt's not worth it. It just isn't worth it to anyone. And agents aren't real and they might not be being used the way that anyone wants them to yet. All these companies are spending more than they're making on these products. Refrigerators holding blood storage in Europe are being hacked.\n\nThe costs are too high. The benefits are not real. And if you connect that to corruption, you're like, in order to impose these costs on me, these CEOs are in the White House shaking Trump's hand, renaming it to the Gulf of America, paying for this ballroom that we don't want. It's obvious crypto-corruption, and it's still slop.\n\nThe AI industry will not get out of it until they make better products. Until everyone can see without needing to be convinced, without needing an ad campaign, without any of this stuff that just using these products makes your life better.\n\n— Nilay Patel , The Vergecast: Big Tech lost big in the 2026 election\n\nRecent articles Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 The October inflection point for vibe game development - 28th October 2026 Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026 This is a quotation collected by Simon Willison, posted on 6th November 2026 .",
+    "contentSnippet": "The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history. It's not worth it. It just isn't worth it to anyone. And agents aren't real and they might not be being used the way that anyone wants them to yet. All these companies are spending more than they're making on these products. Refrigerators holding blood storage in Europe are being hacked. The costs are too high. The benefits are not real. And if you connect that to corruption, you're like, in order to impose these costs on me, these CEOs are in the White House shaking Trump's hand, renaming it to the Gulf of America, paying for this ballroom that we don't want. It's obvious crypto-corruption, and it's still slop. The AI industry will not get out of it until they make better products . Until everyone can see without needing to be convinced, without needing an ad campaign, without any of this stuff that just using these products makes your life better. — Nilay Patel , The Vergecast: Big Tech lost big in the 2026 election Tags: nilay-patel , slop , ai , generative-ai , ai-ethics",
     "category": "LLMs & GenAI",
     "lab": "Independent",
     "entryType": "DISPATCH",
@@ -214,7 +474,7 @@
     "contentSnippet": "When Irene moved to San Francisco last year, she started using dating apps as a way to meet new people, get to know her new city, and connect with others who care about the things she does. After the 25-year-old analyst downloaded Hinge and started swiping, she noticed a trend. “Hinge has a prompt where you can say, ‘We’ll get along if”,” she recalls. “Sometimes people will be like, ‘Fuck AI.’” Usually, the people who include this kind of value statement on their profile work in the arts, nursing, maybe graphic design. Within the span of a few minutes of sitting down and swiping, Irene shows me a second profile where this happened once more: “You should *not* go out with me if… you use AI.” In San Francisco, the epicenter of tech, the metaphorical AI bomb went off in 2022 with the release of OpenAI’s ChatGPT. Conversations surrounding artificial intelligence now permeate the dating scene in one shape or another. Over the past month, I bopped around the city —, chatting with people at parties and coworking spaces and reviewing dating directories and other online profiles —, trying to find out how AI affects the dating scene. Responses varied wildly. For some, AI feelings take on a similar valence to traditionally political ones, showing up in dating profiles next to party affiliation or other signifiers, like the watermelon emoji symbolizing solidarity with Palestinians amid the war in Gaza. Others are wrestling with the ethics of dating someone who builds AI, considering the financial benefits a partner in the industry can bring, weighing whether to have children in a future this uncertain, or even handing their love lives over to it entirely. On a street near Berkeley, I meet up with Kyle. (His name has been changed so that he can talk openly about his personal life.) Kyle is a researcher at an AI safety nonprofit initiative, and although he is just in his early 20s, he’s already thinking about death. In the AI safety community, some experts see a 10 percent chance of humans going extinct due to AI taking over. This apocalyptic possibility is always top of mind when he navigates conversations with a potential partner: The rapid development of AI shapes how he thinks about whether he wants to have kids or where he might live long term — if there is even a long term. “A lot of people are planning for what they want their life to look like five, 10, 15 years d",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/268841_When_it_comes_to_dating_is_AI_the_new_politics__CVirginia.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Artificial intelligence has emerged as a polarizing social and political signifier within the San Francisco dating scene, with users increasingly listing anti-AI sentiments as dealbreakers on platforms like Hinge. While some individuals view AI development as an existential threat—citing the 10% extinction risk often discussed in AI safety circles—others view the industry as a source of significant financial stability. This divide is underscored by the economic reality of the Bay Area, where over 20,000 AI-related jobs were added in the last year, and AI researcher salaries frequently reach $300,000, leading matchmakers to report increased client interest in partners employed by firms approaching IPOs, such as Anthropic and OpenAI.\n\nBeyond social signaling, AI is fundamentally altering the mechanics of modern courtship. A 2025 survey by Match and the Kinsey Institute indicates that 26% of U.S. singles now utilize AI tools to enhance their dating experiences. Practical applications range from using chatbots for emotional regulation to the deployment of automated AI agents that handle swiping, messaging, and calendar scheduling for busy founders. Despite these efficiencies, the trend raises concerns regarding the erosion of human connection, with 38% of Americans reporting they disclose personal information to chatbots that they would withhold from their own romantic partners.",
@@ -331,7 +591,7 @@
     "contentSnippet": "On Tuesday, millions of American voters went to the polls and voted overwhelmingly for Democrats and against AI. The fight against Big Tech is about to come roaring back, and the fight over data centers is looking even harder for the folks trying to build them. On this episode of The Vergecast, Nilay and David discuss what the 2026 midterms mean for the tech industry going forward. They dig into the self-quarantining echo chamber that is X, the congressional energy likely to be pointed at tech CEOs and AI regulation, and whether anything is actually likely to get done in the next two years. After that, the hosts turn to AI. Specifically, whether anyone has figured out how to make money on AI. Specifically, whether OpenAI’s explosive growth in web search means much, when even Google can’t figure out how to make money on AI web search. Businesses are scaling back; agents don’t appear to be taking over. There’s a lot of money flowing around the AI world, but is there enough flowing into it to keep everything going? That’s the hard part. Finally, it’s time for a somewhat abridged Brendan Carr Is a Dummy, the latest on SpaceX’s mobile ambitions, the touchscreen MacBook, RAM Altman, and much more. Watch | Listen | Get ad-free In case you missed it this week: We also talked about the challenges of cloud gaming, the data center election, Rian Johnson’s new iPhone app, and the future of reading. And we want to hear all your thoughts about all of it! Call the Vergecast Hotline at 866-VERGE11, send us an email at vergecast@theverge.com, and tell us everything that’s on your mind. And make sure you subscribe so you don’t miss an episode!",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/VRG_VST_110626_Site.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "Ethics & Policy",
-    "lab": "Independent",
+    "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "The 2026 U.S. midterm elections resulted in a significant electoral shift toward Democratic candidates, signaling a potential increase in regulatory scrutiny and legislative pressure on the technology sector. The Vergecast hosts Nilay Patel and David Pierce analyze the implications for Big Tech, specifically highlighting the growing political resistance to AI development and the increasing difficulty of securing infrastructure approvals for new data centers. The discussion posits that the next two years of congressional activity will likely focus on aggressive oversight of tech CEOs and AI-related policy.\n\nBeyond the political landscape, the episode examines the commercial viability of AI, questioning whether current business models can sustain the massive capital expenditures required for the industry. The hosts contrast OpenAI’s expansion into web search with Google’s ongoing struggle to monetize AI-integrated search results. They note a broader trend of businesses scaling back AI investments, observing that autonomous AI agents have not yet achieved widespread adoption or utility, raising concerns about the long-term financial sustainability of the current AI investment cycle.",
@@ -357,17 +617,23 @@
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Terrence O’Brien",
-    "contentSnippet": "inMusic, the parent company of Akai, Moog, Native Instruments, and more, has decided to embrace the modding community. In an interview with The Verge , inMusic CEO Jack O'Donnell said, \"We're going to provide a toolbox to the community, we're going to provide the inner workings of, say, an MPC or Sample so that people can do what they want.\" That \"toolbox\" includes making the code for devices like the recently teased MPC Sample Key open source, but also offering developers an SDK to make modifications easier and lessen the risk of bricking your beloved sampler. While Akai is eager to see what the modding community cooks up, and has started s … Read the full story at The Verge.",
+    "contentSnippet": "inMusic, the parent company of Akai, Moog, Native Instruments, and more, has decided to embrace the modding community. In an interview with The Verge, inMusic CEO Jack O’Donnell said, “We’re going to provide a toolbox to the community, we’re going to provide the inner workings of, say, an MPC or Sample so that people can do what they want.” That “toolbox” includes making the code for devices like the recently teased MPC Sample Key open source, but also offering developers an SDK to make modifications easier and lessen the risk of bricking your beloved sampler. While Akai is eager to see what the modding community cooks up, and has started seeding devices to developers ahead of the official release of the Sample Key, the company takes reliability seriously. O’Donnell said the company wants to “make sure that our official software is completely stable and good for an artist on stage.” He can’t have Fred Again going on stage and discovering his MPC is riddled with bugs. But he also wants people to feel comfortable tinkering. “We’ll try to give them a reset button,” he said so “They can experiment with it, and then not lose what they have.” The company is planning to make a big splash NAMM, the annual convention of music manufacturers in Anaheim, with Creator Lab, where it will let technically curious musicians get some hands-on time hacking 22 new products from across its brands. That includes products from Moog, that might not seem like a natural pairing for vibe coding because of its analog design. But O’Donnell thinks it can be, “if we open it up correctly.” That will involve building a platform for devs to work around the analog parts of the circuit. Other companies have also embraced the modding community. Erica Synths recently released the source code for its LXR-02 drum machine, Polyend open-sourced its line of Tracker grooveboxes, and Behringer has also announced a slew of open-source devices, including a $150 clone of the MPC One called Kick, a clone of the E-mu SP-1200, the Anima DJ controller, the Ignite sequencer, and the Polykeys 61 MIDI controller. The change in the industry has been quick and seismic. O’Donnell said of the need to provide developers tools for hacking inMusic’s products, “I can tell you it wasn’t on our task list five weeks ago. It just all of a sudden has to be on a task list now.” Of course, not everyone is thrilled. Elektron ha",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/assets_47c5d023e7b3451a86ac03602c65dce8_43f25647cf8a4cbb8786829bc29ee2fb.webp?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "InMusic, the parent company of Akai, Moog, Native Instruments, and more, has decided to embrace the modding community. In an interview with The Verge , inMusic CEO Jack O'Donnell said, \"We're going to provide a toolbox to the community, we're going to provide the inner workings of, say, an MPC or Sample so that people can do what they want.\" That \"toolbox\" includes making the code for devices like the recently teased MPC Sample Key open source, but also offering developers an SDK to make modifications easier and lessen the risk of bricking your beloved sampler. While Akai is eager to see what the modding community cooks up, and has started s … Read the full story at The Verge.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "inMusic, the parent company of Akai, Moog, and Native Instruments, is pivoting to support the hardware modding community by providing official SDKs and open-source code for its devices. CEO Jack O’Donnell announced that the company will release the source code for upcoming products like the MPC Sample Key and provide a 'toolbox' to facilitate modifications while minimizing the risk of bricking hardware. To ensure stability for professional use, inMusic plans to implement a 'reset button' feature, allowing users to experiment with custom firmware without permanently compromising the device's core functionality.\n\nThe company intends to showcase this initiative at the upcoming NAMM convention in Anaheim through its 'Creator Lab,' where attendees can hack 22 new products across its brands, including analog Moog synthesizers. This shift follows a broader industry trend toward open-source hardware, with competitors like Erica Synths, Polyend, and Behringer—the latter of which recently announced a $150 MPC One clone named Kick—already releasing source code or open-source devices. While inMusic views this as a necessary evolution, other manufacturers like Elektron remain cautious, explicitly banning links to modified firmware on their official forums due to concerns regarding warranty voiding and hardware damage.",
+      "takeaways": [
+        "**inMusic Strategy:** The company is developing an SDK and open-source code for devices like the MPC Sample Key to encourage community modding while maintaining a 'reset' safety feature.",
+        "**Industry Competitors:** Behringer has announced several open-source products, including the $150 'Kick' (MPC One clone), an E-mu SP-1200 clone, the Anima DJ controller, the Ignite sequencer, and the Polykeys 61.",
+        "**Elektron Stance:** Elektron prohibits links to modified firmware on its official forums, citing risks to warranty coverage, future update compatibility, and the potential for bricking devices.",
+        "**NAMM Creator Lab:** inMusic will provide hands-on access to 22 new products for hacking at the Anaheim NAMM convention, including efforts to open up analog Moog circuits for developer modification."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -386,16 +652,17 @@
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "A year ago, NVIDIA open sourced its Aerial wireless software , joining Sionna and a broader suite of open source tools for accelerating next-generation 6G network development. Together, they give researchers a foundation for testing ideas, comparing results and building on each other’s work — connecting simulation and AI training with experiments on real over-the-air wireless systems. Today, researchers and developers are using these tools to build 6G-ready networks that do more than just transmit data — receiving signals more effectively, keeping robots and autonomous systems connected when it matters most, and adapting in real time as devices move through the world.\n\nOver the past year, global developer adoption of NVIDIA AI Aerial and NVIDIA Sionna software has grown 10x, while NVIDIA’s open source 5G/6G tools have surpassed 1 million downloads. More than 8,000 research and academic institutions worldwide are using these platforms. The projects emerging today offer a view of how future networks could look.",
+      "tldr": "NVIDIA has reported a 10x growth in developer adoption for its AI Aerial and Sionna software suites over the past year, with total downloads for its 5G/6G open-source toolkits exceeding 1 million. These platforms are currently utilized by over 8,000 academic and research institutions to develop AI-native 6G networks that integrate connectivity, computing, and sensing into a single software-defined architecture. The primary objective is to transition from traditional data transmission to intelligent, goal-oriented semantic communications capable of supporting autonomous systems and robotics.\n\nTechnical implementation focuses on reducing latency in robotic decision-making by replacing full-image transmission with compact, semantic descriptions of environmental objects and spatial relationships. In a specific deployment at King’s College London, researchers integrated a camera-equipped robot arm with an NVIDIA Jetson AGX Orin running Sionna. By utilizing this goal-oriented approach during fruit-packing and cube-stacking experiments, the team achieved a 52.6% reduction in task completion time and increased task success rates compared to conventional periodic image transmission methods.",
       "takeaways": [
-        "Each addresses a different challenge, but together point toward a broader ambition for building AI-native 6G networks that deliver connectivity, computing and sensing over a converged software-defined platform for billions of people, machines and agents.",
-        "Networks That Help Robots React Faster A robot picking up an object needs to understand its surroundings and act before they change.",
-        "When the AI powering that decision runs on a nearby server or in the cloud, the wireless connection becomes part of the response time.",
-        "Researchers are exploring a more efficient approach called goal-oriented semantic communications."
+        "**Adoption Metrics:** NVIDIA's 5G/6G open-source tools have surpassed 1 million total downloads, with a 10x increase in developer adoption over the last 12 months.",
+        "**Institutional Reach:** The NVIDIA AI Aerial and Sionna platforms are currently deployed across more than 8,000 global research and academic institutions.",
+        "**Performance Benchmark:** Researchers at King’s College London demonstrated a 52.6% reduction in robot task completion time using goal-oriented semantic communications on a Jetson AGX Orin.",
+        "**Core Technology:** The Sionna software supports software-defined 5G networking and edge AI processing, enabling real-time adaptation for autonomous systems."
       ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 6,
-      "generatedWith": "heuristic"
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -408,16 +675,23 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Rebecca Bellan",
-    "contentSnippet": "AI usage keeps climbing, but spending has stalled. Price cuts and smarter cost controls among the biggest spenders could challenge investor assumptions about AI hypergrowth.",
+    "contentSnippet": "Companies are using more AI than ever, but they’re not spending more on it.\n\nA new report from Ramp shows AI spending flatlined over late summer even as token volumes rose, a sign that price competition and savvier customers may be capping revenue for OpenAI and Anthropic. According to Ramp’s data, token spend only grew 1.5% across August and September. To compare, in July, it grew 42% from the previous month.\n\nAs Anthropic gears up for its IPO , the data suggests investors might be wrong to assume AI companies will keep growing at breakneck speed.\n\n“Almost the entire spend on AI is from venture-backed, high-growth tech companies,” Ramp’s lead economist Ara Kharazian told TechCrunch. “That’s fine as long as AI spend continues to rise, but if it starts to slow down because of something in the market or some other factor, they will all start to slow down simultaneously, and that could lead to other cascading effects.”\n\nKharazian said he’s already seeing evidence that the top 1% of firms — the most “ AI-pilled ” — have stuttered slightly in their spend in August and September, coming up just below the $10,000 per-employee they were hitting at their summer peaks. A slowdown among that cohort is “sufficient to slow down revenue entirely, despite the fact that we’re seeing rising volumes,” he said.\n\nRamp data shows growth in spending among median and top 10%, but it’s not enough to make up the difference. Median firms spend $12-$15 per employee per month, and the top 10% spend $600-$1,000.\n\n“If you look at the use cases today, it’s not necessarily clear they will get up to that $10,000 per employee per month mark that the 1% is at,” Kharazian said. While there’s plenty of demand for AI coding agents in industries like software and finance, “it’s not necessarily true that a doctor’s office or a car dealership will need to spend that much on AI.”\n\n“The era of hypergrowth may be over, and now that we know there may not be as much juice to squeeze out of the top 1%,” he continued.\n\nOctober data did see a re-acceleration, with token spend up 8.9% from September 23 to October 23, but Kharazian said the headwinds on spend growth are strong.\n\nKharazian (who has published a series of blogs called “ Cracks in the AI Thesis ”) said the slowdown isn’t due to a demand problem. Again, AI volumes are up. Instead he points to the competitive nature of the marketplace.\n\n“OpenAI an",
     "category": "Business & Big Tech",
     "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "AI usage keeps climbing, but spending has stalled. Price cuts and smarter cost controls among the biggest spenders could challenge investor assumptions about AI hypergrowth.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "Data from financial platform Ramp indicates that corporate AI spending has stalled despite rising token volumes, challenging the assumption of continued hypergrowth for major model providers like OpenAI and Anthropic. While token spend grew 42% month-over-month in July, that growth plummeted to just 1.5% across August and September. Ramp’s lead economist, Ara Kharazian, attributes this stagnation to a combination of aggressive price competition, increased customer efficiency, and a saturation of high-intensity usage among the top 1% of \"AI-pilled\" firms, which had previously peaked at $10,000 in monthly spend per employee.",
+      "takeaways": [
+        "**Spending Deceleration:** Token spend growth dropped from 42% in July to 1.5% in August and September, with a slight re-acceleration of 8.9% observed between September 23 and October 23.",
+        "**Price War Impact:** OpenAI and Anthropic have significantly reduced API pricing—including cuts for GPT-6 Sol/Luna and Fable 5.1/Opus 5.5—with Anthropic noting these reductions slashed revenue growth by approximately $600 million.",
+        "**Efficiency Gains:** Enterprises are increasingly using model routers and budget controls to shift workloads from expensive models to cheaper, lightweight alternatives, effectively decoupling token volume from revenue growth.",
+        "**Valuation Adjustments:** Amidst these headwinds, Anthropic’s estimated valuation reportedly fell from $2 trillion to $1.2–$1.3 trillion, while OpenAI lowered its valuation target from $1.4 trillion to $1.25 trillion and reduced fundraising goals by $10 billion.",
+        "**Market Segmentation:** While top-tier firms spend $600–$1,000 per employee monthly, median firms spend only $12–$15, suggesting that the \"hypergrowth\" model may not scale to broader, less technical industries like healthcare or retail."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -651,6 +925,28 @@
       "readTimeMinutes": 2,
       "generatedWith": "gemini",
       "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a0a44ed09dc9a108",
+    "canonicalUrl": "https://openai.com/index/partnering-with-hacktron",
+    "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+    "publishedAt": "2026-11-06T08:00:00.000Z",
+    "fetchedAt": "2026-11-06T22:38:14.217Z",
+    "contentHash": "b7a0406a5e69feb2",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
     }
   },
   {
@@ -1937,6 +2233,28 @@
       "tldr": "Egyptian and Nigerian English join the Open ASR Leaderboard.",
       "takeaways": [],
       "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "5f721228af3682c2",
+    "canonicalUrl": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
+    "title": "Measuring how AI agents handle everyday wet-lab science",
+    "publishedAt": "2026-11-06T00:00:00.000Z",
+    "fetchedAt": "2026-11-06T22:38:14.217Z",
+    "contentHash": "e9e5d34bef70c7f5",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
+      "takeaways": [],
+      "impact": "High",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
@@ -5013,6 +5331,37 @@
     }
   },
   {
+    "id": "e4aca25b28aa89dd",
+    "canonicalUrl": "https://arxiv.org/abs/2611.08483",
+    "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+    "publishedAt": "2026-11-05T00:00:00.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.296Z",
+    "contentHash": "5d0eb79fa395242b",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Qile Jiang, George Em Karniadakis",
+    "contentSnippet": "Authors: Qile Jiang , George Em Karniadakis\n\nAbstract: LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.08483",
+    "pdfUrl": "https://arxiv.org/pdf/2611.08483",
+    "summary": {
+      "tldr": "Qile Jiang and George Em Karniadakis have introduced SwarmEvolve, a framework designed to accelerate LLM-guided evolutionary search for mathematical and scientific computing problems. By utilizing hundreds of low-cost agents operating in swarms, the system bypasses the latency of textual chain-of-thought generation. Instead, agents reason directly in latent space, communicating by passing KV caches between members. A novelty filter maintains population diversity by calculating distances between hidden state vectors, while a summarizer agent performs crossover by aggregating the combined KV caches of the swarm.\n\nSwarmEvolve demonstrates significant performance gains, achieving top-tier scores on 21 mathematical and scientific computing benchmarks in a median time of 3 to 8 minutes, compared to the 60 minutes required by existing state-of-the-art frameworks. Notably, the framework achieves these results using the Qwen3 8B model, successfully surpassing solutions previously discovered by AlphaEvolve using frontier-scale LLMs. This approach demonstrates that latent-space communication significantly reduces computational overhead while maintaining or exceeding the efficacy of traditional text-based evolutionary search methods.",
+      "takeaways": [
+        "**Architecture:** SwarmEvolve utilizes hundreds of low-cost agents that reason in latent space, avoiding text decoding to facilitate faster iteration.",
+        "**Communication Mechanism:** Information exchange occurs via the passing of KV caches between swarm members, with a summarizer agent aggregating these caches for crossover.",
+        "**Diversity Control:** A novelty filter maintains population variety by measuring the distance between hidden state vectors of different agents.",
+        "**Performance Metrics:** The framework achieves state-of-the-art results in 3 to 8 minutes, a 7.5x to 20x speedup over existing methods that require 60 minutes.",
+        "**Model Efficiency:** SwarmEvolve using Qwen3 8B outperformed solutions previously generated by AlphaEvolve using larger, frontier-class LLMs."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "7aa63af445bdd3ac",
     "canonicalUrl": "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
     "title": "AI PACs spent millions trying to shape Congress — here’s how they fared",
@@ -6406,6 +6755,37 @@
       ],
       "impact": "High",
       "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "93778e1fee12e8e4",
+    "canonicalUrl": "https://arxiv.org/abs/2611.06498",
+    "title": "Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation",
+    "publishedAt": "2026-11-04T13:32:04.000Z",
+    "fetchedAt": "2026-11-06T22:38:12.296Z",
+    "contentHash": "54eecdd45003baea",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Georgios Feretzakis, Alexandros Papaspyridis",
+    "contentSnippet": "Authors: Georgios Feretzakis , Alexandros Papaspyridis\n\nAbstract: Offline retrieval-augmented generation (RAG) on edge devices is updated through signed knowledge packs that carry text and precomputed embedding vectors. A signature proves who published a pack, not that its vectors encode its text. We study this text-vector integrity gap. A verifier that recomputes vectors and accepts them within a cosine tolerance concedes a predictable share of queries to an attacker who controls the vectors: the hijack rate equals the distribution of angular retrieval margins at the tolerance (the margin law). Margins are small in five corpora and two embedding models, so an idealised tolerance at the level of floating-point noise leaves up to 5.5% of queries exposed (at most 1.2% in any corpus once exact duplicate documents are excluded), and a threshold calibrated from our CPU INT8-FP32 comparison of a small embedding model (at the empirical 0.1% quantile of honest cosines) leaves 98-100% exposed; on a Raspberry Pi 5 running a local language model, such an attack lowers correct answers from 0.75 to 0.39. Integrity audits of compressed vector stores fare no better: on a FAISS product-quantisation index over 57,638 documents, tampered vectors that all pass the audit put the attacker's document first for 25% of targets. Verifying quantisation codes instead, with ambiguity decided by the verifier, a calibrated guard band and canonicalisation, accepted every honest vector in our samples on three platforms and left the publisher no choice. We also show that common floating-point and dynamic-INT8 inference pipelines are not bit-reproducible across batch sizes or architectures, and report pre-registered negative results on abstention, context pruning and semantic screening. We release code and data.\n\nNotes: 20 pages, 2 figures, 7 tables. Code and data: this https URL (DOI https://doi.org/10.5281/zenodo.23948839 )",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.06498",
+    "pdfUrl": "https://arxiv.org/pdf/2611.06498",
+    "summary": {
+      "tldr": "Georgios Feretzakis and Alexandros Papaspyridis identify a critical 'text-vector integrity gap' in offline Retrieval-Augmented Generation (RAG) systems, where signed knowledge packs containing text and precomputed embedding vectors fail to guarantee that the vectors accurately represent the text. While digital signatures verify the publisher's identity, they do not prevent attackers from injecting malicious vectors that pass standard cosine similarity verification. The authors demonstrate that even with strict tolerances, attackers can hijack retrieval results, with empirical tests on a Raspberry Pi 5 showing a drop in correct RAG answers from 0.75 to 0.39 when vectors are tampered with.\n\nThe research reveals that common inference pipelines, including floating-point and dynamic-INT8, lack bit-reproducibility across different architectures and batch sizes, complicating verification. In tests using a FAISS product-quantization index of 57,638 documents, tampered vectors successfully forced an attacker's document to the top rank in 25% of queries. To mitigate this, the authors propose a verification method based on quantization codes rather than raw vectors, utilizing a calibrated guard band and canonicalization. This approach successfully accepted all honest vectors in their samples across three platforms while eliminating the publisher's ability to manipulate the retrieval outcome.",
+      "takeaways": [
+        "**Hijack Vulnerability:** Using a threshold calibrated from CPU INT8-FP32 comparisons, 98-100% of queries were exposed to vector-based hijacking attacks.",
+        "**Performance Impact:** On a Raspberry Pi 5, vector tampering reduced RAG accuracy from 0.75 to 0.39.",
+        "**FAISS Vulnerability:** In a product-quantization index of 57,638 documents, malicious vectors allowed attackers to force their document to the first position in 25% of target queries.",
+        "**Proposed Solution:** Verifying quantization codes with a calibrated guard band and canonicalization successfully accepted all honest vectors while preventing manipulation.",
+        "**Reproducibility Issues:** The study reports that standard floating-point and dynamic-INT8 inference pipelines are not bit-reproducible across different batch sizes or hardware architectures."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
       "generatedWith": "gemini",
       "summaryVersion": 2
     }
@@ -10506,355 +10886,6 @@
       ],
       "impact": "Medium",
       "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4613e85d09f408da",
-    "canonicalUrl": "https://arxiv.org/abs/2611.04408",
-    "title": "Halley: A Predictive Control Plane for Optical AI Data Center Networks",
-    "publishedAt": "2026-11-03T06:45:50.000Z",
-    "fetchedAt": "2026-11-05T22:41:29.494Z",
-    "contentHash": "55baddd84d71a33a",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Manav Mishra, Krishna M. Sivalingam",
-    "contentSnippet": "Authors: Manav Mishra , Krishna M. Sivalingam\n\nAbstract: A frontier AI model is trained in an AI data center, on tens of thousands of accelerators joined by a dedicated network, and every training step ends with all of them exchanging data at once. Between racks, that network is optical, and each of its four layers, from lasers to switches, runs a fixed or after-the-fact policy. Lasers sharing an enclosure, cooling, and power can fail together. At a fixed spare ratio, correlated failure provably caps a pool's availability however large it grows. In this paper, we present a comprehensive predictive control plane framework, called Halley, that reads each resource's next state and acts before the failure occurs. It has four components, each carrying a formal guarantee: LightReserve that sizes the laser pool to provide a coverage bound, FoldFit that schedules the switch within $11/9$ of the optimal, ThermaLead that holds a microring with one-step-ahead control, and TriageGuard that protects the highest-risk modules first. Halley gives each layer a predictive controller that defers to the deployed policy when unsure. Composed from simulations at that point, effective goodput, the share of ideal throughput kept, rises from 65.2\\% to 76.5\\% if a window that exhausts its spares is lost. If only the dark channels' bandwidth is lost, it reaches 67.4\\%. Per megawatt, that is up to 1.03--1.17 times the training; for the same training, up to 3.3--14.7\\% less data center capacity. \\textsf{Halley}'s fallback circuits are formally verified and are shown to achieve close timing on a commercial FPGA, and pass a 130~nm signoff.\n\nNotes: 24 pages, 18 figures",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.04408",
-    "pdfUrl": "https://arxiv.org/pdf/2611.04408",
-    "summary": {
-      "tldr": "Manav Mishra and Krishna M. Sivalingam have introduced Halley, a predictive control plane framework designed to mitigate correlated failures in optical AI data center networks. By addressing the limitations of fixed or reactive policies in multi-layer optical architectures—where shared power, cooling, and enclosure constraints lead to correlated failures—Halley implements a proactive management layer. The framework consists of four formally guaranteed components: LightReserve for laser pool sizing, FoldFit for switch scheduling, ThermaLead for microring control, and TriageGuard for risk-based module protection.\n\nHalley functions as a predictive controller that defers to existing deployed policies when uncertainty arises. Simulation results indicate that the framework improves effective goodput from 65.2% to 76.5% during scenarios where spare capacity is exhausted. In terms of operational efficiency, the system achieves 1.03 to 1.17 times the training performance per megawatt and reduces required data center capacity by 3.3% to 14.7% for equivalent training workloads. The framework's fallback circuits have been formally verified, validated on a commercial FPGA, and passed a 130 nm signoff.",
-      "takeaways": [
-        "**Performance Gains:** Effective goodput increases from 65.2% to 76.5% during spare-exhaustion events.",
-        "**Efficiency Metrics:** Delivers 1.03–1.17x training performance per megawatt and reduces data center capacity requirements by 3.3–14.7%.",
-        "**Algorithmic Guarantees:** FoldFit component provides switch scheduling within 11/9 of the theoretical optimal.",
-        "**Validation:** Fallback circuits are formally verified and passed a 130 nm signoff process."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "dfdd0b70b8a46bf2",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/02/openai-pando-git-backend-monorepo/",
-    "title": "OpenAI Introduces Pando: A Git Backend That Cuts Median Push Latency ~80%",
-    "publishedAt": "2026-11-03T05:51:06.000Z",
-    "fetchedAt": "2026-11-03T12:40:43.486Z",
-    "contentHash": "7b73a28464804c8a",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "OpenAI has introduced Pando , a new Git backend that now serves all development in its monorepo. The OpenAI Pando Git backend keeps the standard Git client and protocol. Engineers and Codex agents still run git push and git fetch as before. Only the server changed. OpenAI team reports median push latency fell nearly 80%. Pando now delivers nearly a petabyte of Git data per day. TL;DR Scale: Nearly 1 PB of Git data per day; peak above 57 TB in 1 hour. Runs on: Commodity hardware; standard cloud VMs saturate 10 Gbps links on clone and fetch. Performance: Thousands of concurrent pushers without degradation, per OpenAI’s own testing. Best: Median push latency down nearly 80% (about 5x). Worst: Not open source; repeat branch pushes resend non-trunk history (p99 pack under 3 MiB). What is OpenAI Pando? Pando is a Git-compatible server backend from OpenAI that scales concurrent pushes and fetches for a monorepo. It was written in Rust and reached production in 10 weeks. One engineer designed the core and teams of Codex agents implemented it. It has served production traffic since April 2026. Why did OpenAI need a new Git backend? Codex multiplied parallel work. OpenAI’s commit chart shows commits landed on master up 1,378% in Q3 2026 versus Q1 2024. Its Q4 2026 estimate is +2,442%. Each push now triggers many CI fetches. By late 2025, fetches and pushes slowed, merges failed, and reliability at times fell below 90%. OpenAI concluded the bottleneck was how it served Git, not Git itself. How does Pando work? Pando drops 2 assumptions that most Git servers treat as requirements: 1. Repository-wide consistency : Conventional servers order every ref update repo-wide, so unrelated pushes wait. Pando uses causal consistency instead. Each branch is serialized on its own, and clients only conflict when pushing the same ref. The tradeoff: a reader viewing several branches may see them at different points in time. 2. A unique packfile per client : Standard servers build a fresh pack per fetch. Pando stores each pushed pack as an immutable blob. A “ref version” goes into a scalable metadata store. A push needs O(1) metadata reads and writes. A fetch needs O(log Δ) reads, where Δ is the ref-version gap to close. How are pushes kept small and reusable? With millions of branches, a full ref advertisement can exceed 100 MiB. Pando advertises only the trunk branch as the base for n",
-    "category": "Robotics & Hardware",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI has introduced Pando , a new Git backend that now serves all development in its monorepo. The OpenAI Pando Git backend keeps the standard Git client and protocol. Engineers and Codex agents still run git push and git fetch as before.\n\nOpenAI team reports median push latency fell nearly 80%. Pando now delivers nearly a petabyte of Git data per day. TL;DR Scale: Nearly 1 PB of Git data per day; peak above 57 TB in 1 hour.",
-      "takeaways": [
-        "Runs on: Commodity hardware; standard cloud VMs saturate 10 Gbps links on clone and fetch.",
-        "Performance: Thousands of concurrent pushers without degradation, per OpenAI’s own testing.",
-        "Best: Median push latency down nearly 80% (about 5x).",
-        "Worst: Not open source; repeat branch pushes resend non-trunk history (p99 pack under 3 MiB)."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "dcf65f4aed7f78c1",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
-    "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
-    "publishedAt": "2026-11-03T05:32:25.000Z",
-    "fetchedAt": "2026-11-03T12:40:43.488Z",
-    "contentHash": "b9a6065865b7bf47",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross reference them against ADS-B data to find the exact location of the video based on their speed, distance, and gaps between different flights. Via Lobste.rs Tags: privacy , youtube",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross reference them against ADS-B data to find the exact location of the video based on their speed, distance, and gaps between different flights. Via Lobste.rs Tags: privacy , youtube.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "de959bab941149a9",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/3/october-newsletter/",
-    "title": "October sponsors-only newsletter",
-    "publishedAt": "2026-11-03T05:28:59.000Z",
-    "fetchedAt": "2026-11-03T12:40:43.488Z",
-    "contentHash": "d1ed2e23f78b2e2f",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for $100+/month subscriptions What I'm using right now My software releases My September newsletter can now be seen here , as a preview of what you'll get. Pay $10/month to stay a month ahead of the free copy! Tags: newsletter",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I sent out the October edition of my sponsors-only monthly newsletter . If you are a sponsor (or start a sponsorship now) you can access it here . This month: The October inflection point for vibe game development The vulnerability apocalypse gets hot LLM releases API credits for $100+/month subscriptions What I'm using right now My software releases My September newsletter can now be seen here , as a preview of what you'll get.",
-      "takeaways": [
-        "Pay $10/month to stay a month ahead of the free copy!"
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6dea643d43183551",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00159",
-    "title": "A Generalized Sparse Fuzzy Clustering Framework with Automated Cluster Cardinality Estimation Ability",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "60e997aefdd07c3a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "George Stamatelis, Konstantinos Koutroumbas",
-    "contentSnippet": "arXiv:2611.00159v1 Announce Type: new Abstract: Fuzzy clustering provides a robust framework for handling ambiguous and overlapping data boundaries, yet its traditional formulation generates entirely dense membership assignments that limit noise resilience and prevent estimating the true number of clusters, when it is unknown. To address these limitations, we introduce in this paper the Generalized Sparse Fuzzy Clustering (GSFC) framework, which incorporates a continuous sparsity penalty into the fuzzy objective function. Because closed-form solutions are precluded by the simultaneous presence of fuzzifier and sparsity exponents, we propose an efficient primal-dual bisection search coupled with specialized analytic pathways to rigorously enforce the partition constraint while organically driving trace memberships to exact zero. This mathematically enforced sparsity empowers the algorithm to autonomously estimate the true number of clusters by dynamically pruning redundant clusters, provided that it is initialized by a larger than the true number of clusters. Furthermore, we integrate a virtual noise sink to insulate outliers from the rest of the data points. The usage of the proposed framework is also extended to line segment detection. Extensive empirical evaluations across synthetic toy datasets, high-noise geometric stress tests, and real-world benchmarks (UCI wine dataset and hyperspectral images) demonstrate that GSFC effectively exceeds conventional fuzzy benchmarks while autonomously resolving cluster cardinality. Additionally, it significantly outperforms existing sparse possibilistic and probabilistic soft-clustering alternatives in line detection tasks.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00159",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00159.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00159v1 Announce Type: new Abstract: Fuzzy clustering provides a robust framework for handling ambiguous and overlapping data boundaries, yet its traditional formulation generates entirely dense membership assignments that limit noise resilience and prevent estimating the true number of clusters, when it is unknown. To address these limitations, we introduce in this paper the Generalized Sparse Fuzzy Clustering (GSFC) framework, which incorporates a continuous sparsity penalty into the fuzzy objective function. Because closed-form solutions are precluded by the simultaneous presence of fuzzifier and sparsity exponents, we propose an efficient primal-dual bisection search coupled with specialized analytic pathways to rigorously enforce the partition constraint while organically driving trace memberships to exact zero.\n\nThis mathematically enforced sparsity empowers the algorithm to autonomously estimate the true number of clusters by dynamically pruning redundant clusters, provided that it is initialized by a larger than the true number of clusters. Furthermore, we integrate a virtual noise sink to insulate outliers from the rest of the data points. The usage of the proposed framework is also extended to line segment detection.",
-      "takeaways": [
-        "Extensive empirical evaluations across synthetic toy datasets, high-noise geometric stress tests, and real-world benchmarks (UCI wine dataset and hyperspectral images) demonstrate that GSFC effectively exceeds conventional fuzzy benchmarks while autonomously resolving cluster cardinality.",
-        "Additionally, it significantly outperforms existing sparse possibilistic and probabilistic soft-clustering alternatives in line detection tasks."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "66078168dc1304ce",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00165",
-    "title": "Learning to bid and bundle: a posterior-sampling agent for online retail",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "18c179ee63d91771",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Hadi Mohammadi (Utrecht University)",
-    "contentSnippet": "arXiv:2611.00165v1 Announce Type: new Abstract: An online retailer launching a perishable product bids for sponsored-search clicks, discounts a bundle with an always-stocked staple and displays its remaining stock, which raises willingness to pay. It knows neither how clicks respond to its bid nor how strong and dispersed its market is, and learns both over repeated seasons from data its own decisions censor: a zero bid reveals nothing about paid clicks, and choices follow only clicks. We design a posterior-sampling agent for it. Each period it draws a market from an exact posterior and posts the bid and discount of that market's exactly solved season plan, so every action is one a fully informed seller could take. In a simulated online florist it has the lowest regret averaged over markets. In weak markets it gives up 12% to 23% of one season's revenue over 500 seasons, four to seven times less than drawing once per season. A planner acting on point estimates can stop bidding and never learn that bidding pays. The agent escapes after about three seasons on average, against fifty with one draw per season. Where displayed scarcity keeps willingness to pay above the posted price, the discount needs no learning. Customers waiting for the discount to return to its recent level look like lost sales, so frequent waiting makes the agent underrate its market. One discount per season removes waiting at a cost of 5.9% of clairvoyant revenue in a weak market and none in a strong one.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00165",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00165.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00165v1 Announce Type: new Abstract: An online retailer launching a perishable product bids for sponsored-search clicks, discounts a bundle with an always-stocked staple and displays its remaining stock, which raises willingness to pay. It knows neither how clicks respond to its bid nor how strong and dispersed its market is, and learns both over repeated seasons from data its own decisions censor: a zero bid reveals nothing about paid clicks, and choices follow only clicks. We design a posterior-sampling agent for it.\n\nEach period it draws a market from an exact posterior and posts the bid and discount of that market's exactly solved season plan, so every action is one a fully informed seller could take. In a simulated online florist it has the lowest regret averaged over markets. In weak markets it gives up 12% to 23% of one season's revenue over 500 seasons, four to seven times less than drawing once per season.",
-      "takeaways": [
-        "A planner acting on point estimates can stop bidding and never learn that bidding pays.",
-        "The agent escapes after about three seasons on average, against fifty with one draw per season.",
-        "Where displayed scarcity keeps willingness to pay above the posted price, the discount needs no learning.",
-        "Customers waiting for the discount to return to its recent level look like lost sales, so frequent waiting makes the agent underrate its market."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ad6788a6f79328b2",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00166",
-    "title": "Early Stopping in Large Reasoning Models: A Survey and Empirical Audit of Efficiency and Reliability",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "a29869919677788a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Quang Hung Nguyen, Hanh Nguyen, Thanh Tam Nguyen, Quoc Viet Hung Nguyen, Trinh Pham, Thanh Trung Huynh",
-    "contentSnippet": "arXiv:2611.00166v1 Announce Type: new Abstract: Large reasoning models can improve accuracy by generating longer reasoning traces, but some of this computation may be unnecessary. Early-stopping methods aim to stop once enough reasoning is available to answer. Evaluating these methods requires accounting for the cost of deciding when to stop and the reliability of the resulting answer. We evaluate different methods across five reasoning models on mathematical and scientific reasoning, code generation, and factuality tasks by using a shared rollout replay protocol. We introduce Target-Integrated Token Efficiency (TITE) to measure efficiency relative to the oracle across accuracy targets. We also examine correctness at later exit positions, transfer across models and tasks, post-stop reasoning continuation, and retained justification quality. In our experiments, correctness can decrease at later positions beyond what the fitted decoding-noise model predicts. Reliability checks also reveal continued reasoning after forced termination and weaker supporting reasoning in some correct early-stopping outputs. The implementation can be found in https://github.com/hung20gg/audit-early-stopping.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00166",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00166.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00166v1 Announce Type: new Abstract: Large reasoning models can improve accuracy by generating longer reasoning traces, but some of this computation may be unnecessary. Early-stopping methods aim to stop once enough reasoning is available to answer. Evaluating these methods requires accounting for the cost of deciding when to stop and the reliability of the resulting answer.\n\nWe evaluate different methods across five reasoning models on mathematical and scientific reasoning, code generation, and factuality tasks by using a shared rollout replay protocol. We introduce Target-Integrated Token Efficiency (TITE) to measure efficiency relative to the oracle across accuracy targets. We also examine correctness at later exit positions, transfer across models and tasks, post-stop reasoning continuation, and retained justification quality.",
-      "takeaways": [
-        "In our experiments, correctness can decrease at later positions beyond what the fitted decoding-noise model predicts.",
-        "Reliability checks also reveal continued reasoning after forced termination and weaker supporting reasoning in some correct early-stopping outputs.",
-        "The implementation can be found in https://github.com/hung20gg/audit-early-stopping."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "07159714c466a3c7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00169",
-    "title": "PatchScout: Thematic Web Data Collection via Information Foraging",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "47bc8019c2fda5f9",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Michael West, Eduard Dragut",
-    "contentSnippet": "arXiv:2611.00169v1 Announce Type: new Abstract: Researchers often need web corpora that are not answers to a single query, but reusable collections of documents spanning many decentralized sources. We refer to this problem as thematic web data collection: assembling semantically relevant documents that share a common theme but are scattered across heterogeneous and structurally disconnected regions of the web. Existing approaches, including traversal-based methods and LLM-driven web agents, are limited by local exploration or short-horizon stopping, preventing comprehensive collection. We formulate this task as a long-horizon information foraging problem over query-induced semantic patches, where the central challenge is deciding when to continue local exploitation and when to switch to new regions. We propose PatchScout, a multi-agent framework that instantiates a class of patch-switching policies to balance local exploitation and adaptive patch switching under a fixed budget. Experiments on four live-web topics show that PatchScout substantially improves yield and domain coverage over traversal-based and search-augmented reasoning agent baselines. In an applied social science setting with an incomplete prior collection, PatchScout discovers 102 previously unidentified entities, illustrating its ability to expand existing thematic datasets.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00169",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00169.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00169v1 Announce Type: new Abstract: Researchers often need web corpora that are not answers to a single query, but reusable collections of documents spanning many decentralized sources. We refer to this problem as thematic web data collection: assembling semantically relevant documents that share a common theme but are scattered across heterogeneous and structurally disconnected regions of the web. Existing approaches, including traversal-based methods and LLM-driven web agents, are limited by local exploration or short-horizon stopping, preventing comprehensive collection.\n\nWe formulate this task as a long-horizon information foraging problem over query-induced semantic patches, where the central challenge is deciding when to continue local exploitation and when to switch to new regions. We propose PatchScout, a multi-agent framework that instantiates a class of patch-switching policies to balance local exploitation and adaptive patch switching under a fixed budget. Experiments on four live-web topics show that PatchScout substantially improves yield and domain coverage over traversal-based and search-augmented reasoning agent baselines.",
-      "takeaways": [
-        "In an applied social science setting with an incomplete prior collection, PatchScout discovers 102 previously unidentified entities, illustrating its ability to expand existing thematic datasets."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "314f23b30b1f6e9b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00171",
-    "title": "Reimagining Text-to-SQL: A Survey of Large Language Model Architectures and Strategies",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "32c3f9f4d683e9b8",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Shikhar Dave, Bhaskarjit Sarmah, Stefano Pasquali",
-    "contentSnippet": "arXiv:2611.00171v1 Announce Type: new Abstract: Text-to-SQL systems translate natural language questions into executable SQL queries, democratizing access to relational data. Early approaches relied on handcrafted rules and template matching, while subsequent neural methods introduced encoder-decoder architectures, schema linking, and constrained decoding to handle increasingly complex queries. The emergence of large language models (LLMs), exemplified by systems such as ReFoRCE, Agentar-Scale-SQL, Snowflake's Arctic-Text2SQL-R1, and the modular XiYan-SQL framework, has dramatically advanced the field, pushing execution accuracy to new state-of-the-art levels on challenging benchmarks such as Spider, Spider 2.0, and BIRD. In parallel, modular frameworks decompose the task into sub-problems (schema retrieval, sketch-based generation, repair, and ranking), while agentic systems coordinate multiple specialized agents that communicate and dynamically allocate sub-tasks. This survey systematically reviews these LLM-driven approaches within a unified taxonomy of five paradigms (in-context learning, supervised and parameter-efficient fine-tuning, agentic and tool-augmented orchestration, retrieval-augmented generation, and reinforcement learning) and characterizes them by model granularity (monolithic vs. modular), level of supervision (zero-shot, fine-tuned, or reinforcement-based), and reasoning style (direct decoding vs. decomposed multi-step reasoning). We further analyze evaluation metrics, datasets, and open challenges, including domain generalization, efficiency, and real-world deployment, and we examine the role of the semantic layer in production systems. As LLMs increasingly access sensitive databases, we also discuss responsible AI practices. We survey over 100 papers and technical resources, focusing on work published between 2022 and 2026.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00171",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00171.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00171v1 Announce Type: new Abstract: Text-to-SQL systems translate natural language questions into executable SQL queries, democratizing access to relational data. Early approaches relied on handcrafted rules and template matching, while subsequent neural methods introduced encoder-decoder architectures, schema linking, and constrained decoding to handle increasingly complex queries. The emergence of large language models (LLMs), exemplified by systems such as ReFoRCE, Agentar-Scale-SQL, Snowflake's Arctic-Text2SQL-R1, and the modular XiYan-SQL framework, has dramatically advanced the field, pushing execution accuracy to new state-of-the-art levels on challenging benchmarks such as Spider, Spider 2.0, and BIRD.\n\nIn parallel, modular frameworks decompose the task into sub-problems (schema retrieval, sketch-based generation, repair, and ranking), while agentic systems coordinate multiple specialized agents that communicate and dynamically allocate sub-tasks. This survey systematically reviews these LLM-driven approaches within a unified taxonomy of five paradigms (in-context learning, supervised and parameter-efficient fine-tuning, agentic and tool-augmented orchestration, retrieval-augmented generation, and reinforcement learning) and characterizes them by model granularity (monolithic vs. Modular), level of supervision (zero-shot, fine-tuned, or reinforcement-based), and reasoning style (direct decoding vs.",
-      "takeaways": [
-        "Decomposed multi-step reasoning).",
-        "We further analyze evaluation metrics, datasets, and open challenges, including domain generalization, efficiency, and real-world deployment, and we examine the role of the semantic layer in production systems.",
-        "As LLMs increasingly access sensitive databases, we also discuss responsible AI practices.",
-        "We survey over 100 papers and technical resources, focusing on work published between 2022 and 2026."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "7dd9677362f1004d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00177",
-    "title": "AuroraWorld: Structured 4D World Modeling for Exo-to-Ego Video Generation in Robot Manipulation",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "abbe6784a0dad431",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Hao Xue, Peng-Fei Zhang, Ying Cheng, Lanyun Zhu, Lei Zhu, Heng Tao Shen",
-    "contentSnippet": "arXiv:2611.00177v1 Announce Type: new Abstract: Egocentric observations provide a robot-centric view of manipulation processes, capturing contact interactions and object-state changes that are important for visuomotor policy learning but difficult to observe from external cameras. However, collecting such data at scale remains expensive due to additional hardware requirements and platform-specific deployment costs. Synthesizing egocentric observations from large-scale exocentric manipulation videos provides a scalable alternative. However, existing methods struggle to synthesize physically consistent and policy-relevant egocentric videos under substantial viewpoint transformations, severe occlusions, complex object interactions, and inherently sparse observations from available exocentric viewpoints.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00177",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00177.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00177v1 Announce Type: new Abstract: Egocentric observations provide a robot-centric view of manipulation processes, capturing contact interactions and object-state changes that are important for visuomotor policy learning but difficult to observe from external cameras. However, collecting such data at scale remains expensive due to additional hardware requirements and platform-specific deployment costs. Synthesizing egocentric observations from large-scale exocentric manipulation videos provides a scalable alternative.",
-      "takeaways": [
-        "However, existing methods struggle to synthesize physically consistent and policy-relevant egocentric videos under substantial viewpoint transformations, severe occlusions, complex object interactions, and inherently sparse observations from available exocentric viewpoints."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0b5407eb32008ea4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00186",
-    "title": "Neurons Are All You Need",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "e06e7763732e407b",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Joseph B. Alzagatiti, Alain C. Glanzman, Perry A. Demsko, Pablo I. Salanova, David L. Glanzman",
-    "contentSnippet": "arXiv:2611.00186v1 Announce Type: new Abstract: For decades, artificial neural networks have operated under the assumption that durable, learned capability resides exclusively in adaptive synaptic parameters, primarily due to the established neurobiology of synaptic connectivity. This design forces models to remain stateless during deployment, incurring well-known limitations such as catastrophic forgetting and expensive retraining. However, recent neurobiological research by Glanzman and colleagues, and others, shows that memories can be transferred between individual organisms in a synaptically independent manner. Inspired by this research, we sought to demonstrate memory transfer of persistent memory between AI model instances, leveraging a neurocentric version of memory. In this paper, we propose NURESA (Neural Unit with Retentive Self-Adaptive Architecture), a novel neural layer that eschews sole reliance on synaptic weight updating by introducing persistent intra-unit memory as a first-class, computational primitive. By structurally separating computation from persistent memory, NURESA enables autonomous memory accumulation and consolidation into transferable stores of memory registers. Experiments across MLP, GPT-2, and modern frontier models like Qwen2.5 demonstrate qualitatively new capability: zero-shot transfer of learned capability into a naive model instance without retraining or access to the original training data; this transfer is enabled by a sparse set of parameters in NURESA's memory register that the model selects on its own based on which neurons were most active. The memory transfer capability of NURESA also protects against domain loss when transformer models undergo learning via fine-tuning. Finally, the memory transfer process completes in approximately one minute even for transformer models with millions to billions of parameters, producing a transfer file orders of magnitude smaller than the original model.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00186",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00186.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00186v1 Announce Type: new Abstract: For decades, artificial neural networks have operated under the assumption that durable, learned capability resides exclusively in adaptive synaptic parameters, primarily due to the established neurobiology of synaptic connectivity. This design forces models to remain stateless during deployment, incurring well-known limitations such as catastrophic forgetting and expensive retraining. However, recent neurobiological research by Glanzman and colleagues, and others, shows that memories can be transferred between individual organisms in a synaptically independent manner.\n\nInspired by this research, we sought to demonstrate memory transfer of persistent memory between AI model instances, leveraging a neurocentric version of memory. In this paper, we propose NURESA (Neural Unit with Retentive Self-Adaptive Architecture), a novel neural layer that eschews sole reliance on synaptic weight updating by introducing persistent intra-unit memory as a first-class, computational primitive. By structurally separating computation from persistent memory, NURESA enables autonomous memory accumulation and consolidation into transferable stores of memory registers.",
-      "takeaways": [
-        "Experiments across MLP, GPT-2, and modern frontier models like Qwen2.5 demonstrate qualitatively new capability: zero-shot transfer of learned capability into a naive model instance without retraining or access to the original training data; this transfer is enabled by a sparse set of parameters in NURESA's memory register that the model selects on its own based on which neurons were most active.",
-        "The memory transfer capability of NURESA also protects against domain loss when transformer models undergo learning via fine-tuning.",
-        "Finally, the memory transfer process completes in approximately one minute even for transformer models with millions to billions of parameters, producing a transfer file orders of magnitude smaller than the original model."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8e856ecf4cf11072",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00191",
-    "title": "MemU-Bench: Benchmarking GUI Agents on Long-Horizon User Interactions",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "dc1d5761f11a20e7",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yizhou Liu, Zhengxi Lu, Fei Tang, Yiwen Qiu, Yong Du, Tongbo Chen, Bofan Chen, Tao Jiang, Wenhao Xu, Yunfeng Shu, Wenqi Zhang, Weiming Lu, Jun Xiao, Yueting Zhuang, Yongliang Shen",
-    "contentSnippet": "arXiv:2611.00191v1 Announce Type: new Abstract: Existing Graphical User Interface (GUI) benchmarks predominantly rely on precise and stateless user instructions. In everyday usage, however, instructions are often \\emph{vague and history-dependent}: users omit the exact details of their past operations because they no longer remember them, leaving the agent to recover the missing context from long and noisy interaction histories. To bridge this evaluation gap, we introduce \\textbf{MemU-Bench}, a mobile benchmark of \\textbf{118 vague tasks} grounded in 29 long-horizon user trajectories, where agents must distill raw interaction streams into memory and retrieve the missing context on demand, with task outcomes verified against serialized application databases. Alongside Success Rate, we incorporate Interaction Efficiency (IE) and Success weighted by Path Length (SPL) to expose agents that succeed by exhaustively searching across different applications rather than by \\emph{genuinely recalling} the history. Evaluations show that without user history, state-of-the-art systems struggle under such ambiguity: the best-performing Gemini-3.1-Pro achieves an SPL of only 16.4\\%, and end-to-end GUI agents fall below 5\\%. To address this, we further propose \\textbf{AppMem}, a training-free framework that distills user history into a \\emph{structured, app-centric} memory bank, tracks interrupted intents across application switches, and selectively retrieves relevant memories via target-app inference. AppMem raises the SPL of GPT-5.5 from 15.7\\% to 66.9\\% (\\textbf{+51.2\\%}), outperforms a naive summary baseline by 9.3\\%, and delivers consistent gains across evaluated backbones.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00191",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00191.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00191v1 Announce Type: new Abstract: Existing Graphical User Interface (GUI) benchmarks predominantly rely on precise and stateless user instructions. In everyday usage, however, instructions are often \\emph{vague and history-dependent}: users omit the exact details of their past operations because they no longer remember them, leaving the agent to recover the missing context from long and noisy interaction histories. To bridge this evaluation gap, we introduce \\textbf{MemU-Bench}, a mobile benchmark of \\textbf{118 vague tasks} grounded in 29 long-horizon user trajectories, where agents must distill raw interaction streams into memory and retrieve the missing context on demand, with task outcomes verified against serialized application databases.\n\nAlongside Success Rate, we incorporate Interaction Efficiency (IE) and Success weighted by Path Length (SPL) to expose agents that succeed by exhaustively searching across different applications rather than by \\emph{genuinely recalling} the history. Evaluations show that without user history, state-of-the-art systems struggle under such ambiguity: the best-performing Gemini-3.1-Pro achieves an SPL of only 16.4\\%, and end-to-end GUI agents fall below 5\\%. To address this, we further propose \\textbf{AppMem}, a training-free framework that distills user history into a \\emph{structured, app-centric} memory bank, tracks interrupted intents across application switches, and selectively retrieves relevant memories via target-app inference.",
-      "takeaways": [
-        "AppMem raises the SPL of GPT-5.5 from 15.7\\% to 66.9\\% (\\textbf{+51.2\\%}), outperforms a naive summary baseline by 9.3\\%, and delivers consistent gains across evaluated backbones."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3be1607a11123078",
-    "canonicalUrl": "https://arxiv.org/abs/2611.00226",
-    "title": "From Cross-Section to Cross-Omics: Conditional Cell Nucleus Image Editing in Spatial Transcriptomics",
-    "publishedAt": "2026-11-03T05:00:00.000Z",
-    "fetchedAt": "2026-11-03T12:40:41.517Z",
-    "contentHash": "d7538b2854ab857a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yuechen Yang, Junchao Zhu, Junlin Guo, Yanfan Zhu, Ruining Deng, Zhengyi Lu, Tianyuan Yao, Chongyu Qu, Marilyn Lionts, Xingyi Guo, Yaohong Wang, Yu Wang, Shilin Zhao, Haichun Yang, Yuankai Huo",
-    "contentSnippet": "arXiv:2611.00226v1 Announce Type: new Abstract: Spatial transcriptomics (ST) platforms simultaneously measure gene expression and capture cell nucleus images at single-cell resolution. A fundamental property of tissue preparation introduces a confounding relationship between the two measurement modalities: sectioning a three-dimensional tissue into a thin slice produces a two-dimensional cross-section whose area depends on the cutting angle. Larger cross-sections expose more cytoplasm, yielding higher mRNA counts, while pathomics features such as nuclear area are measured directly from the same 2D boundary. This sectioning geometry creates an apparent correlation between gene expression and pathomics that reflects the measurement process rather than independent biology. Existing gene-to-image methods generate cell images from gene features but do not support condition-driven editing of existing images across both omics layers. We apply the Manifold-Aware Diffusion (MAD) framework to this dual-omics editing setting, enabling targeted modification of one feature group while preserving the other. Evaluated on podocyte cells from CosMx SMI kidney tissue, MAD achieves MAE=0.6636 and FID=25.19 for pathomics editing, outperforming all compared baselines. A controlled simulation study further confirms that the VAE component in MAD better preserves cross-group independence than CCDM (MAD without VAE).",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.00226",
-    "pdfUrl": "https://arxiv.org/pdf/2611.00226.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.00226v1 Announce Type: new Abstract: Spatial transcriptomics (ST) platforms simultaneously measure gene expression and capture cell nucleus images at single-cell resolution. A fundamental property of tissue preparation introduces a confounding relationship between the two measurement modalities: sectioning a three-dimensional tissue into a thin slice produces a two-dimensional cross-section whose area depends on the cutting angle. Larger cross-sections expose more cytoplasm, yielding higher mRNA counts, while pathomics features such as nuclear area are measured directly from the same 2D boundary.\n\nThis sectioning geometry creates an apparent correlation between gene expression and pathomics that reflects the measurement process rather than independent biology. Existing gene-to-image methods generate cell images from gene features but do not support condition-driven editing of existing images across both omics layers. We apply the Manifold-Aware Diffusion (MAD) framework to this dual-omics editing setting, enabling targeted modification of one feature group while preserving the other.",
-      "takeaways": [
-        "Evaluated on podocyte cells from CosMx SMI kidney tissue, MAD achieves MAE=0.6636 and FID=25.19 for pathomics editing, outperforming all compared baselines.",
-        "A controlled simulation study further confirms that the VAE component in MAD better preserves cross-group independence than CCDM (MAD without VAE)."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
