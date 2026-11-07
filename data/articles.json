@@ -1,5 +1,61 @@
 [
   {
+    "id": "757379c07d1179f7",
+    "canonicalUrl": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
+    "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
+    "publishedAt": "2026-11-07T22:07:22.000Z",
+    "fetchedAt": "2026-11-07T23:20:57.280Z",
+    "contentHash": "b419633d80015493",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "Democrats’ historic victory in this week’s midterm elections could also have a dramatic effect on the tech industry.\n\nIn dozens of local ballot measures, voters rejected data centers . And even when they weren’t voting on the issue directly, they were electing politicians — like Texas’ new governor-elect Gina Hinojosa — who campaigned on the promise of restricting data centers.\n\nOn the latest episode of TechCrunch’s Equity podcast , Kirsten Korosec, Sean O’Kane, and I discussed what the midterms mean for the tech industry. Sean kicked it off by noting that Elon Musk “seems to have basically nothing out of donating half a billion dollars” to Republicans, while his companies are now headquartered “in a state that has, remarkably, turned about as blue as it could possibly turn.”\n\nAnd Kirsten said that while data centers probably weren’t the main cause of the “blue wave,” they’ve become an “an increasingly grassroots issue, in part because of how hyperscalers and companies have gone about” getting their projects approved. And now, “we’re already seeing companies like OpenAI all of a sudden go, ‘Actually, we can change our policies.’”\n\nKeep reading for a preview of our conversation , edited for length and clarity.\n\nSean O’Kane: First off, let’s talk about the fact that one of the biggest data center builders was also the largest donor to the Republican Party. Elon Musk seems to have gotten basically nothing out of donating half a billion dollars — maybe even more, by the time we see the final count — and in fact is now sitting there with all of his businesses in a state that has, remarkably, turned about as blue as it could possibly turn for the first time in a very long time, if ever.\n\nThat, I think, is the biggest thing hanging above a lot of this discussion. But, there were also a bunch of ballot measures up around the country that would have paved the way for data centers to get built faster. Almost all of them got shot down, or voted against. [Actually, many of the ballot measures would have imposed restrictions or moratoriums on data centers, and almost all of those measures passed.]\n\nWith [Democrats] in power, there is a consensus view, at least in the tech world, that this is going to mean we have a lot of roadblocks ahead for data centers, especially in places like Texas, where [you have] folks like the governor-elect [Gina] Hinojosa, who has spoken pret",
+    "category": "Business & Big Tech",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Following recent midterm elections resulting in a Democratic victory and the election of figures like Texas governor-elect Gina Hinojosa—who campaigned on restricting data centers—tech companies face significant roadblocks regarding infrastructure expansion. Voters across numerous local ballot measures rejected or restricted data centers, while major Republican donor Elon Musk finds his corporate footprint located in a state that has turned heavily blue with little tangible return on his reported half-billion-dollar political donations.\n\nIn response to mounting grassroots backlash against hyperscalers—driven by secretive project approvals, non-disclosure agreements with officials, and strain on water resources in sensitive regions—companies are altering their strategic approaches. OpenAI has released a \"compute campus policy blueprint\" attempting to rebrand data centers as \"compute campuses,\" dropping the requirement for non-disclosure agreements, and promising greater transparency. Podcasters on TechCrunch’s Equity discussed how this regulatory pressure coincides with shifting Wall Street sentiment, where investors are increasingly skeptical of massive capital expenditures on AI compute infrastructure.",
+      "takeaways": [
+        "**Elon Musk Political Spending:** Elon Musk donated approximately half a billion dollars to Republicans, yet his companies remain headquartered in Texas, which shifted significantly toward Democrats following the midterms.",
+        "**Data Center Ballot Measures:** Voters across multiple local ballot measures passed restrictions and moratoriums on data centers, aligning with the campaign promises of newly elected politicians like Texas governor-elect Gina Hinojosa.",
+        "**Grassroots Opposition:** Public backlash was exacerbated by hyperscalers utilizing secretive approval processes, requiring non-disclosure agreements from local officials, and ignoring environmental concerns such as water scarcity in the Southwest.",
+        "**OpenAI Policy Shift:** OpenAI responded to regulatory pressure by releasing a compute campus policy blueprint, dropping mandatory non-disclosure agreements, and attempting to rebrand traditional data centers as \"compute campuses\" for public relations purposes."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4e392e0aaa878514",
+    "canonicalUrl": "https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/",
+    "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
+    "publishedAt": "2026-11-07T21:17:08.000Z",
+    "fetchedAt": "2026-11-07T23:20:57.280Z",
+    "contentHash": "53bad0421c04c422",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "Posted: 1:17 PM PST · November 7, 2026 <img width=\"1024\" height=\"683\" src=\"https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"Nvidia CEO Jensen Huang\" style=\"object-fit:cover;\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg 5000w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=768,512 768w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=680,454 680w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800 1200w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1280,854 1280w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=430,287 430w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=720,480 720w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=900,600 900w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=800,534 800w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1536,1025 1536w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=2048,1366 2048w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=668,446 668w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=562,375 562w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=925,617 925w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=708,472 708w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=50,33 50w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /> Image Credits: Benjamin Fanjoy / Getty Images Anthony Ha Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo A memo circulated earlier this year claimed that technology executive Alice Huang was recruited by China’s Ministry of State S",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "A U.S. intelligence memo circulated earlier in the year alleges that Alice Huang, an executive at Singapore-based company Megaspeed, was recruited by China’s Ministry of State Security to spy on Nvidia CEO Jensen Huang. The initial reporting by The New York Times identified the Nvidia chief executive as a target of Chinese intelligence, while subsequent reporting by the Financial Times revealed that the memo detailed a romantic relationship between Jensen Huang and Alice Huang.\n\nIn response to the allegations, an Nvidia spokesperson stated that Jensen Huang's interactions with Alice Huang were \"not unusual\" and emphasized that the company does not share classified information with its customers. Nvidia also reiterated that it sells its best technology primarily within the United States. Additionally, separate reporting by The New York Times scrutinized New Matrix, a Chinese company authorized by the U.S. Commerce Department to purchase advanced Nvidia chips, noting that its listed office address contained only a \"hollow gray shell\" and raising concerns that it may act as a front for a blacklisted private equity firm.",
+      "takeaways": [
+        "**Intelligence Memo Allegations:** A U.S. intelligence memo claims Megaspeed executive Alice Huang was recruited by China’s Ministry of State Security to spy on Nvidia CEO Jensen Huang.",
+        "**Reported Relationship:** According to the Financial Times, the intelligence memo also asserts that Jensen Huang and Alice Huang had a romantic relationship.",
+        "**Nvidia's Response:** An Nvidia spokesperson stated that Jensen Huang's interactions were \"not unusual\" and that the company does not share classified information with customers.",
+        "**New Matrix Investigation:** The New York Times found that the official office address of New Matrix—a Chinese firm authorized by the U.S. Commerce Department to buy advanced Nvidia chips—was merely a \"hollow gray shell.\""
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "57571dc1d784b80d",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/07/coding-guide-nvidia-dory-4b-llama-cpp/",
     "title": "How to Run NVIDIA Dory 4B with llama.cpp: Loop by Loop Guide",
@@ -10892,55 +10948,6 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d683890ef6589f42",
-    "canonicalUrl": "https://techcrunch.com/2026/11/03/the-techcrunch-founder-summit-agenda-is-only-half-the-reason-to-be-in-boston-on-nov-4/",
-    "title": "The TechCrunch Founder Summit agenda is only half the reason to be in Boston on November 4",
-    "publishedAt": "2026-11-03T14:30:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.793Z",
-    "contentHash": "083ac79a89ab9223",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "TechCrunch Events",
-    "contentSnippet": "On November 4, TechCrunch Founder Summit 2026 brings founders and VCs to Boston's SoWa Power Station for practical insights and connections. Register before prices increase at the door.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "On November 4, TechCrunch Founder Summit 2026 brings founders and VCs to Boston's SoWa Power Station for practical insights and connections. Register before prices increase at the door.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9196ade51ae85b13",
-    "canonicalUrl": "https://arxiv.org/abs/2611.04968v1",
-    "title": "Who is the Pronoun Pro? Comparing LLMs and Humans at Number-Disambiguation of 'they'",
-    "publishedAt": "2026-11-03T14:26:17.000Z",
-    "fetchedAt": "2026-11-04T06:56:52.027Z",
-    "contentHash": "3369cb98b189ba7a",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Carlos Hartmann",
-    "contentSnippet": "This study evaluates whether large language models (LLMs) can reliably replace or complement human research assistants in linguistically complex annotation. In a controlled annotation task, 73 human annotators (local students and crowdworkers with and without a background in linguistics) and more than 40 LLM configurations number-disambiguated 174 authentic uses of 'they' from Reddit, including innovative and context-sensitive cases. The best LLM, Kimi K3, reached 94.5% accuracy, above the human majority vote (86.2%) and the mean of the top half of human annotators (78.5%); only the single best human annotator scored higher (95.7%). LLMs also offer substantial practical advantages in cost and speed. However, qualitative error analysis reveals a crucial complementarity: human reasoning in low-agreement cases exposes inconsistencies in the annotation typology and thereby improves the methodological framework itself. The study contributes (i) a benchmark-style human-LLM comparison for a semantically demanding task, (ii) transparent cost and time evidence, and (iii) a methodological argument against a purely replacement-oriented view of automation. LLMs are viable for large-scale annotation support in linguistics, but their responsible use requires human critical oversight. The dataset with its gold-standard labels, all human and LLM annotations, and the fully reproducible code are openly available as a Quarto-based, public repository.",
-    "category": "LLMs & GenAI",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.04968",
-    "pdfUrl": "https://arxiv.org/pdf/2611.04968.pdf",
-    "summary": {
-      "tldr": "This study evaluates whether large language models (LLMs) can reliably replace or complement human research assistants in linguistically complex annotation. In a controlled annotation task, 73 human annotators (local students and crowdworkers with and without a background in linguistics) and more than 40 LLM configurations number-disambiguated 174 authentic uses of 'they' from Reddit, including innovative and context-sensitive cases. The best LLM, Kimi K3, reached 94.5% accuracy, above the human majority vote (86.2%) and the mean of the top half of human annotators (78.5%); only the single best human annotator scored higher (95.7%).\n\nLLMs also offer substantial practical advantages in cost and speed. However, qualitative error analysis reveals a crucial complementarity: human reasoning in low-agreement cases exposes inconsistencies in the annotation typology and thereby improves the methodological framework itself. The study contributes (i) a benchmark-style human-LLM comparison for a semantically demanding task, (ii) transparent cost and time evidence, and (iii) a methodological argument against a purely replacement-oriented view of automation.",
-      "takeaways": [
-        "LLMs are viable for large-scale annotation support in linguistics, but their responsible use requires human critical oversight.",
-        "The dataset with its gold-standard labels, all human and LLM annotations, and the fully reproducible code are openly available as a Quarto-based, public repository."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
