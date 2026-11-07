@@ -1,5 +1,92 @@
 [
   {
+    "id": "4b429bd7582936e3",
+    "canonicalUrl": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
+    "title": "AI broke the cybersecurity world. What’s next?",
+    "publishedAt": "2026-11-07T15:00:00.000Z",
+    "fetchedAt": "2026-11-07T15:42:28.209Z",
+    "contentHash": "64f3a71efae09c81",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Nilay Patel",
+    "contentSnippet": "Today, I’m talking with Alex Stamos, chief security officer at Cognition and longtime cybersecurity expert, about what a mess cybersecurity is right now. This episode is part one of a special series looking at AI in real life. I’ve always enjoyed talking to Alex because he’s so direct, and you’re going to hear him say that the multibillion-dollar cybersecurity industry as we’ve known it is essentially overdue to the unrelenting, AI-boosted waves of hacks, breaches, and attacks — and this is only the beginning of how much AI is changing security. Verge subscribers, don’t forget you get exclusive access to ad-free Decoder wherever you get your podcasts. Head here . Not a subscriber? You can sign up here . Both private actors and also state actors, like Russia or North Korea, are breaking into systems all over thanks to AI helping them both detect and exploit vulnerabilities all at the same time. It’s got a real frontier feel to it, Alex notes, just like the ’90s, when the whole idea of an always-online world was brand-new. That much disruption means a lot of places where bad guys can get in while everyone else is left scrambling. Alex isn’t a doomer in the long run, but he does think we’re in for a “dark age” while we try to figure out how on earth to adapt to the new era. There’s a lot going on here — we even got all the way to how AI-powered misinformation and slop might be managed on our social networks. Before we get going, do me a favor and subscribe to Decoder on YouTube, where we put out new episodes every Monday and Thursday. Okay: Alex Stamos on how AI is upending cybersecurity. Here we go. This interview has been lightly edited for length and clarity. Alex Stamos, you’re the chief security officer at Cognition. You’re also a lecturer at Stanford University Cyber Policy Center. Welcome back to Decoder . Hey, thanks for having me, man. I’m excited to talk to you. It’s been a long time since you and I chatted in what you might call the “content moderation era” of internet policy discourse. I feel like you and I talked a lot about how all that was working, about election security, all those sorts of things. We’re in a new era of big problems on the internet, particularly around cyber defense, cybersecurity. You’ve been thinking about this stuff a lot. You referred to the past few weeks as “security awareness month.” Tell me what’s going on. Just give me ",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/VRG_DCD_110726.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Alex Stamos, Chief Security Officer at Cognition and lecturer at the Stanford University Cyber Policy Center, argues that the current multibillion-dollar cybersecurity industry is fundamentally ill-equipped to handle the surge in AI-augmented cyberattacks. Stamos characterizes the current landscape as a 'dark age' of security, noting that both private and state-sponsored actors—specifically citing Russia and North Korea—are leveraging AI to simultaneously detect and exploit system vulnerabilities at an unprecedented scale.\n\nStamos draws parallels between the current environment and the 1990s, describing a 'frontier' atmosphere where rapid technological disruption outpaces defensive capabilities. The discussion highlights that AI is not only facilitating technical breaches but also complicating the management of misinformation and automated content on social networks. Stamos suggests that the industry is currently in a period of reactive scrambling, necessitating a significant shift in how organizations approach cyber defense in an era where AI-driven threats are becoming the standard.",
+      "takeaways": [
+        "**Industry Outlook:** Alex Stamos asserts that the existing cybersecurity industry model is overdue for a collapse due to the unrelenting nature of AI-boosted attacks.",
+        "**Threat Actors:** State-sponsored entities, including Russia and North Korea, are actively utilizing AI to automate the discovery and exploitation of system vulnerabilities.",
+        "**Historical Context:** The current cybersecurity landscape is compared to the 1990s, characterized by a 'frontier' environment where rapid, disruptive change leaves systems highly vulnerable.",
+        "**Scope of Impact:** The disruption extends beyond traditional network security to include the management of AI-powered misinformation and automated content on social media platforms."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "eecad6fef1daea32",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
+    "title": "Why a new report on Anthropic automating AI development is alarming researchers",
+    "publishedAt": "2026-11-07T12:30:00.000Z",
+    "fetchedAt": "2026-11-07T15:42:28.209Z",
+    "contentHash": "cd7e40ce0bb67875",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Robert Hart",
+    "contentSnippet": "Anthropic is using AI to build more powerful AI. And it appears to be working remarkably well, with the company’s models improving roughly twice as quickly as a year ago, with little indication of slowing down. That’s according to a new report published Thursday by the AI safety research organization METR, following an 11-week investigation inside the company, as part of a report evaluating its AI research and development. The probe is separate from a program offering safety researchers “employee-like” access to systems in the wake of high-profile hacking incidents over the summer. The findings offer some of the clearest evidence yet of AI accelerating its own development, raising questions about how quickly the technology could advance toward a future in which AI systems can improve themselves with little or no human involvement. They also come at a pivotal time for Anthropic, which is preparing to go public even as its CEO, Dario Amodei, has publicly called for labs to pump the brakes on AI development. But while the report offers a rare glimpse into the inner workings of the world’s leading AI labs, what it leaves out is just as revealing. Anthropic was permitted to redact portions of the final report as part of its agreement with METR, and it appears to have exercised that power liberally, raising questions about how much the public really knows about the pace — and risks — of frontier AI development. Here are some of the biggest takeaways. AI is dramatically accelerating Anthropic’s research and development One of METR’s most noteworthy findings is that Anthropic’s AI models are improving roughly twice as quickly as they were a year ago, with benchmark scores suggesting “that Anthropic has made roughly two years of historical progress over the last year.” Crucially, METR’s researchers said they “are confident” that the acceleration was not simply due to scaling up the computing power used to train the models, which historically has been a major driver of AI progress. Instead, the researchers said that the majority of the acceleration as of October “is due to AI,” with its contribution growing over time. That finding was supported by informal Slack polls and interviews with Anthropic employees, which pointed to sizable productivity gains. METR wrote that employees using Anthropic’s most capable internal model on average self-reported being around 12 time",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2280291125.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Ethics & Policy",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "A new investigation published by the AI safety research organization METR reveals that Anthropic's AI models are improving roughly twice as quickly as they did a year ago, achieving an estimated two years of historical progress in a single year. Following an 11-week probe inside the company, METR concluded that the majority of this acceleration is driven by AI assistance rather than increases in raw compute scaling. Employees utilizing Anthropic's most capable internal models reported being on average 12 times more productive than without AI assistance. The findings highlight a growing trend of AI accelerating its own development, raising critical questions about recursive self-improvement and the timeline for autonomous AI R&D.\n\nDespite granting METR access to confidential research, model data, and employee interviews, Anthropic exercised extensive editorial control over the final publication. The company redacted the majority of the most informative evidence from METR's roughly 100-page report, citing commercial sensitivity and the risk of providing rivals with a competitive roadmap. Co-founder Sam McCandlish defended the redactions on X, noting that while it complicates external verification, Anthropic plans to publish its own report on progress speeds and safety measures. Meanwhile, METR documented three unreleased internal models—codenamed Model 2, Model 3, and Model 4—that completed training consecutively between July and October, alongside an older 2022 model.",
+      "takeaways": [
+        "**METR Investigation Findings:** AI safety organization METR published a report following an 11-week investigation detailing how Anthropic's models are improving twice as quickly as a year ago, equating to roughly two years of historical progress in twelve months.",
+        "**Compute vs. AI Contribution:** METR researchers expressed high confidence that the acceleration is primarily driven by AI-assisted R&D rather than historical drivers like increased compute scaling.",
+        "**Employee Productivity Metrics:** Internal Slack polls and interviews showed that Anthropic employees using the lab's most capable internal model self-reported being roughly 12 times more productive, double the rate reported a few months prior with Mythos 5.",
+        "**Unreleased Model Pipeline:** METR identified three unreleased models trained over recent months—Model 2 (completed July), Model 3 (August-September), and Model 4 (September-October)—plus an older internal model called Unreleased 2022.",
+        "**Extensive Redactions:** Anthropic heavily redacted the public version of METR's 100-page report to protect commercially sensitive data and prevent handing competitors a development roadmap, according to co-founder Sam McCandlish."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "daa5b2afd1c7092c",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/07/buoyant-kinference-open-source-inference-control-plane-kubernetes-vllm/",
+    "title": "Buoyant Releases Kinference: An Open Source Inference Control Plane for Kubernetes and vLLM",
+    "publishedAt": "2026-11-07T08:16:33.000Z",
+    "fetchedAt": "2026-11-07T15:42:28.623Z",
+    "contentHash": "c701aa28cb5101bf",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Buoyant, the company behind Linkerd, has released Kinference , an open source project for building inference platforms on Kubernetes. Kinference is an inference control plane for Kubernetes and vLLM. It sits in front of a fleet of vLLM workers and decides where each request goes. It applies routing policies, token rate limits, KV-cache-aware load balancing and per-tenant metrics in one layer. For dev teams serving many open-weight models to many internal clients, it targets the layer above the model server. The project is Apache 2.0 licensed on GitHub . The current release is v0.1.0-alpha.7 . TL;DR Size: v0.1.0-alpha.7, written in Rust, Apache 2.0, configured through 5 Kubernetes CRDs. Runs on: any GPU-enabled Kubernetes cluster running vLLM. Buoyant’s benchmark used 3 L40S GPUs per pool. Performance: large gains on prefix-heavy traffic versus plain Kubernetes Service routing (self-reported). Best: median TTFT fell from 6.88 s to 0.31 s (95%) on a shared-prefix workload. Worst: no median TTFT gain on prompts without shared prefixes (6.92 s vs 6.83 s). What is Kinference? Kinference is a policy-driven control plane that turns Kubernetes plus vLLM into a multi-tenant inference platform. Buoyant’s FAQ puts it simply: vLLM is the data plane and Kinference is the control plane. How does Kinference work? The system has 2 parts: a traffic gateway and an inference handler. The GitHub README states that the handler exposes a gRPC interface. It takes a request and returns the chosen endpoint plus a possibly mutated body. It pairs with a proxy such as the Buoyant Gateway . Kinference watches vLLM KV-cache events and engine metrics. It currently uses NVIDIA’s dynamo-kv-router crate to process cache events. Configuration lives in 5 CRDs: GatewayBackend, InferencePolicy, InferencePool, InferenceProvider and InferenceWorkerSet . What are inference policies? Inference policies are declarative rules for how each request is routed or rejected. Rules can match on tenant, requested model, GPU pool state and semantic tags. Example policies on the project site cover 5 patterns: Simple to cheaper: route low-complexity prompts to a smaller model, unless cache overlap makes the large model faster. Burst to cloud: skip workers with over 2 queued prompts, then fall back to providers like Bedrock. PII stays local: remove external providers when a PII tag fires, and fail closed with onE",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Buoyant, the creators of Linkerd, have launched Kinference, an open-source inference control plane designed to manage vLLM deployments on Kubernetes. Released under the Apache 2.0 license as version v0.1.0-alpha.7, the project is written in Rust and functions as a policy-driven orchestration layer that sits above model servers. It enables multi-tenant inference by providing KV-cache-aware load balancing, token rate limiting, and per-tenant metrics, effectively separating the control plane (Kinference) from the data plane (vLLM).\n\nThe architecture consists of a traffic gateway and an inference handler that exposes a gRPC interface, utilizing NVIDIA’s dynamo-kv-router crate to monitor engine metrics and KV-cache events. Configuration is managed through five custom Kubernetes CRDs: GatewayBackend, InferencePolicy, InferencePool, InferenceProvider, and InferenceWorkerSet. These allow for declarative routing based on tenant, model, GPU pool state, and semantic tags. Buoyant’s internal benchmarks on a 3-GPU L40S cluster demonstrated significant performance improvements for prefix-heavy workloads, with median Time-To-First-Token (TTFT) dropping from 6.88 seconds to 0.31 seconds. However, the system showed negligible performance gains for prompts lacking shared prefixes, where TTFT remained largely unchanged at approximately 6.9 seconds.",
+      "takeaways": [
+        "**Architecture:** Kinference operates as a control plane using five specific Kubernetes CRDs to manage routing, policy, and worker sets.",
+        "**Performance:** Benchmarks on L40S GPUs showed a 95% reduction in median TTFT for shared-prefix workloads, but no significant improvement for non-prefix-heavy traffic.",
+        "**Technical Stack:** The project is written in Rust, utilizes gRPC for handler communication, and integrates with NVIDIA’s dynamo-kv-router for cache-aware routing.",
+        "**Policy Capabilities:** Supports complex routing logic, including cost-based routing, cloud bursting to providers like Bedrock, and PII-based local-only enforcement."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "ec2480d446f6212c",
     "canonicalUrl": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
     "title": "Crusoe sells troubled Wyoming data center project to Google",
@@ -10840,82 +10927,6 @@
         "Legal AI technology is nothing new, but its adoption in ..."
       ],
       "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "582121ac3f74de31",
-    "canonicalUrl": "https://siliconangle.com/2026/11/03/pagerduty-debuts-paige-ai-agent-with-renamed-pd-reliability-platform-and-pd-labs/",
-    "title": "PagerDuty debuts Paige AI agent with renamed PD Reliability Platform and PD Labs",
-    "publishedAt": "2026-11-03T13:00:13.000Z",
-    "fetchedAt": "2026-11-03T19:56:01.559Z",
-    "contentHash": "c7ece0599ebbadd2",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Duncan Riley",
-    "contentSnippet": "Operations management software company PagerDuty Inc. today introduced Paige, an artificial intelligence agent for site reliability engineering that is built to work as a member of operations and engineering teams. Paige runs on the company’s flagship product, which as of today is called the PD Reliability Platform. Alongside both, PagerDuty opened PD Labs to put […] The post PagerDuty debuts Paige AI agent with renamed PD Reliability Platform and PD Labs appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Operations management software company PagerDuty Inc. Today introduced Paige, an artificial intelligence agent for site reliability engineering that is built to work as a member of operations and engineering teams. Paige runs on the company’s flagship product, which as of today is called the PD Reliability Platform.",
-      "takeaways": [
-        "Alongside both, PagerDuty opened PD Labs to put ..."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0859ab9fba27ff99",
-    "canonicalUrl": "https://arxiv.org/abs/2611.04760",
-    "title": "Koopman Generative Operators for Efficient Probabilistic Time-Series Forecasting",
-    "publishedAt": "2026-11-03T12:08:37.000Z",
-    "fetchedAt": "2026-11-05T08:52:57.957Z",
-    "contentHash": "bb618865f5878d6c",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Raz Marshanski, Liran Nochumsohn, Mayank Jauhari, Boris N. Oreshkin",
-    "contentSnippet": "Authors: Raz Marshanski , Liran Nochumsohn , Mayank Jauhari , Boris N. Oreshkin , Omri Azencot\n\nAbstract: Probabilistic time-series forecasting requires models that simultaneously capture structured temporal dynamics, expressive uncertainty, and efficient inference, yet existing approaches fall short of this goal: latent dynamical models impose structure but rely on restrictive generation mechanisms, while modern generative methods such as diffusion and flow matching achieve flexibility at the cost of iterative and computationally expensive sampling. We introduce the Koopman Generative Operator (KGO), a probabilistic forecasting method that conceptualizes prediction as the evolution of structured uncertainty. KGO integrates three core components: (1) Koopman Patch Embedding (KoPE) for temporally consistent latent trajectory extrapolation; (2) Koopman Flow Matching (KoFM), which enables fast, single-step generation through a closed-form matrix exponential in a Koopman latent space, bypassing iterative sampling; and (3) an Adaptive Uncertainty Gate (AUG), which provides probabilistic forecasts by adapting uncertainty per-variable and per-horizon, corresponding to a learned decomposition of aleatoric uncertainty without manual tuning. By unifying these components, KGO achieves state-of-the-art accuracy on 13/17 ProbTS benchmarks in CRPS and 16/17 in NMAE. Further, by eliminating iterative sampling, KGO delivers at least a 25$\\times$ reduction in inference time compared to iterative generative models. These results position KGO as a practical and principled framework that advances the accuracy-efficiency trade-off in probabilistic time-series forecasting, combining leading accuracy on the evaluated benchmarks with fast, single-step generation.\n\nNotes: Accepted at NeurIPS 2026",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.04760",
-    "pdfUrl": "https://arxiv.org/pdf/2611.04760",
-    "summary": {
-      "tldr": "Researchers Raz Marshanski, Liran Nochumsohn, Mayank Jauhari, Boris N. Oreshkin, and Omri Azencot introduced the Koopman Generative Operator (KGO), a probabilistic time-series forecasting framework accepted at NeurIPS 2026. KGO addresses the computational overhead of modern generative methods like diffusion and flow matching by replacing iterative sampling with a closed-form matrix exponential approach. The model conceptualizes forecasting as the evolution of structured uncertainty, aiming to balance temporal dynamics with efficient inference.\n\nThe architecture integrates three primary components: Koopman Patch Embedding (KoPE) for consistent latent trajectory extrapolation, Koopman Flow Matching (KoFM) for single-step generation within a Koopman latent space, and an Adaptive Uncertainty Gate (AUG) for per-variable and per-horizon aleatoric uncertainty decomposition. By utilizing these mechanisms, KGO achieves state-of-the-art performance on 13 of 17 ProbTS benchmarks in Continuous Ranked Probability Score (CRPS) and 16 of 17 in Normalized Mean Absolute Error (NMAE). The framework provides at least a 25x reduction in inference time compared to traditional iterative generative models, establishing a new efficiency benchmark for probabilistic forecasting.",
-      "takeaways": [
-        "**Core Architecture:** KGO utilizes Koopman Patch Embedding (KoPE), Koopman Flow Matching (KoFM), and an Adaptive Uncertainty Gate (AUG).",
-        "**Inference Efficiency:** The model enables single-step generation via closed-form matrix exponentials, resulting in a minimum 25x speedup over iterative generative baselines.",
-        "**Benchmark Performance:** KGO secured state-of-the-art results on 13/17 ProbTS benchmarks for CRPS and 16/17 for NMAE.",
-        "**Uncertainty Handling:** The Adaptive Uncertainty Gate (AUG) automates the decomposition of aleatoric uncertainty without requiring manual hyperparameter tuning."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "25493a43cba550c7",
-    "canonicalUrl": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
-    "title": "Accelerating engineering for the physical world",
-    "publishedAt": "2026-11-03T12:00:00.000Z",
-    "fetchedAt": "2026-11-03T19:55:58.613Z",
-    "contentHash": "1477e2be2f982234",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
-      "takeaways": [],
-      "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
