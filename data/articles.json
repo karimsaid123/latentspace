@@ -1,5 +1,89 @@
 [
   {
+    "id": "54c06e97d6e0a2b7",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
+    "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
+    "publishedAt": "2026-11-08T20:22:39.000Z",
+    "fetchedAt": "2026-11-08T20:44:55.898Z",
+    "contentHash": "6851f0468fd7578e",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "Nvidia has announced that it is opening an investigation into CEO Jensen Huang and his relationship with Megaspeed executive Alice Huang, who was reportedly recruited by China’s Ministry of State Security to spy on the company. A statement posted by the board of directors reads: > The NVIDIA Board is initiating an independent investigation in light of recent reporting that founder and CEO Jensen Huang has been the target of a foreign intelligence effort. A committee of independent directors, assisted by outside independent counsel, will oversee the investigation. > The Board prioritizes U.S. national and economic security, which is paramount to the interests of NVIDIA and its shareholders. While the Board has no reason to believe that either national security or NVIDIA secrets were compromised, the Board’s inquiry will examine all available information. Jensen fully supports the review and has committed to cooperating with it. > The Board has confidence in Jensen and his leadership team and will provide further updates as appropriate. The New York Times reported last month that Huang had developed a “close relationship” with the Megaspeed executive, which he later admitted was romantic in nature in a memo to the company. US officials believe she was feeding information directly back to Beijing. Megaspeed is a customer of Nvidia and is the subject of a Commerce Department investigation into whether it was smuggling AI chips to China. The company’s AI chips are viewed as crucial to the US maintaining technological supremacy. Both the Biden and Trump administrations have restricted their sale to China. President Trump has loosened those restrictions but still bars sales of Nvidia’s most powerful chips to Chinese firms, and the Commerce Department must approve individual firms to handle the chips. Just as importantly, Jensen Huang has gotten quite cozy with Donald Trump, and there is concern about what insights into the administration’s deliberations around AI he may have been privy to. And whether any of that information may have been shared with Alice Huang, and eventually found its way to Beijing. Developing…",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/STKP210_JENSEN_HUANG_A.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia’s board of directors has announced an independent investigation into CEO Jensen Huang regarding his relationship with Alice Huang, an executive at the customer firm Megaspeed who was reportedly recruited by China’s Ministry of State Security as a spy. An independent committee of directors, assisted by outside counsel, is overseeing the inquiry to examine whether national security or company secrets were compromised, though the board stated it currently has no evidence of a breach. Jensen Huang has fully committed to cooperating with the review, and the board has expressed continued confidence in his leadership.\n\nThe investigation follows a New York Times report revealing that Jensen Huang maintained a close relationship with Alice Huang, which he subsequently acknowledged as romantic in an internal company memo. Megaspeed, a customer of Nvidia, is separately under investigation by the U.S. Department of Commerce over allegations of smuggling restricted AI chips to China. These chips are subject to federal export controls aimed at preserving U.S. technological supremacy, under regulations implemented by both the Biden and Trump administrations requiring Commerce Department approval for individual Chinese firms.\n\nBeyond corporate secrets, the inquiry is examining potential security implications tied to Jensen Huang's interactions with Donald Trump and any potential access to U.S. administration deliberations concerning AI policy. Federal officials are investigating whether insights gained from these political connections could have been passed to Alice Huang and subsequently reached Beijing.",
+      "takeaways": [
+        "**Board Investigation:** Nvidia's board of directors initiated an independent investigation overseen by a committee of independent directors and outside counsel to examine CEO Jensen Huang's relationship with Megaspeed executive Alice Huang.",
+        "**Romantic Acknowledgment:** Jensen Huang admitted in an internal memo to the company that his relationship with Alice Huang was romantic in nature, following reporting by The New York Times.",
+        "**Megaspeed Commerce Probe:** Megaspeed, an Nvidia customer, is currently the target of a U.S. Department of Commerce investigation examining whether the firm smuggled restricted AI chips to China in violation of U.S. export controls.",
+        "**Political Access Concerns:** Investigators are examining whether insights into U.S. administration AI policy deliberations, obtained through Jensen Huang's relationship with Donald Trump, could have been compromised."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b9c0dd474c98ba84",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+    "title": "Apple is racing to make Siri more agentic",
+    "publishedAt": "2026-11-08T19:18:19.000Z",
+    "fetchedAt": "2026-11-08T20:44:55.898Z",
+    "contentHash": "f8a744661cbc5cab",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "Bloomberg’s Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI’s Dots or Meta’s Muse. While Federighi has delivered a functional version of Siri AI on an incredibly short timeline, the company has no illusions that it’s keeping pace with its rivals. Two significant improvements are expected to be made to Siri in the coming months. One will give the assistant fine-grained control over Apple’s first-party apps, allowing it to do things like rotate and crop images in Photos and organize Safari tabs. Those capabilities are expected to land with iOS 27.3. The bigger change, integration with third-party apps, is likely to land later, in the Spring, according to Gurman. That would let Siri place an order through Grubhub or book a dinner reservation through OpenTable, for example. But that’s just the start. Apple is expected to push Siri to become more agentic and enable features that will allow it to perform ongoing tasks, not just one-offs. Gurman says: > Dots, Muse and Grok can keep track of goals, determine what needs to happen next and continue pursuing objectives without the user initiating every individual step. Apple ultimately wants to go in this direction, I’m told, and I believe the company could make Siri more like an agent as early as next year — not that it has much of a choice, given current consumer and market demands.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-3.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Bloomberg's Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI's Dots or Meta's Muse. While Federighi has delivered a functional version of Siri AI on an incredibly short timeline, the company has no illusions that it's keeping pace with its rivals. Two significant improvements are expected to be made to Siri in the coming months.",
+      "takeaways": [
+        "One will give the assistant fine-grained control over Apple's first-party apps, allowing it to do things like rotate and crop images in Photos and organize Safari tabs.",
+        "Those capabilities are expected to … Read the full story at The Verge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "c08233254ab55692",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+    "title": "Elvis and Eminem rights holders are suing Suno",
+    "publishedAt": "2026-11-08T17:23:19.000Z",
+    "fetchedAt": "2026-11-08T20:44:55.898Z",
+    "contentHash": "0f95b800b96780a4",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "Suno is facing yet another pair of lawsuits. A group of rights holders of Elvis Presley’s music and the publisher of some of Eminem‘s biggest records are suing the AI music company, claiming it illegally generates music and lyrics that mimic those artists. The lawyers in the Presley suit claim that Suno has violated Tennessee’s Ensuring Likeness Voice and Image Security (ELVIS) Act, which makes it illegal for an AI company to clone a singer’s voice. In the suit, lawyers representing Presley’s rights holders argue that “Suno has mechanically encoded itself with artists’ identities, hard-work, creativity, and time, and harnessed them all for a consistent conveyor belt of cold hard cash.“ These suits closely mirror one filed by Jason Isbell and others in September, which claimed Suno created imitations of the plaintiffs but did not claim copyright infringement directly. Later in the complaint, the lawyers write that “Suno’s ravenous race to the bottom aims to make human creativity obsolete, coldly replicating without a license in seconds what takes years to learn, struggle with, maintain, and endlessly attempt to make better and perfect.” Suno spokesperson Cat McCormack told The Verge that, “Suno exists to help people create new, original music, not to trade on anyone’s name or likeness, and we prohibit any unauthorized use of an artist’s work. To protect against this, we do not allow prompts for specific artists’ names and songs and work with third-party providers to screen uploaded audio files and lyrics for potential misuse. We are always working to strengthen our guardrails and we will continue to add new safeguards that protect artists and our users.” This adds to the pile of lawsuits Suno is currently facing from Sony, UMG, Isbell, Reservoir Media, and more.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22202367/517216004.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Music rights holders for Elvis Presley and the publisher of Eminem records have filed lawsuits against AI music generation company Suno. The legal actions allege that Suno illegally generates music and lyrics mimicking protected artists, with the Elvis estate specifically invoking Tennessee’s Ensuring Likeness Voice and Image Security (ELVIS) Act, which penalizes unauthorized AI voice cloning.\n\nPlaintiffs argue that Suno mechanically encodes artist identities and creativity without licenses to generate rapid commercial output, mirroring a September lawsuit filed by Jason Isbell. Suno spokesperson Cat McCormack responded that the platform is designed for original music creation, prohibits unauthorized use, and utilizes guardrails such as blocking specific artist prompts and screening uploaded audio and lyrics via third-party providers.\n\nThese new legal filings compound Suno's ongoing litigation burden, which already includes lawsuits from major music companies and publishers including Sony, Universal Music Group (UMG), and Reservoir Media.",
+      "takeaways": [
+        "**ELVIS Act Invocation:** Lawyers representing Elvis Presley's rights holders argue Suno violated Tennessee's Ensuring Likeness Voice and Image Security Act by cloning singer voices.",
+        "**Similar Legal Actions:** The new complaints closely mirror a September lawsuit filed by Jason Isbell and other plaintiffs alleging imitation without direct copyright infringement.",
+        "**Suno Guardrails:** Suno spokesperson Cat McCormack stated the company blocks prompts for specific artists and songs while employing third-party providers to screen uploaded audio and lyrics.",
+        "**Broader Litigation:** The company faces an expanding roster of legal challenges from major industry stakeholders, including Sony, UMG, Reservoir Media, and Jason Isbell."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "86cc59a51a4e9689",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/",
     "title": "Google AI Releases Elephant-Goldfish Model Plugin for Spec-First Coding",
@@ -10880,89 +10964,6 @@
         "All of this is possible without allowing Astra to write training loops.",
         "It uses its reasoning to figure out what each part of a neural network computes, or should compute, and changes the weights accordingly.",
         "We call this Weight-Space Programming ."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "910ebbfa62fe03cf",
-    "canonicalUrl": "https://arstechnica.com/security/2026/11/uefi-bootkit-infected-fully-patched-windows-machines-is-microsoft-to-blame/",
-    "title": "UEFI bootkit infected fully patched Windows machines. Is Microsoft to blame?",
-    "publishedAt": "2026-11-03T16:03:13.000Z",
-    "fetchedAt": "2026-11-03T19:56:01.560Z",
-    "contentHash": "383927bd88f9b503",
-    "sourceId": "arstechnica-tech",
-    "sourceName": "Ars Technica",
-    "author": "\n                    Dan Goodin\n                ",
-    "contentSnippet": "In 2023, malware tracked as BlackLotus became the first publicly documented in-the-wild UEFI bootkit capable of bypassing Secure Boot on fully updated Windows 11 systems. With the industry-wide chain-of-trust mechanism subverted, the malware was able to run malicious code before Windows was fully loaded and many security defenses were operational. Microsoft had already patched the vulnerability that BlackLotus exploited in 2022. In 2023 and 2024, Microsoft issued additional updates. The first added a new certificate that no longer trusted the vulnerable boot managers. The second provided the means to revoke trust in the digital certificate used to sign older vulnerable Windows boot managers. The organizations infected by the new bootkit, which is tracked under the name BlackX, had installed all of these patches. So how did they fall victim? UEFI bootkit refresher Before discussing the incident further, a brief review of BlackLotus and UEFI malware is in order. Short for Unified Extensible Firmware Interface , UEFI is firmware that runs immediately after a computer is turned on. One of its main jobs is to load system configuration settings, identify and initialize hardware components, and prepare the computer to start its OS. Read full article Comments",
-    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2020/10/malware-1000x648.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "In 2023, malware tracked as BlackLotus became the first publicly documented in-the-wild UEFI bootkit capable of bypassing Secure Boot on fully updated Windows 11 systems. With the industry-wide chain-of-trust mechanism subverted, the malware was able to run malicious code before Windows was fully loaded and many security defenses were operational. Microsoft had already patched the vulnerability that BlackLotus exploited in 2022.\n\nIn 2023 and 2024, Microsoft issued additional updates. The first added a new certificate that no longer trusted the vulnerable boot managers. The second provided the means to revoke trust in the digital certificate used to sign older vulnerable Windows boot managers.",
-      "takeaways": [
-        "The organizations infected by the new bootkit, which is tracked under the name BlackX, had installed all of these patches.",
-        "So how did they fall victim?",
-        "UEFI bootkit refresher Before discussing the incident further, a brief review of BlackLotus and UEFI malware is in order.",
-        "Short for Unified Extensible Firmware Interface , UEFI is firmware that runs immediately after a computer is turned on."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "55e43bcf23925747",
-    "canonicalUrl": "https://blogs.nvidia.com/blog/ai-semiconductor-fabs/",
-    "title": "AI Is Changing How Semiconductor Fabs Work — and Engineers Are Moving Faster Because of It",
-    "publishedAt": "2026-11-03T16:00:45.000Z",
-    "fetchedAt": "2026-11-05T01:46:23.238Z",
-    "contentHash": "ec3bf5689badeee2",
-    "sourceId": "nvidia-blog",
-    "sourceName": "NVIDIA AI News",
-    "author": "Timothy Costa",
-    "contentSnippet": "Demand for advanced chips is rising. The processes to build them are getting more complex. And the margin for error is shrinking. For engineers, understanding how a process change will behave, how a material will interact with a new step, how a defect maps back to a root cause are critical, challenging steps in semiconductor manufacturing — and these analyses can take days. Physical experiments on a fab line are slow and expensive. A wrong call on yield or process quality has real consequences. AI is transforming semiconductor manufacturing, impacting what engineers can do — and how fast. Accelerated computing shortens simulation time, allowing engineers to evaluate more alternatives before committing to physical trials. Physics-based AI helps engineers predict process behavior without running a full simulation every time. AI agents handle sequences of engineering tasks that once consumed hours. And digital twins let teams test changes in a virtual environment before committing to physical trials. Together, these capabilities describe an AI-defined fab: a semiconductor manufacturing factory where AI helps engineers optimize processes, catch problems earlier and make better decisions across the full manufacturing chip lifecycle. Engineers direct the work and make decisions based on their expertise while spending less time waiting for answers. Shorter Simulation Cycles Change What Engineers Can Explore Accelerated computing doesn’t just speed up individual calculations — it changes how many alternatives engineers can test before committing. Multiphysics simulations model interactions among physical effects, such as heat transfer, electrical behavior and mechanical stress. Using the NVIDIA cuDSS library, multiphysics simulation software provider COMSOL is accelerating such simulations for semiconductor manufacturing by up to 10x. This helps engineers optimize equipment and processes, compare alternatives and decide which changes to test physically. Applied Materials and NVIDIA are collaborating to accelerate atomic-scale materials discovery and process development. By integrating NVIDIA cuDSS, Applied’s Ginestra simulation platform runs up to 10x faster than CPU-only approaches. And with NVIDIA PhysicsNeMo, Applied’s ACE+ multiphysics platform delivers topography simulations up to 35x faster. In some cases, acceleration doesn’t just shorten the calculation — it",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Demand for advanced chips is rising. The processes to build them are getting more complex. And the margin for error is shrinking.\n\nFor engineers, understanding how a process change will behave, how a material will interact with a new step, how a defect maps back to a root cause are critical, challenging steps in semiconductor manufacturing — and these analyses can take days. Physical experiments on a fab line are slow and expensive. A wrong call on yield or process quality has real consequences.",
-      "takeaways": [
-        "AI is transforming semiconductor manufacturing, impacting what engineers can do — and how fast.",
-        "Accelerated computing shortens simulation time, allowing engineers to evaluate more alternatives before committing to physical trials.",
-        "Physics-based AI helps engineers predict process behavior without running a full simulation every time.",
-        "AI agents handle sequences of engineering tasks that once consumed hours."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5fb7488de8910ebe",
-    "canonicalUrl": "https://www.theverge.com/policy/1020640/midterm-elections-2026-all-the-news",
-    "title": "Midterm elections 2026: all the news",
-    "publishedAt": "2026-11-03T15:58:39.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.794Z",
-    "contentHash": "2bc9a160e929eb9a",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Lauren Feiner",
-    "contentSnippet": "The 2026 midterm elections will determine the scope of President Donald Trump’s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year’s races are expected to be most broadly defined by affordability issues, there are several topics impacting the tech industry that appear to be on voters’ minds. Among them are concerns about data centers, and whether voters will have to bear the burden of higher energy costs, AI safety, and the rapid expansion of surveillance technology through Flock. There’s also the question of how to tax billionaires’ wealth in California, a topic that has driven heavy tech spending and creative stock class structures meant to keep tech executives from fleeing the state should a ballot measure pass. The next Congress is likely to continue grappling with how to regulate AI, and stem the data center backlash, among other issues. How that conversation shapes up, and which tech CEOs are hauled to testify on Capitol Hill, will be shaped by the outcome of November 3rd. Maine Republican Susan Collins concedes Senate seat in a tech-fueled race. Democrat projected to win Ohio seat that Republicans warned could spell trouble for data centers. Data center-dense Texas turns blue. Data center backlash wasn’t quite enough to flip Florida. Democrats leaned into Big Tech and AI opposition this cycle. Fulton County, GA may need to rescan 1,000 ballots tonight because of scanner malfunctions. Things still seem to be going fairly smoothly. Michigan officials contacted DOJ about reports of election monitors speaking with poll workers. This Election Day, remember which party ran against EVs and tethered us all to the gas pump Severe weather is affecting some voters across the country. A ballot scanner issue is impacting a New York suburb. Election protection hotline has received 3,000 calls this morning. DOJ sends 1,000 election monitors to watch polls in every state. Prop 45 in California could be hiding a loophole for data centers Another election year, another tech company war room. Voters in Texas agree: They hate data centers Data center backlash is uniting America Republican politicians have embraced anti-Indian racism — and it’s costing them votes Meta made a deal to keep Mark Zuckerberg from leaving California over its billionaire tax. Trump is giving Nick Shirley $10,000 an",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STK423_ELECTIONS2.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "Business & Big Tech",
-    "lab": "Meta AI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The 2026 midterm elections will determine the scope of President Donald Trump’s power in his final two years in office, and signal what voters care about going into the 2028 presidential election. While this year’s races are expected to be most broadly defined by affordability issues, there are several topics impacting the tech industry that appear to be on voters’ minds. Among them are concerns about data centers, and whether voters will have to bear the burden of higher energy costs, AI safety, and the rapid expansion of surveillance technology through Flock.\n\nThere’s also the question of how to tax billionaires’ wealth in California, a topic that has driven heavy tech spending and creative stock class structures meant to keep tech executives from fleeing the state should a ballot measure pass. The next Congress is likely to continue grappling with how to regulate AI, and stem the data center backlash, among other issues. How that conversation shapes up, and which tech CEOs are hauled to testify on Capitol Hill, will be shaped by the outcome of November 3rd.",
-      "takeaways": [
-        "Maine Republican Susan Collins concedes Senate seat in a tech-fueled race.",
-        "Democrat projected to win Ohio seat that Republicans warned could spell trouble for data centers.",
-        "Data center-dense Texas turns blue.",
-        "Data center backlash wasn’t quite enough to flip Florida."
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
