@@ -1,5 +1,63 @@
 [
   {
+    "id": "af7aff3d43eefabb",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/07/moe-routing-strategies-explained/",
+    "title": "MoE Routing Strategies Explained: Top-K, Expert-Choice, Sigmoid Gating and Dynamic Routing (2026 Guide)",
+    "publishedAt": "2026-11-08T06:18:33.000Z",
+    "fetchedAt": "2026-11-08T09:47:31.752Z",
+    "contentHash": "2daa0901525d2898",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Every Mixture-of-Experts (MoE) model repeats one decision for every token: which experts should process it. That decision belongs to the router. MoE routing strategies shape quality, load balance and serving cost in every major open model. This guide explains the 7 routing strategies used in production, and the models that use each one. TL;DR Size: Routers choose from 8 experts (Mixtral) to 384 (DeepSeek-V4-Pro), activating 1 to 8 per token. Runs on: Routing cost shows up in multi-GPU expert parallelism, where each choice becomes all-to-all network traffic. Performance: Sigmoid scoring with aux-loss-free bias balancing is the dominant 2026 recipe for frontier open MoE models. Best: Loss-free balancing cut MaxVio from 0.72 to 0.04 at 1B, with lower perplexity. Worst: Expert choice leaks future tokens in causal models; one test showed a roughly 10% abnormal loss drop. Bottom line: Best thing: bias-based balancing adds no interfering gradients. Worst thing: no router removes the need for serving-time load fixes. What is MoE routing? MoE routing is the mechanism that sends each token to a small subset of expert networks. A router scores every expert, keeps the top candidates and weights their outputs. Only the selected experts run. Mixtral 8x7B , for example, gives each token access to 47B parameters but uses 13B active parameters. video created by marktechpost.com The 7 MoE routing strategies used in production 1. Softmax top-k token choice Each token scores all experts with a linear layer and keeps the k highest. A softmax over those k scores sets the mixing weights. Mixtral picks 2 of 8 experts. gpt-oss-120b picks 4 of 128. Qwen3-235B-A22B picks 8 of 128. An auxiliary loss usually keeps expert load even. Used by: Mixtral, gpt-oss, Qwen3. 2. Top-1 switch routing with a capacity factor Switch Transformer showed that routing each token to 1 expert preserves quality and cuts router compute. Each expert gets a fixed buffer: tokens per batch divided by experts, times a capacity factor. Overflow tokens skip the layer through the residual connection. Llama 4 Maverick also sends each token to 1 routed expert, plus a shared expert. Used by: Switch Transformer, Llama 4 Maverick (with a shared expert). 3. Shared plus routed experts DeepSeekMoE splits each layer into always-on shared experts and sparsely routed experts. The shared expert captures common knowledge, so rout",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "This 2026 technical guide details the seven primary routing strategies for Mixture-of-Experts (MoE) architectures, which govern how tokens are distributed across expert networks to balance model quality, compute efficiency, and serving costs. Current production models range from 8 experts (Mixtral) to 384 experts (DeepSeek-V4-Pro), with active parameter counts per token varying from 1 to 8. The industry has shifted toward sigmoid scoring combined with auxiliary-loss-free bias balancing, a method that reduces MaxVio (maximum violation) from 0.72 to 0.04 in 1B parameter tests while simultaneously improving perplexity.\n\nRouting mechanisms function by scoring experts via a linear layer and selecting a subset for execution. Common strategies include Softmax top-k (used by Mixtral 8x7B, gpt-oss-120b, and Qwen3-235B-A22B), Top-1 switch routing with capacity factors (Switch Transformer, Llama 4 Maverick), and hybrid approaches like DeepSeekMoE, which utilizes always-on shared experts alongside sparsely routed experts to capture common knowledge. While these strategies optimize performance, they introduce all-to-all network traffic in multi-GPU expert parallelism and require serving-time load balancing, as no current router eliminates the need for post-training load management.",
+      "takeaways": [
+        "**Dominant Routing Recipe:** Sigmoid scoring with aux-loss-free bias balancing is currently the standard for frontier open MoE models.",
+        "**Model Scaling:** Expert counts range from 8 in Mixtral to 384 in DeepSeek-V4-Pro, with active experts per token ranging from 1 to 8.",
+        "**Performance Metric:** Loss-free balancing reduced MaxVio from 0.72 to 0.04 in 1B parameter models while lowering perplexity.",
+        "**Routing Limitations:** Expert-choice routing can cause data leakage in causal models, with tests showing a ~10% abnormal loss drop; additionally, no router currently removes the need for serving-time load fixes.",
+        "**Architecture Specifics:** Mixtral 8x7B utilizes 47B total parameters but only 13B active parameters per token."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "52b4870a078c1879",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/",
+    "title": "Nous Research Releases Arete-27B that Cuts Qwen3.8-27B Propaganda From 22% to 0.9%",
+    "publishedAt": "2026-11-08T04:45:59.000Z",
+    "fetchedAt": "2026-11-08T09:47:31.752Z",
+    "contentHash": "b4905c0dc9e9c6ee",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Nous Research has released Arete-27B , a supervised fine-tune of Alibaba’s Qwen3.8-27B . Arete-27B is a 27B open-weight model that strips Chinese state framing from Qwen’s answers. On Nous’s own 803-prompt eval, answers containing propaganda fell from 22% to 0.9%. Developers get Qwen-class agentic skill without state-aligned answers. The weights, eval and training data are all public. TL;DR Size: 27B dense parameters (all active). Trained at 64k context. Base Qwen3.8-27B supports 262,144 tokens natively. Runs on: BF16 weights are 53.81 GB. A community Q4_K_M quant is 17.20 GB, sized for 24 GB consumer GPUs. Performance: Capability unchanged on the benchmarks Nous ran; political framing now matches Western models. Best: Propaganda rate 0.9%, down from 22% for base Qwen3.8-27B. Worst: Fact score 2.98 of 5; 216 of 803 answers still score 0. What is Arete-27B? Arete-27B is Qwen3.8-27B after supervised fine-tuning only . Nous used no RL, no preference optimization and no architecture changes. The license is Apache 2.0, matching the base model. Nous team states that it saw refusals, deflections and CCP-framed answers on sensitive topics in the base model. It picked Qwen3.8-27B because it was the most capable local model and showed the target behavior. How was Arete-27B trained? The teacher was Inkling , an open model from Thinking Machines. Nous chose an open teacher to avoid terms-of-use limits on distillation. It rejected Nemotron 3 Ultra after finding a checkered record on China topics. Training covered about 52.8 million tokens at 64k context, without sequence packing. The run took 2 epochs and 1,202 steps at batch size 48. It used AdamW, a 1e-5 peak learning rate and tensor parallel 4. All language-model weights were trained. The vision encoder stayed frozen, since the data is text-only. The multi-token-prediction head was disabled. The released arete-data-pairs set holds 34,878 prompts across 7 topics. Each prompt has both an Inkling answer and a Qwen answer. 29,236 accepted teacher answers form the SFT split. How does the propaganda eval work? The Propaganda_Eval set has 803 prompts across 7 value categories. These include freedom of expression, state ideology, data privacy and democracy. Each prompt carries 2 to 4 required facts from a cited source. A Grok 4.7 judge grades two things separately: Fact mean (0 to 5): how many required facts the answer states",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nous Research has released Arete-27B, a supervised fine-tune (SFT) of Alibaba’s Qwen3.8-27B model designed to remove Chinese state-aligned framing. The model maintains the base architecture's 27B dense parameter count and 64k context window while reducing the propaganda rate from 22% to 0.9% on Nous’s internal 803-prompt evaluation suite. The release includes the model weights, training data, and evaluation framework under an Apache 2.0 license, aiming to provide Qwen-level agentic performance without the political bias found in the original base model.\n\nThe training process utilized distillation from 'Inkling,' an open model by Thinking Machines, to avoid restrictive terms-of-use associated with other proprietary models. Nous performed 2 epochs of training over 52.8 million tokens at a batch size of 48, utilizing AdamW with a 1e-5 peak learning rate. The process involved no reinforcement learning or preference optimization, and the vision encoder remained frozen. The resulting model requires 53.81 GB for BF16 weights, with community-provided Q4_K_M quantizations available at 17.20 GB for 24 GB consumer GPUs.",
+      "takeaways": [
+        "**Propaganda Reduction:** The model successfully lowered the propaganda rate from 22% in the base Qwen3.8-27B to 0.9% in Arete-27B.",
+        "**Training Methodology:** The model was trained via SFT on 34,878 prompts using the Inkling model as a teacher, covering 52.8 million tokens over 1,202 steps.",
+        "**Hardware Requirements:** BF16 weights occupy 53.81 GB, while Q4_K_M quantized versions are 17.20 GB, enabling deployment on 24 GB consumer hardware.",
+        "**Evaluation Metrics:** The model scored 2.98 out of 5 on factual accuracy, with 216 of 803 answers receiving a score of 0, as measured by a Grok 4.7 judge.",
+        "**Technical Constraints:** The training run utilized tensor parallel 4, disabled the multi-token-prediction head, and kept the vision encoder frozen."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "fe1f6a98c50b6110",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
     "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
@@ -10895,58 +10953,6 @@
       "tldr": "| Photo: Bloomberg via Getty Images Apple's latest earnings show how it's continuing to capitalize on the AI boom without busting its budget on the infrastructure spending consuming its competitors. Overall, Apple posted its best-ever fiscal year for revenue and earnings per share. IPhone and Mac sales continued to grow strongly in the fourth quarter.\n\nIPhone revenue rose 17.5% from a year earlier to a September quarter record of $57.6 billion while Mac revenue climbed 24% to $10.8 billion, its highest level in four years. Shares nevertheless fell in premarket trading Tuesday after Apple warned that rising memory costs would squeeze its profit margins in the holiday quarter. … Read the full story at The Verge.",
       "takeaways": [],
       "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3290365e3ff7da1f",
-    "canonicalUrl": "https://arxiv.org/abs/2611.05029",
-    "title": "DRAP: Dynamics-Risk Adaptive Plasticity for Continual Learning in Physical AI",
-    "publishedAt": "2026-11-03T15:05:06.000Z",
-    "fetchedAt": "2026-11-05T17:02:31.389Z",
-    "contentHash": "e0acd95c878a76ad",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Oswaldo Ludwig",
-    "contentSnippet": "Continual learning in physical AI differs from conventional continual learning because small per-step policy errors can accumulate over a trajectory. Each deviation may move the agent outside the training distribution, increase subsequent prediction errors, and ultimately cause closed-loop task failure. This work introduces Dynamics-Risk Adaptive Plasticity (DRAP), a replay-free method that estimates the historical importance of adaptable model tensors from sample-level action gradients weighted by local trajectory-amplification risk. A ridge-regularized local linear model is fitted to expert state-action transitions, and the largest singular value of its state-transition matrix provides a policy-independent, Lyapunov-inspired estimate of one-step perturbation amplification. After each task, risk-weighted squared gradients are accumulated in a tensor-level importance memory. During subsequent tasks, DRAP uses normalized cumulative importance to scale the effective AdamW learning rate of each tensor, immediately reducing the plasticity of components that supported previous behavior at dynamically sensitive trajectory points. We instantiate DRAP on a fixed KappaTune-selected subnetwork of OpenVLA and evaluate replay-free sequential adaptation across the LIBERO Spatial, Object, and Goal suites. Compared with standard AdamW fine-tuning and EWC, the results show substantially improved retention of previously learned behaviors while preserving strong new-suite acquisition.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.05029",
-    "pdfUrl": "https://arxiv.org/pdf/2611.05029",
-    "summary": {
-      "tldr": "Continual learning in physical AI differs from conventional continual learning because small per-step policy errors can accumulate over a trajectory. Each deviation may move the agent outside the training distribution, increase subsequent prediction errors, and ultimately cause closed-loop task failure. This work introduces Dynamics-Risk Adaptive Plasticity (DRAP), a replay-free method that estimates the historical importance of adaptable model tensors from sample-level action gradients weighted by local trajectory-amplification risk.\n\nA ridge-regularized local linear model is fitted to expert state-action transitions, and the largest singular value of its state-transition matrix provides a policy-independent, Lyapunov-inspired estimate of one-step perturbation amplification. After each task, risk-weighted squared gradients are accumulated in a tensor-level importance memory. During subsequent tasks, DRAP uses normalized cumulative importance to scale the effective AdamW learning rate of each tensor, immediately reducing the plasticity of components that supported previous behavior at dynamically sensitive trajectory points.",
-      "takeaways": [
-        "We instantiate DRAP on a fixed KappaTune-selected subnetwork of OpenVLA and evaluate replay-free sequential adaptation across the LIBERO Spatial, Object, and Goal suites.",
-        "Compared with standard AdamW fine-tuning and EWC, the results show substantially improved retention of previously learned behaviors while preserving strong new-suite acquisition."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e2d2bf508ced1caa",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1025242/openai-quietly-renames-data-centers-as-compute-campuses",
-    "title": "OpenAI is quietly renaming data centers ‘compute campuses’",
-    "publishedAt": "2026-11-03T15:00:44.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.688Z",
-    "contentHash": "5dfcbac0feaebccf",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Robert Hart",
-    "contentSnippet": "The Stargate AI data center “compute campus” in Abilene, Texas. | Photo: Bloomberg via Getty Images People hate data centers . They're loud, resource-hungry eyesores that are so profoundly unpopular they have managed to achieve the near-impossible in today's polarized political landscape: genuine bipartisan opposition . But what about \"compute campuses\"? Those sound lovely, right? OpenAI seems to be gambling that a quiet rebrand could be all it takes to defuse the growing political backlash that threatens to derail the infrastructure fueling the AI boom. OpenAI debuted the new terminology on Monday in an announcement launching its new \"Grid Protectors Program.\" The initiative, starting with an upcoming site in Effingham County, Georgia, ai … Read the full story at The Verge.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2236733575.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The Stargate AI data center “compute campus” in Abilene, Texas. | Photo: Bloomberg via Getty Images People hate data centers . They're loud, resource-hungry eyesores that are so profoundly unpopular they have managed to achieve the near-impossible in today's polarized political landscape: genuine bipartisan opposition .\n\nBut what about \"compute campuses\"? Those sound lovely, right? OpenAI seems to be gambling that a quiet rebrand could be all it takes to defuse the growing political backlash that threatens to derail the infrastructure fueling the AI boom.",
-      "takeaways": [
-        "OpenAI debuted the new terminology on Monday in an announcement launching its new \"Grid Protectors Program.\" The initiative, starting with an upcoming site in Effingham County, Georgia, ai … Read the full story at The Verge."
-      ],
-      "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
