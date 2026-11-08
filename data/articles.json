@@ -1,5 +1,33 @@
 [
   {
+    "id": "fe1f6a98c50b6110",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+    "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
+    "publishedAt": "2026-11-07T23:57:46.000Z",
+    "fetchedAt": "2026-11-08T02:40:49.598Z",
+    "contentHash": "d896d84b1ffe10de",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages . I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table.\n\nThis was happening because Datasette pages serve an HTTP link header like this:\n\nlink: <https://latest.datasette.io/fixtures/compound_three_primary_keys?_next=a%2Cd%2Cv>; rel=\"next\"\n\nThis is bad. A tiny fraction of the visitors to one of those pages will click the \"next\" link, which means their browser is fetching unnecessary data and the Datasette server is having to render an entire page that then gets thrown away.\n\nI dug in and learned that Firefox has an issue that has been open for 24 years about this behavior...\n\nAnd one of the early comments on that issue links to my blog post from 2002 complaining about this feature. I hadn't just forgotten that I had written about it, I had forgotten the feature entirely!\n\nRecent articles Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 The October inflection point for vibe game development - 28th October 2026 Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026 This is a link post by Simon Willison, posted on 7th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has identified and addressed a performance issue in Datasette (issue #3046) where the application was serving 'Link: rel=\"next\"' HTTP headers for HTML pages. This header triggered automatic HTTP prefetching in Firefox, causing the browser to download and the server to render subsequent table pages that were rarely accessed by users. This behavior resulted in unnecessary server-side rendering overhead and wasted bandwidth.\n\nThe issue stems from a long-standing Firefox behavior, documented in a bug report open for 24 years, which automatically prefetches resources linked with 'rel=\"next\"'. Willison noted that he had previously written about this specific browser behavior in 2002. To mitigate the performance impact, the fix involves modifying Datasette to exclude these headers specifically when serving requests to Firefox, preventing the browser from initiating the unwanted prefetch requests.",
+      "takeaways": [
+        "**Issue Identification:** Datasette was serving 'Link: rel=\"next\"' headers, causing Firefox to trigger automatic HTTP prefetches for subsequent table pages.",
+        "**Performance Impact:** The prefetch behavior forced the Datasette server to render entire pages that were ultimately discarded, wasting server resources and user bandwidth.",
+        "**Browser Behavior:** The issue is linked to a 24-year-old open Firefox bug regarding the handling of 'rel=\"next\"' link headers.",
+        "**Resolution:** Datasette #3046 implements a conditional check to stop serving these specific headers to Firefox browsers."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "757379c07d1179f7",
     "canonicalUrl": "https://techcrunch.com/2026/11/07/after-the-midterms-things-are-looking-rocky-for-elon-musk-and-data-centers/",
     "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
@@ -10920,34 +10948,6 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "91963f93a3962993",
-    "canonicalUrl": "https://spectrum.ieee.org/ai-small-business-mobile-money-startup",
-    "title": "How a Kenyan Startup Is Rethinking AI for Small Businesses",
-    "publishedAt": "2026-11-03T14:30:02.000Z",
-    "fetchedAt": "2026-11-04T10:13:26.042Z",
-    "contentHash": "e27d5e91a18379ae",
-    "sourceId": "ieee-spectrum-ai",
-    "sourceName": "IEEE Spectrum AI",
-    "author": "Lucila Pinto",
-    "contentSnippet": "The first time Mutembei Kariuki thought about how AI models could work in Kenya, his home country, was in 2019. He was attending a conference at the University of Tokyo on the future of AI, and kept hearing about how this technology was going to transform the world. “But nobody mentioned Africa at all,” he says. Even then—before AI giants like OpenAI and Anthropic had launched their chatbots to the public—Kariuki could see significant obstacles to AI adoption in Africa. Internet access was slow and unequal, computing resources for training models were scarce, and there was little high-quality, structured training data. Most people, meanwhile, reached the internet through outdated, low-memory cellphones rather than computers or high-end phones. Together with cofounders Jude Mwenda and Stephanie Njerenga , Kariuki created Fastagger , a startup that builds AI models that can run offline and on low-power cellphones. Its first big product, Auni, is a business-intelligence assistant that launched in 2024; it got a big push when it was integrated into the business app of M-Pesa , Kenya’s largest mobile money service. Since then, about 6,000 businesses have signed up. Auni helps small and medium businesses like barbershops, restaurants, and small manufacturers analyze their transaction data and gives them marketing recommendations. Peter Chege, owner of a salon and barbershop in Nairobi, started using Auni last year. Before that, he recorded all his sales on paper. “We were not able to translate that information into a graph,” he says. Now, the app helps him identify his busiest days and hours, as well as his loyal customers. If a regular customer stops coming, for example, he can send a personalized message encouraging them to return. Fastagger is part of an emerging effort to build AI around the technological realities of users in developing economies, rather than adapting products designed for wealthier markets. In Fastagger’s case, that meant finding a way to make their models work despite inexpensive phones, unreliable internet connections, and business records that may consist of little more than mobile-money transactions. Designing AI for Kenya’s Small Businesses Before developing Auni, Kariuki and his cofounders started by tackling the problem of data availability for AI training. They asked themselves: “How do we get Africa to catch up fast? How do we creat",
-    "imageUrl": "https://spectrum.ieee.org/media-library/a-photo-shows-a-smiling-man-in-a-barbers-chair-with-a-smiling-man-standing-over-him.jpg?id=68563378&width=980",
-    "category": "Robotics & Hardware",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The first time Mutembei Kariuki thought about how AI models could work in Kenya, his home country, was in 2019. He was attending a conference at the University of Tokyo on the future of AI, and kept hearing about how this technology was going to transform the world. “But nobody mentioned Africa at all,” he says.\n\nEven then—before AI giants like OpenAI and Anthropic had launched their chatbots to the public—Kariuki could see significant obstacles to AI adoption in Africa. Internet access was slow and unequal, computing resources for training models were scarce, and there was little high-quality, structured training data. Most people, meanwhile, reached the internet through outdated, low-memory cellphones rather than computers or high-end phones.",
-      "takeaways": [
-        "Together with cofounders Jude Mwenda and Stephanie Njerenga , Kariuki created Fastagger , a startup that builds AI models that can run offline and on low-power cellphones.",
-        "Its first big product, Auni, is a business-intelligence assistant that launched in 2024; it got a big push when it was integrated into the business app of M-Pesa , Kenya’s largest mobile money service.",
-        "Since then, about 6,000 businesses have signed up.",
-        "Auni helps small and medium businesses like barbershops, restaurants, and small manufacturers analyze their transaction data and gives them marketing recommendations."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   }
