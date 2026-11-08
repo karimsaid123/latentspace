@@ -1,5 +1,62 @@
 [
   {
+    "id": "86cc59a51a4e9689",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/08/google-elephant-goldfish-model-plugin-spec-review-coding-agents/",
+    "title": "Google AI Releases Elephant-Goldfish Model Plugin for Spec-First Coding",
+    "publishedAt": "2026-11-08T10:46:18.000Z",
+    "fetchedAt": "2026-11-08T16:29:26.545Z",
+    "contentHash": "8070123ce85c994e",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Google has open-sourced the Elephant-Goldfish Model (EGM) plugin , a design-and-review layer for AI coding agents. The Elephant-Goldfish Model plugin makes an agent write a specification before it writes code. Fresh subagents with no conversation history then attack that spec. Google says thousands of its engineers use it . It is quite simple: catch wrong assumptions in a Markdown file, not in a pull request. TL;DR Size: 7 skills, 9 reviewer personas, 6 brainstorm lenses, 5 review stages. No model weights; your agent supplies the LLM. Runs on: any harness that can spawn fresh subagents: Antigravity, Claude Code 2.1.271+, Claude Cowork, Codex, ChatGPT. Uses your existing model quota. Performance: no accuracy benchmark published. Evidence is adoption and end-to-end harness test runs. Best: Codex 0.163.0 completed 15 native fresh-context reviewers in order. 2 live tests passed in 573.13s. Worst: the Claude Cowork run stopped after stages 5 to 7 on a usage limit. Issue #237 reports AGENTS.md leaking into Codex reviewers. Bottom line: best thing, forced independent review before code. Worst thing, heavy token use and unverified isolation on some hosts. What is Google’s Elephant-Goldfish Model plugin? EGM is an Apache 2.0 plugin of skills, reviewer personas and document standards. It is not a new language model. The method comes from Dave Rensin’s essay on elephants and goldfish. The Google Open Source blog frames it as a fix for AI “slop” and session context collapse. The README states it is not an officially supported Google product . How does the Elephant-Goldfish workflow work? The Elephant is a long session holding project context and earlier decisions. It drafts the spec and writes no code. Each Goldfish is a stateless subagent. It reads only the draft and the files it references. You resolve trade-offs and approve the design. The core loop has 3 commands: /egm-brainstorm clarifies the idea, then runs a 6-lens Goldfish swarm. Lenses cover YAGNI, token cost, UX, migration, observability and tech debt. Output: concepts_brief.md . /egm-draft turns the brief into a design doc under docs/designs/ , section by section. /egm-review runs the Goldfish review. /egm-drift-report later compares code with the spec. The docs recommend running it weekly. What happens in the 5-stage Goldfish review? The review skill runs 5 sequential stages: Initial Zoom Out: checks the who",
+    "category": "Open Source & Research",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has open-sourced the Elephant-Goldfish Model (EGM) plugin, a framework designed to force AI coding agents to generate and validate specifications before writing code. The plugin is licensed under Apache 2.0 and is not a standalone model, but rather a set of skills, reviewer personas, and document standards that operate on top of existing LLMs. It is designed to mitigate AI 'slop' and session context collapse by separating the 'Elephant' (a long-session agent holding project context) from 'Goldfish' (stateless subagents that perform independent reviews). The system is currently used by thousands of Google engineers, though it is not an officially supported Google product.\n\nThe EGM workflow consists of three primary commands: /egm-brainstorm, which uses a 6-lens swarm (YAGNI, token cost, UX, migration, observability, and tech debt) to produce a concepts_brief.md; /egm-draft, which generates design documentation; and /egm-review, which executes a 5-stage sequential review process. The plugin is compatible with any harness capable of spawning fresh subagents, including Antigravity, Claude Code 2.1.271+, Claude Cowork, Codex, and ChatGPT. Performance data is based on end-to-end harness tests rather than accuracy benchmarks; for instance, Codex 0.163.0 completed 15 native fresh-context reviews in 573.13 seconds, while Claude Cowork runs have been limited by token usage caps.\n\nDeployment requires significant token overhead due to the multi-stage review process. Users have reported technical issues, such as Issue #237, which notes that AGENTS.md files can leak into the context of Codex reviewers. The framework is intended to be run weekly to ensure code alignment with the original design specifications, with a final /egm-drift-report command used to compare implemented code against the established design documentation.",
+      "takeaways": [
+        "**Architecture:** EGM utilizes 7 skills, 9 reviewer personas, 6 brainstorm lenses, and 5 review stages to enforce a spec-first coding methodology.",
+        "**Compatibility:** The plugin runs on any harness supporting fresh subagent spawning, specifically validated on Antigravity, Claude Code 2.1.271+, Claude Cowork, Codex, and ChatGPT.",
+        "**Performance Metrics:** In testing, Codex 0.163.0 completed 15 fresh-context reviews in 573.13 seconds, while Claude Cowork instances have encountered failures due to usage limits.",
+        "**Known Limitations:** The system lacks official Google support, suffers from high token consumption, and has documented bugs regarding context leakage (Issue #237)."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "12477044aa13f086",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/08/moe-model-routing-comparison/",
+    "title": "Which Routing Does Each MoE Model Use? DeepSeek, Qwen, Mixtral, Llama 4, gpt-oss Compared",
+    "publishedAt": "2026-11-08T10:27:27.000Z",
+    "fetchedAt": "2026-11-08T16:29:26.545Z",
+    "contentHash": "1ffdf7188d6e9ab7",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Open Mixture-of-Experts (MoE) models share one idea but disagree on almost every routing detail. Expert counts range from 8 to 384. Top-k ranges from 1 to 8. Some models keep an always-on shared expert; others drop it. TL;DR Size: 10 models, from Qwen3.6-35B-A3B (35B total, 3B active) to DeepSeek-V4-Pro (1.6T total, 49B active). Runs on: gpt-oss-120b fits one 80 GB GPU with MXFP4; DeepSeek-V4-Pro and Kimi K2 need multi-GPU expert parallelism. Performance: Routed sparsity spans 4x in Mixtral (8 experts, top-2) to 128x in Llama 4 Maverick (128, top-1). Best: Kimi K2 found sparsity 48 needed 1.69x fewer FLOPs than sparsity 8 at equal validation loss. Worst: Llama 4 Maverick and gpt-oss do not publish their gating or balancing method in config.json. Bottom line: Best thing: configs make routing fully auditable. Worst thing: names like “17B active” hide very different routers. How do open MoE models route tokens? Every model below uses token-choice routing: each token selects its own experts. They differ on 5 knobs. These are expert count, experts per token, shared experts, the scoring function and the load-balancing method. The table lists each knob per model. MoE routing comparison table (November 2026) Model Total / active params Routed experts Top-k Shared experts Gating Load balancing Mixtral 8x7B 47B / 13B 8 2 0 Softmax over top-k Aux loss, coef 0.02 ( config ) gpt-oss-120b 117B / 5.1B 128 4 0 Softmax over selected Not disclosed Qwen3-235B-A22B 235B / 22B 128 8 0 Softmax, top-k normalized Global-batch aux loss, coef 0.001 Qwen3.6-35B-A3B 35B / 3B 256 8 1 Not disclosed Aux loss, coef 0.001 (config) Llama 4 Maverick 400B / 17B 128 1 1 Not disclosed Not disclosed DeepSeek-V3 671B / 37B 256 8 1 Sigmoid Aux-loss-free bias (noaux_tc) DeepSeek-V4-Pro 1.6T / 49B 384 6 1 sqrtsoftplus noaux_tc; hash routing in 3 layers DeepSeek-V4-Flash 284B / 13B 256 6 1 sqrtsoftplus noaux_tc; hash routing in 3 layers Kimi K2 1.04T / 32B 384 8 1 Sigmoid noaux_tc + sequence aux, alpha 0.001 GLM-4.5 355B / 32B 160 8 1 Sigmoid Loss-free balance routing Sources: each model’s Hugging Face config.json, model card or technical report, verified November 7, 2026. Configs and cards for Qwen3.6 and Llama 4 omit gating. gpt-oss and Llama 4 omit the balancing method. <iframe id=\"mtp-r2-frame\" title=\"MoE model routing comparison explorer\" loading=\"lazy\" scrolling=\"no\" style=\"width:100%;height:600",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "A comparative analysis of 10 open Mixture-of-Experts (MoE) models reveals significant architectural divergence in routing strategies, despite a shared reliance on token-choice routing. Expert counts range from 8 in Mixtral 8x7B to 384 in DeepSeek-V4-Pro and Kimi K2, with active parameter counts varying from 3B in Qwen3.6-35B-A3B to 49B in DeepSeek-V4-Pro. The study highlights that while models like Mixtral utilize standard softmax gating with auxiliary loss, newer architectures such as DeepSeek-V4-Pro and Kimi K2 have shifted toward 'noaux_tc' (auxiliary-loss-free) methods, incorporating specialized techniques like sqrtsoftplus gating and hash routing to manage load balancing.\n\nTechnical performance metrics indicate that routed sparsity varies drastically, from 4x in Mixtral to 128x in Llama 4 Maverick. Kimi K2 demonstrates the highest efficiency, requiring 1.69x fewer FLOPs than a sparsity-8 configuration while maintaining equivalent validation loss. Deployment requirements also vary: gpt-oss-120b can fit on a single 80GB GPU using MXFP4 quantization, whereas larger models like DeepSeek-V4-Pro and Kimi K2 necessitate multi-GPU expert parallelism. Notably, transparency remains inconsistent, with Llama 4 Maverick and gpt-oss failing to disclose their gating or load-balancing methodologies in their respective configuration files.",
+      "takeaways": [
+        "**Routing Diversity:** Expert counts across the 10 surveyed models span from 8 to 384, with top-k selections ranging from 1 to 8 experts per token.",
+        "**Efficiency Gains:** Kimi K2 achieves superior computational efficiency, requiring 1.69x fewer FLOPs at a sparsity of 48 compared to a sparsity of 8.",
+        "**Load Balancing Evolution:** Modern models like DeepSeek-V4-Pro and Kimi K2 have moved away from traditional auxiliary loss, adopting 'noaux_tc' (auxiliary-loss-free) bias and sequence-based balancing.",
+        "**Deployment Constraints:** While gpt-oss-120b is optimized for single 80GB GPU deployment via MXFP4, the 1.6T parameter DeepSeek-V4-Pro requires multi-GPU expert parallelism.",
+        "**Transparency Gaps:** Llama 4 Maverick and gpt-oss do not publish gating or load-balancing methods in their config.json files, limiting auditability compared to models like Mixtral or Qwen."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "af7aff3d43eefabb",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/07/moe-routing-strategies-explained/",
     "title": "MoE Routing Strategies Explained: Top-K, Expert-Choice, Sigmoid Gating and Dynamic Routing (2026 Guide)",
@@ -40,7 +97,7 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Nous Research has released Arete-27B , a supervised fine-tune of Alibaba’s Qwen3.8-27B . Arete-27B is a 27B open-weight model that strips Chinese state framing from Qwen’s answers. On Nous’s own 803-prompt eval, answers containing propaganda fell from 22% to 0.9%. Developers get Qwen-class agentic skill without state-aligned answers. The weights, eval and training data are all public. TL;DR Size: 27B dense parameters (all active). Trained at 64k context. Base Qwen3.8-27B supports 262,144 tokens natively. Runs on: BF16 weights are 53.81 GB. A community Q4_K_M quant is 17.20 GB, sized for 24 GB consumer GPUs. Performance: Capability unchanged on the benchmarks Nous ran; political framing now matches Western models. Best: Propaganda rate 0.9%, down from 22% for base Qwen3.8-27B. Worst: Fact score 2.98 of 5; 216 of 803 answers still score 0. What is Arete-27B? Arete-27B is Qwen3.8-27B after supervised fine-tuning only . Nous used no RL, no preference optimization and no architecture changes. The license is Apache 2.0, matching the base model. Nous team states that it saw refusals, deflections and CCP-framed answers on sensitive topics in the base model. It picked Qwen3.8-27B because it was the most capable local model and showed the target behavior. How was Arete-27B trained? The teacher was Inkling , an open model from Thinking Machines. Nous chose an open teacher to avoid terms-of-use limits on distillation. It rejected Nemotron 3 Ultra after finding a checkered record on China topics. Training covered about 52.8 million tokens at 64k context, without sequence packing. The run took 2 epochs and 1,202 steps at batch size 48. It used AdamW, a 1e-5 peak learning rate and tensor parallel 4. All language-model weights were trained. The vision encoder stayed frozen, since the data is text-only. The multi-token-prediction head was disabled. The released arete-data-pairs set holds 34,878 prompts across 7 topics. Each prompt has both an Inkling answer and a Qwen answer. 29,236 accepted teacher answers form the SFT split. How does the propaganda eval work? The Propaganda_Eval set has 803 prompts across 7 value categories. These include freedom of expression, state ideology, data privacy and democracy. Each prompt carries 2 to 4 required facts from a cited source. A Grok 4.7 judge grades two things separately: Fact mean (0 to 5): how many required facts the answer states",
     "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
+    "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Nous Research has released Arete-27B, a supervised fine-tune (SFT) of Alibaba’s Qwen3.8-27B model designed to remove Chinese state-aligned framing. The model maintains the base architecture's 27B dense parameter count and 64k context window while reducing the propaganda rate from 22% to 0.9% on Nous’s internal 803-prompt evaluation suite. The release includes the model weights, training data, and evaluation framework under an Apache 2.0 license, aiming to provide Qwen-level agentic performance without the political bias found in the original base model.\n\nThe training process utilized distillation from 'Inkling,' an open model by Thinking Machines, to avoid restrictive terms-of-use associated with other proprietary models. Nous performed 2 epochs of training over 52.8 million tokens at a batch size of 48, utilizing AdamW with a 1e-5 peak learning rate. The process involved no reinforcement learning or preference optimization, and the vision encoder remained frozen. The resulting model requires 53.81 GB for BF16 weights, with community-provided Q4_K_M quantizations available at 17.20 GB for 24 GB consumer GPUs.",
@@ -10909,51 +10966,6 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5eba943719a0061f",
-    "canonicalUrl": "https://techcrunch.com/2026/11/03/apple-restricts-dating-apps-and-ai-companions-to-users-18-and-up/",
-    "title": "Apple restricts dating apps and AI companions to users 18 and up",
-    "publishedAt": "2026-11-03T15:38:27.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.687Z",
-    "contentHash": "a7cee7e4c1942ae7",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Sarah Perez",
-    "contentSnippet": "Apple's new App Store rules will require 18+ ratings for dating apps and AI companions that offer sexual or romantic content.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Apple's new App Store rules will require 18+ ratings for dating apps and AI companions that offer sexual or romantic content.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "03ad66ba1fba6125",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1025245/apple-earnings-q4-ai",
-    "title": "Apple is all in on AI — its own and everyone else’s",
-    "publishedAt": "2026-11-03T15:24:51.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.688Z",
-    "contentHash": "ebe6ba28324596a6",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Rani Molla",
-    "contentSnippet": "Apple CEO John Ternus. | Photo: Bloomberg via Getty Images Apple's latest earnings show how it's continuing to capitalize on the AI boom without busting its budget on the infrastructure spending consuming its competitors. Overall, Apple posted its best-ever fiscal year for revenue and earnings per share. iPhone and Mac sales continued to grow strongly in the fourth quarter. iPhone revenue rose 17.5% from a year earlier to a September quarter record of $57.6 billion while Mac revenue climbed 24% to $10.8 billion, its highest level in four years. Shares nevertheless fell in premarket trading Tuesday after Apple warned that rising memory costs would squeeze its profit margins in the holiday quarter. … Read the full story at The Verge.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2301906266.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "| Photo: Bloomberg via Getty Images Apple's latest earnings show how it's continuing to capitalize on the AI boom without busting its budget on the infrastructure spending consuming its competitors. Overall, Apple posted its best-ever fiscal year for revenue and earnings per share. IPhone and Mac sales continued to grow strongly in the fourth quarter.\n\nIPhone revenue rose 17.5% from a year earlier to a September quarter record of $57.6 billion while Mac revenue climbed 24% to $10.8 billion, its highest level in four years. Shares nevertheless fell in premarket trading Tuesday after Apple warned that rising memory costs would squeeze its profit margins in the holiday quarter. … Read the full story at The Verge.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   }
