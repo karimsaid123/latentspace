@@ -1,5 +1,89 @@
 [
   {
+    "id": "f0be6325bfc4dec9",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia",
+    "title": "Here’s the full text of Jensen Huang’s memo to Nvidia",
+    "publishedAt": "2026-11-08T22:54:50.000Z",
+    "fetchedAt": "2026-11-09T00:26:31.626Z",
+    "contentHash": "d0c26a4aaa608222",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "On Sunday, Nvidia announced it was launching an investigation into CEO Jensen Huang’s relationship with Alice Huang, an AI executive and agent of the Chinese government. In addition to the Board of Directors announcing the investigation, Huang sent a memo to Nvidia employees acknowledging the affair. You can read the full text below. > To my colleagues at NVIDIA, > I owe my family and all of you an apology. > I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry. > Throughout my life, my family has given me love and support. They deserve my honesty and loyalty. Instead, I let them down and damaged the life we built together. I take full responsibility for what I did and the hurt I caused, and I accept the criticism that comes with it. > To my wife and family: I love you. I know an apology cannot undo what I have done. I hope our family will heal and that, over time, I can earn back your trust. > To my colleagues at NVIDIA, including those I have worked alongside for decades, and to our board, partners, and shareholders around the world: you deserve better from me. Leading NVIDIA is the privilege of my life. My responsibility is to serve you and be worthy of your trust. I have fallen short of that responsibility. I am fully committed to NVIDIA and will work to earn back your confidence. > Regarding the national security concerns raised in news reports, NVIDIA’s Board of Directors has initiated an independent investigation. I support the investigation and will cooperate fully. I love our country and our company. I am committed to protecting NVIDIA and supporting America’s national security. I am proud and grateful to be an American. > My family bears no responsibility for my choices. I do. Please give them privacy. > — Jensen",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang has issued a formal apology to employees, shareholders, and his family following the disclosure of an extramarital affair with Alice Huang, an AI executive alleged to be an agent of the Chinese government. The Nvidia Board of Directors has officially launched an independent investigation into the relationship, specifically addressing the national security implications raised by the reports.\n\nIn his memo, Huang acknowledged personal responsibility for the affair, stating he failed to uphold the standards expected of his leadership role. He explicitly addressed the national security concerns, pledging full cooperation with the board's investigation and reaffirming his commitment to protecting Nvidia and supporting U.S. national security interests. Huang requested privacy for his family while the investigation proceeds.",
+      "takeaways": [
+        "**Board Action:** The Nvidia Board of Directors has initiated an independent investigation into the CEO's conduct.",
+        "**Allegation Context:** Reports link the affair to Alice Huang, described as an AI executive and alleged agent of the Chinese government.",
+        "**CEO Stance:** Jensen Huang has publicly committed to full cooperation with the board's inquiry.",
+        "**Corporate Impact:** The investigation centers on potential national security risks associated with the CEO's personal relationship."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a86fe963d82ab963",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
+    "title": "parse_number() as a SQLite extension: C vs Rust",
+    "publishedAt": "2026-11-08T22:26:00.000Z",
+    "fetchedAt": "2026-11-09T00:26:32.423Z",
+    "contentHash": "c5bf492a212f60eb",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "8th November 2026 Research parse_number() as a SQLite extension: C vs Rust — Four SQLite extensions implement the same `parse_number()` behavior in C and Rust, with tests covering type preservation, parsing rules, and floating-point accuracy. The optimized C implementation was fastest at 16–19 ns per row, about twice as fast as the Rust versions and far faster than SQL `replace()`. Plain C was slower on decimals because it relied on `strtod()`, while a compact fast path closed that gap; all versions matched across 8 million fuzz checks. I was out walking the dog when I got curious about how easy/difficult it would be to write a SQLite C extension that adds a parse_number() function for turning strings like -$1,234.56 or '12.5%' into numeric values that could be summed and sorted.\n\nI fired up regular Claude chat (Opus 5.5) and prompted :\n\nI'm thinking about a SQLite custom function 'parse_number(value)' that strips ',', '$', '£' and '%', handles a leading '-', and returns 'NULL' for anything it can’t parse\n\nExplore the difference between building this as a SQLite extension in C v.s. in Rust - I want to compare performance and code complexity and size of the resulting .so (or whatever) file\n\nThis gave me a solid starting point - the Rust extension was 321 KB (using Rusqlite ) and 298 KB (using sqlite-loadable-rs ), while the C extension was 14 KB. But the Rust extension was faster!\n\nTurns out that's because the Rust equivalent of C's strtod is \"twice as fast\". So I prompted:\n\nTry writing your own C function for parsing text into a decimal number that catches up to or beats the Rust implementation\n\nAnd it did: Net cost per row over 2 million rows, lower is better:\n\nFinally, I had it rewrite the prototype as a research report to match the others in simonw/research by prompting this:\n\nClone simonw/research from GitHub and turn your above investigation into a research report as seen in that repository - you can give me a zip file to download that contains your new folder\n\nRecent articles Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 The October inflection point for vibe game development - 28th October 2026 Battle Drones - a vibe coded RTS with audio-based multiplayer - 20th October 2026 This is a beat by Simon Willison, posted on 8th November 2026 .\n\nMonthly briefi",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison’s November 8, 2026 research report evaluates the performance and implementation trade-offs of building a SQLite `parse_number()` extension in C versus Rust. The function is designed to sanitize strings containing currency symbols ($, £), commas, and percentage signs into numeric values for SQL operations. The study compares four distinct implementations, focusing on type preservation, parsing accuracy, and execution speed across 8 million fuzz-tested inputs.\n\nPerformance benchmarks reveal that while the initial Rust implementations (using `rusqlite` and `sqlite-loadable-rs`) were faster than standard C due to efficient parsing logic, a custom-optimized C implementation closed the gap. The final optimized C version achieved 16–19 ns per row, significantly outperforming native SQL `replace()` functions. In terms of binary size, the C extension was notably more compact at 14 KB, compared to 321 KB and 298 KB for the Rust variants. The research highlights that while Rust’s standard library parsing is highly efficient, custom C logic can match or exceed these speeds while maintaining a much smaller footprint.",
+      "takeaways": [
+        "**Performance Metrics:** Optimized C implementation achieved 16–19 ns per row, outperforming standard C `strtod()` and matching Rust performance.",
+        "**Binary Size:** C extensions measured 14 KB, whereas Rust implementations using `rusqlite` and `sqlite-loadable-rs` measured 321 KB and 298 KB respectively.",
+        "**Validation:** All four implementations were verified against 8 million fuzz checks to ensure consistent parsing behavior and floating-point accuracy.",
+        "**Development Methodology:** The research was prototyped and refined using Claude Opus 5.5, with the final report structured to match the `simonw/research` repository format."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ab3c0090fa33621f",
+    "canonicalUrl": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+    "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+    "publishedAt": "2026-11-08T21:00:11.000Z",
+    "fetchedAt": "2026-11-09T00:26:31.626Z",
+    "contentHash": "075b0803c4482ee4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "Nvidia’s board of directors announced Sunday that it’s launching an independent investigation following reports that CEO Jensen Huang was targeted by a Chinese spy operation .\n\nNvidia also published a message that Huang sent to the company admitting that he had an affair with Alice Huang, a former executive at Singapore-based chip company Megaspeed (though he didn’t mention her by name). A memo circulating among U.S. policymakers earlier this year claimed that Alice Huang had been recruited by China’s Ministry of State Security to spy on Nvidia’s CEO.\n\n“I owe my family and all of you an apology,” Jensen Huang wrote. “I was unfaithful to my wife. My actions hurt her and our children. There is no excuse for what I did. I am deeply sorry.”\n\nHuang added that he’d “fallen short” of his responsibility to the company.\n\n“To my colleagues at NVIDIA, including those I have worked alongside for decades, and to our board, partners, and shareholders around the world: you deserve better from me,” he said.\n\nAs the AI race between the United States and China heats up , chips, especially Nvidia’s chips, have been a major focus . Huang also seems to have a close relationship with President Donald Trump , who’s been a cheerleader of the AI ( or “superintelligence” ) industry.\n\nIn its announcement, Nvidia’s board said that it has “no reason to believe” that either national security or company secrets were compromised. It also said that Huang “fully supports the review and has committed to cooperating with it,” and that the board has “confidence in Jensen and his leadership team.”\n\nThe investigation will be conducted by independent directors working with outside legal counsel.\n\nIn response to earlier reports about the CEO’s relationship with Alice Huang, Nvidia had said that the pair’s interactions were “not unusual,” and that the company does not share classified information with customers.\n\nOther companies involved in the AI boom have warned employees to be wary of possible spies , including those offering sex or romance.\n\nTopics AI , Government & Policy , Jensen Huang , nvidia When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nAnthony Ha is TechCrunch’s weekend editor. Previously, he worked as a tech reporter at Adweek, a senior editor at VentureBeat, a local government reporter at the Hollister F",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia’s board of directors has initiated an independent investigation into CEO Jensen Huang following allegations that he was targeted by a Chinese intelligence operation. The probe follows reports that Huang engaged in an affair with Alice Huang, a former executive at the Singapore-based chip firm Megaspeed. A memo circulating among U.S. policymakers previously alleged that Alice Huang had been recruited by China’s Ministry of State Security to conduct espionage against the Nvidia CEO.\n\nIn a message to Nvidia employees, Jensen Huang confirmed the affair and issued a formal apology, stating he had \"fallen short\" of his responsibilities to the company, its board, and shareholders. Despite the investigation, Nvidia’s board stated it has \"no reason to believe\" that company secrets or national security interests were compromised. The review is being conducted by independent directors in conjunction with outside legal counsel, and the board has publicly affirmed its continued confidence in Huang’s leadership.",
+      "takeaways": [
+        "**Investigation Scope:** The probe is being led by independent directors and external legal counsel to determine if the CEO's relationship with Alice Huang posed a security risk.",
+        "**Board Stance:** Nvidia’s board maintains that there is no evidence of compromised company secrets or national security breaches.",
+        "**CEO Admission:** Jensen Huang confirmed an affair with a former executive from Singapore-based chip company Megaspeed, acknowledging the relationship in a company-wide memo.",
+        "**Espionage Allegations:** A memo distributed to U.S. policymakers earlier this year claimed Alice Huang was recruited by China’s Ministry of State Security to target the Nvidia CEO."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "54c06e97d6e0a2b7",
     "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
     "title": "Nvidia is investigating Jensen Huang’s relationship with a Chinese spy",
@@ -41,17 +125,20 @@
     "contentSnippet": "Bloomberg’s Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI’s Dots or Meta’s Muse. While Federighi has delivered a functional version of Siri AI on an incredibly short timeline, the company has no illusions that it’s keeping pace with its rivals. Two significant improvements are expected to be made to Siri in the coming months. One will give the assistant fine-grained control over Apple’s first-party apps, allowing it to do things like rotate and crop images in Photos and organize Safari tabs. Those capabilities are expected to land with iOS 27.3. The bigger change, integration with third-party apps, is likely to land later, in the Spring, according to Gurman. That would let Siri place an order through Grubhub or book a dinner reservation through OpenTable, for example. But that’s just the start. Apple is expected to push Siri to become more agentic and enable features that will allow it to perform ongoing tasks, not just one-offs. Gurman says: > Dots, Muse and Grok can keep track of goals, determine what needs to happen next and continue pursuing objectives without the user initiating every individual step. Apple ultimately wants to go in this direction, I’m told, and I believe the company could make Siri more like an agent as early as next year — not that it has much of a choice, given current consumer and market demands.",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/Siri-AI-Being-invoked-3.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "OpenAI",
+    "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Bloomberg's Mark Gurman says CEO John Ternus is pressuring AI czar Craig Federighi to accelerate the Siri roadmap and deliver a powerful AI agent that can compete with OpenAI's Dots or Meta's Muse. While Federighi has delivered a functional version of Siri AI on an incredibly short timeline, the company has no illusions that it's keeping pace with its rivals. Two significant improvements are expected to be made to Siri in the coming months.",
+      "tldr": "Apple is accelerating its Siri development roadmap under pressure from CEO John Ternus and AI lead Craig Federighi to compete with emerging agentic AI systems like OpenAI’s Dots, Meta’s Muse, and xAI’s Grok. While Apple has successfully deployed a functional AI-powered Siri on a compressed timeline, internal assessments acknowledge the company is currently trailing its primary competitors in agentic capabilities.\n\nUpcoming updates to Siri are planned in two distinct phases. The first, expected in iOS 27.3, will introduce fine-grained control over first-party applications, enabling specific actions such as image cropping, rotation in Photos, and Safari tab management. A second, more significant phase arriving in the Spring will introduce third-party app integration, allowing Siri to execute external tasks like placing Grubhub orders or booking OpenTable reservations. Apple’s long-term objective is to transition Siri from a single-turn assistant to an agentic system capable of multi-step goal tracking and autonomous objective pursuit, with these advanced features potentially arriving as early as next year.",
       "takeaways": [
-        "One will give the assistant fine-grained control over Apple's first-party apps, allowing it to do things like rotate and crop images in Photos and organize Safari tabs.",
-        "Those capabilities are expected to … Read the full story at The Verge."
+        "**Leadership Pressure:** CEO John Ternus is actively pushing AI lead Craig Federighi to accelerate the Siri roadmap to match industry rivals.",
+        "**iOS 27.3 Features:** The upcoming update will enable granular control over Apple first-party apps, specifically targeting Photos and Safari functionality.",
+        "**Third-Party Integration:** Spring-scheduled updates will allow Siri to interface with external services like Grubhub and OpenTable.",
+        "**Agentic Roadmap:** Apple aims to evolve Siri into an agent capable of maintaining long-term goals and autonomous task execution by next year."
       ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -10890,83 +10977,6 @@
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "726c1b134d9eb84f",
-    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/",
-    "title": "Introducing India-based inference for Kimi K3 on Amazon Bedrock",
-    "publishedAt": "2026-11-03T16:32:54.000Z",
-    "fetchedAt": "2026-11-03T19:56:01.016Z",
-    "contentHash": "c2a58188a26fc6d3",
-    "sourceId": "aws-ml",
-    "sourceName": "AWS Machine Learning",
-    "author": "Naomi Teng",
-    "contentSnippet": "Kimi K3 is a multi-modal, open-weight foundation model (FM) that provider Moonshot AI reported achieved frontier-level coding and general agentic intelligence at release. In addition to global and US-based inference, Amazon Bedrock now supports in-country inference in India for Kimi K3: unblocking local workloads with strict data residency requirements. Customers like Ultrahuman are already seeing the benefits in production: “Jade, an AI Health and Wellness assistant in the Ultrahuman app, answers questions in plain language using each person’s own Ring and glucose data, across more than 14,000 conversations a day. Kimi K3 on Amazon Bedrock let us add a leading open-weight model through the API we already use, with health data staying inside AWS and Mumbai as a fallback Region. With prompt caching, we’ve cut LLM costs by 80 percent and made multi-turn chats 85 percent faster.” — Aditya Patawari, VP Engineering, Ultrahuman In this post, we explain the different global and geographic inference options available, and share code for an example use case: optical character recognition (OCR) and understanding of Indic-language documents, with follow-up question answering in code-mixed Hinglish. Choose where inference can run Kimi K3 on Amazon Bedrock is offered through cross-Region inference profiles . You can invoke the model from any of a wide range of AWS Regions (the “source”). Amazon Bedrock then securely processes your request in one of multiple possible “destination” Regions. Cross-Region inference is fully managed by AWS: Data is encrypted in transit between Regions and remains on the AWS network, never traversing the public internet or requiring you to set up any multi-Region virtual private cloud (VPC) infrastructure. The inference profile ID you invoke controls which destination Regions are eligible: Profile Model ID When to choose it Global global.moonshotai.kimi-k3 Recommended for most use cases: lowest cost and most broadly available India geographic in.moonshotai.kimi-k3 Inference processing must stay within Mumbai and Hyderabad Regions See the Amazon Bedrock Kimi K3 model card for up-to-date information on available inference profiles, which AWS Regions they can be called from, and what destination Regions they can use for inference. Example walkthrough: Indic-language document understanding Let’s consider an example use case: reading a scanned Hind",
-    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/02/ML-22220-1-1.png",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "summary": {
-      "tldr": "Kimi K3 is a multi-modal, open-weight foundation model (FM) that provider Moonshot AI reported achieved frontier-level coding and general agentic intelligence at release. In addition to global and US-based inference, Amazon Bedrock now supports in-country inference in India for Kimi K3: unblocking local workloads with strict data residency requirements. Customers like Ultrahuman are already seeing the benefits in production: “Jade, an AI Health and Wellness assistant in the Ultrahuman app, answers questions in plain language using each person’s own Ring and glucose data, across more than 14,000 conversations a day.\n\nKimi K3 on Amazon Bedrock let us add a leading open-weight model through the API we already use, with health data staying inside AWS and Mumbai as a fallback Region. With prompt caching, we’ve cut LLM costs by 80 percent and made multi-turn chats 85 percent faster.” — Aditya Patawari, VP Engineering, Ultrahuman In this post, we explain the different global and geographic inference options available, and share code for an example use case: optical character recognition (OCR) and understanding of Indic-language documents, with follow-up question answering in code-mixed Hinglish. Choose where inference can run Kimi K3 on Amazon Bedrock is offered through cross-Region inference profiles .",
-      "takeaways": [
-        "You can invoke the model from any of a wide range of AWS Regions (the “source”).",
-        "Amazon Bedrock then securely processes your request in one of multiple possible “destination” Regions.",
-        "Cross-Region inference is fully managed by AWS: Data is encrypted in transit between Regions and remains on the AWS network, never traversing the public internet or requiring you to set up any multi-Region virtual private cloud (VPC) infrastructure.",
-        "The inference profile ID you invoke controls which destination Regions are eligible: Profile Model ID When to choose it Global global.moonshotai.kimi-k3 Recommended for most use cases: lowest cost and most broadly available India geographic in.moonshotai.kimi-k3 Inference processing must stay within Mumbai and Hyderabad Regions See the Amazon Bedrock Kimi K3 model card for up-to-date information on available inference profiles, which AWS Regions they can be called from, and what destination Regions they can use for inference."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0a382aa136fca6d9",
-    "canonicalUrl": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/",
-    "title": "Google will let schools disable its AI tools, but not without sacrificing Search",
-    "publishedAt": "2026-11-03T16:30:34.000Z",
-    "fetchedAt": "2026-11-03T19:55:59.687Z",
-    "contentHash": "4ac22df11b267c73",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Aisha Malik",
-    "contentSnippet": "Schools choosing to restrict AI altogether will no longer be able to access Google Search, as AI features are now integrated into the search engine.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Schools choosing to restrict AI altogether will no longer be able to access Google Search, as AI features are now integrated into the search engine.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f1a111e72742f0df",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-    "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-    "publishedAt": "2026-11-03T16:29:48.000Z",
-    "fetchedAt": "2026-11-03T19:56:01.560Z",
-    "contentHash": "2ac40064ee59b1c5",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well! Weight-Space Programming Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term Weight-Space Programming for when LLMs analyze and modify model weights: Just by looking at the raw weights, GPT-6 Astra can tell what a network was trained to do . And without any environment feedback, it has no trouble writing, from scratch, small game-playing networks that outplay networks trained with PPO for 100 million steps. Likewise, asked to make Qwen3.5-0.8B better at math without gradients, Astra identifies an issue in its weights causing reasoning loops that Qwen’s own model card warns about, and fixes this by natively editing 0.016% of the weights . With the same sampling settings, this weight correction raises MATH-500 from 7.9% to 48.1% and generalizes out of the box to instruction following, raising IFEval by 3x. All of this is possible without allowing Astra to write training loops. It uses its reasoning to figure out what each part of a neural network computes, or should compute, and changes the weights accordingly. We call this Weight-Space Programming . The paper combines two topics that I think deserve to be treated separately. The first is what models can do with raw weights without running tools or executing code. The second explores how well models, once armed with code, can run operations to update and improve other models. spaCy author Matthew Honnibal called the paper misleading for conflating the two, and Sean Goedecke deconstructed the Qwen3.5-0.8B update example as taking the same steps that a human ML researcher would use. I'm going to focus on the no-tools question, which I think is the more interesting of the two. The paper presents the first question as Can LLMs understand model ",
-    "category": "Open Source & Research",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well!\n\nWeight-Space Programming Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term Weight-Space Programming for when LLMs analyze and modify model weights: Just by looking at the raw weights, GPT-6 Astra can tell what a network was trained to do . And without any environment feedback, it has no trouble writing, from scratch, small game-playing networks that outplay networks trained with PPO for 100 million steps. Likewise, asked to make Qwen3.5-0.8B better at math without gradients, Astra identifies an issue in its weights causing reasoning loops that Qwen’s own model card warns about, and fixes this by natively editing 0.016% of the weights .",
-      "takeaways": [
-        "With the same sampling settings, this weight correction raises MATH-500 from 7.9% to 48.1% and generalizes out of the box to instruction following, raising IFEval by 3x.",
-        "All of this is possible without allowing Astra to write training loops.",
-        "It uses its reasoning to figure out what each part of a neural network computes, or should compute, and changes the weights accordingly.",
-        "We call this Weight-Space Programming ."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   }
