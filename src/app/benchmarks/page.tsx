@@ -173,7 +173,7 @@ export default function BenchmarksPage() {
   const labHighlights = useMemo(() => {
     const labs = [
       { id: 'google', name: 'Google DeepMind', labFilter: 'Google DeepMind', desc: 'Gemini 4 Multimodal Frontier & Orbital TPU Acceleration' },
-      { id: 'anthropic', name: 'Anthropic', labFilter: 'Anthropic', desc: 'Claude Opus 5.5 & Constitutional AI Reasoning' },
+      { id: 'anthropic', name: 'Anthropic', labFilter: 'Anthropic', desc: 'Claude Fable 5.2 & Constitutional AI Agent Swarms' },
       { id: 'openai', name: 'OpenAI', labFilter: 'OpenAI', desc: 'GPT-6 Astro & High-Throughput Reasoning Matrix' },
       { id: 'deepseek', name: 'DeepSeek', labFilter: 'DeepSeek', desc: 'DeepSeek R1 / V4 Reasoning & Ultra-Efficient Open MoE Architecture' },
       { id: 'xai', name: 'SpaceX & xAI', labFilter: 'SpaceX & xAI', desc: 'Grok 4.7 & Colossus Memphis Supercluster Compute' },
@@ -247,13 +247,13 @@ export default function BenchmarksPage() {
                 <span>AA INDEX v5</span>
               </div>
               <div className="text-3xl sm:text-4xl font-black tracking-tight text-black mb-1">
-                {topIntelligenceModel?.evaluations.intelligenceIndex ?? 59} <span className="text-base text-black/40 font-mono">/ 100</span>
+                {topIntelligenceModel?.evaluations.intelligenceIndex ?? 65} <span className="text-base text-black/40 font-mono">/ 100</span>
               </div>
               <div className="font-mono text-[10px] uppercase font-bold text-black">
-                {topIntelligenceModel?.name || 'GEMINI 4 CARBON (HIGH)'}
+                {topIntelligenceModel?.name || 'CLAUDE FABLE 5.2 (MAX)'}
               </div>
               <div className="font-mono text-[9px] uppercase text-black/50 mt-1">
-                {topIntelligenceModel?.creator.name || 'Google DeepMind'} • {topIntelligenceModel?.category || 'Frontier'}
+                {topIntelligenceModel?.creator.name || 'Anthropic'} • {topIntelligenceModel?.category || 'Frontier'}
               </div>
             </div>
 
