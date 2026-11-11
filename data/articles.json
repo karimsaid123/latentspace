@@ -1,5 +1,231 @@
 [
   {
+    "id": "65b96c238445cded",
+    "canonicalUrl": "https://openai.com/index/gilbert-tobin-sam-nickless",
+    "title": "Gilbert + Tobin rethinks the business of law with AI",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-11T01:40:24.876Z",
+    "contentHash": "98ff53fe555208d6",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Gilbert + Tobin, led by Partner and Chief Executive Officer Sam Nickless, is currently undergoing a strategic re-evaluation of its legal business model through the integration of artificial intelligence. The initiative focuses on how AI technologies are being applied to transform traditional legal service delivery and operational workflows within the firm.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "edde9887c7bce6ac",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/",
+    "title": "Introducing Kimi K3.1 Pro on Amazon Bedrock",
+    "publishedAt": "2026-11-11T01:07:19.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.585Z",
+    "contentHash": "50783c3c009ee29e",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Aris Tsakpinis",
+    "contentSnippet": "Kimi K3.1 Pro Highspeed from Moonshot AI is now available on Amazon Bedrock . Part of Moonshot AI’s new K3.1 series, it’s a post-trained version of Kimi K3 with the same 3T-class open-weight architecture and 1-million-token context window, trained with substantially more post-training compute. According to Moonshot AI, that extra training targets long-horizon agentic work and fewer factual errors. It also improves professional tasks such as financial modeling and office documents, and coding for game engines, 3D scenes, and computer-aided design (CAD) scripts. Kimi K3.1 Pro Highspeed generates output tokens at a higher rate and Moonshot AI reports 2–3 times the speed of Kimi K3.1 Pro. Kimi K3.1 Pro Highspeed uses the same endpoint, APIs, and features as Kimi K3 on Amazon Bedrock. If you already build with Kimi K3, you can try it by changing the model ID in your existing code. Kimi K3.1 Pro Highspeed supports tool calling, structured output, configurable reasoning, image input, and streaming. You can adopt Kimi K3.1 Pro Highspeed without changing your security posture. Your data is processed within the AWS data boundary, isn’t shared with Moonshot AI, and isn’t used to train the model. Zero data retention is always enabled for inference requests, and with zero operator access, AWS operators can’t view your prompts and completions during inference. In this post, we show you how to get started with Kimi K3.1 Pro Highspeed on Amazon Bedrock. We also cover how to lower costs with the Flex tier, explicit prompt caching for repeated context, and how to use the model as a coding assistant in OpenCode. Get started with Kimi K3.1 Pro Highspeed on Amazon Bedrock To try the model without writing code, open the Amazon Bedrock console , choose Test , then Playground , and select Kimi K3.1 . From code, Kimi K3.1 Pro Highspeed is available on the bedrock-runtime endpoint through the OpenAI-compatible Chat Completions and Responses APIs, and through the Amazon Bedrock Converse and Invoke APIs. We recommend the Chat Completions API. You reach the model through cross-Region inference profiles: global.moonshotai.kimi-k3.1 routes requests to any supported commercial AWS Region, and costs less per token than the geographic profiles. We recommend it for most workloads. us.moonshotai.kimi-k3.1 keeps processing within US Regions, and in.moonshotai.kimi-k3.1 keeps it within India Reg",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ml-22229-opencode-connect-dialog.png",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Moonshot AI has launched Kimi K3.1 Pro Highspeed on Amazon Bedrock, an iteration of the K3.1 series built on the 3T-class open-weight architecture. The model maintains a 1-million-token context window while incorporating significantly increased post-training compute. This optimization is specifically designed to enhance performance in long-horizon agentic workflows, reduce factual hallucinations, and improve specialized tasks including financial modeling, CAD script generation, and coding for 3D game engines.\n\nThe 'Highspeed' variant delivers output token generation rates 2–3 times faster than the standard Kimi K3.1 Pro. It maintains full compatibility with existing Kimi K3 endpoints, APIs, and features, allowing developers to switch models by updating the model ID. Supported capabilities include tool calling, structured output, configurable reasoning, image input, and streaming. The deployment adheres to AWS data privacy standards, ensuring data remains within the AWS boundary, is not shared with Moonshot AI, and is not used for model training, with zero data retention and zero operator access enabled by default.\n\nIntegration is supported via the Amazon Bedrock Converse and Invoke APIs, as well as OpenAI-compatible Chat Completions APIs. Users can access the model through cross-Region inference profiles, such as 'global.moonshotai.kimi-k3.1' for cost-optimized routing, or region-specific profiles like 'us.moonshotai.kimi-k3.1' and 'in.moonshotai.kimi-k3.1' for data residency requirements. The platform also supports cost-reduction features including the Flex tier and explicit prompt caching.",
+      "takeaways": [
+        "**Architecture:** Based on a 3T-class open-weight architecture with a 1-million-token context window.",
+        "**Performance:** The Highspeed variant achieves 2–3x faster output token generation compared to the standard Kimi K3.1 Pro.",
+        "**Data Privacy:** Operates within the AWS data boundary with zero data retention and zero operator access; prompts are not used for model training.",
+        "**API Compatibility:** Supports OpenAI-compatible Chat Completions, Amazon Bedrock Converse, and Invoke APIs.",
+        "**Inference Profiles:** Offers global routing via 'global.moonshotai.kimi-k3.1' and localized profiles for US and India regions."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "77e9052fb1721fe5",
+    "canonicalUrl": "https://www.theregister.com/software/2026/11/10/anthropic-tiptoes-into-ms-office-territory/5308988",
+    "title": "Anthropic tiptoes into MS Office territory",
+    "publishedAt": "2026-11-10T23:45:26.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.589Z",
+    "contentHash": "a7cbc7b31ed57d78",
+    "sourceId": "the-register-ai",
+    "sourceName": "The Register AI",
+    "author": "The Register AI",
+    "contentSnippet": "Anthropic has introduced three new types of artifacts that show the company tiptoeing into the office productivity market long dominated by Microsoft and Google. On Tuesday, the Claudefather announced Claude Sheets, Claude Whiteboards, and Claude Data, and promised the imminent arrival of Claude Meetings. These artifact types join existing ones – Docs, Slides, Design, and Motion – to form a nascent Claude-dependent productivity suite. Anthropic initially used the term artifacts to refer to shareable AI-based interactive tools, like dynamic charts. But the scope of the term has been stretched to cover specific artifact types, which refer to what traditionalists might take to mean files associated with specific hosted applications. \"An artifact is anything Claude makes for you that you'd put in front of someone: a design, a deck, a document, a dashboard, or a small interactive tool,\" the company explains. The key thing that distinguishes an artifact from a file is that users are meant to interact with artifacts through Claude, rather than storing and transferring them independently. Think of it more as a container or managed object that opens in Claude (via a sharing URL), because artifacts in fact consist of various content types – .txt, .md, .html, .jsx, .svg, .pptx, .docx, .zip, .pdf, and .mp4, among others. Anthropic's vision of Claude as a container for other applications goes beyond artifacts. The AI biz has also expanded its interactive connectors, which turn Claude into a landlord for other software applications. Its own promotional video for the feature hammers that point home in its title: \"Your apps have moved into Claude.\" \"Starting today, partners can embed their apps directly in Claude, so you can work in Adobe, Atlassian, and others without switching tabs,\" Anthropic said. \"Plugins from Salesforce (beta), NetSuite, and Workday (beta) come with built-in skills, so sellers can prep for a call, accountants can analyze financial data, and HR teams can handle time off and expenses.\" In a prior era, those would be fighting words. Tech companies like Apple, Google, and Microsoft have worked for years to maintain their positions as platform landlords. Anthropic's invitation to become a Claude tenant ought to set off competition alarm bells. But perhaps with LLMs being able to re-create other people's apps on demand, there's less interest in defending ap",
+    "imageUrl": "https://image.theregister.com/?imageId=5308992&width=800",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic has expanded its 'Artifacts' ecosystem, signaling a strategic pivot into the enterprise productivity market traditionally held by Microsoft and Google. The company introduced Claude Sheets, Claude Whiteboards, and Claude Data, with Claude Meetings slated for imminent release. These join existing Artifact types—Docs, Slides, Design, and Motion—to form a cohesive, Claude-centric suite. Unlike traditional files, these Artifacts function as managed, interactive objects hosted within the Claude interface, accessible via sharing URLs and supporting diverse formats including .txt, .md, .html, .jsx, .svg, .pptx, .docx, .zip, .pdf, and .mp4.\n\nBeyond native tools, Anthropic is positioning Claude as a central platform for third-party software integration. Through new interactive connectors, partners can embed applications directly into the Claude environment, eliminating the need for tab-switching. Initial integrations include Adobe and Atlassian, with Salesforce, NetSuite, and Workday currently in beta. These integrations feature built-in skills tailored for specific roles, such as sales call preparation, financial data analysis, and HR management, effectively challenging the traditional 'platform landlord' model maintained by established tech incumbents.",
+      "takeaways": [
+        "**New Artifact Types:** Anthropic added Sheets, Whiteboards, and Data to its existing suite of Docs, Slides, Design, and Motion.",
+        "**Platform Integration:** Third-party apps from Adobe, Atlassian, Salesforce (beta), NetSuite, and Workday (beta) can now be embedded directly into the Claude interface.",
+        "**Artifact Definition:** Artifacts are defined as managed, interactive containers rather than static files, supporting formats ranging from .jsx and .html to .pptx and .mp4.",
+        "**Strategic Shift:** The company is moving toward a 'landlord' model where external enterprise software functions as a tenant within the Claude ecosystem."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4f311f00d62cd1ed",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/",
+    "title": "Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search",
+    "publishedAt": "2026-11-10T23:34:05.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.585Z",
+    "contentHash": "72f41fd48c970f02",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Sundar Raghavan",
+    "contentSnippet": "AI agents increasingly handle work that depends on what changed today, such as security advisories, product releases, prices, and regulations. A model’s training data can’t answer those questions, so agents need web search. For production use, teams also need results they can cite, and control over which sources count. They want search queries to stay inside their cloud environment because those queries often reveal internal work. The Web Search API in Amazon Bedrock AgentCore is now available. It gives agents and applications current web results through a single API call, signed with the AWS credentials they already use. AWS serves every query from a web index that Amazon operates, and doesn’t send it to a third-party search engine. Each result includes the page’s title, URL, publication date, and an extract relevant to the query. Requests can include or exclude domains, and limit results to a publication date range. On AWS Lambda , Amazon Elastic Container Service (Amazon ECS) , or Amazon Bedrock AgentCore runtime , your agent calls the API with its execution role. There’s no search API key to store or rotate. Web Search on Amazon Bedrock AgentCore is also available through AgentCore Gateway , a capability of Amazon Bedrock AgentCore. There, one administrator source policy covers every agent and Model Context Protocol (MCP) client. For LangChain developers, the AgentCore web search tool in LangChain’s AWS integration now calls the Web Search API. One function call gives an agent current, cited search results. The tool can also hold rules that the model can’t change, such as a date window, a source blocklist, and a search budget. It returns its results as data that your code can check. It works with LangChain agents, with LangGraph , the orchestration framework that runs them, and with Deep Agents , which adds subagents, a virtual filesystem, and context compression. In this post, you build a daily dependency watch for a security team as a LangGraph graph on the Web Search API. Every morning, the watch checks whether anything new affects the open source packages and container base images the team ships. It researches three package ecosystems in parallel, while your code keeps the date window, the blocklist, and the search budget out of the model’s control. It checks each finding against the sources it cites and remembers what it already reported. Then you r",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/06/ML-22037-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has launched the Web Search API within Amazon Bedrock AgentCore, providing agents with real-time web access via AWS-managed infrastructure. Unlike third-party search integrations, this service operates entirely within the AWS environment, ensuring that search queries remain private and authenticated via standard AWS execution roles rather than external API keys. The API returns structured data including page titles, URLs, publication dates, and query-relevant extracts, while supporting granular controls such as domain filtering, date range constraints, and search budget limits.\n\nThe service integrates directly with LangChain’s AWS integration, allowing developers to incorporate cited search results into LangGraph workflows and Deep Agents. Administrators can enforce global search policies via AgentCore Gateway, which applies consistent rules—such as source blocklists and temporal windows—across all agents and Model Context Protocol (MCP) clients. This architecture enables the construction of automated monitoring systems, such as daily dependency watchers, that can perform parallel research across multiple package ecosystems while maintaining strict, code-level control over the search parameters that the underlying LLM cannot override.",
+      "takeaways": [
+        "**Authentication:** Uses standard AWS execution roles for API access, eliminating the need for external search API key management or rotation.",
+        "**Data Privacy:** Queries are processed through an Amazon-operated web index, ensuring search traffic does not transit to third-party search providers.",
+        "**Policy Enforcement:** AgentCore Gateway allows administrators to set immutable rules for agents, including domain blocklists, date windows, and search budget caps.",
+        "**Integration:** Native support for LangChain, LangGraph, and Deep Agents, enabling the creation of autonomous agents that perform parallel research and citation-backed reporting."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "dba183e7e6624faa",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/10/meta-fair-e-means-k-means-faiss/",
+    "title": "Meta FAIR Releases e-means: An Algorithm Beating k-means in 10x Fewer Epochs",
+    "publishedAt": "2026-11-10T23:20:19.000Z",
+    "fetchedAt": "2026-11-11T01:40:24.453Z",
+    "contentHash": "abc953f2551580de",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Meta FAIR researchers have released e-means , a drop-in replacement for Lloyd’s k-means algorithm. The e-means clustering algorithm reaches the loss Lloyd’s k-means gets in 25 epochs in 1.4 to 2.6 epochs . It ships in FAISS 1.16.0 under faiss.contrib.e_means . For anyone building vector indexes, quantizers or data-curation pipelines, clustering is often the slowest offline step. e-means targets exactly that step. TL;DR Size: It is an algorithm. Tested from 100K to 10 billion points, up to 16.7M clusters. Runs on: CPU or GPU, with PyTorch tensors or NumPy. Paper GPU runs use H100s. Performance: Lower loss than Lloyd’s k-means in roughly one-tenth the epochs, across 24 dataset configurations (self-reported). Best: 10-45x GPU wall-clock speedup over Flash-KMeans at equal loss. Worst: 16M-centroid runs need 64 GiB of float32 accumulators, so centroids must be sharded across GPUs. What is e-means? e-means is a mini-batch k-means algorithm from Meta FAIR that updates centroids with exponential moving averages. How does e-means work? Every k-means variant keeps a sum S and a count N per cluster. The centroid is S divided by N. Methods differ only in how S and N change. Lloyd recomputes S and N from the full dataset each iteration. MacQueen (1967) keeps adding batch statistics forever, so stale assignments never leave. e-means decays old statistics at rate α: S ← (1−α)S + αs, and the same for N. Older assignments fade, so centroids track recent data. The research team expa Lloyd is a corner case: full batch with α = 1. On DEEP, that corner sits 1.8% above the best loss. The team tested plain gradient descent as an alternative. At its best setting, it ended 1.6% (DEEP) and 0.4% (SIFT) above EMA. The authors suspect EMA wins because centroids always stay inside the hull of their assigned points. What replaces hyperparameter tuning? Two fitted scaling laws set batch size B and initial step α0 from dataset size n, cluster count k and epochs T. On held-out datasets, median regret was 0.07% for the step law. The step then follows a cosine schedule from α0 to 0.1α0. What else changed? Dead-cluster revival: clusters below a size threshold are revived by splitting a large cluster. Finalization: training ends on each cluster’s exact last-epoch mean. Fused GPU kernels: nearest-centroid assignment is fused, so saved epochs become saved seconds. [EMBED: e-means interactive expla",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Meta FAIR has introduced e-means, a drop-in replacement for Lloyd’s k-means clustering algorithm, now available in FAISS version 1.16.0 under the namespace faiss.contrib.e_means. Designed to accelerate vector indexing and data curation pipelines, e-means utilizes exponential moving averages (EMA) to update centroids, allowing it to achieve the same loss as Lloyd’s k-means in approximately one-tenth of the epochs. The algorithm is compatible with both CPU and GPU environments, supporting PyTorch tensors and NumPy arrays, and has been validated on datasets ranging from 100,000 to 10 billion points with up to 16.7 million clusters.\n\nTechnically, e-means improves upon traditional mini-batch k-means by decaying old statistics at a rate α, ensuring centroids effectively track recent data without the stale assignment issues found in MacQueen’s method. The implementation features fused GPU kernels for nearest-centroid assignment, dead-cluster revival via splitting, and a finalization step that calculates exact means on the final epoch. Performance benchmarks across 24 configurations show a 10-45x GPU wall-clock speedup over Flash-KMeans at equivalent loss levels. For large-scale deployments, such as 16-million-centroid runs, the algorithm requires 64 GiB of float32 accumulators, necessitating centroid sharding across multiple GPUs.",
+      "takeaways": [
+        "**Performance Metric:** e-means achieves target loss in 1.4 to 2.6 epochs compared to 25 epochs for Lloyd’s k-means.",
+        "**Scaling Laws:** The algorithm replaces manual hyperparameter tuning with two fitted scaling laws that determine batch size and initial step α0 based on dataset size, cluster count, and epoch count.",
+        "**Hardware Requirements:** Large-scale runs with 16M centroids require 64 GiB of float32 memory for accumulators, requiring multi-GPU sharding.",
+        "**Comparison:** e-means outperformed plain gradient descent by 1.6% on the DEEP dataset and 0.4% on the SIFT dataset.",
+        "**Implementation:** The algorithm is integrated into FAISS 1.16.0 and utilizes a cosine schedule for the decay rate α, transitioning from α0 to 0.1α0."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1ac123525914ae46",
+    "canonicalUrl": "https://siliconangle.com/2026/11/10/mercor-raises-750m-at-20b-valuation-to-take-ai-agent-evaluation-to-enterprises/",
+    "title": "Mercor raises $750M at $20B valuation to take AI agent evaluation to enterprises",
+    "publishedAt": "2026-11-10T22:45:50.000Z",
+    "fetchedAt": "2026-11-11T01:40:24.452Z",
+    "contentHash": "b8bf91ccb30a7ab0",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Duncan Riley",
+    "contentSnippet": "UPDATED 17:45 EST / NOVEMBER 10 2026\n\nMercor raises $750M at $20B valuation to take AI agent evaluation to enterprises\n\nArtificial intelligence training data company Mercor.io Corp. today revealed that it has raised $750 million in new funding at a $20 billion valuation.\n\nMercor provides the human expertise used to train and evaluate AI models, drawing on a network of more than 5 million domain experts. Most of that work so far has been for frontier AI labs. The new funding is aimed at taking it to enterprises in every industry, which Mercor argues need their own way to measure whether an AI agent can be trusted with a job.\n\nCo-Chief Executive Brendan Foody said “every job in the economy” will need its own AI agents and that companies will need a way to train and evaluate them on their own work. Mercor spent the past two years building that infrastructure with the frontier labs. The lab business has grown fast. Foody said in a post on X in July that annualized revenue had passed $2 billion in June.\n\nAdarsh Hiremath, Mercor’s other co-chief executive, said a model can score well on a public benchmark and still fail on “the systems, policies and edge cases that define how a specific business runs.” For each enterprise customer, Mercor builds a custom benchmark that measures models against that company’s own standards. Post-training starts from there.\n\nPart of that post-training runs on software from Deeptune Inc. Mercor bought the New York startup in July , and its team had spent the two years before that recreating hundreds of enterprise applications for AI agents to practice on. The company said the new money will pay for research and evaluation infrastructure, including more of those environments.\n\nMercor did not name a lead investor for the Series D round, which drew corporate money from Nvidia Corp., Salesforce Inc. and Zoom Communications Inc. Returning investors Benchmark Capital Management Co., Felicis Ventures Management Co. and General Catalyst Group Management also participated. Other investors in the round were Fundomo, G Squared Equity Management LP, Glade Brook Capital Partners, Sapphire Ventures, StepStone Group Inc., XTX Ventures and funds managed by affiliates of Apollo Global Management Inc.\n\nThe last round came in October 2025 , when Felicis led a $350 million Series C round that valued Mercor at $10 billion. Foody’s blog post on the new rou",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Mercor.io Corp., a provider of human-expert-driven training and evaluation data for AI models, has raised $750 million in a Series D funding round, bringing its valuation to $20 billion. The company, led by co-CEOs Brendan Foody and Adarsh Hiremath, utilizes a network of over 5 million domain experts to help frontier AI labs train and validate models. Having previously focused on frontier labs, Mercor is now pivoting to provide enterprise-grade evaluation infrastructure, enabling businesses to test AI agents against their specific internal systems, policies, and edge cases.\n\nThe company’s technical approach involves creating custom benchmarks for each enterprise client, moving beyond generic public benchmarks that often fail to capture business-specific requirements. This process is supported by technology from Deeptune Inc., a New York-based startup acquired by Mercor in July. Deeptune spent two years recreating hundreds of enterprise applications to serve as practice environments for AI agents. Mercor reported annualized revenue exceeding $2 billion as of June 2026, marking significant growth from its $10 billion valuation in October 2025.\n\nThe Series D round included participation from corporate investors Nvidia, Salesforce, and Zoom, alongside returning investors Benchmark Capital, Felicis Ventures, and General Catalyst. Other participants included Sapphire Ventures, StepStone Group, and Apollo Global Management affiliates. The funding will be directed toward expanding research and evaluation infrastructure, including the development of additional simulated enterprise environments for agent training.",
+      "takeaways": [
+        "**Valuation & Funding:** Mercor raised $750 million at a $20 billion valuation, doubling its valuation from the $10 billion mark set in October 2025.",
+        "**Revenue Scale:** The company reached an annualized revenue run rate of over $2 billion as of June 2026.",
+        "**Expert Network:** Mercor leverages a proprietary network of more than 5 million domain experts to provide human-in-the-loop training and evaluation data.",
+        "**Strategic Acquisition:** Mercor acquired Deeptune Inc. in July, integrating software that simulates hundreds of enterprise applications to train AI agents on specific business workflows.",
+        "**Investor Syndicate:** The Series D round featured corporate backing from Nvidia, Salesforce, and Zoom, alongside venture firms including Benchmark, Felicis, and General Catalyst."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b7cb8b2840188c70",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore/",
+    "title": "The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations",
+    "publishedAt": "2026-11-10T22:35:03.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.585Z",
+    "contentHash": "f53386120b8a3155",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Bharathi Srinivasan",
+    "contentSnippet": "When you deploy an agent to production, one of the hardest questions is whether it’s actually working? The bar isn’t whether it runs. It’s whether it does what the business needs, at scale. Many teams will tell you they can’t really see this. They spot-check outputs, watch latency, and collect user feedback when they can get it. None of that tells you whether the agent finished the user’s task, stayed on topic across a long session, leaked personally identifiable information (PII), or quietly skipped half the steps it was supposed to follow. Figure 1: Teams usually watch surface signals, but business outcomes are decided by the agent behaviors below the waterline Agent evaluation solves this problem. What makes this challenging is that a good score on one metric can hide a failure on another. A support agent can resolve every ticket and still expose personal information in its replies. In this case, the agent is failing although it has a high completion rate. To get evaluation right, measure the behaviors that matter for each agent, at the right level of detail. This post shows how to do this on Amazon Bedrock AgentCore. We use the AgentCore built-in evaluators together with the DeepEval and AutoEval evaluators directly from AgentCore Evaluations. Start with business outcomes, instead of metric names The most common mistake is to start with the metric list and pick the names that sound right. “Helpfulness sounds good, so we use it.” The result runs and produces numbers, but it gives almost no useful insight. The metric fits its label, not what success means for the agent. Instead, start with three steps. Define success in business terms. For a customer support agent, that might be first-contact resolution. For a research agent, it might be producing a complete, well-sourced answer grounded entirely in retrieved documents. For a content moderation assistant, it means flagging everything that should be flagged and only what should be flagged. Break the outcome into observable behaviors. A customer support agent that achieves first-contact resolution will typically complete the user’s stated goal, stay coherent across turns when the issue requires clarification, keep responses within compliance boundaries, and correctly invoke backend tools like ticket creation or order lookup. Map each behavior to an evaluator at the right level. Trace-level metrics cover per-",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21893-1.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon Bedrock AgentCore is positioning itself as a framework for production-grade agent evaluation, moving beyond surface-level monitoring like latency or spot-checking to focus on business-outcome-driven metrics. The platform integrates built-in evaluators with third-party tools DeepEval and AutoEval to address complex failure modes such as PII leakage, task abandonment, and multi-turn incoherence that traditional monitoring often misses.\n\nThe methodology emphasizes defining success through specific business outcomes—such as first-contact resolution for support agents or source-grounded accuracy for research agents—rather than generic performance metrics. By decomposing these outcomes into observable behaviors, developers can map specific evaluation tasks to trace-level metrics, ensuring that agents are measured against their functional requirements rather than arbitrary benchmarks.",
+      "takeaways": [
+        "**Evaluation Framework:** Amazon Bedrock AgentCore integrates native evaluators with DeepEval and AutoEval to monitor agent performance.",
+        "**Failure Modes:** The framework targets critical production issues including PII leakage, multi-turn topic drift, and incomplete task execution.",
+        "**Methodology:** The recommended workflow requires defining success via business outcomes (e.g., first-contact resolution) before selecting specific evaluation metrics.",
+        "**Granularity:** The approach advocates for mapping business-level goals to trace-level metrics to ensure compliance and functional accuracy."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b5fcfd132ce760cd",
+    "canonicalUrl": "https://siliconangle.com/2026/11/10/financial-institutions-confront-complexities-of-scaling-ai-awsfinserv/",
+    "title": "Financial institutions confront the complexities of scaling AI",
+    "publishedAt": "2026-11-10T22:05:29.000Z",
+    "fetchedAt": "2026-11-11T01:40:24.452Z",
+    "contentHash": "3c1caf8836517bf9",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Krystle Vermes",
+    "contentSnippet": "UPDATED 17:05 EST / NOVEMBER 10 2026\n\nFinancial institutions confront the complexities of scaling AI\n\nAI in financial services is moving beyond the pilot phase as banks, capital markets firms, mortgage lenders and other organizations begin deploying the technology more broadly. The challenge is shifting toward managing AI responsibly at scale while meeting strict requirements for security, compliance and customer trust.\n\nThe AWS Financial Services Symposium highlighted that transition in May. As financial institutions expand their use of AI, they have opportunities to test new applications without committing to large-scale deployments, according to Scott Mullins , former general manager of AWS Worldwide Financial Services at Amazon Web Services Inc.\n\n“You can spin this stuff up really quickly; you can experiment with it,” he said during the symposium . “You can show that it actually achieves the things that you want to achieve within specific policy guidelines and frameworks, and you can actually evaluate whether that governance is holding.”\n\nThis feature is part of SiliconANGLE Media’s ongoing coverage of the AWS Financial Services Symposium. (* Disclosure below.)\n\nFrom AI pilots to regulated production\n\nMoving AI from experimentation into production requires financial institutions to address a different set of challenges. Beyond demonstrating that the technology works, organizations must establish the governance and operational safeguards needed to support AI across regulated business processes, according to Paul Nashawaty , practice lead and principal analyst for application development at theCUBE Research.\n\n“Our AppDev research shows that 92% of organizations now integrate AI into at least one stage of the software delivery lifecycle, yet only about one-third have established the governance, security, and operational maturity required for production-scale AI,” he said. “In banking, capital markets and insurance, the gap is even more pronounced because compliance, explainability, and customer trust are non-negotiable. The next phase of AI adoption will be defined less by model performance and more by platforms that embed policy controls, auditability and security into AI-enabled workflows while improving customer experiences and operational efficiency.”\n\nInfosys Ltd. is addressing those requirements through its AI platform, which incorporates safeguards a",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Financial institutions are transitioning AI initiatives from pilot programs to production-scale deployments, shifting the primary challenge from model performance to governance, security, and regulatory compliance. According to theCUBE Research, while 92% of organizations integrate AI into software delivery lifecycles, only one-third possess the operational maturity required for production-scale AI. This gap is particularly acute in banking and insurance, where auditability, explainability, and policy controls are non-negotiable requirements for automated decision-making systems.\n\nTo address these hurdles, firms are focusing on cloud modernization and infrastructure resilience. Notable examples include New York Life Insurance Co. using AI to automate manual tasks, Fifth Third Bank leveraging Amazon Connect for conversational AI to reduce call-handling times, and PennyMac Financial Services expanding its AWS partnership to modernize its 'Plaisse' mortgage servicing platform. Industry providers are responding with specialized tooling, such as Infosys' AI platform featuring built-in guardrails and NetApp’s ONTAP storage solutions for AWS, which provide native ransomware detection and data replication to support AI-intensive workloads.",
+      "takeaways": [
+        "**Industry Adoption Metrics:** PagerDuty’s 2026 State of AI-First Operations report indicates 59% of banks are actively incorporating AI into operations, with 34% in the discussion phase.",
+        "**AWS Investment:** Amazon Web Services has committed $1 billion toward forward-deployed engineering to accelerate the development and deployment of agentic AI applications.",
+        "**Operational Maturity Gap:** Only approximately 33% of organizations have established the necessary governance and security frameworks for production-scale AI, despite 92% utilizing AI in software delivery.",
+        "**Infrastructure Integration:** NetApp’s ONTAP for AWS is being utilized by financial firms to manage data migration and resilience, specifically leveraging space-efficient snapshots and native ransomware detection engines."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "f8293cdb10f997f1",
     "canonicalUrl": "https://siliconangle.com/2026/11/10/anthropic-launches-ipo-roadshow-with-64b-fundraising-goal/",
     "title": "Anthropic launches IPO roadshow with $64B fundraising goal",
@@ -356,20 +582,23 @@
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Jay Peters",
-    "contentSnippet": "ChatGPT is going to let you chat with verified \"Business Agents\" that represent a brand to help you with things like comparison shopping. The feature, available first to \"eligible\" e-commerce and online service businesses in the US, is launching as part of a suite of business-focused features in ChatGPT being announced today in beta . You can start talking with a Business Agent if a business that has created one appears in a response from ChatGPT. While chatting with a custom agent, you can ask about a business's offerings and ask follow-up questions, like asking about differences between two different products. Businesses can specify a Busi … Read the full story at The Verge.",
+    "contentSnippet": "ChatGPT is going to let you chat with verified “Business Agents” that represent a brand to help you with things like comparison shopping. The feature, available first to “eligible” e-commerce and online service businesses in the US, is launching as part of a suite of business-focused features in ChatGPT being announced today in beta. You can start talking with a Business Agent if a business that has created one appears in a response from ChatGPT. While chatting with a custom agent, you can ask about a business’s offerings and ask follow-up questions, like asking about differences between two different products. Businesses can specify a Business Agent’s instructions and provide business context so that the agent knows how to respond. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Business-Agent-Setup.png?quality=90&strip=all] Chats with Business Agents will be clearly labeled and separate from your main ChatGPT conversation, OpenAI says. To help people know that they’re talking with an agent that actually represents the business, companies will be able to claim their organization and get verified through a feature called Business Hub. (OpenAI isn’t sharing specifics about its verification methods because there are different methods for different businesses, VP of monetization Benji Shomair said in a press briefing.) Business Hub will also let companies see insights such as mentions in ChatGPT responses and top “discovery topics” where their business pops up. “Today’s announcement is an early step in bringing businesses more deeply into ChatGPT,” OpenAI says in a blog post. “We’re starting with the foundations: accurate business information, useful insights and conversations that help people make informed decisions.” As things evolve, “we’ll explore more ways for businesses to connect with customers — directly or through agents and in ChatGPT and beyond. Our goal is to make ChatGPT more useful for people making decisions, and give businesses new ways to participate and grow.”",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Business-Agent-Customer-Conversation.png?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
     "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "ChatGPT is going to let you chat with verified \"Business Agents\" that represent a brand to help you with things like comparison shopping. The feature, available first to \"eligible\" e-commerce and online service businesses in the US, is launching as part of a suite of business-focused features in ChatGPT being announced today in beta . You can start talking with a Business Agent if a business that has created one appears in a response from ChatGPT.",
+      "tldr": "OpenAI has launched 'Business Agents' for ChatGPT, a new feature allowing e-commerce and online service businesses in the U.S. to deploy verified AI representatives to interact directly with users. These agents are designed to assist with tasks such as product comparison and answering specific queries about a company's offerings. Businesses can configure these agents by providing custom instructions and proprietary context, ensuring the AI adheres to brand-specific guidelines during customer interactions.\n\nTo ensure authenticity, OpenAI is introducing a 'Business Hub' where companies can claim their organization and undergo a verification process. While specific verification protocols remain undisclosed, the Business Hub provides companies with analytics, including tracking how often their brand is mentioned in ChatGPT responses and identifying the top 'discovery topics' that lead users to their business. These agent-led conversations are visually distinct from standard ChatGPT threads, appearing in separate, clearly labeled interfaces to maintain transparency for the user.",
       "takeaways": [
-        "While chatting with a custom agent, you can ask about a business's offerings and ask follow-up questions, like asking about differences between two different products.",
-        "Businesses can specify a Busi … Read the full story at The Verge."
+        "**Geographic Availability:** The Business Agents feature is currently limited to eligible e-commerce and online service businesses operating within the United States.",
+        "**Verification Mechanism:** Companies must claim their organization via the new 'Business Hub' to receive verification, though OpenAI has not disclosed the specific criteria used for this process.",
+        "**Analytics Suite:** The Business Hub provides participating companies with data on brand mentions and 'discovery topics' to track how their business is surfaced in AI responses.",
+        "**User Interface:** Conversations with Business Agents are separated from standard ChatGPT chat history and are explicitly labeled to distinguish them from general AI interactions."
       ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -382,17 +611,24 @@
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Jay Peters",
-    "contentSnippet": "Some Independent Games Festival (IGF) jurors published a statement yesterday saying they would not vote for games that use generative AI in \"any capacity.\" Soon after, the developer of indie hit Big Walk has published a statement saying it \"sparingly\" used AI in the \"final stretch\" of the game's development to \"help work through difficult technical challenges and bugs.\" According to the jurors' statement , a copy of which was posted by Austin Walker, while this year's IGF entries have been \"incredible,\" there has been \"a significant increase\" in the number of games \"developed with generative AI tools,\" leading to \"fairly intense discussion a … Read the full story at The Verge.",
+    "contentSnippet": "Some Independent Games Festival (IGF) jurors published a statement yesterday saying they would not vote for games that use generative AI in “any capacity.” Soon after, the developer of indie hit Big Walk has published a statement saying it “sparingly” used AI in the “final stretch” of the game’s development to “help work through difficult technical challenges and bugs.” According to the jurors’ statement, a copy of which was posted by Austin Walker, while this year’s IGF entries have been “incredible,” there has been “a significant increase” in the number of games “developed with generative AI tools,” leading to “fairly intense discussion and disagreement” with no “universal consensus.” The statement includes a list of beliefs, including that generative AI has “negative effects,” that AI-generated code is “not an exception to these harms,” and that use of AI tools is “not a forgone conclusion in our industry.” IGF jurors that signed include Telling Lies and Immortality creator Sam Barlow and Celeste composer Lena Raine. The jurors say that the statement doesn’t speak for IGF as an organization or for all IGF jury members, noting that some voiced concern about being able to safely sign “without professional blowback.” [Media: https://bsky.app/profile/austinwalker.bsky.social/post/3mzvyqaxnzc2w] One contentious title was apparently Big Walk, the co-op adventure game from Untitled Goose Game developer House House. In a statement to Aftermath and posted on its website, House House said that “In some cases, snippets from LLM responses were copied as a starting point to be modified into game code—we’d estimate that well under 0.1% of Big Walk’s code had anything to do with this usage, and generative AI was not used in any other context when making the game.” House House said its “primary use case” of LLMs was “to research, via chatbots, issues we encountered with third-party code,” including fixing an issue with shadows by modifying LLM-suggested code. House House noted it turned to the “LLM chatbot” after researching the problem “extensively” and even speaking to an engineer at Unity. The studio said it disclosed its AI usage as part of its IGF submission, though it has not disclosed AI usage on Big Walk’s Steam page because “the platform does not request disclosure of code or chatbot usage.” “This is not an endorsement of, or argument for, the use of AI tools, h",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/BigWalk_Screenshot_Jun26_01.png?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Some Independent Games Festival (IGF) jurors published a statement yesterday saying they would not vote for games that use generative AI in \"any capacity.\" Soon after, the developer of indie hit Big Walk has published a statement saying it \"sparingly\" used AI in the \"final stretch\" of the game's development to \"help work through difficult technical challenges and bugs.\" According to the jurors' statement , a copy of which was posted by Austin Walker, while this year's IGF entries have been \"incredible,\" there has been \"a significant increase\" in the number of games \"developed with generative AI tools,\" leading to \"fairly intense discussion a … Read the full story at The Verge.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "A group of Independent Games Festival (IGF) jurors has issued a statement declaring their refusal to vote for games utilizing generative AI in any capacity, citing concerns over the technology's negative industry impact. The statement, signed by notable figures including Sam Barlow and Lena Raine, highlights a growing divide within the indie community regarding the integration of AI tools in development. While the jurors clarified that their stance does not represent the official policy of the IGF organization, they noted that many members fear professional repercussions for publicly opposing AI usage in submissions.\n\nThe controversy intensified following disclosures regarding 'Big Walk,' the upcoming co-op adventure game from House House, the studio behind 'Untitled Goose Game.' House House confirmed that they used LLMs to troubleshoot technical issues and bugs during the final stages of development, estimating that less than 0.1% of the game's total code involved LLM-generated snippets. The studio disclosed this usage in their IGF submission but not on their Steam page, noting that the platform does not require such disclosures. House House acknowledged the lack of an internal AI policy during development as a failure and expressed support for efforts to limit the harms of generative AI in the industry.\n\nSam Barlow clarified that 'Big Walk' was not the specific catalyst for the jurors' statement but served as a complex edge case for evaluating 'minimal' AI usage. The jurors emphasized that their position is intended to define the values of the IGF awards as an alternative to mainstream development rather than a call to boycott specific titles or developers. The discussion remains ongoing as the community grapples with establishing standards for AI transparency and ethical development practices.",
+      "takeaways": [
+        "**IGF Juror Stance:** A group of jurors, including Sam Barlow and Lena Raine, declared they will not vote for games using generative AI in any capacity.",
+        "**Big Walk AI Usage:** Developer House House estimated that less than 0.1% of 'Big Walk' code involved LLM-generated snippets, used primarily for troubleshooting third-party code and shadow-related bugs.",
+        "**Disclosure Practices:** House House disclosed their AI usage to the IGF but did not list it on their Steam page, citing a lack of platform requirements for such disclosures.",
+        "**Policy Failure:** House House admitted they lacked a formal AI policy during the development of 'Big Walk' and committed to establishing a more comprehensive policy for future projects.",
+        "**Juror Motivation:** The jurors stated their position is focused on defining the identity of the IGF awards rather than economically targeting specific developers or games."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -405,7 +641,7 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Aisha Malik",
-    "contentSnippet": "As participants talk, Claude can draft the plan being discussed, map out a timeline on a whiteboard, answer questions in the meeting chat, and access connected work apps to retrieve information, such as last year's figures.",
+    "contentSnippet": "Anthropic announced new workplace features on Tuesday, including Claude Meetings, which brings Claude into video calls to begin working on tasks while participants are still talking. The company also unveiled Claude Whiteboards and Claude Sheets.\n\nThe launch of Anthropic’s new productivity-focused features comes just a few weeks after OpenAI unveiled a series of workplace tools that allow users to collaborate with ChatGPT to do things like visualize company information and create presentations, as both companies compete to turn their products into office suites of sorts to take on Microsoft and Google. Meta is also joining the competition with its Muse AI agent, which can build mini-apps on the fly to help users complete specific tasks.\n\nWith Claude Meetings, teams can add Claude to a video call as a visible participant. Claude then follows the conversation and gets to work on tasks in real time. As participants talk, it can draft the plan being discussed, map out a timeline on a whiteboard, answer questions in the meeting chat, and access connected work apps to retrieve information, such as last year’s figures. After the call, the meeting notes, action items, and other materials Claude created are available in claude.ai.\n\nThe work that comes out of a meeting usually starts after everyone hangs up, but with this new feature, teams can turn discussions into actions in real time, Anthropic says.\n\nClaude identifies itself as a meeting participant and posts a notice in the meeting chat. It won’t join calls with external guests unless authorized by an admin, and will automatically leave if an external guest joins.\n\nClaude Meetings is launching in beta on Team and Enterprise plans. At launch, it works with Google Meet, with support for additional plans expected to follow.\n\nAs for Claude Whiteboards, Anthropic describes the feature as a collaborative board where teams can talk through a plan and have Claude turn it into an organized visual workspace with timelines and deadlines.\n\nThe company notes that many people already brainstorm with Claude, but that in order to share their results with others, they would have to copy-paste them somewhere else. Now, a team can work directly with Claude on the same board in real time.\n\nWhen the brainstorm is done, Claude can turn the board into a doc or a slide deck. Additionally, Whiteboards also work inside Claude Meetings, so",
     "category": "Business & Big Tech",
     "lab": "Anthropic",
     "entryType": "DISPATCH",
@@ -427,19 +663,24 @@
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Hayden Field",
-    "contentSnippet": "For years, Anthropic has been known for its focus on enterprise and coding tools that attract high-flying corporate clients, inspiring competing frontier labs - like OpenAI, SpaceXSI, and Meta - to copy its strategies . Earlier this year, Claude Code went through its own particular hype cycle . And now, Anthropic is trying to expand its footprint to other knowledge workers with an AI-powered suite of office tools. At an event in San Francisco on Tuesday, Anthropic unveiled new tools for non-technical workers who spend a lot of time attending meetings, brainstorming new ideas, and analyzing metrics: Claude Meetings, Claude Sheets, and Claude W … Read the full story at The Verge.",
+    "contentSnippet": "For years, Anthropic has been known for its focus on enterprise and coding tools that attract high-flying corporate clients, inspiring competing frontier labs — like OpenAI, SpaceXSI, and Meta — to copy its strategies. Earlier this year, Claude Code went through its own particular hype cycle. And now, Anthropic is trying to expand its footprint to other knowledge workers with an AI-powered suite of office tools. At an event in San Francisco on Tuesday, Anthropic unveiled new tools for non-technical workers who spend a lot of time attending meetings, brainstorming new ideas, and analyzing metrics: Claude Meetings, Claude Sheets, and Claude Whiteboards. The tools allow for Claude to join a meeting, take notes, lay out ideas on a shared whiteboard, edit spreadsheets alongside employees, or turn a presentation into a one-minute explainer video. The new “Artifacts,” or Anthropic’s version of graphical UI, come two and a half years after Artifacts first debuted, and join existing tools like Claude Docs, Slides, Design and Motion. Claude Whiteboards, Sheets, and Meetings are all now available in beta, with the first two available to all paid plans and Meetings available for Teams and Enterprise subscriptions. The company also announced that Claude Data (formerly known as Claude Dashboards when it was introduced in beta in October) is now generally available to all paid plans. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Claude-Artifacts-All-Press.png?quality=90&strip=all] Nicholas Lin, who works on product at Anthropic, told The Verge in a pre-briefing that Claude Code “changed how engineers work a year ago” — and now, the company is looking to knowledge workers as “the gap we’re hoping to close.” “I think there’s still a lot of friction when it comes to adopting AI for non-developers,” he said. The company also unveiled new interactive connectors that allow for users to open apps from partnered companies, such as HubSpot, Adobe, and Atlassian, inside Claude. The company launched Model Context Protocol about two years ago, and its marketplace of tools has grown to more than 9,000 plugin options; now, Lin says, the company is looking to make those connections a lot deeper, so that users don’t have to switch tabs to access the services they use every day and instead just embed them into Claude. For example, with the new tools, people can a",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/05/STKB364_CLAUDE_2_C_96d15c.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
     "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "For years, Anthropic has been known for its focus on enterprise and coding tools that attract high-flying corporate clients, inspiring competing frontier labs - like OpenAI, SpaceXSI, and Meta - to copy its strategies . Earlier this year, Claude Code went through its own particular hype cycle . And now, Anthropic is trying to expand its footprint to other knowledge workers with an AI-powered suite of office tools.",
+      "tldr": "Anthropic has expanded its enterprise product suite with three new AI-powered tools for non-technical knowledge workers: Claude Meetings, Claude Sheets, and Claude Whiteboards. These tools, which leverage the company's Artifacts graphical UI, allow users to automate meeting note-taking, collaborate on spreadsheets, and visualize brainstorming sessions directly within the Claude interface. Additionally, the company announced the general availability of Claude Data (formerly Claude Dashboards) for all paid plans. These releases represent a strategic shift to capture the broader knowledge worker market, moving beyond the developer-centric focus of previous tools like Claude Code.\n\nTo reduce context-switching, Anthropic introduced \"interactive connectors\" that embed third-party applications directly into the Claude environment. Users can now access native integrations for platforms including HubSpot, Adobe, and Atlassian. This expansion builds upon the Model Context Protocol, which now supports over 9,000 plugin options. While Claude Sheets and Whiteboards are available to all paid plans, Claude Meetings is restricted to Teams and Enterprise subscriptions. The move positions Anthropic to compete directly with Google’s Gemini and OpenAI’s ChatGPT, both of which offer similar meeting-transcription and spreadsheet-integration capabilities, as the company seeks to demonstrate revenue growth and product engagement ahead of a potential IPO.",
       "takeaways": [
-        "At an event in San Francisco on Tuesday, Anthropic unveiled new tools for non-technical workers who spend a lot of time attending meetings, brainstorming new ideas, and analyzing metrics: Claude Meetings, Claude Sheets, and Claude W … Read the full story at The Verge."
+        "**New Toolset:** Anthropic launched Claude Meetings, Claude Sheets, and Claude Whiteboards to target non-technical knowledge workers.",
+        "**Availability:** Claude Sheets and Whiteboards are available to all paid plans, while Claude Meetings is limited to Teams and Enterprise tiers.",
+        "**Interactive Connectors:** New integrations allow users to run third-party apps like HubSpot, Adobe, and Atlassian natively within the Claude interface.",
+        "**Ecosystem Growth:** The Model Context Protocol now supports over 9,000 plugin options for the Claude platform.",
+        "**Strategic Context:** The product expansion is part of an effort to increase revenue and engagement metrics ahead of a highly anticipated public offering."
       ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -487,8 +728,8 @@
         "Second, it had to cover both API and browser-based UI testing to match how BFSI applications are built.",
         "Third, security is paramount, so every tenant’s data and knowledge store must be isolated."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Medium",
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -516,7 +757,7 @@
         "The AWS CloudFormation templates, AWS Lambda code, and SQL queries are all in the AWS Sample Bedrock Invocation Data Lake GitHub repository ."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -618,8 +859,8 @@
         "Securing AI Agents in the Open NVIDIA’s contribution of OpenShell to CNCF puts security infrastructure for autonomous agents in the community’s hands to build, inspect and improve — accelerating development and hardening its safeguards.",
         "“The cloud-native community has a new infrastructure challenge: giving agents secure environments in which to operate,” said Jim Zemlin, CEO of the Linux Foundation."
       ],
-      "impact": "High",
-      "readTimeMinutes": 5,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -683,7 +924,7 @@
     "contentSnippet": "Zyphra has released ZONOS3-Mini , an open-source text-to-speech model built for real-time use on local devices. The ZONOS3-Mini text-to-speech model is a sparse Mixture of Experts (MoE) with 800M total and 100M active parameters. It supports zero-shot voice cloning and word-level delivery control. Weights ship under Apache 2.0. For AI devs, size is the key point. It runs in a browser tab, on a laptop or on a server GPU. TL;DR Size: 800M total parameters, about 100M active per token (64 experts, top-2 routing); 32,768-position context; up to 10 minutes of audio per generation. Runs on: NVIDIA GPUs via SGLang-Omni, Apple Silicon via MLX, CPU/CUDA/Metal/Vulkan via ggml, and phones or laptops via WebGPU in the browser. Performance: Ranks first among open models on Zyphra’s ZTTS2-Eval Capability Index (self-reported). Best: 80 ms median time to first audio on one H100 at 8 concurrent requests, and 457 seconds of audio per second peak throughput. Worst: Under 570 ms time to first audio in the browser on a Pixel 9, versus under 150 ms on an M3 MacBook Air. Bottom line: Best: frontier-level open TTS quality at 100M active parameters. Worst: every benchmark is run by Zyphra itself, and reference-clip cloning scores far lower than embedding mode. What is ZONOS3-Mini? ZONOS3-Mini is a compact zero-shot voice-cloning TTS model from Zyphra that runs in real time on-device. Zyphra trained it on 112 NVIDIA H100s in 2.5 days. It follows ZONOS2 , which used 8B parameters and an 86 Hz codec. That size limited where ZONOS2 could be deployed. How does the ZONOS3-Mini architecture work? Zyphra changed 3 layers of the stack : A new codec : Zyphra trained Zyphra Audio Codec 1 (ZAC-1) to replace the Descript Audio Codec. ZAC-1 runs at 15 Hz with 10 codebooks of 4,096 entries: 1 semantic and 9 acoustic. Zyphra reports a 10x word error rate reduction versus a DAC-trained model under similar data constraints. A causal iSTFT head renders each frame to 44.1 kHz audio as soon as it is generated. A hybrid MoE backbone : The model card lists 11 layers with model dimension 1,024. Sequence mixing follows a 3:1 ratio: 9 Gated DeltaNet layers and 2 global attention layers. Zyphra also adds latent MoE, Q balancing and attention residuals. A new speaker encoder : Voice representation moves from the Qwen3-TTS speaker encoder to MECT-B2. The model accepts a raw reference clip of up to 60 seconds, ",
     "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
     "category": "Robotics & Hardware",
-    "lab": "OpenAI",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Zyphra has released ZONOS3-Mini , an open-source text-to-speech model built for real-time use on local devices. The ZONOS3-Mini text-to-speech model is a sparse Mixture of Experts (MoE) with 800M total and 100M active parameters. It supports zero-shot voice cloning and word-level delivery control.\n\nWeights ship under Apache 2.0. For AI devs, size is the key point. It runs in a browser tab, on a laptop or on a server GPU.",
@@ -694,7 +935,7 @@
         "Best: 80 ms median time to first audio on one H100 at 8 concurrent requests, and 457 seconds of audio per second peak throughput."
       ],
       "impact": "High",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -743,7 +984,7 @@
         "Worst: AutomationBench 51.4%, behind Gemini 4 Carbon (53.9%)."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -1253,7 +1494,7 @@
         "Best: AutomationBench-AA at 37.8, versus 20.2 for GPT-6 Luna and 13.9 for Claude Haiku 5.5."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3007,8 +3248,8 @@
         "Figure 1: How a Quick agent follows its instructions, loads the skills a task needs, acts through connectors, and grounds its answers in your data The agent sits at the center of Figure 1.",
         "It follows its instructions, loads the skills that a task calls for, takes action through connectors, and grounds its answers in your data: spaces, knowledge bases, datasets, and dashboards."
       ],
-      "impact": "Medium",
-      "readTimeMinutes": 8,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3129,7 +3370,7 @@
         "This helped me gain confidence that it was capable of locating a sound."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 9,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3246,7 +3487,7 @@
         "These modes join the existing agentic retrieval, where the service plans and runs multiple searches before answering."
       ],
       "impact": "Medium",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3274,7 +3515,7 @@
         "If a cyber security query is declined, you can retry it on Opus 4.8, and if a biology query is declined, you can retry it on Opus 5."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3301,8 +3542,8 @@
         "JumpStart offers two variants: NVFP4, quantized from BF16 with quantization-aware distillation for optimized inference, and the BF16 full-precision reference weights.",
         "In this post, we walk through the model’s capabilities and the JumpStart deployment configurations."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3393,7 +3634,7 @@
     "author": "James O'Donnell",
     "contentSnippet": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here . As voters went to the polls across the US last week, I was in Ashburn, Virginia, part of what’s known as Data Center Alley—the world’s largest data center hub. It’s also where the backlash now sweeping the country arguably first began taking shape. Driving through it is surreal. Concrete monolithic buildings loom along every major road, with names like Skybox and CloudHQ. It’s accepted wisdom in Big Tech that the war against data centers must be about something bigger than just data centers themselves. Two days after the midterms, OpenAI’s chief global affairs officer, Chris Lehane, wrote that data centers “have become a proxy for public unease about affordability, corporate power, and people losing control over their futures.” It’s a culture war, in other words. But spending a few days in Data Center Alley left me wondering if it’s really the proxy that Lehane describes. I came away convinced that the data center backlash is more about electricity than Big Tech admits. The industry can improve its image, but it can’t escape the physical consequences of its enormous appetite for electricity. Here’s why. There are two ways to power the sort of data center that AI companies want: connecting to the grid, or generating electricity onsite. In Virginia’s Loudoun County, where data centers are ubiquitous but have been built at a steadier pace than the breakneck expansion now underway elsewhere in the country, most are connected to the existing grid.  One facility I went inside, operated by Equinix, has massive diesel generators onsite for backup but gets its power from the local utility, Dominion Energy. Much of Dominion’s electricity is generated by natural gas (which is cleaner than coal or oil, but worse than renewables). The average data center operating in this part of Virginia today has a power capacity of 54 megawatts. That’s more than the power draw of the Denver International Airport .  Elena Schlossberg, a prominent activist against data centers in Virginia, told me she’s “always banging my head against the wall” when the industry paints the fight as a culture war. “It was always about power,” she says—that is, electricity. Some Virginia protesters appear more animated by a broader anti-tech populism than Schlossberg, ",
     "category": "Business & Big Tech",
-    "lab": "SpaceX & xAI",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here . As voters went to the polls across the US last week, I was in Ashburn, Virginia, part of what’s known as Data Center Alley—the world’s largest data center hub.\n\nIt’s also where the backlash now sweeping the country arguably first began taking shape. Driving through it is surreal. Concrete monolithic buildings loom along every major road, with names like Skybox and CloudHQ.",
@@ -3403,8 +3644,8 @@
         "But spending a few days in Data Center Alley left me wondering if it’s really the proxy that Lehane describes.",
         "I came away convinced that the data center backlash is more about electricity than Big Tech admits."
       ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 7,
+      "impact": "High",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3432,7 +3673,7 @@
         "Every team building an agent tends to rebuild the same scaffolding from scratch: its own routing logic, its own guardrails, its own observability, all applied after the fact rather than built in from the start."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3482,7 +3723,7 @@
         "Because ATLAS already manages the facility model, the base control software, the historian, and the optimization applications in one platform on AWS, CrossnoKaye’s agentic intelligence system, AURA, has native access to the full operational state of the plant within a single security boundary."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -3510,7 +3751,7 @@
         "Because context stays locked inside a single project or one vendor’s suite, productivity never compounds across the team or the company."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3585,7 +3826,7 @@
         "8tx cuts latency up to 2x versus TPU 8t."
       ],
       "impact": "High",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3612,7 +3853,7 @@
         "SB 1047, a bill that he authored in 2024, was set to become the first real piece of frontier AI legislation in the country before it was vetoed by California governor Gavin Newsom; he then sponsored SB 53, a lighter-touch bill that Newsom signed."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 6,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3639,7 +3880,7 @@
         "Best: Generation speed on Kunlunxin P800 reached 623.6% of baseline after 4 research rounds."
       ],
       "impact": "High",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3669,7 +3910,7 @@
         "For example, vibe coding by using an AI model to help develop software, giving away the entire codebase to an untrusted entity outside the organization can lead to vulnerability sweeping across multiple surfaces."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3767,7 +4008,7 @@
         "At CoRL, NVIDIA is introducing GR00T 2 , an open frontier world action model built on NVIDIA Cosmos."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -3793,8 +4034,8 @@
         "These capabilities could prove especially valuable in advancing sustainability.",
         "Digital modeling can help researchers evaluate more formulations, explore materials such as starch and corn-based alternatives, and assess trade-offs across a product’s life cycle."
       ],
-      "impact": "Medium",
-      "readTimeMinutes": 3,
+      "impact": "Notable",
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -3938,18 +4179,15 @@
     "author": "Berkeley AI Research (BAIR)",
     "contentSnippet": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr. See below for the full schedule of sessions with BAIR members, including papers co-authored with collaborators at other universities and companies. .corl { font-size: 0.95rem; text-align: left; } .corl [hidden] { display: none !important; } .corl p, .corl ul, .corl li { text-align: left; } .corl a { word-break: break-word; } .corl-sans, .corl-meta, .corl-stat, .corl-nav, .corl-tools, .corl-time, .corl-tag, .corl-board, .corl-day-sub, .corl-venue, .corl-chair, .corl-also, .corl-sources, .corl-program { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; } .corl-meta { color: #555; margin: 0 0 1.2em; } .corl-meta span + span::before { content: \"·\"; margin: 0 0.5em; color: #aaa; } .corl-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0 0 1.4em; } .corl-stat { border: 1px solid #e3e3e3; border-radius: 6px; padding: 0.7rem 0.8rem; line-height: 1.25; } .corl-stat strong { display: block; font-size: 1.7rem; font-weight: 900; color: #003262; } .corl-stat span { display: block; font-size: 0.8rem; color: #333; } .corl-stat small { display: block; font-size: 0.75rem; color: #777; } .corl-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 1.2em; } .corl-nav a { border: 1px solid #cfd8e3; border-radius: 4px; padding: 0.3rem 0.7rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; } .corl-nav a small { font-weight: 400; color: #777; margin-left: 0.3em; } .corl-nav a:hover { background: #f2f6fb; } .corl-nav-note { font-size: 0.8rem; color: #777; } .corl-notes { background: #f7f7f7; border-left: 3px solid #FDB515; padding: 0.8rem 1rem; margin: 0 0 1.4em; font-size: 0.85rem; } .corl-notes p { margin: 0 0 0.5em; } .corl-notes p:last-child { margin-bottom: 0; } .corl-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-end; margin: 0 0 0.4em; font-size: 0.85rem; } .corl-tools label { display: block; font-size: 0.75rem; color: #555; margin-bottom: 0.2em; } .corl-tools .corl-field { flex: 1 1 14rem; } .corl-tools input, .corl-tools select { width: 100%; font: inherit; padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; heig",
     "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
+    "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "summary": {
-      "tldr": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr. See below for the full schedule of sessions with BAIR members, including papers co-authored with collaborators at other universities and companies.\n\n.corl { font-size: 0.95rem; text-align: left; } .corl [hidden] { display: none !important; } .corl p, .corl ul, .corl li { text-align: left; } .corl a { word-break: break-word; } .corl-sans, .corl-meta, .corl-stat, .corl-nav, .corl-tools, .corl-time, .corl-tag, .corl-board, .corl-day-sub, .corl-venue, .corl-chair, .corl-also, .corl-sources, .corl-program { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; } .corl-meta { color: #555; margin: 0 0 1.2em; } .corl-meta span + span::before { content: \"·\"; margin: 0 0.5em; color: #aaa; } .corl-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0 0 1.4em; } .corl-stat { border: 1px solid #e3e3e3; border-radius: 6px; padding: 0.7rem 0.8rem; line-height: 1.25; } .corl-stat strong { display: block; font-size: 1.7rem; font-weight: 900; color: #003262; } .corl-stat span { display: block; font-size: 0.8rem; color: #333; } .corl-stat small { display: block; font-size: 0.75rem; color: #777; } .corl-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 1.2em; } .corl-nav a { border: 1px solid #cfd8e3; border-radius: 4px; padding: 0.3rem 0.7rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; } .corl-nav a small { font-weight: 400; color: #777; margin-left: 0.3em; } .corl-nav a:hover { background: #f2f6fb; } .corl-nav-note { font-size: 0.8rem; color: #777; } .corl-notes { background: #f7f7f7; border-left: 3px solid #FDB515; padding: 0.8rem 1rem; margin: 0 0 1.4em; font-size: 0.85rem; } .corl-notes p { margin: 0 0 0.5em; } .corl-notes p:last-child { margin-bottom: 0; } .corl-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-end; margin: 0 0 0.4em; font-size: 0.85rem; } .corl-tools label { display: block; font-size: 0.75rem; color: #555; margin-bottom: 0.2em; } .corl-tools .corl-field { flex: 1 1 14rem; } .corl-tools input, .corl-tools select { width: 100%; font: inherit; padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; height: auto; margin: 0; } .corl-tools button { font: inherit; padding: 0.35rem 0.8rem; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; } .corl-status { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; font-size: 0.75rem; color: #777; margin: 0 0 1.5em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5em; } .corl-empty { padding: 1rem; border: 1px dashed #ccc; border-radius: 6px; text-align: center; } .corl-day { margin-top: 2.2em; } .corl-day > h2 { border-bottom: 2px solid #003262; padding-bottom: 0.3rem; margin-bottom: 0.2rem; } .corl-day-sub { font-size: 0.8rem; color: #666; margin: 0 0 1em; } .corl-day-sub span + span::before { content: \"·\"; margin: 0 0.5em; color: #aaa; } .corl-session { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid #eee; } .corl-session:first-of-type { border-top: 0; } .corl-session.corl-featured { background: #fffbf0; border-left: 3px solid #FDB515; padding-left: 0.8rem; } .corl-time { font-weight: 700; font-size: 0.9rem; line-height: 1.3; } .corl-time small { display: block; font-weight: 400; font-size: 0.7rem; color: #777; text-transform: uppercase; letter-spacing: 0.03em; } .corl-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 3px; background: #eef2f7; color: #003262; } .corl-tag.k-keynote { background: #FDB515; color: #1a1a1a; } .corl-tag.k-oral { background: #003262; color: #fff; } .corl-tag.k-spotlight { background: #3b7ea1; color: #fff; } .corl-tag.k-poster { background: #eef2f7; color: #003262; } .corl-tag.k-lbr { background: #e7f3ec; color: #145a32; } .corl-tag.k-workshop { background: #f1ecf7; color: #4a2a75; } .corl-session h3 { margin: 0.35rem 0 0.15rem; font-size: 1.05rem; } .corl-venue { font-size: 0.8rem; color: #666; margin: 0 0 0.6em; } .corl-chair { font-weight: 700; color: #333; } .corl-paper, .corl-appearance { margin: 0 0 0.9em; } .corl-paper h4, .corl-appearance h4 { font-size: 0.92rem; margin: 0 0 0.2em; line-height: 1.35; font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 700; } .corl-board { display: inline-block; font-size: 0.72rem; color: #555; border: 1px solid #ddd; border-radius: 3px; padding: 0 0.35rem; margin-bottom: 0.25em; } .corl-authors { font-size: 0.82rem; margin: 0 0 0.2em; line-height: 1.45; } .corl-also, .corl-sources, .corl-program, .corl-see { font-size: 0.75rem; color: #666; margin: 0 0 0.15em; } .corl-see { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; font-style: italic; } .corl-talk { font-style: italic; margin: 0 0 0.2em; } .corl-appearance p { font-size: 0.85rem; margin: 0 0 0.2em; } .corl-organizers { margin: 0; padding-left: 1.1rem; } .corl-organizers li { margin-bottom: 0.5em; font-size: 0.88rem; } .corl-organizers p { margin: 0; font-size: 0.82rem; color: #444; } .corl-about { margin-top: 2.5em; border-top: 2px solid #003262; padding-top: 0.5em; font-size: 0.85rem; } .corl-about-links { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; } @media (max-width: 40em) { .corl-stats { grid-template-columns: repeat(2, 1fr); } .corl-session { grid-template-columns: 1fr; gap: 0.3rem; } .corl-time small { display: inline; margin-left: 0.4em; } .corl-time { font-size: 1rem; } .corl-venue, .corl-also, .corl-sources, .corl-program, .corl-board, .corl-tag, .corl-time small, .corl-day-sub, .corl-stat small, .corl-nav-note, .corl-see { font-size: 0.8rem; } .corl-authors { font-size: 0.9rem; } } @media print { .corl-tools, .corl-status, .corl-nav, .corl-empty { display: none !important; } } November 9–12, 2026 Austin, Texas All times CST · UTC−6 33 Main-conference papers 4 Late-breaking results (LBR) posters 10 Orals & spotlights 3 orals · 7 spotlights 4 Days of research November 9–12 Mon Nov 9 Tue Nov 10 Wed Nov 11 Thu Nov 12 Main conference Nov 9–11 · Workshops Nov 12 Times shown for oral and spotlight papers are session windows. Individual presentation order is not specified. Papers appear in both their talk and poster sessions.",
+      "tldr": "The Conference on Robot Learning (CoRL) takes place November 9–12, 2026, in Austin, Texas. BAIR faculty, postdocs and students will be presenting research at various sessions, including an Early Career Keynote from Professor Negar Mehr. See below for the full schedule of sessions with BAIR members, including papers co-authored with collaborators at other universities and companies.",
       "takeaways": [
-        "Paper inclusion: At least one author is affiliated with UC Berkeley; joint affiliations qualify.",
-        "Faculty talks, session-chair roles and workshop participation are also included.",
-        "Late-breaking results: Four late-breaking posters with Berkeley authors are listed so far.",
-        "This list may grow as more late-breaking posters are confirmed."
+        ".corl { font-size: 0.95rem; text-align: left; } .corl [hidden] { display: none !important; } .corl p, .corl ul, .corl li { text-align: left; } .corl a { word-break: break-word; } .corl-sans, .corl-meta, .corl-stat, .corl-nav, .corl-tools, .corl-time, .corl-tag, .corl-board, .corl-day-sub, .corl-venue, .corl-chair, .corl-also, .corl-sources, .corl-program { font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif; } .corl-meta { color: #555; margin: 0 0 1.2em; } .corl-meta span + span::before { content: \"·\"; margin: 0 0.5em; color: #aaa; } .corl-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0 0 1.4em; } .corl-stat { border: 1px solid #e3e3e3; border-radius: 6px; padding: 0.7rem 0.8rem; line-height: 1.25; } .corl-stat strong { display: block; font-size: 1.7rem; font-weight: 900; color: #003262; } .corl-stat span { display: block; font-size: 0.8rem; color: #333; } .corl-stat small { display: block; font-size: 0.75rem; color: #777; } .corl-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 1.2em; } .corl-nav a { border: 1px solid #cfd8e3; border-radius: 4px; padding: 0.3rem 0.7rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; } .corl-nav a small { font-weight: 400; color: #777; margin-left: 0.3em; } .corl-nav a:hover { background: #f2f6fb; } .corl-nav-note { font-size: 0.8rem; color: #777; } .corl-notes { background: #f7f7f7; border-left: 3px solid #FDB515; padding: 0.8rem 1rem; margin: 0 0 1.4em; font-size: 0.85rem; } .corl-notes p { margin: 0 0 0.5em; } .corl-notes p:last-child { margin-bottom: 0; } .corl-tools { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-end; margin: 0 0 0.4em; font-size: 0.85rem; } .corl-tools label { display: block; font-size: 0.75rem; color: #555; margin-bottom: 0.2em; } .corl-tools .corl-field { flex: 1 1 14rem; } .corl-tools input, .corl-tools select { width: 100%; font: inherit; padding: 0.35rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; heig."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -4006,7 +4244,7 @@
         "Bottom line: Best: per-branch writes remove the per-repository push ceiling."
       ],
       "impact": "Medium",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4093,7 +4331,7 @@
     "author": "Michal Sutter",
     "contentSnippet": "Zurich-based 0sec Labs has released 0 , an open-source AI security harness. It runs vulnerability investigations, code review, pentesting, reverse engineering and fix generation. Developers drive it from a local browser console, a headless CLI or an MCP server . The 0sec Labs open-source AI security harness is licensed MIT OR Apache-2.0 and ships as a research preview. TL;DR Wrapper: It is a software harness. Bring your own LLM from 14 listed providers . Runs on: Apple Silicon macOS, x64 or ARM64 Linux, or the ghcr.io/0sec-labs/0 container. No GPU needed. Model inference runs at your provider. Performance: Strong self-reported CTF scores, plus a public record of upstream Linux kernel fixes. Best: 93/95 (97.9%) on XBOW web CTFs, gpt-5.4 cohort, any-success grouping. Worst: Black-box-only XBOW union of 81/104 (77.9%) . A 2026 cold run scored 45/104 (43.3%) . Bottom line: Best: one harness spans web, source, packages, binaries and kernels. Worst: headline scores are self-reported and not pass@1. What is 0 from 0sec Labs? 0 is a control plane around LLMs and security tools. It is not a model. You plug in a provider, and 0 runs scoped workflows against authorized targets. The research team describes it as a self-evolving, multi-model harness . 0sec Labs is backed by Y Combinator . How does the 0 harness work? The architecture docs state one rule: reproduce before trusting. Agentic scans follow a conceptual pipeline: Plan, Discover, Attack: a research agent picks vulnerability classes, maps endpoints and tests hypotheses. Triage: filters remove weak findings and check evidence completeness. Verify: a separate session re-exercises each candidate, with 5 turns per finding. Report: outputs include HTML, PDF, SARIF, Markdown and JSON. Web pentesting is shell-first. The agent uses bash with curl, python3 and sqlmap, not a fixed HTTP tool set. Evidence carries a proof grade from candidate to impact-proven . Compiled targets go through 0verse , a separate in-repo engine. It wraps Ghidra, angr and AFL++. Its local MCP server exposes 9 tools for scanning, triage, PoVs and reports. How do developers use it? Installation is one script. Running 0 opens the local browser console without an account. The console has chat, a findings queue and board, workflow templates, skills and memory. Coding agents connect through 0 mcp-server --workflows . The CLI exposes the same workflow r",
     "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Zurich-based 0sec Labs has released 0 , an open-source AI security harness. It runs vulnerability investigations, code review, pentesting, reverse engineering and fix generation. Developers drive it from a local browser console, a headless CLI or an MCP server .\n\nThe 0sec Labs open-source AI security harness is licensed MIT OR Apache-2.0 and ships as a research preview. TL;DR Wrapper: It is a software harness. Bring your own LLM from 14 listed providers .",
@@ -4103,8 +4341,8 @@
         "Performance: Strong self-reported CTF scores, plus a public record of upstream Linux kernel fixes.",
         "Best: 93/95 (97.9%) on XBOW web CTFs, gpt-5.4 cohort, any-success grouping."
       ],
-      "impact": "High",
-      "readTimeMinutes": 4,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4132,7 +4370,7 @@
         "Samsung is developing chip-scale thermal and mechanical analysis workflows with NVIDIA PhysicsNeMo ."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 3,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -4262,7 +4500,7 @@
         "It doesn't matter how accurate or useful the information is, I'm instantly put off by the thought that it will take me longer to read than it took the driving author to write..."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 6,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4489,6 +4727,68 @@
     }
   },
   {
+    "id": "baf0c324b7542809",
+    "canonicalUrl": "https://arxiv.org/abs/2611.11994",
+    "title": "EmoHarness: Boosting Multimodal Emotion Understanding with Meta-Harness Evolving",
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.565Z",
+    "contentHash": "a986f4e32abdbf40",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Fenghai Li, Bingxuan Li, Jiawen Zhang, Yifan Shen",
+    "contentSnippet": "Authors: Fenghai Li , Bingxuan Li , Jiawen Zhang , Yifan Shen , Jiateng Liu , Yutong Zhang , Yue Guo\n\nAbstract: Small multimodal models can misjudge emotion when words, voice, and visual cues conflict. We present EmoHarness, which runs such a model, the frozen student, inside a harness: the prompts, settings, and verification code around its calls. A human-written starting harness, the scaffold, numbers the student's visual observations, transcript, and prosody descriptions as citable evidence and has the student weigh candidate emotions against it. In Meta-Harness Evolving (MHE), a stronger LLM, the Builder, reads the student's errors and execution traces offline and edits the harness; static checks and validation gates decide which edits are kept, and the Builder never sees evaluation items. On 5,507 MME-Emotion items, EmoHarness raises task-macro Recognition by 7.6-13.4 points over a single video-only call for all four students and both Builders. Transcripts and prosody descriptions supply most of this boost (+5.38 to +10.71); the scaffold changes the audio-augmented call by -0.79 to +2.54, partly through extra multi-label predictions, and evolved edits add at most +0.95, although no evolved increment survives Holm correction. The harness's emotion context also transfers to IntentQA, with small gains for three of four students, none of which survives correction. EmoHarness thus boosts small multimodal students chiefly by supplying and organizing audio-derived evidence.\n\nNotes: 18 pages, 11 figures, 6 tables. Project page: this https URL . Code: this https URL",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.11994",
+    "pdfUrl": "https://arxiv.org/pdf/2611.11994",
+    "summary": {
+      "tldr": "Researchers Fenghai Li et al. introduced EmoHarness, a framework designed to improve emotion recognition in small multimodal models (SMMs) by wrapping them in a 'harness'—a structured system of prompts, settings, and verification code. The system utilizes a 'scaffold' that forces the model to index visual observations, transcripts, and prosody descriptions as citable evidence before weighing candidate emotions. This approach addresses the common failure mode where SMMs misinterpret emotions when verbal, vocal, and visual cues are contradictory.\n\nThe framework incorporates Meta-Harness Evolving (MHE), an offline process where a stronger LLM (the 'Builder') analyzes the student model's execution traces and errors to iteratively refine the harness. Validation gates and static checks ensure that only effective edits are retained, while the Builder is strictly prevented from accessing evaluation data. Testing on 5,507 items from the MME-Emotion dataset demonstrated that EmoHarness improved task-macro recognition by 7.6 to 13.4 points across four different student models and two Builder models. The majority of these gains (5.38 to 10.71 points) were attributed to the inclusion of transcripts and prosody descriptions, while the evolved edits provided marginal improvements of up to 0.95 points, though these did not survive Holm correction.",
+      "takeaways": [
+        "**Performance Gains:** EmoHarness improved task-macro recognition by 7.6–13.4 points on the 5,507-item MME-Emotion dataset.",
+        "**Primary Driver:** The integration of transcripts and prosody descriptions accounted for the bulk of performance improvements, contributing 5.38 to 10.71 points.",
+        "**Meta-Harness Evolving (MHE):** An offline iterative process where a stronger LLM edits the harness based on student error logs, though evolved increments did not survive Holm correction.",
+        "**Transferability:** The framework was tested on IntentQA, showing small gains for three of four student models, though these results were not statistically significant after correction.",
+        "**Methodology:** The system uses a 'scaffold' to force the model to cite evidence from visual, transcript, and prosody inputs before finalizing an emotion classification."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a46d73fdabb21524",
+    "canonicalUrl": "https://arxiv.org/abs/2611.11995",
+    "title": "Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization",
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "fetchedAt": "2026-11-11T01:40:22.565Z",
+    "contentHash": "7521e8d461b9356f",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zhengyu Hu, Zheyuan Xiao, Yike Wang, Hamish Ivison",
+    "contentSnippet": "Authors: Zhengyu Hu , Zheyuan Xiao , Yike Wang , Hamish Ivison , Haoyu Wang , Yige Yuan , Rulin Shao , Yuetai Li , Niqi Lyu , Yicheng Ding , Shu Yang , Zhichen Zeng , Banghua Zhu , Jiaxin Pei , Kaize Ding , Pradeep Dasigi , Dan Roth , Hannaneh Hajishirzi , Noah A. Smith , Teng Xiao , Radha Poovendran\n\nAbstract: In this work, we study whether frontier agent can continually improve real-world AI infrastructure over long horizons. We introduce Infrathon, a benchmark of diverse, long-horizon AI infrastructure optimization tasks across different levels. We evaluate six models across 150 runs with 24-hour budgets, totaling over 10,000 GPU-hours. Our results show that model rankings vary with the evaluation horizon, while 135 of the 150 runs achieve further improvements during the second half of their budgets. These findings indicate that shorter evaluations can overlook both optimization gains and changes in relative model performance. We also find agents can discover solutions that outperform human-designed baselines: Claude Opus 5.5 increases the mean KV-cache compression ratio from 6.82% with the human-designed Quant-VideoGen codec to 19.86%. Analysis of agent trajectories identifies task violations, unreliable testing, and premature completion as barriers to sustained improvement. Together, Our Infrathon framework provide resources for constructing long-horizon tasks, evaluating frontier agents, and discovering good infrastructure solutions.",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.11995",
+    "pdfUrl": "https://arxiv.org/pdf/2611.11995",
+    "summary": {
+      "tldr": "Researchers from a multi-institutional team including the University of Washington and Allen Institute for AI have introduced Infrathon, a benchmark designed to evaluate the capability of frontier AI agents to perform long-horizon infrastructure optimization. The study assessed six models over 150 experimental runs, each with a 24-hour budget, consuming a total of over 10,000 GPU-hours. The research aims to determine if agents can autonomously improve real-world AI infrastructure systems over extended timeframes, moving beyond the limitations of short-duration evaluations.\n\nThe findings reveal that model performance rankings are highly sensitive to the evaluation horizon, with 135 out of 150 runs demonstrating continued optimization gains during the second half of their 24-hour budgets. Notably, the Claude Opus 5.5 model outperformed human-designed baselines in specific tasks, increasing the mean KV-cache compression ratio from 6.82% (achieved by the Quant-VideoGen codec) to 19.86%. Despite these successes, the study identified significant barriers to sustained agent performance, including task violations, unreliable testing protocols, and a tendency for agents to signal premature completion of optimization tasks.",
+      "takeaways": [
+        "**Benchmark Scope:** Infrathon evaluates AI agents across diverse, long-horizon infrastructure optimization tasks using a 24-hour budget per run.",
+        "**Resource Intensity:** The study utilized over 10,000 GPU-hours across 150 individual model runs to assess performance.",
+        "**Performance Metric:** Claude Opus 5.5 achieved a 19.86% mean KV-cache compression ratio, significantly exceeding the 6.82% ratio of the human-designed Quant-VideoGen baseline.",
+        "**Evaluation Insight:** 90% of experimental runs (135/150) showed continued optimization progress in the second half of the 24-hour window, suggesting short-term benchmarks may be misleading.",
+        "**Failure Modes:** Identified primary barriers to agent efficacy include task violations, unreliable testing environments, and premature task termination."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a86fe963d82ab963",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
     "title": "parse_number() as a SQLite extension: C vs Rust",
@@ -4614,7 +4914,7 @@
         "Performance: no accuracy benchmark published."
       ],
       "impact": "High",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4641,7 +4941,7 @@
         "Bottom line: Best thing: configs make routing fully auditable."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 4,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4668,7 +4968,7 @@
         "Bottom line: Best thing: bias-based balancing adds no interfering gradients."
       ],
       "impact": "High",
-      "readTimeMinutes": 6,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5200,7 +5500,7 @@
         "That changes both constraints: you can place a different model in each partition, and you can choose a fraction of a newer accelerator instead of a whole one of either generation."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5228,7 +5528,7 @@
         "The framework at a glance Figure 1: How triggers, agents, and capabilities relate, with learning feeding back from the session runtime A trigger starts the work and carries the task ( When and What ), an agent takes it on ( Who ) and uses its capabilities (tools, skills, and workflows) to perform the task ( How )."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5255,8 +5555,8 @@
         "In this post, we describe the architecture, show how a metadata-driven approach removes the need for per-dataset integration code, and explain how the serverless infrastructure supports multiple agents and applications in a multi-tenant environment.",
         "Problem statement and design goals Two interrelated challenges shaped how we designed this system: fragmented data access patterns and an unsustainable onboarding model."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -5308,10 +5608,10 @@
         "Policy in Amazon Bedrock AgentCore evaluates Cedar policies that bind each tool to the agent and the scope Okta delegated.",
         "A second agent on Amazon Elastic Kubernetes Service (Amazon EKS) joins under its own Okta identity, to show that the front door doesn’t care where an agent runs.",
         "And Amazon Bedrock AgentCore Observability, a capability of Amazon Bedrock AgentCore, with Amazon CloudWatch gives you one place to read every decision, including Okta’s.",
-        "We also compare XAA with per-user OAuth consent for applications that can’t accept Okta’s grant."
+        "We also compare XAA with per-user OAuth consent for applicati."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5339,7 +5639,7 @@
         "In our tests, AgentCore Identity added about 0.6 seconds to a request that took about 30 seconds end to end."
       ],
       "impact": "Medium",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5367,7 +5667,7 @@
         "What Greenlight needed to solve Greenlight Financial provides financial products for families: debit cards, savings tools, and connected devices such as the Family Hub and Pet Tracker."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -5424,7 +5724,7 @@
         "Four constraints shaped what we built: Grounded and cited – Our users make filing decisions."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5452,7 +5752,7 @@
         "These include billing and credits through their existing AWS account with no per-seat licenses, audit logging in AWS CloudTrail, and geographic inference profiles for data residency."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5506,7 +5806,7 @@
         "Researchers are exploring a more efficient approach called goal-oriented semantic communications."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 6,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -5621,7 +5921,7 @@
         "Because this data is so valuable to Tau, the company charges less for cleaning than one might expect for such a cutting-edge product."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -10342,282 +10642,6 @@
       "readTimeMinutes": 2,
       "generatedWith": "gemini",
       "summaryVersion": 2
-    }
-  },
-  {
-    "id": "590db0199eb15999",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03684",
-    "title": "Functional-Group Knowledge Is Structured in Language Models Before It Is Spoken",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "843b76530722c4c9",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Tran Nhat Khang Nguyen, Anh Nguyen, Obed Issakah, Janghoon Ock",
-    "contentSnippet": "arXiv:2611.03684v1 Announce Type: new Abstract: Language models serve as the reasoning core of agents for chemistry and materials science, where they must interpret molecular structure before planning syntheses or proposing materials. Yet their outputs show only what they say, not what they know. Given a prompt such as ``The primary functional group in 1-Fluorobutane (CCCCF) is'', a small general-purpose model may answer ``the alkyne group'' instead of an alkyl fluoride. The output alone cannot tell whether the model failed to recognize the fluorine or recognized it and failed to say so. We address this by reading the internal representations of five open-source models on prompts covering 92 molecules and 20 functional groups. Even without chemistry training, the models organize functional groups by chemical family, and they encode chemical differences as consistent directions. The shift from thioether ($\\mathrm{R{-}S{-}R'}$) to thiol ($\\mathrm{R{-}SH}$), added to ether ($\\mathrm{R{-}O{-}R'}$), lands nearest alcohol ($\\mathrm{R{-}OH}$). This structure emerges abruptly in the middle layers, where representations shift from tracking the wording of the prompt to tracking the functional group. The base model names the correct functional group in only 58.5\\% of prompts, the lowest of the five, yet it encodes functional-group families and preserves chemically meaningful patterns. Its errors are mostly failures to answer rather than wrong answers. Functional-group knowledge is structured in the model before it is spoken. Chemistry fine-tuning reorganizes it, making functional groups rather than prompt wording dominate the representation. These results suggest that evaluating chemical language models through outputs alone can underestimate the chemical information they encode. Representation analysis can distinguish a lack of knowledge from a failure to express it, which matters when choosing or adapting models for chemical agents.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03684",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03684.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03684v1 Announce Type: new Abstract: Language models serve as the reasoning core of agents for chemistry and materials science, where they must interpret molecular structure before planning syntheses or proposing materials. Yet their outputs show only what they say, not what they know. Given a prompt such as ``The primary functional group in 1-Fluorobutane (CCCCF) is'', a small general-purpose model may answer ``the alkyne group'' instead of an alkyl fluoride.\n\nThe output alone cannot tell whether the model failed to recognize the fluorine or recognized it and failed to say so. We address this by reading the internal representations of five open-source models on prompts covering 92 molecules and 20 functional groups. Even without chemistry training, the models organize functional groups by chemical family, and they encode chemical differences as consistent directions.",
-      "takeaways": [
-        "The shift from thioether ($\\mathrm{R{-}S{-}R'}$) to thiol ($\\mathrm{R{-}SH}$), added to ether ($\\mathrm{R{-}O{-}R'}$), lands nearest alcohol ($\\mathrm{R{-}OH}$).",
-        "This structure emerges abruptly in the middle layers, where representations shift from tracking the wording of the prompt to tracking the functional group.",
-        "The base model names the correct functional group in only 58.5\\% of prompts, the lowest of the five, yet it encodes functional-group families and preserves chemically meaningful patterns.",
-        "Its errors are mostly failures to answer rather than wrong answers."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2c44ff8988c41f3e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03685",
-    "title": "LOLPlay: Benchmarking Real-Time Visual Agents in League of Legends",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "cef84ddf61b6ccd9",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Zhaojian Yu",
-    "contentSnippet": "arXiv:2611.03685v1 Announce Type: new Abstract: Visual agents need to coordinate reasoning and action while their environment evolves during inference. We introduce LOLPlay, a benchmark in native \\emph{League of Legends} with 36 champion-specific tasks spanning resource management, combat, cooperation, and objectives. Agents interact through screenshots and mouse--keyboard actions; automated initialization and 82 executable subgoal checks distinguish partial progress from completion. Across 324 task evaluations of three models at three reasoning-effort settings, GPT-6 Astra achieves the highest task success rate of 25.0\\% at low and medium effort, and the highest subgoal success rate of 40.3\\% at medium effort. However, high effort improves neither metric over low effort for any model. For Astra, longer requests leave fewer interaction rounds, suggesting a cost to additional reasoning in real-time control. Trajectories reveal incomplete subgoal composition and actions executing after the observed scene changes, motivating agents that combine visual reasoning with timely action.",
-    "category": "Open Source & Research",
-    "lab": "OpenAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03685",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03685.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03685v1 Announce Type: new Abstract: Visual agents need to coordinate reasoning and action while their environment evolves during inference. We introduce LOLPlay, a benchmark in native \\emph{League of Legends} with 36 champion-specific tasks spanning resource management, combat, cooperation, and objectives. Agents interact through screenshots and mouse--keyboard actions; automated initialization and 82 executable subgoal checks distinguish partial progress from completion.\n\nAcross 324 task evaluations of three models at three reasoning-effort settings, GPT-6 Astra achieves the highest task success rate of 25.0\\% at low and medium effort, and the highest subgoal success rate of 40.3\\% at medium effort. However, high effort improves neither metric over low effort for any model. For Astra, longer requests leave fewer interaction rounds, suggesting a cost to additional reasoning in real-time control.",
-      "takeaways": [
-        "Trajectories reveal incomplete subgoal composition and actions executing after the observed scene changes, motivating agents that combine visual reasoning with timely action."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b649a352e5dba3b4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03698",
-    "title": "Training LLM Agents to Automate LLM Post-Training with RSI-Dojo",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "965806c3cf32e81a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Shuzheng Gao, Zhaojian Yu, Penghao Yin, Yuling Shi, Kai Cai, Shilin He, Michael R. Lyu",
-    "contentSnippet": "arXiv:2611.03698v1 Announce Type: new Abstract: Recursive Self-Improvement (RSI) aims to enable AI systems to autonomously build and improve AI systems themselves, including models, harnesses, and underlying infrastructure. Within this broader agenda, a central capability is enabling agents to train and improve base models. However, existing studies on automated model training primarily focused on workflow- or harness-level optimizations, rather than internalizing the ability to conduct post-training into the model itself. Developing this capability requires executable model training environments that can produce high-quality trajectories demonstrating how to select data, train models, diagnose failures, and iteratively improve results. In this paper, we introduce RSI-Dojo, a collection of executable model training environments designed to teach LLM agents to conduct post-training. To construct RSI-Dojo, we develop RSI-Craft, an automatic pipeline that converts human research artifacts into executable model training environments. RSI-Craft automatically collects research papers from top venues, instantiates datasets and metrics into a unified interface, and reproduces evaluation dependencies. It then filters tasks by data size, execution reliability, and discriminability, yielding RSI-Dojo with 281 seed model training tasks. Building on RSI-Dojo, we employ a trajectory collection method with an improved harness to collect high-quality model-training trajectories from frontier models, then retain examples through rubric-based and outcome-based filtering. We fine-tune Qwen3.5-9B and Qwen3.6-35B-A3B on these trajectories. The resulting RSI-Dojo-9B and RSI-Dojo-35B-A3B improve over their base models by 8.74 and 16.87 PostTrainBench points, respectively. RSI-Dojo-35B-A3B reaches 29.95 on PostTrainBench and 53.29 on PostTrainBench-Lite, matching the performance of frontier models such as GLM-5.2 and GPT 5.5.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03698",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03698.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03698v1 Announce Type: new Abstract: Recursive Self-Improvement (RSI) aims to enable AI systems to autonomously build and improve AI systems themselves, including models, harnesses, and underlying infrastructure. Within this broader agenda, a central capability is enabling agents to train and improve base models. However, existing studies on automated model training primarily focused on workflow- or harness-level optimizations, rather than internalizing the ability to conduct post-training into the model itself.\n\nDeveloping this capability requires executable model training environments that can produce high-quality trajectories demonstrating how to select data, train models, diagnose failures, and iteratively improve results. In this paper, we introduce RSI-Dojo, a collection of executable model training environments designed to teach LLM agents to conduct post-training. To construct RSI-Dojo, we develop RSI-Craft, an automatic pipeline that converts human research artifacts into executable model training environments.",
-      "takeaways": [
-        "RSI-Craft automatically collects research papers from top venues, instantiates datasets and metrics into a unified interface, and reproduces evaluation dependencies.",
-        "It then filters tasks by data size, execution reliability, and discriminability, yielding RSI-Dojo with 281 seed model training tasks.",
-        "Building on RSI-Dojo, we employ a trajectory collection method with an improved harness to collect high-quality model-training trajectories from frontier models, then retain examples through rubric-based and outcome-based filtering.",
-        "We fine-tune Qwen3.5-9B and Qwen3.6-35B-A3B on these trajectories."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1afc5db13dcf50e7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03713",
-    "title": "Unsatz: Evaluating Scientific Discovery Without a Given Ansatz",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "feaefcb088a0b28c",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Ethan Ji, Wei Wang, Yizhou Sun",
-    "contentSnippet": "arXiv:2611.03713v1 Announce Type: new Abstract: Before a scientist fits any parameter, they must decide what the model contains: which quantities exist, which are hidden, how they interact, and how they are measured. Physicists call such a trial form an ansatz. Benchmarks for automated equation discovery mostly supply it, by fixing the variables, a library of candidate terms, or a law to be modified. We introduce Unsatz, a benchmark in which an LLM agent must construct the ansatz itself. Each task is a simulated system, generated from a private seed as a program in a small modeling language: ordinary, delay, or partial differential equations, discrete maps, static and causal models, or stochastic processes, possibly with hidden states, distorted sensors, and uninformative measurement channels. The agent buys experiments within a budget, writes candidate programs in the same language, obtains their coefficients from the benchmark's fitter, and is scored only on how its final program predicts experiments it never saw: conditions outside the range it could explore, interventions, and longer runs. Across 80 systems in 20 domains, nine language models solve between 21% and 60%. On 44 of these systems, classical equation-discovery methods almost never succeed, although the same data usually suffice once the true equations are given with unknown coefficients; the difficulty lies in finding the structure, not in estimating it. Because mechanisms recur across systems, we also give agents the program they discovered for a related system; it helped only when the new system shared the mechanism and the first investigation had succeeded. Stronger agents make fewer unscientific errors; beyond these, agents find which variables a system has but not how they act, and prefer revisions that lower the training error to revisions that predict better.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03713",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03713.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03713v1 Announce Type: new Abstract: Before a scientist fits any parameter, they must decide what the model contains: which quantities exist, which are hidden, how they interact, and how they are measured. Physicists call such a trial form an ansatz. Benchmarks for automated equation discovery mostly supply it, by fixing the variables, a library of candidate terms, or a law to be modified.\n\nWe introduce Unsatz, a benchmark in which an LLM agent must construct the ansatz itself. Each task is a simulated system, generated from a private seed as a program in a small modeling language: ordinary, delay, or partial differential equations, discrete maps, static and causal models, or stochastic processes, possibly with hidden states, distorted sensors, and uninformative measurement channels. The agent buys experiments within a budget, writes candidate programs in the same language, obtains their coefficients from the benchmark's fitter, and is scored only on how its final program predicts experiments it never saw: conditions outside the range it could explore, interventions, and longer runs.",
-      "takeaways": [
-        "Across 80 systems in 20 domains, nine language models solve between 21% and 60%.",
-        "On 44 of these systems, classical equation-discovery methods almost never succeed, although the same data usually suffice once the true equations are given with unknown coefficients; the difficulty lies in finding the structure, not in estimating it.",
-        "Because mechanisms recur across systems, we also give agents the program they discovered for a related system; it helped only when the new system shared the mechanism and the first investigation had succeeded.",
-        "Stronger agents make fewer unscientific errors; beyond these, agents find which variables a system has but not how they act, and prefer revisions that lower the training error to revisions that predict better."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "70aa2010d2df0136",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03721",
-    "title": "Counterexample-driven autonomous research with application to excess radiated energy in a Z-pinch",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "dd4bd3f79fdc2b4d",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Bowen Zhu, Jian Wu",
-    "contentSnippet": "arXiv:2611.03721v1 Announce Type: new Abstract: Recent breakthroughs in artificial-intelligence-assisted mathematics show that open-ended machine search can outperform human mathematicians, yet transferring this paradigm to physics requires refactoring the research workflow. We introduce Simjecture, an open-source framework in which language-model agents pursue human-defined physical conjectures. The framework tackles two central challenges in this transfer: first, because physics is empirical and no model is final, it structures inquiry around counterexample-driven falsification and prospective hypothesis repair; second, because physical theories must interact with the real world, it uses computational physics as an executable testbed while separating the qualification of numerical instruments from scientific claim review so solvers and diagnostics can be adapted within a recorded investigation. We apply the framework in an 82.6 h investigation to tackle the long-standing problem of radiated energy exceeding the imploding-shell kinetic energy in a Z-pinch. The investigation reveals competing effects of energy conversion, retention, and release timing. Stronger coherent helical deformation increases resistive conversion while reducing radiation and increasing retained energy. A broader trailing-plasma profile delays the later radiation maximum and recovers much of its early bolometric deficit, with a spectral response that changes during the pulse. These results provide new insight into energy conversion in high-energy-density plasma physics and demonstrate a new paradigm for physics research.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03721",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03721.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03721v1 Announce Type: new Abstract: Recent breakthroughs in artificial-intelligence-assisted mathematics show that open-ended machine search can outperform human mathematicians, yet transferring this paradigm to physics requires refactoring the research workflow. We introduce Simjecture, an open-source framework in which language-model agents pursue human-defined physical conjectures. The framework tackles two central challenges in this transfer: first, because physics is empirical and no model is final, it structures inquiry around counterexample-driven falsification and prospective hypothesis repair; second, because physical theories must interact with the real world, it uses computational physics as an executable testbed while separating the qualification of numerical instruments from scientific claim review so solvers and diagnostics can be adapted within a recorded investigation.\n\nWe apply the framework in an 82.6 h investigation to tackle the long-standing problem of radiated energy exceeding the imploding-shell kinetic energy in a Z-pinch. The investigation reveals competing effects of energy conversion, retention, and release timing. Stronger coherent helical deformation increases resistive conversion while reducing radiation and increasing retained energy.",
-      "takeaways": [
-        "A broader trailing-plasma profile delays the later radiation maximum and recovers much of its early bolometric deficit, with a spectral response that changes during the pulse.",
-        "These results provide new insight into energy conversion in high-energy-density plasma physics and demonstrate a new paradigm for physics research."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "38016044e59057cc",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03723",
-    "title": "EMBERS: Empirically Motivated Robustness Testing of Deep Research Systems via Defect-Guided Fuzzing",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "32bc17c085f8a76e",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Shuochuan Li, Zan Wang, Dong Wang, Yuhang Jiang, Huajin Cui, Chen Zhang, Gang Wang, Junjie Chen",
-    "contentSnippet": "arXiv:2611.03723v1 Announce Type: new Abstract: Deep Research (DR) systems extend large language models into autonomous agents that decompose complex information needs, iteratively search the web, and synthesize evidence to answer challenging questions. However, their multi-stage execution may introduce robustness risks, as variations in user questions or intermediate search inputs may propagate across research stages and lead to incorrect answers. Existing evaluations focus on task-solving capabilities or robustness against external evidence disturbances, leaving intrinsic weaknesses in DR execution insufficiently explored. Thus, we conduct an empirical study of 1,932 execution trajectories from three representative DR systems and identify nine recurring defect categories across subquestion formulation, online search, and final reasoning. Guided by these findings, we propose EMBERS, an empirically motivated, defect-guided fuzzing framework for robustness testing of DR systems. Starting from correctly answered seed questions, EMBERS generates stage-targeted test inputs using defect-guided mutation, web-search-assisted fidelity assurance, and diversity-aware seed maintenance. Experiments across 16 framework--model--dataset settings show that EMBERS achieves 3.21 times the failure-discovery throughput of the strongest baseline under identical testing budgets. Human and LLM-assisted evaluations demonstrate that most generated inputs preserve the original information need and necessary contextual constraints. Moreover, model fine-tuning experiments show consistent-answer performance improvement, highlighting their value for robustness testing and model improvement.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03723",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03723.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03723v1 Announce Type: new Abstract: Deep Research (DR) systems extend large language models into autonomous agents that decompose complex information needs, iteratively search the web, and synthesize evidence to answer challenging questions. However, their multi-stage execution may introduce robustness risks, as variations in user questions or intermediate search inputs may propagate across research stages and lead to incorrect answers. Existing evaluations focus on task-solving capabilities or robustness against external evidence disturbances, leaving intrinsic weaknesses in DR execution insufficiently explored.\n\nThus, we conduct an empirical study of 1,932 execution trajectories from three representative DR systems and identify nine recurring defect categories across subquestion formulation, online search, and final reasoning. Guided by these findings, we propose EMBERS, an empirically motivated, defect-guided fuzzing framework for robustness testing of DR systems. Starting from correctly answered seed questions, EMBERS generates stage-targeted test inputs using defect-guided mutation, web-search-assisted fidelity assurance, and diversity-aware seed maintenance.",
-      "takeaways": [
-        "Experiments across 16 framework--model--dataset settings show that EMBERS achieves 3.21 times the failure-discovery throughput of the strongest baseline under identical testing budgets.",
-        "Human and LLM-assisted evaluations demonstrate that most generated inputs preserve the original information need and necessary contextual constraints.",
-        "Moreover, model fine-tuning experiments show consistent-answer performance improvement, highlighting their value for robustness testing and model improvement."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e584f1f19644aa4d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03725",
-    "title": "From Logs to Faults: Reference-Free Fault Localization for Retrieval-Augmented Generation Pipelines",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "1e024d92aa8c7d01",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Hira Naveed, Scott Barnett, Stefanus Kurniawan, John Grundy, Chetan Arora, Hourieh Khalajzadeh, Omar Haggag",
-    "contentSnippet": "arXiv:2611.03725v1 Announce Type: new Abstract: Retrieval-Augmented Generation (RAG) pipelines are widely used for domain-specific question answering, yet locating faults remains manual and time-consuming. Fault localization is challenging because RAG pipelines consist of interdependent stages, where faults can propagate downstream, masking their origin, or remain undetected even when the final answer is correct. Existing evaluation approaches often focus on individual stages and rely on reference answers or code instrumentation. We present RAGLog, which detects and localizes faults across RAG stages using execution logs, without requiring reference answers or code instrumentation. RAGLog transforms heterogeneous API logs into a common RAG schema and combines rule-based, embedding-based, and LLM-based checks to identify faulty stages. We introduce a live fault injector and RAGLog Faults, a dataset of 3,134 runs from five RAG pipelines with stage-level fault labels. With Claude Haiku 5.5, RAGLog achieves a pooled F1 score of 0.73 on runs with naturally occurring faults, outperforming Claude Code (0.58) and Codex (0.52), and comparable effectiveness on runs with injected faults (0.84 versus 0.80 and 0.82, respectively). It analyzes runs in approximately five seconds at US\\$0.005 each, with overall lower cost and latency than agent baselines. RAGLog is available as an open-source tool for debugging, evaluating, and monitoring RAG pipelines.",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03725",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03725.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03725v1 Announce Type: new Abstract: Retrieval-Augmented Generation (RAG) pipelines are widely used for domain-specific question answering, yet locating faults remains manual and time-consuming. Fault localization is challenging because RAG pipelines consist of interdependent stages, where faults can propagate downstream, masking their origin, or remain undetected even when the final answer is correct. Existing evaluation approaches often focus on individual stages and rely on reference answers or code instrumentation.\n\nWe present RAGLog, which detects and localizes faults across RAG stages using execution logs, without requiring reference answers or code instrumentation. RAGLog transforms heterogeneous API logs into a common RAG schema and combines rule-based, embedding-based, and LLM-based checks to identify faulty stages. We introduce a live fault injector and RAGLog Faults, a dataset of 3,134 runs from five RAG pipelines with stage-level fault labels.",
-      "takeaways": [
-        "With Claude Haiku 5.5, RAGLog achieves a pooled F1 score of 0.73 on runs with naturally occurring faults, outperforming Claude Code (0.58) and Codex (0.52), and comparable effectiveness on runs with injected faults (0.84 versus 0.80 and 0.82, respectively).",
-        "It analyzes runs in approximately five seconds at US\\$0.005 each, with overall lower cost and latency than agent baselines.",
-        "RAGLog is available as an open-source tool for debugging, evaluating, and monitoring RAG pipelines."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3e85f68dbcd3d2db",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03739",
-    "title": "Reasoning is topologically simple",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "10c0cef7b84b1fdf",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Chris Kapulkin, Nathan Kershaw",
-    "contentSnippet": "arXiv:2611.03739v1 Announce Type: new Abstract: We formulate and investigate the hypothesis that reasoning text has simpler co-occurrence topology than non-reasoning text, and that higher-quality reasoning has simpler co-occurrence topology than lower-quality reasoning. We discuss and test applications to AI safety and AI evaluation.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03739",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03739.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03739v1 Announce Type: new Abstract: We formulate and investigate the hypothesis that reasoning text has simpler co-occurrence topology than non-reasoning text, and that higher-quality reasoning has simpler co-occurrence topology than lower-quality reasoning. We discuss and test applications to AI safety and AI evaluation.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6ad18cfa83cc1d47",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03765",
-    "title": "VagueBench: Benchmarking the Robustness of Embodied Agents on Ambient Context Illusions",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "a606679feab9b282",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yang Qu, Qiang Fu, Zonghao Ying, Jiayi Zhao, Yaoyuan Zhang, Jinyang Guo, Jian Yang, Aishan Liu, Yingxun Wang, Xianglong Liu",
-    "contentSnippet": "arXiv:2611.03765v1 Announce Type: new Abstract: Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities. A more fundamental issue is largely overlooked: agents are rarely tested under semantically sufficient but contextually minimal instructions (i.e., common in real-world human communication), where auxiliary contextual cues are absent. For the first, we identify a novel phenomenon termed Ambient Context Illusion, where agents fail to execute tasks correctly when non-essential contextual details are omitted, despite unchanged task semantics. To systematically study this, we establish VagueBench, a benchmark built upon the AI2-THOR interactive simulation environment for the evaluation of context dependency in embodied agents. We systematically consider key semantic components of instructions (entities, procedures, constraints, and prior knowledge) and derive a unified taxonomy with four categories and nine subtypes to reduce auxiliary information. VagueBench contains 1,303 instruction pairs across diverse indoor environments, constructed via a human-agent co-generation framework that integrates semantic redundancy estimation, taxonomy-guided transformation, and rigorous semantic-invariance verification. Through extensive evaluation on 6 state-of-the-art embodied agents, we observe significant degradation on VagueBench in both task performance and executability (relatively -19.65% in task success rate and relatively +54.10% in empty plan rate) revealing a strong reliance on auxiliary linguistic signals rather than core task semantics. Furthermore, we demonstrate that this phenomenon persists in real-world robotic systems, where it can lead to incorrect decisions and potential safety risks.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03765",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03765.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03765v1 Announce Type: new Abstract: Embodied agents are increasingly deployed in open-world environments, yet current robustness evaluations remain biased toward hazardous instructions and jailbreak vulnerabilities. A more fundamental issue is largely overlooked: agents are rarely tested under semantically sufficient but contextually minimal instructions (i.e., common in real-world human communication), where auxiliary contextual cues are absent. For the first, we identify a novel phenomenon termed Ambient Context Illusion, where agents fail to execute tasks correctly when non-essential contextual details are omitted, despite unchanged task semantics.\n\nTo systematically study this, we establish VagueBench, a benchmark built upon the AI2-THOR interactive simulation environment for the evaluation of context dependency in embodied agents. We systematically consider key semantic components of instructions (entities, procedures, constraints, and prior knowledge) and derive a unified taxonomy with four categories and nine subtypes to reduce auxiliary information. VagueBench contains 1,303 instruction pairs across diverse indoor environments, constructed via a human-agent co-generation framework that integrates semantic redundancy estimation, taxonomy-guided transformation, and rigorous semantic-invariance verification.",
-      "takeaways": [
-        "Through extensive evaluation on 6 state-of-the-art embodied agents, we observe significant degradation on VagueBench in both task performance and executability (relatively -19.65% in task success rate and relatively +54.10% in empty plan rate) revealing a strong reliance on auxiliary linguistic signals rather than core task semantics.",
-        "Furthermore, we demonstrate that this phenomenon persists in real-world robotic systems, where it can lead to incorrect decisions and potential safety risks."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8b0d9aa8cd440282",
-    "canonicalUrl": "https://arxiv.org/abs/2611.03832",
-    "title": "El Agente F\\'armaco: A Scalable AI Scientist for Drug Discovery",
-    "publishedAt": "2026-11-04T05:00:00.000Z",
-    "fetchedAt": "2026-11-04T06:56:50.798Z",
-    "contentHash": "2b96c5fcda03bb04",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Marcel M\\\"uller, Mohammad Ghazi Vakili, Yoshihiro Ogura, Ella Ashoori, Shimeng Wang, Alessandro S. Nascimento, Eddie Calleja, Yutong Zhao, Yimeng Liu, Ella Miray Rajaonson, Aiwei Yin, Jiaru Bai, Yunheng Zou, Abraham C. Stern, Varinia Bernales, Al\\'an Aspuru-Guzik",
-    "contentSnippet": "arXiv:2611.03832v1 Announce Type: new Abstract: Computational drug discovery offers a growing range of tools for proposing and evaluating molecules, but combining them and deciding what to do next still requires substantial expert effort. Here, we introduce El Agente F\\'armaco, an AI scientist that uses modern large language model (LLM) technology to turn discovery goals expressed in everyday language into complex, scalable computational screening workflows. The agentic harness selects scientific tools, reviews their results, and adjusts subsequent steps to the target and the user's objectives. Our approach centers on a shared scientific memory: F\\'armaco Atlas, which stores molecules, structures, and results together with their provenance -- a record of how they were obtained. The agent uses targeted database queries to retrieve the evidence needed for each decision. A single request can launch calculations for an entire collection of molecules, without requiring a separate LLM decision for every compound. This design limits the information the model must process as screening collections grow, while keeping the underlying results available for inspection and further analysis. The integrated tools support molecule generation, prediction of binding and molecular properties, and searches for compounds available for purchase. In a retrospective comparison with an expert-led campaign, the agent proposed chemically distinct candidates with competitive docking scores and higher calculated drug-likeness under explicitly imposed selection criteria. In a 22-task benchmark against plain tool calls and Codex, the agent achieved the highest observed mean model-judged score, with lower median cumulative token use and peak context. F\\'armaco provides a foundation for flexible, scalable drug discovery workflows that connect scientific reasoning with an enduring, traceable record of computational work.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.03832",
-    "pdfUrl": "https://arxiv.org/pdf/2611.03832.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.03832v1 Announce Type: new Abstract: Computational drug discovery offers a growing range of tools for proposing and evaluating molecules, but combining them and deciding what to do next still requires substantial expert effort. Here, we introduce El Agente F\\'armaco, an AI scientist that uses modern large language model (LLM) technology to turn discovery goals expressed in everyday language into complex, scalable computational screening workflows. The agentic harness selects scientific tools, reviews their results, and adjusts subsequent steps to the target and the user's objectives.\n\nOur approach centers on a shared scientific memory: F\\'armaco Atlas, which stores molecules, structures, and results together with their provenance -- a record of how they were obtained. The agent uses targeted database queries to retrieve the evidence needed for each decision. A single request can launch calculations for an entire collection of molecules, without requiring a separate LLM decision for every compound.",
-      "takeaways": [
-        "This design limits the information the model must process as screening collections grow, while keeping the underlying results available for inspection and further analysis.",
-        "The integrated tools support molecule generation, prediction of binding and molecular properties, and searches for compounds available for purchase.",
-        "In a retrospective comparison with an expert-led campaign, the agent proposed chemically distinct candidates with competitive docking scores and higher calculated drug-likeness under explicitly imposed selection criteria.",
-        "In a 22-task benchmark against plain tool calls and Codex, the agent achieved the highest observed mean model-judged score, with lower median cumulative token use and peak context."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
     }
   }
 ]
