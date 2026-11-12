@@ -1,5 +1,114 @@
 [
   {
+    "id": "f553f232a4bb22bd",
+    "canonicalUrl": "https://siliconangle.com/2026/11/12/data-observability-becomes-must-ai-agents-build-databases-kubeconna/",
+    "title": "Agents that build their own databases are forcing a data foundation rethink",
+    "publishedAt": "2026-11-12T11:02:13.000Z",
+    "fetchedAt": "2026-11-12T12:05:13.703Z",
+    "contentHash": "7f75e8105eec71da",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Jonathan Anthony",
+    "contentSnippet": "UPDATED 06:02 EST / NOVEMBER 12 2026\n\nAgents that build their own databases are forcing a data foundation rethink\n\nAI agents are changing how enterprises create, move and govern information, and data observability is turning into a prerequisite rather than a nice-to-have. Models get most of the attention, but the data beneath them decides whether they hold up in production.\n\nThat pressure is now reaching the cloud-native community, where KubeCon organizers added a dedicated AI inference and agentic track this year. The industry has raced from chatbots to retrieval, fine-tuning and agents, yet every wave rests on the same groundwork, according to Sanjeev Mohan (pictured), principal at SanjMo, a data and AI advisory firm, and author of “Designing the AI-Driven Data Foundations.”\n\n“AI can only be successful if it’s built on a solid foundation,” Mohan said. “You have no observability or transparency into it. No matter what you do on top of it, it will not be successful.”\n\nMohan spoke with theCUBE Research’s John Furrier and Rebecca Knight at KubeCon + CloudNativeCon NA , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed theCUBE’s second day of coverage at the event. (* Disclosure below.)\n\nWhy AI agents demand data observability at runtime\n\nFor decades, data was created once in an operational system and then pushed through brittle pipelines for extraction, transformation, cataloging and preparation. That model works when humans consume batch reports, Mohan explained. Thousands of agents change the math.\n\n“They’re not going to wait for this pipeline to finish. They want access to the database directly,” Mohan said.\n\nAgents are also doing something no earlier software did. They spin up short-lived databases, copy data and test different chains of thought before picking one action, according to Mohan. An agent reviewing a loan application might query census records and social media before rejecting it, which raises the question of how that decision gets audited.\n\n“Governance becomes really important, and this is not like governance in the past where you would govern your data and then have a deterministic CFO report dashboard run on it,” Mohan said.\n\nThat makes data observability part of the architecture itself, not an afterthought bolted onto a warehouse. Mohan’s book, published in June 2026 by John Wiley & Sons Inc",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Sanjeev Mohan, principal at SanjMo and author of \"Designing the AI-Driven Data Foundations\" (published June 2026 by John Wiley & Sons), argues that the rise of autonomous AI agents necessitates a fundamental shift in enterprise data architecture. Traditional data models, which rely on batch processing and brittle extraction-transformation-loading (ETL) pipelines, are insufficient for agents that require direct, real-time database access to perform tasks. Mohan emphasizes that data observability must transition from a post-hoc monitoring tool to a core architectural requirement to ensure transparency and auditability in agentic decision-making.\n\nAgents are increasingly creating short-lived, ephemeral databases to test various \"chains of thought\" and build context at runtime. This behavior creates a challenge for governance, as agents may query diverse sources—such as census records and social media—to inform a single decision, such as a loan rejection. Mohan posits that future data platforms must evolve into converged systems capable of handling both structured and unstructured data, as the context required for agentic tasks is highly dynamic and unique to each specific execution instance.",
+      "takeaways": [
+        "**Architectural Shift:** AI agents are moving away from batch-processed data pipelines toward direct, runtime database access.",
+        "**Ephemeral Databases:** Agents are increasingly spinning up short-lived, temporary databases to test decision paths and store context during execution.",
+        "**Governance Challenge:** Traditional deterministic reporting dashboards are inadequate for auditing agentic decisions that rely on dynamic, runtime-generated context.",
+        "**Converged Systems:** Future data foundations must integrate structured and unstructured data into a single, observable architecture to support agentic workflows."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "3783f1b9ccff67ee",
+    "canonicalUrl": "https://siliconangle.com/2026/11/12/nebuly-wants-to-help-enterprises-understand-exactly-what-their-ai-investments-are-worth-after-raising-21m/",
+    "title": "Nebuly wants to help enterprises understand exactly what their AI investments are worth after raising $21M",
+    "publishedAt": "2026-11-12T10:00:35.000Z",
+    "fetchedAt": "2026-11-12T12:05:13.703Z",
+    "contentHash": "e7e76742f5e75421",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Mike Wheatley",
+    "contentSnippet": "UPDATED 05:00 EST / NOVEMBER 12 2026\n\nNebuly wants to help enterprises understand exactly what their AI investments are worth after raising $21M\n\nAn Italian startup called Nebuly S.r.l. says it’s going to help organizations better understand the impact their investments in artificial intelligence have on their bottom lines after raising $21 million in funding today.\n\nThe round was led by Planven and saw participation from backers including Exor Ventures, Tenacity Capital, TGVG Capital, Fastweb, Vodafone and CDP Venture Capital’s Digital Transition Fund.\n\nThe world’s biggest companies have been spending millions of dollars on artificial intelligence, but very few can actually say how much value those investments have returned. Though some leaders might be able to point to a few vanity metrics, they’ll likely stumble if pressed to come up with concrete numbers.\n\nThis is a problem because enterprise leaders are increasingly feeling the pressure to justify their investments in AI. A recent Gartner Inc. survey of business leaders found that 85% of respondents plan to step up their AI spending in the next year, but at the same time, only 22% say they have managed to scale the technology across multiple business units.\n\nMeanwhile, spending is spiraling out of control at many companies. Famously, Uber Technologies Inc. revealed earlier this year that it had eaten up the entire budget it set aside for AI in 2026 in just four months.\n\nNebuly co-founder and Chief Executive Franceso Signorato told SiliconANGLE that one of the main challenges when it comes to understanding AI’s return on investment is that many companies have deployed a jumbled patchwork of AI models and applications. They’re using tools from OpenAI Group PBC, Anthropic PBC, Microsoft Corp., Google LLC and others, as well as developing in-house tools under their own steam.\n\nThat makes it harder to see which projects are actually paying off and generating real business revenue. Although companies can track superficial metrics like token consumption and prompt tallies, genuine productivity gains remain obscured.\n\n“Every enterprise is about to face the same question from its board, if it hasn’t already: What is AI actually worth to us? Nebuly exists to answer that question,” Signorato said. “Until now companies have measured AI by counting users, prompts and responses, which has fueled the rise of tokenmaxx",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Italian startup Nebuly S.r.l. has raised $21 million in a funding round led by Planven, with participation from Exor Ventures, Tenacity Capital, TGVG Capital, Fastweb, Vodafone, and CDP Venture Capital’s Digital Transition Fund. The company provides an AI measurement platform designed to quantify the business value and return on investment (ROI) of enterprise AI deployments, moving beyond superficial metrics like token consumption to track actual productivity gains and revenue impact.\n\nThe platform functions as a unified control plane that connects directly to AI agents within a company’s IT environment. For internal, employee-facing agents, it measures operational efficiency, such as hours saved and capacity freed, while also tracking net-new work enabled by AI. For customer-facing agents, it monitors revenue generation, churn impact, and upsell opportunities. To ensure auditability, the platform allows financial teams to inspect the underlying math and assumptions, and it can be deployed on-premises or in private clouds to maintain data security.\n\nNebuly currently serves large-scale organizations, with nearly all customers generating over $100 million in annual revenue and approximately half exceeding $1 billion. Notable clients include Carl Zeiss AG, Iveco Group N.V., and Oura Health Oy. The new funding will be used to expand the company's go-to-market operations, specifically targeting growth in the U.S. market.",
+      "takeaways": [
+        "**Funding Details:** Nebuly raised $21 million in a round led by Planven, with backing from major telecommunications and venture firms including Vodafone and Fastweb.",
+        "**Core Value Proposition:** The platform aims to replace 'tokenmaxxing' metrics with evidence-based ROI, tracking specific business outcomes like employee time saved and customer revenue impact.",
+        "**Deployment Architecture:** The software acts as a unified control plane for AI agents and supports on-premises or private cloud deployment to ensure data security and auditability.",
+        "**Target Market:** The company focuses on large enterprises, with a client base where 50% of companies report annual revenues exceeding $1 billion.",
+        "**Expansion Plans:** CEO Francesco Signorato intends to use the new capital to scale go-to-market hiring and operations within the United States."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4922ca6fb0dd9299",
+    "canonicalUrl": "https://openai.com/business/customer-stories/holidays-extras-codex",
+    "title": "Holiday Extras is rethinking what it can build with Codex",
+    "publishedAt": "2026-11-12T09:30:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:14.030Z",
+    "contentHash": "fe9619587b6d2d37",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Holiday Extras is utilizing OpenAI's Codex to develop internal applications by leveraging customer expertise. The company aims to improve booking conversion rates and identify new growth opportunities through these AI-driven software development efforts.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "afde530eb01eba51",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/12/ibm-quantum-nighthawk-r3-520-qubits-1040-qubit-system-2027/",
+    "title": "IBM Announces IBM Quantum Nighthawk r3: A New Processor to Support 10k Quantum Operations on 520 Programmable Qubits",
+    "publishedAt": "2026-11-12T08:42:21.000Z",
+    "fetchedAt": "2026-11-12T12:05:13.704Z",
+    "contentHash": "aa2e98fe35aae3df",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "IBM has announced IBM Quantum Nighthawk r3 , its next superconducting quantum processor. It is designed to run 10,000 quantum operations accurately across 520 programmable qubits. In 2027, IBM plans to link 2 r3 chips into a single 1,040-qubit system. For developers, the announcement is speed. The current Nighthawk r2 already runs workloads up to 19x faster than IBM’s earlier processors. TL;DR Size: Nighthawk r3: 520 programmable qubits, 2,034 physical qubits, 10 l-couplers. Nighthawk r2 (live today): 120 programmable qubits, 218 couplers. Runs on: IBM Quantum Platform cloud (r2 as ibm_phoenix ). Superconducting chips in dilution refrigerators, paired with laptop-to-supercomputer classical compute. Performance: r2 executes 100,000+ circuits per second, about 25x Heron, with Heron-class gate fidelity. Best: Up to 19x speedup over earlier IBM processors on partner workloads; E.ON reports 15x. Worst: r3 is a design, not shipping hardware. Chip-to-chip links average 99% state transfer fidelity, short of the 99.9% target. Bottom line: Best: real throughput gains on a cloud chip you can use now. Worst: the 1,040-qubit system is a 2027 plan, not a result. What is IBM Quantum Nighthawk? Nighthawk is IBM’s square-lattice processor family built for quantum advantage workloads. Most qubits connect to 4 nearest neighbors, versus 2 or 3 on earlier designs. That connectivity lets circuits express more entangling structure with fewer swap operations. The current production chip is Nighthawk r2 . It has 120 programmable qubits, 218 couplers and 120 reset elements. That is 458 physical quantum elements in total. How does Nighthawk r2 get 25x more throughput? The bottleneck was qubit reset. Heron uses conditional reset: measure, then flip any qubit found in the excited state. That method cannot fix leaked qubits, so the chip idles for hundreds of microseconds between shots. Nighthawk r2 replaces this with a dissipative reset gadget per qubit. A tunable coupler links each qubit to a cold environment on demand. This drops effective T1 from about 200 microseconds to roughly 25 nanoseconds. Idle time between runs falls to as little as 1 microsecond. The result is 100,000+ circuits per second. Heron manages roughly 4,000. IBM also reports about 25x lower initialization error, while neighbors stay undisturbed. What speedups are partners reporting? According to IBM, clients have run",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "IBM has announced IBM Quantum Nighthawk r3, a next-generation superconducting quantum processor designed to execute 10,000 accurate quantum operations across 520 programmable qubits. The company plans to link two r3 chips into a single 1,040-qubit system by 2027. Meanwhile, the current production chip, Nighthawk r2 (available on the IBM Quantum Platform cloud as ibm_phoenix), features 120 programmable qubits, 218 couplers, 120 reset elements, and a total of 2,034 physical qubits across the architecture. Nighthawk is a square-lattice processor family where most qubits connect to four nearest neighbors, reducing swap operations compared to earlier designs.\n\nNighthawk r2 achieves high throughput by replacing Heron's conditional reset method with a dissipative reset gadget per qubit, using a tunable coupler to link each qubit to a cold environment on demand. This drops effective T1 relaxation time from approximately 200 microseconds to roughly 25 nanoseconds, reducing idle time between runs to as little as 1 microsecond. Consequently, r2 executes over 100,000 circuits per second (about 25 times the throughput of Heron, which manages roughly 4,000), alongside 25x lower initialization error. Partner workloads show up to a 19x speedup over earlier IBM processors, with E.ON reporting a 15x speedup.\n\nDespite the performance gains of the live r2 hardware, limitations remain. Nighthawk r3 is currently a design rather than shipping hardware, and the planned 1,040-qubit system is a 2027 roadmap target. Furthermore, chip-to-chip links currently average 99% state transfer fidelity, falling short of the required 99.9% target.",
+      "takeaways": [
+        "**Nighthawk r3 Specifications:** Features 520 programmable qubits, 2,034 physical qubits, and 10 l-couplers, designed for 10,000 accurate quantum operations with a 1,040-qubit linked system targeted for 2027.",
+        "**Nighthawk r2 Specifications:** Features 120 programmable qubits, 218 couplers, 120 reset elements, and executes over 100,000 circuits per second with Heron-class gate fidelity.",
+        "**Dissipative Reset Innovation:** Drops effective T1 time from ~200 microseconds to ~25 nanoseconds and idle time between runs to 1 microsecond, yielding 25x higher throughput than Heron.",
+        "**Partner Performance:** Delivers up to 19x speedups over earlier IBM processors on partner workloads, including a 15x speedup reported by E.ON.",
+        "**Architectural Limitations:** Chip-to-chip links currently achieve 99% state transfer fidelity, which is below the 99.9% target, and r3 remains a design specification rather than shipping hardware."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a552875406bb3160",
     "canonicalUrl": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
     "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
@@ -129,6 +238,29 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Gilbert + Tobin, led by Partner and Chief Executive Officer Sam Nickless, is currently undergoing a strategic re-evaluation of its legal business model through the integration of artificial intelligence. The initiative focuses on how AI technologies are being applied to transform traditional legal service delivery and operational workflows within the firm.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "d7c1da8cb7dc41da",
+    "canonicalUrl": "https://openai.com/index/children-first-declaration",
+    "title": "Supporting research on AI and children’s safety",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:14.030Z",
+    "contentHash": "ba704cb5a556833f",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+    "category": "Ethics & Policy",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI has announced a $2 million funding commitment dedicated to research concerning AI and children's safety. The initiative aims to develop and support shared tools designed to measure both the risks and opportunities associated with AI usage among young people.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -342,12 +474,12 @@
     "canonicalUrl": "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
     "title": "Nvidia is reportedly preparing to fire Jensen Huang",
     "publishedAt": "2026-11-11T22:44:36.000Z",
-    "fetchedAt": "2026-11-11T23:16:02.055Z",
-    "contentHash": "172406678e67aa73",
+    "fetchedAt": "2026-11-12T12:05:13.058Z",
+    "contentHash": "622261c40f744f98",
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Lauren Feiner",
-    "contentSnippet": "Nvidia’s board is preparing to dismiss CEO Jensen Huang following a report from the New York Times about a second alleged extramarital affair, just days after he admitted to a separate affair with a woman alleged to be a Chinese spy, The Wall Street Journal reports. The second alleged affair was with an executive who reports to him, Nvidia’s vice president of health care, Kimberly Powell, according to the Times. The Nvidia board will meet as soon as today to decide on Huang’s future at the company, according to the Journal. Nvidia did not immediately respond to a request for comment from The Verge. Huang and Powell, who are both married to other people, were allegedly captured together at a hotel in San Jose during Nvidia’s GTC developer conference in March, two unnamed sources told the Times. The Times has not seen the video. Rumors about a potential affair between the two had long circulated at Nvidia, an unnamed source told CNBC, partially because Powell does not have a health or science background. Nvidia’s stock fell more than 7 percent in after-hours trading Wednesday. Since Nvidia and Huang confirmed an extramarital relationship with Megaspeed executive and alleged spy Alice Huang and a subsequent investigation over the weekend, the company has said it retained former US attorney Joon H. Kim and his firm, Wachtell, Lipton, Rosen & Katz, to handle it, but today’s rumor suggests it won’t wait for those results to act. Last year, Huang hired crisis communications firm Heller known for handling public sex scandals, according to Wired. Its founder has advised several powerful men who faced public scrutiny, Wired reported, like former congressman Anthony Weiner and writer Jeffrey Toobin. Heller did not immediately respond to a request for comment from The Verge.",
+    "contentSnippet": "Nvidia's board is preparing to dismiss CEO Jensen Huang following a report from The New York Times about a second alleged extramarital affair , just days after he admitted to a separate affair with a woman alleged to be a Chinese spy, The Wall Street Journal reports . The second alleged affair was with an executive who reports to him, Nvidia's vice president of health care, Kimberly Powell, according to the Times . The Nvidia board will meet as soon as today to decide on Huang's future at the company, according to the Journal . Nvidia did not immediately respond to a request for comment from The Verge . Huang and Powell, who are both marrie … Read the full story at The Verge.",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25824934/2192224191.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "Robotics & Hardware",
     "lab": "NVIDIA",
@@ -690,7 +822,7 @@
     "author": "Lucas Ropek",
     "contentSnippet": "Posted: 12:12 PM PST · November 11, 2026 Image Credits: Marcin Golba/NurPhoto / Getty Images Lucas Ropek Meta is losing its longtime head of infrastructure A key figure in Meta’s growth into a social media and tech industry powerhouse is leaving the company.\n\nSantosh Janardhan, the company’s longtime head of infrastructure and co-head of engineering, will be stepping down, Meta told TechCrunch. He will be replaced by Dave Brown, who joined the company as vice president of infrastructure earlier this year, the company added. Previous to coming aboard at Meta, Brown spent 19 years at Amazon, where he focused on compute, cloud, and AI, his LinkedIn shows .\n\nIt sounds like Janardhan will remain at Meta for a little bit, although he is expected to leave next year. “Santosh will stay on for transition and he is moving into an advisory role on Meta Compute,” said a Meta representative.\n\nJanardhan, who originally joined the company in 2009, helped the firm grow into the massive internet presence that it is today. Bloomberg originally reported Janardhan’s departure, citing an internal memo that had recently been circulated. It’s unclear why Janardhan is stepping down from the role. The memo did not specify the reasons for his departure and Meta didn’t immediately respond to a request for clarity on the issue. However, Janardhan’s memo apparently cited the need to “pass the baton.”\n\nIn recent years, the company’s investment in infrastructure has exploded , as it seeks to keep up with its competitors in the AI race. Earlier this year, Janardhan was tasked with leading Meta Compute , the company initiative to scale its data center investments and strategy.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related Social X launches its own clipping feature to spur influencer engagement\n\nAI Meta’s AI agent Muse lands on Apple Watch and Android Wear OS Aisha Malik\n\nMedia & Entertainment Jensen Huang’s alleged honeypot scandal has inspired some top-notch memes Dominic-Madori Davis\n\n<img width=\"666\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2026/11/Congratulations-Nvidias-New-CEO.png?w=666\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/11/Congratulations-Nvidias-New-CEO.png 1672w, https://techcrunch.com/wp-content/uploads/",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Santosh Janardhan, Meta’s longtime head of infrastructure and co-head of engineering, is stepping down from his role. Janardhan, who joined Meta in 2009, has been a central figure in scaling the company’s technical operations. He will remain at the company for a transition period before moving into an advisory role focused on Meta Compute, the internal initiative responsible for scaling data center investments and infrastructure strategy.\n\nDave Brown, who joined Meta earlier this year as vice president of infrastructure, will succeed Janardhan. Brown brings 19 years of experience from Amazon, where his tenure focused on cloud, compute, and AI technologies. While the specific reasons for Janardhan’s departure remain undisclosed, an internal memo cited by Bloomberg indicated his intent to \"pass the baton\" as Meta continues to aggressively expand its infrastructure to support its AI development roadmap.",
@@ -1323,7 +1455,7 @@
         "In all cases, the first thing we do is step back and ask who the product is for and what they’re trying to do."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 8,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -7406,6 +7538,147 @@
     }
   },
   {
+    "id": "0c27c7b3c601916d",
+    "canonicalUrl": "https://arxiv.org/abs/2611.14418",
+    "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "b827d69e84e43851",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Mohammed Nayeem Khan, Logesh L, Aliyas Ahmad Misri",
+    "contentSnippet": "Authors: Mohammed Nayeem Khan , Logesh L , Aliyas Ahmad Misri\n\nAbstract: Local decoding usually fixes one weight precision for the whole generation. We study a different allocation: store 8-bit weights, decode with their top 4 bits, and redo a step at 8 bits only when the low-precision output distribution looks uncertain (entropy above a threshold or a small top-two margin). Quantization is simulated, the model is Qwen3-0.6B, and the benchmark is GSM8K. Cost is counted in weight bytes read per token. On 36724 replayed steps the entropy of the low pass ranks argmax flips with AUC 0.93. At a 15% escalation budget it catches 78% of flips and the margin gate 94%, against the 15% expected for a random gate of equal rate (a computed expectation, not a run). In 150 live problems all-high scores 64.0% and all-low 55.3% (McNemar p=0.053). An entropy gate with a 16% escalation rate scores 62.7% at 0.87 of the all-high weight bytes. Its paired difference is -1.3 (-8.0 to +5.3) points to all-high and +7.3 (+0.0 to +14.7) points to all-low (p=0.080), so the live data do not separate the gate from either end. Verified speculation reaches zero KL at similar bytes in the same cost model. A live random control, a thinking-mode phase rule, a second model and live KL were not run.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.14418",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14418",
+    "summary": {
+      "tldr": "Researchers Mohammed Nayeem Khan, Logesh L, and Aliyas Ahmad Misri propose a dynamic precision allocation strategy for local LLM decoding, utilizing the Qwen3-0.6B model to test the efficacy of escalating weight precision based on output uncertainty. The method stores weights in 8-bit format but defaults to 4-bit decoding, triggering a re-computation at 8-bit precision only when the model exhibits high entropy or a narrow margin between the top two predicted tokens. This approach aims to optimize memory bandwidth by reducing the average weight bytes read per token while maintaining performance levels comparable to full 8-bit precision.\n\nIn simulations using the GSM8K benchmark, the team analyzed 36,724 replayed steps, finding that entropy-based gating correlates with argmax flips with an AUC of 0.93. With a 15% escalation budget, the margin gate successfully identified 94% of potential flips, significantly outperforming a random gate. Live testing on 150 problems showed that an entropy gate with a 16% escalation rate achieved a 62.7% score while consuming only 87% of the weight bytes required for full 8-bit inference. While the performance difference between the gated approach and the all-high baseline was statistically inconclusive (p=0.080), the method demonstrates a viable path toward reducing computational overhead in resource-constrained local environments.",
+      "takeaways": [
+        "**Model Architecture:** The study utilizes the Qwen3-0.6B model to evaluate dynamic precision scaling.",
+        "**Performance Metric:** On the GSM8K benchmark, the entropy-gated approach achieved 62.7% accuracy compared to 64.0% for all-high 8-bit precision.",
+        "**Efficiency Gain:** The gated method reduced weight byte consumption to 0.87 of the full 8-bit baseline while maintaining competitive accuracy.",
+        "**Detection Capability:** The margin gate identified 94% of argmax flips at a 15% escalation budget, significantly exceeding the performance of a random gate.",
+        "**Statistical Significance:** Live testing results showed a paired difference of -1.3 points compared to all-high precision and +7.3 points compared to all-low precision (p=0.080)."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "11c10fbc3c4d9de1",
+    "canonicalUrl": "https://arxiv.org/abs/2611.14413",
+    "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "ac27ddc857a66d51",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Mohammed Nayeem Khan, Logesh L, Aliyas Ahmad Misri",
+    "contentSnippet": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and which is the cheaper way to spend a fixed budget. On Qwen3-0.6B and Qwen3-1.7B with simulated round-to-nearest weight quantization (8, 6, 4 and 3 bits, fp16 reference), read from the logits of the letters A to D on ARC-Easy, ARC-Challenge, MMLU and HellaSwag (300 items each), 6 bits lose no accuracy against fp16 (they score +1.8 (+1.0 to +2.5) and +0.9 (+0.3 to +1.5) points higher, which we do not explain), and 8 bits change it by -0.7 (-1.1 to -0.3) and -0.4 (-0.7 to -0.2) points. At 4 bits the answer-slot skew rises from 0.15 to 0.53 (0.6B) and from 0.07 to 0.12 (1.7B); Gaussian noise at the same weight SNR gives 0.15 and 0.37 (two draws) and 0.19 (one draw), so the control is inconclusive on whether rounding adds slot skew beyond equal-power noise. Flip rates rise but stay below an accuracy-matched baseline of independent uniform errors. Averaging four cyclic orders recovers +12.6 points at 4 bits for 0.6B (+5.3 at fp16). We price bits and passes in one machine-independent unit, weight bytes read times passes. In cost-matched pairs, extra orders beat extra bits only when the weights have 6 or more bits, and the decision table reduces to: use 6-bit weights and spend the rest of the budget on up to four orders, one pass each. Everything is simulated on two small models with the simplest quantizer; a title-level search found no earlier study of quantization together with option order.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.14413",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14413",
+    "summary": {
+      "tldr": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and which is the cheaper way to spend a fixed budget. On Qwen3-0.6B and Qwen3-1.7B with simulated round-to-nearest weight quantization (8, 6, 4 and 3 bits, fp16 reference), read from the logits of the letters A to D on ARC-Easy, ARC-Challenge, MMLU and HellaSwag (300 items each), 6 bits lose no accuracy against fp16 (they score +1.8 (+1.0 to +2.5) and +0.9 (+0.3 to +1.5) points higher, which we do not explain), and 8 bits change it by -0.7 (-1.1 to -0.3) and -0.4 (-0.7 to -0.2) points.\n\nAt 4 bits the answer-slot skew rises from 0.15 to 0.53 (0.6B) and from 0.07 to 0.12 (1.7B); Gaussian noise at the same weight SNR gives 0.15 and 0.37 (two draws) and 0.19 (one draw), so the control is inconclusive on whether rounding adds slot skew beyond equal-power noise. Flip rates rise but stay below an accuracy-matched baseline of independent uniform errors. Averaging four cyclic orders recovers +12.6 points at 4 bits for 0.6B (+5.3 at fp16).",
+      "takeaways": [
+        "We price bits and passes in one machine-independent unit, weight bytes read times passes.",
+        "In cost-matched pairs, extra orders beat extra bits only when the weights have 6 or more bits, and the decision table reduces to: use 6-bit weights and spend the rest of the budget on up to four orders, one pass each.",
+        "Everything is simulated on two small models with the simplest quantizer; a title-level search found no earlier study of quantization together with option order."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "fe8b36ff8f5a01a4",
+    "canonicalUrl": "https://arxiv.org/abs/2611.13843",
+    "title": "PolyRoute: A Twelve-Language and Code-Mixed Benchmark for Typed-Decision Routing, with Baselines and a Leaderboard",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "bf5d6b2869756c01",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Mohammed Nayeem Khan, Sarun Kumar K S",
+    "contentSnippet": "Typed-decision encoders answer a question about a text in one forward pass, but their behaviour outside English is rarely measured on a fixed yardstick. We release PolyRoute: 322 native-language support messages in 12 languages and 9 writing systems, 156 code-mixed or romanised messages (Hinglish, Spanglish, Arabizi), 967 optional native training rows, and a protocol for a three-way department-routing decision. Labels come from Qwen3.8-27B with a blind second pass (91% of candidates kept); an independent model, gemma4-31b, agrees on 97.2% of test items, and the largest character 5-gram similarity between any test text and any training text is 0.33. A leaderboard of 13 systems gives 61.2% for the English-root checkpoint, 77.3% for the shipped multilingual one and 96.6% for the best fine-tune; TF-IDF with logistic regression reaches 91.9%. On four withheld languages the three multilingual systems score 77%, 90% and 93%. On code-mixed text the English root (85%) is nominally ahead of the shipped multilingual checkpoint (79%; p=0.134). The split resolves differences only above about 4 points. All texts and labels are LLM-generated.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.13843",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13843",
+    "summary": {
+      "tldr": "Typed-decision encoders answer a question about a text in one forward pass, but their behaviour outside English is rarely measured on a fixed yardstick. We release PolyRoute: 322 native-language support messages in 12 languages and 9 writing systems, 156 code-mixed or romanised messages (Hinglish, Spanglish, Arabizi), 967 optional native training rows, and a protocol for a three-way department-routing decision. Labels come from Qwen3.8-27B with a blind second pass (91% of candidates kept); an independent model, gemma4-31b, agrees on 97.2% of test items, and the largest character 5-gram similarity between any test text and any training text is 0.33.\n\nA leaderboard of 13 systems gives 61.2% for the English-root checkpoint, 77.3% for the shipped multilingual one and 96.6% for the best fine-tune; TF-IDF with logistic regression reaches 91.9%. On four withheld languages the three multilingual systems score 77%, 90% and 93%. On code-mixed text the English root (85%) is nominally ahead of the shipped multilingual checkpoint (79%; p=0.134).",
+      "takeaways": [
+        "The split resolves differences only above about 4 points.",
+        "All texts and labels are LLM-generated."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "a18a364ab42df63e",
+    "canonicalUrl": "https://arxiv.org/abs/2611.13410",
+    "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "0972506c73057312",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Genming Cui, Xiangyu Li, Zixu Hao, Xin Ding",
+    "contentSnippet": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. Examining failed rollouts, we find that quantized agents overlook task requirements or environmental conditions, producing environment transitions that diverge from successful full-precision references. Correcting these behavioral divergences remains difficult: offline data may miss the student's failure contexts, while its own rollouts may provide few correct responses in those contexts. We introduce SteerDistill, a quantization-aware distillation method in which a full-precision teacher guides the student to revise failed responses and iteratively refines its guidance using feedback from student execution. This closed-loop teacher steering produces locally verified behavioral corrections. We internalize these corrections by training the student without guidance to match the steered student's predictions at corrected turns and the full-precision teacher's at other turns, enabling unassisted inference. Across five agentic benchmarks and three models, SteerDistill exceeds the strongest quantized baseline by 1.67--2.18 points in average score under W4A16 and stays within one point of BF16. On τ^2-Bench, it outperforms QeRL by 1.84 percentage points in success rate using 67% fewer training GPU hours and produces shorter successful trajectories than the quantized baselines.",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.13410",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13410",
+    "summary": {
+      "tldr": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success. Examining failed rollouts, we find that quantized agents overlook task requirements or environmental conditions, producing environment transitions that diverge from successful full-precision references. Correcting these behavioral divergences remains difficult: offline data may miss the student's failure contexts, while its own rollouts may provide few correct responses in those contexts.\n\nWe introduce SteerDistill, a quantization-aware distillation method in which a full-precision teacher guides the student to revise failed responses and iteratively refines its guidance using feedback from student execution. This closed-loop teacher steering produces locally verified behavioral corrections. We internalize these corrections by training the student without guidance to match the steered student's predictions at corrected turns and the full-precision teacher's at other turns, enabling unassisted inference.",
+      "takeaways": [
+        "Across five agentic benchmarks and three models, SteerDistill exceeds the strongest quantized baseline by 1.67--2.18 points in average score under W4A16 and stays within one point of BF16.",
+        "On τ^2-Bench, it outperforms QeRL by 1.84 percentage points in success rate using 67% fewer training GPU hours and produces shorter successful trajectories than the quantized baselines."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "38b0b95969fe82f6",
+    "canonicalUrl": "https://arxiv.org/abs/2611.13758",
+    "title": "Mixed Signals: Weight-Space Programming for EEG and ECG",
+    "publishedAt": "2026-11-10T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "c6f891a6648b42ba",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Dara Varam, Taraneh Aminosharieh Najafi, David Atienza",
+    "contentSnippet": "Weight-space programming allows language models to read a trained neural network's weights and edit them. This opens the door to ``training'' by reasoning rather than through gradient descent. Prior work has demonstrated its functionality and promise for game-playing networks and fixing specific failures in language models, even extending to diffusion models. In this work, we present its applicability to models trained on biosignal data, specifically EEG and ECG data. We show that frontier models are not only able to debug specific faults planted in biosignal-based models without being told what these faults are, but are even capable of writing all the weights of a network from scratch, given only the architecture, the task, and a minimal set of training subjects. In particular, in one set of experiments, a language model was able to match standard gradient-descent training using 6times fewer training subjects, through reasoning alone and without any gradient descent step. Networks written by Claude Opus 5.5 also scored higher than classic hand-crafted EEG pipelines (alpha band power, and common spatial patterns with linear discriminant analysis) when built from the same 5 subjects. We also highlight some of the limitations, which include the inability of language models to improve already well-trained classification models, and their incapacity to reliably recognize, from the weights alone, the task a network was trained on. Overall, our results indicate that weight-space programming can be useful for small networks, such as those deployed on edge devices and wearables, but the concept still requires further investigation before it can be used in practice.",
+    "category": "Open Source & Research",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.13758",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13758",
+    "summary": {
+      "tldr": "Weight-space programming allows language models to read a trained neural network's weights and edit them. This opens the door to ``training'' by reasoning rather than through gradient descent. Prior work has demonstrated its functionality and promise for game-playing networks and fixing specific failures in language models, even extending to diffusion models.\n\nIn this work, we present its applicability to models trained on biosignal data, specifically EEG and ECG data. We show that frontier models are not only able to debug specific faults planted in biosignal-based models without being told what these faults are, but are even capable of writing all the weights of a network from scratch, given only the architecture, the task, and a minimal set of training subjects. In particular, in one set of experiments, a language model was able to match standard gradient-descent training using 6times fewer training subjects, through reasoning alone and without any gradient descent step.",
+      "takeaways": [
+        "Networks written by Claude Opus 5.5 also scored higher than classic hand-crafted EEG pipelines (alpha band power, and common spatial patterns with linear discriminant analysis) when built from the same 5 subjects.",
+        "We also highlight some of the limitations, which include the inability of language models to improve already well-trained classification models, and their incapacity to reliably recognize, from the weights alone, the task a network was trained on.",
+        "Overall, our results indicate that weight-space programming can be useful for small networks, such as those deployed on edge devices and wearables, but the concept still requires further investigation before it can be used in practice."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "86b4ba3155e4ca0c",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/9/llm-anthropic/",
     "title": "llm-anthropic 0.31",
@@ -7893,6 +8166,36 @@
       "impact": "Breakthrough",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "9dae1169c3cc66db",
+    "canonicalUrl": "https://arxiv.org/abs/2611.12869",
+    "title": "Where Does Alignment Emerge and What Does It Mean? A Closer Look at the Platonic Representation Hypothesis",
+    "publishedAt": "2026-11-09T18:53:57.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "92bb583f239631ae",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Julia Herbst, Simon Roschmann, Quentin Bouniot, Zeynep Akata",
+    "contentSnippet": "Authors: Julia Herbst , Simon Roschmann , Quentin Bouniot , Zeynep Akata\n\nAbstract: The Platonic Representation Hypothesis (PRH) suggests that neural networks are converging toward similar representation spaces. As language models become more capable, their representations are aligning with those of vision models. However, recent work has questioned whether this trend continues to hold for newer language models. Moreover, it has been shown that representation similarity metrics can be confounded by model depth and width, requiring appropriate baselines for interpretation. In this work, we first investigate where alignment emerges between unimodal models across model layers and representation dimensions. Next, we find that the PRH capability-alignment trend persists for newer models as long as the captions are sufficiently clean and informative. Finally, we contextualize cross-modal alignment, introducing unimodal and multimodal baselines on various datasets. Our results show that the cross-modal representational alignment of unimodal models can surpass that of explicitly aligned vision-language models, but remains substantially behind the alignment observed for models of the same modality. Code is available at this https URL .\n\nNotes: NeurIPS 2026 Workshop on Neural Network Artifacts as a New Data Modality (Spotlight)",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.12869",
+    "pdfUrl": "https://arxiv.org/pdf/2611.12869",
+    "summary": {
+      "tldr": "In their NeurIPS 2026 spotlight paper, Julia Herbst, Simon Roschmann, Quentin Bouniot, and Zeynep Akata evaluate the Platonic Representation Hypothesis (PRH), which posits that neural networks converge toward shared representation spaces as they scale. The authors investigate the emergence of alignment between unimodal models across layers and dimensions, challenging recent skepticism regarding the persistence of this trend in newer language models. They conclude that the capability-alignment correlation holds for modern architectures, provided the training data—specifically captions—is sufficiently clean and informative.\n\nThe researchers introduce new unimodal and multimodal baselines to contextualize cross-modal alignment, noting that standard similarity metrics are often confounded by architectural variables like model depth and width. Their findings reveal that while unimodal models can achieve cross-modal representational alignment that exceeds that of some explicitly trained vision-language models, this alignment remains significantly lower than the intra-modal alignment observed between models of the same modality. The study provides a framework for interpreting representation similarity and includes open-source code for further analysis.",
+      "takeaways": [
+        "**PRH Validation:** The Platonic Representation Hypothesis remains valid for newer language models, contingent on the quality and informativeness of the training captions.",
+        "**Metric Confounding:** Representation similarity metrics are frequently skewed by model depth and width, necessitating the use of the authors' proposed unimodal and multimodal baselines.",
+        "**Alignment Hierarchy:** Cross-modal alignment of unimodal models can outperform explicitly aligned vision-language models but remains inferior to intra-modal alignment.",
+        "**Research Context:** The work was presented as a spotlight at the NeurIPS 2026 Workshop on Neural Network Artifacts as a New Data Modality."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -9306,6 +9609,36 @@
     }
   },
   {
+    "id": "87767c0feba3c40c",
+    "canonicalUrl": "https://arxiv.org/abs/2611.12304",
+    "title": "Evolving Infra: Agent-Adaptive LLM Serving at Scale",
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "2ea9747aa3ffffba",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Hao Kang, Weili Xu, Ziyang Li, Zheng Du",
+    "contentSnippet": "Authors: Hao Kang , Weili Xu , Ziyang Li , Zheng Du , Hanchen Li , Tian Xia , Song Bian , Tushar Krishna , Huizi Mao , Ion Stoica , Song Han\n\nAbstract: Agentic workloads are a major source of LLM inference demand. Existing prefill--decode (PD) disaggregated serving systems offer limited flexibility for runtime adaptation of compute allocation and KV cache management, and rely on coarse signals that only partly capture the diverse and dynamic agent workload. These limitations lead to load imbalance between prefill and decode nodes and eviction of KV caches that agents will reuse. We present Evolving Infra, an agent-adaptive serving framework that adapts compute allocation to agent workloads and KV cache management to agent context management at runtime. We decouple compute allocation from key--value (KV) cache management, allowing nodes to switch efficiently between prefill and decode. Building on this design, an online planner matches the PD split to workload composition, while an agent-aware distributed KV manager guides cache eviction and transfer with signals from agent context management. Across coding, math, and computer-use tasks with GLM-5.2 and Kimi K2.6 on up to 256 GB300 GPUs, Evolving Infra reduces mean end-to-end request latency and P95 TTFT by up to 4.1x and 14x over Dynamo, NVIDIA's production framework.",
+    "category": "Robotics & Hardware",
+    "lab": "Moonshot AI",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.12304",
+    "pdfUrl": "https://arxiv.org/pdf/2611.12304",
+    "summary": {
+      "tldr": "Evolving Infra is a new agent-adaptive LLM serving framework developed by researchers from MIT, UC Berkeley, and Georgia Tech, designed to optimize inference for agentic workloads. Unlike traditional prefill-decode (PD) disaggregated serving systems, Evolving Infra decouples compute allocation from KV cache management, enabling nodes to dynamically switch roles between prefill and decode tasks. This architecture addresses the load imbalances and inefficient cache evictions common in existing production systems when handling the dynamic, multi-turn nature of agentic tasks.\n\nThe framework utilizes an online planner that adjusts the PD split based on real-time workload composition and an agent-aware distributed KV manager that optimizes cache eviction and transfer based on agent context signals. Tested on coding, math, and computer-use tasks using GLM-5.2 and Kimi K2.6 models across a cluster of up to 256 NVIDIA GB300 GPUs, Evolving Infra demonstrated significant performance gains. It achieved up to a 4.1x reduction in mean end-to-end request latency and a 14x improvement in P95 Time-to-First-Token (TTFT) compared to NVIDIA’s Dynamo production framework.",
+      "takeaways": [
+        "**Core Architecture:** Decouples compute allocation from KV cache management to allow nodes to switch between prefill and decode roles at runtime.",
+        "**Performance Metrics:** Achieved up to 4.1x lower mean end-to-end latency and 14x lower P95 TTFT compared to NVIDIA's Dynamo.",
+        "**Experimental Scale:** Validated on clusters of up to 256 NVIDIA GB300 GPUs using GLM-5.2 and Kimi K2.6 models.",
+        "**Key Components:** Features an online planner for PD split matching and an agent-aware distributed KV manager for context-guided cache management."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a86fe963d82ab963",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
     "title": "parse_number() as a SQLite extension: C vs Rust",
@@ -9904,6 +10237,33 @@
     }
   },
   {
+    "id": "0946e2aac8962d9e",
+    "canonicalUrl": "https://arxiv.org/abs/2608.22237",
+    "title": "Read Less, Solve More: Token-Efficient Sparse Reading of External Content for AI Agents",
+    "publishedAt": "2026-11-07T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T12:05:12.172Z",
+    "contentHash": "59dd24680e225cf1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zedong Liu, Jiaan Wu, Xinyang Ma, Le Xu",
+    "contentSnippet": "Web-facing AI agents repeatedly access webpages, documents, repositories, and tool responses, yet reading interfaces often expose entire objects when only sparse evidence is needed. This over-reading increases token and latency costs and can dilute relevant evidence. We present SparseRead, a reusable reading control layer that governs content admission without modifying the agent model. Its Read Intent Protocol tracks evolving needs and source coverage; Adaptive Reader Backends select how evidence is located and exposed; and the Budgeted Read Gate bounds cumulative raw exposure per episode with faithful full-view fallback. A unified Reader interface supports interchangeable evidence acquisition across heterogeneous resources. Across six models, including Claude Opus 5, and five scenarios, SparseRead reduces total tokens by up to 92.9% and wall time by up to 89.0%, preserving or improving task quality in 97% settings. On Web deep-search tasks, it reduces tokens by 31.0--43.0% and task completion time by 23.0--37.0%. Ablations validate the three designs, while integration with three agent frameworks demonstrates portability.",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2608.22237",
+    "pdfUrl": "https://arxiv.org/pdf/2608.22237",
+    "summary": {
+      "tldr": "Web-facing AI agents repeatedly access webpages, documents, repositories, and tool responses, yet reading interfaces often expose entire objects when only sparse evidence is needed. This over-reading increases token and latency costs and can dilute relevant evidence. We present SparseRead, a reusable reading control layer that governs content admission without modifying the agent model.\n\nIts Read Intent Protocol tracks evolving needs and source coverage; Adaptive Reader Backends select how evidence is located and exposed; and the Budgeted Read Gate bounds cumulative raw exposure per episode with faithful full-view fallback. A unified Reader interface supports interchangeable evidence acquisition across heterogeneous resources. Across six models, including Claude Opus 5, and five scenarios, SparseRead reduces total tokens by up to 92.9% and wall time by up to 89.0%, preserving or improving task quality in 97% settings.",
+      "takeaways": [
+        "On Web deep-search tasks, it reduces tokens by 31.0--43.0% and task completion time by 23.0--37.0%.",
+        "Ablations validate the three designs, while integration with three agent frameworks demonstrates portability."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "ef2b9c8fd99236a5",
     "canonicalUrl": "https://siliconangle.com/2026/11/06/openai-reportedly-raises-11b-in-new-funding-at-1-25t-valuation/",
     "title": "OpenAI reportedly raises $11B in new funding at $1.25T valuation",
@@ -10407,340 +10767,6 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b9a951e4bec5fc07",
-    "canonicalUrl": "https://siliconangle.com/2026/11/06/midterm-elections-will-put-ai-and-data-centers-on-trial-but-big-tech-may-end-up-winning-anyway/",
-    "title": "Midterm elections will put AI and data centers on trial, but will Big Tech end up winning anyway?",
-    "publishedAt": "2026-11-06T15:09:18.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.462Z",
-    "contentHash": "63b57fe140bc09e3",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Robert Hof",
-    "contentSnippet": "It may be a little soon to determine the ultimate winners and losers among enterprise suppliers after the midterm elections, but the early line is: Big Tech wins and data center suppliers operators such as chipmakers and neoclouds lose. Or will everybody lose? The day after the elections, stocks of many tech companies shot up, […] The post Midterm elections will put AI and data centers on trial, but will Big Tech end up winning anyway? appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "It may be a little soon to determine the ultimate winners and losers among enterprise suppliers after the midterm elections, but the early line is: Big Tech wins and data center suppliers operators such as chipmakers and neoclouds lose. The day after the elections, stocks of many tech companies shot up, ...",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b54a2133f48336a7",
-    "canonicalUrl": "https://siliconangle.com/2026/11/06/the-ai-booms-missing-balance-sheet-question-what-has-actually-been-verified/",
-    "title": "The AI boom’s missing balance-sheet question: What has actually been verified?",
-    "publishedAt": "2026-11-06T15:00:36.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.462Z",
-    "contentHash": "7f184def13f846ad",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Neil P. Osnato",
-    "contentSnippet": "Artificial intelligence infrastructure commitments are growing faster than the evidence connecting contracted capacity to sustained economic value. I spent 13 years on the floor of the New York Stock Exchange. One lesson stayed with me long after the trading jackets disappeared: A transaction could be executed, documented and perfectly valid while the assumptions that made […] The post The AI boom’s missing balance-sheet question: What has actually been verified? appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Artificial intelligence infrastructure commitments are growing faster than the evidence connecting contracted capacity to sustained economic value. I spent 13 years on the floor of the New York Stock Exchange. One lesson stayed with me long after the trading jackets disappeared: A transaction could be executed, documented and perfectly valid while the assumptions that made ...",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0cbb383569069ade",
-    "canonicalUrl": "https://siliconangle.com/2026/11/06/atomicwork-launches-certified-ai-coworker-marketplace-for-enterprise-it-and-security/",
-    "title": "Atomicwork launches certified AI coworker marketplace for enterprise IT and security",
-    "publishedAt": "2026-11-06T14:00:53.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.462Z",
-    "contentHash": "14f62fd79955845c",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Kyt Dotson",
-    "contentSnippet": "Information technology service management startup Atomicwork Inc. today announced the launch of an Artificial Intelligence Coworker Marketplace that will give enterprise IT and security teams access to prebuilt, certified AI coworkers that can work alongside employees. The company said these agentic AI coworkers include verified roles and capabilities across cloud infrastructure, access management, security and […] The post Atomicwork launches certified AI coworker marketplace for enterprise IT and security appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Information technology service management startup Atomicwork Inc. Today announced the launch of an Artificial Intelligence Coworker Marketplace that will give enterprise IT and security teams access to prebuilt, certified AI coworkers that can work alongside employees. The company said these agentic AI coworkers include verified roles and capabilities across cloud infrastructure, access management, security and ...",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5a90caffb2c87d2e",
-    "canonicalUrl": "https://huggingface.co/blog/allenai/toyblocks",
-    "title": "ToyBlocks: A controlled world for robot learning and evaluation",
-    "publishedAt": "2026-11-06T14:00:48.000Z",
-    "fetchedAt": "2026-11-10T21:50:19.410Z",
-    "contentHash": "932d994be30a9357",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "ToyBlocks: A controlled world for robot learning and evaluation.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1ca94b52e709b2f5",
-    "canonicalUrl": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
-    "title": "I watched a humanoid robot clean my apartment. It felt like a taste of the future.",
-    "publishedAt": "2026-11-06T10:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.004Z",
-    "contentHash": "cc730fb5dc050375",
-    "sourceId": "mit-tech-ai",
-    "sourceName": "MIT Technology Review",
-    "author": "Grace Huckins",
-    "contentSnippet": "I’m not the sort of person who typically pays for a house cleaner. I’m too frugal, and I kind of enjoy putting on a podcast and going to town on my tub with a Magic Eraser. But when I saw an X post about a new humanoid-robot cleaning service in San Francisco, I immediately signed up for the waitlist. I wanted my apartment to feel like The Jetsons , even if just for an hour. I was also motivated by journalistic interest. In order to ensure an authentic experience, I didn’t tell Tau Robotics, the startup behind the X post, that I was a journalist—though I did use my real name, so it’s possible someone looked me up. Tau’s long-term goal is to make autonomous cleaning robots a reality, but they’re not quite there yet: For now, the robots are piloted remotely by humans, who watch what’s going on via cameras mounted in the robots’ heads and wrists. As the robots clean, they collect data that Tau will use to train up their more independent descendants. Every counter successfully wiped and T-shirt successfully folded will help the models that power the robots learn to do better on the next go-round. Because this data is so valuable to Tau, the company charges less for cleaning than one might expect for such a cutting-edge product. At the time I booked, Tau was offering $30 for an hourlong cleaning with a single robot; now the charge is $60 per weekly cleaning with two robots, or $100 for a one-time visit. But even at the cheaper rate of $30 per hour, Tau’s robots aren’t a great bargain. They are thorough but slow, so if you, like me, are tempted to stand around watching them for their entire visit, it would probably be a better use of your time to just take care of the cleaning yourself.  But the robots are physically capable of cleaning, and they’re undeniably cute. Tau has armed each four-and-a-half-foot-tall robot with a 3D-printed “head” with antennae that allow it to communicate with Tau’s headquarters, as well as two 3D-printed claw “hands” (the more humanlike alternatives apparently aren’t durable enough, and claws do surprisingly well for most cleaning tasks). Mine was wearing a Tau Robotics shirt, and grippy socks so that it didn’t scratch hardwood floors. With all the human support they need, the robots are closer to radio-controlled cars than Waymos. Many tasks, such as making the bed and folding laundry, require what’s called kinematic guidance: The huma",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "I’m not the sort of person who typically pays for a house cleaner. I’m too frugal, and I kind of enjoy putting on a podcast and going to town on my tub with a Magic Eraser. But when I saw an X post about a new humanoid-robot cleaning service in San Francisco, I immediately signed up for the waitlist.\n\nI wanted my apartment to feel like The Jetsons , even if just for an hour. I was also motivated by journalistic interest. In order to ensure an authentic experience, I didn’t tell Tau Robotics, the startup behind the X post, that I was a journalist—though I did use my real name, so it’s possible someone looked me up.",
-      "takeaways": [
-        "Tau’s long-term goal is to make autonomous cleaning robots a reality, but they’re not quite there yet: For now, the robots are piloted remotely by humans, who watch what’s going on via cameras mounted in the robots’ heads and wrists.",
-        "As the robots clean, they collect data that Tau will use to train up their more independent descendants.",
-        "Every counter successfully wiped and T-shirt successfully folded will help the models that power the robots learn to do better on the next go-round.",
-        "Because this data is so valuable to Tau, the company charges less for cleaning than one might expect for such a cutting-edge product."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6144a970fbd28ec1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09195",
-    "title": "InstantHMR : Real-Time Human Mesh Recovery on Your Phone",
-    "publishedAt": "2026-11-06T09:17:27.000Z",
-    "fetchedAt": "2026-11-10T21:50:17.213Z",
-    "contentHash": "cad82e7fd4431fc1",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Mohamed Adjel, Kahina Chalabi, Vincent Bonnet",
-    "contentSnippet": "Real-time 3D human mesh recovery from a single image on mobile devices is a challenging problem with many applications, including robotics, biomechanics, AR/VR, and exergames. Current state-of-the-art models are either too slow to run efficiently on mobile devices or sacrifice accuracy for speed. We present InstantHMR, a family of open-source single-image regressors suited for mobile inference, based on the Momentum Human Rig (MHR) parametric model and trained exclusively on publicly available annotations from the SAM 3D Body dataset. Our approach achieves remarkable performance on a Samsung Galaxy S23 NPU, recovering a 6,890-vertex body mesh in 5.5 ms per person, and 0.98 ms on an NVIDIA RTX 4070 GPU. This speed surpasses all existing methods we evaluated. On mobile, it is 12x faster than the single mobile-compatible method that slightly outperforms ours in accuracy, while achieving competitive accuracy with 40.0 mm PA-MPJPE on 3DPW, 48.8 mm on EMDB and 41.7 mm on RICH. To ensure fair comparisons, we re-evaluate 11 state-of-the-art methods under a unified protocol aligned with the closest MHR-based competitors, including Meta's official MHR-to-SMPL conversion, and report their reproduction results. Additionally, we measure latency across eight different targets, ranging from desktop TensorRT to two phone NPUs. Code and models are available at https://github.com/Naturalpad-studio/InstantHMR.",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.09195",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09195",
-    "summary": {
-      "tldr": "Real-time 3D human mesh recovery from a single image on mobile devices is a challenging problem with many applications, including robotics, biomechanics, AR/VR, and exergames. Current state-of-the-art models are either too slow to run efficiently on mobile devices or sacrifice accuracy for speed. We present InstantHMR, a family of open-source single-image regressors suited for mobile inference, based on the Momentum Human Rig (MHR) parametric model and trained exclusively on publicly available annotations from the SAM 3D Body dataset.\n\nOur approach achieves remarkable performance on a Samsung Galaxy S23 NPU, recovering a 6,890-vertex body mesh in 5.5 ms per person, and 0.98 ms on an NVIDIA RTX 4070 GPU. This speed surpasses all existing methods we evaluated. On mobile, it is 12x faster than the single mobile-compatible method that slightly outperforms ours in accuracy, while achieving competitive accuracy with 40.0 mm PA-MPJPE on 3DPW, 48.8 mm on EMDB and 41.7 mm on RICH.",
-      "takeaways": [
-        "To ensure fair comparisons, we re-evaluate 11 state-of-the-art methods under a unified protocol aligned with the closest MHR-based competitors, including Meta's official MHR-to-SMPL conversion, and report their reproduction results.",
-        "Additionally, we measure latency across eight different targets, ranging from desktop TensorRT to two phone NPUs.",
-        "Code and models are available at https://github.com/Naturalpad-studio/InstantHMR."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8abfb1d80d93eb70",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09177v1",
-    "title": "Analyzing Code Provenance in LLMs for Programming Education",
-    "publishedAt": "2026-11-06T08:59:27.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.901Z",
-    "contentHash": "f89e2374b3c94502",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Subhankar Maity",
-    "contentSnippet": "Large language models (LLMs) play an increasing role in programming education, challenging traditional assessment methods as they can generate fully functional code instantly. This disrupts the reliability of student submissions as indicators of learning and effort. To address this issue, code provenance is essential for tracing the origins of code and distinguishing student-authored, AI-generated, and externally sourced components. We extend the Min-K% probability approach by incorporating synthetic non-member code generation and apply it to Python code for membership inference and provenance tracking. Evaluations cover free LLMs such as GPT-2, DistilGPT-2, and DialoGPT, as well as state-of-the-art commercial models including GPT-5, Gemini 2.5, Mistral, DeepSeek, and LLaMA 3.3. Before evaluating our approach on higher-education student assignments, we validate its feasibility using Stack Overflow data. The results show that free models enable more sensitive code memorization detection than commercial models. By systematically comparing these LLMs, we assess trade-offs between detection accuracy and privacy protection, taking an initial step toward effective assessment of AI-assisted programming education through combined provenance detection and process visibility.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09177",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09177.pdf",
-    "summary": {
-      "tldr": "Large language models (LLMs) play an increasing role in programming education, challenging traditional assessment methods as they can generate fully functional code instantly. This disrupts the reliability of student submissions as indicators of learning and effort. To address this issue, code provenance is essential for tracing the origins of code and distinguishing student-authored, AI-generated, and externally sourced components.\n\nWe extend the Min-K% probability approach by incorporating synthetic non-member code generation and apply it to Python code for membership inference and provenance tracking. Evaluations cover free LLMs such as GPT-2, DistilGPT-2, and DialoGPT, as well as state-of-the-art commercial models including GPT-5, Gemini 2.5, Mistral, DeepSeek, and LLaMA 3.3. Before evaluating our approach on higher-education student assignments, we validate its feasibility using Stack Overflow data.",
-      "takeaways": [
-        "The results show that free models enable more sensitive code memorization detection than commercial models.",
-        "By systematically comparing these LLMs, we assess trade-offs between detection accuracy and privacy protection, taking an initial step toward effective assessment of AI-assisted programming education through combined provenance detection and process visibility."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a0a44ed09dc9a108",
-    "canonicalUrl": "https://openai.com/index/partnering-with-hacktron",
-    "title": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
-    "publishedAt": "2026-11-06T08:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "b7a0406a5e69feb2",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI is partnering with Hacktron to find vulnerabilities, test connections with third-party services, and strengthen defenses with frontier AI.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "647cdf8e063bd5c9",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09061v1",
-    "title": "Does Reasoning Improve Psychological Depth in Large Language Models?",
-    "publishedAt": "2026-11-06T06:39:24.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.901Z",
-    "contentHash": "001ec68a5ba1b711",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Ruichen Zheng",
-    "contentSnippet": "Benchmark gains from reasoning-enhanced large language models encourage the assumption that these models should broadly perform better on complex generative tasks, but this remains underexplored in open-ended, creative domains shaped by nuances of reader experience. We tested this assumption through the lens of psychological depth in short stories. We compared DeepSeek-R1 vs. DeepSeek-V3, our closest available contrast for reasoning-oriented post-training, and GPT-5 vs. GPT-4o, through 60 blinded pairwise evaluations in which seven human annotators and an ensemble LLM-as-a-Judge rated prompt-matched story outputs. Human evaluations showed no universal reasoning advantage: GPT-5 was slightly preferred over GPT-4o (60.0-62.9% across two reasoning-effort settings), whereas DeepSeek-R1 fell behind DeepSeek-V3 (42.9%). Although this pattern was marked by low inter-annotator agreement (Krippendorff's $α= 0.070$), our annotation-quality checks suggested genuine evaluative subjectivity, plausibly reflecting distinct annotator decision schemes rather than annotation failure. In contrast, the LLM-as-a-Judge showed a strong pro-reasoning bias (98.3% of pairs vs. 55.2% of human votes), consistent across its five configurations and partly tracking sentence length. These findings suggest that, at the frontier, reasoning-related quality differences are small enough to be dominated by reader subjectivity, and that LLM-as-a-Judge evaluators can obscure this subjectivity in nuanced creative-generation tasks.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09061",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09061.pdf",
-    "summary": {
-      "tldr": "Benchmark gains from reasoning-enhanced large language models encourage the assumption that these models should broadly perform better on complex generative tasks, but this remains underexplored in open-ended, creative domains shaped by nuances of reader experience. We tested this assumption through the lens of psychological depth in short stories. We compared DeepSeek-R1 vs.\n\nDeepSeek-V3, our closest available contrast for reasoning-oriented post-training, and GPT-5 vs. GPT-4o, through 60 blinded pairwise evaluations in which seven human annotators and an ensemble LLM-as-a-Judge rated prompt-matched story outputs. Human evaluations showed no universal reasoning advantage: GPT-5 was slightly preferred over GPT-4o (60.0-62.9% across two reasoning-effort settings), whereas DeepSeek-R1 fell behind DeepSeek-V3 (42.9%).",
-      "takeaways": [
-        "Although this pattern was marked by low inter-annotator agreement (Krippendorff's $α= 0.070$), our annotation-quality checks suggested genuine evaluative subjectivity, plausibly reflecting distinct annotator decision schemes rather than annotation failure.",
-        "In contrast, the LLM-as-a-Judge showed a strong pro-reasoning bias (98.3% of pairs vs.",
-        "55.2% of human votes), consistent across its five configurations and partly tracking sentence length.",
-        "These findings suggest that, at the frontier, reasoning-related quality differences are small enough to be dominated by reader subjectivity, and that LLM-as-a-Judge evaluators can obscure this subjectivity in nuanced creative-generation tasks."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "07cfb7a4028fc173",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09008v1",
-    "title": "ISER-MoE: Dynamic In-Switch Replication of Hot Experts for Load Balancing in Expert-Parallel",
-    "publishedAt": "2026-11-06T05:40:40.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.901Z",
-    "contentHash": "5ea6f9b87db38de8",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Jintao Peng",
-    "contentSnippet": "Expert-parallel mixture-of-experts (MoE) layers run at the pace of the most loaded GPU, and a few hot experts carry most of the excess load. Replicating them at every MoE layer balances the load only if their weights arrive within the layer, and broadcasting from the owner is the bottleneck: point-to-point copies overload it, and baseline broadcasts pay latency or bandwidth overheads. We present ISER-MoE (In-Switch Expert Replication for MoE), built in TensorRT-LLM, which multicasts hot experts through the NVLink switch to fixed GPU groups, so each byte leaves its owner once. A GPU scheduler assigns hot experts to groups per layer, and a multi-port broadcast spreads the injection over the group's ports, both overlapped with the shared expert. In trace replay, the scheduler removed 98-99% of the excess load; in prefill serving of DeepSeek-V4-Pro, throughput rose 17.4% on a math benchmark and 7.2% on agentic prompts.",
-    "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09008",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09008.pdf",
-    "summary": {
-      "tldr": "Expert-parallel mixture-of-experts (MoE) layers run at the pace of the most loaded GPU, and a few hot experts carry most of the excess load. Replicating them at every MoE layer balances the load only if their weights arrive within the layer, and broadcasting from the owner is the bottleneck: point-to-point copies overload it, and baseline broadcasts pay latency or bandwidth overheads. We present ISER-MoE (In-Switch Expert Replication for MoE), built in TensorRT-LLM, which multicasts hot experts through the NVLink switch to fixed GPU groups, so each byte leaves its owner once.",
-      "takeaways": [
-        "A GPU scheduler assigns hot experts to groups per layer, and a multi-port broadcast spreads the injection over the group's ports, both overlapped with the shared expert.",
-        "In trace replay, the scheduler removed 98-99% of the excess load; in prefill serving of DeepSeek-V4-Pro, throughput rose 17.4% on a math benchmark and 7.2% on agentic prompts."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d0feb89065d69416",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09501",
-    "title": "e-means: outperforming k-means (in one-tenth the epochs)",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:17.213Z",
-    "contentHash": "85a3a17bb2fdf354",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Swann Bessa, Pierre-Emmanuel Mazaré, Gergely Szilvasy, Hugo Touvron",
-    "contentSnippet": "Authors: Swann Bessa , Pierre-Emmanuel Mazaré , Gergely Szilvasy , Hugo Touvron , David Picard , Matthijs Douze , Hervé Jégou\n\nAbstract: Lloyd's k-means algorithm is a long-running standard for clustering, with applications in data analysis, retrieval, quantization and data curation. In this paper, we introduce an exponential moving average optimization procedure for k-means with mini-batch updates, powered by modern deep learning machinery and new insights. We also establish scaling laws on how decay rate and batch size impact final performance. This gives us a formulaic rule to fix them for multiple problem sizes and embedding datasets, without the need for any hyperparameter sweep. The resulting clustering algorithm, coined e-means, is much faster than Lloyd k-means and converges to lower losses, frequently even beating k-means++. On a wide array of embeddings datasets, it beats the loss of Lloyd k-means at 25 epochs in 1.4 to 2.6 epochs, which translates to 10-45x GPU wall-clock speedups compared to state-of-the-art k-means implementations. As an example, e-means partitions DINO10B, a dataset of 10 billion DINO embeddings, into 16 million clusters in only 2.5 epochs, reaching a loss below Lloyd's at 25 epochs.\n\nNotes: Code : this https URL Website : this https URL",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.09501",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09501",
-    "summary": {
-      "tldr": "Researchers from Meta and associated institutions have introduced 'e-means,' an optimization procedure for k-means clustering that utilizes exponential moving average (EMA) updates within a mini-batch framework. By leveraging modern deep learning infrastructure, the authors established specific scaling laws governing the relationship between decay rates and batch sizes, effectively eliminating the requirement for hyperparameter tuning across various embedding datasets. The algorithm is designed to replace the traditional Lloyd's k-means approach, offering a more efficient path to convergence for large-scale data curation and quantization tasks.\n\nPerformance benchmarks demonstrate that e-means achieves lower loss values than standard Lloyd's k-means and frequently outperforms k-means++ initialization. In practical testing, the algorithm reaches the loss level of a 25-epoch Lloyd's run in just 1.4 to 2.6 epochs, resulting in GPU wall-clock speedups ranging from 10x to 45x. A notable demonstration involved partitioning the DINO10B dataset—comprising 10 billion DINO embeddings—into 16 million clusters in only 2.5 epochs, surpassing the loss metrics of traditional methods.",
-      "takeaways": [
-        "**Algorithm Mechanism:** e-means replaces standard Lloyd's updates with an exponential moving average (EMA) optimization procedure optimized for mini-batch processing.",
-        "**Efficiency Gains:** The method delivers 10-45x GPU wall-clock speedups compared to state-of-the-art k-means implementations.",
-        "**Scaling Laws:** The authors derived a formulaic rule for setting decay rates and batch sizes, removing the need for manual hyperparameter sweeps.",
-        "**Large-Scale Benchmark:** The algorithm successfully clustered 10 billion DINO embeddings into 16 million clusters in 2.5 epochs.",
-        "**Performance Metric:** e-means consistently achieves lower loss values than Lloyd's k-means at 25 epochs within a fraction of the time."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "5d308e14f05e7791",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09709",
-    "title": "RidgeFill: Training-Free Late-Layer Cache Fill for Faster Prefill",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:17.213Z",
-    "contentHash": "be7f682c497a38b5",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Dylan Johnston, Robert P. Smith",
-    "contentSnippet": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model. RidgeFill retrofits it onto models that were never trained for it: the map is a ridge regression fitted once in closed form from one pass over calibration text, the layer's own projections run unchanged, and a chosen set of rows, the last few thousand tokens, and every decoding step run the full model. Nothing is trained and no token is dropped. Most of the work was in measurement, finding a repeatable methodology. Loss averaged over all tokens hides RidgeFill's error. Needle retrieval in the filled region, loss on tokens that depend on distant context, and splice tests that swap filled keys or values for exact ones show which component carries it: the keys on Llama-3.1-8B, half of it in their scale, and the values and the recurrent state on Qwen3.5-9B. On Qwen3.8-27B in a llama.cpp fork on an A100, time to first token is 1.25 to 1.31x faster at 16K to 120K tokens with the maps in VRAM; RULER changes by -1.2 and -1.4 points and LongBench v2 by -1.4; the 95 % intervals include zero but do not rule out losses of a few points. On Qwen3.8-Flash-Next in vLLM it is 1.50 to 1.60x faster than exact at 9K to 32K tokens, with RULER's needle tasks at 99.8 against 100.0 and perplexity on novel tokens 2.65 % higher [-0.02 %, +4.93 %]. On three 8 to 9B reference models, at the same split and tail as the identity fill, the fitted map retrieves 49.1 and 49.6 more filled-region RULER points on the two dense models (at that split Llama's loss is worse), and its long-document loss is +/-0.03 nats of the released SwiftKV checkpoint's.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.09709",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09709",
-    "summary": {
-      "tldr": "RidgeFill shortens prefill by not computing most of a model's upper layers for the prompt. The lower layers run exactly up to a split; from the split layer's state a per-layer map predicts every later layer's input, and each late layer writes its cache from that prediction. The design follows YOCO and DeepSeek-V4.1-Flash, where the projection is trained into the model.\n\nRidgeFill retrofits it onto models that were never trained for it: the map is a ridge regression fitted once in closed form from one pass over calibration text, the layer's own projections run unchanged, and a chosen set of rows, the last few thousand tokens, and every decoding step run the full model. Nothing is trained and no token is dropped. Most of the work was in measurement, finding a repeatable methodology.",
-      "takeaways": [
-        "Loss averaged over all tokens hides RidgeFill's error.",
-        "Needle retrieval in the filled region, loss on tokens that depend on distant context, and splice tests that swap filled keys or values for exact ones show which component carries it: the keys on Llama-3.1-8B, half of it in their scale, and the values and the recurrent state on Qwen3.5-9B.",
-        "On Qwen3.8-27B in a llama.cpp fork on an A100, time to first token is 1.25 to 1.31x faster at 16K to 120K tokens with the maps in VRAM; RULER changes by -1.2 and -1.4 points and LongBench v2 by -1.4; the 95 % intervals include zero but do not rule out losses of a few points.",
-        "On Qwen3.8-Flash-Next in vLLM it is 1.50 to 1.60x faster than exact at 9K to 32K tokens, with RULER's needle tasks at 99.8 against 100.0 and perplexity on novel tokens 2.65 % higher [-0.02 %, +4.93 %]."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "704bef227d1df285",
-    "canonicalUrl": "https://arxiv.org/abs/2501.08686",
-    "title": "Knowledge Graph-based Retrieval-Augmented Generation for Schema Matching",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:17.213Z",
-    "contentHash": "9d474f1d4b51877a",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Chuangtao Ma, Sriom Chakrabarti, Arijit Khan, Bálint Molnár",
-    "contentSnippet": "Traditional similarity-based schema matching methods fail to resolve semantic ambiguities and conflicts in complex, domain-specific mappings due to a lack of commonsense and domain-specific knowledge. In parallel, large language models (LLMs) without sufficient background knowledge tend to hallucinate, further complicating schema matching. To overcome these limitations, we introduce KG-RAG4SM, a Knowledge Graph-based Retrieval-Augmented Generation for Schema Matching. This method integrates novel retrieval mechanisms, including LLM-based, vector-based, graph traversal-based, and hybrid techniques with advanced reranking schemes to extract the most relevant subgraphs from large external KGs. Our approach achieves superior results without requiring re-training, as evidenced by improvements of 39.79% in precision and 30.56% in F1 score over LLM-based state-of-the-art (SOTA) methods (e.g., Jellyfish-8B) on the MIMIC dataset, and enhancements of 69.20% in precision and 21.99% in F1 score over pre-trained language model (PLM)-based SOTA methods (e.g., SMAT) on the Synthea dataset. Additionally, KG-RAG4SM scales effectively across KGs from commonsense KGs to domain-specific ones, while its instruction-tuning knowledge exclusion component ensures truthful performance in end-to-end schema matching tasks despite the suboptimal relevance of KG context. Our empirical analysis and case studies from real-world scenarios show that the hallucination problem in LLMs for schema matching is well mitigated by our solution.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2501.08686",
-    "pdfUrl": "https://arxiv.org/pdf/2501.08686",
-    "summary": {
-      "tldr": "Traditional similarity-based schema matching methods fail to resolve semantic ambiguities and conflicts in complex, domain-specific mappings due to a lack of commonsense and domain-specific knowledge. In parallel, large language models (LLMs) without sufficient background knowledge tend to hallucinate, further complicating schema matching. To overcome these limitations, we introduce KG-RAG4SM, a Knowledge Graph-based Retrieval-Augmented Generation for Schema Matching.\n\nThis method integrates novel retrieval mechanisms, including LLM-based, vector-based, graph traversal-based, and hybrid techniques with advanced reranking schemes to extract the most relevant subgraphs from large external KGs. Our approach achieves superior results without requiring re-training, as evidenced by improvements of 39.79% in precision and 30.56% in F1 score over LLM-based state-of-the-art (SOTA) methods (e.g., Jellyfish-8B) on the MIMIC dataset, and enhancements of 69.20% in precision and 21.99% in F1 score over pre-trained language model (PLM)-based SOTA methods (e.g., SMAT) on the Synthea dataset. Additionally, KG-RAG4SM scales effectively across KGs from commonsense KGs to domain-specific ones, while its instruction-tuning knowledge exclusion component ensures truthful performance in end-to-end schema matching tasks despite the suboptimal relevance of KG context.",
-      "takeaways": [
-        "Our empirical analysis and case studies from real-world scenarios show that the hallucination problem in LLMs for schema matching is well mitigated by our solution."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
