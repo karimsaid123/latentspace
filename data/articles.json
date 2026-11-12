@@ -1,5 +1,119 @@
 [
   {
+    "id": "a552875406bb3160",
+    "canonicalUrl": "https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/",
+    "title": "Who could replace Jensen Huang? A highly unscientific list of possible successors",
+    "publishedAt": "2026-11-12T03:13:10.000Z",
+    "fetchedAt": "2026-11-12T03:52:33.039Z",
+    "contentHash": "6a036fcbe052c4b0",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Connie Loizos",
+    "contentSnippet": "It’s almost inconceivable that Nvidia would fire its rock star CEO. Yet here we are, on the precipice of this happening. Over at Kalshi, Jensen Huang’s odds of surviving the week are sitting at a lowly 30% . Even though he built one of the world’s most valuable — and, many would argue, dangerously powerful — companies, the tides have completely turned against him. He has confessed to an extramarital affair, but as of Wednesday afternoon it isn’t even clear whom he meant: Alice Huang, the Chinese executive suspected by U.S. intelligence of spying for her country, or Kimberly Powell, an Nvidia executive who reports to him and who, five sources told The New York Times in an explosive new report, was also a paramour.\n\nEven if Huang is pushed out as CEO, the board members he has made very rich are unlikely to cut him loose entirely. Barring another shoe dropping, they could keep him on as chairman, a role Nvidia doesn’t currently have. But someone still has to run the company, and there’s no apparent succession plan, which leaves us, like everyone else, to speculate while we wait to see what happens next. While Huang’s 60 direct reports undoubtedly get a closer look, consider this our own parlor game, featuring some obvious and less obvious candidates:\n\nLisa Su . The AMD CEO runs Nvidia’s most credible rival, as well as a distant cousin of Huang. The Information floated her name this week, but why would she leave her job for his? Her company stands to benefit from every day that Nvidia spends distracted by an investigation, congressional briefings, and all the mini dramas that are sure to follow. Her best move might be to send a nice note and keep her current corner office.\n\nEric Schmidt. He was the pick of Jeffrey Sonnenfeld, senior associate dean for leadership studies at the Yale School of Management, who we talked with earlier this week. Schmidt could “parachute in tomorrow and do a very good job,” Sonnenfeld said, and perhaps he could. He ran Google from 2001 to 2011, chaired the National Security Commission on AI from 2018 to 2021, and now runs the rocket company Relativity Space. Chips, software, government, rockets — it’s an impressive range. Then again, Schmidt would bring a lot of baggage when it comes to his own extramarital dalliances . It’s hard to see him clearing the board for that reason.\n\nLip-Bu Tan . Intel’s CEO knows chips, and right now he mig",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang is facing significant leadership uncertainty following reports of an extramarital affair and alleged involvement with individuals under U.S. intelligence scrutiny. Prediction market Kalshi currently estimates Huang's probability of remaining CEO through the week at 30%. While no formal succession plan exists, the company's board faces the prospect of either replacing Huang or potentially transitioning him to a newly created chairman role to maintain continuity.\n\nThe article outlines several potential candidates for the CEO position, ranging from industry veterans to internal Nvidia leadership. External candidates include AMD CEO Lisa Su, former Google CEO Eric Schmidt, Intel CEO Lip-Bu Tan, and Sierra co-founder and former OpenAI board chair Bret Taylor. Internal candidates identified as potential successors include Nvidia VP Ian Buck, a key architect of the CUDA software platform, and SVP of Hardware Engineering Andrew Bell, who has been with the company for 25 years. CFO Colette Kress is also noted as an internal possibility, though analysts question her alignment with the company's visionary and innovation-focused leadership requirements.",
+      "takeaways": [
+        "**Market Sentiment:** Prediction market Kalshi places Jensen Huang's probability of retaining his CEO position through the current week at 30%.",
+        "**Internal Candidates:** Potential internal successors include VP Ian Buck (CUDA developer), SVP of Hardware Engineering Andrew Bell, and CFO Colette Kress.",
+        "**External Candidates:** Speculated external successors include AMD CEO Lisa Su, former Google CEO Eric Schmidt, Intel CEO Lip-Bu Tan, and Sierra co-founder Bret Taylor.",
+        "**Intel Financial Context:** Intel recently reported Q3 revenue of $16.5 billion (up 21%) but warned of Q4 shortfalls, contributing to a 20% stock decline in after-hours trading."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "38143f46dee5d139",
+    "canonicalUrl": "https://siliconangle.com/2026/11/11/model-fine-tuning-kubernetes-google-s-openrl-explained-kubeconna/",
+    "title": "Google’s GKE Labs turns reinforcement learning into a Kubernetes workload",
+    "publishedAt": "2026-11-12T01:51:03.000Z",
+    "fetchedAt": "2026-11-12T03:52:34.018Z",
+    "contentHash": "539e52db9ebce850",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Jonathan Anthony",
+    "contentSnippet": "UPDATED 20:51 EST / NOVEMBER 11 2026\n\nGoogle’s GKE Labs turns reinforcement learning into a Kubernetes workload\n\nModel fine-tuning through reinforcement learning is fast becoming one of the most demanding jobs in AI infrastructure. It mixes training, inference and sandboxed agent work in a single loop, often with research code tangled into the systems beneath it.\n\nGoogle LLC has been tackling that problem from inside its Kubernetes engineering group, and recently donated the result, OpenRL, to the Cloud Native Computing Foundation . The GKE Labs team got there by building an AI agent for Kubernetes tasks, then a benchmark to grade models on that work, according to Sunil Arora (pictured, left), senior software engineer at Google Cloud.\n\n“If you look at reinforcement learning, I think of it as a kind of a super app of AI because it involves training. It involves sampling. It involves agents actually doing things in a sandbox and sometimes kind of evaluating the work,” Arora said. “It’s kind of a very diverse workload and it is, I think, pushing the boundaries of our infrastructure.”\n\nArora and Justin Santa Barbara (right), developer at Google, spoke with theCUBE Research’s John Furrier and Rebecca Knight at KubeCon + CloudNativeCon NA , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed model fine-tuning and their work in GKE Labs, which puts experimental projects in users’ hands early. (* Disclosure below.)\n\nModel fine-tuning without the infrastructure tangle\n\nOpenRL debuted as a research preview in June 2026 , offering a self-hosted training API for a company’s own Kubernetes cluster. It splits the reinforcement learning loop from the compute plumbing, so infrastructure engineers handle scaling while researchers keep control of experiments, Arora explained.\n\n“With OpenRL, one of the things that we are trying to do is kind of abstracting away the infrastructure as kind of core primitives so that researchers and AI engineers can just focus on their RL loop,” Arora said.\n\nSandboxes are where that loop meets agent infrastructure, since calculating rewards can mean running millions of isolated commands. Google’s Agent Substrate packs more of those sandboxes onto limited compute, according to Arora. For Santa Barbara, the need surfaced one step at a time.\n\n“We built kubectl-ai, and in theory, kubectl-ai could have f",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google’s GKE Labs has introduced OpenRL, a framework designed to treat reinforcement learning (RL) model fine-tuning as a native Kubernetes workload. Donated to the Cloud Native Computing Foundation (CNCF), OpenRL aims to decouple the complex RL training loop—which involves simultaneous training, sampling, and agent evaluation—from the underlying compute infrastructure. By abstracting infrastructure into core primitives, the project allows researchers to focus on RL loops while infrastructure engineers manage scaling and resource allocation.\n\nThe architecture relies on Google’s 'Agent Substrate' to manage high-density sandboxing, which is critical for executing the millions of isolated commands required for reward calculation in RL. The project originated from internal GKE Labs experiments, including the development of 'kubectl-ai,' an AI agent for Kubernetes management. To mitigate security risks associated with autonomous agents—such as accidental disk formatting—the team implemented sandboxing to isolate agent actions from host systems. OpenRL was released as a research preview in June 2026 and provides a self-hosted training API for Kubernetes clusters.",
+      "takeaways": [
+        "**Project Origin:** OpenRL was developed by Google’s GKE Labs and subsequently donated to the Cloud Native Computing Foundation (CNCF).",
+        "**Core Functionality:** The framework provides a self-hosted training API that separates the RL training loop from compute plumbing to simplify infrastructure management.",
+        "**Security Architecture:** The system utilizes 'Agent Substrate' to pack isolated sandboxes onto limited compute, preventing autonomous agents (like kubectl-ai) from damaging host environments.",
+        "**Release Timeline:** OpenRL was first made available as a research preview in June 2026."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "d7717d6f073e26be",
+    "canonicalUrl": "https://siliconangle.com/2026/11/11/google-enters-the-decision-model-market-with-gemini-decisions-api/",
+    "title": "Google enters decision model market with Gemini Decisions API",
+    "publishedAt": "2026-11-12T01:22:05.000Z",
+    "fetchedAt": "2026-11-12T03:52:34.018Z",
+    "contentHash": "3913e5c32e78b6ba",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 20:22 EST / NOVEMBER 11 2026\n\nGoogle enters decision model market with Gemini Decisions API\n\nGoogle LLC today launched Gemini Decisions API, an artificial intelligence service designed to answer user questions in a cost-efficient manner.\n\nIt’s powered by a new AI model called Gemini Decision 1.\n\nTraditional large language models are designed to answer a broad range of prompts. Gemini Decision 1 has a much narrower focus: It can process just three types of questions. The upside is that it answers those questions at a significantly lower cost. According to Google, the model is nearly five times cheaper than its entry-level Gemini 3.5 Flash-Lite LLM.\n\nThe model can answer yes-no questions, multiple choice questions and prompts that ask it to rate an item on a user-specified scale. A cybersecurity team, for example, could ask the model to rate the severity of an antivirus alert on a scale of 1 to 10.\n\nGemini Decision 1 prompts include two items: the user’s questions and the dataset to which those questions pertain. The dataset can include up to 256,000 tokens worth of text, audio, images, video or some combination thereof.\n\nLLMs usually generate verbose free-flowing text in response to user questions. Gemini Decision 1, in contrast, outputs terse answers such as “yes” or “no.” It also displays a score that indicates how confident it is in the accuracy of a given response. That score helps applications decide whether they should make use of the output.\n\nNeural networks designed to generate brief answers to simple questions are known as decision models. The first such model, Jev, was launched in mid-September by a startup called TypeSafe AI Inc. It gained a million users within a few days. Three weeks after the launch, TypeSafe raised $870 million at a $7.5 billion valuation.\n\nDecision models can answer the narrow set of questions for which they’re optimized faster than LLMs. Additionally, they’re easier to integrate into applications. An application that powers some of its features using an AI model must check the model’s output for errors and filter redundant details before ingesting it. Decision models’ concise, structured responses make both tasks simpler.\n\n“Gemini Decision 1 scores options without token-by-token decoding, keeping median latency 50-100 ms of model compute (150-250 ms end-to-end), across multimodal inputs and contexts up to 16K tokens, ",
+    "category": "Business & Big Tech",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has launched the Gemini Decisions API, powered by a specialized model called Gemini Decision 1. Unlike traditional large language models (LLMs) designed for open-ended text generation, this model is purpose-built for three specific tasks: yes-no questions, multiple-choice queries, and rating items on a user-defined scale. By narrowing the scope, Google claims the model is approximately five times cheaper than its Gemini 3.5 Flash-Lite LLM, with pricing set at $0.10 per 1 million input tokens and no charge for output tokens.\n\nTechnically, Gemini Decision 1 processes multimodal datasets—including text, audio, images, and video—up to 256,000 tokens. The model avoids token-by-token decoding, achieving a median model compute latency of 50-100 ms (150-250 ms end-to-end) for contexts up to 16K tokens. It outputs concise, structured responses alongside a confidence score to assist in automated decision-making. Google reports that the model outperformed competitors, including TypeSafe AI’s 'Jev' and OpenAI’s 'Decisions API,' in seven out of nine internal benchmarks, though Jev remains slightly more cost-efficient.",
+      "takeaways": [
+        "**Pricing Model:** Gemini Decision 1 is priced at $0.10 per 1 million input tokens with zero cost for output tokens.",
+        "**Performance Metrics:** The model maintains a median end-to-end latency of 150-250 ms for contexts up to 16K tokens, with performance remaining stable for up to 100 questions per request.",
+        "**Input Capacity:** The API supports multimodal datasets (text, audio, images, video) up to a 256,000-token limit.",
+        "**Competitive Landscape:** Google claims Gemini Decision 1 outperformed OpenAI’s Decisions API and TypeSafe AI’s Jev in seven of nine internal benchmarks.",
+        "**Availability:** The service is currently accessible via the Gemini Decisions API and a limited free tier within Google AI Studio."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8be14bb33dc353e0",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/",
+    "title": "Build autonomous AI agents with Amazon Bedrock and Spring AI",
+    "publishedAt": "2026-11-12T01:18:23.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.974Z",
+    "contentHash": "46f46f60b3c5676f",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Viquar Khan",
+    "contentSnippet": "Java teams have established JVM tooling, continuous integration and continuous delivery (CI/CD) pipelines, and operational patterns, yet taking AI agents from prototype to production is hard: agent frameworks do not solve scalability, governance, security, and operational concerns by default. Amazon Bedrock and Spring AI close those gaps, so Java teams can build autonomous AI agents that plan, call tools and APIs, and maintain context across multi-turn conversations. Agentic AI is moving beyond prompt-response interactions toward autonomous systems that execute complex multi-step tasks. Java remains one of the widely used programming languages in enterprise software. Teams have existing CI/CD pipelines, operational expertise, and established patterns built around the JVM. Spring AI brings AI capabilities to the JVM through familiar Spring patterns: auto-configuration, dependency injection, and composable advisors. Developers can build AI agents using the same idioms they use for REST APIs, security, and data access. Amazon Bedrock AgentCore is a platform to build, connect, and optimize agents at scale, with any framework or model. With AgentCore, you can build, deploy, and operate AI agents at scale. It is framework-agnostic and model-agnostic: you bring your preferred agent framework and foundation model (FM). With AgentCore, you can access the production infrastructure you need: managed runtime, memory, browser automation, code execution, and identity management. In this post, we show you how to build autonomous AI agents in Java using Spring AI and Amazon Bedrock with spring-ai-agentcore . We explore the key implementation patterns for two systems. The first is a single-agent travel assistant that demonstrates tool calling and memory. The second is a multi-agent intelligent document processing (IDP) system that shows how specialist agents, a rules engine, and alerting work together. Prerequisites To follow along with this walkthrough, you need the following: Java – JDK 21 (required) Spring Boot – 4.1 (with Spring AI 2.0 and spring-ai-agentcore 2.0) Maven – 3.9+. Node.js – 18+ (for the React frontend) Terraform – 1.5+. Docker – with Buildx for multi-architecture builds. AWS Command Line Interface (AWS CLI) – v2, configured with credentials. An AWS account . What makes a system an agent A chat completion call can generate text, but it can’t decide what to d",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-20629-1.jpeg",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon and the Spring AI team have introduced a framework integration designed to bridge the gap between Java enterprise infrastructure and autonomous AI agent development. By utilizing Spring AI 2.0 and the newly introduced spring-ai-agentcore 2.0, Java developers can now leverage familiar idioms—such as dependency injection, auto-configuration, and composable advisors—to build agents capable of tool calling, multi-turn context management, and complex task execution. The integration aims to address common production hurdles like scalability, governance, and security that often plague prototype-to-production transitions in AI.\n\nAt the core of this architecture is Amazon Bedrock AgentCore, a framework-agnostic and model-agnostic platform that provides managed runtime environments for AI agents. AgentCore supplies the necessary infrastructure for production-grade deployments, including identity management, memory, browser automation, and code execution. The implementation patterns demonstrated include a single-agent travel assistant utilizing tool calling and a multi-agent intelligent document processing (IDP) system that coordinates specialist agents, rules engines, and alerting mechanisms. The stack requires JDK 21, Spring Boot 4.1, Maven 3.9+, and Terraform 1.5+ for deployment.",
+      "takeaways": [
+        "**Core Frameworks:** Development requires Spring Boot 4.1, Spring AI 2.0, and the spring-ai-agentcore 2.0 library.",
+        "**Infrastructure Requirements:** Deployment necessitates JDK 21, Node.js 18+, Maven 3.9+, Docker with Buildx, and Terraform 1.5+.",
+        "**AgentCore Capabilities:** Amazon Bedrock AgentCore provides managed runtime, memory, browser automation, code execution, and identity management for agents.",
+        "**System Patterns:** The architecture supports both single-agent systems (e.g., travel assistants) and multi-agent systems (e.g., intelligent document processing with rules engines)."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "65b96c238445cded",
     "canonicalUrl": "https://openai.com/index/gilbert-tobin-sam-nickless",
     "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -23,12 +137,184 @@
     }
   },
   {
+    "id": "2c1c14009b34ac8b",
+    "canonicalUrl": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+    "title": "The unfolding Jensen Huang scandal: a timeline",
+    "publishedAt": "2026-11-11T23:50:00.000Z",
+    "fetchedAt": "2026-11-12T03:52:33.039Z",
+    "contentHash": "4aa657e7045a135b",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Amanda Silberling",
+    "contentSnippet": "Nvidia co-founder CEO Jensen Huang has never been as flashy or controversy-prone as AI leaders like OpenAI’s Sam Altman or SpaceXAI’s Elon Musk. Now, the 63-year-old industry kingpin has admitted that he cheated on his wife of 40 years in an affair that could have ramifications beyond Huang’s personal life and potentially impact national security.\n\nUnited States officials believe that Huang’s likely romantic interest, Megaspeed executive Alice Huang, is a Chinese spy who has been feeding information back to Beijing. (Alice Huang, a Chinese citizen, is of no relation to Jensen Huang.)\n\nMegaspeed, a Singapore-based AI infrastructure company, had reportedly purchased $4.8 billion in Nvidia chips over the last two years. The U.S. and Singapore have both previously investigated Megaspeed over suspicions that the firm was illegally sharing chips with China. The Justice Department has since taken over the federal investigation into the company, the Times has reported.\n\nThe story took a sudden new turn on Wednesday. Citing five people who worked at Nvidia, the Times reported that Huang also had an extramarital relationship with Kimberly Powell, the company’s vice president of health care, who reports directly to him. Nvidia, Huang and Powell have not confirmed the report. Reached by a Times reporter, Huang reportedly said, “I don’t think you should be talking to me directly,” before hanging up.\n\nSeparately, the Wall Street Journal reported that Nvidia’s board is preparing to oust Huang , and Nvidia’s shares fell in after-hours trading.\n\nThe U.S. and China are embroiled in a fierce technological arms race to build the most advanced AI infrastructure, which could shape each country’s economic future, military prowess, and capacity for innovation. Nvidia is valuable in this competition as one of the world’s largest makers of AI chips, which are essential for accelerating AI development. But as an American company, Nvidia faces government restrictions on the sale of its most powerful chips to Chinese entities.\n\nAs the controversy unfolds, we are organizing the most relevant events into a reverse-chronological timeline to keep you up to date.\n\nNovember 11, 2026: Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang\n\nAfter reports of a second extramarital affair, Nvidia’s board reportedly plans to meet to discuss Huang’s future at the company, per the Wa",
+    "category": "Business & Big Tech",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang is facing a mounting corporate and national security crisis following reports of an extramarital affair with Alice Huang, a Singapore-based Megaspeed executive whom U.S. officials allege is a Chinese intelligence operative. The situation has escalated into a federal investigation by the Department of Justice, with House committee chairs threatening subpoenas if the CEO does not participate in a closed-door briefing regarding potential breaches of U.S. chip export restrictions. The controversy has triggered an internal board-led investigation and reports that Nvidia’s board is preparing to oust Huang, causing the company's stock to decline 11% over a five-day period.\n\nTechnical and commercial scrutiny centers on Megaspeed, an AI infrastructure firm that purchased $4.8 billion in Nvidia hardware over two years. Investigations by U.S. and Singaporean authorities suggest Megaspeed acted as a conduit for bypassing export controls, with reports indicating the firm facilitated $7.5 billion in chip acquisitions, including restricted models, for Chinese entities like Alibaba. Further complicating the leadership crisis, the New York Times reported a second extramarital relationship between Jensen Huang and Kimberly Powell, Nvidia’s Vice President of Healthcare, who reports directly to him. Huang has admitted to infidelity in a public letter but has not confirmed specific details regarding the allegations involving Alice Huang.",
+      "takeaways": [
+        "**Corporate Governance:** Nvidia’s board has initiated an independent investigation into CEO Jensen Huang, with reports suggesting active preparations for his removal following the dual-affair allegations.",
+        "**Export Control Violations:** Megaspeed International is under federal investigation for allegedly smuggling restricted Nvidia chips into China, with reports citing $7.5 billion in total chip acquisitions facilitated by the firm.",
+        "**Congressional Oversight:** Three House committee chairs—John Moolenaar, Brian Mast, and Rick Crawford—have requested a closed-door briefing, threatening a subpoena if Huang fails to address national security concerns.",
+        "**Market Impact:** Nvidia shares fell 8% in after-hours trading on November 11, 2026, contributing to an 11% decline over the preceding five-day period.",
+        "**Intelligence Allegations:** A secret memo supervised by Secretary of State Marco Rubio reportedly identified Alice Huang as an operative for China’s Ministry of State Security, a finding briefed to President Trump."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "df4c427209a31b94",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/",
+    "title": "OpenAI Codex on Amazon Bedrock",
+    "publishedAt": "2026-11-11T23:35:47.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.974Z",
+    "contentHash": "f445267b558a1c74",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Shivi Bhatia",
+    "contentSnippet": "Developers increasingly use Codex with Amazon Bedrock to explore unfamiliar code, make changes, and handle repetitive engineering work. For platform teams, the challenge is to make those tools available without creating a second model-access, identity, and operations stack. Codex can use Amazon Bedrock for inference with supported OpenAI models. In this post, we show how to fit that path into the AWS identity, AWS Identity and Access Management (IAM), Regional, and observability practices your organization already uses. Codex still runs on the developer workstation. The main design choice is how its model requests reach Amazon Bedrock and where your organization applies policy and operational controls. We begin with a small, least-privilege pilot and work through the checks that matter before access expands. The examples use GPT-5.6 Sol. Before starting the pilot, review Supported models by AWS Region in Amazon Bedrock to confirm that Sol, Terra, or Luna is available in the AWS Region and inference path you plan to use. Recommended default: Start with Native AWS Access for a small, least-privilege pilot. Choose AgentCore Gateway, a capability of Amazon Bedrock AgentCore, when you want AWS managed gateway infrastructure for routing or Amazon Bedrock Guardrails. Choose an LLM Gateway when a platform team wants to enforce controls in the request path. A custom integration is the advanced version of the LLM Gateway pattern, not a quick start. The examples come from the open source Guidance for Codex on AWS repository. It includes quick starts for Native AWS Access, AgentCore Gateway, LiteLLM on ECS, Portkey, the AWS Distro for OpenTelemetry (ADOT), and the Amazon CloudWatch setup used later in the post. Choose the quick start that matches your architecture, use it for the pilot, and adapt it to your environment. Choose your rollout path Authentication is only one part of an enterprise rollout. Decide who can use the service and which models and Regions are approved. Also define where configuration lives, what telemetry to collect, how usage is allocated, and which skills or Model Context Protocol (MCP) servers are allowed. The following table maps those needs to an access path and an owning team. Choose the access path that provides the controls you need now. The most straightforward path that meets the requirement usually has the lowest operational overhead. De",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21633-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AWS has published guidance for integrating OpenAI Codex with Amazon Bedrock, enabling developers to utilize OpenAI models while maintaining existing AWS identity, access management (IAM), and observability infrastructure. The integration allows Codex to run on local developer workstations while routing model requests through Amazon Bedrock, effectively centralizing operational controls and security policies within the AWS ecosystem. The documentation specifically references the use of 'GPT-5.6 Sol' as a model example, alongside mentions of 'Terra' and 'Luna' model variants, emphasizing the need to verify regional availability via the Amazon Bedrock supported models list.\n\nTo facilitate deployment, the guidance outlines three primary architectural patterns: Native AWS Access for least-privilege pilots, the AgentCore Gateway (a capability of Amazon Bedrock AgentCore) for managed routing and Guardrails, and custom LLM Gateway implementations for advanced policy enforcement. AWS provides an open-source 'Guidance for Codex on AWS' repository containing quick-start templates for these patterns, including configurations for LiteLLM on ECS, Portkey, AWS Distro for OpenTelemetry (ADOT), and Amazon CloudWatch integration. Platform teams are advised to evaluate requirements for telemetry, usage allocation, and Model Context Protocol (MCP) server permissions when selecting an access path to minimize operational overhead.",
+      "takeaways": [
+        "**Model Support:** The documentation cites GPT-5.6 Sol, Terra, and Luna as models available for inference via Amazon Bedrock.",
+        "**Deployment Patterns:** Recommended architectures include Native AWS Access, AgentCore Gateway for managed routing/Guardrails, and custom LLM Gateway integrations.",
+        "**Tooling Integration:** The 'Guidance for Codex on AWS' repository includes pre-built quick starts for LiteLLM on ECS, Portkey, ADOT, and Amazon CloudWatch.",
+        "**Operational Scope:** The architecture supports Model Context Protocol (MCP) servers and requires centralized management of telemetry, usage allocation, and regional model availability."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "95656bee021c75ec",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/",
+    "title": "Semantic diffing of formal policies with anti-unification",
+    "publishedAt": "2026-11-11T23:33:03.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.974Z",
+    "contentHash": "ce23b64cd225305f",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Ferhat Erata",
+    "contentSnippet": "When reviewing code, you start with a diff. You wouldn’t compare two 3,000-line files by eye and hope to spot every change. Formal policies can be even harder to compare because a textual diff often highlights syntactic changes that don’t affect meaning. Reorder two conjuncts, swap the arguments of an equality, or use an equivalent predicate, and much of the file might appear changed. A real change in behavior, such as an Or where the requirement says and , can get lost in that noise. A semantic diff shows what two policies have in common and where they disagree. The open source engine used in this post computes this diff using anti-unification , which finds a most specific common pattern for two expressions. Plotkin’s 1970 paper gives the classical formulation. The engine works over an e-graph, which keeps track of expressions known to be equal. We supply the algebraic laws and domain rules that justify those equalities, such as equating an external destination with one that isn’t internal. The result shows the shared parts once and keeps both versions of each differing part for review. If no differences remain, the policies are equivalent under those laws and rules. When the rules or the search are incomplete, a remaining difference might reflect an equivalence the engine has not found. One use case is autoformalization. Autoformalization translates natural language into a formal language. Suppose you want to turn requirements into SMT-LIB , the standard input language for satisfiability modulo theories (SMT) solvers such as Z3 and cvc5, or into Cedar or Dogwood to control authorization in your software system. A large language model (LLM) generates the formal artifact from the prose. The model writes the artifact. It plays no part in computing the diff. Run the model twice, and it might produce two different formalizations, with no ground truth to identify the correct one. A semantic diff shows where they agree and where they differ. Generate more candidates by varying the model, prompt, or sampling temperature. Comparing them shows which parts stay the same and which vary. Review the varying parts first. Requirements can also become OpenShell sandbox policies or Common Expression Language (CEL) expressions. OpenShell uses YAML to describe an agent’s filesystem and network access. CEL is embedded in applications to evaluate expressions, including policy c",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The article introduces a semantic diffing engine for formal policies that utilizes anti-unification—a technique derived from Plotkin’s 1970 research—to identify meaningful behavioral changes rather than superficial syntactic ones. By operating over an e-graph that tracks expressions known to be equivalent through supplied algebraic laws and domain rules, the engine isolates shared logic while highlighting specific points of divergence. This approach addresses the noise inherent in textual diffs, where minor reorderings or predicate swaps often obscure actual policy shifts.\n\nBeyond policy auditing, the engine serves as a critical tool for autoformalization workflows, where LLMs translate natural language requirements into formal languages like SMT-LIB, Cedar, Dogwood, OpenShell, or Common Expression Language (CEL). Because LLMs can generate multiple, non-identical formalizations for the same prompt, the semantic diffing engine allows developers to compare candidates, identify consensus, and focus human review on the specific segments where the model outputs disagree. The engine effectively treats the absence of remaining differences as proof of equivalence under the provided rule set.",
+      "takeaways": [
+        "**Methodology:** Uses anti-unification to find the most specific common pattern between two expressions, implemented over an e-graph to account for known algebraic and domain-specific equalities.",
+        "**Target Languages:** Supports formal policy formats including SMT-LIB (for Z3/cvc5 solvers), Cedar, Dogwood, OpenShell (YAML-based), and Common Expression Language (CEL).",
+        "**Autoformalization Utility:** Enables comparison of multiple LLM-generated formal artifacts to isolate discrepancies and verify consistency across different prompts, models, or sampling temperatures.",
+        "**Limitations:** The engine's ability to prove equivalence is bounded by the completeness of the provided algebraic laws and the underlying search mechanism."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1d3861729eb9d0f2",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/",
+    "title": "Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod",
+    "publishedAt": "2026-11-11T23:30:03.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.974Z",
+    "contentHash": "a0b9d81fcee10326",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Siddharth Senger",
+    "contentSnippet": "Silent data corruption (SDC) happens when hardware, such as a GPU, returns a wrong but plausible number and raises no error. In distributed training, the wrong number can flow into the gradients and weights of every replica. Loss can still look normal for hours, and by the time a team notices an unexplained divergence or a weaker model, the compute is spent. It happens at scale: during a 54-day period of Llama 3 405B pre-training on up to 16K H100 GPUs, Meta attributed 6 of 419 unexpected job interruptions to silent data corruption, and those were only the cases that interrupted the job and were traced to SDC. Amazon SageMaker HyperPod already replaces nodes that report a fault: the health-monitoring agent watches for GPU errors, deep health checks stress-test nodes, and automatic node recovery swaps out bad hardware. SDC slips past all of these features, because the hardware never reports anything. Detection has to come from the training job itself. In this post, we add three checks to a PyTorch DistributedDataParallel (DDP) training loop to detect SDC. When a check fires, we map the suspect rank to its node, contain the corruption, and have SageMaker HyperPod replace the node. Each check covers a different place where a fault can land: A non-finite gradient check catches NaN, Inf, and overflow in a GPU’s forward or backward pass, on the step it happens, and NaN or Inf that the gradient all-reduce introduces. A ring replay audit catches finite wrong values. On audit steps, every GPU recomputes a micro-batch from another node and compares the loss bit for bit and the gradients by fingerprint. A weight fingerprint comparison catches corruption in the optimizer step and in stored weights, by comparing every replica’s weights after the update. We tested the checks with software-injected faults on a SageMaker HyperPod cluster with 4 ml.p5.48xlarge instances (32 NVIDIA H100 GPUs), and repeated every test on three instances, the minimum the checks need. The full code of this solution is available in the accompanying GitHub repository . How silent data corruption happens and why the usual checks miss it SDC comes from manufacturing defects (marginal transistors that slip past vendor screening) and silicon aging in a specific compute unit, most often a multiply-accumulate lane in a tensor core, which is exactly the hardware model training hammers. That marginal circ",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/03/ML-21841-1-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon Web Services has introduced a detection and recovery framework for silent data corruption (SDC) within Amazon SageMaker HyperPod, specifically targeting distributed training environments where hardware errors occur without triggering standard system alerts. SDC, often caused by marginal transistors or silicon aging in GPU tensor cores, can propagate incorrect values through gradients and weights, leading to model divergence that remains undetected for hours. Meta reported that during the 54-day pre-training of Llama 3 405B on 16,000 H100 GPUs, 6 of 419 job interruptions were explicitly attributed to SDC, highlighting the scale of the issue in large-cluster training.\n\nThe proposed solution integrates three specific checks into the PyTorch DistributedDataParallel (DDP) training loop: a non-finite gradient check for NaNs and Infs, a ring replay audit that recomputes micro-batches across nodes to compare loss and gradient fingerprints, and a weight fingerprint comparison to verify optimizer updates. When a check identifies a corruption, the system maps the fault to the specific rank and node, allowing SageMaker HyperPod to automatically replace the compromised hardware. AWS validated this methodology using software-injected faults on a cluster of 4 ml.p5.48xlarge instances, totaling 32 NVIDIA H100 GPUs.",
+      "takeaways": [
+        "**SDC Prevalence:** Meta identified 6 SDC-related job interruptions out of 419 total during the 54-day Llama 3 405B pre-training run on 16K H100 GPUs.",
+        "**Detection Methodology:** The framework utilizes three distinct checks: non-finite gradient detection, ring replay audits for bit-for-bit loss comparison, and weight fingerprinting post-optimizer update.",
+        "**Hardware Validation:** AWS tested the recovery workflow on a cluster of 4 ml.p5.48xlarge instances (32 NVIDIA H100 GPUs) using software-injected faults.",
+        "**Recovery Mechanism:** Upon detection, the system isolates the suspect rank and triggers the SageMaker HyperPod automatic node recovery process to swap out the faulty hardware."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c80b16c4f3bf86c6",
+    "canonicalUrl": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+    "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+    "publishedAt": "2026-11-11T23:28:45.000Z",
+    "fetchedAt": "2026-11-12T03:52:33.039Z",
+    "contentHash": "682a58004121b5ff",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Amanda Silberling",
+    "contentSnippet": "Posted: 3:28 PM PST · November 11, 2026 Image Credits: Tomohiro Ohsumi / Getty Images Amanda Silberling Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang Nvidia is reportedly planning to oust its co-founder and CEO Jensen Huang, who has led the company for the last 33 years, the Wall Street Journal reports . Sources told the newspaper that the Nvidia board is meeting as soon as Wednesday to determine Huang’s future at the company.\n\nOn Sunday, Huang admitted to having an extramarital affair with a woman purported by U.S. intelligence to be a Chinese spy. On Wednesday evening, the New York Times reported that Huang also had an affair with an executive who reports to him.\n\nNvidia has become one of the most valuable companies in the world as it designs the chips that power the AI boom, but in the midst of Huang’s ongoing scandal , Nvidia stock fell about 8% in after hours trading on Wednesday. The stock is down about 11% in the past five days.\n\nHuang famously delegates very little and has about 60 direct reports, he has said . The company also has not had an obvious successor or a succession plan. According to Bloomberg, Nvidia is working with an outside firm to identify candidates that could potentially replace Huang as CEO.\n\nSubscribe for the industry’s biggest tech news\n\nAI Nvidia’s crisis has corporate governance experts reaching for the popcorn Connie Loizos\n\n<img width=\"562\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?w=562\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"Potato chips sit against a light blue table.\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg 3000w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=768,512 768w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=680,454 680w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=1200,800 1200w, https://techcrunch.com/wp-content/uploads/2024/09/GettyImages-1484622878.jpeg?resize=1280,854 1280w, https://techcrunch.com/wp-conte",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia’s board of directors is reportedly preparing to remove co-founder and CEO Jensen Huang following a series of personal scandals. The board is scheduled to meet as early as Wednesday to deliberate on Huang's future at the company, which he has led for 33 years. The potential leadership change follows public admissions by Huang regarding an extramarital affair with a woman identified by U.S. intelligence as a Chinese spy, as well as a separate report from the New York Times alleging an affair with an executive who reported directly to him.\n\nNvidia’s stock price reacted sharply to the news, declining approximately 8% in after-hours trading on Wednesday and marking an 11% drop over the preceding five-day period. The company currently lacks a formal succession plan, and Huang is known for a highly centralized management style, maintaining roughly 60 direct reports. According to Bloomberg, Nvidia has engaged an external firm to assist in the search for potential CEO candidates to replace Huang.",
+      "takeaways": [
+        "**Leadership Tenure:** Jensen Huang has served as Nvidia's CEO for 33 years.",
+        "**Stock Performance:** Nvidia shares fell 8% in after-hours trading on Wednesday and 11% over the last five days.",
+        "**Management Structure:** Huang maintains a flat organizational structure with approximately 60 direct reports.",
+        "**Succession Planning:** Nvidia has retained an outside firm to identify potential CEO successors, as no formal plan was previously in place."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b908c072a557d814",
+    "canonicalUrl": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+    "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+    "publishedAt": "2026-11-11T23:17:05.000Z",
+    "fetchedAt": "2026-11-12T03:52:33.039Z",
+    "contentHash": "bb3a2e1709f79b01",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lucas Ropek",
+    "contentSnippet": "Posted: 3:17 PM PST · November 11, 2026 <img width=\"1024\" height=\"683\" src=\"https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"Nvidia CEO Jensen Huang\" style=\"object-fit:cover;\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg 5000w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=768,512 768w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=680,454 680w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1200,800 1200w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1280,854 1280w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=430,287 430w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=720,480 720w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=900,600 900w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=800,534 800w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=1536,1025 1536w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=2048,1366 2048w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=668,446 668w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=562,375 562w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=925,617 925w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=708,472 708w, https://techcrunch.com/wp-content/uploads/2026/09/GettyImages-2294936867.jpg?resize=50,33 50w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /> Image Credits: Benjamin Fanjoy / Getty Images Lucas Ropek Jensen Huang accused of having another affair — with an Nvidia exec Nvidia CEO Jensen Huang is already under investigation after having admitted to having an affair with a woman accused of being a Chinese spy ",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang is facing mounting corporate and political pressure following reports of a second extramarital affair. According to the New York Times, five Nvidia employees have alleged that Huang was involved with Kimberly Powell, the company's vice president of healthcare. The report claims the two were captured on video behaving affectionately at a San Jose hotel during a conference earlier this year. This development follows Huang's prior admission of an affair with a woman accused of being a Chinese spy, an incident that is currently under investigation by the Nvidia board.\n\nBeyond internal corporate governance concerns regarding relationships between superiors and subordinates, Huang faces significant external scrutiny. Two House Republicans have indicated that Congress is preparing to subpoena the CEO if he does not voluntarily participate in a closed-door briefing regarding the espionage allegations. Following the emergence of the second affair report, the Wall Street Journal reported that the Nvidia board is actively preparing to oust Huang, who has led the company since co-founding it in 1993.",
+      "takeaways": [
+        "**Alleged Second Affair:** Five Nvidia employees reported an alleged relationship between Jensen Huang and Kimberly Powell, Nvidia’s VP of healthcare.",
+        "**Evidence Cited:** Sources claim video footage exists of Huang and Powell acting affectionately at a San Jose hotel during a conference.",
+        "**Congressional Scrutiny:** Two House Republicans are threatening a subpoena for a closed-door briefing regarding the previously admitted affair with a woman accused of being a Chinese spy.",
+        "**Board Action:** The Wall Street Journal reports that the Nvidia board is preparing to remove Huang from his position as CEO.",
+        "**Corporate Policy:** Nvidia maintains internal rules that discourage relationships between superiors and subordinates."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "159c28074b6c86e5",
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/",
     "title": "Introducing the Web Search API on Amazon Bedrock AgentCore",
     "publishedAt": "2026-11-11T23:13:16.000Z",
-    "fetchedAt": "2026-11-11T23:16:01.312Z",
-    "contentHash": "41e6b07ecac11b56",
+    "fetchedAt": "2026-11-12T03:52:31.974Z",
+    "contentHash": "de8e3b0181b234fc",
     "sourceId": "aws-ml",
     "sourceName": "AWS Machine Learning",
     "author": "Shubham Divekar",
@@ -92,7 +378,7 @@
     "author": "Duncan Riley",
     "contentSnippet": "UPDATED 17:37 EST / NOVEMBER 11 2026\n\nGoogle tests Tabletop, letting groups build planning tools with an AI agent\n\nGoogle LLC today began testing Tabletop, a Google Labs experiment in which groups share an online space and ask an artificial intelligence agent to build the planning tools they need.\n\nIn a blog post , Roman Nurik, design and engineering lead at Google Labs, wrote that coordinating a family trip or a potluck goes more smoothly when the whole group can pitch in from one place. Whoever sets up a space adds the links, files and ideas the group has collected, and from there a request to @tabletop produces the tool.\n\nTools Google lists include itineraries, dinner polls, expense splitters and tournament brackets, and there is a set of starter templates that Tabletop users can access as well. Once the space is shared through an invite link posted in the group’s existing chat, everyone can work on those tools at the same time, “like in a Google Doc,” Nurik wrote.\n\nWhen a guest at an office party in one of Google’s demos ends up seated next to the boss, a request to @tabletop turns the seating chart into one where name badges can be dragged between tables. Any tool can be reworked the same way, according to the Tabletop site .\n\nGoogle did not say which of its models run Tabletop. When Labs released its Disco browser experiment last December , Gemini 3 was the model it used to turn a person’s open tabs into small web apps. Tabletop also follows Google’s move in September to let up to six members of a household share the division’s CC agent. Rival OpenAI Group PBC added group chats to ChatGPT a year ago , and up to 20 people can now talk to the chatbot in one thread.\n\nIn ChatGPT the chatbot sits inside the conversation as one more member, and OpenAI said at launch that it had taught the model to judge when to join in. Replies in those chats initially came from GPT-5.1 Auto, which chooses a model based on the prompt and on the subscription of whoever ChatGPT is answering. OpenAI also kept personal memory out of group chats entirely.\n\nTabletop is limited for now to U.S. users 18 and older who sign up through the waitlist at tabletop.google , with Google saying it will let more people in each week. Google’s announcement does not mention pricing or a release outside the U.S.\n\nSupport our mission to keep content open and free by engaging with theCUBE community.",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Google DeepMind",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Google Labs has launched Tabletop, an experimental platform designed for collaborative group planning via an AI agent. Users create a shared online space where they can aggregate files, links, and ideas, then prompt the @tabletop agent to generate specific planning tools. These tools, which include itineraries, expense splitters, dinner polls, and interactive seating charts, allow for real-time, multi-user editing similar to a Google Doc. The platform is currently in a testing phase, accessible via a waitlist for U.S. users aged 18 and older.\n\nWhile Google has not disclosed the specific underlying model powering Tabletop, the experiment follows the company's recent integration of AI into collaborative environments, such as the household-sharing features for its CC agent introduced in September. Tabletop functions as a direct competitor to OpenAI’s group chat functionality for ChatGPT, which allows up to 20 participants per thread and utilizes the GPT-5.1 Auto model. Unlike OpenAI’s approach, which treats the AI as a conversational participant, Tabletop focuses on the generative creation and manipulation of functional, interactive planning interfaces.",
@@ -178,7 +464,7 @@
     "contentSnippet": "United says it won’t let personal AI assistants book tickets on the airline, citing both privacy and regulatory concerns. The company says it hasn’t yet seen many people try to use AI agents to book their flights, The Wall Street Journal reports, in line with observations from other businesses like Doordash. But United is concerned that agents could expose customers’ information or make purchases they didn’t intend, and potentially skirt federal rules about the kind of information airlines need to share with customers — like having them attest that their bags don’t have explosives. While agents can still show users United flights, they won’t be able to actually complete the transaction on their behalf. The decision, and others like it, could limit the potential usefulness of newer personal AI assistants like Meta’s Muse and OpenAI’s Dots. “To be honest, I don’t want to create another middleman,” United CEO Scott Kirby said at an event on Tuesday, according to the Journal. Across sectors, businesses are grappling with whether to let AI agents transact on their sites, and United is not alone in blocking access for unauthorized agents. eBay appeared to block agents from browsing the site, and several major banks have also placed restrictions on them. United suggests it could reconsider its decision based on future advancements. “As third-party AI agents advance, we see the opportunities they present. However, at the same time, allowing them to interact directly with a United account or booking could involve sensitive actions, and we want to make sure we have established protections for travelers first.”",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23176430/1237621702.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "United Airlines has officially prohibited personal AI agents from completing flight bookings on its platform, citing significant concerns regarding data privacy, regulatory compliance, and the potential for unauthorized transactions. While these agents are still permitted to display flight availability and pricing, the airline is blocking the final transaction step to prevent AI-driven errors or the circumvention of mandatory federal safety disclosures, such as hazardous materials attestations. CEO Scott Kirby stated that the company aims to avoid introducing unnecessary middlemen into the booking process, reflecting a broader industry trend where firms like eBay and various major financial institutions are similarly restricting automated agent access to their transactional systems.\n\nThis policy directly impacts the utility of emerging personal AI assistants, including Meta’s Muse and OpenAI’s Dots, which are designed to perform autonomous tasks on behalf of users. United maintains that while it recognizes the potential utility of these technologies, it will not allow direct interaction with customer accounts or booking flows until robust security and protection frameworks are established. The airline has indicated that it may reconsider its stance as AI agent technology matures and security standards evolve, but for now, it remains committed to maintaining direct control over the passenger booking experience.",
@@ -234,7 +520,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "aws-emulator . Finally, an official emulator from AWS to run tests against a local clone of their many different services without having to provision a paid API key to do so.\n\nIt's written in Rust by a huge swarm of agents - 29,684 commits in the first three weeks of the project. Swaminathan (Swami) Sivasubramanian wrote about how it came to be in a guest post on Werner Vogels' blog.\n\nIt currently requires Docker to run on macOS or Windows. I'm hoping they fix that in the future - it would be great if you could download a single binary and use that as part of a standard test suite in other languages and on other platforms.\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a link post by Simon Willison, posted on 11th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "AWS has released an official emulator designed to allow developers to run tests against local clones of various AWS services, eliminating the need to provision paid API keys for testing environments. The project, highlighted by AWS VP Swaminathan (Swami) Sivasubramanian in a guest post on Werner Vogels' blog, was developed using a high-velocity approach, recording 29,684 commits within its first three weeks of existence.\n\nThe emulator is written in Rust and currently requires a Docker environment to function on macOS or Windows. While the tool provides a significant utility for local development and testing workflows, current limitations include its dependency on containerization, with community feedback suggesting a preference for a standalone binary to facilitate easier integration into cross-platform test suites.",
@@ -376,16 +662,20 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Theresa Loconsolo, Rebecca Bellan, Tim De Chant",
-    "contentSnippet": "The data center boom is running into serious real-world obstacles, from widespread local opposition and permitting delays to a scramble for electricity. Before those challenges even come into play, though, there’s a more basic problem: A lot of the projects being announced may never get built in the first place. With billions of dollars in AI infrastructure […]",
+    "contentSnippet": "The data center boom is running into serious real-world obstacles, from widespread local opposition and permitting delays to a scramble for electricity . Before those challenges even come into play, though, there’s a more basic problem: A lot of the projects being announced may never get built in the first place. With billions of dollars in AI infrastructure investment at stake, separating realistic projects from speculative ones is becoming increasingly important.\n\nOn this episode of TechCrunch’s Equity podcast, hosts Rebecca Bellan and Tim De Chant are joined by Brent Nelson , senior managing director of markets and strategy at Ascend Analytics , to separate the data center projects that are likely to get built from the ones that may never get off the ground.\n\nSubscribe to Equity on YouTube , Apple Podcasts , Overcast , Spotify and all the casts. You also can follow Equity on X and Threads , at @EquityPod.\n\nTheresa Loconsolo is an audio producer at TechCrunch focusing on Equity, the network’s flagship podcast. Before joining TechCrunch in 2022, she was one of 2 producers at a four-station conglomerate where she wrote, recorded, voiced and edited content, and engineered live performances and interviews from guests like lovelytheband. Theresa is based in New Jersey and holds a bachelors degree in Communication from Monmouth University. You can contact or verify outreach from Theresa by emailing [email protected] . View Bio Rebecca Bellan Senior Reporter\n\nRebecca Bellan is a senior reporter at TechCrunch where she covers the business, policy, and emerging trends shaping artificial intelligence. Her work has also appeared in Forbes, Bloomberg, The Atlantic, The Daily Beast, and other publications.\n\nYou can contact or verify outreach from Rebecca by emailing [email protected] or via encrypted message at rebeccabellan.491 on Signal.\n\nTim De Chant is a senior climate reporter at TechCrunch. He has written for a wide range of publications, including Wired magazine, the Chicago Tribune, Ars Technica, The Wire China, and NOVA Next, where he was founding editor.\n\nDe Chant is also a lecturer in MIT’s Graduate Program in Science Writing, and he was awarded a Knight Science Journalism Fellowship at MIT in 2018, during which time he studied climate technologies and explored new business models for journalism. He received his PhD in environmental science, policy, and mana",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "The data center boom is running into serious real-world obstacles, from widespread local opposition and permitting delays to a scramble for electricity. Before those challenges even come into play, though, there’s a more basic problem: A lot of the projects being announced may never get built in the first place. With billions of dollars in AI infrastructure ...",
-      "takeaways": [],
-      "impact": "Breakthrough",
+      "tldr": "The current data center boom faces significant real-world obstacles, including local opposition, permitting delays, electricity constraints, and a high proportion of speculative proposals that may never materialize despite billions in announced AI infrastructure investments.\n\nOn an episode of TechCrunch’s Equity podcast, hosts Rebecca Bellan and Tim De Chant discussed these infrastructural bottlenecks with Ascend Analytics senior managing director of markets and strategy, Brent Nelson, focusing on how to distinguish viable data center projects from speculative ones.",
+      "takeaways": [
+        "**Podcast Guest:** Brent Nelson, senior managing director of markets and strategy at Ascend Analytics, joined TechCrunch's Equity podcast to discuss data center viability.",
+        "**Infrastructure Bottlenecks:** Proposed AI data center projects face widespread local opposition, permitting delays, and severe electricity grid constraints."
+      ],
+      "impact": "Medium",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -398,16 +688,22 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Lucas Ropek",
-    "contentSnippet": "Santosh Janardhan, who originally joined the company in 2009, will be stepping down from his role.",
+    "contentSnippet": "Posted: 12:12 PM PST · November 11, 2026 Image Credits: Marcin Golba/NurPhoto / Getty Images Lucas Ropek Meta is losing its longtime head of infrastructure A key figure in Meta’s growth into a social media and tech industry powerhouse is leaving the company.\n\nSantosh Janardhan, the company’s longtime head of infrastructure and co-head of engineering, will be stepping down, Meta told TechCrunch. He will be replaced by Dave Brown, who joined the company as vice president of infrastructure earlier this year, the company added. Previous to coming aboard at Meta, Brown spent 19 years at Amazon, where he focused on compute, cloud, and AI, his LinkedIn shows .\n\nIt sounds like Janardhan will remain at Meta for a little bit, although he is expected to leave next year. “Santosh will stay on for transition and he is moving into an advisory role on Meta Compute,” said a Meta representative.\n\nJanardhan, who originally joined the company in 2009, helped the firm grow into the massive internet presence that it is today. Bloomberg originally reported Janardhan’s departure, citing an internal memo that had recently been circulated. It’s unclear why Janardhan is stepping down from the role. The memo did not specify the reasons for his departure and Meta didn’t immediately respond to a request for clarity on the issue. However, Janardhan’s memo apparently cited the need to “pass the baton.”\n\nIn recent years, the company’s investment in infrastructure has exploded , as it seeks to keep up with its competitors in the AI race. Earlier this year, Janardhan was tasked with leading Meta Compute , the company initiative to scale its data center investments and strategy.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related Social X launches its own clipping feature to spur influencer engagement\n\nAI Meta’s AI agent Muse lands on Apple Watch and Android Wear OS Aisha Malik\n\nMedia & Entertainment Jensen Huang’s alleged honeypot scandal has inspired some top-notch memes Dominic-Madori Davis\n\n<img width=\"666\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2026/11/Congratulations-Nvidias-New-CEO.png?w=666\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/11/Congratulations-Nvidias-New-CEO.png 1672w, https://techcrunch.com/wp-content/uploads/",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Santosh Janardhan, who originally joined the company in 2009, will be stepping down from his role.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "Santosh Janardhan, Meta’s longtime head of infrastructure and co-head of engineering, is stepping down from his role. Janardhan, who joined Meta in 2009, has been a central figure in scaling the company’s technical operations. He will remain at the company for a transition period before moving into an advisory role focused on Meta Compute, the internal initiative responsible for scaling data center investments and infrastructure strategy.\n\nDave Brown, who joined Meta earlier this year as vice president of infrastructure, will succeed Janardhan. Brown brings 19 years of experience from Amazon, where his tenure focused on cloud, compute, and AI technologies. While the specific reasons for Janardhan’s departure remain undisclosed, an internal memo cited by Bloomberg indicated his intent to \"pass the baton\" as Meta continues to aggressively expand its infrastructure to support its AI development roadmap.",
+      "takeaways": [
+        "**Leadership Transition:** Santosh Janardhan is vacating his role as head of infrastructure and co-head of engineering, with Dave Brown appointed as his successor.",
+        "**Successor Background:** Dave Brown joined Meta earlier this year following a 19-year career at Amazon, where he specialized in cloud, compute, and AI.",
+        "**Strategic Focus:** The leadership change occurs as Meta prioritizes the \"Meta Compute\" initiative, which manages the company's large-scale data center investments.",
+        "**Transition Timeline:** Janardhan will remain at Meta in an advisory capacity for Meta Compute before officially departing the company next year."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -437,17 +733,17 @@
     "canonicalUrl": "https://techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth/",
     "title": "CoreWeave turns to customer prepayments, shorter contracts to fund AI growth",
     "publishedAt": "2026-11-11T19:54:00.000Z",
-    "fetchedAt": "2026-11-11T23:16:02.055Z",
-    "contentHash": "21f161a86a87fb3a",
+    "fetchedAt": "2026-11-12T03:52:33.039Z",
+    "contentHash": "fea599ccbb28b694",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Rebecca Bellan",
-    "contentSnippet": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
+    "contentSnippet": "CoreWeave is increasingly asking customers to pay up front, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "CoreWeave is increasingly asking customers to pay upfront, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
+      "tldr": "CoreWeave is increasingly asking customers to pay up front, borrowing against specific contracts, and even looking to short-term deals that could lead to higher prices, according to the company’s third-quarter earnings.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -544,8 +840,8 @@
         "For a complete list of all available assets, see the asset catalog at the end of this post.",
         "The problem: Why teams keep rebuilding Three root causes drive redundant development across generative AI teams: No single source of truth – Assets scatter across repositories, wikis, and drives."
       ],
-      "impact": "High",
-      "readTimeMinutes": 7,
+      "impact": "Notable",
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -1008,18 +1304,18 @@
     "canonicalUrl": "https://spectrum.ieee.org/human-centered-ai-product-design",
     "title": "When Does It Actually Make Sense to Put AI Into Products?",
     "publishedAt": "2026-11-11T14:00:02.000Z",
-    "fetchedAt": "2026-11-11T16:51:12.347Z",
-    "contentHash": "26c43a87cecb34b1",
+    "fetchedAt": "2026-11-12T03:52:31.976Z",
+    "contentHash": "ead312e8ddd1a8ee",
     "sourceId": "ieee-spectrum-ai",
     "sourceName": "IEEE Spectrum AI",
     "author": "Stephen Cousins",
-    "contentSnippet": "Over the past few years, the tech industry has rushed to plug a new microchip into every device on the assumption that if you can add AI, you should. Smart vision toothbrushes , mood-reading household robots , and a host of physical products are invading consumers’ daily lives, reliant on artificial intelligence to learn, predict, and adjust our behavior. But as anyone who’s struggled to update the firmware in their fridge knows, AI doesn’t improve every product. Some product designers are asking where the line is between genuine innovation and a solution looking for a problem. Savannah Kunovsky leads a team of industrial product designers at Ideo , a design consultancy based in San Francisco focused on helping clients unpack when AI becomes a barrier rather than a breakthrough. Kunovsky spoke with IEEE Spectrum about the pressure to integrate AI in everything, where that integration goes wrong, and what companies can do to determine when an AI integration is—and isn’t—a smart choice. When AI makes products worse How much of the current wave of AI integration into physical products is driven by pressure from investors and shareholders to keep up with industry trends? Savannah Kunovsky : Some of it. Teams come to us feeling pressured to show they’re doing something with AI, sometimes because a CEO has promised the board an “AI story” before the next earnings call, or a competitor has just launched an AI-powered version of their product. In all cases, the first thing we do is step back and ask who the product is for and what they’re trying to do. Once that’s clear, the role AI should play, whether large, small, or invisible, usually becomes obvious. There is an appetite for this kind of grounding in the industry right now. People want to cut through the hype and see what works in practice. How do you distinguish between a genuinely helpful AI feature and a gimmick? Kunovsky : The test for an AI gimmick is the same test we’d apply to any product experience: Does it help someone do what they’re trying to do? Answering that means understanding how people would use the product in the real context they’ll be using it. Many companies look straight to large language models (LLMs) because that’s top of their mind, but there is a whole AI toolbox to draw from: computer vision, sensor fusion, on-device models, et cetera. Picking the right capability for the task matters",
+    "contentSnippet": "Over the past few years, the tech industry has rushed to plug a new microchip into every device on the assumption that if you can add AI, you should. Smart-vision toothbrushes , mood-reading household robots , and a host of physical products are invading consumers’ daily lives, reliant on artificial intelligence to learn, predict, and adjust our behavior. But as anyone who’s struggled to update the firmware in their fridge knows, AI doesn’t improve every product. Some product designers are asking where the line is between genuine innovation and a solution looking for a problem. Savannah Kunovsky leads a team of industrial product designers at Ideo , a design consultancy based in San Francisco focused on helping clients unpack when AI becomes a barrier rather than a breakthrough. Kunovsky spoke with IEEE Spectrum about the pressure to integrate AI in everything, where that integration goes wrong, and what companies can do to determine when an AI integration is—and isn’t—a smart choice. When AI makes products worse How much of the current wave of AI integration into physical products is driven by pressure from investors and shareholders to keep up with industry trends? Savannah Kunovsky : Some of it. Teams come to us feeling pressured to show they’re doing something with AI, sometimes because a CEO has promised the board an “AI story” before the next earnings call, or a competitor has just launched an AI-powered version of their product. In all cases, the first thing we do is step back and ask who the product is for and what they’re trying to do. Once that’s clear, the role AI should play, whether large, small, or invisible, usually becomes obvious. There is an appetite for this kind of grounding in the industry right now. People want to cut through the hype and see what works in practice. How do you distinguish between a genuinely helpful AI feature and a gimmick? Kunovsky : The test for an AI gimmick is the same test we’d apply to any product experience: Does it help someone do what they’re trying to do? Answering that means understanding how people would use the product in the real context they’ll be using it. Many companies look straight to large language models (LLMs) because that’s top of their mind, but there is a whole AI toolbox to draw from: computer vision, sensor fusion, on-device models, et cetera. Picking the right capability for the task matters",
     "imageUrl": "https://spectrum.ieee.org/media-library/photo-collage-of-a-woman-speaking-on-stage-with-electric-toothbrushes-and-refrigerators-layered-in-the-background.jpg?id=68653834&width=980",
     "category": "Robotics & Hardware",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Over the past few years, the tech industry has rushed to plug a new microchip into every device on the assumption that if you can add AI, you should. Smart vision toothbrushes , mood-reading household robots , and a host of physical products are invading consumers’ daily lives, reliant on artificial intelligence to learn, predict, and adjust our behavior. But as anyone who’s struggled to update the firmware in their fridge knows, AI doesn’t improve every product.\n\nSome product designers are asking where the line is between genuine innovation and a solution looking for a problem. Savannah Kunovsky leads a team of industrial product designers at Ideo , a design consultancy based in San Francisco focused on helping clients unpack when AI becomes a barrier rather than a breakthrough. Kunovsky spoke with IEEE Spectrum about the pressure to integrate AI in everything, where that integration goes wrong, and what companies can do to determine when an AI integration is—and isn’t—a smart choice.",
+      "tldr": "Over the past few years, the tech industry has rushed to plug a new microchip into every device on the assumption that if you can add AI, you should. Smart-vision toothbrushes , mood-reading household robots , and a host of physical products are invading consumers’ daily lives, reliant on artificial intelligence to learn, predict, and adjust our behavior. But as anyone who’s struggled to update the firmware in their fridge knows, AI doesn’t improve every product.\n\nSome product designers are asking where the line is between genuine innovation and a solution looking for a problem. Savannah Kunovsky leads a team of industrial product designers at Ideo , a design consultancy based in San Francisco focused on helping clients unpack when AI becomes a barrier rather than a breakthrough. Kunovsky spoke with IEEE Spectrum about the pressure to integrate AI in everything, where that integration goes wrong, and what companies can do to determine when an AI integration is—and isn’t—a smart choice.",
       "takeaways": [
         "When AI makes products worse How much of the current wave of AI integration into physical products is driven by pressure from investors and shareholders to keep up with industry trends?",
         "Savannah Kunovsky : Some of it.",
@@ -1027,7 +1323,7 @@
         "In all cases, the first thing we do is step back and ask who the product is for and what they’re trying to do."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 3,
+      "readTimeMinutes": 8,
       "generatedWith": "heuristic"
     }
   },
@@ -3294,12 +3590,12 @@
     "canonicalUrl": "https://simonwillison.net/2026/Nov/10/llm-gemini/",
     "title": "llm-gemini 0.36",
     "publishedAt": "2026-11-10T20:09:44.000Z",
-    "fetchedAt": "2026-11-11T08:45:06.272Z",
-    "contentHash": "e7f45ca590f8c274",
+    "fetchedAt": "2026-11-12T03:52:34.019Z",
+    "contentHash": "db83dc3c79f7c98b",
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
-    "contentSnippet": "Release: llm-gemini 0.36 Gemini 4 Carbon was announced two weeks ago for \"a subset of cyber defenders\", but today it's available to everyone else . This is Google's best ever Gemini, priced at $2/million input and $10/million output at launch (that's GPT-6.1 Sol / Claude Sonnet 5.5 prices) but scheduled to double in price to $4/$20 on December 1st (same as Opus 5.5). Here are three pelicans for the low, medium and high thinking efforts (it defaults to medium). This is the pelican I got for high: Gemini pelicans have all been great for a while now, so I also tested it out using Google's Antigravity IDE with a prompt I first tried with Claude Fable 5.2 yesterday : Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data Here's the HTML result (I had to prompt \"build that into a standalone HTML file\" to get a version with no external dependencies). I then screen-captured that as a video: Update : Huh, just saw this on YouTube (and tweeted by Sundar Pichai ): Using Google Antigravity’s /swarm feature, Carbon built an open-world 3D game where you explore Google’s Mountain View campus as a pelican riding a GBike — coordinating subagents to model 3D assets in Blender from Omni and Nano Banana references, build the browser game in Three.js with WebGL shaders, and pair procedural Web Audio sound effects with Lyria music. Here's the playable version in AI Studio. Tags: llm-release , gemini , llm , google , generative-ai , ai , llms , pelican-riding-a-bicycle",
+    "contentSnippet": "Release: llm-gemini 0.36 Gemini 4 Carbon was announced two weeks ago for \"a subset of cyber defenders\", but today it's available to everyone else . This is Google's best ever Gemini, priced at $2/million input and $10/million output at launch (that's GPT-6.1 Sol / Claude Sonnet 5.5 prices) but scheduled to double in price to $4/$20 on December 1st (same as Opus 5.5). Here are three pelicans for the low, medium and high thinking efforts (it defaults to medium). This is the pelican I got for high: Gemini pelicans have all been great for a while now, so I also tested it out using Google's Antigravity IDE with a prompt I first tried with Claude Fable 5.2 yesterday : Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and stomps around manhattan and queens and Brooklyn, use openstreetmap mapping data Here's the HTML result (I had to prompt \"build that into a standalone HTML file\" to get a version with no external dependencies). I then screen-captured that as a video: Update : Huh, just saw this on YouTube (and tweeted by Google CEO Sundar Pichai ): Using Google Antigravity’s /swarm feature, Carbon built an open-world 3D game where you explore Google’s Mountain View campus as a pelican riding a GBike — coordinating subagents to model 3D assets in Blender from Omni and Nano Banana references, build the browser game in Three.js with WebGL shaders, and pair procedural Web Audio sound effects with Lyria music. Here's the playable version in AI Studio. Tags: llm-release , gemini , llm , google , generative-ai , ai , llms , pelican-riding-a-bicycle",
     "imageUrl": "https://static.simonwillison.net/static/2026/carbon-pelican.webp",
     "category": "LLMs & GenAI",
     "lab": "Google DeepMind",
@@ -8949,6 +9245,67 @@
     }
   },
   {
+    "id": "05e0692506e6950c",
+    "canonicalUrl": "https://arxiv.org/abs/2611.13028",
+    "title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.943Z",
+    "contentHash": "9ecafafecd1f809a",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Jiajun Chen, Shicheng Fang, Jiahao Lu, Yuxin Wang",
+    "contentSnippet": "Authors: Jiajun Chen , Shicheng Fang , Jiahao Lu , Yuxin Wang , Xipeng Qiu\n\nAbstract: AAA games offer a rich testbed for evaluating agent perception, reasoning, and control. However, evaluating whether agents can complete tasks in AAA games is challenging and often human-annotated because task outcomes are often difficult to verify automatically, let alone applying it for Reinforcement Learning (RL). We introduce GTAGym, an environment and framework for evaluation and RL on GTA V tasks. Its evaluation benchmark, GTAVBench, derived from GTA V main-story missions, contains 103 online tasks reconstructed across nine task families, alongside 47 image-based shooting and sniping tasks using GTA V imagery. A web server provides access to the online environment and evaluation interface, supporting parallel testing through screenshots and keyboard-mouse actions with automatic engine-state outcome checks. We evaluate six frontier LLMs on GTAVBench with textual task instructions and on its GTAVBench-AGI branch, where instructions appear only in the first screenshot and a harness automatically compresses interaction history. The best configuration achieves 70.9% overall accuracy in GTAVBench-AGI, yet aerial navigation, evasion and interception remain difficult. GTAGym also provides a scalable generator that samples task parameters within user-specified ranges and option sets under fixed templates, creating batches of 3D and image-based shooting environments for RL with automatic reward and termination signals. LoRA RL of Qwen3.8-27B on generated on-foot navigation tasks improves the in-domain performance and transfers to out-of-domain task categories, and native GTA V tasks from 15% to 23%.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.13028",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13028",
+    "summary": {
+      "tldr": "GTAGym is a new evaluation and reinforcement learning (RL) framework for Grand Theft Auto V (GTA V) developed by Jiajun Chen, Shicheng Fang, Jiahao Lu, Yuxin Wang, and Xipeng Qiu. The framework includes GTAVBench, a benchmark consisting of 103 online tasks across nine task families derived from the game's main-story missions, plus 47 image-based shooting and sniping tasks. The system utilizes a web server to facilitate parallel testing, enabling agents to interact with the game engine via screenshot observation and keyboard-mouse action outputs, with automated verification of task outcomes.\n\nIn testing six frontier LLMs on the GTAVBench-AGI branch—where instructions are provided only via an initial screenshot and interaction history is compressed—the top-performing configuration reached 70.9% accuracy. Despite this, the researchers identified significant performance gaps in complex maneuvers such as aerial navigation, evasion, and interception. GTAGym also features a scalable task generator that creates randomized 3D and image-based environments with automated reward and termination signals for RL training.\n\nTo demonstrate the framework's utility, the authors performed LoRA-based RL on the Qwen3.8-27B model using generated on-foot navigation tasks. This training resulted in a performance increase from 15% to 23% on native GTA V tasks, demonstrating successful transfer learning from generated synthetic environments to complex, out-of-domain game scenarios.",
+      "takeaways": [
+        "**Benchmark Scope:** GTAVBench includes 103 online tasks across nine categories and 47 image-based shooting/sniping tasks.",
+        "**Performance Ceiling:** The best-performing frontier LLM configuration achieved 70.9% accuracy on the GTAVBench-AGI branch.",
+        "**RL Methodology:** The team utilized LoRA fine-tuning on Qwen3.8-27B to improve navigation performance in native game tasks.",
+        "**Performance Gain:** RL training on generated tasks improved native GTA V task success rates from 15% to 23%.",
+        "**Technical Architecture:** The framework supports parallel testing via a web server that handles screenshot-based observation and automated engine-state verification."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b25f206861560f24",
+    "canonicalUrl": "https://arxiv.org/abs/2611.11912",
+    "title": "LO-World: Unified BEV Latent Modeling for Joint 4D Occupancy and LiDAR Forecasting",
+    "publishedAt": "2026-11-09T00:00:00.000Z",
+    "fetchedAt": "2026-11-12T03:52:31.943Z",
+    "contentHash": "cd61d26134251b7a",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zhimin Liao, Ping Wei, Kai Mao, Shuaijia Chen",
+    "contentSnippet": "Authors: Zhimin Liao , Ping Wei , Kai Mao , Shuaijia Chen\n\nAbstract: LiDAR point clouds and 3D semantic occupancy represent two distinct modalities capturing fine-grained metric geometry and dense volumetric semantics, respectively, holding natural potential for mutual complementarity. However, existing world models typically forecast these modalities independently or cascade them heuristically, missing the opportunity for reciprocal cross-modal regularization. To address this, we propose \\textbf{LO-World}, a unified 4D world model that forecasts both modalities within a shared BEV latent space. This single-stream formulation enables dense semantics and metric geometry to mutually reinforce each other, while eliminating multi-pipeline redundancy. Specifically, LO-World couples an efficient hybrid range-voxel autoencoder with a flow-matching generator that caches historical context to reduce iterative sampling latency. Extensive experiments demonstrate that LO-World outperforms prior state-of-the-art baselines, improving occupancy forecasting IoU by 10.9% and reducing LiDAR Chamfer Distance by 30.1%. Meanwhile, it sustains a real-time throughput exceeding $25$~FPS on a single RTX 4090. Our code is available at this https URL .",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.11912",
+    "pdfUrl": "https://arxiv.org/pdf/2611.11912",
+    "summary": {
+      "tldr": "LO-World, developed by Zhimin Liao, Ping Wei, Kai Mao, and Shuaijia Chen, is a unified 4D world model designed to jointly forecast LiDAR point clouds and 3D semantic occupancy. By integrating these modalities into a shared Bird's-Eye-View (BEV) latent space, the model replaces independent or heuristic-based pipelines with a single-stream architecture that allows metric geometry and dense semantics to provide reciprocal regularization.\n\nThe architecture utilizes a hybrid range-voxel autoencoder paired with a flow-matching generator. To optimize performance, the system caches historical context, which significantly lowers iterative sampling latency. Benchmarks indicate that LO-World achieves a 10.9% improvement in occupancy forecasting Intersection over Union (IoU) and a 30.1% reduction in LiDAR Chamfer Distance compared to existing state-of-the-art baselines. The model maintains a real-time throughput of over 25 FPS on a single NVIDIA RTX 4090 GPU.",
+      "takeaways": [
+        "**Architecture:** Employs a hybrid range-voxel autoencoder and a flow-matching generator within a shared BEV latent space.",
+        "**Performance Metrics:** Delivers a 10.9% increase in occupancy forecasting IoU and a 30.1% reduction in LiDAR Chamfer Distance.",
+        "**Computational Efficiency:** Sustains real-time inference speeds exceeding 25 FPS on a single RTX 4090.",
+        "**Methodology:** Utilizes historical context caching to minimize latency during the iterative sampling process."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a86fe963d82ab963",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/8/sqlite-parse-number-c-vs-rust/",
     "title": "parse_number() as a SQLite extension: C vs Rust",
@@ -10385,329 +10742,6 @@
       "impact": "Notable",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1f2ab6c74b1de2ba",
-    "canonicalUrl": "https://arxiv.org/abs/2611.08935",
-    "title": "SkinMind: Equipping Agentic RAG with Human-Inspired Graph Probing for Reliable Dermatology AI",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:17.213Z",
-    "contentHash": "90baed81d8d41290",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Jing Hao, Weinan Zhou, Zhihong Lu, Yaling Shen",
-    "contentSnippet": "Reliable dermatology AI requires access to verifiable evidence distributed across heterogeneous textual and visual sources. However, conventional retrieval-augmented generation (RAG) typically relies on one-shot retrieval from flat corpora, limiting its ability to adapt retrieval granularity, explore multi-hop relations, and integrate multimodal clinical evidence. We introduce SkinMind, a multimodal agentic RAG framework that equips policy models with human-inspired graph probing for autonomous evidence seeking. SkinMind organizes retrieval as an iterative interaction between an orchestrator and a graph environment. Through eight hierarchical graph-probing tools, the orchestrator progressively identifies relevant entities, inspects node-level information, traverses relations and paths, and retrieves source-text and visual evidence. This progressive-disclosure design allows the model to adaptively determine the retrieval modality, exploration direction, and evidence granularity while constructing a query-specific evidence subgraph. To support autonomous graph probing, we construct SkinMind-KG from a 62M-token corpus of dermatology guidelines and textbooks and 423K images, guided by a dermatologist-informed schema and a conflict-resolution mechanism. The resulting graph contains over 1.0M nodes and 2.0M edges, unifying textual, relational, and visual evidence for retrieval. Across six dermatology VQA benchmarks and two policy-model settings, SkinMind improves the average score over direct answering by 8.70 and 8.89 points with GPT-5.4-mini and Gemini-2.5-Flash, respectively, while consistently outperforming competing RAG methods. Together, SkinMind and SkinMind-KG provide an effective foundation for evidence-grounded multimodal reasoning in dermatology.",
-    "category": "Ethics & Policy",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.08935",
-    "pdfUrl": "https://arxiv.org/pdf/2611.08935",
-    "summary": {
-      "tldr": "Reliable dermatology AI requires access to verifiable evidence distributed across heterogeneous textual and visual sources. However, conventional retrieval-augmented generation (RAG) typically relies on one-shot retrieval from flat corpora, limiting its ability to adapt retrieval granularity, explore multi-hop relations, and integrate multimodal clinical evidence. We introduce SkinMind, a multimodal agentic RAG framework that equips policy models with human-inspired graph probing for autonomous evidence seeking.\n\nSkinMind organizes retrieval as an iterative interaction between an orchestrator and a graph environment. Through eight hierarchical graph-probing tools, the orchestrator progressively identifies relevant entities, inspects node-level information, traverses relations and paths, and retrieves source-text and visual evidence. This progressive-disclosure design allows the model to adaptively determine the retrieval modality, exploration direction, and evidence granularity while constructing a query-specific evidence subgraph.",
-      "takeaways": [
-        "To support autonomous graph probing, we construct SkinMind-KG from a 62M-token corpus of dermatology guidelines and textbooks and 423K images, guided by a dermatologist-informed schema and a conflict-resolution mechanism.",
-        "The resulting graph contains over 1.0M nodes and 2.0M edges, unifying textual, relational, and visual evidence for retrieval.",
-        "Across six dermatology VQA benchmarks and two policy-model settings, SkinMind improves the average score over direct answering by 8.70 and 8.89 points with GPT-5.4-mini and Gemini-2.5-Flash, respectively, while consistently outperforming competing RAG methods.",
-        "Together, SkinMind and SkinMind-KG provide an effective foundation for evidence-grounded multimodal reasoning in dermatology."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5f721228af3682c2",
-    "canonicalUrl": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science",
-    "title": "Measuring how AI agents handle everyday wet-lab science",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "e9e5d34bef70c7f5",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI introduces BioBasicsBench, a 100-task benchmark measuring how well AI agents interpret raw experimental data and handle everyday wet-lab science.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "13e4c95dcbaa6d34",
-    "canonicalUrl": "https://huggingface.co/blog/open-asr-leaderboard-liva",
-    "title": "Egyptian and Nigerian English join the Open ASR Leaderboard",
-    "publishedAt": "2026-11-06T00:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:19.410Z",
-    "contentHash": "ae322022701525f6",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Egyptian and Nigerian English join the Open ASR Leaderboard.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b6cc61adf7e9fb2b",
-    "canonicalUrl": "https://arstechnica.com/security/2026/11/vulnerability-allows-attackers-to-log-into-some-linux-devices-sans-password/",
-    "title": "Meet *sshole, the vulnerability that lets hackers SSH into Linux devices",
-    "publishedAt": "2026-11-05T23:09:36.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.004Z",
-    "contentHash": "b406e75b64055c3d",
-    "sourceId": "arstechnica-tech",
-    "sourceName": "Ars Technica",
-    "author": "\n                    Dan Goodin\n                ",
-    "contentSnippet": "Devices running some configurations of Alpine Linux, and possibly other distributions, are affected by a decade-old vulnerability that allows attackers to log into devices with no password. The vulnerability exists in the interaction between OpenSSH, the code library implementing SSH connections, and musl, a lightweight alternative to the libc library that, unlike most other Linux distributions, is used in Alpine. Further, OpenSSH using musl (pronounced muscle) must not use PAM (pluggable authentication modules), a framework that handles user authentication and account-access checks. Alpine is a lightweight, widely used Linux distribution. Other platforms may be affected if they use the same configurations. One connection, works every time, needs no retries There are two other conditions necessary for successful exploitation. First, a system must have at least one user account that’s accessible using a password that is hashed using the SHA256 or SHA512 functions. Second, the target system account must be configured to be passwordless, by way of specifying a \"*\" in the password field in /etc/shadow, the Linux file where password hashes are stored. Passwordless accounts are commonly used for accounts that use certificate-based authentication. This setting is common for certain types of accounts. Read full article Comments",
-    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2017/05/getty-hacking-1152x648.jpg",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Devices running some configurations of Alpine Linux, and possibly other distributions, are affected by a decade-old vulnerability that allows attackers to log into devices with no password. The vulnerability exists in the interaction between OpenSSH, the code library implementing SSH connections, and musl, a lightweight alternative to the libc library that, unlike most other Linux distributions, is used in Alpine. Further, OpenSSH using musl (pronounced muscle) must not use PAM (pluggable authentication modules), a framework that handles user authentication and account-access checks.\n\nAlpine is a lightweight, widely used Linux distribution. Other platforms may be affected if they use the same configurations. One connection, works every time, needs no retries There are two other conditions necessary for successful exploitation.",
-      "takeaways": [
-        "First, a system must have at least one user account that’s accessible using a password that is hashed using the SHA256 or SHA512 functions.",
-        "Second, the target system account must be configured to be passwordless, by way of specifying a \"*\" in the password field in /etc/shadow, the Linux file where password hashes are stored.",
-        "Passwordless accounts are commonly used for accounts that use certificate-based authentication.",
-        "This setting is common for certain types of accounts."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "17b57e4655701f14",
-    "canonicalUrl": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
-    "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
-    "publishedAt": "2026-11-05T22:40:55.000Z",
-    "fetchedAt": "2026-11-05T22:41:30.268Z",
-    "contentHash": "5fef8dc1498a7e5b",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Sarah Perez",
-    "contentSnippet": "Airbnb has teased its plans to build its own AI travel agent before, but on Thursday the company announced that the new AI feature will launch in the first half of 2027. In the company’s Q3 shareholder letter on Thursday , Airbnb also provided more detail about how the agent will work, what it will actually do, and how it’s different from a typical AI chatbot.\n\nIn prior interviews, CEO Brian Chesky sketched out the travel company’s approach to AI, describing a plan to build an AI agent that has a richer interface than a conventional chatbot. He also expressed his opinions about how chatbots aren’t the right interface for travel, noting that people take pleasure in the planning process and in anticipating a trip. Any agent that it built, then, shouldn’t take away from the inspiration and the browsing, he told TechCrunch in an interview last month.\n\nChesky today reiterated that belief, telling analysts on the earnings call that people won’t use one AI agent for everything.\n\n“Today’s AI agents like Muse and Instinct are good at simple routine tasks like making a restaurant reservation or scheduling an appointment. But planning a trip is different,” he said. “Travel is aspirational. Discovering where to go and where to stay is part of the experience. In fact, 80% of travelers say they enjoy spending time researching trips. People want to look at photos. They want to compare homes. They want to make decisions with people they’re traveling with,” he continued. “And I don’t think the general-purpose agents are the best to do that. So that is why we are building our own AI agent,” Chesky said.\n\nAirbnb described its agent as having a personalized interface that’s designed specifically for travel, where it will “build an interface” around a user’s question instead of simply responding as a chatbot would.\n\n“What we are doing is developing a custom-designed AI-native experience that responds to what guests are looking for,” Chesky said. “So instead of relying on traditional chat alone, which is very text-heavy—which, again, is definitely not the way you should plan travel, our agent draws from a library of hundreds of travel-specific interface components—maps, photos, comparisons, calendars, itineraries—and composes them in real time to match what they’re looking for.”\n\nThe exec said the agent will feel “a little bit like generative UI” as it’s designed to offer up “the",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Airbnb has officially scheduled the launch of its proprietary AI travel agent for the first half of 2027. Announced during the company's Q3 earnings call, the agent is positioned as a departure from standard text-based chatbots, which CEO Brian Chesky argues are ill-suited for the aspirational and visual nature of travel planning. Airbnb cites internal data suggesting 80% of travelers enjoy the research process, necessitating an interface that prioritizes discovery over simple task automation.\n\nThe agent will utilize a \"generative UI\" architecture, drawing from a library of hundreds of travel-specific components—including maps, photos, comparison tools, calendars, and itineraries—to compose real-time, dynamic interfaces tailored to specific user queries. Beyond discovery and booking, the agent is designed to handle post-booking logistics, such as reservation changes, payment disputes, refunds, and 24-hour safety support, leveraging Airbnb’s proprietary data on host-guest interactions. The company intends to eventually expand the agent's scope to include services and experiences beyond home and hotel bookings.\n\nThis announcement accompanied strong Q3 financial results, with revenue reaching $4.87 billion, a 19% year-over-year increase that exceeded analyst expectations. Consequently, Airbnb has raised its 2026 revenue growth forecast from the mid-teens to the high teens, signaling a reacceleration of growth for the platform.",
-      "takeaways": [
-        "**Launch Timeline:** The AI travel agent is scheduled for consumer release in the first half of 2027.",
-        "**Architectural Approach:** The agent uses a generative UI model that dynamically assembles travel-specific components (maps, photos, itineraries) rather than relying on text-heavy chatbot responses.",
-        "**Functional Scope:** The tool will support end-to-end trip management, including reservation modifications, payment resolution, refunds, and 24-hour safety support.",
-        "**Financial Performance:** Airbnb reported Q3 revenue of $4.87 billion, representing 19% growth, and increased its 2026 revenue growth outlook to the high teens."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "79876b2220947007",
-    "canonicalUrl": "https://arxiv.org/abs/2611.08772v1",
-    "title": "StarLoc: A Practical Approach to Encoding Geographic Locators in IPv6 for Starlink",
-    "publishedAt": "2026-11-05T22:39:58.000Z",
-    "fetchedAt": "2026-11-10T21:50:19.411Z",
-    "contentHash": "3ca986debcffd6ca",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Vanya Singla",
-    "contentSnippet": "LEO satellite networks such as Starlink provide Internet connectivity across continents, oceans, and airspace. IP geolocation providers map Starlink's IPv6 prefixes to locations mainly through its self-published GeoFeed. However, users may be far away from their assigned Points of Presence (PoPs), one label covers an entire prefix, and labels and PoP mappings can change while addresses stay the same. We characterize Starlink's IPv6 addressing using 925 historical GeoFeed snapshots (2024--2026), one year of PoP mappings, and over 7.9 million observed IPv6 addresses. Our findings reveal that customer prefixes lack clear geographic structure, prefix labels lie a median of 540km from their PoPs, and relabeling a single /40 can affect the reported locations of up to 65,536 possible /56 delegations. To address these challenges, we propose StarLoc, a geographic Locator--Identifier separation scheme that embeds terminal location into IPv6 addresses using a resolution-adaptive H3 Locator while preserving existing Starlink prefixes, /56 delegations, and stable Endpoint Identifiers. To balance accuracy and privacy, StarLoc reveals only cells with at least a certain number of terminals, and operators can cap resolution in sensitive regions or withhold location entirely. Unlike topology-based schemes, StarLoc encodes physical location and lets Locators follow moving users.",
-    "category": "Open Source & Research",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.08772",
-    "pdfUrl": "https://arxiv.org/pdf/2611.08772.pdf",
-    "summary": {
-      "tldr": "LEO satellite networks such as Starlink provide Internet connectivity across continents, oceans, and airspace. IP geolocation providers map Starlink's IPv6 prefixes to locations mainly through its self-published GeoFeed. However, users may be far away from their assigned Points of Presence (PoPs), one label covers an entire prefix, and labels and PoP mappings can change while addresses stay the same.\n\nWe characterize Starlink's IPv6 addressing using 925 historical GeoFeed snapshots (2024--2026), one year of PoP mappings, and over 7.9 million observed IPv6 addresses. Our findings reveal that customer prefixes lack clear geographic structure, prefix labels lie a median of 540km from their PoPs, and relabeling a single /40 can affect the reported locations of up to 65,536 possible /56 delegations. To address these challenges, we propose StarLoc, a geographic Locator--Identifier separation scheme that embeds terminal location into IPv6 addresses using a resolution-adaptive H3 Locator while preserving existing Starlink prefixes, /56 delegations, and stable Endpoint Identifiers.",
-      "takeaways": [
-        "To balance accuracy and privacy, StarLoc reveals only cells with at least a certain number of terminals, and operators can cap resolution in sensitive regions or withhold location entirely.",
-        "Unlike topology-based schemes, StarLoc encodes physical location and lets Locators follow moving users."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2165b65a40c289be",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
-    "title": "Perplexity launches its own take on AI agents for work",
-    "publishedAt": "2026-11-05T22:26:50.000Z",
-    "fetchedAt": "2026-11-05T22:41:30.269Z",
-    "contentHash": "856e7ae4ebd6aef0",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Emma Roth",
-    "contentSnippet": "Perplexity is taking on OpenAI and Anthropic with its own work-focused AI agents. The startup’s new always-on “Teammates” can take on multiple roles within a workspace, while pulling existing projects, skills, and memory from the Perplexity tools you already use. Teammates integrate with Perplexity Computer, an AI system that can deploy agents on your device to complete tasks. But Perplexity says Teammates “build on top” of Computer by offering the ability to collaborate and complete “ongoing, large-scale work.” You can assign each Teammate different jobs that they can perform simultaneously — much like OpenAI’s Dots and Claude Duet. Perplexity’s take on the feature is much more expensive, however, as it requires a subscription to its $200 / month Max plan. [Image: Each Teammate gets their own thread. https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/perplexity-teammates.png?quality=90&strip=all] Perplexity notes that you can keep tabs on Teammates’ progress through individual threads in the Perplexity app, as well as interact with them in Slack. “Over time, we envision every org having hundreds of teammates working for each person,” Perplexity CEO Aravind Srinivas says on X.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25472503/STK271_PERPLEXITY_C.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "Business & Big Tech",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Perplexity has launched 'Teammates,' a suite of AI agents designed for enterprise workflows that function as persistent, role-based collaborators within a workspace. These agents leverage the company's existing 'Perplexity Computer' system—which enables agents to execute tasks directly on a user's device—to manage ongoing, large-scale projects. Unlike standard chatbot interfaces, Teammates are designed to operate simultaneously, allowing users to assign distinct responsibilities to multiple agents that maintain memory and skill sets derived from the user's existing Perplexity data.\n\nThe service is positioned as a direct competitor to OpenAI’s 'Operator' (referred to as 'Dots' in the text) and Anthropic’s 'Claude Duet.' Users can monitor agent progress through dedicated threads within the Perplexity application or via Slack integration. Access to the Teammates feature is gated behind the company’s 'Max' subscription plan, which is priced at $200 per month. CEO Aravind Srinivas has stated that the long-term vision for the platform involves organizations deploying hundreds of these agents to support individual employees.",
-      "takeaways": [
-        "**Product Architecture:** Teammates are built on top of the Perplexity Computer system, enabling agents to perform tasks locally on user devices while maintaining persistent memory of projects and skills.",
-        "**Pricing Model:** Access to the Teammates feature requires a Perplexity Max subscription, priced at $200 per month.",
-        "**Integration Capabilities:** Agents provide status updates and interaction capabilities through individual threads in the Perplexity app and via Slack.",
-        "**Competitive Positioning:** The feature is designed to compete with OpenAI's 'Dots' and Anthropic's 'Claude Duet' by enabling simultaneous, multi-agent collaboration on large-scale work."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "c7f436c36385e313",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/05/baidu-ernie-5-5-flash-base-280b-moe/",
-    "title": "Baidu Releases ERNIE 5.5 Flash Base: A 280B MoE Base Model With 14B Active Parameters",
-    "publishedAt": "2026-11-05T21:33:00.000Z",
-    "fetchedAt": "2026-11-05T22:41:30.934Z",
-    "contentHash": "bac93b47b4be830f",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "Baidu has released ERNIE 5.5 Flash Base , the raw pre-training checkpoint of its new sparse Mixture-of-Experts language model. ERNIE 5.5 Flash Base is a 280B-parameter text model from Baidu that activates 14B parameters per token. The weights stop at the end of pre-training, with no mid- or post-training applied. This as a clean starting point for teams that want to compare fine-tuning, instruction tuning or RL methods from one checkpoint. TL;DR Size: 280B total, 14B active per token; 128K training context, 1M for fine-tuning and inference. Runs on: Multi-GPU servers. Baidu’s reference configs use 4-way parallelism in SGLang and vLLM. GPU model and VRAM not disclosed. FP8 and BF16 weights. Performance: Best score on 24 of 30 base-model benchmarks in Baidu’s unified pipeline (self-reported). Best: MMLU-Pro 78.4, ahead of DeepSeek-V4-Flash-Base at 69.2. Worst: HELMET-Rerank 56.2, behind DeepSeek-V4-Flash-Base at 60.0. What is ERNIE 5.5 Flash Base? It is a text-only MoE base model with 43 layers and a 4096 hidden size . It was pre-trained from scratch on 33.5T tokens with the Muon optimizer. The tokenizer has 201,216 entries and groups numbers right-to-left in chunks of up to 3 digits. Activated compute, KV cache and long-context cost were treated as one budget. Pre-training data leaned on repository-scale code and long-context material, since those are hard to add later. How does the ERNIE 5.5 Flash architecture work? Hybrid attention : 37 layers use Heavily Compressed Attention (HCA), which caches 1 entry per 128 tokens. The other 6 layers use Multi-head Latent Attention with sparse attention (MLA + DSA). That means 1 in 7 layers keeps full-context access. HCA layers use 512-dim heads; MLA layers use 256-dim heads. Gated and mixed heads : The attention output gate comes from the low-rank query latent, cutting gate-projection parameters by 75%. Virtual Head Attention adds a lightweight low-rank mix across heads. Multi-Router Latent MoE. Each MoE layer has 512 routed experts (top-10) plus 1 shared expert. Several independent sigmoid routers replace a single router, per Baidu’s Multi-Router paper . Expert FLOPs and communication volume stay unchanged. Experts run in a 2048-d latent space, half the hidden width. ECHO instead of MTP. : ECHO reuses the backbone’s final layer to predict future tokens. The same layer doubles as a built-in draft model for speculative ",
-    "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Baidu has released ERNIE 5.5 Flash Base, a 280B-parameter sparse Mixture-of-Experts (MoE) model that activates 14B parameters per token. The release consists of raw pre-training weights without mid- or post-training, intended as a baseline for research into fine-tuning, instruction tuning, and RL methods. The model features a 128K training context window, extendable to 1M tokens for inference and fine-tuning, and supports both FP8 and BF16 precision. It was trained from scratch on 33.5T tokens using the Muon optimizer, with a tokenizer containing 201,216 entries that utilizes right-to-left chunking for numerical data.\n\nArchitecturally, the model utilizes 43 layers with a 4096 hidden size, employing a hybrid attention mechanism: 37 layers use Heavily Compressed Attention (HCA) with 1:128 token caching, while 6 layers use Multi-head Latent Attention with sparse attention (MLA + DSA). The MoE layers feature 512 routed experts (top-10 selection) plus one shared expert, managed by independent sigmoid routers. Instead of Multi-Token Prediction (MTP), the model uses ECHO, which repurposes the final backbone layer to predict future tokens, serving as a built-in draft model for speculative decoding. Baidu reports the model outperforms DeepSeek-V4-Flash-Base on 24 of 30 internal benchmarks, including an MMLU-Pro score of 78.4 compared to 69.2, though it trails on the HELMET-Rerank benchmark.",
-      "takeaways": [
-        "**Architecture Specs:** 280B total parameters, 14B active per token, 43 layers, 4096 hidden size, and 512 routed experts per MoE layer.",
-        "**Attention Mechanism:** Hybrid approach using 37 layers of Heavily Compressed Attention (HCA) and 6 layers of Multi-head Latent Attention (MLA) with sparse attention.",
-        "**Training Details:** Pre-trained on 33.5T tokens using the Muon optimizer; features a 201,216-entry tokenizer.",
-        "**Performance Benchmarks:** Achieved 78.4 on MMLU-Pro (vs. 69.2 for DeepSeek-V4-Flash-Base) and 56.2 on HELMET-Rerank (vs. 60.0 for DeepSeek-V4-Flash-Base).",
-        "**Deployment:** Supports 4-way parallelism in SGLang and vLLM; utilizes ECHO for speculative decoding instead of MTP."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "d6f90cb0462c10ef",
-    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
-    "title": "Getting started with Web Answer on Amazon Bedrock AgentCore",
-    "publishedAt": "2026-11-05T21:04:24.000Z",
-    "fetchedAt": "2026-11-05T22:41:29.523Z",
-    "contentHash": "cd44fb1239e0d356",
-    "sourceId": "aws-ml",
-    "sourceName": "AWS Machine Learning",
-    "author": "Adrianna Chudy",
-    "contentSnippet": "Today, we are announcing the general availability of Web Answer on Amazon Bedrock AgentCore. With Web Answer, agent builders get a synthesized, source-cited answer to a natural-language question with a single tool call. They no longer build a search, retrieve, synthesize, and citation pipeline themselves. If you have built agents that need to answer questions from current web sources, you know the pattern: call a search API, decide which results to trust, retrieve and clean page content, prompt a model to synthesize, and engineer citation extraction so the output traces back to a source. Every step is code you maintain, and every step is another place things can go wrong: hallucination when evidence is insufficient, stale content when the index moves, and broken attribution when a claim and its source drift apart. The Web Answer collapses that entire pipeline into one request. You send a question. You get back a cited answer in seconds. In this post, we explain what Web Answer does, compare it with Web Search on AgentCore, show how it works and what it returns, and walk through adding Web Answer to a gateway and calling it from an agent. What Web Answer does Figure 1: Request flow from an agent through the Gateway to Web Answer and back Your agent sends a question to your AgentCore Gateway, a capability of Amazon Bedrock AgentCore. The Gateway authenticates the call with AWS Identity and Access Management (AWS IAM) or a JSON Web Token (JWT). The Gateway calls Web Answer, a managed connector that AWS owns, using its own service role. Web Answer plans its searches, runs several in parallel, and reads key pages to check the facts. When the evidence is insufficient, it searches again. It then writes an answer that ties each claim to its source URL. The Gateway returns the answer and its citations to your agent as a Model Context Protocol (MCP) tool result. Web Answer is a managed AgentCore Gateway tool that takes a natural-language question and returns a synthesized answer in seconds grounded in current web sources. Here is what you get back: A grounded, cited answer, where each grounded claim maps to a citation, with a source URL where one is available. Current sources. Web Answer runs new searches for every question, and its model is given today’s date so it can search for up-to-date information. Agentic search: Web Answer plans its own searches, runs several ",
-    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/04/ML-22248-1.png",
-    "category": "Ethics & Policy",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Amazon has announced the general availability of Web Answer, a managed tool within Amazon Bedrock AgentCore designed to automate the retrieval, synthesis, and citation of web-based information. By integrating this capability, developers can replace custom-built search pipelines—which typically involve manual search API calls, content cleaning, and citation engineering—with a single tool call. The service is designed to mitigate common issues in agentic workflows, such as hallucinations due to insufficient evidence, stale data, and broken attribution links.\n\nWhen an agent sends a natural-language query to the AgentCore Gateway, Web Answer executes a multi-step process: it plans parallel searches, verifies facts by reading key pages, and performs iterative searching if initial evidence is insufficient. The final output is a synthesized response where every claim is mapped to a specific source URL. The service authenticates via AWS IAM or JWT and returns results to the agent as a Model Context Protocol (MCP) tool result, ensuring the model is provided with the current date to maintain temporal relevance for all queries.",
-      "takeaways": [
-        "**Core Functionality:** Web Answer collapses search, retrieval, synthesis, and citation extraction into a single managed tool call within Amazon Bedrock AgentCore.",
-        "**Authentication:** The AgentCore Gateway supports authentication via AWS Identity and Access Management (AWS IAM) or JSON Web Tokens (JWT).",
-        "**Output Format:** Returns a grounded, synthesized answer where each claim is explicitly mapped to a source URL via the Model Context Protocol (MCP).",
-        "**Search Methodology:** The tool performs parallel searches and iterative fact-checking, automatically re-searching if the initial evidence is deemed insufficient."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "b1feafc8620ed538",
-    "canonicalUrl": "https://blogs.nvidia.com/blog/vera-cpu-highest-throughput-fastest-agents/",
-    "title": "Vera Delivers the Best of Both Worlds: Highest Throughput and Fastest Agents",
-    "publishedAt": "2026-11-05T20:00:41.000Z",
-    "fetchedAt": "2026-11-05T22:41:32.100Z",
-    "contentHash": "fe57e33ca903c0b0",
-    "sourceId": "nvidia-blog",
-    "sourceName": "NVIDIA AI News",
-    "author": "Hannah Coutand",
-    "contentSnippet": "AI agents do more than generate answers. They search for information, query databases, write and test code and take action. Each of those steps relies on a CPU, with agents moving between GPU reasoning and CPU execution throughout a task. As businesses put more agents to work, AI factories need CPUs that can execute those steps quickly and support many agents at once, all within the limits of available power. What this means: AI infrastructure providers need to support more agents without making each one wait longer to get work done. And critically, AI factories are power limited. This means operators need to choose infrastructure that maximizes the work done for every watt. Why it matters: NVIDIA Vera delivers both fast agent performance and high capacity per watt within a single CPU. That gives providers one CPU for a range of agent workloads, rather than having to mix and match fast and dense x86 parts to balance speed and capacity. The data that proves it: In a 100-megawatt data center comparison, NVIDIA found that a single Vera CPU performs better than the fastest x86 CPU and the most energy-efficient x86 CPU. Vera delivers industry-leading agent speed while enabling 1.6x more agents per watt versus the fastest x86 CPU. Vera delivers 2x faster agent speed with leading energy efficiency compared with the most energy-efficient x86 CPU. Partners are already putting Vera to work. Early adopters see the same exceptional performance in production-style tests: Perplexity : Ran agentic coding tasks 1.5x faster with Vera than on traditional CPUs. Perplexity plans to deploy Vera in an upcoming production system. DeepInfra : Delivered up to 2.2x speed of the best x86 processor on agentic orchestration for its production agent workload, achieving the fastest of the four architectures tested. ClickHouse : Its standard binary, with no Vera-specific tuning, scaled near-linearly across 176 cores and topped the ClickBench hardware leaderboard. DuckLabs : Achieved about 1.5x the median TPC-H SF1000 performance of an Intel Xeon 6 baseline. Daytona : Brought 1,000 agent sandboxes online in 10.8 seconds, and achieved 12.7 completed jobs per second at 2,000 concurrent sandboxes, using Vera versus 88.4 seconds with x86. Modal : Achieved up to 2x sandbox throughput per core versus comparable x86 hardware, with gains that grow under heavy load. Learn more about the NVIDIA Vera ",
-    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/11/tech-blog-cpu-architecture-angled-vera-rack-5769445-1920x1080-1.png",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "NVIDIA has introduced Vera, a CPU architecture designed to optimize AI agent workflows that require frequent switching between GPU-based reasoning and CPU-based execution. By consolidating high-speed performance and energy efficiency into a single processor, Vera aims to eliminate the need for data centers to mix and match specialized x86 hardware for different agent tasks. NVIDIA claims that in a 100-megawatt data center simulation, Vera outperforms both the fastest and the most energy-efficient x86 CPUs currently available.\n\nTechnical benchmarks indicate that Vera provides 1.6x more agents per watt compared to the fastest x86 CPU and delivers 2x faster agent speed than the most energy-efficient x86 alternative. Early production-style testing by partners demonstrates significant gains: Perplexity reported 1.5x faster agentic coding tasks, while DeepInfra achieved 2.2x the speed of the best x86 processor for agentic orchestration. Additionally, Daytona demonstrated a reduction in sandbox deployment time from 88.4 seconds on x86 to 10.8 seconds on Vera, while Modal observed up to 2x higher sandbox throughput per core under heavy load.",
-      "takeaways": [
-        "**Agent Throughput:** Daytona achieved 12.7 completed jobs per second at 2,000 concurrent sandboxes using Vera.",
-        "**Database Performance:** ClickHouse scaled near-linearly across 176 cores on Vera, topping the ClickBench hardware leaderboard without specific tuning.",
-        "**Energy Efficiency:** Vera provides 1.6x more agents per watt than the fastest x86 CPU and 2x faster agent speed than the most energy-efficient x86 CPU.",
-        "**Benchmark Comparison:** DuckLabs recorded 1.5x the median TPC-H SF1000 performance compared to an Intel Xeon 6 baseline.",
-        "**Deployment Speed:** Daytona brought 1,000 agent sandboxes online in 10.8 seconds on Vera, compared to 88.4 seconds on x86 hardware."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "bbd492caba72ca54",
-    "canonicalUrl": "https://openai.com/index/cultfit-builds-with-codex",
-    "title": "Cult.fit builds operational muscle with Codex",
-    "publishedAt": "2026-11-05T20:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "eb59f9cb18aebcb0",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ce33817e4026d3a9",
-    "canonicalUrl": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
-    "title": "Meta says US users can now video chat with their Muse AI avatar",
-    "publishedAt": "2026-11-05T19:48:28.000Z",
-    "fetchedAt": "2026-11-05T22:41:30.268Z",
-    "contentHash": "6e695d6f2581b8d4",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Sarah Perez",
-    "contentSnippet": "Muse Voice, a feature that lets users call and video chat with Meta’s consumer AI agent, Muse, is now available to everyone in the U.S., the company announced on Thursday.\n\nFirst introduced at Meta’s Connect developer conference in September, the video-chatting feature involves new AI models, Muse Realtime Avatar and Muse Realtime Voice technology, which help power the digital avatar that chats with the user.\n\nWhile other AI competitors offer voice chat features, Meta’s Muse offers a cute, animated avatar (nicknamed Jolly), which users interact with as they ask questions or request tasks to be handled on their behalf. Users can also customize the avatar as they choose, changing it to something that looks more like a person, animal, or some other character.\n\nThe company believes that anthropomorphizing Muse in this way could make consumers feel more connected to their AI agent — a connection that could grow even stronger as they begin to engage in live conversations with it.\n\nAs the Muse avatar speaks, Meta says it will use “subtle expressions and gestures” that match the tone of the conversation. (Muse doesn’t actually “see” the user, but it hears them and reacts based on their conversations.)\n\nThe news of the rollout was announced via blog post and on X by Meta’s chief AI officer, Alexandr Wang, who shared a demo of his Muse in action. The video saw Wang joking around, referencing his love of posting memes on X, which he told his Muse may have gotten him in trouble with his boss. His Muse, a fluffy white dog, responds with a suggestion to add disclaimers to those memes that could be misinterpreted as Meta endorsing anything risqué. (Ha!)\n\nThe added support for video chats and calls comes just before Meta’s plan to launch a Tamagotchi-like wearable device for its Muse AI agent before year-end. When the device arrives, the digital avatar will appear on its small screen, letting users talk to the agent, which can then reply or carry out tasks for them.\n\nMeta says the real-time conversations are supported on mobile, web, and Mac and will later come to its AI Glasses and the upcoming “Muse Charm” hardware device.\n\nTopics AI , Meta , muse When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nBuy One Pass, Get a Second Free Cover more ground at TechCrunch’s ultimate founder bootcamp of th",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Meta has officially launched 'Muse Voice,' a video-chatting feature for its consumer AI agent, Muse, to all users in the United States. First unveiled at the September Connect developer conference, the feature utilizes proprietary 'Muse Realtime Avatar' and 'Muse Realtime Voice' technology to facilitate interactive, real-time conversations. The interface features an animated avatar, such as the default 'Jolly,' which users can customize to resemble humans, animals, or other characters. Meta intends for this anthropomorphization to foster deeper user engagement, with the avatar programmed to mirror conversational tone through subtle gestures and expressions.\n\nTechnically, the Muse avatar operates via audio input, as it does not possess visual perception of the user. The system is currently accessible across mobile, web, and Mac platforms. Meta plans to expand this functionality to its AI Glasses and a forthcoming wearable device, internally referred to as 'Muse Charm,' which is scheduled for release before the end of the year. This hardware is designed to function as a Tamagotchi-like device, displaying the digital avatar on a small screen to handle user requests and tasks.",
-      "takeaways": [
-        "**Core Technology:** Muse Voice is powered by Muse Realtime Avatar and Muse Realtime Voice models.",
-        "**Platform Availability:** The feature is currently live for U.S. users on mobile, web, and Mac platforms.",
-        "**Hardware Roadmap:** Meta plans to launch a wearable device called 'Muse Charm' by the end of the year, featuring a screen for the AI avatar.",
-        "**Interaction Mechanics:** The avatar uses non-verbal cues like gestures and expressions to match conversational tone, though it does not have visual input capabilities."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
     }
   }
 ]
