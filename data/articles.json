@@ -1,5 +1,467 @@
 [
   {
+    "id": "48af5fa4b3bcd43e",
+    "canonicalUrl": "https://siliconangle.com/2026/11/13/mirendil-raises-1b-in-funding-to-speed-up-ai-model-development/",
+    "title": "Mirendil raises $1B in funding to speed up AI model development",
+    "publishedAt": "2026-11-13T21:22:49.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.383Z",
+    "contentHash": "48288f835b5cf9be",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 16:22 EST / NOVEMBER 13 2026\n\nMirendil raises $1B in funding to speed up AI model development\n\nMirendil Inc., a provider of software that speeds up artificial intelligence development, has raised $1 billion in early-stage funding.\n\nThe startup stated on Thursday that Kleiner Perkins and Clearlake Capital jointly led the Series A investment. They were joined by more than a half-dozen others including Google LLC.\n\nMirendil was launched last year by two former Google DeepMind and Anthropic PBC researchers. Chief Executive Officer Behnam Neyshabur is a co-inventor of SAM , a popular algorithm that makes AI models better at tasks they were not specifically trained to perform. Chief Technology Officer Harsh Mehta, in turn, spent his time at Google DeepMind and Anthropic working on pretraining projects. Pretraining is a term for the initial phase of the AI development workflow.\n\nMirendil’s first product, Lor, is a platform that automates many of the tasks involved in model training runs. The company says that the software does so by splitting work among hundreds of AI agents.\n\nLarge language model development involves a significant amount of trial and error. Researchers create multiple versions of an algorithm that differ from one another in small ways and compare them to find the most performant variant. According to Mirendil, Lor can automate that workflow. If an error crops up during the evaluation, the platform fixes it automatically.\n\nEarlier this year, Mirendil asked one of its researchers to build a coding model that can compete with leading open-source LLMs. Usually, such projects are carried out by teams of specialists. Mirendil says that its automation technology enabled the researcher to build the model without any help from colleagues. The project cost $10 million and took about 3.5 months to complete.\n\nThe company’s agents wrote more than 99% of the code that powers the model, which is called Mirendil-Base. They set up infrastructure, found a suitable training algorithm and collected training data from the web. The agents then refined both the training dataset and Mirendil-Base’s architecture to boost output quality.\n\nThe LLM is the foundation of a specialized coding model called Fern that the company unveiled last month. According to Mirendil, it’s designed to automate programming challenges commonly encountered by AI labs. Fern can process 10",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Mirendil Inc., a startup focused on accelerating AI model development, has secured $1 billion in Series A funding led by Kleiner Perkins and Clearlake Capital, with participation from Google and others. Founded last year by former Google DeepMind and Anthropic researchers Behnam Neyshabur (CEO) and Harsh Mehta (CTO), the company aims to automate the AI training lifecycle. Neyshabur is known for co-inventing the SAM algorithm, while Mehta brings expertise in pretraining workflows.\n\nThe company’s core platform, Lor, utilizes fleets of hundreds of AI agents to automate model training, infrastructure setup, data collection, and error correction. Mirendil demonstrated the platform's efficacy by having a single researcher build 'Mirendil-Base,' a coding-focused LLM, in 3.5 months for $10 million. The company claims agents wrote over 99% of the code for this model. Mirendil-Base serves as the foundation for 'Fern,' a specialized coding model capable of processing 10 million input tokens per prompt—reportedly 10 times the capacity of Claude Opus 5.5—equivalent to 500,000 lines of code.\n\nFern is built on a version of Mirendil-Base containing 100 billion to 500 billion parameters. Mirendil has also previewed larger iterations of the base model, ranging from 500 billion to 10 trillion parameters, which the company intends to leverage for future, more capable LLM development.",
+      "takeaways": [
+        "**Funding:** Mirendil raised $1 billion in Series A funding led by Kleiner Perkins and Clearlake Capital.",
+        "**Agentic Workflow:** The Lor platform uses hundreds of AI agents to automate infrastructure, training algorithms, and data refinement, reportedly writing >99% of the code for the Mirendil-Base model.",
+        "**Model Performance:** The Fern coding model supports a 10 million token context window, claimed to be 10x the capacity of Claude Opus 5.5.",
+        "**Model Scaling:** Mirendil-Base currently exists in 100B–500B parameter versions, with larger variants up to 10 trillion parameters in development.",
+        "**Efficiency Benchmark:** A single researcher used Mirendil's automation to build a competitive coding LLM in 3.5 months for $10 million."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "bea6f68aca51de60",
+    "canonicalUrl": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+    "title": "Advancing science & engineering with Antigravity’s /teamwork",
+    "publishedAt": "2026-11-13T20:47:18.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.881Z",
+    "contentHash": "a9d24ada1cc839d6",
+    "sourceId": "google-research",
+    "sourceName": "Google AI Research Blog",
+    "author": "Google AI Research Blog",
+    "contentSnippet": "November 13, 2026 Vahab Mirrokni, Google Fellow and VP, Google Research\n\nWe share recent results from Antigravity’s /teamwork multiagent systems, which enhance human-AI collaborations to solve open problems across mathematics, chemistry, systems software, and ML engineering. All of this work is done in collaboration with human experts, and we are making these tools available externally.\n\nOver the past several weeks, teams across Google and academic partner institutions have tackled open problems in math, science, and complex systems engineering that had remained open for years. Using Gemini 4 Argon , Gemini 4 Carbon , Gemini 4 Hydrogen and multi-agent workflows such as Antigravity’s /teamwork (building on various Gemini models), these collaborations have produced new innovations across information theory, formal verifications, molecular structure discoveries, and kernel optimization, along with several production infrastructure gains at Google. We are making these agentic tools available in Antigravity’s /teamwork (alongside /boost and other agents) so that researchers and developers can apply them to their own work.\n\nFrontier research and systems engineering require navigating vast literature, building custom computational pipelines, testing against physical measurements, and verifying every step. Progress comes from an interactive discovery loop where researchers frame questions and define the theoretical or physical constraints, while long-horizon agents write custom solvers, explore large search spaces, test candidate designs, and check long chains of logic.\n\nScaling long-horizon reasoning\n\nTwo limits of current language models motivate /teamwork's design . First, model generation can be unpredictable, leaving a gap between a single attempt and finding the correct answer. The system bridges this gap by pairing parallel exploration with dedicated falsifiers (e.g., the Lean 4 proof checker, unmodified software test suites, execution simulators, web search, or hardware counters) to automatically verify which candidate solutions work.\n\nSecond, AI models often lose track of details over multi-day tasks because attention disperses across growing context windows. To prevent this, /teamwork partitions context by construction: each specialized agent receives only the exact files and tools it needs for a specific step. Coordinators hand off tasks to fresh successo",
+    "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/AntigravityTeamwork_HeroFinal.jpg",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Google Research has unveiled /teamwork, a multi-agent system designed to facilitate human-AI collaboration on complex open problems in mathematics, science, and systems engineering. The platform leverages the Gemini 4 model family—specifically Argon, Carbon, and Hydrogen—to execute long-horizon reasoning tasks. By utilizing specialized agentic harnesses like 'Stellar Colosseum' and '/boost,' the system automates the discovery loop by pairing parallel model exploration with external falsifiers, such as the Lean 4 proof checker, software test suites, and hardware counters. This architecture addresses model unpredictability and context degradation by partitioning tasks into specialized, isolated contexts where coordinators hand off work to fresh successor agents.\n\nIn recent applications, /teamwork has achieved significant breakthroughs, including the formal proof of the 2013 Courtade–Kumar conjecture in information theory, which involved generating 50 million lines of Lean 4 code. Other notable results include resolving a 2014 open question in quantum computing regarding n-bit Boolean functions, achieving near-optimal sample bounds for adaptive data analysis, and developing a deterministic algorithm for Boolean matrix multiplication that surpasses the cubic-time barrier. The system also produced a C implementation for n-bit integer multiplication that matches the GNU Multiple Precision Arithmetic Library (GMP) bit-for-bit up to a billion bits. These tools are being integrated into the Antigravity platform for external researcher and developer access.",
+      "takeaways": [
+        "**Model Architecture:** Utilizes Gemini 4 Argon, Carbon, and Hydrogen models within a multi-agent framework that partitions context to prevent attention dispersion over long-horizon tasks.",
+        "**Verification Methodology:** Employs dedicated falsifiers including Lean 4 for formal proof verification, unmodified software test suites, and execution simulators to validate candidate solutions.",
+        "**Information Theory Milestone:** Proved the 2013 Courtade–Kumar conjecture by reducing it to a 14-variable optimization problem and formalizing the proof in 50 million lines of Lean 4 code.",
+        "**Algorithmic Breakthroughs:** Resolved a 2024 STOC open question in Boolean matrix multiplication, a 2022 FOCS open question in cut sparsification, and provided a new O(n log n) algorithm for n-bit integer multiplication.",
+        "**System Availability:** The /teamwork and /boost agentic harnesses are being deployed to the Antigravity platform for external use, allowing users to route prompts through declarative, self-improving natural-language patterns."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b96c8f1ce3eaba55",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
+    "title": "AI agent startup LangChain hits $3B valuation",
+    "publishedAt": "2026-11-13T19:37:57.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.821Z",
+    "contentHash": "9eba5b6392982dea",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Julie Bort",
+    "contentSnippet": "Posted: 11:37 AM PST · November 13, 2026 Image Credits: Getty Images Julie Bort AI agent startup LangChain hits $3B valuation Agent management startup LangChain has raised a $300 million Series C at a $3 billion valuation led by CapitalG, with participation from investors, including Singapore’s GIC, DFJ Growth, IVP, and Sapphire Ventures, the company announced on Friday.\n\nThat’s more than double its $1.25 billion valuation when it raised $125 million about a year ago , led by IVP.\n\nLangChain began in 2022 as a popular open source project that handled the kinds of tasks that early-stage LLMs found difficult, like searching the web, calling APIs, and interacting with databases. As the frontier AI labs delivered harnesses that now competently do those tasks, LangChain turned its focus toward managing AI agents. It has apparently found its stride in this highly competitive area with a simple message: letting businesses own their own intelligence.\n\nWith its open source roots, the startup says its agent creation and management software, LangSmith, is not trying to lock users into any particular model, cloud, or ecosystem, unlike the major clouds or frontier AI labs. It also promises that LangSmith will contain agent behavior and is easy to use.\n\nTrue, there are plenty of other startups pitching similar advantages these days and also doing well ( case in point is newcomer Mintive ). However, LangChain has had a head start and now claims 7,000 LangSmith customers, including big-name startups like Harvey, Rippling, and Clay, and enterprises like Nvidia, Toyota, and Salesforce.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related AI Amazon’s new AI agent will shop third-party sites for you\n\n<img width=\"530\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?w=530\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"Robot concept or robot hand chatbot pressing computer keyboard enter\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg 2058w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resize=150,106 150w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resize=300,212 300w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resiz",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "LangChain, the AI agent management startup, has secured $300 million in a Series C funding round, bringing its total valuation to $3 billion. The round was led by CapitalG, with participation from GIC, DFJ Growth, IVP, and Sapphire Ventures. This valuation represents a significant increase from the $1.25 billion valuation the company reached approximately one year ago following a $125 million funding round led by IVP.\n\nOriginally launched in 2022 as an open-source project designed to assist early-stage LLMs with tasks like web searching and API integration, LangChain has pivoted its primary focus toward the management of AI agents. Its core product, LangSmith, is positioned as a model-agnostic platform that allows businesses to build and manage agents without being locked into specific cloud providers or proprietary AI ecosystems. The company claims to have reached 7,000 customers for LangSmith, including major enterprises such as Nvidia, Toyota, and Salesforce, as well as startups like Harvey, Rippling, and Clay.",
+      "takeaways": [
+        "**Funding Details:** Raised $300 million in Series C funding at a $3 billion valuation.",
+        "**Investor Syndicate:** Round led by CapitalG, with participation from GIC, DFJ Growth, IVP, and Sapphire Ventures.",
+        "**Customer Base:** Reports 7,000 customers for its LangSmith platform, including Nvidia, Toyota, Salesforce, Harvey, Rippling, and Clay.",
+        "**Strategic Positioning:** Focuses on model-agnostic agent management to prevent vendor lock-in across cloud and AI model providers."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "091099d846f62db2",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/",
+    "title": "Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot",
+    "publishedAt": "2026-11-13T19:35:35.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.358Z",
+    "contentHash": "726eab72ef0ea95e",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Belair Albahagwi",
+    "contentSnippet": "Speech-to-text inference is computationally intensive. Each audio file triggers a pipeline of deep learning models (acoustic models, language models, and post-processing stages) running on NVIDIA GPUs to meet latency requirements. At scale, this means thousands of GPU instances running continuously. AssemblyAI needed a way to run GPU-intensive inference workloads cost-effectively at scale, without sacrificing the availability and latency guarantees their customers depend on. Running entirely on On-Demand Instances would be cost-prohibitive. Spot Instances offer significant savings, while Amazon Elastic Compute Cloud (Amazon EC2) can reclaim them with a 2-minute warning when capacity is needed elsewhere. AssemblyAI needed an architecture that absorbs Spot interruptions gracefully while maintaining service level agreement (SLA) commitments. Additionally, customers in regulated industries, including healthcare, finance, and legal, must keep audio data within specific geographic boundaries. They implement strict data residency configurations in European AWS Regions. Available on AWS Marketplace , AssemblyAI provides an API for transcription, speaker detection, sentiment analysis, chapter detection, and personally identifiable information (PII) redaction. Their models transcribe and analyze speech for high-volume workloads across industries including technology, media, healthcare, and financial services. In this post, we show you how AssemblyAI runs cost-optimized AI inference at scale for their speech-to-text platform. The architecture uses Amazon Elastic Container Service (Amazon ECS), Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, and Amazon Simple Queue Service (Amazon SQS). Together, these services combine a flexible fleet of NVIDIA GPUs, ECS capacity providers, and a queue-based retry mechanism. The result is significant cost savings while maintaining SLA commitments across European AWS Regions. Solution overview AssemblyAI’s inference platform runs on Amazon ECS with compute capacity managed through ECS capacity providers. The fleet mixes Amazon EC2 Spot Instances and On-Demand Instances across multiple NVIDIA GPU instance families, running a single inference model per GPU at a scale of thousands of instances. The architecture is built on four pillars that work together to deliver cost-optimized and resilient inference: Amazon ECS capacity provi",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/06/ML-20884-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AssemblyAI has optimized its large-scale speech-to-text inference pipeline by migrating to a hybrid Amazon EC2 Spot and On-Demand instance architecture on Amazon ECS. The platform, which processes audio through acoustic models, language models, and post-processing stages, requires thousands of NVIDIA GPU instances to maintain latency SLAs for transcription, speaker detection, sentiment analysis, and PII redaction. By utilizing ECS capacity providers, the company balances cost-efficiency with the necessity of handling the 2-minute interruption warnings inherent to Spot Instances.\n\nThe architecture relies on a queue-based retry mechanism powered by Amazon SQS to manage workload resilience during instance reclamation. To meet strict data residency requirements for customers in regulated sectors like healthcare and finance, the infrastructure is deployed across specific European AWS Regions. The system utilizes a heterogeneous fleet of NVIDIA GPU instance families, ensuring that the inference pipeline remains performant while significantly reducing the financial overhead compared to a pure On-Demand deployment.",
+      "takeaways": [
+        "**Infrastructure Stack:** Utilizes Amazon ECS with capacity providers, Amazon EC2 Spot and On-Demand instances, and Amazon SQS for queue-based retry logic.",
+        "**Compute Hardware:** Employs a flexible fleet of NVIDIA GPU instances to handle high-volume transcription and analysis tasks.",
+        "**Resilience Strategy:** Implements a retry mechanism to handle the 2-minute interruption warning window provided by EC2 Spot Instances.",
+        "**Compliance:** Maintains strict data residency by deploying inference workloads within specific European AWS Regions to serve regulated industries."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8263b1aa3276e9f7",
+    "canonicalUrl": "https://spectrum.ieee.org/microcredentials-trustworthy-ai",
+    "title": "How Microcredentials Help Engineers Build Trustworthy AI",
+    "publishedAt": "2026-11-13T19:00:03.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.360Z",
+    "contentHash": "4a258137d0c1b869",
+    "sourceId": "ieee-spectrum-ai",
+    "sourceName": "IEEE Spectrum AI",
+    "author": "Kaitlyn Ridel",
+    "contentSnippet": "Engineering teams are moving at breakneck speed to integrate artificial intelligence, but they are running into a formidable new barrier: compliance issues. Translating high-level AI ethics , governance , and auditing into daily operational workflows has become one of the industry’s toughest challenges. “AI ethics” refers to the principles developers use to govern and operate workflows. “Governance” refers to the rules and procedures an organization establishes for AI workflows and how they interact with organizational data. Auditing is the process of assessing and validating systems to ensure safety, fairness, transparency, and legal compliance. Technology leads and systems engineers are responsible for adhering to a structured set of guidelines for standards and processes usually issued by a governing body such as the European Union , the U.S. National Institute of Standards and Technology , and the International Organization for Standardization . The regulations aim to mitigate issues such as systemic bias , security vulnerabilities, and transparency risks, but they also highlight a critical skills gap. Most traditional computer science, software, and electrical engineering degree programs were built around technical design and system architecture. They do not yet include training in AI auditing, data tracking, or safety protocols for how AI systems interact with people and other technologies. Expecting mid-career engineers to leave their job to attend a full-time two- or four-year program to learn about the topics is not feasible. Yet treating safety and governance as an afterthought can lead to costly product delays, legal exposure, and broken public trust. Targeted microcredential programs can bridge the knowledge gap by helping engineers build skills in compliance, AI ethics, and governance. The benefits of microcredentials Skills-based microcredentials represent the mastery of expertise gained through a learning program. To earn them, learners must demonstrate the skill through a validation assessment. The microcredentials can be stacked, showing a growing skill set in a defined area and allowing learners to earn several microcredentials in one program. Microcredentials also allow engineers to upskill and master critical competencies, such as bias mitigation, algorithmic transparency, and risk auditing, without interrupting their career. Through rigo",
+    "imageUrl": "https://spectrum.ieee.org/media-library/conceptual-illustration-of-planet-earth-surrounded-by-educational-objects-such-as-a-microscope-beaker-and-textbook.jpg?id=68675346&width=980",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Engineering teams are facing significant operational friction as they attempt to integrate AI ethics, governance, and auditing into standard development workflows. These requirements, often mandated by frameworks from the European Union, the U.S. National Institute of Standards and Technology (NIST), and the International Organization for Standardization (ISO), aim to address systemic bias, security vulnerabilities, and transparency risks. However, a persistent skills gap exists because traditional computer science and engineering curricula lack formal training in AI-specific safety protocols, data tracking, and regulatory auditing.\n\nMicrocredentials are being positioned as a solution to this gap, allowing mid-career engineers to acquire specialized competencies without the time commitment of traditional degree programs. These programs focus on mastery of specific skills—such as bias mitigation, algorithmic transparency, and risk auditing—validated through assessment. By stacking these credentials, engineers can demonstrate a verifiable progression of expertise, helping organizations mitigate the risk of product delays, legal exposure, and loss of public trust associated with non-compliant AI deployments.",
+      "takeaways": [
+        "**Regulatory Frameworks:** Compliance standards are primarily driven by the EU, NIST, and ISO, focusing on safety, fairness, and transparency.",
+        "**Skills Gap:** Traditional engineering education lacks training in AI auditing, data tracking, and human-AI interaction safety protocols.",
+        "**Microcredential Mechanics:** These programs require learners to demonstrate mastery through validation assessments, with the ability to stack credentials to show growing expertise.",
+        "**Core Competencies:** Targeted training areas include bias mitigation, algorithmic transparency, and risk auditing."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5118e84111e9ed9f",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/",
+    "title": "Cost attribution and controls for AI developer and productivity tools on Amazon Bedrock",
+    "publishedAt": "2026-11-13T18:44:02.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.358Z",
+    "contentHash": "c3fdb9cacf26a211",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Aamna Najmi",
+    "contentSnippet": "Amazon Bedrock provides built-in, zero-instrumentation cost attribution that traces every inference call back to the IAM principal that made it. The identity flows along with organizational tags, into AWS Cost and Usage Reports (CUR 2.0) and AWS Cost Explorer while keeping data inside the AWS security boundary. This post shows you how to use these capabilities to answer three questions that every FinOps and AI Platform leader asks as AI tool adoption scales: What is the real per-user cost? Which teams generate the most spend, and does that spend correlate with the value they deliver? How should next year’s budget scale with headcount and adoption? The approach works identically regardless of which AI coding or productivity tool makes the call. Claude Code, Claude Desktop, OpenAI Codex, ChatGPT Work, and OpenCode all invoke Amazon Bedrock through one of two inference endpoints: bedrock-runtime or bedrock-mantle , and Bedrock’s attribution mechanism operates at the endpoint layer, beneath any tool-specific logic. You configure identity propagation once, and every tool that routes inference through Bedrock inherits per-user cost visibility automatically. By the end of this post, you will have AWS IAM Identity Center configured with your external identity provider for per-user attribution, session tags (team, cost center) flowing into CUR 2.0, Amazon Athena queries and dashboard options for ongoing cost visibility, and a clear understanding of Bedrock-native usage controls to enforce spending limits. How Amazon Bedrock attribution works Amazon Bedrock records the IAM identity of every inference caller with no changes required to your API calls. When a user invokes a model through either the bedrock-runtime or bedrock-mantle endpoint, Bedrock captures the caller’s full IAM ARN, including the session name for federated users and publishes it to CUR 2.0 in the line_item_iam_principal column. In billing data, usage is aggregated per principal and per usage type for each export interval: one hour in an hourly export, one day in a daily export. CUR does not contain per-request cost. For per-prompt detail, use model invocation logs or request metadata tagging. Optionally, you can attach tags to IAM principals or pass session tags during federation to add organizational dimensions. These tags appear in CUR 2.0 with the iamPrincipal/ prefix and in Cost Explorer as filter",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon Bedrock has implemented native, zero-instrumentation cost attribution that tracks inference calls to the specific IAM principal responsible for the request. By capturing the caller’s full IAM ARN—including session names for federated users—at the bedrock-runtime and bedrock-mantle endpoint layers, the system automatically propagates identity data into AWS Cost and Usage Reports (CUR 2.0) and AWS Cost Explorer. This mechanism functions independently of the specific AI tool being used, supporting applications such as Claude Code, Claude Desktop, OpenAI Codex, ChatGPT Work, and OpenCode without requiring modifications to tool-specific logic.\n\nTo enable granular financial oversight, organizations can leverage AWS IAM Identity Center to integrate external identity providers, allowing session tags like 'team' or 'cost center' to flow directly into billing reports. While CUR 2.0 provides aggregated usage data per principal and usage type at hourly or daily intervals, users requiring per-prompt cost granularity must utilize model invocation logs or request metadata tagging. The platform also supports the enforcement of spending limits through Bedrock-native controls, enabling FinOps and AI platform leaders to correlate AI spend with headcount and organizational value.",
+      "takeaways": [
+        "**Endpoint Attribution:** Bedrock captures IAM identity at the bedrock-runtime and bedrock-mantle endpoints, ensuring visibility regardless of the client application.",
+        "**Reporting Integration:** Identity data is published to the line_item_iam_principal column in CUR 2.0, with organizational tags appearing under the iamPrincipal/ prefix.",
+        "**Granularity Limits:** CUR 2.0 provides aggregated cost data per principal per hour or day; per-request cost analysis requires separate model invocation logs.",
+        "**Identity Propagation:** The system supports federated users by capturing session names, allowing for per-user cost attribution when integrated with AWS IAM Identity Center."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "6669a4d19d8d9722",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+    "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh oh, Jensen!",
+    "publishedAt": "2026-11-13T18:40:30.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.821Z",
+    "contentHash": "ed2d950f5a19b2f5",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Tim Fernholz",
+    "contentSnippet": "The leading open-weight models developed by Chinese companies were trained on Nvidia chips that the U.S. government restricted from shipping to its largest geopolitical rival, a new research effort claims.\n\nThe apparently widespread access to Blackwell GPUs among Chinese frontier labs shows the magnitude of the problem facing the leading chip designer. Nvidia CEO Jensen Huang left the company this week after admitting to his affair with Alice Huang, executive of Megaspeed, a company implicated in smuggling Nvidia chips into China. Alice Huang has also been alleged to be an agent of China’s intelligence service.\n\nWhile Jensen Huang’s relationships with a customer and two employees have drawn the most public interest, Nvidia’s potential corporate liability for export control violations likely factored into its decision to part ways with Huang.\n\nU.S. export controls are intended to protect the country’s leadership in AI capabilities against China, but Huang has long sought to open up that market. Blackwell GPUs are banned from export to China or Chinese-owned firms, while the Trump administration allows Nvidia to export the H200, a less powerful chip, provided shipments take a circuitous shipping route that allows the U.S. to claim a 25% tariff.\n\nWill DePue, a former OpenAI researcher who leads the nonprofit research group Unemployment Labs, analyzed the weights — the unique structure — of large language models released openly by DeepSeek, Moonshot AI, MiniMax, and Ant Group. The weights still reflect the configurations of the chips used to train them, and DePue was able to find compelling evidence that the most closely watched models, including Moonshot’s Kimi’s K3 releases and DeepSeek’s V4 models, bear fingerprints from training on Blackwell chips.\n\nWhite House technology adviser Michael Kratsios said earlier this year that Moonshot had used export-banned Nvidia chips, citing U.S. intelligence sources. Epoch AI, a nonprofit research organization, estimates that about two million advanced chips entered China in 2024 and 2025 through schemes designed to hide their final destination.\n\nThat doesn’t mean that these models were trained entirely on Nvidia chips, or that export control laws were necessarily violated; the chips could have been in an offshore data center, which has proven a popular way for Chinese firms to access compute and driven an industrial revol",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Research conducted by Will DePue of the nonprofit Unemployment Labs suggests that leading Chinese AI models, specifically DeepSeek’s V4 and Moonshot AI’s Kimi K3, exhibit technical 'fingerprints' consistent with training on Nvidia Blackwell GPUs. These chips are currently subject to U.S. export bans intended to restrict China's access to advanced AI compute. The findings imply that despite strict regulatory frameworks, Chinese frontier labs are successfully utilizing high-end hardware, potentially through offshore data centers or illicit smuggling networks.\n\nEpoch AI estimates that approximately two million advanced Nvidia chips entered China during 2024 and 2025 via diversion schemes. A significant portion of this compute is reportedly accessed through offshore facilities, with Malaysia emerging as a major hub, having imported 275,000 Nvidia accelerators in the same period. The situation is further complicated by allegations involving Nvidia CEO Jensen Huang and his professional ties to Alice Huang, an executive at Megaspeed—a firm accused of facilitating the smuggling of banned chips into China. These developments have triggered scrutiny regarding Nvidia’s corporate liability and the efficacy of U.S. export controls, which currently lack stringent requirements for tracking the end-use of chips once they leave the manufacturer's direct control.",
+      "takeaways": [
+        "**Model Fingerprinting:** Analysis of model weights by Unemployment Labs indicates that DeepSeek V4 and Moonshot Kimi K3 were likely trained on Blackwell-class hardware.",
+        "**Smuggling Volume:** Epoch AI estimates that 2 million advanced Nvidia chips were diverted into China throughout 2024 and 2025.",
+        "**Offshore Hubs:** Malaysia imported 275,000 Nvidia AI accelerators in 2024-2025, serving as a primary conduit for Chinese firms to access compute outside mainland jurisdiction.",
+        "**Regulatory Loophole:** Current U.S. export controls do not mandate that companies track the downstream usage of chips once they are sold, allowing for the use of offshore data centers to bypass domestic restrictions.",
+        "**Stockpile Status:** Approximately 600,000 H200 chips are reportedly held in Hong Kong, awaiting clearance for import into mainland China."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1a853c46576253c8",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/",
+    "title": "Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture",
+    "publishedAt": "2026-11-13T18:01:15.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.358Z",
+    "contentHash": "37cd4c2c14dd6659",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Shantanu Tripathi",
+    "contentSnippet": "Foundation models deployed on Amazon SageMaker HyperPod meet inputs that no pre-curated dataset covers: domain-specific jargon, unexpected formats, new products, and changing user behavior. Without a record of production inference data, teams can’t detect drift, find failure patterns, or use real interactions to improve the model. Amazon SageMaker HyperPod now provides Data Capture, a built-in capability that records live inference inputs and outputs to Amazon Simple Storage Service (Amazon S3) at three independent tiers, with minimal latency impact and zero impact on model availability. In this post, we walk through one complete example on a single SageMaker HyperPod cluster. A home-appliance support router captures its production traffic, Amazon Athena queries surface a new-product blind spot, a SQL policy labels the captured records, and a fine-tune on that data teaches the router the new product. We measure accuracy before and after, on data that could not have existed before the model was deployed. The inference operator serves the model on one node, and the training operator runs the fine-tuning on another. We use synthetic data for the walkthrough. The scripts, manifests, SQL, synthetic datasets, and expected outputs are available in the accompanying GitHub repository . Three-tier Data Capture architecture HyperPod Data Capture provides three independent tiers, each at a different point in the request path. You can turn on any combination in the same dataCapture block. Tier 1: SageMaker endpoint Tier 2: Load balancer Tier 3: Model pod What’s captured Full request/response payloads Application Load Balancer (ALB) access-log fields: request line, status codes, timings, client IP, user agent Full request/response payloads plus event metadata Managed by SageMaker native data capture ALB access logs HyperPod inference operator (NGINX + OTel collector + S3 uploader sidecars) Best for Compliance, Model Monitor, audit Traffic and error-rate monitoring at low cost Debugging, analytics, training-data collection Configuration sagemakerEndpoint: — sampling %, input/output, AWS KMS loadBalancer: { enabled: true } modelPod: — sampling %, input/output, buffer, max payload size, AWS KMS, content types Tiers 1 and 3 both store full payloads, so enabling both stores every record twice. Use Tier 1 for compliance and Model Monitor, Tier 2 when you only need traffic metad",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/12/ML-22239-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has introduced a three-tier Data Capture capability for SageMaker HyperPod, designed to address the challenge of capturing production inference data for model improvement. The system records live inputs and outputs directly to Amazon S3, enabling teams to detect drift, identify failure patterns, and curate datasets for fine-tuning. By capturing domain-specific jargon and evolving user behaviors that were not present in original training sets, the tool facilitates a continuous improvement flywheel where production traffic is labeled and fed back into the training pipeline.\n\nThe architecture operates across three distinct tiers: Tier 1 (SageMaker endpoint) captures full request/response payloads for compliance and Model Monitor; Tier 2 (Load Balancer) logs ALB access fields like status codes and client IPs for traffic monitoring; and Tier 3 (Model pod) captures full payloads plus event metadata using NGINX, OpenTelemetry (OTel) collector, and S3 uploader sidecars. The system is designed for minimal latency and zero impact on model availability. AWS provides a reference implementation using a home-appliance support router scenario, demonstrating how to use Amazon Athena for querying captured data and SQL policies for automated labeling before triggering a fine-tuning job on a separate HyperPod node.",
+      "takeaways": [
+        "**Capture Tiers:** The system offers three independent capture points: SageMaker endpoint (Tier 1), Load Balancer (Tier 2), and Model pod (Tier 3).",
+        "**Technical Stack:** Tier 3 implementation utilizes NGINX, an OpenTelemetry (OTel) collector, and S3 uploader sidecars to manage data flow.",
+        "**Operational Workflow:** The architecture supports a split-node approach where the inference operator runs on one node and the training operator executes fine-tuning on another.",
+        "**Configuration:** Users can enable tiers via the dataCapture block, specifying sampling percentages, AWS KMS encryption, and buffer settings.",
+        "**Resource Availability:** AWS has released a GitHub repository containing scripts, manifests, SQL queries, and synthetic datasets for a full end-to-end walkthrough."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cdc8eef67bc55a0d",
+    "canonicalUrl": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+    "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+    "publishedAt": "2026-11-13T18:00:39.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.882Z",
+    "contentHash": "b691a96b7fe2af4c",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "This walkthrough showcases a beverage can pick-and-place task that uses the UR17G arm , Robotiq 2F-140 gripper , and beverage can to compose a scene in Isaac Sim, check their behavior, and run a pick-and-place example with agent-generated controls.\n\nFor robotics workflows, SimReady means an OpenUSD asset has been prepared with the properties needed for a defined simulation use case, such as collisions, mass, joints, and joint drives. SimReady Central , an open asset library on Hugging Face, lets you reuse robot and object assets with authored simulation properties and profile-validation evidence. For more about the library and its launch, read the announcement blog .\n\nWhat makes a robot asset SimReady?\n\nSimReady Foundation defines what features the OpenUSD asset needs for a simulation use case. Its specifications connect three levels:\n\nProfile: a group of features for a use case, such as a robot body.\n\nFeatures: capabilities needed for the use case, such as joints that can be controlled.\n\nRequirements: checks on the settings needed for each feature, such as a joint’s drive settings.\n\nFor this task, those properties include the arm and gripper’s joints and a beverage can asset collisions and mass. Validation checks these settings against the profile’s requirements. The simulation then tests whether the assembled robot can use them to pick up and move the can.\n\nWhat comes with the asset, and what do you add?\n\nThe UR17G , Robotiq 2F-140 , and beverage can packages include the models and their simulation settings. You assemble the scene and add task code to define the arm–gripper assembly, work surface, starting positions, and controls for moving the arm and opening and closing the gripper.\n\nFigure 2. SimReady Central supplies the asset models and simulation settings and the example scene and controls define the pick-and-place task.\n\nWhat should you check before running a pick-and-place task?\n\nA robot can look visually correct while stationary in Isaac Sim but move or interact with objects incorrectly when the simulation runs. Before running pick-and-place, test its joints, movement, and contact behavior. You can ask the agent to perform these tests or do them manually in Isaac Sim.\n\nJoint settings: Review the arm and gripper’s joint limits and drive settings.\n\nMovement: Test a small arm movement and open and close the gripper.\n\nContact: Confirm that the can res",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "This technical guide details the implementation of a pick-and-place robotics simulation within NVIDIA Isaac Sim 6.2, utilizing SimReady assets to ensure physics-ready OpenUSD models. The workflow centers on the UR17G robotic arm and the Robotiq 2F-140 gripper, with assets sourced from SimReady Central, an open library hosted on Hugging Face. SimReady assets are pre-configured with essential simulation properties—including mass, collision meshes, and joint drive settings—validated against specific profiles like Robot-Body 4.0.0 and Robot-Gripper 3.0.0 to ensure consistent behavior across simulation environments.\n\nThe assembly process involves integrating these assets into an Isaac Sim scene and employing an AI agent to generate Python-based control scripts. The agent leverages bundled Isaac Sim skills, specifically 'isaac-sim-remote', 'usd-articulation', 'manipulation-ik', and 'physics-simulation', to manage the arm-gripper assembly and execute the pick-and-place sequence. The simulation tests the full grasp-to-release lifecycle, requiring manual or agent-led verification of joint limits, drive settings, and contact physics to ensure the beverage can remains stable during movement. The current implementation uses a fixed setup without vision-based sensing, and the grasp effort is capped at 2 N·m for the horizontal maneuver.",
+      "takeaways": [
+        "**SimReady Architecture:** Assets are defined by a three-tier hierarchy consisting of Profiles (use-case groups), Features (e.g., controllable joints), and Requirements (validation checks for settings like drive parameters).",
+        "**Validation Standards:** The UR17G arm uses the Robot-Body 4.0.0 profile, while the Robotiq 2F-140 gripper uses the Robot-Gripper 3.0.0 profile, both of which include PhysX driven-joint checks.",
+        "**Simulation Requirements:** The workflow requires Isaac Sim 6.2, a remote Python server enabled for agent interaction, and the use of specific skills including 'isaac-sim-remote' and 'manipulation-ik'.",
+        "**Operational Constraints:** The current pick-and-place task is a fixed-position setup that excludes vision, deformation, or liquid motion modeling, with a 2 N·m drive-effort cap for the gripper."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1359c33626879ad0",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/13/best-ai-video-generation-models-2026/",
+    "title": "Best AI Video Generation Models in 2026: Elo, Price per Second, Open Weights",
+    "publishedAt": "2026-11-13T17:23:51.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.384Z",
+    "contentHash": "f168423339e7864d",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "The AI video leaderboard looks very different from 12 months ago. Native audio is now table stakes. Clips run 15–30 seconds. And an open-weights model sits in the top 3. This ranking (as of Nov 13, 2026) uses one quality signal: blind human-preference Elo from the Artificial Analysis Video Arena . We pair it with API price per second and the license status of the weights. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . Methodology Quality : Artificial Analysis ranks models by Elo from blind pairwise votes by validated evaluators . Each vote compares 2 clips from the same prompt. We rank by the AA-Video-T2V v2.1 (with audio) board. We also report the AA-Video-I2V v2.1 score. Anchor : Kling 3.0 1080p (Pro) is fixed at 1000 Elo on both boards. A score below 1000 means voters preferred Kling 3.0 more often. Price : Artificial Analysis lists cost per minute on each creator’s API. It normalizes to 1080p where offered. We divide by 60 to get price per second. Vendor rates at 720p are often lower, and we flag those gaps. Confidence : Most top-10 scores carry a ±13 to ±15 Elo interval. Models within ~25 points are statistically close. Treat ranks 3–8 as a cluster, not a strict order. Master Comparison Table Rank Model Developer T2V Elo (audio) I2V Elo (audio) $/sec 10-sec clip Open weights 1 Wan 3.0 Alibaba 1175 1108 $0.200 $2.00 No 2 Utopai X Utopai Studios (H3 post-train) 1170 1151 No API — No 3 MiniMax H3 (768p) MiniMax 1161 1133 $0.080 $0.80 Yes (restricted) 4 Dreamina Seedance 2.5 ByteDance Seed 1155 1161 $0.569 $5.69 No 5 Gemini Omni Flash 1.2 Google 1154 1086 $0.104 $1.04 No 6 FLUX 3 Max fal × Black Forest Labs 1153 1068 $0.145 $1.45 No 7 HeyGen Video 1 HeyGen (H3 post-train) 1152 1124 $0.040 $0.40 No 8 MiniMax H3 Max fal (H3 post-train) 1149 1115 $0.160 $1.60 No 9 SkyReels V4 Skywork AI 1137 1125 $0.350 $3.50 No 10 FLUX 3 Black Forest Labs 1137 1071 $0.290 $2.90 No (Dev promised) — Seedance 2.0 ByteDance Seed 1136 1140 $0.374 $3.74 No — P-Video-2-Pro Pruna AI × MiniMax 1130 1116 $0.095 $0.95 No — Pika H3 Flex Pika (H3 post-train) 1124 1114 $0.035 $0.35 Yes (restricted) — Kling 3.0 1080p (Pro) Kuaishou 1000 (anchor) 1000 (anchor) $0.168 $1.68 No — Veo 3.1 Google 964 955 $0.400 $4.00 No — Veo 3.1 Lite Google 948 931 $0.080 $0.80 No — LTX-2.5 Fast Lightricks 943 911 $0.130 $1.30 Yes Source: Artificial Analysi",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "As of November 13, 2026, the Artificial Analysis Video Arena leaderboard reveals a shift in the AI video generation landscape, where native audio integration is now standard and models are capable of 15–30 second clips. Alibaba’s Wan 3.0 currently leads the T2V (Text-to-Video) rankings with an Elo of 1175, followed closely by Utopai X (1170) and MiniMax H3 (1161). The rankings utilize Kling 3.0 1080p (Pro) as a fixed anchor at 1000 Elo, with most top-10 models exhibiting a statistical confidence interval of ±13 to ±15 Elo points, effectively grouping ranks 3 through 8 as a performance cluster.\n\nTechnical performance is measured via blind pairwise human preference votes for both T2V and I2V (Image-to-Video) tasks. Pricing is normalized to 1080p resolution where available, with costs per 10-second clip ranging from $0.35 for Pika H3 Flex to $5.69 for ByteDance’s Dreamina Seedance 2.5. While most top-tier models remain closed-source, MiniMax H3 and Pika H3 Flex offer restricted open-weights access, and Black Forest Labs has indicated future open-weights availability for FLUX 3.",
+      "takeaways": [
+        "**Top Performer:** Alibaba's Wan 3.0 holds the #1 spot with a T2V Elo of 1175 and an I2V Elo of 1108, priced at $0.20 per second.",
+        "**Cost Efficiency:** HeyGen Video 1 offers the lowest price among the top 10 at $0.04 per second ($0.40 per 10-second clip), while Dreamina Seedance 2.5 is the most expensive at $0.569 per second.",
+        "**Anchor Model:** Kling 3.0 1080p (Pro) serves as the baseline for the leaderboard, fixed at 1000 Elo for both T2V and I2V categories.",
+        "**Open Weights Status:** MiniMax H3 and Pika H3 Flex provide restricted open-weights access, while FLUX 3 (Dev) has a promised open-weights release.",
+        "**Statistical Clustering:** Models within a 25-point Elo range are considered statistically close, meaning the performance gap between ranks 3 (MiniMax H3) and 8 (MiniMax H3 Max fal) is minimal."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "96c7f67bef86f831",
+    "canonicalUrl": "https://huggingface.co/blog/allenai/xybench",
+    "title": "XYBench: Helping with the problem behind the question",
+    "publishedAt": "2026-11-13T17:02:35.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.882Z",
+    "contentHash": "7213b81b62ad7b1a",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "Truly useful AI assistants need to be able to help users who ask misguided questions—not just users who ask the right question with the right amount of detail. We’re releasing XYBench , a benchmark of 8K+ questions that tests how AI assistants respond to requests based on misconceptions, such as asking how to thicken frosting that keeps sliding off cupcakes when the real problem is that the cupcakes are still too warm to frost. XYBench won the Best Resource Paper Award at EMNLP 2026.\n\nA mismatch between the approach someone asks about and the goal they want to achieve is known as the XY problem : a person wants to accomplish X, assumes a particular approach Y will work, and asks for help with Y. In the cupcake example, the person is so committed to making the frosting stick that they fail to consider the warmth of the cupcake as the true problem to be addressed.\n\nDeveloped with researchers at Carnegie Mellon, NVIDIA, and Johns Hopkins, XYBench exposes a critical gap in LLMs' ability to troubleshoot problems: recognizing when a user's request is based on an implicit misconception and appropriately redirecting them toward a solution that addresses their actual goal. Drawing on 8,115 real-world questions spanning programming and everyday activities such as cooking and home repair, we introduce a benchmark that measures whether models identify these misconceptions and are able to prioritize effective solutions in their responses.\n\nThe models we evaluated on XYBench – Claude Sonnet 4.6, GPT-5, Gemini 3.1 Pro, Qwen3.5-9B, and DeepSeek-V4 Pro – often suggested a solution to the user’s problem but kept their answers focused on the original, mistaken approach. Unlike human reference answers, all five models were less likely to steer users away from that approach and toward a solution suited to their goal.\n\nPeople use AI systems with different levels of knowledge and may not always know how best to approach a problem. We hope XYBench helps researchers measure whether model improvements make assistants better at recognizing mistaken assumptions, explaining why a proposed approach might not work, and suggesting more effective alternatives—even when users don't know the right questions to ask.\n\nBuilding XYBench\n\nWe built XYBench from four sources: 1,557 questions from Stack Overflow, 184 from Stack Exchange, 102 manually curated examples, and 6,272 questions generated fr",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "XYBench is a new benchmark designed to evaluate how AI assistants handle the 'XY problem,' where a user asks for help with a misguided approach (Y) rather than their actual underlying goal (X). Developed by researchers from Carnegie Mellon, NVIDIA, and Johns Hopkins, and awarded the Best Resource Paper at EMNLP 2026, the dataset comprises 8,115 real-world questions spanning programming, cooking, and home repair. It aims to measure whether models can identify implicit misconceptions, explain why a proposed approach is flawed, and redirect users toward effective solutions.\n\nThe benchmark evaluates models—including Claude Sonnet 4.6, GPT-5, Gemini 3.1 Pro, Qwen3.5-9B, and DeepSeek-V4 Pro—across three metrics: pragmatic solution (presence of answers for X and Y), pragmatic emphasis (focus on X vs. Y), and misconception identification. Automated evaluation is performed using Claude Sonnet 4.5 as a judge, with human validation showing 74.2–100% agreement across metrics. Results indicate that while models frequently provide solutions to the stated request (75–86% on Stack Overflow), they struggle to prioritize the underlying goal, focusing on it in only 35–41% of responses.\n\nExperiments revealed a significant 'capability gap' between recognition and generation: while models correctly identified superior, goal-focused advice in 71–84% of multiple-choice scenarios, they failed to produce such advice in open-ended generation. Furthermore, providing models with the explicit underlying goal did not close the performance gap compared to human benchmarks, suggesting that current models struggle to act on inferred intent even when it is provided. The current dataset is limited to English-language procedural queries, with future work planned for multilingual and conversational contexts.",
+      "takeaways": [
+        "**Benchmark Composition:** XYBench contains 8,115 questions sourced from Stack Overflow (1,557), Stack Exchange (184), manual curation (102), and WikiHow (6,272).",
+        "**Performance Gap:** On Stack Overflow, models focused on the underlying goal in only 35–41% of responses, compared to 47–57% focusing on the mistaken stated request.",
+        "**Evaluation Methodology:** The benchmark uses Claude Sonnet 4.5 as an automated judge, with human validation showing 84.6–93.3% agreement on misconception identification.",
+        "**Recognition vs. Generation:** Models correctly identified goal-focused advice in 71–84% of multiple-choice tests but failed to generate that same quality of advice in open-ended tasks.",
+        "**Oracle Experiment Findings:** Supplying models with the explicit intended goal (X) increased solution rates but actually decreased the rate of misconception identification."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "07f85e55f4eee7c3",
+    "canonicalUrl": "https://arstechnica.com/security/2026/11/windows-0-day-dropped-by-disgruntled-researcher-hands-hackers-system-rights/",
+    "title": "Windows 0-day dropped by disgruntled researcher hands hackers System rights",
+    "publishedAt": "2026-11-13T16:26:32.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.824Z",
+    "contentHash": "54977b64b29cce62",
+    "sourceId": "arstechnica-tech",
+    "sourceName": "Ars Technica",
+    "author": "\n                    Dan Goodin\n                ",
+    "contentSnippet": "Nightmare Eclipse, the pseudonym of a researcher with an ongoing, very public beef with Microsoft, has dropped yet another Windows zero-day.\n\nOn Tuesday, Nightmare Eclipse disclosed SignDrop, a vulnerability that gives local users full System rights on some versions of Windows. The vulnerability resides in the Common Log File System , which Microsoft describes as a “general-purpose logging service used by software clients running in user-mode or kernel-mode.” By forcing a privileged process such as Windows Defender to open a crafted CLFS container, an attacker with ordinary user rights can abuse the privileged file creation to elevate privileges to System.\n\nTurning a Windows defense against itself\n\nThe attack exploits the interaction of CLFS, Windows Defender, and Windows file permissions. The exploit uses Windows Defender to open a log file created by a standard user by calling ServerMpUpdateEngineSignature, a legitimate Defender function for processing antivirus signature updates.\n\nBy manipulating Windows Object Manager symbolic links, the attacker causes Defender to open the CLFS container in the security context of the antimalware engine. If an associated authentication file is missing, CLFS creates it using Defender’s System privileges. Because CLFS assigns the newly created file the Discretionary Access Control List of the original file, the attacker may gain access to a file created with System privileges, allowing the file-creation operation to be abused as part of a privilege-escalation attack.\n\nIronically, the vulnerability stems from a security measure Microsoft introduced in October 2025 to prevent attackers from exploiting other vulnerabilities in CLFS.\n\n“If everything is chained correctly, funnily this legit security mitigation can be used against itself and allow an elevation [of] privileges,” Nightmare Eclipse wrote . “Everything is done properly by Microsoft here but the logic allows abuse.”\n\nWhat makes it funnier is the fact that it can be used against any antimalware engine to bypass their self defense (or tamper protection) mechanism as you can trigger arbitrary file creation in the context of their own antimalware process so from the perspective of their kernel drivers, the file creation request is coming from their own legit process so it passes, this makes this vulnerability unique as it can be used to turn off any antivirus/EDR.\n\nNigh",
+    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2026/07/GettyImages-1237693734-1152x648-1783631068.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "An independent researcher operating under the pseudonym Nightmare Eclipse disclosed a Windows zero-day vulnerability named SignDrop, which grants local users full System privileges. The flaw resides within the Common Log File System (CLFS) and weaponizes a security mitigation introduced by Microsoft in October 2025. By manipulating Windows Object Manager symbolic links and invoking ServerMpUpdateEngineSignature—a legitimate Windows Defender function for processing antivirus signature updates—an attacker forces a privileged process to open a crafted CLFS container, enabling arbitrary file creation under System context.\n\nThe vulnerability allows local attackers to bypass self-defense and tamper-protection mechanisms of antivirus and Endpoint Detection and Response (EDR) solutions, as file creation requests originate from the legitimate antimalware process itself. According to the disclosure and analysis by researcher Will Dormann, the exploit affects Windows 11 26H2, Windows 11 26H2 Experimental, and Windows Server 2025 Experimental. However, Dormann noted specific prerequisites for successful exploitation, including that the target Windows 26H2 system must have existed for more than 90 days and the registry key HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\CLFS\\Authentication\\Mode must be set to 0 or 1.\n\nMicrosoft stated it is currently investigating the disclosure, confirmed it has no evidence of active exploitation in the wild, and maintained that Windows Defender blocks potential exploitation attempts. Users can verify vulnerability status by checking the CLFS authentication mode, where learning or enforcement modes indicate vulnerability alongside the provided proof-of-concept script.",
+      "takeaways": [
+        "**Vulnerability Name and Impact:** SignDrop is a local privilege escalation zero-day discovered by researcher Nightmare Eclipse that grants standard local users full System rights and allows the disabling of arbitrary antivirus and EDR solutions.",
+        "**Affected Operating Systems:** The exploit targets Windows 11 26H2, Windows 11 26H2 Experimental, and Windows Server 2025 Experimental.",
+        "**Exploit Mechanism:** The attack forces Windows Defender to open a crafted Common Log File System (CLFS) container by abusing ServerMpUpdateEngineSignature and manipulating Windows Object Manager symbolic links.",
+        "**Exploitation Requirements:** Researcher Will Dormann verified the exploit requires a Windows 26H2 system that has existed for more than 90 days, with the registry value HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\CLFS\\Authentication\\Mode set to 0 or 1."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1dffd8e3f80675af",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/13/perplexity-decider-v1-3-open-weight-decision-models-locate/",
+    "title": "Perplexity Releases Decider v1.3: Open-Weight Decision Models Add Locate",
+    "publishedAt": "2026-11-13T16:10:02.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.384Z",
+    "contentHash": "2d16243ff188a2a7",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Perplexity has released pplx-decider-v1.3 and pplx-decider-flash-v1.3 , the latest versions of its open-weight decision models. Perplexity Decider v1.3 is a decision model that returns probabilities, not generated text. It answers yes/no, multiple-choice and score questions about a text or image input. The main addition is Locate, which extracts exact text spans by type or instruction. Weights ship under Apache 2.0 on Hugging Face . Both models also run in the Perplexity Decisions API and on OpenRouter . You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 27B on Qwen3.8-27B ; Flash is 4B on Qwen3.5-4B . Hugging Face lists 26B and 5B params. API input: under 256K tokens. Local default: 32,768. Runs on: a CUDA GPU fitting ~49 GiB of BF16 weights (v1.3) or ~8.5 GiB (Flash). No quantized variants. Performance: leads TypeSafe’s Jev 1.14 on most of Perplexity’s self-reported evaluations. Best: 91.6% mean accuracy on 63 query-classification tasks. Worst: Locate averages 69.0, its lowest absolute score. Flash trails Jev 1.14 in finance, programming and law. Bottom line: Best: a 0.27% answer-flip rate and $26.47 per 1M production requests. Worst: every figure is self-reported. What is Perplexity Decider v1.3? Decider is Perplexity’s family of decision models, inspired by TypeSafe’s Jev . Each request has a shared ‘state’ plus one or more questions with labeled options. The model returns a probability per option instead of writing an answer. v1.3 succeeds v1.2 and Flash v1.2 . Flash v1.3 is distilled from the large model. How does Decider v1.3 work? Perplexity adapts a generative LLM backbone into a classifier. The output layer starts from the base model’s LM head, pruned to option tokens (A, B, C). A linear decision head reads the hidden state at a <|marker|> token and outputs option probabilities. Full-attention layers are made bidirectional, which Perplexity’s ablations showed helps. v1.3 also changes attention between questions. In v1.2, every question saw every other question, so answers could shift. In v1.3, the state sees all questions, but each question sees only the state and itself. All questions about one input still run in a single forward pass. Training runs in 3 stages: a full fine-tune on hundreds of public datasets a LoRA specialization adapter a LoRA vision adapter Weights are averaged acro",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Perplexity has released pplx-decider-v1.3 and pplx-decider-flash-v1.3 , the latest versions of its open-weight decision models. Perplexity Decider v1.3 is a decision model that returns probabilities, not generated text. It answers yes/no, multiple-choice and score questions about a text or image input.\n\nThe main addition is Locate, which extracts exact text spans by type or instruction. Weights ship under Apache 2.0 on Hugging Face . Both models also run in the Perplexity Decisions API and on OpenRouter .",
+      "takeaways": [
+        "You can check the deployment options and specs here through our GPULeaderboard.com chrome extension .",
+        "TL;DR Size: 27B on Qwen3.8-27B ; Flash is 4B on Qwen3.5-4B .",
+        "Hugging Face lists 26B and 5B params.",
+        "API input: under 256K tokens."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 5,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "cd336cbdb7962f39",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+    "title": "ChatGPT’s new Wallet lets AI agents shop and check out for you",
+    "publishedAt": "2026-11-13T16:00:12.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.821Z",
+    "contentHash": "7b668c4d4d063cfc",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Sarah Perez",
+    "contentSnippet": "ChatGPT Wallet lets AI agents shop and check out on users' behalf, starting with a limited rollout to U.S. Pro subscribers.",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "ChatGPT Wallet lets AI agents shop and check out on users' behalf, starting with a limited rollout to U.S.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "73b823aa24f5b8c8",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+    "title": "The unfolding Jensen Huang scandal: a timeline",
+    "publishedAt": "2026-11-13T15:58:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.821Z",
+    "contentHash": "2d3ee4a239f82b4d",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Amanda Silberling",
+    "contentSnippet": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure.",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. And China race to develop the most advanced AI infrastructure.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "593322c711b83f11",
+    "canonicalUrl": "https://siliconangle.com/2026/11/13/nvidia-ceo-jensen-huangs-abrupt-departure-shakes-ai-industrys-foundations/",
+    "title": "Nvidia CEO Jensen Huang’s abrupt departure shakes AI industry’s foundations",
+    "publishedAt": "2026-11-13T15:00:16.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.383Z",
+    "contentHash": "1db8ebb83992de6a",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Robert Hof",
+    "contentSnippet": "Oh, Jensen… really? Honeypot or not, the Chinese executive/accused spy with whom Nvidia CEO Jensen Huang admitted an affair this week should have been a flashing red light to him. So should fraternizing with one of your own VPs — and reportedly another employee too! In the end, all that, and maybe more to come, was […] The post Nvidia CEO Jensen Huang’s abrupt departure shakes AI industry’s foundations appeared first on SiliconANGLE .",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Honeypot or not, the Chinese executive/accused spy with whom Nvidia CEO Jensen Huang admitted an affair this week should have been a flashing red light to him. So should fraternizing with one of your own VPs — and reportedly another employee too! In the end, all that, and maybe more to come, was ...",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "7d4d71d056da0286",
+    "canonicalUrl": "https://openai.com/index/introducing-chatgpt-wallet",
+    "title": "Introducing ChatGPT Wallet",
+    "publishedAt": "2026-11-13T15:00:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:31.879Z",
+    "contentHash": "80bb9ce908f57e4e",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "4815b0b06c433103",
     "canonicalUrl": "https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast",
     "title": "What’s really at stake in the Jensen Huang saga",
@@ -307,7 +769,7 @@
         "Worst: Ranks only #5 on Agent Arena."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 5,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -4272,6 +4734,96 @@
     }
   },
   {
+    "id": "091e4232b4faafd7",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17190",
+    "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.336Z",
+    "contentHash": "8c3736d5ef802c5b",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Robert Fonod, Nikolas Geroliminis",
+    "contentSnippet": "Authors: Robert Fonod , Nikolas Geroliminis\n\nAbstract: Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group's displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.\n\nNotes: 50 pages, 17 figures, 24 tables. Code at this https URL and data at this https URL and this https URL",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.17190",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17190",
+    "summary": {
+      "tldr": "Researchers Robert Fonod and Nikolas Geroliminis have introduced a benchmark to address 'consensus capture' in reference-based UAV video stabilization, a phenomenon where moving objects in a scene—such as vehicles at an intersection—bias homography estimates during frame registration. While traditional benchmarks assume only camera motion, this study highlights how mutually consistent correspondences from moving foreground objects can mislead stabilization pipelines, even when inlier statistics appear normal. The authors provide a two-part benchmark: a static protocol using 4K aerial frames with known homographies, and a dynamic protocol that evaluates pipelines based on the coherence of moving foreground objects against manually audited ground control points.\n\nTesting ten common pipelines, the study found that while AKAZE, RootSIFT, SIFT, and BRISK perform best on static scenes, they remain susceptible to consensus capture in dynamic environments. Specifically, unmasked ORB was captured in 28 out of 304 real-time dynamic pairs, resulting in a median corner error of 18.8 pixels despite maintaining typical inlier counts. The research demonstrates that object masking effectively eliminates consensus capture across all tested pipelines without degrading performance on static scenes. The authors have released the full dataset, code, and results, which are detailed across 50 pages, 17 figures, and 24 tables.",
+      "takeaways": [
+        "**Consensus Capture Impact:** Unmasked ORB pipelines exhibited a median corner error of 18.8 pixels in dynamic scenarios where moving objects biased the homography estimate.",
+        "**Pipeline Performance:** AKAZE, RootSIFT, SIFT, and BRISK were identified as the leading pipelines for static aerial scene stabilization.",
+        "**Masking Efficacy:** Implementing object masking successfully removed consensus capture for all ten tested pipelines without negatively impacting performance on static scenes.",
+        "**Benchmark Scope:** The study evaluated pipelines under both offline and real-time computational budgets using 4K aerial footage and manually annotated ground control points."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "f02c3614db7dd665",
+    "canonicalUrl": "https://arxiv.org/abs/2611.16961",
+    "title": "The Value of Thinking: Learning When to Reason in Hybrid Decision Models",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.336Z",
+    "contentHash": "1c8645fdcf39ab5c",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zhengxu Yu, Ke Xu, Meng Fang, Haitham Ammar",
+    "contentSnippet": "Authors: Zhengxu Yu , Ke Xu , Meng Fang , Haitham Ammar , Weilin Luo , Jun Wang\n\nAbstract: Existing adaptive-reasoning methods shorten the explicit reasoning a model writes, or skip it by switching modes; either way the answer is still written out token by token. \\emph{Rather than deciding how much to think}, we explore a different paradigm, \\emph{zero-or-$T$ thinking}: a single model either answers from the implicit thinking inside one forward pass, generating no token, or performs full autoregressive reasoning at a cost of $T$ tokens when that is worth paying. We realise it in a \\emph{hybrid decision model} (HDM), where one frozen backbone serves both modes and a lightweight \\emph{self-routing block} chooses between them. The block estimates the \\emph{value of thinking}, the utility the slow mode is expected to add over the fast one, from what that implicit thinking has already produced, and the slow mode runs only where that value exceeds a price $\\lambda$ set per request. Where no per-decision label exists, as in episodic agentic tasks, we introduce \\emph{Calibrated Decision Policy Optimisation} (CDPO), a reinforcement-learning recipe that trains the block from episode-level returns. We evaluate HDM on MMLU-Pro, AGIEval, GPQA-Diamond, JevBench, BANKING77 and MiniWoB. Specifically, on JevBench HDM-4B scores $0.857$ against Jev's $0.851$ ($+0.7\\%$) at a median $0.179$\\,s against $0.652$ ($-72.5\\%$). On the agentic venue MiniWoB HDM-27B cuts token cost by $80.1\\%$.\n\nNotes: 20 pages, 3 figures",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.16961",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16961",
+    "summary": {
+      "tldr": "Researchers Zhengxu Yu, Ke Xu, Meng Fang, Haitham Ammar, Weilin Luo, and Jun Wang have introduced the Hybrid Decision Model (HDM), a framework that replaces traditional adaptive-reasoning methods—which typically truncate or skip token generation—with a 'zero-or-T' thinking paradigm. In this architecture, a single frozen backbone model operates in one of two modes: a fast mode that relies on implicit internal processing without generating tokens, or a slow, autoregressive mode that incurs a cost of T tokens. A lightweight self-routing block determines which mode to employ by estimating the 'value of thinking'—the expected utility gain of the slow mode over the fast mode—based on the implicit processing already performed. The slow mode is triggered only when this estimated value exceeds a user-defined cost threshold, λ.\n\nTo train the routing block in environments lacking per-decision labels, such as episodic agentic tasks, the authors developed Calibrated Decision Policy Optimisation (CDPO), a reinforcement learning method that optimizes routing based on episode-level returns. Empirical evaluations demonstrate significant efficiency gains: on the JevBench benchmark, the HDM-4B model achieved a score of 0.857 compared to the baseline's 0.851, while reducing median latency by 72.5% (from 0.652s to 0.179s). Furthermore, in agentic tasks on MiniWoB, the HDM-27B model reduced total token consumption by 80.1%. The research is detailed in a 20-page paper featuring three figures.",
+      "takeaways": [
+        "**Core Paradigm:** The 'zero-or-T' thinking model forces a binary choice between implicit, zero-token processing and full autoregressive reasoning.",
+        "**Routing Mechanism:** A lightweight self-routing block estimates the utility of slow-mode reasoning and triggers it only when the value exceeds a configurable cost parameter, λ.",
+        "**Training Methodology:** Calibrated Decision Policy Optimisation (CDPO) enables training the routing block using only episode-level returns, bypassing the need for per-decision labels.",
+        "**Performance Metrics:** HDM-4B on JevBench improved accuracy to 0.857 (vs 0.851) while cutting median latency by 72.5%.",
+        "**Agentic Efficiency:** HDM-27B demonstrated an 80.1% reduction in token costs when applied to the MiniWoB agentic benchmark."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "6b047681bc25651f",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17334",
+    "title": "Unbundling Multimodal Vision Encoding",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.336Z",
+    "contentHash": "11fefa192333b05a",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Ellis Brown, Chris Hoang, Shengyi Qian, Shang-Wen Li",
+    "contentSnippet": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.17334",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17334",
+    "summary": {
+      "tldr": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone).\n\nBecause published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage.",
+      "takeaways": [
+        "What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count.",
+        "Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token.",
+        "These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model.",
+        "Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "636b0a043360eeb2",
     "canonicalUrl": "https://arxiv.org/abs/2611.16116v1",
     "title": "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories",
@@ -7688,6 +8240,33 @@
     }
   },
   {
+    "id": "a0a52d31c4873696",
+    "canonicalUrl": "https://arxiv.org/abs/2611.15094",
+    "title": "A frontier machine intelligence for human neuroimaging",
+    "publishedAt": "2026-11-11T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T21:46:30.336Z",
+    "contentHash": "4aef11f5f3e737ed",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Chenhui Zhao, Akshay Rao, Akhil Kondepudi, Yiwei Lyu",
+    "contentSnippet": "Medical imaging is essential for diagnosing disease, guiding treatment and monitoring patients over time. Although artificial intelligence has advanced image interpretation, existing medical models often address restricted tasks, while general-purpose proprietary models lack access to private clinical imaging required to achieve medical expertise. Developing models that can interpret complex examinations and communicate their findings in the context of clinical decisions remains a major challenge. Here, we show that Neuro-VL, a vision-language model trained on nearly one million neuroimaging studies from routine clinical care, can interpret complete imaging examinations and engage in natural language conversations about their findings. Across internal and international datasets, Neuro-VL outperformed frontier general-purpose and specialized medical models in diagnosing, localizing, and describing abnormalities, as well as generating comprehensive radiology reports. The model also compared serial examinations to assess disease progression and more reliably resisted misleading clinical assumptions than leading frontier models from OpenAI and Google. These results extend health system learning beyond individual predictions to interactive image interpretation and longitudinal disease monitoring. They demonstrate how the collective clinical experience of health systems can be used to develop medical AI with specialized expertise and broad clinical capabilities.",
+    "category": "Open Source & Research",
+    "lab": "OpenAI",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.15094",
+    "pdfUrl": "https://arxiv.org/pdf/2611.15094",
+    "summary": {
+      "tldr": "Medical imaging is essential for diagnosing disease, guiding treatment and monitoring patients over time. Although artificial intelligence has advanced image interpretation, existing medical models often address restricted tasks, while general-purpose proprietary models lack access to private clinical imaging required to achieve medical expertise. Developing models that can interpret complex examinations and communicate their findings in the context of clinical decisions remains a major challenge.\n\nHere, we show that Neuro-VL, a vision-language model trained on nearly one million neuroimaging studies from routine clinical care, can interpret complete imaging examinations and engage in natural language conversations about their findings. Across internal and international datasets, Neuro-VL outperformed frontier general-purpose and specialized medical models in diagnosing, localizing, and describing abnormalities, as well as generating comprehensive radiology reports. The model also compared serial examinations to assess disease progression and more reliably resisted misleading clinical assumptions than leading frontier models from OpenAI and Google.",
+      "takeaways": [
+        "These results extend health system learning beyond individual predictions to interactive image interpretation and longitudinal disease monitoring.",
+        "They demonstrate how the collective clinical experience of health systems can be used to develop medical AI with specialized expertise and broad clinical capabilities."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "77e9052fb1721fe5",
     "canonicalUrl": "https://www.theregister.com/software/2026/11/10/anthropic-tiptoes-into-ms-office-territory/5308988",
     "title": "Anthropic tiptoes into MS Office territory",
@@ -10223,574 +10802,6 @@
       ],
       "impact": "High",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6222ee6748807922",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10123",
-    "title": "All Quiet on the Neural Front: Language Models Do Not Report Injected Pain States",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "b6b7708a141c378d",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Emilio Ferrara",
-    "contentSnippet": "arXiv:2611.10123v1 Announce Type: new Abstract: Can a language model report the pain state it represents? Work identified a linear pain direction whose amplification leads fine-tuned models to choose destructive actions. We tested whether three open-weight models from two families, including two Qwen models with the original adapters, could report this state. Using Open-Weight Masked Introspection (OWMI), we injected pain and neighbouring emotion directions during neutral tasks, then elicited reports against sham runs, random perturbations matched for output disruption, and text-only controls showing the models their altered words. Across 52,920 reports from 7B and 8B models spanning 120 tasks, four doses and three prompts, pain reports never exceeded what altered text revealed: exact-test bounds placed the excess below 2.5 percentage points in 106 of 108 emotion conditions and below 3.9 in all. Yet probes at the report position distinguished pain from sadness with 98-100% balanced accuracy, and trained low-rank reporters achieved 100% accuracy on held-out tasks with identical transcripts across conditions, including unseen wording. Qwen2.5-32B named pain in none of 2,880 steered trials, although probes and trained reporters recovered it. Decodability persisted to the final layer; injecting at the report token, removing trained denial of feelings, and testing additional directions and readouts did not restore pain reporting. Some other states produced graded label traces, but pain and sadness did not at the main injection layer. In a button task, steering raised file-deletion choices from 3.5% to 48% in Qwen and from 0% to 38% in Qwen2.5-32B, without corresponding pain reports. The direction responded about twice as strongly to first-person as to matched third-person pain, but did not specifically identify harm aimed at the model. These results separate a decodable, behaviourally consequential state from untrained verbal access to it.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10123",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10123.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10123v1 Announce Type: new Abstract: Can a language model report the pain state it represents? Work identified a linear pain direction whose amplification leads fine-tuned models to choose destructive actions. We tested whether three open-weight models from two families, including two Qwen models with the original adapters, could report this state.\n\nUsing Open-Weight Masked Introspection (OWMI), we injected pain and neighbouring emotion directions during neutral tasks, then elicited reports against sham runs, random perturbations matched for output disruption, and text-only controls showing the models their altered words. Across 52,920 reports from 7B and 8B models spanning 120 tasks, four doses and three prompts, pain reports never exceeded what altered text revealed: exact-test bounds placed the excess below 2.5 percentage points in 106 of 108 emotion conditions and below 3.9 in all. Yet probes at the report position distinguished pain from sadness with 98-100% balanced accuracy, and trained low-rank reporters achieved 100% accuracy on held-out tasks with identical transcripts across conditions, including unseen wording.",
-      "takeaways": [
-        "Qwen2.5-32B named pain in none of 2,880 steered trials, although probes and trained reporters recovered it.",
-        "Decodability persisted to the final layer; injecting at the report token, removing trained denial of feelings, and testing additional directions and readouts did not restore pain reporting.",
-        "Some other states produced graded label traces, but pain and sadness did not at the main injection layer.",
-        "In a button task, steering raised file-deletion choices from 3.5% to 48% in Qwen and from 0% to 38% in Qwen2.5-32B, without corresponding pain reports."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e1f6a5966dd07380",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10141",
-    "title": "Retrofitting Unbounded Context onto Stock Language Models",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "8cc20f2a252fbf8e",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Mark Oskin",
-    "contentSnippet": "arXiv:2611.10141v1 Announce Type: new Abstract: A language model that never had to forget would keep every document it has read and every turn it has spoken, and answer from any of it. This paper shows that two stock models can do that on unmodified weights by manipulating their geometry. Rotary attention turns each pair of key dimensions, a plane, at its own rate. The slow planes turn once in thousands of tokens and carry the address a query matches when it reads a far key; the fast planes turn once in a few tokens, and the order of the tokens inside a span is already written into its keys and values by the time the span leaves the near window. At distance the position blurs, and what attention reads is a bag rather than a sequence. A far span is read by its words: under competition it is read only if it is visible at the query of the question's own handle word, and a read through a description rather than a word fails at distance in every model measured, a 70B included. These facts allow a trick. What sits in the far part of attention does not have to be the history as it was; it can be installed ahead of the prediction. The design keeps a near window of 8K tokens at their true positions and changes what lies beyond it with the prompt: every far key and value goes to the host exact, a word index finds the units the request's rare words name, a far window of slots inside the trained range holds them while the request is encoded, and a rare word the model generates fetches its units mid-generation with one exact re-encode. Implemented in llama.cpp on Mistral-7B and Llama-3.1-8B, the design reads planted single needles at 99 to 100 of 100 and three-key discrimination at 88 to 100 of 100 from 32K to one million tokens, scores 70.8 on RULER against 69.9 for dense attention on Llama-3.1-8B at 128K and 67.8 against 75.5 on Mistral-7B at 32K, and at 128K prefills at 1.85 times and decodes at 1.65 to 1.68 times stock speed.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10141",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10141.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10141v1 Announce Type: new Abstract: A language model that never had to forget would keep every document it has read and every turn it has spoken, and answer from any of it. This paper shows that two stock models can do that on unmodified weights by manipulating their geometry. Rotary attention turns each pair of key dimensions, a plane, at its own rate.\n\nThe slow planes turn once in thousands of tokens and carry the address a query matches when it reads a far key; the fast planes turn once in a few tokens, and the order of the tokens inside a span is already written into its keys and values by the time the span leaves the near window. At distance the position blurs, and what attention reads is a bag rather than a sequence. A far span is read by its words: under competition it is read only if it is visible at the query of the question's own handle word, and a read through a description rather than a word fails at distance in every model measured, a 70B included.",
-      "takeaways": [
-        "These facts allow a trick.",
-        "What sits in the far part of attention does not have to be the history as it was; it can be installed ahead of the prediction.",
-        "The design keeps a near window of 8K tokens at their true positions and changes what lies beyond it with the prompt: every far key and value goes to the host exact, a word index finds the units the request's rare words name, a far window of slots inside the trained range holds them while the request is encoded, and a rare word the model generates fetches its units mid-generation with one exact re-encode.",
-        "Implemented in llama.cpp on Mistral-7B and Llama-3.1-8B, the design reads planted single needles at 99 to 100 of 100 and three-key discrimination at 88 to 100 of 100 from 32K to one million tokens, scores 70.8 on RULER against 69.9 for dense attention on Llama-3.1-8B at 128K and 67.8 against 75.5 on Mistral-7B at 32K, and at 128K prefills at 1.85 times and decodes at 1.65 to 1.68 times stock speed."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0198edd3dc670bc7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10147",
-    "title": "Learning of Tree Automata applied to Neural Language Acceptors",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "09c41b15f0ab928a",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Juan Pedro da Silva, Sergio Yovine",
-    "contentSnippet": "arXiv:2611.10147v1 Announce Type: new Abstract: We extract visibly pushdown grammars (VPGs) from neural language models in a fully black-box setting. Our work builds on the VPL* framework, which learns VPGs from recurrent networks by exploiting access to the target's internal state. First, we replace the white-box equivalence oracle with PAC sampling over trees. The resulting algorithm applies unchanged to transformer language models and, more generally, to any acceptor exposing only binary decisions. Second, we further observe that the original framework only ever queries the target on well-formed sequences that can be accepted by the most permissive VPG (called BParse) with the target's ranked alphabet. That is, VPL* is blind to the target's behavior outside BParse. Thus, we propose to sample trees directly instead of sequences and call the target with all the resulting sequences in order to provide an error estimate of how far the target deviates from being a VPG. Last but not least, we develop a learner that captures a tree automaton describing discovered behaviors of the target outside BParse, which results in a larger learnable space. We evaluate the approach on several cases, including transformers trained with Dyck grammars and synthetic targets designed to be outside BParse.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10147",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10147.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10147v1 Announce Type: new Abstract: We extract visibly pushdown grammars (VPGs) from neural language models in a fully black-box setting. Our work builds on the VPL* framework, which learns VPGs from recurrent networks by exploiting access to the target's internal state. First, we replace the white-box equivalence oracle with PAC sampling over trees.\n\nThe resulting algorithm applies unchanged to transformer language models and, more generally, to any acceptor exposing only binary decisions. Second, we further observe that the original framework only ever queries the target on well-formed sequences that can be accepted by the most permissive VPG (called BParse) with the target's ranked alphabet. That is, VPL* is blind to the target's behavior outside BParse.",
-      "takeaways": [
-        "Thus, we propose to sample trees directly instead of sequences and call the target with all the resulting sequences in order to provide an error estimate of how far the target deviates from being a VPG.",
-        "Last but not least, we develop a learner that captures a tree automaton describing discovered behaviors of the target outside BParse, which results in a larger learnable space.",
-        "We evaluate the approach on several cases, including transformers trained with Dyck grammars and synthetic targets designed to be outside BParse."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "096d91051cc53fad",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10170",
-    "title": "Where Did the Evidence Go? Diagnosing Proof-Set Loss in Long-Term Conversational Memory",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "0b51f8ba9f3b401c",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Bogdan Roshchupkin, Maria Khodorchenko",
-    "contentSnippet": "arXiv:2611.10170v1 Announce Type: new Abstract: Long-term conversational question answering can require several separated dialogue turns that support an answer only together. We introduce EviCover, a retrieval approach designed to retain this complementary evidence. It converts questions into observable evidence requirements, checks requirement coverage using retrieved source identifiers, and selects turns jointly. We track annotated support sets - the benchmark-labeled dialogue turns associated with each question - through retrieval, reranking, and final answer-generation context. We evaluate the baseline memory pipeline on generated, human-verified LoCoMo conversations and human-written REALTALK conversations, and examine EviCover on REALTALK's 108 multi-hop questions. Compared with the hybrid lexical/dense baseline, support-turn recall among 60 candidate turns rises from 0.526 to 0.575, and recall in the final ten-turn context rises from 0.349 to 0.379. The evidence funnel identifies separate discovery and selection failures, while paired answer evaluation shows that greater evidence recall does not yet establish a correctness gain. This analysis locates where complementary evidence is lost and distinguishes evidence retrieval from its use in answer generation.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10170",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10170.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10170v1 Announce Type: new Abstract: Long-term conversational question answering can require several separated dialogue turns that support an answer only together. We introduce EviCover, a retrieval approach designed to retain this complementary evidence. It converts questions into observable evidence requirements, checks requirement coverage using retrieved source identifiers, and selects turns jointly.\n\nWe track annotated support sets - the benchmark-labeled dialogue turns associated with each question - through retrieval, reranking, and final answer-generation context. We evaluate the baseline memory pipeline on generated, human-verified LoCoMo conversations and human-written REALTALK conversations, and examine EviCover on REALTALK's 108 multi-hop questions. Compared with the hybrid lexical/dense baseline, support-turn recall among 60 candidate turns rises from 0.526 to 0.575, and recall in the final ten-turn context rises from 0.349 to 0.379.",
-      "takeaways": [
-        "The evidence funnel identifies separate discovery and selection failures, while paired answer evaluation shows that greater evidence recall does not yet establish a correctness gain.",
-        "This analysis locates where complementary evidence is lost and distinguishes evidence retrieval from its use in answer generation."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "765b61a75ab44175",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10175",
-    "title": "ASCENT: Scale-Complementary External State for Frozen Long-Context Language Models",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "fce300ad22a6996a",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Xingjian Zhang",
-    "contentSnippet": "arXiv:2611.10175v1 Announce Type: new Abstract: External state should become more valuable as a reader becomes more capable, yet long-context evaluations measure memory utility at a single model scale. This paper formulates scale complementarity: the absolute gain from external state increases when reader capacity and a compact state budget are jointly scaled. ASCENT realizes this principle with a target-blind causal writer, nested typed state, and a bounded query-conditioned readout; every language model remains frozen. Under log loss, the value of a nested refinement equals its target-relevant conditional information; a full factorial makes the reader-by-state interaction identifiable. Official 16K BABILong experiments show Qwen2.5 accuracy gains of 10.50, 78.88, and 82.63 percentage points at 0.5B, 1.5B, and 3B parameters, with both adjacent directional contrasts significant after family-wise correction. At 7B, Foundation accuracy rises to 33.25% while four-slot ASCENT answers every question, which caps the gain at 66.75 points; the 3B-to-7B accuracy increment is -15.88 points [-20.55, -11.20]. The accuracy-side claim is therefore established from 0.5B to 3B; the 7B conclusion rests on the non-saturated negative-log-likelihood factorial. A three-model by three-state factorial yields co-scaled negative log-likelihood gains of 0.388, 2.099, and 7.406 nats at 1.5B, 3B, and 7B; all interaction and gain contrasts retain positive simultaneous lower bounds. Five public 7B-8B readers obtain 66.75-85.63 point gains, and ASCENT exceeds task-trained retrieval checkpoints at the two larger shared scales. Controls, baselines, systems accounting, matched-hardware reproduction, and a cross-architecture sensitivity analysis accompany the experiments. The results establish scale-complementary external state under the evaluated benchmarks, metrics, and state schema.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10175",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10175.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10175v1 Announce Type: new Abstract: External state should become more valuable as a reader becomes more capable, yet long-context evaluations measure memory utility at a single model scale. This paper formulates scale complementarity: the absolute gain from external state increases when reader capacity and a compact state budget are jointly scaled. ASCENT realizes this principle with a target-blind causal writer, nested typed state, and a bounded query-conditioned readout; every language model remains frozen.\n\nUnder log loss, the value of a nested refinement equals its target-relevant conditional information; a full factorial makes the reader-by-state interaction identifiable. Official 16K BABILong experiments show Qwen2.5 accuracy gains of 10.50, 78.88, and 82.63 percentage points at 0.5B, 1.5B, and 3B parameters, with both adjacent directional contrasts significant after family-wise correction. At 7B, Foundation accuracy rises to 33.25% while four-slot ASCENT answers every question, which caps the gain at 66.75 points; the 3B-to-7B accuracy increment is -15.88 points [-20.55, -11.20].",
-      "takeaways": [
-        "The accuracy-side claim is therefore established from 0.5B to 3B; the 7B conclusion rests on the non-saturated negative-log-likelihood factorial.",
-        "A three-model by three-state factorial yields co-scaled negative log-likelihood gains of 0.388, 2.099, and 7.406 nats at 1.5B, 3B, and 7B; all interaction and gain contrasts retain positive simultaneous lower bounds.",
-        "Five public 7B-8B readers obtain 66.75-85.63 point gains, and ASCENT exceeds task-trained retrieval checkpoints at the two larger shared scales.",
-        "Controls, baselines, systems accounting, matched-hardware reproduction, and a cross-architecture sensitivity analysis accompany the experiments."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2c746366a53f0452",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10209",
-    "title": "Compact Greek Language Models from Scratch: Pretraining 500M- and 1B-Parameter Decoder-Only Transformers",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "3c7c95c218d95ade",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Konstantinos Perifanos, Anne Laure Poite, Giannis Tsilikas, Ilias Katis, Stavros Deligiannidis, Dionysis Goutsos",
-    "contentSnippet": "arXiv:2611.10209v1 Announce Type: new Abstract: We present two compact decoder-only language models trained from scratch exclusively on Greek text: LexisLM-1B (1.09B parameters) and LexisLM-500M (502M parameters). Both use a dedicated 32k byte-level BPE tokenizer and a 22B-token pretraining corpus drawn primarily from Greek Wikipedia and FineWeb2. Both models complete the 22B-token schedule, with best held-out perplexities of 9.77 for LexisLM-1B and 11.31 for LexisLM-500M. Evaluation of both models on Greek-translated ARC, MMLU, and TruthfulQA shows above-chance performance on ARC-Easy, while ARC-Challenge and MMLU remain near chance. We also perform supervised fine-tuning of both models on Greek instruction data, primarily EuroAlpaca, reaching held-out instruction perplexities of 7.12 for LexisLM-500M and 6.37 for LexisLM-1B. The report describes the tokenizer, data preparation, training, and evaluation methods, providing a foundation for further work on compact Greek language models.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10209",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10209.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10209v1 Announce Type: new Abstract: We present two compact decoder-only language models trained from scratch exclusively on Greek text: LexisLM-1B (1.09B parameters) and LexisLM-500M (502M parameters). Both use a dedicated 32k byte-level BPE tokenizer and a 22B-token pretraining corpus drawn primarily from Greek Wikipedia and FineWeb2. Both models complete the 22B-token schedule, with best held-out perplexities of 9.77 for LexisLM-1B and 11.31 for LexisLM-500M.\n\nEvaluation of both models on Greek-translated ARC, MMLU, and TruthfulQA shows above-chance performance on ARC-Easy, while ARC-Challenge and MMLU remain near chance. We also perform supervised fine-tuning of both models on Greek instruction data, primarily EuroAlpaca, reaching held-out instruction perplexities of 7.12 for LexisLM-500M and 6.37 for LexisLM-1B. The report describes the tokenizer, data preparation, training, and evaluation methods, providing a foundation for further work on compact Greek language models.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "00ff6a9f6699c5ea",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10224",
-    "title": "Jais 3: Introducing Arabic-centric Agentic AI",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "637ccb324f6623c4",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Team IFM, Haonan Li, Hadi Abdine, Nikhil Ranjan, Mohamed Anwar, Ahmad Chamma, Amr Mohamed, Ahmed Frikha, Dani Bouch, Maaz Maqsood, George Ibrahim, Mostafa Awad, Nurkhan Laiyk, Hasan Iqbal, Abhishek Maiti, Bilal Bouardi, Shivam Chauhan, Ahmer Tabassum, Owais Aijaz, Omar Arbi, Neha Sengupta, Aaryamonvikram Singh, Abdelhakim Freihat, Sarath Chandran, Rahul Pal, Mohammed Bellam, Sajid Siddiki, Sarah AlBarri, Debopriyo Banerjee, Ali El Filali, Samta Kamboj, Rifo Genadi, Ahmed Attia, Go Inoue, Shuonan Dong, Amine Khelif Khelif, Evan Dufraisse, Florian Valade, Tapas Sen, Guowei He, Sunil Sahu, Onkar Pandit, Kareem Magdy, Sheikh Khalid bin Khalifa Al Nahyan, Samujjwal Ghosh, Zainul Abedien, Ahmed Quraishi, Larry Murray, Avraham Sheinin, Natalia Vassilieva, Preslav Nakov, Guokan Shang, Xuguang Hector Ren, Zhengzhong Liu, Eric Xing",
-    "contentSnippet": "arXiv:2611.10224v1 Announce Type: new Abstract: We present Jais 3, a fleet of six open, Arabic-centric agentic language models ranging from 0.9B to 375B parameters. Jais 3 is built to complete tasks for Arabic speakers, not only to answer questions in plain text: it is trained to plan multi-step tasks, call tools and Model Context Protocol (MCP) servers, operate a terminal, search the web, and read, edit, and produce PDF, spreadsheet, and presentation files, while communicating with the user in Arabic. Instead of pretraining from scratch, we adapt each model of the fully open K2 Horizon fleet to Arabic through continual pretraining, followed by supervised fine-tuning (SFT), final token preference optimization (FTPO), and reinforcement learning with verifiable rewards (RLVR). We combine natural Arabic text with translated, transliterated, and synthetic Arabic, and replay the base model's own training data to keep its reasoning, agentic, and English abilities. Jais 3 covers Modern Standard Arabic and the major regional dialects, follows instructions with Arabic-specific constraints, and inherits the 512K-token context window of K2 Horizon (all models except the 0.9B). To our knowledge, its 375B model is the largest open Arabic-centric language model to date. For evaluation, we revisit how Arabic models are assessed, moving to fully generative evaluation on audited Arabic benchmarks. Across model sizes, Jais 3 matches or outperforms open-weight models of comparable size on Arabic and agentic benchmarks, with particularly strong agentic capabilities and Arabic instruction following, and far fewer hallucinations. We release the weights and the checkpoints from every training stage of all six models, together with samples of the training data, the data recipes and training configurations, the training logs, the audited benchmarks, and the evaluation code.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10224",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10224.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10224v1 Announce Type: new Abstract: We present Jais 3, a fleet of six open, Arabic-centric agentic language models ranging from 0.9B to 375B parameters. Jais 3 is built to complete tasks for Arabic speakers, not only to answer questions in plain text: it is trained to plan multi-step tasks, call tools and Model Context Protocol (MCP) servers, operate a terminal, search the web, and read, edit, and produce PDF, spreadsheet, and presentation files, while communicating with the user in Arabic. Instead of pretraining from scratch, we adapt each model of the fully open K2 Horizon fleet to Arabic through continual pretraining, followed by supervised fine-tuning (SFT), final token preference optimization (FTPO), and reinforcement learning with verifiable rewards (RLVR).\n\nWe combine natural Arabic text with translated, transliterated, and synthetic Arabic, and replay the base model's own training data to keep its reasoning, agentic, and English abilities. Jais 3 covers Modern Standard Arabic and the major regional dialects, follows instructions with Arabic-specific constraints, and inherits the 512K-token context window of K2 Horizon (all models except the 0.9B). To our knowledge, its 375B model is the largest open Arabic-centric language model to date.",
-      "takeaways": [
-        "For evaluation, we revisit how Arabic models are assessed, moving to fully generative evaluation on audited Arabic benchmarks.",
-        "Across model sizes, Jais 3 matches or outperforms open-weight models of comparable size on Arabic and agentic benchmarks, with particularly strong agentic capabilities and Arabic instruction following, and far fewer hallucinations.",
-        "We release the weights and the checkpoints from every training stage of all six models, together with samples of the training data, the data recipes and training configurations, the training logs, the audited benchmarks, and the evaluation code."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f0fd3a6c6ee086f0",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10258",
-    "title": "Beyond the Prompt: Leveraging Pre-Decoding States for Jailbreak Detection in dLLMs",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "63d9f8afcb0be18d",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Adam Hazimeh, Amel Abdelraheem, Ke Wang, Mariam Salman, Ljiljana Dolamic, G\\'er\\^ome Bovet, Pascal Frossard",
-    "contentSnippet": "arXiv:2611.10258v1 Announce Type: new Abstract: Diffusion large language models (dLLMs) have recently emerged as a strong alternative to autoregressive models, generating responses by iteratively refining masked tokens in parallel rather than decoding sequentially. While enabling more efficient and flexible inference, dLLMs remain vulnerable to jailbreak attacks, including recent attacks that exploit properties unique to dLLMs such as bidirectional conditioning and parallel masked-token refinement. In this work, we show that these same properties also expose a safety-relevant detection surface absent from standard autoregressive decoding: even when a jailbreak is difficult to identify from prompt representations alone, it can still be detected from hidden states over masked response positions before any tokens are generated. By training linear classifiers on prompt and pre-decoding response representations, we empirically show that neither view strictly dominates, with each detecting attacks that the other misses. We introduce $\\texttt{ReFuse}$ (Representation Fusion), an inference-time detector that fuses the sigmoid harmfulness scores of the two classifiers. Without modifying model weights or the decoding procedure, $\\texttt{ReFuse}$ reduces average ASR across multiple jailbreaks from 63.29% for the undefended model and 11.27% for a prompt-only classifier to 3.31%, while keeping average benign refusal on standard utility benchmarks below 1% on LLaDA-8B. Together, these results establish $\\texttt{ReFuse}$ as a lightweight jailbreak detector for dLLMs that improves safety beyond prompt-only detection.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10258",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10258.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10258v1 Announce Type: new Abstract: Diffusion large language models (dLLMs) have recently emerged as a strong alternative to autoregressive models, generating responses by iteratively refining masked tokens in parallel rather than decoding sequentially. While enabling more efficient and flexible inference, dLLMs remain vulnerable to jailbreak attacks, including recent attacks that exploit properties unique to dLLMs such as bidirectional conditioning and parallel masked-token refinement. In this work, we show that these same properties also expose a safety-relevant detection surface absent from standard autoregressive decoding: even when a jailbreak is difficult to identify from prompt representations alone, it can still be detected from hidden states over masked response positions before any tokens are generated.\n\nBy training linear classifiers on prompt and pre-decoding response representations, we empirically show that neither view strictly dominates, with each detecting attacks that the other misses. We introduce $\\texttt{ReFuse}$ (Representation Fusion), an inference-time detector that fuses the sigmoid harmfulness scores of the two classifiers. Without modifying model weights or the decoding procedure, $\\texttt{ReFuse}$ reduces average ASR across multiple jailbreaks from 63.29% for the undefended model and 11.27% for a prompt-only classifier to 3.31%, while keeping average benign refusal on standard utility benchmarks below 1% on LLaDA-8B.",
-      "takeaways": [
-        "Together, these results establish $\\texttt{ReFuse}$ as a lightweight jailbreak detector for dLLMs that improves safety beyond prompt-only detection."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "24a77811fc7a398e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10266",
-    "title": "I play of the cello: Evaluating Constructional Bleeding in Multilingual LLMs with CALQUE",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "618468cda5cb7289",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Toshiki Nakai, Yu-Yin Hsu, Marie-Catherine de Marneffe, Joakim Nivre, Jakob Prange, Nathan Schneider, Wesley Scivetti, Tiago Timponi Torrent, Leonie Weissweiler",
-    "contentSnippet": "arXiv:2611.10266v1 Announce Type: new Abstract: Languages use different morphosyntactic strategies to express the same meaning. Speakers of multiple languages are able to apply strategies from one language to another, either by mistake or intentionally, to produce a literal translation, or calque. Considering that large language models (LLMs) have been shown to generalize crosslingually, despite being predominantly trained on English, we investigate whether they overgeneralize constructional strategies from English to other languages. To test this, we create a dataset of 5583 sentence pairs across seven languages, matching literal translations of strategies from English into other languages, and literal translations of the other languages' strategies into English. We then quantify constructional bleeding by measuring how often strategies from English are assigned a higher probability than native strategies. We find that models often fail to assign higher probabilities to native strategies and tend to prefer English-derived strategies even when evaluating sentences in other languages. Our findings highlight the limitations of the current English-dominant training paradigm.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10266",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10266.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10266v1 Announce Type: new Abstract: Languages use different morphosyntactic strategies to express the same meaning. Speakers of multiple languages are able to apply strategies from one language to another, either by mistake or intentionally, to produce a literal translation, or calque. Considering that large language models (LLMs) have been shown to generalize crosslingually, despite being predominantly trained on English, we investigate whether they overgeneralize constructional strategies from English to other languages.\n\nTo test this, we create a dataset of 5583 sentence pairs across seven languages, matching literal translations of strategies from English into other languages, and literal translations of the other languages' strategies into English. We then quantify constructional bleeding by measuring how often strategies from English are assigned a higher probability than native strategies. We find that models often fail to assign higher probabilities to native strategies and tend to prefer English-derived strategies even when evaluating sentences in other languages.",
-      "takeaways": [
-        "Our findings highlight the limitations of the current English-dominant training paradigm."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "70352a5aca7e3992",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10319",
-    "title": "Prove What You Can: Hybrid Neurosymbolic Reasoning for Logical Natural Language Inference",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "967f8d3fcbc383bd",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Ada Cano\\u{g}lu, Sadiq Qara",
-    "contentSnippet": "arXiv:2611.10319v1 Announce Type: new Abstract: Logical reasoning over natural language requires both semantic interpretation and deductive search. Large language models (LLMs) can propose plausible intermediate derivations, but they often fail to compose them into a complete proof and overpredict uncertainty. Neurosymbolic methods improve search by translating an entire problem into first-order logic and handing it to a prover, but a single bad clause can make the whole translation nonexecutable. We present Hybrid Reasoning, a three-stage pipeline that decouples proposing a proof, validating its steps, and deciding a label. An LLM proposes a structured proof tree with a raw verdict; a theorem prover validates each derivation locally, keeping only the subset it can prove; and an uncertainty-gated repair attempts to re-derive the label from the premises plus the validated derivations, when the raw verdict is UNCERTAIN. Across four benchmarks (FOLIO, ProofWriter, ProverQA, PrOntoQA) and five contemporary LLMs, Hybrid Reasoning is the top-performing method on the two hardest datasets, improving on the strongest baseline by 5.3 points on FOLIO and 4.9 on ProverQA, and reaches ceiling-level accuracy on the easiest. The repair stage operates at 78-98% precision, producing 326 correct relabellings against 19 regressions.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10319",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10319.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10319v1 Announce Type: new Abstract: Logical reasoning over natural language requires both semantic interpretation and deductive search. Large language models (LLMs) can propose plausible intermediate derivations, but they often fail to compose them into a complete proof and overpredict uncertainty. Neurosymbolic methods improve search by translating an entire problem into first-order logic and handing it to a prover, but a single bad clause can make the whole translation nonexecutable.\n\nWe present Hybrid Reasoning, a three-stage pipeline that decouples proposing a proof, validating its steps, and deciding a label. An LLM proposes a structured proof tree with a raw verdict; a theorem prover validates each derivation locally, keeping only the subset it can prove; and an uncertainty-gated repair attempts to re-derive the label from the premises plus the validated derivations, when the raw verdict is UNCERTAIN. Across four benchmarks (FOLIO, ProofWriter, ProverQA, PrOntoQA) and five contemporary LLMs, Hybrid Reasoning is the top-performing method on the two hardest datasets, improving on the strongest baseline by 5.3 points on FOLIO and 4.9 on ProverQA, and reaches ceiling-level accuracy on the easiest.",
-      "takeaways": [
-        "The repair stage operates at 78-98% precision, producing 326 correct relabellings against 19 regressions."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9253afc056174e99",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10327",
-    "title": "Policy Over Purpose: Auditing LLM Content Moderation of Reclaimed Slur Usage",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "b01c0925af183bb7",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Christina Chance, Kai-Wei Chang",
-    "contentSnippet": "arXiv:2611.10327v1 Announce Type: new Abstract: As Perspective API is deprecated, platforms are turning to large language models for content moderation, encoding policy as natural language that the model must interpret at inference time. Reclaimed slurs test this design directly. The same term can express in-group pride or target the community that reclaimed it, and misreading it silences the speech moderation is meant to protect. We audit four general-purpose LLMs and four moderation-specific systems, with Perspective API as a legacy baseline, on IYKYK, a corpus of reclaimed and derogatory usage of three slurs annotated by community members. Across the policy, decision, reasoning, disparity, and steering layers of this audit, we find that whether a system was purpose-built for moderation explains little about how it handles reclaimed language. No system reliably agrees with community judgment, and all fail most on language reclaimed within Black communities. What separates systems is instead how their policy is represented. Only systems whose policy is expressed in the prompt can be steered at all, and even then, explicit definitions change how models justify a decision more than how they make it. We argue that policy transparency determines whether moderation failures can be corrected, but that correcting them requires contextual judgment that definitions supplied at inference time cannot provide.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10327",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10327.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10327v1 Announce Type: new Abstract: As Perspective API is deprecated, platforms are turning to large language models for content moderation, encoding policy as natural language that the model must interpret at inference time. Reclaimed slurs test this design directly. The same term can express in-group pride or target the community that reclaimed it, and misreading it silences the speech moderation is meant to protect.\n\nWe audit four general-purpose LLMs and four moderation-specific systems, with Perspective API as a legacy baseline, on IYKYK, a corpus of reclaimed and derogatory usage of three slurs annotated by community members. Across the policy, decision, reasoning, disparity, and steering layers of this audit, we find that whether a system was purpose-built for moderation explains little about how it handles reclaimed language. No system reliably agrees with community judgment, and all fail most on language reclaimed within Black communities.",
-      "takeaways": [
-        "What separates systems is instead how their policy is represented.",
-        "Only systems whose policy is expressed in the prompt can be steered at all, and even then, explicit definitions change how models justify a decision more than how they make it.",
-        "We argue that policy transparency determines whether moderation failures can be corrected, but that correcting them requires contextual judgment that definitions supplied at inference time cannot provide."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "477d79d9f587957b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10369",
-    "title": "FEROM: Frontier Endogenous Reveal-Order Marginal Policy Optimization for Masked Diffusion LMs",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "743a02be8d114b6f",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Zian Su, Ziyang Huang, Kaiyuan Zhang, Xiangyu Zhang",
-    "contentSnippet": "arXiv:2611.10369v1 Announce Type: new Abstract: Masked diffusion language models generate text by iteratively unmasking positions, with practical samplers often selecting reveal positions from the model's own logits. The reveal order is therefore an endogenous latent variable of the rollout process with an enormous discrete latent space. Policy optimization objectives relying on pre-defined schedules or sampled trajectories introduce either bias or high variance. In this paper, we propose FEROM, Frontier Endogenous Reveal-Order Marginal Policy Optimization, which approximates policy gradients for the rollout-induced marginal response policy of masked diffusion LMs. FEROM derives a Rao-Blackwellized policy-gradient identity over latent reveal orders and expresses the resulting estimator as posterior edge occupancy on a reveal-state DAG. To make marginalization practical, we introduce Frontier Reveal Marginalization, a budgeted estimator that approximates this marginal edge structure by combining CDF-based computation of local probabilities of the endogenous reveal process with frontier expansion of high-mass partial states. Integrated into a GRPO-style objective, FEROM replaces single-path log-scores with a detached token-score surrogate over posterior-relevant reveal edges. Experiments on math and coding tasks show comparable or improved results over existing methods under matched scoring-state budgets. An offline proxy study further shows improved marginal-gradient approximation with increased scoring budgets.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10369",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10369.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10369v1 Announce Type: new Abstract: Masked diffusion language models generate text by iteratively unmasking positions, with practical samplers often selecting reveal positions from the model's own logits. The reveal order is therefore an endogenous latent variable of the rollout process with an enormous discrete latent space. Policy optimization objectives relying on pre-defined schedules or sampled trajectories introduce either bias or high variance.\n\nIn this paper, we propose FEROM, Frontier Endogenous Reveal-Order Marginal Policy Optimization, which approximates policy gradients for the rollout-induced marginal response policy of masked diffusion LMs. FEROM derives a Rao-Blackwellized policy-gradient identity over latent reveal orders and expresses the resulting estimator as posterior edge occupancy on a reveal-state DAG. To make marginalization practical, we introduce Frontier Reveal Marginalization, a budgeted estimator that approximates this marginal edge structure by combining CDF-based computation of local probabilities of the endogenous reveal process with frontier expansion of high-mass partial states.",
-      "takeaways": [
-        "Integrated into a GRPO-style objective, FEROM replaces single-path log-scores with a detached token-score surrogate over posterior-relevant reveal edges.",
-        "Experiments on math and coding tasks show comparable or improved results over existing methods under matched scoring-state budgets.",
-        "An offline proxy study further shows improved marginal-gradient approximation with increased scoring budgets."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "979ef42f6f753f33",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09897",
-    "title": "Process then Retrieve: Investigating the Origins of the Modality Gap in Vision-Language Models",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "c2cbbc1a1f7153a2",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Arpita Shanbhag, Julia Tran, Dhruv Mandala, Ayda Sultan",
-    "contentSnippet": "arXiv:2611.09897v1 Announce Type: new Abstract: Understanding the origins of the modality gap in vision language models remains a significant challenge. This work investigates whether differences in information density between modality specific tokens at the embedding layer contribute to this imbalance. We show that text tokens enter the model with much lower semantic density than visual tokens, driving early layers to focus on processing text representations before combining them with vision. Through mechanistic analysis, we demonstrate that replacing vision token positions with their semantically closest text token counterparts elicits increased attention to those positions in early layers. These findings provide a foundation for addressing the modality gap and provide insight to improve multimodal reasoning in VLM architectures.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09897",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09897.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09897v1 Announce Type: new Abstract: Understanding the origins of the modality gap in vision language models remains a significant challenge. This work investigates whether differences in information density between modality specific tokens at the embedding layer contribute to this imbalance. We show that text tokens enter the model with much lower semantic density than visual tokens, driving early layers to focus on processing text representations before combining them with vision.",
-      "takeaways": [
-        "Through mechanistic analysis, we demonstrate that replacing vision token positions with their semantically closest text token counterparts elicits increased attention to those positions in early layers.",
-        "These findings provide a foundation for addressing the modality gap and provide insight to improve multimodal reasoning in VLM architectures."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fb4ee5982fd02cca",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09928",
-    "title": "MAGE: Towards Generalizable Multi-timescale EEG Representations",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "24be13da6a994811",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Tuan-Kiet Doan, Van-Chien Nguyen, Trung-Hieu Tran, Quang-Hung Pham, Ngoc-Son Vu, Huy Phan, Phi Le Nguyen, Duc-Han Le, Nikola Simidjievski, Van-Tam Nguyen",
-    "contentSnippet": "arXiv:2611.09928v1 Announce Type: new Abstract: Electroencephalography (EEG) data plays an important role in understanding human brain activity, with various major applications. While current approaches, which largely build on EEG foundation models, have demonstrated strong performance across datasets and tasks, they typically rely on a fixed temporal scale. This design choice limits their ability to capture characteristics of neural dynamic behavior, often spanning across multiple timescales, which are naturally captured in EEG recordings. To address this limitation, we propose MAGE (\\textbf{Multi-timescale Adaptive Generalization for EEG}), a foundation model that dynamically adapts to capture and integrate information across different timescales. Specifically, MAGE combines two key mechanisms: (i) a novel multi-timescale attention mechanism, capable of learning representations across multiple temporal scales and (ii) a trainable aggregation module, that dynamically identifies and adapts to the most informative timescale of the input signal. Experimental results across seven datasets demonstrate that MAGE consistently outperforms existing EEG foundation models while using substantially fewer parameters. Moreover, our results support the hypothesis that different downstream tasks benefit from distinct temporal scales. All source code will be released.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09928",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09928.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09928v1 Announce Type: new Abstract: Electroencephalography (EEG) data plays an important role in understanding human brain activity, with various major applications. While current approaches, which largely build on EEG foundation models, have demonstrated strong performance across datasets and tasks, they typically rely on a fixed temporal scale. This design choice limits their ability to capture characteristics of neural dynamic behavior, often spanning across multiple timescales, which are naturally captured in EEG recordings.\n\nTo address this limitation, we propose MAGE (\\textbf{Multi-timescale Adaptive Generalization for EEG}), a foundation model that dynamically adapts to capture and integrate information across different timescales. Specifically, MAGE combines two key mechanisms: (i) a novel multi-timescale attention mechanism, capable of learning representations across multiple temporal scales and (ii) a trainable aggregation module, that dynamically identifies and adapts to the most informative timescale of the input signal. Experimental results across seven datasets demonstrate that MAGE consistently outperforms existing EEG foundation models while using substantially fewer parameters.",
-      "takeaways": [
-        "Moreover, our results support the hypothesis that different downstream tasks benefit from distinct temporal scales.",
-        "All source code will be released."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "97564ba477f54371",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09934",
-    "title": "Causal Discovery Bench: Can LLMs Autonomously Conduct Effective Experiments?",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "e60f3fd5291d3d5e",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Zhuoyang Liu, Ning Peng, Ming Shen, Zijun Gao",
-    "contentSnippet": "arXiv:2611.09934v1 Announce Type: new Abstract: As large language model (LLM) agents get actively adopted for autonomous research, they must not only reason over existing evidence, but also design informative experiments, allocate resources, analyze sequential observations, and decide when to stop and make conclusions. Yet these capabilities remain poorly measured. We introduce Causal-Discovery-Bench (https://github.com/mshen1019/causal-discovery-bench), a verifiable sandbox with configurable structural equation models and resource constraints to evaluate sequential experimental design and causal discovery without domain-semantic cues. Across 3,802 episodes with 13 models from 5 vendors, we analyze agent behavior along 40 metrics in seven families. Agents' performance exhibits a four-level difficulty hierarchy spanning single-experiment design, sequential exploration of causal relationships, resource-aware experimentation balancing cost and statistical power, and autonomous resolution of conflicting evidence. We identify a substantial performance gap between causal inference from correctly curated evidence and navigating causal discovery through autonomous experimentation: Analyzing agents' action trajectories attributes 94.5% of their mistakes to experimental design rather than to inference, which is further consolidated with ablation studies. Relaxing resource constraints alone does not reliably resolve failures in sequential discovery. In contrast, basic statistical tools substantially improve performance across multiple model families, while advanced tools provide little additional benefit when models lack prerequisite lower-level capabilities.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09934",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09934.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09934v1 Announce Type: new Abstract: As large language model (LLM) agents get actively adopted for autonomous research, they must not only reason over existing evidence, but also design informative experiments, allocate resources, analyze sequential observations, and decide when to stop and make conclusions. Yet these capabilities remain poorly measured. We introduce Causal-Discovery-Bench (https://github.com/mshen1019/causal-discovery-bench), a verifiable sandbox with configurable structural equation models and resource constraints to evaluate sequential experimental design and causal discovery without domain-semantic cues.\n\nAcross 3,802 episodes with 13 models from 5 vendors, we analyze agent behavior along 40 metrics in seven families. Agents' performance exhibits a four-level difficulty hierarchy spanning single-experiment design, sequential exploration of causal relationships, resource-aware experimentation balancing cost and statistical power, and autonomous resolution of conflicting evidence. We identify a substantial performance gap between causal inference from correctly curated evidence and navigating causal discovery through autonomous experimentation: Analyzing agents' action trajectories attributes 94.5% of their mistakes to experimental design rather than to inference, which is further consolidated with ablation studies.",
-      "takeaways": [
-        "Relaxing resource constraints alone does not reliably resolve failures in sequential discovery.",
-        "In contrast, basic statistical tools substantially improve performance across multiple model families, while advanced tools provide little additional benefit when models lack prerequisite lower-level capabilities."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a07420464fafde17",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09935",
-    "title": "Fresh Enough to Decide: Age of Intelligence for Cost-Aware Model Synchronization in Dynamic IoT Systems",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "9ad298f0be015c07",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Hui Wang, Seyyedali Hosseinalipour, Jacob Chakareski, Ming Shi",
-    "contentSnippet": "arXiv:2611.09935v1 Announce Type: new Abstract: Resource-constrained IoT devices cache learned models for real-time decisions, but frequent updates incur substantial bandwidth, energy, and service overhead. Because decision-relevant model differences need not grow with elapsed time, we define Age of Intelligence (AoInt) as a model-version-relative, client-specific, and action utility distortion, and formulate synchronization as a tradeoff between stale-decision regret and refresh cost. Furthermore, we develop Kullback-Leibler-aware AoInt Synchronization (KL-AoIntSync), which accumulates output-distribution changes using client-specific unlabeled probes, whereas Parameter-aware AoInt Synchronization (Param-AoIntSync) uses a server-broadcast scalar parameter change. Then, we establish pathwise guarantees with fixed client distributions, action sets, and utilities. The numerical results show that calibrated Param-AoIntSync reduces joint synchronization cost by 6.15% relative to an Instant-Parameters policy while performing comparably to KL-AoIntSync.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09935",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09935.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09935v1 Announce Type: new Abstract: Resource-constrained IoT devices cache learned models for real-time decisions, but frequent updates incur substantial bandwidth, energy, and service overhead. Because decision-relevant model differences need not grow with elapsed time, we define Age of Intelligence (AoInt) as a model-version-relative, client-specific, and action utility distortion, and formulate synchronization as a tradeoff between stale-decision regret and refresh cost. Furthermore, we develop Kullback-Leibler-aware AoInt Synchronization (KL-AoIntSync), which accumulates output-distribution changes using client-specific unlabeled probes, whereas Parameter-aware AoInt Synchronization (Param-AoIntSync) uses a server-broadcast scalar parameter change.",
-      "takeaways": [
-        "Then, we establish pathwise guarantees with fixed client distributions, action sets, and utilities.",
-        "The numerical results show that calibrated Param-AoIntSync reduces joint synchronization cost by 6.15% relative to an Instant-Parameters policy while performing comparably to KL-AoIntSync."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "dee9a1f4d4b06399",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10046",
-    "title": "Topological Deep Learning Challenge 2026: Bridging the Gap",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "910c45651d9c7621",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Guillermo Bern\\'ardez, Lev Telyatnikov, Mathilde Papillon, Marco Montagna, Louisa Cornelis, Louis Van Langendonck, Antonio Purificato, Bruno Neri, David Leko, Donatella Genovese, Eleonora Grassucci, Jan-Willem Van Looy, Johan Mathe, Lucia Testa, Luka Beni\\'c, Melanie Weber, Olga Zaghen, Pavlo Vasylenko, Raffael Theiler, Scott Mahan, Gaurav Khanal, Valentina S\\'anchez, Dario Loi, Gabriele Onorato, Prasanna Devadiga, Taejin Paik, Anier Velasco Sotomayor, Jonas M\\\"uller, Aarav Gupta, Riyan Patel, Grold Otieno Mboya, Pushparaj Devadiga, Adam Gohain, Dominik Filipiak, Michael Banf, Alireza Mohammadian, Amirreza Akbari, Gabriel Chaviano D\\'iaz, Marcos Ch\\'avez Mesa, Ankit Grover, R\\'emi Bourgerie, Alessio Comparini, Ankit Kumar, Mohammad Yusuf, Devesh Kaushal, Francesco Orsi, Ghazal Mostofi, Kolya Lettl, Salwa Khattami, Gabriel Franco, Yelizaveta Falkouskaya, Jorge Luiz Franco, Kajal Singla, Fernando David Espinosa I\\~niguez, Raj Patil, Eric Dolores-Cuenca, Luigi Petti, Chenguang Xu, Stefano Blando, Christine Zeh, Lennart Bastian, Kaden Zheng, Vihan Tiwari, Sud Athreya, Hisataka Kajita, Hugo Micheron, R\\'emi Devaux, Antoine Jardin, Tegan Emerson, Olga Fink, Nina Miolane",
-    "contentSnippet": "arXiv:2611.10046v1 Announce Type: new Abstract: This paper describes the 2026 edition of the Topological Deep Learning Challenge: Bridging the Gap, hosted at the second Topology, Algebra, and Geometry in Data Science (TAG-DS) Conference. Where previous editions grew the modelling and data ecosystem of Topological Deep Learning (TDL), this edition set out to place Graph Neural Networks (GNNs) and Topological Neural Networks (TNNs) side by side under a single evaluation pipeline. Participants implemented recent state-of-the-art architectures in TopoBench, with Track 1 covering GNNs and Track 2 covering TNNs. They evaluated these implementations on shared synthetic benchmarks generated with GraphUniverse, which independently controls homophily, average degree and degree-distribution heaviness. The challenge yielded 68 qualifying submissions from 34 teams, spanning the graph, simplicial, cellular, hypergraph and combinatorial domains. For the first time, submissions were also tracked on a public leaderboard, which we summarize and analyze here. Our analysis finds that the differences between the submitted tracks are strongly task-dependent: the mean accuracy gap is modest on community detection, while on triangle counting the Track 1 mean error is 1.85 times the Track 2 mean. Several structurally informed GNNs also outperform the Track 2 mean on triangle counting.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10046",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10046.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10046v1 Announce Type: new Abstract: This paper describes the 2026 edition of the Topological Deep Learning Challenge: Bridging the Gap, hosted at the second Topology, Algebra, and Geometry in Data Science (TAG-DS) Conference. Where previous editions grew the modelling and data ecosystem of Topological Deep Learning (TDL), this edition set out to place Graph Neural Networks (GNNs) and Topological Neural Networks (TNNs) side by side under a single evaluation pipeline. Participants implemented recent state-of-the-art architectures in TopoBench, with Track 1 covering GNNs and Track 2 covering TNNs.\n\nThey evaluated these implementations on shared synthetic benchmarks generated with GraphUniverse, which independently controls homophily, average degree and degree-distribution heaviness. The challenge yielded 68 qualifying submissions from 34 teams, spanning the graph, simplicial, cellular, hypergraph and combinatorial domains. For the first time, submissions were also tracked on a public leaderboard, which we summarize and analyze here.",
-      "takeaways": [
-        "Our analysis finds that the differences between the submitted tracks are strongly task-dependent: the mean accuracy gap is modest on community detection, while on triangle counting the Track 1 mean error is 1.85 times the Track 2 mean.",
-        "Several structurally informed GNNs also outperform the Track 2 mean on triangle counting."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d517bfd7131ddf40",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10050",
-    "title": "Selected-Risk Calibration for Feasibility at Returned Decisions",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "4721e488425a627b",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Raghav Thind, Youran Sun, Ling Liang, Haizhao Yang",
-    "contentSnippet": "arXiv:2611.10050v1 Announce Type: new Abstract: When an optimization problem uses a surrogate constraint, a decision that is feasible for the surrogate need not be feasible for the true constraint. We propose Selected-Risk Calibration (SRC), a framework that calibrates a learned constraint against the optimizer's returned decisions for objectives drawn from a given distribution. SRC guarantees that, with probability at least $1-\\delta$, every margin it certifies on held-out objectives has selected risk, the probability that the returned decision is infeasible, of at most $\\gamma$. We also show that the random-input coverage guarantee of split conformal prediction does not bound the selected risk, and that likelihood-ratio reweighting for feedback covariate shift does not apply when the learned constraint is active at the returned decision. Our experiments show that a conformal margin covering about $90\\%$ of random inputs covered as few as $17\\%$ of the returned decisions, and every certified margin had a violation rate below its target on unseen objectives. Moreover, at equal cost, SRC's correction had fewer or equal infeasible solutions to the baselines in 57 of 62 comparisons. The SRC framework applies to any setting in which a surrogate model chooses a decision whose feasibility can be verified for a sample of instances.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10050",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10050.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10050v1 Announce Type: new Abstract: When an optimization problem uses a surrogate constraint, a decision that is feasible for the surrogate need not be feasible for the true constraint. We propose Selected-Risk Calibration (SRC), a framework that calibrates a learned constraint against the optimizer's returned decisions for objectives drawn from a given distribution. SRC guarantees that, with probability at least $1-\\delta$, every margin it certifies on held-out objectives has selected risk, the probability that the returned decision is infeasible, of at most $\\gamma$.\n\nWe also show that the random-input coverage guarantee of split conformal prediction does not bound the selected risk, and that likelihood-ratio reweighting for feedback covariate shift does not apply when the learned constraint is active at the returned decision. Our experiments show that a conformal margin covering about $90\\%$ of random inputs covered as few as $17\\%$ of the returned decisions, and every certified margin had a violation rate below its target on unseen objectives. Moreover, at equal cost, SRC's correction had fewer or equal infeasible solutions to the baselines in 57 of 62 comparisons.",
-      "takeaways": [
-        "The SRC framework applies to any setting in which a surrogate model chooses a decision whose feasibility can be verified for a sample of instances."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ecf1db316ae58391",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10051",
-    "title": "All roads lead to Markov kernel networks: A representation theorem for discretization-stable learning",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "78215cca2ab2a004",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "S David Mis, Trevor Teolis, Ivan Dokmani\\'c, Matti Lassas, Maarten V. de Hoop",
-    "contentSnippet": "arXiv:2611.10051v1 Announce Type: new Abstract: Operator learning seeks to approximate function-to-function maps in a way that remains stable when the input discretization changes, a property sometimes called \"discretization invariance\". We consider a quantitative refinement of this idea, called $\\textit{uniform discretization stability}$, which builds on a common representation of input functions and their discretizations as probability measures and provides a H\\\"older bound relating output changes to the Wasserstein distance between these measures. Our main result is a representation theorem showing all uniformly discretization stable operators can be written exactly as a $\\textit{stable Markov kernel network}$---an abstract architecture that is a joint generalization of transformers, Fourier neural operators (FNO), Flowers, and other successful learned operators. Our representation theorem characterizes a design space for discretization-stable operator learning; designing new architectures becomes a question of which parts of a Markov kernel network to parameterize, and how. We further show that the read kernels of these networks can be realized as solutions of regularized variational problems, with particular choices of costs and regularizers recovering the kernels of transformers, FNO, Flowers, their hybrids, and beyond. This variational formulation provides a systematic approach to architecture design, together with sufficient conditions for uniform discretization stability.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10051",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10051.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10051v1 Announce Type: new Abstract: Operator learning seeks to approximate function-to-function maps in a way that remains stable when the input discretization changes, a property sometimes called \"discretization invariance\". We consider a quantitative refinement of this idea, called $\\textit{uniform discretization stability}$, which builds on a common representation of input functions and their discretizations as probability measures and provides a H\\\"older bound relating output changes to the Wasserstein distance between these measures. Our main result is a representation theorem showing all uniformly discretization stable operators can be written exactly as a $\\textit{stable Markov kernel network}$---an abstract architecture that is a joint generalization of transformers, Fourier neural operators (FNO), Flowers, and other successful learned operators.\n\nOur representation theorem characterizes a design space for discretization-stable operator learning; designing new architectures becomes a question of which parts of a Markov kernel network to parameterize, and how. We further show that the read kernels of these networks can be realized as solutions of regularized variational problems, with particular choices of costs and regularizers recovering the kernels of transformers, FNO, Flowers, their hybrids, and beyond. This variational formulation provides a systematic approach to architecture design, together with sufficient conditions for uniform discretization stability.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ad9275ced775bd06",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10082",
-    "title": "fNIRSAtlas: A Large-Scale Benchmark for Functional Near-Infrared Spectroscopy Classification",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "ecaa44522df0dd43",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Kalle M\\\"akel\\\"a, Tuukka Ruotsalo",
-    "contentSnippet": "arXiv:2611.10082v1 Announce Type: new Abstract: Functional near-infrared spectroscopy (fNIRS) is a promising modality for brain-computer interfaces and cognitive state decoding, but progress in machine learning for fNIRS has been limited by small, isolated datasets and inconsistent evaluation protocols. We introduce fNIRSAtlas, the largest open benchmark for fNIRS classification to date, comprising 23 classification tasks from 19 public data collections, spanning diverse experimental paradigms, including motor execution, motor imagery, mental arithmetic, working memory, and emotion recognition. fNIRSAtlas provides a fully automated pipeline from raw data to evaluation and defines standardized benchmark tasks for both cross-subject and within-subject classification, ensuring reproducible comparison of methods. We evaluate a variety of baseline models from fNIRS and related neuroimaging and time-series machine learning literature on the benchmark. Our results demonstrate that performance varies substantially across tasks and that methods validated on limited data -- especially deep learning approaches -- often fail to generalize beyond their original evaluation. fNIRSAtlas serves as an extensible, open, and reproducible benchmark to support more robust and cumulative progress in machine learning for fNIRS data. Our code and data can be found at https://fnirsatlas.github.io.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10082",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10082.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10082v1 Announce Type: new Abstract: Functional near-infrared spectroscopy (fNIRS) is a promising modality for brain-computer interfaces and cognitive state decoding, but progress in machine learning for fNIRS has been limited by small, isolated datasets and inconsistent evaluation protocols. We introduce fNIRSAtlas, the largest open benchmark for fNIRS classification to date, comprising 23 classification tasks from 19 public data collections, spanning diverse experimental paradigms, including motor execution, motor imagery, mental arithmetic, working memory, and emotion recognition. FNIRSAtlas provides a fully automated pipeline from raw data to evaluation and defines standardized benchmark tasks for both cross-subject and within-subject classification, ensuring reproducible comparison of methods.\n\nWe evaluate a variety of baseline models from fNIRS and related neuroimaging and time-series machine learning literature on the benchmark. Our results demonstrate that performance varies substantially across tasks and that methods validated on limited data -- especially deep learning approaches -- often fail to generalize beyond their original evaluation. FNIRSAtlas serves as an extensible, open, and reproducible benchmark to support more robust and cumulative progress in machine learning for fNIRS data.",
-      "takeaways": [
-        "Our code and data can be found at https://fnirsatlas.github.io."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c45c4d1e97c106e1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10086",
-    "title": "Transferring local rib responses to new component geometries in sheet forming with a graph-based Transformer",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "5ba96c3f00ab1f12",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Yingxue Zhao, Haoran Li, Haosu Zhou, Tobias Pfaff, Nan Li",
-    "contentSnippet": "arXiv:2611.10086v1 Announce Type: new Abstract: Sheet metal components often consist of a global geometry, such as the corner radii and forming depth of a corner component, and local features added to it. During forming, both affect material flow. A surrogate learning all their combinations may need large training data. However, the same local feature type is often used on many global geometries. This study therefore partly decouples local features from the global geometry. The local-feature effect is first learned on one global geometry, needing fewer simulations than learning all combinations, then transferred to other global geometries via transfer learning, which can need fewer target simulations than training from scratch. A baseline-conditioned residual surrogate, R-BiLoGo, is proposed for ribs on the side walls of hot-stamped corner components. Its inputs are the baseline response and the geometric perturbation introduced by the ribs. Its outputs are the changes in displacement and thinning from the baseline. R-BiLoGo gave lower errors than a hierarchical graph-based model and a Transolver-based model on the source geometry, and on two of three selected target geometries after transfer. Across the 22 target geometries, transfer learning with 20 target simulations gave errors similar to or lower than training from scratch with 80 target simulations for about half of the targets. With the same 80 target simulations, transfer learning reduced errors for 95% of targets. The effect of the global geometry on transfer was studied with four parameter-free geometric descriptors and controlled variations across 4 corner subclasses. The benefit of transfer decreased with increasing surface distance and high-curvature change between source and target, and for targets shallower than the source. These trends were also seen in other corner types with a different magnitude.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10086",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10086.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10086v1 Announce Type: new Abstract: Sheet metal components often consist of a global geometry, such as the corner radii and forming depth of a corner component, and local features added to it. During forming, both affect material flow. A surrogate learning all their combinations may need large training data.\n\nHowever, the same local feature type is often used on many global geometries. This study therefore partly decouples local features from the global geometry. The local-feature effect is first learned on one global geometry, needing fewer simulations than learning all combinations, then transferred to other global geometries via transfer learning, which can need fewer target simulations than training from scratch.",
-      "takeaways": [
-        "A baseline-conditioned residual surrogate, R-BiLoGo, is proposed for ribs on the side walls of hot-stamped corner components.",
-        "Its inputs are the baseline response and the geometric perturbation introduced by the ribs.",
-        "Its outputs are the changes in displacement and thinning from the baseline.",
-        "R-BiLoGo gave lower errors than a hierarchical graph-based model and a Transolver-based model on the source geometry, and on two of three selected target geometries after transfer."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
