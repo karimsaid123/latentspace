@@ -1,5 +1,317 @@
 [
   {
+    "id": "4815b0b06c433103",
+    "canonicalUrl": "https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast",
+    "title": "What’s really at stake in the Jensen Huang saga",
+    "publishedAt": "2026-11-13T14:47:16.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "d2575eeaef9231e3",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "David Pierce",
+    "contentSnippet": "One part of the saga surrounding Nvidia CEO Jensen Huang ended on Thursday, when Huang resigned from his position at the top of AI’s most important company. But in the coming weeks and months, a much bigger story may be about to unfold. A story about Nvidia’s dealings in China, about the US government’s willingness to turn a lot of blind eyes to protect a powerful ally, and about the very stability of the AI industry as a whole. It’s a lot. On this episode of The Vergecast, David and Nilay start by trying to unpack the many parts of the story. We’re all going to learn a lot more about Megaspeed than we ever planned or wanted, and we’re going to hear a lot of people — particularly newly elected Democrats — asking questions about who knew what and when. In the meantime, who will replace Huang as the AI industry’s front man? And will everyone survive the scrutiny that’s coming? After that, the hosts tackle a week filled with small-ish news from streaming services that adds up to Hollywood’s plan to properly take on TikTok. We’re about to find out whether microdramas, free tiers, and a deep obsession with vertical video will save the Netflixes and Paramounts of the world. Will it work? Probably not. Is it the only rational thing to try? You bet. Finally, in the lightning round, it’s time for Brendan Carr is a Dummy, Mark Zuckerberg’s AI experiments, the Cybertruck era, and more. Watch | Listen | Get ad-free In case you missed it this week: We also talked about private torrent trackers, reviewed the Apple HomeView, took your questions on the Vergecast Hotline, and discussed the Huang saga… a lot. And we want to hear all your thoughts about all of it! Call the Hotline at 866-VERGE11, send us an email at vergecast@theverge.com, and tell us everything that’s on your mind. And make sure you subscribe so you don’t miss an episode!",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/VRG_VST_111326_Site.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The Vergecast episode hosted by David Pierce and Nilay Patel discusses the reported resignation of Nvidia CEO Jensen Huang. The hosts frame this event as the conclusion of one chapter in a broader narrative involving Nvidia’s business operations in China, potential U.S. government oversight, and the long-term stability of the artificial intelligence sector. The discussion highlights upcoming political scrutiny, specifically from newly elected Democrats, regarding the timeline of knowledge surrounding Nvidia's corporate dealings and the emergence of a project or entity referred to as 'Megaspeed.'\n\nBeyond the Nvidia leadership transition, the episode covers the strategic pivot of major streaming platforms—including Netflix and Paramount—as they attempt to compete with TikTok. This strategy involves the adoption of microdramas, the implementation of free, ad-supported tiers, and a focus on vertical video formats. The lightning round segment touches on various industry topics, including Brendan Carr, Mark Zuckerberg’s recent AI experiments, and the current state of the Tesla Cybertruck.",
+      "takeaways": [
+        "**Leadership Change:** The episode reports that Jensen Huang has resigned from his position as CEO of Nvidia.",
+        "**Regulatory Scrutiny:** The hosts anticipate upcoming investigations by newly elected Democrats regarding Nvidia’s business dealings in China and U.S. government oversight.",
+        "**Streaming Strategy:** Major streaming services are shifting toward vertical video, microdramas, and free tiers to compete with TikTok’s market dominance.",
+        "**Industry Topics:** The podcast covers additional tech developments including Mark Zuckerberg’s AI initiatives and the market reception of the Tesla Cybertruck."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "69a4be7aab7399d4",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/",
+    "title": "ElevenLabs’ new app combines meeting note-taking and dictation for teams",
+    "publishedAt": "2026-11-13T14:44:48.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "effb80a611d22455",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Ivan Mehta",
+    "contentSnippet": "In the last few months, Fireflies , Wispr Flow , and Granola have all released competing capabilities in the dictation and meeting note-taking space. The newest entrant in that category is voice AI giant ElevenLabs , which this week released an experimental app called ElevenAI that combines meeting note-taking, dictation, and agent integration.\n\nLaunched during its 11/11 Summit in New York, ElevenAI is still in preview, and you have to sign up for early access instead of just downloading an app. ElevenLabs, valued at $22 billion , is very much positioning this as a product that lives within a team as compared to a productivity tool for an individual.\n\nElevenAI packs all the features typically found in other apps in the category. It can take meeting notes across your meetings and notify other participants that the conversation is being recorded. Users can query data across meetings and get live assistance during a chat, helping them recall a key detail from older conversations. ElevenLabs also allows companies to integrate ElevenAgent and take follow-up actions such as writing a draft email based on meeting notes.\n\nPlus, there’s a dictation feature, which lets users convert speech to cleaned-up text in any app with support for over 90 languages. The company said that the app is capable of understanding industry-specific terms across dictation and meeting transcription.\n\nElevenAI allows the company to use its own model as a showcase and also utilize its agent platforms for better context funneling. The startup’s positioning might not be to directly compete in the productivity market, but rather to give enterprise teams an option to not buy licenses to a notetaker and use its solution instead. All meeting-related tools are rushing to become central knowledge hubs for companies while aiming to automate knowledge extraction and follow-up actions\n\nIn the last week, the company also launched its v3 series of Scribe speech-to-text models with live transcription capabilities and the ability for companies to fine-tune models using their own data, a tool to pick the right language model based on use case , and a routine creator that automates tasks based on the transcript.\n\nWhen you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nIvan covers global consumer tech developments at TechCrunch. He is ",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "ElevenLabs has introduced ElevenAI, an experimental meeting note-taking and dictation application unveiled at the company's 11/11 Summit in New York. Currently in early access, the platform is designed for enterprise team integration rather than individual productivity, positioning ElevenLabs to compete with incumbents like Fireflies, Wispr Flow, and Granola. The app functions as a centralized knowledge hub, enabling users to record meetings, query historical conversation data, and trigger automated follow-up actions through ElevenAgent, such as drafting emails based on transcriptions.\n\nTechnically, ElevenAI leverages ElevenLabs' proprietary speech-to-text capabilities, supporting over 90 languages with specialized recognition for industry-specific terminology. The release coincides with the launch of the v3 series of Scribe speech-to-text models, which feature live transcription, support for custom fine-tuning on enterprise data, and a routine creator for task automation. By integrating these models with its agent platform, ElevenLabs aims to provide companies with a unified solution for knowledge extraction and workflow automation, potentially reducing the need for disparate third-party productivity licenses.",
+      "takeaways": [
+        "**Market Positioning:** ElevenLabs, currently valued at $22 billion, is targeting enterprise teams with ElevenAI to consolidate meeting management and knowledge extraction.",
+        "**Core Features:** The app includes cross-meeting data querying, live meeting assistance, and integration with ElevenAgent for automated follow-up tasks like email drafting.",
+        "**Language Support:** The dictation engine supports over 90 languages and is optimized to recognize industry-specific jargon.",
+        "**Model Infrastructure:** The platform utilizes the newly released v3 series of Scribe speech-to-text models, which allow for enterprise-specific fine-tuning and automated task creation based on transcripts."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ac1207e2a7c1e67c",
+    "canonicalUrl": "https://siliconangle.com/2026/11/13/agentic-ai-workloads-push-kubernetes-return-idle-resources-kubeconna/",
+    "title": "Agents idling while they wait on humans push Kubernetes to hand back unused resources",
+    "publishedAt": "2026-11-13T14:22:57.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.119Z",
+    "contentHash": "a70b077582915296",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Jonathan Anthony",
+    "contentSnippet": "UPDATED 09:22 EST / NOVEMBER 13 2026\n\nAgents idling while they wait on humans push Kubernetes to hand back unused resources\n\nAgentic AI workloads are handing Kubernetes an unexpected second act . The orchestrator once dismissed as reliable but boring is now at the center of how enterprises plan to run autonomous software.\n\nPast platform shifts, from physical servers to virtual machines and from virtual machines to containers, forced companies to wipe the slate clean and start over. This shift is different because Kubernetes was built as a platform for building platforms, according to Bobby Allen (pictured), cloud therapist at Google Cloud LLC.\n\n“Kubernetes now, 11, 12+ years in, has this whole new life,” Allen said. “You don’t need a new platform this time. … This shift doesn’t mean that you’ve got to retool and rebuild and replatform everything, and I think that could be comforting for folks to realize that they don’t have to start from scratch.”\n\nAllen spoke with theCUBE’s Rebecca Knight at KubeCon + CloudNativeCon NA , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how Kubernetes is recovering resources spent on idle agentic AI workloads. (* Disclosure below.)\n\nRunning agentic AI workloads in the open\n\nGoogle is putting that view into practice. The company has donated Agent Substrate, gVisor and OpenRL to the Cloud Native Computing Foundation, while engineering teams are tuning Kubernetes for agents rather than building a new stack.\n\n“Google is doubling down on our commitment to not just open source but community-driven, collaborative, multiple-partner-involvement open source,” Allen said. “These concepts are foundational, but they’re important enough that we need to all contribute and shape these together.”\n\nEfficiency is a big part of the motivation. Agents spend long stretches idle while they wait for human input, and the projects aim to give those resources back during the downtime, Allen explained.\n\n“These are kind of different efforts that contribute to an open, flexible, transparent, collaborative way to make agentic workloads run better so that we can have these amazing outcomes but also be efficient with our resources,” Allen said. “We don’t want to have this sci-fi Star Trek moment where we’re stepping into the future and kill the planet.”\n\nHere’s the complete video interview, part of SiliconA",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google Cloud is positioning Kubernetes as the primary orchestration layer for agentic AI workloads, aiming to avoid the need for new, specialized infrastructure platforms. Bobby Allen, a cloud therapist at Google Cloud, stated that Kubernetes' maturity allows it to adapt to agent-based architectures without requiring enterprises to rebuild their existing stacks. The core technical challenge addressed is the inefficiency of AI agents that remain idle while awaiting human input, which currently consumes significant compute resources.\n\nTo optimize these workloads, Google has donated three key projects to the Cloud Native Computing Foundation (CNCF): Agent Substrate, gVisor, and OpenRL. These projects are designed to improve the efficiency, transparency, and flexibility of agentic AI execution. By integrating these tools, Google aims to enable Kubernetes to dynamically reclaim resources during agent downtime, ensuring that large-scale AI deployments remain resource-efficient rather than relying on static, over-provisioned infrastructure.",
+      "takeaways": [
+        "**Project Donations:** Google has contributed Agent Substrate, gVisor, and OpenRL to the Cloud Native Computing Foundation to support agentic AI on Kubernetes.",
+        "**Resource Optimization:** The initiative focuses on reclaiming compute resources from AI agents during idle periods while they wait for human interaction.",
+        "**Platform Strategy:** Google advocates for evolving Kubernetes rather than creating new platforms, citing the orchestrator's 11-12 year maturity as a stable foundation for autonomous software.",
+        "**Sustainability Goal:** The effort is framed as a move to prevent excessive resource consumption and environmental impact associated with scaling agentic AI workloads."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "6841e619fcd7e8d9",
+    "canonicalUrl": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+    "title": "llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem",
+    "publishedAt": "2026-11-13T14:05:22.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.850Z",
+    "contentHash": "62ef8566ce51ce08",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "llama.cpp makes it possible to run multi-modal LLMs across a wide range of hardware - from consumer-grade local machines to high-end enterprise servers. Through quantization, optimized backends, and a portable C/C++ implementation, we make AI inference accessible at every level of the software stack. We believe this is the most lightweight, versatile and sensible platform for building cross-platform and private AI products.\n\nDuring the 3.5 years since its inception , the project has grown a lot and many downstream applications already depend on our work. We expect this trend to continue as local AI and privacy become increasingly important in our everyday lives. Every new integration means more developers depending on our library interfaces and therefore having a flexible but stable API is paramount.\n\nToday we release libraries v1.0.0 , highlighting our responsibility to those developers. Moving forward, both llama.cpp and ggml will reflect API and ABI incompatibilities with major-version bumps. As adoption grows, we will be stricter about making those boundaries visible to downstream consumers.\n\nSemantic version update rules\n\nThe following rules apply to all ggml-org projects using semantic versioning :\n\nDistribution\n\nWe are looking forward to expanding the ways in which ggml-org software is distributed and reaches developers and end-users. For more information about how to add ggml-org projects to your packaging and release pipelines, please check the following discussion .\n\nThe project has fostered an amazing open-source community with highly-skilled and talented contributors. With the rapid advance of AI capabilities in the field of software engineering, we continue to adapt and integrate LLMs in our developement cycle in a thoughtful and resonable manner. Maintaining a high quality codebase, staying in control of the architecture and understanding the implementation details will remain our top priorities.\n\nTo reinforce the faster pace of development we continue to invest more and more resources in improving the CI infrastructure behind the projects. Thanks to HF technologies such as HF Buckets and HF Jobs we are able to scale the capacity necessary to guarantee correctness for every change that lands on the master branches. With hardware support from NVIDIA, AMD, Qualcomm, Arm, IBM and Intel, we continue to enroll more self-hosted runners across all maj",
+    "category": "Open Source & Research",
+    "lab": "Meta AI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The llama.cpp project has officially released version 1.0.0, marking a transition to formal semantic versioning for its core library and the underlying ggml machine learning engine. After 3.5 years of development, this milestone establishes a stable API and ABI policy, where future breaking changes will be strictly managed through major-version bumps to support the growing ecosystem of downstream applications relying on the framework for local, private AI inference.\n\nTechnically, the project continues to emphasize hardware-agnostic inference through its modular ggml backend architecture, which allows for dynamic loading of libraries at runtime. The framework currently supports over 150 model architecture variants and all mainstream speculative decoding methods. To maintain code quality and performance, the team has scaled its CI infrastructure using Hugging Face technologies and expanded its self-hosted runner capacity across hardware platforms from NVIDIA, AMD, Qualcomm, Arm, IBM, and Intel.",
+      "takeaways": [
+        "**Version Policy:** Implementation of semantic versioning for llama.cpp and ggml, requiring major-version bumps for any API or ABI incompatibilities.",
+        "**Model Support:** The framework currently supports more than 150 distinct model architecture variants.",
+        "**Hardware Coverage:** Backend support includes NVIDIA, AMD, Qualcomm, Arm, IBM, and Intel, utilizing a dynamic library loading system for cross-platform compatibility.",
+        "**Infrastructure:** CI pipelines are now scaled using Hugging Face technologies, including HF Buckets and HF Jobs, to ensure correctness across master branches."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "0acc674430dfd202",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on",
+    "title": "Claude’s Duet agent is a little neurotic and surprisingly helpful",
+    "publishedAt": "2026-11-13T14:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "36cbe0ccd126dc27",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Allison Johnson",
+    "contentSnippet": "Normally, the products I test don’t offer to help me write up my experience with them. Duet is different. Claude Duet is Anthropic’s AI agent for consumers, the latest attempt by an AI company to try to convince us that agents can be useful for people who don’t write code. It’s been an interesting couple of months: Instinct gave us an impressive text-based assistant, Meta offered us its cute little guy, Muse, to help us buy things, and OpenAI gave us the more work-oriented Dots. Claude Duet is even more focused on work than those. It’s also more consumer-friendly than Claude Cowork, which was more consumer-friendly than Claude Code — the coding agent that kicked off a whole hype cycle earlier this year. I’ve been testing it over the past week as I navigate a busy travel and work schedule. At turns it has been truly useful, kind of a nag, and very eager to write about itself. Duet is still a “research preview” according to Anthropic, and access is limited to Pro, Max, and Ultra subscribers in the US, with a waitlist to join. It’s not here to order you burritos, either; it’s for “professionals and small business owners” and is meant to use its judgment about what needs your attention most. Like Meta’s Muse, Duet has its own app. (If you’re keeping score at home, yes, it has been updated to fully support the iPhone Duo). Duet uses Claude’s characteristically cheery, minimalist design. The app is consumer-friendly and approachable. Once you’ve connected all the productivity and chat services you want, it’ll look for ways to help out with and suggest them as cards you can swipe left or right to hide or accept — kind of a to-do list Tinder. In the name of testing, I went all in on Duet and gave it everything: my work email, calendar, Google Docs, and Slack. This gave it plenty of grist for the mill in more ways than I’d even realized at first. Because our biweekly staff meeting is automatically summarized in an email from Gemini, and Duet had access to my email, it was able to connect the dots between something said in a meeting and a direct message in Slack. Duet also worked out who my boss is because we have a shared Google Doc for our weekly 1:1 meetings. AI is at its most useful when it can suck up lots of data, and Duet wasted no time doing so. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/IMG_3369.png?quality=90&strip=all] [Image: ",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DSC04398_processed.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic has released Claude Duet, a consumer-focused AI agent designed for professionals and small business owners. Currently in a \"research preview\" phase, the tool is available to Pro, Max, and Ultra subscribers in the US via a waitlist. Unlike previous Anthropic offerings like Claude Code or Claude Cowork, Duet is specifically engineered to integrate with productivity suites—including email, calendars, Google Docs, and Slack—to proactively manage workflows, summarize meeting action items, and identify discrepancies across communication channels.",
+      "takeaways": [
+        "**Integration Capabilities:** Duet functions by ingesting data from connected services (email, calendar, Google Docs, Slack) to generate \"cards\" that users can swipe to accept or hide, functioning as an automated task manager.",
+        "**Proactive Workflow Management:** The agent provides daily morning briefings and identifies potential scheduling conflicts or missed deadlines by cross-referencing disparate data sources, such as linking meeting summaries in email to Slack messages.",
+        "**Platform Availability:** The service is delivered via a dedicated mobile app that supports the iPhone Duo and is restricted to Anthropic's higher-tier subscription plans (Pro, Max, and Ultra) in the US.",
+        "**Transparency Features:** AI-generated communications sent via the agent, such as Slack messages, are automatically tagged with a \"sent with Claude\" label to ensure transparency in professional correspondence.",
+        "**Current Limitations:** The agent is currently undergoing testing regarding its \"judgment\" on notification frequency and tone, as it has demonstrated difficulty in distinguishing between hard deadlines and flexible project timelines."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a0730e6c360a1658",
+    "canonicalUrl": "https://blogs.nvidia.com/blog/how-ai-is-helping-care-teams/",
+    "title": "How AI Is Helping Care Teams Get Patients the Right Care, Sooner",
+    "publishedAt": "2026-11-13T13:00:42.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.849Z",
+    "contentHash": "fa9022103f0ff42d",
+    "sourceId": "nvidia-blog",
+    "sourceName": "NVIDIA AI News",
+    "author": "NVIDIA Writers",
+    "contentSnippet": "From pediatric research to smart hospitals, AI is helping care teams spend less time on routine tasks and more time with patients. Health systems and startups are putting it to work across healthcare, from matching patients to clinical trials to supporting radiologists, hospital teams and patients at home. Clinicians stay at the center, reviewing AI outputs and guiding decisions, while NVIDIA technologies provide the compute behind the applications. Read on to learn how healthcare teams are using AI to improve and speed patient care. Friday, Nov. 13, 5:00 a.m. PT Dyania Health Uses AI to Turn Decades of Patient Records Into Better Care Hospitals hold decades of patient history, most of it written in free text, as physicians’ notes, operative reports, imaging and pathology reads and discharge summaries. To understand one patient’s full story, a clinician would need to read through years of charts . Dyania Health , a New Jersey-based clinical AI company, built Synapsis AI to do just that. Synapsis AI is a clinical reasoning engine: It works across every note, report and lab result in a patient’s record, connecting findings that may be years apart to answer clinical questions the way a specialist reviewing the chart would. The output is a set of clinical signals, each traceable to its source in the record, that tells care teams which patients need attention and why. Clinicians review the evidence and make every decision. Keeping Patient Data Inside the Hospital Walls Synapsis AI runs on NVIDIA-accelerated computing inside a health system’s own firewall. The entire health system’s patient records can be processed onsite, so patient data is never shared and never leaves the hospital. Processing records this way takes chart review off the desks of clinical teams and lets them spend that time with patients. But Synapsis AI still requires clinician input — it’s an assistive tool that surfaces evidence from medical records that a clinician must still confirm and act on. Dyania builds and trains its clinical models with NVIDIA NeMo open libraries, then uses NVIDIA TensorRT and TensorRT-LLM to optimize them to run faster and more efficiently on the hospital’s own GPU servers. Synapsis AI in the Real World Cleveland Clinic used Synapsis AI to support a study of more than 7,800 aortic valve replacement patients between 2005 and 2021. Synapsis AI reasoned across each pati",
+    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/11/Screenshot-2026-11-12-at-9.25.28-AM-scaled.png",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Dyania Health, a New Jersey-based clinical AI company, has developed Synapsis AI, a clinical reasoning engine designed to parse decades of unstructured patient data, including physician notes, operative reports, and pathology results. The system functions by connecting disparate clinical findings across years of records to generate traceable clinical signals, effectively automating the manual chart review process to assist clinicians in identifying patients requiring immediate attention.\n\nTechnically, Synapsis AI is built using NVIDIA NeMo open libraries for model training and utilizes NVIDIA TensorRT and TensorRT-LLM for inference optimization. To address data privacy concerns, the platform is designed to run entirely on-premises within a health system’s firewall, ensuring patient data remains localized. The tool is strictly assistive, requiring clinician verification for all surfaced evidence and subsequent medical decisions.\n\nIn a practical application, the Cleveland Clinic utilized Synapsis AI to analyze a cohort of over 7,800 aortic valve replacement patients spanning data from 2005 to 2021. By automating the synthesis of longitudinal records, the tool aims to reduce the administrative burden on hospital staff, allowing for increased direct patient interaction.",
+      "takeaways": [
+        "**Core Technology:** Synapsis AI uses NVIDIA NeMo for training and TensorRT/TensorRT-LLM for optimized, on-premises inference.",
+        "**Data Privacy:** The system operates entirely behind a hospital's firewall, ensuring patient records are processed locally without external data sharing.",
+        "**Clinical Application:** Cleveland Clinic deployed the tool to process longitudinal records for a study involving 7,800+ aortic valve replacement patients.",
+        "**Operational Scope:** The engine processes unstructured data including free-text physician notes, imaging reports, pathology reads, and discharge summaries."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cea0e000c38dfa2e",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/",
+    "title": "Israel’s VCs see opportunity for challengers in Nvidia’s turmoil",
+    "publishedAt": "2026-11-13T12:52:19.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "a2da7f9d9da67ae4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anna Heim",
+    "contentSnippet": "Former Nvidia CEO Jensen Huang’s resignation has been received with worry in Israel, the company’s “second home,” as Huang described it in 2023. The company’s importance flows both ways, as the semiconductor giant has provided a major boost to Israel’s economic forecasts in recent years.\n\nIntel, Microsoft and many homegrown startups also conduct a sizable share of their R&D in Israel. But owing to Nvidia’s stronghold on AI given the centrality of its GPUs for training LLMs and using them, many in the country are wondering how much of a reshuffle will result from its leadership crisis.\n\nAs with everything at Nvidia, Huang drove the company to acquire Israeli chipmaker Mellanox for $6.9 billion in 2019 and use the company as the base for its largest R&D facility outside of the U.S. Nvidia also made plans to build a multibillion-dollar campus in northern Israel.\n\n“Jensen brought Nvidia to Israel with the acquisition of Mellanox, so there is a strong positive sentiment towards Nvidia and Jensen in Israel’s tech community,” Israeli repeat cybersecurity entrepreneur Pavel Gurvich told TechCrunch.\n\nBeyond the 6,000 locals Nvidia employs, the bigger question is whether the company will remain as committed to Israel with someone else at the helm. As a result, his line of succession is being observed just as closely by those who hope the company continues to do so as by those who don’t want it to happen.\n\nThe latter have already gathered that they may be in for disappointment. In a 2023 interview that is now doing the rounds on X, interim CEO Colette Kress had declared that as Nvidia’s CFO, she typically started her day “with Israel meetings, and only then continue[d] to California.”\n\nKress may not remain in charge in the long run, but the many names floated for the role include two Israelis , Apple’s Johny Srouji and Nvidia’s Michael Kagan — although they’re not at the top of the still quite tentative list .\n\nRegardless of who gets chosen, Huang’s successor will likely have less of a grip on Nvidia and the tech industry as a whole. But investors don’t think that would cause demand for Nvidia’s product to fade away.\n\nAccording to Yanai Oron, a general partner at Vertex Ventures Israel, “slower decisions at Nvidia could give competitors an opening, but if that uncertainty also slows AI spending, they could end up with a bigger share of a smaller opportunity.”\n\nNvidia h",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia is facing a leadership transition following the resignation of CEO Jensen Huang, creating significant uncertainty within Israel’s technology sector, where the company maintains its largest R&D presence outside the U.S. Nvidia employs approximately 6,000 people in Israel, a footprint established largely through the $6.9 billion acquisition of Mellanox in 2019. The Israeli tech community, which views Nvidia as a critical economic pillar, is closely monitoring the succession process to determine if the company’s commitment to local R&D and planned multibillion-dollar campus infrastructure will persist under new leadership.\n\nIndustry analysts and venture capitalists suggest that while Nvidia’s core technology and ecosystem remain robust, the leadership vacuum may provide a strategic opening for competitors. Yanai Oron of Vertex Ventures Israel notes that while slower decision-making at Nvidia could benefit rivals, it risks cooling overall AI spending, potentially shrinking the total addressable market. Investors like Adi Levanon of Selah Ventures argue that while the company is unlikely to collapse, the transition may prevent Nvidia from achieving a total monopoly, allowing challengers in AI-specific chips and inference software to compete on economic efficiency and alternative architectural approaches.",
+      "takeaways": [
+        "**Israel Footprint:** Nvidia employs 6,000 people in Israel and operates its largest R&D facility outside the U.S., a legacy of the 2019 Mellanox acquisition.",
+        "**Succession Candidates:** Potential candidates for the CEO role include Apple’s Johny Srouji and Nvidia’s Michael Kagan, though neither is currently considered a frontrunner.",
+        "**Interim Leadership:** Nvidia CFO Colette Kress is currently serving as interim CEO, having previously managed daily operations with a heavy focus on Israeli R&D coordination.",
+        "**Market Impact:** Analysts suggest that leadership uncertainty may allow competitors to gain market share in AI-specific hardware and inference software by offering better unit economics."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4cfa741e559e9c75",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/jensen-huang-didnt-show-confidence-in-his-successor-report-says/",
+    "title": "Jensen Huang didn’t show confidence in his successor, report says",
+    "publishedAt": "2026-11-13T12:28:23.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "84ac038fea5a1a51",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Ivan Mehta",
+    "contentSnippet": "Former NVIDIA CEO Jensen Huang described Colette Kress, the company’s CFO who has now replaced him as interim CEO, as “a deer in the headlights” during a presentation earlier in the summer, the Wall Street Journal reported , citing an anonymous source.\n\nHuang made the comment during a meeting with Nvidia’s finance team about the company’s plans to provide guarantees worth billions of dollars to data center operators that couldn’t afford to buy its chips upfront, according to the report.\n\nHe reportedly also said Kress was a person who couldn’t help him steer strategy or decision-making.\n\nKress has been with Nvidia for over 13 years now, after serving as SVP and CFO of Cisco’s Business Technology Operations Finance. The report said she has questioned Nvidia’s program-focused, credit-based deals involving Huang’s son-in-law Nico Caprez, and wanted to know how to decide which deals are beneficial, how to value guarantees, and determine returns.\n\nEarlier in the year, she had scaled back on Nvidia’s commitment for OpenAI’s ambitious Ohio data center project. The company was in talks to provide $250 billion in credit to OpenAI, but ended up committing $105 billion .\n\nHuang resigned Thursday after reports of two extramarital affairs , including one with the company’s VP for healthcare, Kimberly Powell. The company is also investigating a possible Chinese espionage plot .\n\nAfter his resignation, Reuters reported that he was having a third affair with another employee . Nvidia is currently searching for a permanent CEO to replace Huang, who had the top job for over 33 years.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related AI The unfolding Jensen Huang scandal: a timeline\n\n<img width=\"562\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?w=562\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"Jensen Huang holds up a chip at CES 2025\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg 3488w, https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2025/01/GettyImages-2192223928.jpg?resize=768,513 768w, https://techcrunch.com/wp-",
+    "category": "Business & Big Tech",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CFO Colette Kress has assumed the role of interim CEO following the resignation of Jensen Huang, who stepped down after 33 years of leadership. Huang’s departure follows reports of multiple extramarital affairs, including one with Nvidia’s VP for healthcare, Kimberly Powell, and another with an unnamed employee. The company is currently conducting a search for a permanent successor while simultaneously investigating a potential Chinese espionage plot.\n\nInternal friction preceded the leadership transition, with reports indicating that Huang held a low opinion of Kress’s strategic capabilities. During a summer meeting regarding Nvidia’s credit-based data center financing programs, Huang reportedly described Kress as a \"deer in the headlights\" and stated she was unable to assist in high-level decision-making. Kress, a 13-year Nvidia veteran and former Cisco executive, had previously challenged the company’s credit-heavy deal structures—which involved Huang’s son-in-law, Nico Caprez—and questioned the valuation and return metrics of these guarantees. Notably, Kress had previously reduced Nvidia’s credit commitment to OpenAI’s Ohio data center project from a proposed $250 billion to $105 billion.",
+      "takeaways": [
+        "**Leadership Transition:** Colette Kress, Nvidia's CFO for over 13 years, is serving as interim CEO following Jensen Huang's resignation.",
+        "**Financial Disputes:** Kress reportedly challenged the financial viability of credit-based deals involving Huang’s son-in-law, Nico Caprez, specifically questioning how to value guarantees and determine returns.",
+        "**OpenAI Credit Adjustment:** Kress scaled back Nvidia’s credit commitment to OpenAI’s Ohio data center project from $250 billion to $105 billion.",
+        "**Resignation Context:** Huang’s departure followed public reports of multiple extramarital affairs and an ongoing investigation into a potential Chinese espionage plot."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b790ef257fc3d172",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow",
+    "title": "Let’s talk about Jensen Huang’s many affairs!",
+    "publishedAt": "2026-11-13T12:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:01.453Z",
+    "contentHash": "936d120e581d8c6c",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Elizabeth Lopatto",
+    "contentSnippet": "Usually, we’d be offering to answer your questions about a news event, but honestly we don’t really have any answers about what the hell is going on over at Nvidia. I can’t speak for Nilay but at the rate Jensen Huang’s new mistresses are dropping, I am concerned we are approaching an affair Singularity. If things don’t decelerate soon, we may be looking at existential risk. Maybe the future of AI really does depend on Jensen’s sex life, but not in the way I was thinking! As much fun (?) as we are having with all the assorted ladies, it’s important to stay focused on what’s really important: Chips and China. President Donald Trump was reportedly warned about Alice “No Relation” Huang’s possible connections to China’s spy apparatus last year, and again before his China trip in May. Nvidia reportedly intervened into a Commerce Department investigation into Alice’s company. Did Alice girlboss too close to the sun? Have I been wrong all this time about AI being an important productivity tool, freeing everyone up to have multiple affairs at once? What do CEOs do at their jobs anyway? Is Jensen’s leather jacket really an alien symbiote? Can’t I just go for a hike in peace? Let’s discuss. Nilay and I will be joining you at 1PM ET.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25835739/STKP210_JENSEN_HUANG_B.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The provided text is a satirical commentary regarding Nvidia CEO Jensen Huang, focusing on speculative and unverified claims about his personal life and alleged geopolitical entanglements. The author references an individual named Alice 'No Relation' Huang, asserting that she has potential ties to Chinese intelligence apparatuses and that Nvidia allegedly intervened in a U.S. Commerce Department investigation concerning her company.\n\nThe text frames these allegations within a broader, hyperbolic narrative regarding the intersection of corporate leadership, national security, and the semiconductor industry. It explicitly mentions that former President Donald Trump was purportedly briefed on these concerns prior to his May China trip. The article concludes by questioning the nature of executive responsibilities at major AI firms and invites readers to a scheduled discussion at 1:00 PM ET.",
+      "takeaways": [
+        "**Alleged Investigation:** The text claims Nvidia intervened in a U.S. Commerce Department investigation involving a company associated with Alice 'No Relation' Huang.",
+        "**Geopolitical Warning:** The author asserts that Donald Trump received warnings regarding Alice Huang's alleged connections to Chinese intelligence prior to his May trip to China.",
+        "**Discussion Schedule:** The authors, including Nilay, scheduled a public discussion regarding these claims for 1:00 PM ET."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "dab0b7fbc2e835d3",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/13/google-tpu-sync-kv-cache-transfer-library/",
+    "title": "Google Releases TPU Sync: Open-Source KV Cache Transfer for TPUs",
+    "publishedAt": "2026-11-13T10:32:26.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.120Z",
+    "contentHash": "3368515d39145e01",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Google Cloud has released TPU Sync , an open-source C++ library for moving KV caches and model weights on Cloud TPUs. The Google TPU Sync KV cache transfer library treats TPU HBM, host DRAM, shared storage and the data center network as one memory hierarchy. It targets a growing bottleneck: moving model state, not computing it. Google reports over 90% lower KV transfer latency on 235B to 480B parameter MoE models. TL;DR Library: Native C++ core with Python wheels for PyTorch and JAX. Tested on 235B to 480B MoE models. Runs on: Cloud TPU v7x (Ironwood) and v6e per the README . Benchmarks used TPU v7x (2x2x1), PCIe Gen5 and 200 Gbps NICs. Performance: Large cuts to KV transfer latency and time to first token (TTFT) in Google’s internal lab tests. Best: Up to 90% lower average TTFT (480B P/D serving at low concurrency, and 64K-context prefix caching). Worst: No RL numbers published. The README says it is not yet recommended for general use. Bottom line: Best: Qwen3 235B KV transfer drops from several seconds to ~230 ms. Worst: every number is self-reported and early-stage. What is TPU Sync? TPU Sync is an open-source C++ library from Google that moves TPU-tiled tensors across memory tiers with asynchronous DMA. It handles 2 jobs: KV cache state during inference, and trainer-to-sampler weight broadcast in reinforcement learning (RL). The repository is licensed Apache-2.0. How does TPU Sync work? The library spans TPU HBM, pinned host DRAM, shared storage and multi-host DCN. Storage uses experimental POSIX backends, including local SSDs and Google Cloud Managed Lustre. Google lists 4 design choices: Layout-preserving direct DMA: It reads JAX PJRT buffers or PyTorch tensors in place. Data keeps its native TPU tile layout, with no Python serialization or bounce buffers. Compute-overlapped transfers: Raw PJRT buffer aliases let transfers run during computation. Built-in DMA pacing stops large copies from delaying kernel launches. No XLA compilation in the data path: Transfers and resharding run in native C++ outside the XLA graph. High-bandwidth PCIe and DCN: It reaches up to 223 GB/s per Ironwood host, against a 256 GB/s PCIe Gen5 ceiling. DCN streaming hits ~192 Gbps on 1 NIC, or ~350 Gbps across 2. Above this sit a global KV store for prefix lookups, a transfer controller and a KV cache manager. How does disaggregated prefill/decode serving use it? The prefill no",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google Cloud has open-sourced TPU Sync, a C++ library designed to optimize the movement of KV caches and model weights across Cloud TPU memory hierarchies. By treating TPU HBM, host DRAM, shared storage, and data center networks as a unified memory space, the library aims to mitigate bottlenecks in large-scale model inference. It supports PyTorch and JAX via Python wheels and is specifically engineered for massive Mixture-of-Experts (MoE) models, with testing conducted on 235B to 480B parameter architectures on TPU v7x (Ironwood) and v6e hardware.\n\nTechnically, TPU Sync utilizes asynchronous DMA to move TPU-tiled tensors without Python serialization or bounce buffers, preserving native layouts to avoid XLA compilation overhead. The library achieves up to 90% reduction in average Time to First Token (TTFT) for 480B parameter models at low concurrency with 64K-context prefix caching. In specific benchmarks, Qwen3 235B KV transfer latency dropped from several seconds to approximately 230 ms. The architecture leverages PCIe Gen5 and 200 Gbps NICs, reaching throughputs of 223 GB/s per host and up to 350 Gbps across dual-NIC DCN configurations.\n\nWhile the library is available under an Apache-2.0 license, Google explicitly notes it is not yet recommended for general production use. The system integrates with experimental POSIX backends, including local SSDs and Google Cloud Managed Lustre, to manage state across multi-host environments. Despite the performance gains, the current documentation lacks reinforcement learning (RL) benchmarks, and all reported metrics are internal, early-stage results.",
+      "takeaways": [
+        "**Performance Gains:** Achieves up to 90% lower average TTFT for 480B MoE models and reduces Qwen3 235B KV transfer latency to ~230 ms.",
+        "**Hardware Throughput:** Reaches 223 GB/s per Ironwood host (near the 256 GB/s PCIe Gen5 ceiling) and up to 350 Gbps across two 200 Gbps NICs.",
+        "**Architectural Design:** Operates outside the XLA graph using native C++ to perform layout-preserving direct DMA, avoiding Python serialization and bounce buffers.",
+        "**Supported Environments:** Compatible with TPU v7x (Ironwood) and v6e, utilizing experimental POSIX backends like local SSDs and Google Cloud Managed Lustre.",
+        "**Integration:** Provides Python wheels for PyTorch and JAX, treating TPU HBM, host DRAM, and DCN as a unified memory hierarchy."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "038d7b77bda0681c",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/13/google-gemini-4-hydrogen/",
+    "title": "Google Releases Gemini 4 Hydrogen: 2.5x Faster Than Gemini 3.8 Flash",
+    "publishedAt": "2026-11-13T09:45:48.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.120Z",
+    "contentHash": "4cb891a39d257691",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Google has released Gemini 4 Hydrogen , a fast model for coding and agentic work. Gemini 4 Hydrogen is a proprietary model from Google DeepMind built for everyday agent loops. It sits below the frontier models Gemini 4 Carbon and Gemini 4 Argon . Google calls it its “daily driver for agentic workflows.” TL;DR Size: 1,048,576-token unified window for input, thinking and output. Runs on: Google-hosted API only. No weights, no quantized variants, no self-hosting. Serving hardware not disclosed. Performance: Scores 51 on the Artificial Analysis Intelligence Index at high, above Argon’s 50. Best: 57% on Terminal-Bench 4.1, versus 18.2% for Gemini 3.8 Flash. Worst: Ranks only #5 on Agent Arena. Costs 2x Gemini 3.8 Flash’s current introductory price. Bottom line: Best: frontier-class agent scores at $1.50/$7.50 per 1M tokens. Worst: closed, and synchronous output caps at 65,536 tokens. What is Gemini 4 Hydrogen? Hydrogen is a closed-weights model served through the Gemini API and Google products. The model card says it is adapted from Gemini 4 Carbon. Google does not disclose parameter count, architecture or training hardware. The knowledge cutoff is March 2026. Input covers text, images, audio, video, PDFs, tables and charts, per the What’s New guide . Output is text. The 1M window is shared by input, thinking and output tokens. How do the 4 thinking levels work? Developers set thinking_level inside generation_config . Values are low , medium , high and a new xhigh . The default is high , not medium as on 3.8 Flash. A minimal setting now returns an error. The model card warns that higher levels use more tokens. How does Hydrogen work with Carbon and Argon? The key design idea is role-splitting across models. In Google Antigravity , an Orchestrator option switches models inside 1 task. Carbon explores, resolves ambiguity and plans. Hydrogen edits files, updates packages and runs tests. When Hydrogen hits friction, it hands control back to Carbon. On Terminal-Bench 4.1, this pairing reached near-Carbon task success rates. It used 24% less quota and finished 19% faster than Carbon alone. The Antigravity SDK exposes the same split for custom multi-agent systems. How does Gemini 4 Hydrogen perform on benchmarks? All figures are self-reported by Google unless noted. Artificial Analysis Intelligence Index : 51 at high, 54 at xhigh. Argon scores 50 on Index v5.0 . Termina",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Google has released Gemini 4 Hydrogen , a fast model for coding and agentic work. Gemini 4 Hydrogen is a proprietary model from Google DeepMind built for everyday agent loops. It sits below the frontier models Gemini 4 Carbon and Gemini 4 Argon .\n\nGoogle calls it its “daily driver for agentic workflows.” TL;DR Size: 1,048,576-token unified window for input, thinking and output. Runs on: Google-hosted API only. No weights, no quantized variants, no self-hosting.",
+      "takeaways": [
+        "Serving hardware not disclosed.",
+        "Performance: Scores 51 on the Artificial Analysis Intelligence Index at high, above Argon’s 50.",
+        "Best: 57% on Terminal-Bench 4.1, versus 18.2% for Gemini 3.8 Flash.",
+        "Worst: Ranks only #5 on Agent Arena."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 5,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "a9c0a0c8a7adff81",
     "canonicalUrl": "https://arxiv.org/abs/2611.14544",
     "title": "Zugwise: Domain-Aware Game Reconstruction for Digitizing Handwritten Chess Scoresheets",
@@ -384,14 +696,17 @@
     "arxivId": "arXiv:2611.14850",
     "pdfUrl": "https://arxiv.org/pdf/2611.14850.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.14850v1 Announce Type: new Abstract: Forward-KL language-model distillation normally computes dense teacher and student scores over the full vocabulary at every supervised position, making training and stored teacher targets expensive. We instead distill from the teacher's highest-probability vocabulary fraction, renormalizing the retained mass as we sweep support from 100% to 0.01%. Our main study distills Qwen3 4B -> 1.7B.\n\nWe confirm the broader support-reduction finding on larger Qwen3 8B -> 4B and Nemotron Nano 12B -> 9B pairs and under answer-only supervision. We evaluate generation primarily on MMLU-Pro and secondarily on GPQA-Diamond. Across the Qwen3 settings, retaining 0.01% of the vocabulary causes no observed MMLU-Pro degradation relative to full-vocabulary distillation, although disagreement with the complete teacher distribution increases.",
+      "tldr": "Researchers in arXiv:2611.14850v1 introduce a method to optimize language model distillation by restricting teacher-student score computation to the teacher's highest-probability vocabulary fraction rather than the full vocabulary. By renormalizing the retained probability mass, the authors demonstrate that distillation remains effective even when support is reduced from 100% to as low as 0.01%. The study primarily evaluates Qwen3 4B-to-1.7B distillation, with additional validation on Qwen3 8B-to-4B and Nemotron Nano 12B-to-9B pairs, using MMLU-Pro and GPQA-Diamond as primary benchmarks.\n\nTechnical results indicate that for Qwen3 models, retaining only 0.01% of the vocabulary results in no MMLU-Pro degradation compared to full-vocabulary distillation, despite increased divergence from the complete teacher distribution. The Nemotron Nano family requires a higher 0.1% threshold to maintain performance, as lower fractions lead to failures in emitting closing reasoning tags, suggesting that optimal support cutoffs are model-family dependent. Implementing this 0.01% support strategy yields a 38% reduction in training step time via cached teacher scores and a 24% reduction in peak memory usage by limiting student output computation to the restricted token set.",
       "takeaways": [
-        "Nemotron Nano matches full-vocabulary MMLU-Pro at 0.1%, but smaller fractions fail to emit the closing reasoning tag, showing that the reliable cutoff depends on the model family.",
-        "At 0.01% support, caching the retained next-token scores from the teacher forward pass cuts training step time by 38%, while restricting student output computation to those tokens cuts peak memory by 24%; neither causes observed MMLU-Pro degradation."
+        "**Efficiency Gains:** Distilling at 0.01% vocabulary support reduces training step time by 38% and peak memory consumption by 24%.",
+        "**Model Performance:** Qwen3 models maintain full MMLU-Pro performance at 0.01% support, while Nemotron Nano 12B-9B requires 0.1% to avoid reasoning tag generation failures.",
+        "**Methodology:** The approach replaces standard dense Forward-KL distillation with a sparse method that renormalizes the teacher's highest-probability mass.",
+        "**Evaluation Metrics:** Benchmarking focused on MMLU-Pro for primary performance validation and GPQA-Diamond for secondary assessment."
       ],
-      "impact": "Notable",
+      "impact": "High",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -3880,6 +4195,83 @@
     }
   },
   {
+    "id": "1eea5402dc0791d9",
+    "canonicalUrl": "https://arxiv.org/abs/2611.16409",
+    "title": "Experience-Handoff Reinforcement Learning for Recursive Self-Improvement",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:00.710Z",
+    "contentHash": "d03e806385844da1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Doyoung Kim, Byeongguk Jeon, Kailin Zhang, Sherry Yang",
+    "contentSnippet": "Authors: Doyoung Kim , Byeongguk Jeon , Kailin Zhang , Sherry Yang\n\nAbstract: It is common to train Large Language Models (LLMs) for agentic tasks with Reinforcement Learning (RL) from scalar rewards. However, this throws away the fine-grained information about the environment that the agent experienced during the trial (e.g., error logs). To utilize this rich information, recent works wrap the agent in a harness that refines its own inputs through reflection or compaction and hands past experience to future rollouts, but the construction of the handed-off artifacts (e.g., a playbook) is itself not learned. We want the best of both worlds: gradient updates from a scalar reward, while also utilizing environment information to hand off experience. As a concrete testbed, we fix the Agentic Context Engineering (\\ace{}) harness and train one model to act, reflect, and curate task-local playbooks. Our method, \\acerl{}, evaluates candidate experience-handoff artifacts by their downstream effect on future actor rollouts, and co-optimizes the role-specific behaviors (action generator, insight reflector, and playbook curator) under a fixed scaffold. Across agentic benchmarks, \\acerl{} achieves higher held-out performance than baseline methods. The results suggest that agent training should optimize not only the actions in the current rollout, but also the model-written experience that future rollouts inherit.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.16409",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16409",
+    "summary": {
+      "tldr": "Researchers Doyoung Kim, Byeongguk Jeon, Kailin Zhang, and Sherry Yang have introduced Experience-Handoff Reinforcement Learning (ACERL), a method designed for recursive self-improvement in LLM agents. Traditional reinforcement learning trains agentic tasks using scalar rewards while discarding fine-grained environment feedback like error logs. While existing harness methods preserve past experiences through reflections or playbooks, the creation of those handed-off artifacts is typically unlearned. ACERL bridges this gap by combining gradient updates from scalar rewards with the utilization of environment information for experience handoffs.\n\nUsing the Agentic Context Engineering (ACE) harness as a concrete testbed, ACERL trains a single model to simultaneously act, reflect, and curate task-local playbooks. The framework evaluates candidate experience-handoff artifacts based on their direct downstream impact on future actor rollouts, co-optimizing role-specific behaviors including the action generator, insight reflector, and playbook curator under a fixed scaffold. Across standard agentic benchmarks, ACERL demonstrates higher held-out performance compared to baseline training methods.",
+      "takeaways": [
+        "**Core Methodology:** ACERL co-optimizes role-specific behaviors (action generator, insight reflector, and playbook curator) within a fixed Agentic Context Engineering (ACE) scaffold.",
+        "**Experience Evaluation:** Candidate experience-handoff artifacts are evaluated and optimized by measuring their downstream effect on future actor rollouts rather than relying solely on immediate scalar rewards.",
+        "**Benchmark Performance:** ACERL achieves higher held-out performance across agentic benchmarks compared to traditional baseline methods that discard fine-grained environment feedback."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "5bc234506dfa3e3a",
+    "canonicalUrl": "https://arxiv.org/abs/2607.13920",
+    "title": "DeepStress: Stress-Testing Deep Search Agents",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:00.710Z",
+    "contentHash": "57089f2a2d0449bd",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Ismael Rousseau, Geraldine Damnati, Frederic Bechet",
+    "contentSnippet": "While search agents demonstrate impressive capabilities in multi-step question answering, their robustness to poor-quality evidence remains under-explored. Such evidence is rare in benchmark corpora, and resulting failures are hard to reproduce. We propose DeepStress, a dynamic stress-testing framework that subjects agents to degraded evidence at controlled rates. It replaces the retrieval module with a synthetic environment where documents are generated dynamically for each query, under independent control of their trustworthiness, relevance, and factuality. To characterize behavior under stress, we go beyond binary accuracy with a five-way classification of final-answer outcomes and two new reliability-aware metrics, RAS and CoPRAS, which credit cautious behavior and account for computational cost. Evaluating 12 systems on questions from HotpotQA and BrowseComp-Plus, we find that several open-weight agents answer confidently when sources contain obvious credibility red flags, and that many HotpotQA questions are answered from parametric knowledge even when all returned documents are factually wrong.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2607.13920",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13920",
+    "summary": {
+      "tldr": "While search agents demonstrate impressive capabilities in multi-step question answering, their robustness to poor-quality evidence remains under-explored. Such evidence is rare in benchmark corpora, and resulting failures are hard to reproduce. We propose DeepStress, a dynamic stress-testing framework that subjects agents to degraded evidence at controlled rates.\n\nIt replaces the retrieval module with a synthetic environment where documents are generated dynamically for each query, under independent control of their trustworthiness, relevance, and factuality. To characterize behavior under stress, we go beyond binary accuracy with a five-way classification of final-answer outcomes and two new reliability-aware metrics, RAS and CoPRAS, which credit cautious behavior and account for computational cost. Evaluating 12 systems on questions from HotpotQA and BrowseComp-Plus, we find that several open-weight agents answer confidently when sources contain obvious credibility red flags, and that many HotpotQA questions are answered from parametric knowledge even when all returned documents are factually wrong.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "9d35d18921aba4a5",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17331",
+    "title": "TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:00.710Z",
+    "contentHash": "a4eed49b2d32ea10",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Chin-Yang Lin, Ryo Hachiuma, Jaesung Choe, Min-Hung Chen",
+    "contentSnippet": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality. The second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.17331",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17331",
+    "summary": {
+      "tldr": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality.\n\nThe second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io.",
+      "takeaways": [],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "636b0a043360eeb2",
     "canonicalUrl": "https://arxiv.org/abs/2611.16116v1",
     "title": "Robo-SWE: An Executable Issue-Resolution Dataset Mined from Robot Software Repositories",
@@ -7236,6 +7628,66 @@
     }
   },
   {
+    "id": "385066b49e67ce5b",
+    "canonicalUrl": "https://arxiv.org/abs/2611.16009",
+    "title": "JustRUA: A Controlled Study of GPT-6 Robot-Use Agents",
+    "publishedAt": "2026-11-11T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:00.710Z",
+    "contentHash": "c7a77ee134fb5fa1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zefan Wang, Yufan Dang, Xuanwei Shi, Mingqi Gao",
+    "contentSnippet": "Authors: Zefan Wang , Yufan Dang , Xuanwei Shi , Mingqi Gao , Cheng Yin , SikYuen Tam , Hanyu Liu , Yasheng Wang , Yaxi Lu , Songyang Zhang , Xin Cong , Yuan Yao\n\nAbstract: GPT-6 Astra can drive a robot arm directly through a fixed harness, and scores of such robot-use agents on RoboDojo have risen quickly since. Reported systems differ in harness and test subset and often change several designs at once, so it is hard to tell which choices produce the gains. We take these designs apart and test them in one framework, along the harness around the model, the action interface, the reuse of experience and the scene geometry given to the model. A lean harness that keeps the full episode history and stops each motion early goes a long way. Reusing experience changes how the model acts but is not a free lunch, and scene geometry helps most, even when depth is predicted from RGB alone. JustRUA starts from the official L3 harness and keeps only what matters most. Even with no learned policy, self-improvement loop or task-specific tuning, this simple harness raises the score on the RoboDojo simulation benchmark substantially, from 29.7 to 50.3.\n\nNotes: 30 pages, 14 figures. Project page: this https URL . Code: this https URL",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.16009",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16009",
+    "summary": {
+      "tldr": "Researchers Zefan Wang et al. have introduced 'JustRUA,' a controlled study and framework designed to isolate the performance drivers of robot-use agents powered by GPT-6 Astra. By deconstructing existing systems that utilize fixed harnesses to control robot arms, the authors identified that current performance gains are often obscured by simultaneous design changes. The study systematically evaluates four key components: the model harness, action interface, experience reuse, and scene geometry input.\n\nThe team developed a 'lean harness' that maintains full episode history and implements early motion termination, which significantly improves performance without requiring learned policies, self-improvement loops, or task-specific fine-tuning. Testing on the RoboDojo simulation benchmark, the JustRUA framework increased the success score from 29.7 to 50.3 compared to the official L3 harness. The findings indicate that scene geometry provides the most consistent gains, even when derived from RGB-only depth prediction, while experience reuse offers performance shifts that are not universally beneficial.",
+      "takeaways": [
+        "**Performance Benchmark:** JustRUA improved RoboDojo simulation scores from 29.7 to 50.3.",
+        "**Core Methodology:** The framework isolates four variables: harness design, action interface, experience reuse, and scene geometry.",
+        "**Key Optimization:** A lean harness architecture utilizing full episode history and early motion termination was identified as the primary driver of performance.",
+        "**Geometry Findings:** Incorporating scene geometry consistently improves agent performance, even when depth data is inferred solely from RGB inputs."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "03618d79ef031431",
+    "canonicalUrl": "https://arxiv.org/abs/2611.15844",
+    "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+    "publishedAt": "2026-11-11T00:00:00.000Z",
+    "fetchedAt": "2026-11-13T15:52:00.710Z",
+    "contentHash": "d046da6db9a505ab",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Arpit Jadon, Valentinos Pariza, Jona Ruthardt, Ryousuke Yamada",
+    "contentSnippet": "Authors: Arpit Jadon , Valentinos Pariza , Jona Ruthardt , Ryousuke Yamada , A. Sophia Koepke , Andrei Bursuc , Yuki M. Asano\n\nAbstract: Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present Open Vision Banana (OVB), a fully open and reproducible recipe for converting pretrained generators into unified multi-task perception systems. Our analyses identify the design choices that matter most for generalization, including color encoding, prompt design, parameter adaptation, and task balancing. These choices interact, so individually helpful choices can hurt when combined with others. Starting from 4B and 9B parameter open-weight base models and using 2.1M-3.8M training pairs from public datasets, OVB surpasses Vision Banana's reported Cityscapes zero-shot performance (73.9 vs. 69.9 mIoU) and rivals state-of-the-art affine-invariant depth estimators. Its non-zero-shot variants come within five points of Vision Banana on referring and reasoning segmentation but remain further behind on instance segmentation. All models largely retain the base model's image-editing abilities. With legend ensembling, we introduce a test-time scaling method for generator-based perception. It segments an image under several class-color legends and fuses the results by majority vote, correcting unstable color-class bindings and improving mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without retraining. We release the dataset construction and processing pipeline, the training and evaluation code, as well as the final, intermediate, and ablation checkpoints. Project website: this https URL",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.15844",
+    "pdfUrl": "https://arxiv.org/pdf/2611.15844",
+    "summary": {
+      "tldr": "Researchers Arpit Jadon, Valentinos Pariza, Jona Ruthardt, Ryousuke Yamada, A. Sophia Koepke, Andrei Bursuc, and Yuki M. Asano have released Open Vision Banana (OVB), a fully reproducible, open-source framework for transforming pretrained image generators into multi-task perception systems. By framing vision tasks as conditional image editing, OVB utilizes 4B and 9B parameter base models trained on 2.1M to 3.8M public dataset pairs. The project provides a complete pipeline, including dataset construction, training/evaluation code, and all model checkpoints, aiming to replicate and improve upon the previously closed-source Vision Banana architecture.\n\nTechnically, OVB identifies critical design factors for generalization, specifically color encoding, prompt engineering, parameter adaptation, and task balancing. The model achieves a 73.9 mIoU on Cityscapes zero-shot performance, outperforming the original Vision Banana's 69.9 mIoU, and demonstrates competitive results against state-of-the-art affine-invariant depth estimators. To address instability in color-class bindings, the authors introduced 'legend ensembling,' a test-time scaling method that performs majority voting across multiple class-color legends. This technique improves mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without requiring additional training, while maintaining the base model's original image-editing capabilities.",
+      "takeaways": [
+        "**Performance Metrics:** OVB achieves 73.9 mIoU on Cityscapes zero-shot, surpassing the original Vision Banana's 69.9 mIoU.",
+        "**Legend Ensembling:** A new test-time scaling method that improves mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object via majority voting.",
+        "**Model Architecture:** Built upon 4B and 9B parameter open-weight base models using 2.1M to 3.8M training pairs.",
+        "**Open Source Scope:** The release includes the full dataset processing pipeline, training/evaluation code, and all final, intermediate, and ablation checkpoints."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "77e9052fb1721fe5",
     "canonicalUrl": "https://www.theregister.com/software/2026/11/10/anthropic-tiptoes-into-ms-office-territory/5308988",
     "title": "Anthropic tiptoes into MS Office territory",
@@ -8708,6 +9160,29 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. Cities, helping them build practical AI skills for everyday life.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "d0f9bf46fa9dba7c",
+    "canonicalUrl": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
+    "title": "Opening the datasets behind our AI weather models",
+    "publishedAt": "2026-11-10T11:13:04.000Z",
+    "fetchedAt": "2026-11-13T15:52:02.847Z",
+    "contentHash": "bbb5c122a0fd1839",
+    "sourceId": "deepmind",
+    "sourceName": "Google DeepMind",
+    "author": "Google DeepMind",
+    "contentSnippet": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
+    "imageUrl": "https://lh3.googleusercontent.com/ggsqfaBnOayx-i7z9Kj8AeZruz8BSo0N7tsnqwH8Z3REnHcDKBt-QSA3DR4UUM8lcwklWihSARoEN2AyQFhoRFGFlk2-0-xGuKt_rtGoFwpJg8LHVQ=w528-h297-n-nu-rw-lo",
+    "category": "LLMs & GenAI",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -10315,455 +10790,6 @@
         "R-BiLoGo gave lower errors than a hierarchical graph-based model and a Transolver-based model on the source geometry, and on two of three selected target geometries after transfer."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "bfd6cf81af9e596e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10096",
-    "title": "Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "b594a908083d2d84",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Weizhong Huang, Jinchao Zhang, Xiawu Zheng",
-    "contentSnippet": "arXiv:2611.10096v1 Announce Type: new Abstract: LLM-based multi-agent systems solve complex tasks through collaboration, but their growing, simultaneously resident key-value (KV) caches create a memory bottleneck. Applying single-model quantization policies independently ignores differences in agents' precision needs, potentially degrading collective reasoning. We introduce Coordinated Mixed-Precision KV Cache Quantization (CoMixKV), which combines online sensitivity estimation with joint agent-layer bit-width allocation under a shared memory budget. To our knowledge, CoMixKV is the first mixed-precision KV-cache quantization framework to jointly allocate precision across simultaneously resident agent caches under such a budget. The estimator derives sensitivity from a local attention-error bound using recent queries, keys, and values, without calibration data, trial quantization, or additional model passes. A shared controller combines these scores with remaining quantizable capacity and byte-level storage costs to minimize total estimated error. Allocations are refreshed as agents start or finish and new observations become available. Selected widths apply only to newly quantized blocks; recent states retain native precision and previously quantized blocks remain unchanged. Across four benchmarks and three LLM backbones at average 2-bit, 3-bit, and 4-bit settings, CoMixKV achieves strong accuracy against the evaluated quantization baselines. At the average 3-bit setting on Gemma-4-31B-it, it achieves 68.35% average accuracy, exceeding the strongest quantized baseline by 0.59%. On Qwen3-32B, it reduces peak KV-cache memory by 32.08% and achieves a 1.38x inference speedup over FullKV.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10096",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10096.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10096v1 Announce Type: new Abstract: LLM-based multi-agent systems solve complex tasks through collaboration, but their growing, simultaneously resident key-value (KV) caches create a memory bottleneck. Applying single-model quantization policies independently ignores differences in agents' precision needs, potentially degrading collective reasoning. We introduce Coordinated Mixed-Precision KV Cache Quantization (CoMixKV), which combines online sensitivity estimation with joint agent-layer bit-width allocation under a shared memory budget.\n\nTo our knowledge, CoMixKV is the first mixed-precision KV-cache quantization framework to jointly allocate precision across simultaneously resident agent caches under such a budget. The estimator derives sensitivity from a local attention-error bound using recent queries, keys, and values, without calibration data, trial quantization, or additional model passes. A shared controller combines these scores with remaining quantizable capacity and byte-level storage costs to minimize total estimated error.",
-      "takeaways": [
-        "Allocations are refreshed as agents start or finish and new observations become available.",
-        "Selected widths apply only to newly quantized blocks; recent states retain native precision and previously quantized blocks remain unchanged.",
-        "Across four benchmarks and three LLM backbones at average 2-bit, 3-bit, and 4-bit settings, CoMixKV achieves strong accuracy against the evaluated quantization baselines.",
-        "At the average 3-bit setting on Gemma-4-31B-it, it achieves 68.35% average accuracy, exceeding the strongest quantized baseline by 0.59%."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9ffb435c75ef19cc",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10145",
-    "title": "TrialJev: Open-Weight Single Pass Eligibility Scoring for Patient Trial Screening",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "fcc29d28710c73fa",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Omar Ibrahim, Grant Hamblin, Benjamin Haibe-Kains",
-    "contentSnippet": "arXiv:2611.10145v1 Announce Type: new Abstract: Clinical trial screening requires assessing large numbers of patient-trial pairs to prioritize candidates for detailed eligibility review, often under restrictions on sharing patient records. We introduce TrialJev, an open-weight eligibility scorer that uses LoRA-adapted Qwen models and a pointer head to score natural-language answer options in a single forward pass, without autoregressive decoding. Trained on TREC Clinical Trials 2021 and evaluated on 6,975 eligible-or-excluded pairs from 50 unseen TREC 2022 synthetic patients, TrialJev achieves 80.97% (Qwen3.5-27B) and 81.84% (Qwen3.8-27B) accuracy, compared with 79.87% and 79.93% for LLMs fine-tuned on the same data to generate verdicts. In matched batch-1 measurements, verdict generation takes 2.45-2.70 times as long as the one-pass inference of TrialJev at 9B-27B. Under a common development-fitted decision correction, the two 27B TrialJev models reach 80.99% and 81.88% accuracy, compared with 81.28% for the proprietary hosted Jev API; paired confidence intervals include zero. TrialJev runs locally on a single GPU, requiring approximately 178 ms per pair at 27B, without transmitting patient text to an external model API. An A/B-logit ablation shows that avoiding decoding, rather than the pointer head alone, accounts for the measured efficiency advantage. TrialJev is intended for first-pass prioritization of candidate trials, complementing rather than replacing explanatory models and clinical review. Evaluation is limited to synthetic patients and implementation-specific timing, and clinical use has not been validated. Adapters, pointer heads, and model cards are released on Hugging Face.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10145",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10145.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10145v1 Announce Type: new Abstract: Clinical trial screening requires assessing large numbers of patient-trial pairs to prioritize candidates for detailed eligibility review, often under restrictions on sharing patient records. We introduce TrialJev, an open-weight eligibility scorer that uses LoRA-adapted Qwen models and a pointer head to score natural-language answer options in a single forward pass, without autoregressive decoding. Trained on TREC Clinical Trials 2021 and evaluated on 6,975 eligible-or-excluded pairs from 50 unseen TREC 2022 synthetic patients, TrialJev achieves 80.97% (Qwen3.5-27B) and 81.84% (Qwen3.8-27B) accuracy, compared with 79.87% and 79.93% for LLMs fine-tuned on the same data to generate verdicts.\n\nIn matched batch-1 measurements, verdict generation takes 2.45-2.70 times as long as the one-pass inference of TrialJev at 9B-27B. Under a common development-fitted decision correction, the two 27B TrialJev models reach 80.99% and 81.88% accuracy, compared with 81.28% for the proprietary hosted Jev API; paired confidence intervals include zero. TrialJev runs locally on a single GPU, requiring approximately 178 ms per pair at 27B, without transmitting patient text to an external model API.",
-      "takeaways": [
-        "An A/B-logit ablation shows that avoiding decoding, rather than the pointer head alone, accounts for the measured efficiency advantage.",
-        "TrialJev is intended for first-pass prioritization of candidate trials, complementing rather than replacing explanatory models and clinical review.",
-        "Evaluation is limited to synthetic patients and implementation-specific timing, and clinical use has not been validated.",
-        "Adapters, pointer heads, and model cards are released on Hugging Face."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "bb870c4cb3f71f57",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10153",
-    "title": "Learning Across Heterogeneous Feature Spaces with Group Robustness",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "071f46502b361915",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Xenia Konti, Arjun Tschand, Chuan Hong, Nicoleta J. Economou-Zavlanos, Michael M. Zavlanos",
-    "contentSnippet": "arXiv:2611.10153v1 Announce Type: new Abstract: In clinical applications, patients undergo different combinations of tests, and machine learning models must therefore ensure accurate predictions across heterogeneous feature spaces. Current approaches upweight the patients with the highest loss, without accounting for the limited predictive information in their features preventing their loss from going any lower. Moreover, when patients' feature spaces are fully disjoint, current methods reduce to training independent models, preventing knowledge transfer across them. We propose a framework for group robust learning across heterogeneous feature spaces, where groups are patients sharing a feature space. Since a high loss may simply reflect uninformative features, we instead optimize for worst-group excess loss, the gap between a group's loss and an estimate of its achievable optimum. To allow collaboration between groups, we use group-specific encoders mapping into a shared latent space in which learnable Gaussian anchors cluster patients by outcome. On tabular and imaging medical datasets, including fully disjoint feature settings, our framework outperforms state-of-the-art methods when groups differ in their optimal losses or cannot train a good model on their own, reducing worst-group loss by up to 79% and excess loss by up to 95% with up to 18$\\times$ fewer parameters.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10153",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10153.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10153v1 Announce Type: new Abstract: In clinical applications, patients undergo different combinations of tests, and machine learning models must therefore ensure accurate predictions across heterogeneous feature spaces. Current approaches upweight the patients with the highest loss, without accounting for the limited predictive information in their features preventing their loss from going any lower. Moreover, when patients' feature spaces are fully disjoint, current methods reduce to training independent models, preventing knowledge transfer across them.\n\nWe propose a framework for group robust learning across heterogeneous feature spaces, where groups are patients sharing a feature space. Since a high loss may simply reflect uninformative features, we instead optimize for worst-group excess loss, the gap between a group's loss and an estimate of its achievable optimum. To allow collaboration between groups, we use group-specific encoders mapping into a shared latent space in which learnable Gaussian anchors cluster patients by outcome.",
-      "takeaways": [
-        "On tabular and imaging medical datasets, including fully disjoint feature settings, our framework outperforms state-of-the-art methods when groups differ in their optimal losses or cannot train a good model on their own, reducing worst-group loss by up to 79% and excess loss by up to 95% with up to 18$\\times$ fewer parameters."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "559f08c02a03e6d5",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10186",
-    "title": "Projected Neural Additive Models as Universal Approximators",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "ee71938c7424a971",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Nhon N. Phan, Qiang Du, John D. Clayton, WaiChing Sun",
-    "contentSnippet": "arXiv:2611.10186v1 Announce Type: new Abstract: Neural additive models (NAMs) offer interpretability but lack expressivity due to their rigid additive structure, whereas multi-layer perceptrons (MLPs) achieve universal approximation at the cost of transparency. We establish the first theoretical foundation for projected neural additive models (PNAMs), which augment NAMs with a learnable linear transformation $\\boldsymbol{T}$ to capture cross-variable interactions. While standard NAMs cannot approximate even the simplest interaction term $\\chi_1 \\chi_2$ because their cross-derivatives are identically zero, we prove that PNAMs are universal approximators and characterize the minimum number of projections required for exact polynomial representation. Furthermore, we derive an approximation rate of $\\mathcal{O}(M^{-s / (N - 1)})$ for $\\mathcal{C}^s$ functions (i.e., functions with $s$ continuous derivatives), where $M$ denotes the number of projections and $N$ the input dimension; this rate is known to be optimal for ridge function approximation. To recover interpretability from the projected inputs, we introduce structured sparsity regularizers and post-hoc symbolic regression techniques that enable global input ranking, parameter pruning, and the conversion of learned bases into compact analytical expressions. Experiments on knot theory invariants, MNIST, and phase field fracture mechanics demonstrate that PNAMs match or surpass similar architectures in accuracy while discovering salient features and yielding symbolic models with orders of magnitude fewer parameters.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10186",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10186.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10186v1 Announce Type: new Abstract: Neural additive models (NAMs) offer interpretability but lack expressivity due to their rigid additive structure, whereas multi-layer perceptrons (MLPs) achieve universal approximation at the cost of transparency. We establish the first theoretical foundation for projected neural additive models (PNAMs), which augment NAMs with a learnable linear transformation $\\boldsymbol{T}$ to capture cross-variable interactions. While standard NAMs cannot approximate even the simplest interaction term $\\chi_1 \\chi_2$ because their cross-derivatives are identically zero, we prove that PNAMs are universal approximators and characterize the minimum number of projections required for exact polynomial representation.\n\nFurthermore, we derive an approximation rate of $\\mathcal{O}(M^{-s / (N - 1)})$ for $\\mathcal{C}^s$ functions (i.e., functions with $s$ continuous derivatives), where $M$ denotes the number of projections and $N$ the input dimension; this rate is known to be optimal for ridge function approximation. To recover interpretability from the projected inputs, we introduce structured sparsity regularizers and post-hoc symbolic regression techniques that enable global input ranking, parameter pruning, and the conversion of learned bases into compact analytical expressions. Experiments on knot theory invariants, MNIST, and phase field fracture mechanics demonstrate that PNAMs match or surpass similar architectures in accuracy while discovering salient features and yielding symbolic models with orders of magnitude fewer parameters.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "04b1fe915c678850",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10187",
-    "title": "Fast Accurate Quantum Monte Carlo without Metropolis Adjustment",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "867801e7f1e831d4",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Reuben Cohn-Gordon, Gabriel Pescia, Sumner N. Hearth, Jakob Robnik, Uro\\v{s} Seljak, Peter Lunts",
-    "contentSnippet": "arXiv:2611.10187v1 Announce Type: new Abstract: In quantum systems, physical quantities of interest can be expressed as expectation values of a probability distribution, which allows their estimation by Markov Chain Monte Carlo (MCMC) methods. This approach, an instance of Quantum Monte Carlo (QMC), plays a central role in obtaining predictions of system properties relevant to condensed matter and high energy physics. The use of Hamiltonian dynamics to design a Markov kernel, known as Hybrid or Hamiltonian Monte Carlo (HMC), is widespread in quantum applications. In this context, it is standard to use an HMC kernel that is ``adjusted'' with the Metropolis-Hastings (MH) criterion, so that estimates of expectations converge to their true value in the limit of infinite sample size. However, recent work in computational statistics suggests that an \\emph{unadjusted} HMC kernel can be significantly more efficient, while safely maintaining an asymptotic bias which is small relative to the error arising from the variance of the finite sample size. We adapt this approach to the QMC setting, focusing on a challenging and high-dimensional \\emph{spin-fermion} model of a quantum phase transition. We find that unadjusted methods outperform adjusted HMC in terms of effective sample size per gradient call, while retaining accurate results.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10187",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10187.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10187v1 Announce Type: new Abstract: In quantum systems, physical quantities of interest can be expressed as expectation values of a probability distribution, which allows their estimation by Markov Chain Monte Carlo (MCMC) methods. This approach, an instance of Quantum Monte Carlo (QMC), plays a central role in obtaining predictions of system properties relevant to condensed matter and high energy physics. The use of Hamiltonian dynamics to design a Markov kernel, known as Hybrid or Hamiltonian Monte Carlo (HMC), is widespread in quantum applications.\n\nIn this context, it is standard to use an HMC kernel that is ``adjusted'' with the Metropolis-Hastings (MH) criterion, so that estimates of expectations converge to their true value in the limit of infinite sample size. However, recent work in computational statistics suggests that an \\emph{unadjusted} HMC kernel can be significantly more efficient, while safely maintaining an asymptotic bias which is small relative to the error arising from the variance of the finite sample size. We adapt this approach to the QMC setting, focusing on a challenging and high-dimensional \\emph{spin-fermion} model of a quantum phase transition.",
-      "takeaways": [
-        "We find that unadjusted methods outperform adjusted HMC in terms of effective sample size per gradient call, while retaining accurate results."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8f9f670eea9bfad8",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10188",
-    "title": "BiMuon: A Geometry-Aware Stochastic Bilevel Optimization Approach",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "3f39fd7efceddb67",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Zhen Qin, Zhiyao Zhang, Yingbin Liang, Jia Liu",
-    "contentSnippet": "arXiv:2611.10188v1 Announce Type: new Abstract: Stochastic bilevel optimization provides a general framework for many machine learning applications, such as hyperparameter learning, data reweighting, language model alignment, and actor-critic reinforcement learning. However, most existing bilevel optimization methods treat matrix-valued gradients as flattened vectors and perform optimization in the resulting vectorized space, ignoring the matrix structures common in modern neural networks. Moreover, the lower-level (LL) problem curvature can induce significant spectral imbalance in the upper-level (UL) geometry. Such limitations of existing bilevel optimization methods motivate us to develop BiMuon, a geometry-aware stochastic bilevel optimization method that integrates implicit hypergradient estimation in bilevel optimization with Muon-style orthogonalized updates at the UL. To our knowledge, BiMuon is the first stochastic BLO method with Muon-style orthogonalized matrix updates and an $O(\\epsilon^{-4})$ iteration-complexity guarantee, matching the best-known rates achieved by Muon-type methods based on matrix parameterizations. To improve computational and parallel efficiency for models with multiple matrix parameters, we further study BiMuon for blockwise diagonal matrix approximation and derive a relative stepsize allocation rule based on UL progress and blockwise LL sensitivity. We evaluate BiMuon on representation learning and blockwise bilevel optimization, providing empirical support for our methods.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10188",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10188.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10188v1 Announce Type: new Abstract: Stochastic bilevel optimization provides a general framework for many machine learning applications, such as hyperparameter learning, data reweighting, language model alignment, and actor-critic reinforcement learning. However, most existing bilevel optimization methods treat matrix-valued gradients as flattened vectors and perform optimization in the resulting vectorized space, ignoring the matrix structures common in modern neural networks. Moreover, the lower-level (LL) problem curvature can induce significant spectral imbalance in the upper-level (UL) geometry.\n\nSuch limitations of existing bilevel optimization methods motivate us to develop BiMuon, a geometry-aware stochastic bilevel optimization method that integrates implicit hypergradient estimation in bilevel optimization with Muon-style orthogonalized updates at the UL. To our knowledge, BiMuon is the first stochastic BLO method with Muon-style orthogonalized matrix updates and an $O(\\epsilon^{-4})$ iteration-complexity guarantee, matching the best-known rates achieved by Muon-type methods based on matrix parameterizations. To improve computational and parallel efficiency for models with multiple matrix parameters, we further study BiMuon for blockwise diagonal matrix approximation and derive a relative stepsize allocation rule based on UL progress and blockwise LL sensitivity.",
-      "takeaways": [
-        "We evaluate BiMuon on representation learning and blockwise bilevel optimization, providing empirical support for our methods."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a0dfe02e4ce851ca",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10198",
-    "title": "BO-Arena: An Evolving Benchmark for High-Dimensional Bayesian Optimisation",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "f05d73c94186a26d",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Colin Doumont, Thomas Christie, Henry Moss, Philipp Hennig",
-    "contentSnippet": "arXiv:2611.10198v1 Announce Type: new Abstract: High-dimensional Bayesian optimisation (HDBO) is an increasingly crowded field with new methods proposed at every major conference, making it ever harder to answer a deceptively simple question: \"Which method is currently state-of-the-art?\" In this paper, we question the efficacy of benchmarking practices in the field, and find them to be systematically ineffective: multiple published works fail to benchmark against the strongest available baselines, or even include incorrect implementations of key methods. Without a shared reference implementation, such errors are difficult to detect during peer review. We therefore introduce BO-Arena, an actively maintained and extensible package providing canonical implementations of state-of-the-art algorithms, which allows researchers to develop new methods and benchmark them rigorously. Using BO-Arena, we find that what currently drives performance in HDBO is even simpler than previously thought. We use these insights to propose a new algorithm which is competitive with the state of the art on problems with many observations, without resorting to the complex GP approximations used in recent methods. Finally, we question whether there is currently sufficient evidence that any more complex method outperforms a simple Gaussian process baseline for HDBO.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10198",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10198.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10198v1 Announce Type: new Abstract: High-dimensional Bayesian optimisation (HDBO) is an increasingly crowded field with new methods proposed at every major conference, making it ever harder to answer a deceptively simple question: \"Which method is currently state-of-the-art?\" In this paper, we question the efficacy of benchmarking practices in the field, and find them to be systematically ineffective: multiple published works fail to benchmark against the strongest available baselines, or even include incorrect implementations of key methods. Without a shared reference implementation, such errors are difficult to detect during peer review. We therefore introduce BO-Arena, an actively maintained and extensible package providing canonical implementations of state-of-the-art algorithms, which allows researchers to develop new methods and benchmark them rigorously.\n\nUsing BO-Arena, we find that what currently drives performance in HDBO is even simpler than previously thought. We use these insights to propose a new algorithm which is competitive with the state of the art on problems with many observations, without resorting to the complex GP approximations used in recent methods. Finally, we question whether there is currently sufficient evidence that any more complex method outperforms a simple Gaussian process baseline for HDBO.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ca0b890d1e3d69c5",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10202",
-    "title": "Semiprime Factorization with Discrete Diffusion and Beam Search: Scaling Laws",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "491869509164086e",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Brendan O Donoghue, Nenad Tomasev, Volodymyr Mnih, Timothy Nguyen, Dalin Guo, Arun Nair, Kenneth Yang, Alexandre Frechette, Jasper Xian, Jean Tarbouriech, Pavel Tyletski, Ingrid von Glehn, Johannes Bausch, Demis Hassabis, Raia Hadsell",
-    "contentSnippet": "arXiv:2611.10202v1 Announce Type: new Abstract: We demonstrate that transformer architectures trained with discrete denoising diffusion and decoded via guided test-time beam search can learn to recover the prime factors of semiprime integers directly from data. Our approach establishes a new frontier for learning-based semiprime factorization, successfully factoring 68-bit integers-a substantial advance over the prior 56-bit state of the art. While computationally less efficient than classical factoring algorithms, our model requires no domain-specific number-theoretic priors and learns purely from training examples. In practice, the diffusion model acts as a generative prior, identifying promising factor candidates where exact verification or lattice-based post-processing can complete the factorization. Furthermore, we derive empirical scaling laws relating approximation quality to training data volume, model size, and test-time computation. In contrast to language, problem size is the key driver of scaling behavior. Achieving a fixed accuracy on a held-out test set requires compute that scales exponentially with bit length. Consequently, our findings pose no threat to security, as the projected compute cost required to factorize cryptographically relevant integers remains prohibitive.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10202",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10202.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10202v1 Announce Type: new Abstract: We demonstrate that transformer architectures trained with discrete denoising diffusion and decoded via guided test-time beam search can learn to recover the prime factors of semiprime integers directly from data. Our approach establishes a new frontier for learning-based semiprime factorization, successfully factoring 68-bit integers-a substantial advance over the prior 56-bit state of the art. While computationally less efficient than classical factoring algorithms, our model requires no domain-specific number-theoretic priors and learns purely from training examples.\n\nIn practice, the diffusion model acts as a generative prior, identifying promising factor candidates where exact verification or lattice-based post-processing can complete the factorization. Furthermore, we derive empirical scaling laws relating approximation quality to training data volume, model size, and test-time computation. In contrast to language, problem size is the key driver of scaling behavior.",
-      "takeaways": [
-        "Achieving a fixed accuracy on a held-out test set requires compute that scales exponentially with bit length.",
-        "Consequently, our findings pose no threat to security, as the projected compute cost required to factorize cryptographically relevant integers remains prohibitive."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4d53be68a0bb2dff",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10212",
-    "title": "DisMUSE: An Efficient Distributed Singular-Spectrum-Based Optimization Approach with Theoretical Convergence Guarantee",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "f0e13d5ca9e0f04b",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Zhen Qin, Zhiyao Zhang, Yingbin Liang, Jia Liu",
-    "contentSnippet": "arXiv:2611.10212v1 Announce Type: new Abstract: In recent years, singular-spectrum-based optimizers have attracted increasing attention due to their ability to preserve the matrix structure of neural network gradients, thereby enabling geometry-aware optimization. However, most singular-spectrum-based (SSB) approaches remain centralized, limiting their use in distributed learning infrastructures that exploit massive parallelism. Distributed SSB optimization is still at an early stage, with open questions about convergence guarantees and communication efficiency. To fill this gap, we propose the Distributed Momentum-based Spectral Estimator (DisMUSE), an efficient distributed SSB optimization framework for both data-center and federated settings. Using Muon-style exact orthogonalized momentum as the spectral update, DisMUSE integrates a recursive variance-reduced momentum estimator and achieves an $O((KT)^{-1/3})$ convergence rate, where $K$ and $T$ denote the number of nodes and local iterations per node, respectively. This rate matches the best-known rates for variance-reduced nonconvex distributed optimization. Building on this variance-reduced framework, we study two extensions. First, our DisMUSE method with finite Newton-Schulz (NS) iterations preserves the same convergence order under a uniform normalized support-spectrum condition, up to a multiplicative factor. Second, we develop a communication-efficient variant based on low-rank (LR) momentum transmission and quantify the error it introduces to the stationarity bound, characterizing the trade-off between accuracy and communication cost.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10212",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10212.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10212v1 Announce Type: new Abstract: In recent years, singular-spectrum-based optimizers have attracted increasing attention due to their ability to preserve the matrix structure of neural network gradients, thereby enabling geometry-aware optimization. However, most singular-spectrum-based (SSB) approaches remain centralized, limiting their use in distributed learning infrastructures that exploit massive parallelism. Distributed SSB optimization is still at an early stage, with open questions about convergence guarantees and communication efficiency.\n\nTo fill this gap, we propose the Distributed Momentum-based Spectral Estimator (DisMUSE), an efficient distributed SSB optimization framework for both data-center and federated settings. Using Muon-style exact orthogonalized momentum as the spectral update, DisMUSE integrates a recursive variance-reduced momentum estimator and achieves an $O((KT)^{-1/3})$ convergence rate, where $K$ and $T$ denote the number of nodes and local iterations per node, respectively. This rate matches the best-known rates for variance-reduced nonconvex distributed optimization.",
-      "takeaways": [
-        "Building on this variance-reduced framework, we study two extensions.",
-        "First, our DisMUSE method with finite Newton-Schulz (NS) iterations preserves the same convergence order under a uniform normalized support-spectrum condition, up to a multiplicative factor.",
-        "Second, we develop a communication-efficient variant based on low-rank (LR) momentum transmission and quantify the error it introduces to the stationarity bound, characterizing the trade-off between accuracy and communication cost."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "44db34228e497ca3",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10217",
-    "title": "Rethinking How to Leverage Cheap Physics for Data-Efficient Neural Operators",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "ddf08467d08e1ce9",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Shuo Zhang, Senwei Liang",
-    "contentSnippet": "arXiv:2611.10217v1 Announce Type: new Abstract: Neural operators learn mappings from PDE inputs, such as initial conditions and coefficient fields, to the corresponding solutions. Once trained, they can rapidly predict solutions for new inputs. However, obtaining input-solution pairs for supervised training often requires expensive numerical simulations, whereas PDE inputs and governing equations provide inexpensive physical information. This raises a question: how can cheap physical information reduce the need for labeled solutions? A natural approach is to use physics to select inputs for labeling, but our acquisition experiments show no consistent advantage over random sampling. This observation motivates exploring an alternative: using cheap physics to improve neural operator initialization before supervised training. We propose Physics-Informed Initialization (PI-Init), a simple yet effective method that pretrains neural operators on unlabeled inputs using physics-informed losses and retains the learned parameters for supervised fine-tuning on the labeled dataset. A linearized analysis shows that pretraining can improve downstream prediction accuracy by reducing initialization errors that limited labeled data cannot effectively correct. Experiments across diverse PDE benchmarks and neural operator architectures demonstrate improvements in predictive accuracy, out-of-distribution generalization, and label efficiency. Representative results show error reductions of up to 62.7% at the same label budget and comparable or better accuracy with 90% fewer labels, relative to supervised-only training.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10217",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10217.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10217v1 Announce Type: new Abstract: Neural operators learn mappings from PDE inputs, such as initial conditions and coefficient fields, to the corresponding solutions. Once trained, they can rapidly predict solutions for new inputs. However, obtaining input-solution pairs for supervised training often requires expensive numerical simulations, whereas PDE inputs and governing equations provide inexpensive physical information.\n\nThis raises a question: how can cheap physical information reduce the need for labeled solutions? A natural approach is to use physics to select inputs for labeling, but our acquisition experiments show no consistent advantage over random sampling. This observation motivates exploring an alternative: using cheap physics to improve neural operator initialization before supervised training.",
-      "takeaways": [
-        "We propose Physics-Informed Initialization (PI-Init), a simple yet effective method that pretrains neural operators on unlabeled inputs using physics-informed losses and retains the learned parameters for supervised fine-tuning on the labeled dataset.",
-        "A linearized analysis shows that pretraining can improve downstream prediction accuracy by reducing initialization errors that limited labeled data cannot effectively correct.",
-        "Experiments across diverse PDE benchmarks and neural operator architectures demonstrate improvements in predictive accuracy, out-of-distribution generalization, and label efficiency.",
-        "Representative results show error reductions of up to 62.7% at the same label budget and comparable or better accuracy with 90% fewer labels, relative to supervised-only training."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "843d433b9ecbe7a8",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10223",
-    "title": "Lower-Level Agnostic Bilevel Optimization",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "64ff42f7db0b075f",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Peiwen Qiu, Prashant Khanduri, Jia Liu",
-    "contentSnippet": "arXiv:2611.10223v1 Announce Type: new Abstract: Bilevel optimization is a fundamental framework for machine learning problems, where an upper-level (UL) objective depends on the solution of a nested lower-level (LL) problem. Existing bilevel algorithms typically assume that the LL objective is available for evaluation, differentiation, or unrolling. However, this assumption can fail when the LL response is produced by a black-box solver, simulator, adversary, or learned predictor. In this paper, we study LL agnostic bilevel optimization, where the UL learner has access only to an approximate LL solution $\\bar{\\mathbf{y}}(\\mathbf{x})$ and cannot query the LL objective, its gradients, Hessian/Jacobian information, or the procedure that generates the LL response. We propose LeGo-BiO, a coordinate-wise pseudo-hypergradient method that estimates the missing Jacobian $\\nabla _{\\mathbf{x}}\\bar{\\mathbf{y}}(\\mathbf{x})$ using finite differences of $\\bar{\\mathbf{y}}(\\cdot)$. For each UL coordinate, LeGo-BiO constructs a decision vector subject to 1-sparse updates, thereby isolating the corresponding Jacobian column needed in the UL gradient computation. This avoids the directional-projection limitation of full-parameter response differences and, unlike derivative-free/zeroth-order approximations of the entire UL gradient, preserves the available first-order gradient information with respect to the UL variables for more accurate UL gradient evaluation. We establish convergence guarantees for LeGo-BiO in both deterministic and stochastic settings under an LL error-bound/Polyak-Lojasiewicz-type condition, without requiring LL strong convexity. Our bounds yield an $O(T^{-1})$ rate in the deterministic setting and an $O(T^{-1/2})$ rate in the stochastic setting when the LL approximation error decreases geometrically. Experiments demonstrate competitive performance of LeGo-BiO despite being agnostic to the LL objective.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10223",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10223.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10223v1 Announce Type: new Abstract: Bilevel optimization is a fundamental framework for machine learning problems, where an upper-level (UL) objective depends on the solution of a nested lower-level (LL) problem. Existing bilevel algorithms typically assume that the LL objective is available for evaluation, differentiation, or unrolling. However, this assumption can fail when the LL response is produced by a black-box solver, simulator, adversary, or learned predictor.\n\nIn this paper, we study LL agnostic bilevel optimization, where the UL learner has access only to an approximate LL solution $\\bar{\\mathbf{y}}(\\mathbf{x})$ and cannot query the LL objective, its gradients, Hessian/Jacobian information, or the procedure that generates the LL response. We propose LeGo-BiO, a coordinate-wise pseudo-hypergradient method that estimates the missing Jacobian $\\nabla _{\\mathbf{x}}\\bar{\\mathbf{y}}(\\mathbf{x})$ using finite differences of $\\bar{\\mathbf{y}}(\\cdot)$. For each UL coordinate, LeGo-BiO constructs a decision vector subject to 1-sparse updates, thereby isolating the corresponding Jacobian column needed in the UL gradient computation.",
-      "takeaways": [
-        "This avoids the directional-projection limitation of full-parameter response differences and, unlike derivative-free/zeroth-order approximations of the entire UL gradient, preserves the available first-order gradient information with respect to the UL variables for more accurate UL gradient evaluation.",
-        "We establish convergence guarantees for LeGo-BiO in both deterministic and stochastic settings under an LL error-bound/Polyak-Lojasiewicz-type condition, without requiring LL strong convexity.",
-        "Our bounds yield an $O(T^{-1})$ rate in the deterministic setting and an $O(T^{-1/2})$ rate in the stochastic setting when the LL approximation error decreases geometrically.",
-        "Experiments demonstrate competitive performance of LeGo-BiO despite being agnostic to the LL objective."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "73b909606b97c8d6",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13531v1",
-    "title": "Framing-Induced Vulnerability in Large Language Models: Evidence from Chinese News Headlines",
-    "publishedAt": "2026-11-10T03:54:03.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "1385acb50617d7d6",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Mo Zhou",
-    "contentSnippet": "Large language models increasingly evaluate, route, and moderate news, so a model's judgment of a headline has become a gatekeeping decision. We ask whether that judgment follows the fact being reported or the way the fact is framed. We combine an ecological audit of 63,926 Chinese news headlines with a controlled experiment. The experiment covers 30 real events, 30 synthetic events, and 29 natural headline pairs, tested on four Chinese models. Changing only the headline frame shifted both perceived misleadingness and event severity, and the direction and ordering of the shifts were the same for DeepSeek, MiMo, Dots, and LongCat. Emotionally intensified headlines raised severity ratings by 0.65 to 0.88 points, whereas positively reframed headlines lowered them by 0.34 to 0.52 points. Supplying the article body reduced this severity bias by 54 to 80 percent, and all four reductions were significant at p < .01. A small human reference study showed the same direction of effect. Headline-only LLM evaluation therefore carries a measurable robustness gap, and framing sensitivity belongs among the reliability properties that deployment and governance check.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13531",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13531.pdf",
-    "summary": {
-      "tldr": "Large language models increasingly evaluate, route, and moderate news, so a model's judgment of a headline has become a gatekeeping decision. We ask whether that judgment follows the fact being reported or the way the fact is framed. We combine an ecological audit of 63,926 Chinese news headlines with a controlled experiment.\n\nThe experiment covers 30 real events, 30 synthetic events, and 29 natural headline pairs, tested on four Chinese models. Changing only the headline frame shifted both perceived misleadingness and event severity, and the direction and ordering of the shifts were the same for DeepSeek, MiMo, Dots, and LongCat. Emotionally intensified headlines raised severity ratings by 0.65 to 0.88 points, whereas positively reframed headlines lowered them by 0.34 to 0.52 points.",
-      "takeaways": [
-        "Supplying the article body reduced this severity bias by 54 to 80 percent, and all four reductions were significant at p < .01.",
-        "A small human reference study showed the same direction of effect.",
-        "Headline-only LLM evaluation therefore carries a measurable robustness gap, and framing sensitivity belongs among the reliability properties that deployment and governance check."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c4312adb767125dc",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/10/yonkers-rises/",
-    "title": "Yonkers Rises",
-    "publishedAt": "2026-11-10T03:53:04.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "399a5e29a4c53f82",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Tool: Yonkers Rises I realized I didn't know where Yonkers was, so I looked it up on Google Maps and then, to help embed its location and shape in my head (and to try out Claude Fable 5.2's 3D modeling and animation skills), I prompted Fable 5.2 Medium to: Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and átomos around manhattan and queens and Brooklyn, use openstreetmap mapping data It correctly deduced that \"átomos\" was a mobile keyboard typo for \"stomps\": Tags: three-js , llms , ai , generative-ai , claude-mythos-fable",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Tool: Yonkers Rises I realized I didn't know where Yonkers was, so I looked it up on Google Maps and then, to help embed its location and shape in my head (and to try out Claude Fable 5.2's 3D modeling and animation skills), I prompted Fable 5.2 Medium to: Make a three js animation where yonkers stands up as a big mech (cool stand up motion) and átomos around manhattan and queens and Brooklyn, use openstreetmap mapping data It correctly deduced that \"átomos\" was a mobile keyboard typo for \"stomps\": Tags: three-js , llms , ai , generative-ai , claude-mythos-fable.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b7c34654aae29250",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13452v1",
-    "title": "SLIC: Reinforcement Fine-Tuning Small LMs for Multi-Turn Analog Circuit Optimization",
-    "publishedAt": "2026-11-10T01:54:39.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "5f8535bb206b0608",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Yan Xu",
-    "contentSnippet": "Analog integrated circuit (IC) design is a multi-turn, simulator-grounded engineering task that demands iterative reasoning over coupled performance tradeoffs, yet proprietary process design kits (PDKs) make hosted large language model workflows difficult to deploy in practical design settings. We present SLIC (Small LM Iterating on Circuits), a reinforcement fine-tuning framework that trains a 4B-scale, locally deployable language model for closed-loop analog circuit optimization. SLIC pairs structured circuit representations with discretized relative-update actions, domain- and success-gated multiobjective rewards, and Reward-Guided Rollout Steering (RGRS), which turns per-step simulator feedback into signals for both policy learning and online rollout construction in this sparse, highly constrained domain. We further release an open, goal-conditioned benchmark of 41 amplifier topologies with standardized protocols for in-distribution validation, held-out topology evaluation, and cross-technology-node transfer. Trained solely with open source 65 nm CMOS predictive technology models (PTM), SLIC-Random achieves 87.1% in-distribution four-specification Pass@1 within eight turns, surpassing the 763B DeepSeek-V4.1-Flash Think by 48.5 percentage points. Beyond the training distribution, SLIC-Softmax reaches 72.6% Pass@1 on held-out topologies, and the trained policies consistently transfer across five unseen technology nodes without additional fine-tuning. This transfer extends to a commercial TSMC 65 nm CMOS PDK, where SLIC-Random achieves 49.9% held-out-topology Pass@1, demonstrating practical deployment through local inference without transmitting proprietary data to external LLM services. Performance further scales with test-time simulator interactions, reaching up to 83.2% held-out-topology Pass@1 at a 32-turn budget.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13452",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13452.pdf",
-    "summary": {
-      "tldr": "Analog integrated circuit (IC) design is a multi-turn, simulator-grounded engineering task that demands iterative reasoning over coupled performance tradeoffs, yet proprietary process design kits (PDKs) make hosted large language model workflows difficult to deploy in practical design settings. We present SLIC (Small LM Iterating on Circuits), a reinforcement fine-tuning framework that trains a 4B-scale, locally deployable language model for closed-loop analog circuit optimization. SLIC pairs structured circuit representations with discretized relative-update actions, domain- and success-gated multiobjective rewards, and Reward-Guided Rollout Steering (RGRS), which turns per-step simulator feedback into signals for both policy learning and online rollout construction in this sparse, highly constrained domain.\n\nWe further release an open, goal-conditioned benchmark of 41 amplifier topologies with standardized protocols for in-distribution validation, held-out topology evaluation, and cross-technology-node transfer. Trained solely with open source 65 nm CMOS predictive technology models (PTM), SLIC-Random achieves 87.1% in-distribution four-specification Pass@1 within eight turns, surpassing the 763B DeepSeek-V4.1-Flash Think by 48.5 percentage points. Beyond the training distribution, SLIC-Softmax reaches 72.6% Pass@1 on held-out topologies, and the trained policies consistently transfer across five unseen technology nodes without additional fine-tuning.",
-      "takeaways": [
-        "This transfer extends to a commercial TSMC 65 nm CMOS PDK, where SLIC-Random achieves 49.9% held-out-topology Pass@1, demonstrating practical deployment through local inference without transmitting proprietary data to external LLM services.",
-        "Performance further scales with test-time simulator interactions, reaching up to 83.2% held-out-topology Pass@1 at a 32-turn budget."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "db348f4384168007",
-    "canonicalUrl": "https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/",
-    "title": "Meta introduces Muse Ember to power cost-efficient AI agents",
-    "publishedAt": "2026-11-10T01:38:35.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.462Z",
-    "contentHash": "0bbc67d501a5a303",
-    "sourceId": "siliconangle-ai",
-    "sourceName": "SiliconANGLE AI",
-    "author": "Maria Deutscher",
-    "contentSnippet": "Meta Platforms Inc. today introduced Muse Ember, an entry-level artificial intelligence model that costs significantly less than the competition. Notably, it’s the first AI that the company trained using Muse Wonder. The latter algorithm is the Facebook parent’s flagship large language model. Meta didn’t specify which part of the workflow it automated with Muse Wonder. […] The post Meta introduces Muse Ember to power cost-efficient AI agents appeared first on SiliconANGLE .",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Today introduced Muse Ember, an entry-level artificial intelligence model that costs significantly less than the competition. Notably, it’s the first AI that the company trained using Muse Wonder. The latter algorithm is the Facebook parent’s flagship large language model.",
-      "takeaways": [
-        "Meta didn’t specify which part of the workflow it automated with Muse Wonder."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8a35af252b32001f",
-    "canonicalUrl": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/",
-    "title": "Anthropic reportedly plans to move forward with IPO plans",
-    "publishedAt": "2026-11-10T01:27:12.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.003Z",
-    "contentHash": "7e1d7571d8bc6b2c",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Marina Temkin",
-    "contentSnippet": "The AI company is expected to set its valuation range this week, the Wall Street Journal reported.",
-    "category": "Business & Big Tech",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "The AI company is expected to set its valuation range this week, the Wall Street Journal reported.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e2b0b8366555dc6f",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13413v1",
-    "title": "Placing LLM Lookup Tables by Per-Layer Prefetch Deadlines",
-    "publishedAt": "2026-11-10T00:47:42.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "e4301819f805c7b9",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Wen Huang",
-    "contentSnippet": "DeepSeek-V4.1's 203 GB of Engram n-gram tables sit in host DRAM today, taking 190 of the 223 GiB a 4-GPU serving process uses. Row indices depend only on input tokens, so reads can start with each step and overlap earlier layers. V4.1's two Engram layers have windows that differ by 30x (0.3 vs. 9.3 ms). We show that this deadline, together with session reuse and contention on a shared device, decides which tier each table can use and which layers need cache, and we give a model that predicts the resulting slowdown from measured read times. Agent and chat traffic reuse rows within sessions, and static hot sets transfer poorly. We build SlackTier, a table tier for SGLang that issues all lookups at step start. It reads the short-window layer first and splits a small GPU row cache across layers. The path runs inside the decode CUDA graph and is bit-exact with the original gather. Layer 14's table can go to NVMe uncached with no measurable decode cost. With both tables on four NVMe disks, mean time per output token on agent and chat replays rises at most 1.4% over unmodified SGLang, and host memory falls from 212 to 34 GiB. Both tables need no cache when read over RDMA (remote direct memory access) from another node's memory; one copy serves two instances. On a KV-constrained agent workload, using the freed memory as host KV cache at the same memory budget raises median throughput by 36% and cuts median p90 time to first token from 38 to 24 s.",
-    "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13413",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13413.pdf",
-    "summary": {
-      "tldr": "DeepSeek-V4.1's 203 GB of Engram n-gram tables sit in host DRAM today, taking 190 of the 223 GiB a 4-GPU serving process uses. Row indices depend only on input tokens, so reads can start with each step and overlap earlier layers. V4.1's two Engram layers have windows that differ by 30x (0.3 vs.\n\nWe show that this deadline, together with session reuse and contention on a shared device, decides which tier each table can use and which layers need cache, and we give a model that predicts the resulting slowdown from measured read times. Agent and chat traffic reuse rows within sessions, and static hot sets transfer poorly. We build SlackTier, a table tier for SGLang that issues all lookups at step start.",
-      "takeaways": [
-        "It reads the short-window layer first and splits a small GPU row cache across layers.",
-        "The path runs inside the decode CUDA graph and is bit-exact with the original gather.",
-        "Layer 14's table can go to NVMe uncached with no measurable decode cost.",
-        "With both tables on four NVMe disks, mean time per output token on agent and chat replays rises at most 1.4% over unmodified SGLang, and host memory falls from 212 to 34 GiB."
-      ],
-      "impact": "High",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
