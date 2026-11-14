@@ -1,5 +1,121 @@
 [
   {
+    "id": "b61bf08332389a3a",
+    "canonicalUrl": "https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/",
+    "title": "AT&T uses agentic AI to reinvent business processes from the ground up",
+    "publishedAt": "2026-11-14T19:37:13.000Z",
+    "fetchedAt": "2026-11-14T19:58:55.579Z",
+    "contentHash": "41ecf3171010fe8e",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Paul Gillin",
+    "contentSnippet": "UPDATED 14:37 EST / NOVEMBER 14 2026\n\nAT&T uses agentic AI to reinvent business processes from the ground up\n\nAT&T Corp. is moving beyond using artificial intelligence to improve employee productivity, increasingly applying autonomous agents to redesign how its business operates. Nearly 500 agentic workflows are already in production, and the telecom giant plans to triple that number next year.\n\nAT&T now processes about 45 billion AI tokens daily across the company, according to Luke Corbin (pictured, below), assistant vice president of digital transformation and AI at AT&T Business. Its agentic AI platform handles more than 1 million transactions monthly. Many of those workflows now operate autonomously, handling tasks ranging from customer provisioning to sales prospecting.\n\nSpeaking at an Amazon Web Services Inc. event in Boston earlier this month, Corbin said the company’s approach emphasizes rethinking entire processes rather than simply automating individual tasks. AT&T has moved quickly from experimenting with generative AI to systematically identifying business processes that can be redesigned around agentic capabilities.\n\nAt the heart of the transformation is Business Agent Foundry, a group established in early 2025 to work with individual business units. Rather than soliciting isolated automation ideas from employees, the foundry maps business processes using industry frameworks and identifies opportunities to eliminate unnecessary steps, organizational handoffs and legacy application dependencies, Corbin said.\n\nOne early initiative involved automating interactions with AT&T’s mainframe computers. Changes to customer fiber installation orders previously required employees to retrieve tickets from queues, manually update records and return them to the workflow.\n\nAgentic automation eliminated portions of that manual process, reducing delays and accelerating service delivery.\n\n“It was kind of cool having some of the most advanced technology talking to some of the oldest that we have,” Corbin said.\n\nIn another example, AT&T halved the time required to provision dedicated internet connections in buildings where fiber infrastructure was already installed.\n\nA different approach\n\nAT&T’s architecture breaks from conventional approaches that build large numbers of independent, specialized agents. Instead, the company maintains a relatively small set of agent",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AT&T is shifting its AI strategy from simple productivity tools to autonomous agentic workflows, with nearly 500 workflows currently in production and plans to triple that count in 2026. According to Luke Corbin, assistant vice president of digital transformation and AI at AT&T Business, the company processes approximately 45 billion AI tokens daily and handles over 1 million transactions monthly via its agentic platform. The initiative is managed by the 'Business Agent Foundry,' established in early 2025, which focuses on redesigning end-to-end business processes rather than automating isolated tasks, specifically targeting the elimination of legacy application dependencies and organizational handoffs.\n\nTechnically, AT&T avoids the common approach of deploying massive fleets of specialized agents. Instead, it utilizes a smaller set of agents that execute workflows based on centrally managed business logic stored in context or memory. The architecture separates concerns into retrieval agents, which identify knowledge, and planning agents, which determine necessary tools and data. Governance is strictly tiered: while employees can build personal productivity agents, customer-facing or business-critical workflows must pass through the foundry for security, privacy, and compliance reviews. Production workflows require human oversight until they achieve mid-to-high 90% accuracy, at which point they transition to autonomous operation with continuous monitoring for performance drift.",
+      "takeaways": [
+        "**Operational Scale:** AT&T currently processes 45 billion AI tokens daily and manages over 1 million monthly transactions through its agentic platform.",
+        "**Architectural Strategy:** The company utilizes a centralized business logic model rather than a large, fragmented fleet of independent agents.",
+        "**Performance Metrics:** Production AI investments are reportedly achieving a fivefold return on investment within a one-year timeframe.",
+        "**Deployment Threshold:** Autonomous operation is only permitted after a workflow demonstrates mid-to-high 90% accuracy under human supervision.",
+        "**Process Optimization:** Agentic workflows have successfully halved the time required to provision dedicated internet connections in buildings with existing fiber infrastructure."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "0dac5bc8bd77a78d",
+    "canonicalUrl": "https://techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+    "title": "The AI graveyard: a running list of projects and startups that didn’t make it",
+    "publishedAt": "2026-11-14T17:30:00.000Z",
+    "fetchedAt": "2026-11-14T19:58:54.647Z",
+    "contentHash": "1237b2154601847f",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Lauren Forristal",
+    "contentSnippet": "Last month, chatbot platform Character.ai filed for bankruptcy just five years after launching. More recently, privacy-focused AI assistant Ollie announced its shutdown a few weeks ago.\n\nAside from Character.ai and Ollie, plenty of AI bets never even survive inside the companies that build them. According to S&P Global Market Intelligence , about 42% of AI initiatives are ultimately abandoned by their corporate parents. The reasons vary: insufficient funding, technical challenges, competition, difficulty scaling, or just weak user demand.\n\nThe result is a growing AI graveyard. Below is a look at some of the most notable AI products, startups, launches, and bets that have shut down, pivoted, or significantly missed expectations. Think of it less as a scorecard of flops than as a record of what these attempts can (hopefully) teach the rest of the industry.\n\nOpenAI has taken several stumbles\n\nEven the biggest players aren’t immune. OpenAI, one of the most valuable private companies in the world, has had its own share of casualties and missteps. One of the more recent examples was its attempt to turn ChatGPT into a broader “ super app .” On July 9, OpenAI updated the app to combine several experiences, including separate “Chat,” “Codex,” and “Work” modes, while renaming the traditional, familiar version “ChatGPT Classic.”\n\nThe redesign quickly drew criticism from users who found the new interface confusing and cluttered, and OpenAI rolled back the change soon after , bringing the familiar ChatGPT interface back.\n\nThat wasn’t OpenAI’s only attempt to pull everything under one roof. The company has also shut down several stand-alone apps and folded their features directly into ChatGPT — a strategy that’s worked out better than the redesign did. ChatGPT Atlas, a stand-alone AI-powered web browser, lasted less than a year before being discontinued on August 9, with its most useful features absorbed into ChatGPT.\n\nThe company did the same thing with Operator , an AI agent that could browse the web and complete tasks on a user’s behalf, and OpenAI has increasingly built image generation directly into ChatGPT, shrinking the role of DALL-E as its own separate destination for creating images.\n\nWe also can’t forget its video-sharing platform, Sora , which struggled with high operating costs and user-retention challenges and shut down in March 2026.\n\nWhen Apple unveiled Ap",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The AI sector is experiencing a significant wave of product and startup failures, with S&P Global Market Intelligence reporting that 42% of corporate AI initiatives are ultimately abandoned due to funding gaps, technical hurdles, or weak market demand. Notable recent casualties include the bankruptcy of chatbot platform Character.ai and the shutdown of privacy-focused assistant Ollie. Hardware ventures have also faced severe setbacks, most notably the Humane AI Pin, which ceased operations in February 2025 following performance issues and a battery fire risk, leading to an asset acquisition by HP for $116 million after the company had raised $230 million.\n\nMajor incumbents are also consolidating their AI portfolios by folding standalone experiments into core products. OpenAI discontinued its ChatGPT Atlas browser and the Operator agent, while its video platform Sora was shuttered in March 2026 due to high operating costs and retention challenges. Similarly, Microsoft’s Recall feature faced significant delays and ongoing security criticism regarding its 'photographic memory' functionality, and the workflow automation tool Relay shut down in August 2026 as larger platforms integrated similar automation capabilities. Other notable closures include the AI audio app Huxe and the role-play platform Figgs AI, the latter of which struggled to maintain a free service model despite reaching 1 million users.",
+      "takeaways": [
+        "**Humane AI Pin Failure:** The wearable device startup shut down in February 2025 after raising $230 million, with HP acquiring its assets for $116 million.",
+        "**OpenAI Product Consolidation:** OpenAI discontinued the ChatGPT Atlas browser on August 9 and shut down its Sora video platform in March 2026 due to unsustainable operating costs.",
+        "**Apple Intelligence Delays:** Apple faced a $250 million settlement regarding iPhone 16 marketing claims after repeatedly delaying the release of its AI-powered Siri, which finally reached iOS 27 beta in July.",
+        "**Relay Shutdown:** The AI-powered workflow automation tool ceased operations in August 2026, unable to compete with native automation features integrated into larger platforms like OpenAI and Google.",
+        "**Corporate Abandonment Rate:** According to S&P Global Market Intelligence, 42% of corporate AI initiatives are abandoned due to factors including technical challenges, scaling difficulties, and insufficient funding."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "540fe76f78745230",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/14/cmpnd-dspy-wsp-weight-space-programming/",
+    "title": "Cmpnd Releases dspy-wsp: Weight-Space Programming Comes to DSPy",
+    "publishedAt": "2026-11-14T16:45:48.000Z",
+    "fetchedAt": "2026-11-14T19:58:55.580Z",
+    "contentHash": "9f68894094e38ca8",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Cmpnd has released dspy-wsp , a prototype optimizer that brings weight-space programming to DSPy . Weight-space programming is a technique in which a frontier LLM reads another model’s weights and edits them directly. There are no gradients, no training loop and no fine-tuning dataset. dspy-wsp packages this as WeightSpace , an optimizer that plugs into any DSPy program and metric. In Cmpnd’s tests, about $5 to $10 of GPT-6-Astra calls improved every decision model they tried. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR What it is: A DSPy optimizer ( WeightSpace ) where a writer LLM edits a student model’s weights. MIT license, pip install dspy-wsp , needs DSPy 3.5. Size: Tested on open decision models from 0.6B to 9B parameters. One 25-pass run edited a single layer or head. Runs on: One Mac for all experiments. 2B models used about 6 GB of memory. d1-omni-600M needs 4 GB or more (Mac or GPU). Performance: WeightSpace alone added 1.9 to 16.1 points on Typed Decisions. With ReAnchor, gains were 6.5 to 20.0 points. Best: d1-omni-600M rose from 50.9% to 69.1% (+18.3) with WeightSpace + ReAnchor. Worst: Clef-Flash (9B) gained only +1.9 from WeightSpace alone. With the original paper’s stricter rule, d1-omni-600M gained just +2.8. Bottom line: Best: a cheap, gradient-free edit that ships as a small, verifiable patch. Worst: very experimental, slow (78 to 167 minutes per run) and weakest on larger models. What is weight-space programming? Weight-space programming (WSP) treats a neural network’s weights as a program that can be read and rewritten. The idea comes from MIT research: Sparks of Weight-Space Programming . A frontier model (the research team used GPT-6-Astra) looks at weight tensors, reasons about what each part computes, and changes them to match a goal written in plain English. The research team stresses that WSP names an emerging capability, not a fixed method. Gradients were banned in their experiments, but the concept does not rule them out. How is it different from fine-tuning or prompt optimization? It helps to compare the 3 levers developers usually pull: Prompt optimization (DSPy’s MIPROv2, GEPA ) edits text: instructions and examples. The model’s weights never change. Fine-tuning (DSPy’s BootstrapFinetune, used inside BetterTogether ) changes weights with gradient descent. It need",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Cmpnd has released dspy-wsp, an open-source (MIT licensed) prototype optimizer for the DSPy framework that implements 'Weight-Space Programming' (WSP). Unlike traditional fine-tuning, which relies on gradient descent and training loops, WSP utilizes a frontier LLM—specifically GPT-6-Astra in Cmpnd's testing—to directly read and edit the weight tensors of a student model based on plain-English goals. The tool is designed to be model-agnostic, requiring only DSPy 3.5, and is intended for optimizing decision models ranging from 0.6B to 9B parameters.\n\nTechnical performance varies significantly by model size and configuration. In experiments, the WeightSpace optimizer improved performance on 'Typed Decisions' by 1.9 to 16.1 points, with gains reaching 6.5 to 20.0 points when combined with the ReAnchor technique. The d1-omni-600M model saw the most significant improvement, increasing from 50.9% to 69.1% accuracy. Resource requirements are relatively modest, with 2B parameter models consuming approximately 6 GB of memory and 600M models requiring 4 GB, allowing for execution on standard Mac hardware. However, the process is computationally slow, with runtimes ranging from 78 to 167 minutes per optimization pass.\n\nWhile WSP offers a gradient-free alternative to fine-tuning, Cmpnd notes that the method is currently experimental and shows diminishing returns on larger models, such as the 9B parameter Clef-Flash, which saw only a 1.9-point gain. The optimizer functions by editing a single layer or head per 25-pass run, producing a small, verifiable patch rather than a full model checkpoint. Deployment and specification details are accessible via the GPULeaderboard.com Chrome extension.",
+      "takeaways": [
+        "**Core Mechanism:** WSP uses a frontier LLM to reason about and rewrite weight tensors directly, bypassing traditional gradient-based training loops and fine-tuning datasets.",
+        "**Performance Metrics:** The d1-omni-600M model achieved an 18.3% accuracy gain (50.9% to 69.1%) using the combined WeightSpace and ReAnchor approach.",
+        "**Resource Efficiency:** Experiments were conducted on Mac hardware, with 2B parameter models requiring 6 GB of memory and 600M models requiring 4 GB.",
+        "**Operational Constraints:** Optimization runs are time-intensive, taking between 78 and 167 minutes, and the method is currently less effective on larger models like the 9B parameter Clef-Flash.",
+        "**Cost:** Cmpnd reports that optimization costs approximately $5 to $10 in GPT-6-Astra API calls per model."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8097820885cc543d",
+    "canonicalUrl": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+    "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+    "publishedAt": "2026-11-14T16:34:15.000Z",
+    "fetchedAt": "2026-11-14T19:58:54.647Z",
+    "contentHash": "f0dae19f253ed27c",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Kate Park",
+    "contentSnippet": "Jensen Huang’s departure from Nvidia has drawn a range of responses across Asia, with some governments moving to confirm chip supply commitments, while others are monitoring the impact on local projects or addressing ongoing investigations.\n\nOn Sunday, November 8, Nvidia’s board launched an independent investigation after reports that Huang was targeted by a Chinese spy operation; Huang admitted to an affair with Alice Huang, a former executive at Singapore-based chip company Megaspeed.\n\nNvidia’s influence extends far beyond the United States. The chip giant has built close ties with companies worldwide, particularly in Asia, where many of its key partners play important roles in the global AI industry.\n\nIn Singapore, authorities seized the passport of Alice Huang, former CEO of Singapore-based cloud computing company Megaspeed, in June 2025 as part of an investigation into possible false declarations regarding server purchases, according to the Ministry of Home Affairs.\n\nThe Singapore ministry said police took her passport to ensure she remained available for questioning, as she was not based in Singapore. The investigation examined whether servers shipped from Singapore to Malaysia were later sent to other countries without proper declaration.\n\nIn February 2026, police found insufficient evidence to establish that Alice Huang had committed offenses related to the suspected false declarations, according to the ministry. However, authorities said she had knowingly provided inaccurate information about her role at Megaspeed. She was issued a warning and barred from re-entering Singapore. Her passport was returned that month. Singapore also said it received limited assistance from U.S. authorities despite repeated requests for information about U.S. server maker Supermicro. Singapore’s Ministry of Home Affairs said its investigation into Megaspeed and six other individuals remains ongoing. The ministry did not identify the six individuals or specify their alleged roles in the case.\n\nTaiwan’s Economy Minister Kung Ming-shin said Huang’s departure was unlikely to significantly change the growth of the global AI industry, according to local media . Meanwhile, Taipei’s city government said Nvidia’s planned overseas headquarters in the city remained on track despite the leadership change. The company has met its contractual obligations so far, and officials said th",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang has resigned following an independent board investigation launched on November 8, triggered by reports that he was targeted by a Chinese espionage operation and his admission of an affair with Alice Huang, a former executive at the Singapore-based cloud firm Megaspeed. The fallout has prompted varied responses from Asian governments, with Taiwan, Japan, and Singapore assessing the implications for their respective semiconductor supply chains and ongoing regulatory investigations.\n\nIn Singapore, the Ministry of Home Affairs confirmed that Alice Huang was under investigation regarding potential false declarations involving server shipments from Singapore to Malaysia and subsequent unauthorized re-exports. While police found insufficient evidence of criminal offenses in February 2026, she was issued a formal warning for providing inaccurate information about her role at Megaspeed and is now barred from re-entering Singapore. The Ministry noted a lack of cooperation from U.S. authorities regarding inquiries into server manufacturer Supermicro, and investigations into Megaspeed and six unnamed individuals remain active.\n\nRegional stakeholders are attempting to stabilize the outlook for Nvidia’s operations. Taiwan’s Economy Minister Kung Ming-shin stated that the leadership change is unlikely to disrupt global AI growth, and Taipei officials confirmed that Nvidia’s planned overseas headquarters in the city remains on track. Meanwhile, Japan’s Industry Ministry, through Deputy Chief Cabinet Secretary Masanao Ozaki, emphasized the government's focus on maintaining a stable semiconductor supply while monitoring the company's transition.",
+      "takeaways": [
+        "**Investigation Trigger:** Nvidia’s board initiated an independent probe on November 8 following allegations of a Chinese spy operation targeting Jensen Huang.",
+        "**Singapore Regulatory Action:** Alice Huang, former CEO of Megaspeed, was barred from Singapore in February 2026 after an investigation into false declarations regarding server shipments.",
+        "**Supermicro Cooperation:** Singapore’s Ministry of Home Affairs reported receiving limited assistance from U.S. authorities regarding requests for information about server maker Supermicro.",
+        "**Taiwan Infrastructure:** Taipei city officials confirmed that Nvidia’s planned overseas headquarters project remains contractually on track despite the leadership change.",
+        "**Japanese Policy Stance:** Japan’s Industry Ministry has prioritized the continuity of semiconductor supply chains while monitoring the impact of the leadership transition."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "6c2539c06ead4df2",
     "canonicalUrl": "https://www.theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
     "title": "The OpenAI board member who fired Sam Altman says we still can’t trust AI CEOs",
@@ -101,16 +217,17 @@
     "lab": "NVIDIA",
     "entryType": "RESEARCH_PAPER",
     "summary": {
-      "tldr": "Stanford researchers have released Memorilla , an open-source memory system for LLMs. The Memorilla memory system reads a whole document collection and hands a frozen LLM just 16 memory tokens. On FactKG, a frozen Qwen3-8B scored 84.33% with Memorilla, against 80.43% with every document in context .\n\nIt did that with 108x fewer document tokens. Code, training recipes and checkpoints are public under Apache 2.0 . You can check the deployment options and specs here through our GPULeaderboard.com chrome extension .",
+      "tldr": "Stanford’s SNAP group, led by Jure Leskovec with collaborators from Toronto, Penn, and MIT, has released Memorilla, an open-source memory module designed to compress document collections into 16 fixed memory tokens for frozen LLMs. By utilizing a 194M-parameter trainable module, Memorilla allows a frozen Qwen3-8B model to process information from large document stores without the latency or context-window constraints of full-context prompting or standard retrieval-augmented generation. The project, licensed under Apache 2.0, includes public code, training recipes, and model checkpoints.\n\nThe architecture operates in three stages: a frozen Qwen3-Embedding-4B encoder processes documents once, a memory module consisting of two cross-attention layers with eight heads attends to the document store per query, and the resulting 16 slots are projected into the Qwen3-8B input embedding space. This approach achieved an 84.33% accuracy on FactKG using 108x fewer tokens than full-context methods, which scored 80.43%. Training requires approximately 19 hours on four H100 GPUs across three stages, totaling over 3.3 million examples. While it outperformed full-context baselines on PersonaMem-v2 (44.60% vs 27.92%), it underperformed on PubMedQA (59.00% vs 69.00% for LLMLingua-2).",
       "takeaways": [
-        "TL;DR Size: 194M-parameter trainable memory module.",
-        "It always outputs 16 memory tokens, whatever the collection size.",
-        "The encoder ( Qwen3-Embedding-4B ) and decoder ( Qwen3-8B ) stay frozen.",
-        "Runs on: Linux with CUDA GPUs and Python 3.11."
+        "**Architecture Specs:** The system uses a 194,123,776-parameter trainable module that outputs exactly 16 memory tokens regardless of the input collection size.",
+        "**Hardware Requirements:** Training requires 4 H100 80GB GPUs; inference requires a single GPU with 80GB of VRAM, running on Linux with Python 3.11.",
+        "**Performance Metrics:** Memorilla achieved a top score on 5 of 8 benchmarks, including an 84.33% accuracy on FactKG, while utilizing 108x fewer document tokens than full-context prompting.",
+        "**Training Pipeline:** The model was trained in three stages: 1.98M Wikipedia paraphrase examples, 1.34M QA/summarization examples, and a final fine-tuning phase across 8 benchmarks."
       ],
       "impact": "High",
-      "readTimeMinutes": 4,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -10734,119 +10851,6 @@
         "These findings give local leaders, developers, and policy makers a quantified, continuously updatable basis for prioritizing concerns and policy levers, supporting a shift from opposition to negotiated, verifiable partnership for data center development."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "16268c6eb2479c72",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10110",
-    "title": "Homeopathic Learning: Diluting poisoned fine-tuning data can strengthen its effect",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "1456fe92988a348e",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Matt Clarke, Jan Dubi\\'nski, James Chua, Simon Schrodi, Owain Evans, Alex Cloud",
-    "contentSnippet": "arXiv:2611.10110v1 Announce Type: new Abstract: We study homeopathic learning, a phenomenon where poisoned training data with little effect on its own can create a hidden backdoor once clean, contrasting data is added. In our experiments, a model fine-tuned only on a \"poison\" dataset associated with a trait T (such as speaking German or being misaligned) does not learn T. Surprisingly, adding similarly formatted \"clean\" data not associated with T causes the model to learn T. This effect requires that the poison data have an identifying \"trigger\" feature that is absent from the clean data. We demonstrate this effect in a variety of settings: subliminal learning of backdoor behaviors, inoculation prompting of reward hacking transcripts, generalization from archaic bird names, and an MNIST classifier with mislabeled data. We propose a simple regression model as an explanation. In the poison data, the task and trigger always co-occur, and regularization favors attributing T to the task. Clean data without the trigger causes T to be attributed to the trigger instead. Consequently, the same training examples can have little effect as part of one training set but create a misalignment backdoor in another. This finding exposes a potential limitation of safety methods that audit or filter training data in isolation.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10110",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10110.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10110v1 Announce Type: new Abstract: We study homeopathic learning, a phenomenon where poisoned training data with little effect on its own can create a hidden backdoor once clean, contrasting data is added. In our experiments, a model fine-tuned only on a \"poison\" dataset associated with a trait T (such as speaking German or being misaligned) does not learn T. Surprisingly, adding similarly formatted \"clean\" data not associated with T causes the model to learn T.\n\nThis effect requires that the poison data have an identifying \"trigger\" feature that is absent from the clean data. We demonstrate this effect in a variety of settings: subliminal learning of backdoor behaviors, inoculation prompting of reward hacking transcripts, generalization from archaic bird names, and an MNIST classifier with mislabeled data. We propose a simple regression model as an explanation.",
-      "takeaways": [
-        "In the poison data, the task and trigger always co-occur, and regularization favors attributing T to the task.",
-        "Clean data without the trigger causes T to be attributed to the trigger instead.",
-        "Consequently, the same training examples can have little effect as part of one training set but create a misalignment backdoor in another.",
-        "This finding exposes a potential limitation of safety methods that audit or filter training data in isolation."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "30e6cfe617a9147b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10150",
-    "title": "What Is the Value of AI-Involved Art? Evidence From a Juried In-Person Exhibition",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "926fd435f24d35f7",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Wisdom Obinna, Hexuan Wang, Cecile Duncan, Kristelia Garcia, Nina Grgi\\'c-Hla\\v{c}a, Toni-Lee Sangastiano, Elissa M. Redmiles",
-    "contentSnippet": "arXiv:2611.10150v1 Announce Type: new Abstract: What is the value of AI-involved art, and to whom does it belong? We begin to answer these questions using data from an in-person, juried AI art exhibition. Our study involved artists, lawyers, and computer scientists (N=209) as either creators or evaluators of AI-involved artworks. We found that nearly half of evaluators reported willingness to buy an artwork, with pricing correlating with perceived artistic value---creativity and visual appeal---as well as the effort necessary to create it. In contrast, three-quarters of creators reported willingness to sell at prices correlating only with effort rather than artistic value. Both groups viewed prompting users and AI developers as deserving rewards and rights, leaving training data artists behind. Disciplinary training shaped these views: participants with legal training favored distributed reward models. These findings have implications for future research on human-AI creative collaboration and policy debates regarding AI-involved works.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10150",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10150.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10150v1 Announce Type: new Abstract: What is the value of AI-involved art, and to whom does it belong? We begin to answer these questions using data from an in-person, juried AI art exhibition. Our study involved artists, lawyers, and computer scientists (N=209) as either creators or evaluators of AI-involved artworks.\n\nWe found that nearly half of evaluators reported willingness to buy an artwork, with pricing correlating with perceived artistic value---creativity and visual appeal---as well as the effort necessary to create it. In contrast, three-quarters of creators reported willingness to sell at prices correlating only with effort rather than artistic value. Both groups viewed prompting users and AI developers as deserving rewards and rights, leaving training data artists behind.",
-      "takeaways": [
-        "Disciplinary training shaped these views: participants with legal training favored distributed reward models.",
-        "These findings have implications for future research on human-AI creative collaboration and policy debates regarding AI-involved works."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6ba48c50cf15ce4b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10151",
-    "title": "WorldMind: Test-Time Scaling for Visual Spatial Reasoning through Latent World Simulation",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "a4ba1978e4901499",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Haoming Wang, Yongjian Fu, Ju Ren, Wei Gao",
-    "contentSnippet": "arXiv:2611.10151v1 Announce Type: new Abstract: Vision-Language Models (VLMs) have continuous deficiency in spatial reasoning tasks that require \\emph{mental spatial transformation}, such as reasoning under hypothetical changes in viewpoint or position, known as perspective-taking tasks. Existing approaches either scale linguistic reasoning or augment VLMs with static geometric representations, but neither directly enables active transformation of the represented scene. World models offer this capability, yet existing systems typically communicate through synthesized RGB images, introducing a latent-to-pixel-to-latent bottleneck. We introduce \\emph{WorldMind}, a framework for test-time scaling of spatial reasoning through latent world simulation. Given a query and observation, the VLM selects useful spatial transformations, while a world model executes them and exposes aligned intermediate latent features directly to the VLM. The resulting latent evidence is incorporated into subsequent reasoning steps, enabling iterative spatial simulation without repeatedly decoding imagined states into pixels. To optimize this interaction, WorldMind further employs process-verifiable reinforcement learning that rewards reasoning progress only when the associated action and latent transition are valid. WorldMind thus scales spatial reasoning by allocating additional inference-time computation to active world simulation rather than generating more language or pixels. Across VSI-Bench, MMSI-Bench, and MindCube-Tiny, WorldMind achieves an average improvement of 16.0% over the base VLM and 8.3% over the strongest RGB-based world simulation.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10151",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10151.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10151v1 Announce Type: new Abstract: Vision-Language Models (VLMs) have continuous deficiency in spatial reasoning tasks that require \\emph{mental spatial transformation}, such as reasoning under hypothetical changes in viewpoint or position, known as perspective-taking tasks. Existing approaches either scale linguistic reasoning or augment VLMs with static geometric representations, but neither directly enables active transformation of the represented scene. World models offer this capability, yet existing systems typically communicate through synthesized RGB images, introducing a latent-to-pixel-to-latent bottleneck.\n\nWe introduce \\emph{WorldMind}, a framework for test-time scaling of spatial reasoning through latent world simulation. Given a query and observation, the VLM selects useful spatial transformations, while a world model executes them and exposes aligned intermediate latent features directly to the VLM. The resulting latent evidence is incorporated into subsequent reasoning steps, enabling iterative spatial simulation without repeatedly decoding imagined states into pixels.",
-      "takeaways": [
-        "To optimize this interaction, WorldMind further employs process-verifiable reinforcement learning that rewards reasoning progress only when the associated action and latent transition are valid.",
-        "WorldMind thus scales spatial reasoning by allocating additional inference-time computation to active world simulation rather than generating more language or pixels.",
-        "Across VSI-Bench, MMSI-Bench, and MindCube-Tiny, WorldMind achieves an average improvement of 16.0% over the base VLM and 8.3% over the strongest RGB-based world simulation."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b1ac92ed400922f7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10156",
-    "title": "DeepResearch RewardBench: Evaluating Reward Models for Deep Research Report",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "8ad3324923e6237f",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Shudong Liu, Yuting Zhong, Guanhua Chen, Xinyi Yang, Junnan Liu, Lidia S. Chao, Jiaheng Liu, Derek F. Wong",
-    "contentSnippet": "arXiv:2611.10156v1 Announce Type: new Abstract: Empowered by Large Language Models (LLMs), deep research systems integrate online information into research reports through multi-step web searching and information synthesis. Evaluating these reports presents a significant challenge due to their long context, high information density, and domain specificity, necessitating the use of AI evaluation as a substitute for prohibitively expensive human assessment. However, few studies have examined the effectiveness of existing reward models or LLMs in understanding and evaluating such research reports. To bridge this gap, we introduce DeepResearch RewardBench, the first benchmark dedicated to evaluating reward modeling for research reports. We collect diverse report candidates from multiple agents or tool-augmented LLMs. These candidates are scored using query-specific golden rubrics, and we ensure data quality and difficulty through a combination of multi-round filtering and human verification. Our benchmark comprises preference datasets formatted as pairs, triplets, and quadruplets to test ranking capabilities across varying levels of difficulty. Extensive experiments demonstrate that while current reward models handle general coherence effectively, their performance significantly degrades when evaluating research reports. Generative LLMs acting as judges demonstrate comprehensive superiority in this domain, with comparative evaluation proving more effective than direct scoring methods. We anticipate that this benchmark will serve as a vital testbed for the evaluation and advancement of research agents.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10156",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10156.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10156v1 Announce Type: new Abstract: Empowered by Large Language Models (LLMs), deep research systems integrate online information into research reports through multi-step web searching and information synthesis. Evaluating these reports presents a significant challenge due to their long context, high information density, and domain specificity, necessitating the use of AI evaluation as a substitute for prohibitively expensive human assessment. However, few studies have examined the effectiveness of existing reward models or LLMs in understanding and evaluating such research reports.\n\nTo bridge this gap, we introduce DeepResearch RewardBench, the first benchmark dedicated to evaluating reward modeling for research reports. We collect diverse report candidates from multiple agents or tool-augmented LLMs. These candidates are scored using query-specific golden rubrics, and we ensure data quality and difficulty through a combination of multi-round filtering and human verification.",
-      "takeaways": [
-        "Our benchmark comprises preference datasets formatted as pairs, triplets, and quadruplets to test ranking capabilities across varying levels of difficulty.",
-        "Extensive experiments demonstrate that while current reward models handle general coherence effectively, their performance significantly degrades when evaluating research reports.",
-        "Generative LLMs acting as judges demonstrate comprehensive superiority in this domain, with comparative evaluation proving more effective than direct scoring methods.",
-        "We anticipate that this benchmark will serve as a vital testbed for the evaluation and advancement of research agents."
-      ],
-      "impact": "High",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
