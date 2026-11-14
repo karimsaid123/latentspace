@@ -1,5 +1,33 @@
 [
   {
+    "id": "4b969165bc577459",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/13/vercel-ui-sdk-agent-ui-behaviors/",
+    "title": "Vercel Releases UI SDK: 50+ UI Behaviors for AI Coding Agents",
+    "publishedAt": "2026-11-14T06:38:14.000Z",
+    "fetchedAt": "2026-11-14T08:35:00.628Z",
+    "contentHash": "fba775bc61233a57",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Vercel Labs has released UI SDK , an open-source beta library of interface behaviors built for coding agents. Vercel UI SDK is a headless library that ships behaviors, not finished components. Agents combine those behaviors into accessible components for React, Vue, Svelte, Solid and Web Components. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 50+ behaviors, 51 component modules in the repo, 6 npm packages at 0.1.0-beta.1 Runs on: Any modern browser, no GPU. React 19+, Vue 3.5+, Svelte 5.33+, Solid 2 RC, or plain Web Components Performance: In Vercel’s own test, an agent used 69% fewer tool calls on a settings task Best: Task time fell 61%, from 41 s to 16 s, with the agent bridge (self-reported) Worst: That benchmark covers 1 task and 3 runs, and beta APIs may still change What is Vercel UI SDK? UI SDK is a library of UI behaviors from Vercel Labs that agents assemble into components. The README lists keyboard navigation, focus, selection, dismissal, popups, drag and drop, and the ARIA they need. All of it lives in @ui-sdk/core . Thin adapters render it in each framework. The project site explains the idea with a Select. You do not hand the agent a finished Select. You hand it a popup, a selection model and typeahead. Those same parts can produce an autocomplete, a combobox, or a component nobody has designed yet. How does UI SDK work? Components start as primitives defined with definePrimitive . A primitive declares state, an API and slots. Slots attach attributes, events and behaviors to DOM parts. The README example builds a search field with createFocusRecovery . Its Clear button appears only when there is text. Each framework then renders the primitive with createParts . The README says the parts are the same in all 5 adapters. So 1 behavior definition can serve a React app and a Svelte app. Which behaviors ship? Behaviors shown on ui-sdk.dev include: createRovingFocus : arrow keys move through a list with 1 Tab stop createTypeahead : type a few letters to jump to an item createPopup : opens next to its trigger and stays on screen createSelection : select 1 or many, with Shift and Ctrl createReorder , createResize , createViewport and createVirtualizer The docs group behaviors into 10 categories, from Focus and Keys to Canvas. Prebuilt components include Select, Combobox, Date Picker,",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Vercel Labs has released UI SDK, an open-source beta library comprising over 50 headless interface behaviors and 51 component modules across 6 npm packages at version 0.1.0-beta.1. Designed for AI coding agents rather than human developers, the library ships core behaviors—such as keyboard navigation, focus management, selection models, dismissal, popups, and drag-and-drop—alongside the necessary ARIA accessibility attributes, utilizing thin adapters to support React 19+, Vue 3.5+, Svelte 5.33+, Solid 2 RC, and plain Web Components.\n\nIn Vercel's initial internal testing covering a single settings task across three runs, the UI SDK enabled an AI agent to use 69% fewer tool calls, while task completion time fell by 61% (from 41 seconds down to 16 seconds) using the agent bridge. The architecture is built around primitives defined via `definePrimitive`, which declare state, APIs, and slots to attach DOM attributes and behaviors, allowing a single behavior definition to be rendered identically across multiple frontend frameworks.",
+      "takeaways": [
+        "**Package Specs:** Vercel UI SDK launches with 50+ behaviors, 51 component modules, and 6 npm packages under version 0.1.0-beta.1.",
+        "**Framework Support:** The headless library runs in any modern browser without a GPU, featuring framework adapters for React 19+, Vue 3.5+, Svelte 5.33+, Solid 2 RC, and Web Components.",
+        "**Performance Benchmarks:** Internal testing on a settings task showed a 69% reduction in agent tool calls and a 61% decrease in task time from 41 seconds to 16 seconds.",
+        "**Core Primitives:** Behaviors are grouped into 10 categories including Focus, Keys, and Canvas, featuring specific primitives like createRovingFocus, createTypeahead, createPopup, createSelection, createReorder, createResize, createViewport, and createVirtualizer."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "845199e0cd65445d",
     "canonicalUrl": "https://siliconangle.com/2026/11/13/nices-next-generation-cognigy-bets-the-hard-part-of-ai-agents-is-running-them-not-building-them/",
     "title": "NiCE’s next-generation Cognigy bets the hard part of AI agents is running them, not building them",
@@ -11,7 +39,7 @@
     "author": "Zeus Kerravala",
     "contentSnippet": "UPDATED 19:49 EST / NOVEMBER 13 2026\n\nNiCE’s next-generation Cognigy bets the hard part of AI agents is running them, not building them\n\nThe contact center has been the low-hanging fruit for the artificial intelligence industry. Ask any information technology or business leader what they want to use agentic AI for, and they will say it’s to improve the customer experience, which starts with the contact center.\n\nHowever, to date, the industry has spent the past two years arguing over which AI agent is the smartest. That’s the wrong debate. Model capabilities are improving so quickly and are getting so much cheaper that raw intelligence and reasoning are becoming the least differentiated part of the stack.\n\nThe real challenge for enterprises is operating a fleet of AI agents reliably across complete customer journeys, with the visibility and control a large business requires. Without that, the human, or worse, the customer, is left connecting the dots among the outputs of the growing number of agents they are communicating with.\n\nThat’s the thesis behind the next generation of NiCE Cognigy , which NiCE Ltd. launched this week . The release includes a redesigned Agentic Experience Studio, an AI Assist companion spanning the building, testing and improvement of agents, reusable “skills” that package instructions and tools, turn-by-turn tracing and native voice-to-voice model support.\n\nDefault speech-to-text, text-to-speech and large language models are now included in the per-conversation price, with premium models from Deepgram, ElevenLabs and Anthropic available with a few clicks and billed by usage.\n\nAhead of the launch, I attended an analyst briefing with Nhu Ho, senior product marketing manager at NiCE Cognigy, and with Clement Boutier, director of product management, who leads the team that built the release and owns the platform roadmap.\n\nHere are the important points from this release:\n\nCapable is not the same as dependable\n\nHo opened with a chart showing how long AI can work on its own before a human has to step in. In 2020, it was seconds; in 2024, it was minutes; and this year it’s roughly 16 hours. The footnote was interesting, as it calculated that figure at a 50% success rate. “Capable and dependable do not always mean the same thing,” Ho said. “That is exactly where the platform matters.”\n\nFor CX leaders, that’s a solid benchmark to consider. A 50",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "NiCE Ltd. has launched a next-generation version of its Cognigy platform, shifting its strategic focus from model intelligence to the operational reliability of AI agents in contact centers. The release introduces a redesigned Agentic Experience Studio, an AI Assist companion for development and testing, reusable \"skills\" for tool orchestration, and native voice-to-voice model support. By integrating default speech-to-text, text-to-speech, and LLMs into a per-conversation pricing model—while offering premium integrations with Deepgram, ElevenLabs, and Anthropic—NiCE aims to position Cognigy as the governance and orchestration layer for enterprises that require deterministic control over customer journeys.\n\nThe platform supports a hybrid deployment model, allowing businesses to combine traditional natural language understanding (NLU) flows with autonomous agentic behavior. This \"evolutionary\" approach enables companies to maintain deterministic workflows for sensitive tasks like payment processing or data scrubbing while delegating complex interactions to LLMs. Technical enhancements include turn-by-turn tracing, a simulator for multivariate testing of up to 10 variants using \"LLM-as-judge\" metrics, and support for the Model Context Protocol. NiCE is also collaborating with Meta and Sierra on the forthcoming Personal Agent Protocol, aiming to establish Cognigy as the secure \"front door\" for consumer-facing AI agents interacting with enterprise systems.",
@@ -98,7 +126,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "13th November 2026 Release datasette-cluster-map 0.19 — Datasette plugin that shows a map for any data with latitude/longitude columns One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header.\n\nHere's a map of power plants owned by California's PG&E , also demonstrating Datasette's recently redesigned facets :\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 13th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Simon Willison has released version 0.19 of the datasette-cluster-map plugin, a long-standing tool designed to visualize datasets containing latitude and longitude columns on interactive maps. This update ensures compatibility with Datasette 1.0a42, the latest alpha release of the core platform.\n\nTechnically, the plugin now relies on the new datasette-leaflet dependency. This architectural change is specifically implemented to ensure that OpenStreetMap tile requests include a referrer header, addressing previous limitations in how map data was fetched and authenticated. The release continues to support Datasette's recently redesigned faceting features, allowing users to filter and explore geospatial data alongside categorical metadata.",
@@ -155,7 +183,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "13th November 2026 Release datasette-leaflet 0.3 — Datasette plugin adding the Leaflet JavaScript library OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy.\n\ndatasette-leaflet is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to strict-origin-when-cross-origin , passing the host but not the full path to the page.\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 13th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "Ethics & Policy",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Simon Willison has released version 0.3 of datasette-leaflet, a plugin designed to bundle the Leaflet JavaScript library for use by other Datasette plugins. The update specifically addresses a compatibility issue with OpenStreetMap's tile server usage policy, which requires a referrer header for tile requests.\n\nPreviously, Datasette table pages utilized a 'Referrer-Policy: no-referrer' HTTP header, which prevented plugins from correctly authenticating tile requests against OpenStreetMap. Version 0.3 resolves this by explicitly setting the referrer policy on individual tile requests to 'strict-origin-when-cross-origin'. This configuration ensures that the host information is passed to the tile server while omitting the full page path, maintaining compliance with OpenStreetMap's requirements.",
@@ -674,16 +702,23 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Sarah Perez",
-    "contentSnippet": "ChatGPT Wallet lets AI agents shop and check out on users' behalf, starting with a limited rollout to U.S. Pro subscribers.",
+    "contentSnippet": "ChatGPT can now shop for you. On Friday, OpenAI launched a new wallet feature that lets its agents, called dots , help you decide what to buy and then complete the purchase on your behalf. The option will initially be available to a limited number of U.S. ChatGPT Pro subscribers, ages 18 and up, with a U.S.-issued Visa, Mastercard, or American Express.\n\nOpenAI says that users are fully in control of the purchases, as they’re able to review the items, the total, and the payment card that will be used to complete the transaction before the checkout occurs. In addition, users will approve the purchases directly with a security check like Face ID or a fingerprint, which creates a record of their transaction.\n\nThe addition comes as consumer-facing AI tools are working to find the right product-market fit, in terms of how they can help people be more efficient as they complete various tasks. While companies like DoorDash and Uber have so far reported low numbers of orders placed by AI agents, Meta’s Muse, which now has over 10 million users, has seen AI-assisted shopping become a top activity on its app.\n\nOther personal AI agents, like Instinct, also support making purchases on users’ behalf.\n\nIt’s no surprise, then, that OpenAI would want to enter this space more with an agentic shopping feature of its own.\n\nTo get started, ChatGPT subscribers add their eligible payment cards to the new ChatGPT Wallet, then ask their dot to help with a purchase. (This setup is a one-time thing; users don’t have to re-enter their payment information every time they buy.) When it’s time to transact, ChatGPT’s Wallet charges the selected card using a payment token, which is a substitute for the user’s actual card details, so that information isn’t shared with either the dot or the merchant.\n\nThe merchant will automatically receive what it needs to fulfill the order from the dot, like the shipping address and contact information, OpenAI says. The company notes that customers who shop via their dots will still be able to earn their credit card rewards and be able to take advantage of protections that typically come with cards, like being able to dispute transactions.\n\nThe limited availability at launch will allow OpenAI to test and improve the feature and its capabilities before rolling it out more broadly. In the future, the company plans to offer users more control over the feature ",
     "category": "Business & Big Tech",
     "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "ChatGPT Wallet lets AI agents shop and check out on users' behalf, starting with a limited rollout to U.S.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "OpenAI has introduced a new 'Wallet' feature for ChatGPT, enabling AI agents—referred to as 'dots'—to facilitate and complete consumer purchases. The feature is currently in limited release for U.S.-based ChatGPT Pro subscribers aged 18 and older, supporting U.S.-issued Visa, Mastercard, and American Express cards. Users must manually authorize each transaction via biometric security checks, such as Face ID or fingerprint scanning, after reviewing the item, total cost, and payment method.\n\nTechnically, the system utilizes payment tokens to process transactions, ensuring that sensitive card details are not shared with the AI agent or the merchant. The 'dot' agent handles the transmission of necessary fulfillment data, such as shipping addresses and contact information, to the retailer. OpenAI maintains that users retain standard credit card rewards and consumer protections, including the ability to dispute transactions. To support broader adoption, OpenAI has released a 'Commerce Partner Playbook' to assist retailers in integrating with agentic commerce, though the company faces competition and resistance from major retailers like Amazon, which currently blocks AI agents to prioritize its own Alexa ecosystem.",
+      "takeaways": [
+        "**Security Architecture:** Transactions are processed via payment tokens to mask actual card details from merchants and the AI agent.",
+        "**User Authorization:** Every purchase requires a manual biometric confirmation (Face ID or fingerprint) by the user before the transaction is finalized.",
+        "**Eligibility:** The feature is restricted to U.S. ChatGPT Pro subscribers using U.S.-issued Visa, Mastercard, or American Express cards.",
+        "**Future Roadmap:** OpenAI plans to introduce configurable spending limits and automated purchase parameters to allow for higher levels of agent autonomy.",
+        "**Retailer Integration:** OpenAI published a 'Commerce Partner Playbook' to provide guidance for retailers looking to support agent-based shopping."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -696,16 +731,22 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Amanda Silberling",
-    "contentSnippet": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. and China race to develop the most advanced AI infrastructure.",
+    "contentSnippet": "Nvidia co-founder and now former CEO Jensen Huang has never been as prone to controversy as AI leaders like OpenAI’s Sam Altman or SpaceXAI’s Elon Musk. But the 63-year-old industry kingpin recently admitted that he cheated on his wife of 40 years in affairs that could have ramifications beyond Huang’s personal life and U.S. national security.\n\nU.S. officials believe that one of Huang’s likely romantic interests, Megaspeed executive Alice Huang, is a Chinese spy who has been feeding information back to Beijing. (Alice Huang, a Chinese citizen, is of no relation to Jensen Huang.)\n\nMegaspeed is a Singapore-based AI infrastructure company that reportedly purchased $4.8 billion worth of Nvidia chips over the last two years. The U.S. and Singapore have both previously investigated Megaspeed over suspicions that the firm was illegally sharing chips with China. The Justice Department has since taken over the federal investigation into the company, The New York Times has reported.\n\nThe story took a sudden turn on Wednesday. Citing five people who worked at Nvidia, the Times reported that Huang also had an extramarital relationship with Kimberly Powell, the company’s vice president of healthcare, who reports directly to him. Nvidia, Huang and Powell have not confirmed the report. Reached by a Times reporter, Huang reportedly said, “I don’t think you should be talking to me directly,” before hanging up.\n\nBy early Thursday morning, Huang was no longer CEO of the company he co-founded 33 years ago. Then, Thursday afternoon, Reuters dropped another bombshell, publishing a report alleging that Huang had yet another extramarital affair with another unnamed Nvidia employee.\n\nThe U.S. and China are embroiled in a fierce technological arms race to build the most advanced AI infrastructure, which could shape each country’s economic future, military prowess, and capacity for innovation. Nvidia is valuable in this competition as one of the world’s largest makers of AI chips, which are essential for accelerating AI development. But as an American company, Nvidia faces government restrictions on the sale of its most powerful chips to Chinese entities.\n\nAs the controversy unfolds, we are organizing the most relevant events into a reverse-chronological timeline to keep you up to date.\n\nNovember 13, 2026: Huang was not confident in his successor, Colette Kress; reports describe Huang",
     "category": "Robotics & Hardware",
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Jensen Huang has resigned from Nvidia following an affair, which could have ramifications for national security as the U.S. And China race to develop the most advanced AI infrastructure.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "Jensen Huang has resigned as CEO of Nvidia following a series of revelations regarding extramarital affairs and potential national security risks. Reports indicate Huang engaged in relationships with Kimberly Powell, Nvidia’s VP of Healthcare, an unnamed Nvidia employee, and Alice Huang, an executive at Singapore-based Megaspeed. U.S. officials allege Alice Huang is a Chinese spy who facilitated the acquisition of $4.8 billion in Nvidia chips for entities in China, bypassing U.S. export controls. The Justice Department is currently investigating Megaspeed’s role in these chip transfers.\n\nFollowing the resignation on November 12, 2026, Nvidia appointed CFO Colette Kress as interim CEO and named Harvey C. Jones as the company’s first-ever board chair. The fallout has triggered a broader political investigation, with Democrats and Republicans in Congress demanding testimony from Huang and Commerce Secretary Howard Lutnick. Allegations have surfaced that the Trump administration permitted the sale of H200 AI chips to China in December 2025 in exchange for a portion of export sales, despite being briefed on Huang’s alleged compromising relationships. Huang is scheduled to testify before Congress regarding these matters before November 26, 2026.",
+      "takeaways": [
+        "**Leadership Transition:** Colette Kress is serving as interim CEO, while Harvey C. Jones, a board member since 1993, has been appointed as the first-ever chair of the board.",
+        "**Export Control Allegations:** Reports suggest the Trump administration authorized the sale of H200 chips to China in December 2025, allegedly in exchange for a cut of export sales, despite intelligence regarding Huang's associations.",
+        "**Financial Impact:** Nvidia stock fell approximately 8% in after-hours trading on November 11, 2026, and saw an 11% decline over the five-day period surrounding the initial reports.",
+        "**Regulatory Scrutiny:** The Justice Department is investigating Megaspeed International, a firm linked to Alice Huang, which reportedly facilitated the acquisition of $7.5 billion in Nvidia chips, including restricted hardware, via entities like Shanghai Century Litong."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -718,16 +759,23 @@
     "sourceId": "siliconangle-ai",
     "sourceName": "SiliconANGLE AI",
     "author": "Robert Hof",
-    "contentSnippet": "Oh, Jensen… really? Honeypot or not, the Chinese executive/accused spy with whom Nvidia CEO Jensen Huang admitted an affair this week should have been a flashing red light to him. So should fraternizing with one of your own VPs — and reportedly another employee too! In the end, all that, and maybe more to come, was […] The post Nvidia CEO Jensen Huang’s abrupt departure shakes AI industry’s foundations appeared first on SiliconANGLE .",
+    "contentSnippet": "UPDATED 10:00 EST / NOVEMBER 13 2026\n\nNvidia CEO Jensen Huang’s abrupt departure shakes AI industry’s foundations\n\nTHIS WEEK IN ENTERPRISE by Robert Hof\n\nHoneypot or not, the Chinese executive/accused spy with whom Nvidia CEO Jensen Huang admitted an affair this week should have been a flashing red light to him. So should fraternizing with one of your own VPs — and reportedly another employee too!\n\nIn the end, all that, and maybe more to come, was just too much for Nvidia’s board to bear despite the commanding position Huang (pictured) held not only at Nvidia but in the entire artificial intelligence industry. Indeed, the speed with which he resigned — spectacularly stupid as his behavior was — still makes me wonder if there are other shoes to drop, especially on the legal or national security fronts. Market researcher SemiAnalysis thinks it came down to pressure from the U.S. intelligence community that’s very unhappy Nvidia chips have apparently been smuggled to China.\n\nHuang was something of an AI puppet master, providing the chips and software to power the entire industry as well as seemingly unlimited cash to fund and backstop everyone from AI leaders such as OpenAI and Anthropic to innumerable cloud compute providers worldwide. No single person inside or outside Nvidia seems likely to fill that role.\n\nHowever, Nvidia really is much more than Jensen Huang. Interim CEO and CFO Colette Kress helped craft the financial arrangements that in part put Nvidia at the center of AI — though for what it’s worth, Huang himself wasn’t a fan lately . Some of his direct reports such as high-performance computing chief Ian Buck seem quite capable of carrying on, if perhaps not with Huang’s panache. One company is never one person, and shouldn’t be. I expect a less centralized Nvidia going forward, whoever’s at the top.\n\nMore than that, AI is much more than Jensen Huang, and it will continue to be going forward. It’s easy to forget that although Huang brilliantly helped create this new wave, AI and its enablers also are what made him a rock star. But that time is now over. Nvidia and certainly the AI industry shouldn’t be depending on one person to keep everything afloat anyway.\n\nThe reverberations of his sudden and shocking departure will continue to echo for a long time to come across Nvidia, its investors watching hundreds of billions of market cap evaporate, legions",
     "category": "Robotics & Hardware",
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Honeypot or not, the Chinese executive/accused spy with whom Nvidia CEO Jensen Huang admitted an affair this week should have been a flashing red light to him. So should fraternizing with one of your own VPs — and reportedly another employee too! In the end, all that, and maybe more to come, was ...",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "Nvidia CEO Jensen Huang has resigned following a series of scandals involving extramarital affairs, including one with a suspected Chinese intelligence operative. The board of directors moved to oust Huang amid reports of multiple affairs and potential national security concerns regarding the illicit smuggling of Nvidia hardware into China. CFO Colette Kress has been appointed interim CEO, with high-performance computing chief Ian Buck noted as a key internal leader. Market analysts, including SemiAnalysis, suggest the departure may be linked to pressure from the U.S. intelligence community regarding export control compliance.\n\nDespite the leadership vacuum, the broader AI sector continues to move forward. Anthropic has officially launched its IPO roadshow with a target valuation exceeding $64 billion, scheduled for next Thursday. Other market activity includes positive earnings guidance from CoreWeave and Cerebras, the latter of which announced a new deal with Microsoft. Conversely, companies with direct ties to Nvidia, such as Nebius and CoreWeave, experienced stock volatility following the news of Huang's resignation.",
+      "takeaways": [
+        "**Leadership Transition:** CFO Colette Kress is serving as interim CEO following Jensen Huang's resignation.",
+        "**Anthropic IPO:** The company is seeking to raise over $64 billion in its upcoming initial public offering.",
+        "**Market Performance:** Cerebras shares rose nearly 18% following positive guidance and a Microsoft partnership, while Nebius shares dropped 17% after lowering its outlook.",
+        "**Recent Funding Rounds:** Notable capital raises include Mirendil ($1B), Mercor ($750M at $20B valuation), LangChain ($300M), Databento ($100M at $1.1B valuation), and Rox ($100M at $1.3B valuation).",
+        "**Industry Forecasts:** Gartner projects that AI infrastructure will account for 59% of total global AI spending by 2027."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -745,11 +793,12 @@
     "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+      "tldr": "OpenAI has introduced ChatGPT Wallet, a payment integration designed for agents operating within ChatGPT Work, Codex, and dots. The system enables agents to execute purchases, contingent upon explicit user approval and the application of existing card security protections.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -10789,35 +10838,6 @@
       "tldr": "ArXiv:2611.10180v1 Announce Type: new Abstract: Medical ultrasound (US) enables real-time, non-invasive diagnosis, yet building US-based AI systems is limited by data scarcity, costly expert annotation, and limited cross-center generalizability. Privacy constraints and instance-level reporting hinder the collection of diverse abnormal cases and frame-level labels, while repeated retraining for new centers increases computational cost. We introduce EvoDiff, a generative active learning framework that integrates diffusion modelling with information-theoretic objectives, evolutionary search, and curriculum-based sampling to select informative samples across heterogeneous US datasets.\n\nEvoDiff formulates sample selection as a generate-to-retrieve process, in which diffusion-based optimization in feature space guided by information gain produces synthetic probes, and only the real unlabeled samples retrieved by these probes are annotated and used for downstream training. Across six benchmarks covering fifteen datasets and 16,696 images, we evaluate EvoDiff on convolutional network and transformer-based foundation model. EvoDiff approaches fully supervised performance with substantially fewer labels, outperforms active learning baselines, and improves foundation model generalization under cross-domain external validation on unseen cohorts.",
       "takeaways": [
         "A reader study with six radiologists indicates the potential to support clinical annotation workflows, with a model-based estimated 24% to 84% reduction in annotation workload at matched downstream performance."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0809cdc4ea32e509",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10193",
-    "title": "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "7198af433f6e0f79",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Saul Urso, Emanuele Carlini, Patrizio Dazzi, Matteo Mordacchini",
-    "contentSnippet": "arXiv:2611.10193v1 Announce Type: new Abstract: Large language models (LLMs) increasingly support Web-based services that must balance response quality and inference cost across heterogeneous requests. Conventional routing selects one model per prompt, while fixed ensembles cannot adapt their composition and cost to individual requests. We introduce PISA, a prompt-adaptive, cost-aware single-model router, and PISA-E, its extension to ensemble routing. At the core of both methods, PISA combines soft cluster memberships with model-specific predictors to estimate individual model capabilities. Building on these estimates, PISA-E jointly selects ensemble composition and cardinality under an explicit cost--quality preference that can be adjusted at inference time without retraining. A tractable ensemble-success surrogate and efficient candidate selection enable this extension without ensemble-specific training. Across four LLM routing benchmarks under in-distribution (ID) and out-of-distribution (OOD) conditions, PISA achieves the highest macro-average cost--performance hypervolume among the evaluated single-model routers in both settings. Meanwhile, PISA-E achieves the highest macro-average task performance among the evaluated ensemble approaches when prioritizing response quality, surpassing the strongest competitors by 2.09 and 2.87 percentage points under ID and OOD conditions, respectively. At selected lower-cost operating points, it also exceeds the strongest ensemble competitors' macro-average task performance while reducing average inference cost by approximately 36% and 25%, respectively. These results demonstrate the effectiveness of prompt-adaptive capability estimation for both single-model routing and selective ensembling.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10193",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10193.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10193v1 Announce Type: new Abstract: Large language models (LLMs) increasingly support Web-based services that must balance response quality and inference cost across heterogeneous requests. Conventional routing selects one model per prompt, while fixed ensembles cannot adapt their composition and cost to individual requests. We introduce PISA, a prompt-adaptive, cost-aware single-model router, and PISA-E, its extension to ensemble routing.\n\nAt the core of both methods, PISA combines soft cluster memberships with model-specific predictors to estimate individual model capabilities. Building on these estimates, PISA-E jointly selects ensemble composition and cardinality under an explicit cost--quality preference that can be adjusted at inference time without retraining. A tractable ensemble-success surrogate and efficient candidate selection enable this extension without ensemble-specific training.",
-      "takeaways": [
-        "Across four LLM routing benchmarks under in-distribution (ID) and out-of-distribution (OOD) conditions, PISA achieves the highest macro-average cost--performance hypervolume among the evaluated single-model routers in both settings.",
-        "Meanwhile, PISA-E achieves the highest macro-average task performance among the evaluated ensemble approaches when prioritizing response quality, surpassing the strongest competitors by 2.09 and 2.87 percentage points under ID and OOD conditions, respectively.",
-        "At selected lower-cost operating points, it also exceeds the strongest ensemble competitors' macro-average task performance while reducing average inference cost by approximately 36% and 25%, respectively.",
-        "These results demonstrate the effectiveness of prompt-adaptive capability estimation for both single-model routing and selective ensembling."
       ],
       "impact": "High",
       "readTimeMinutes": 2,
