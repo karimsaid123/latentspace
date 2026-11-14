@@ -1,5 +1,34 @@
 [
   {
+    "id": "e86112d5f8734949",
+    "canonicalUrl": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+    "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+    "publishedAt": "2026-11-14T21:41:22.000Z",
+    "fetchedAt": "2026-11-14T23:45:20.652Z",
+    "contentHash": "4559f6b8bf968fce",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "Posted: 1:41 PM PST · November 14, 2026 Image Credits: Li Hongbo/VCG / Getty Images Anthony Ha Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang A petition calling on Nvidia to reinstate the company’s recently ousted CEO Jensen Huang appears to have attracted more than 115,000 signatures as of Saturday afternoon.\n\nThe petition website said the signers include 5,965 current Nvidia employees, 1,108 former employees, and 63,063 shareholders. Notable supporters include Tesla and SpaceX CEO Elon Musk, Replit CEO Amjad Masad, Epic Games CEO Tim Sweeney, and Y Combinator CEO Garry Tan.\n\nThe petition states that its signers are “concerned that Jensen was removed without meaningful due process” and demands that the board “bring him back while an independent investigation establishes the facts.” It also calls on the board to ensure a fair investigation and provide more information to the public.\n\n“Jensen deserves due process, not mob justice,” the petition says.\n\nHuang resigned on Thursday , four days after confessing to having an affair with a chip executive suspected by U.S. intelligence to be a Chinese spy. The former CEO has agreed to testify before Congress, while news reports have also suggested that Huang engaged in multiple extramarital affairs .\n\nNvidia appointed CFO Colette Kress as the company’s interim CEO while it searches for a permanent replacement. Nvidia’s stock price fell sharply through the week, while Huang’s departure is also expected to leave a big gap in AI industry funding .\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related Venture Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say\n\nAI The unfolding Jensen Huang scandal: a timeline Amanda Silberling\n\n<img width=\"563\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2303769281.jpg?w=563\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"NVIDIA - Tel Aviv\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2303769281.jpg 3740w, https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2303769281.jpg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2303769281.jpg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2026/11/GettyImages-2303769281.jpg?",
+    "category": "Robotics & Hardware",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "A petition demanding the reinstatement of former Nvidia CEO Jensen Huang has garnered over 115,000 signatures as of November 14, 2026. The signatories include 5,965 current Nvidia employees, 1,108 former employees, and 63,063 shareholders. High-profile supporters of the movement include Tesla and SpaceX CEO Elon Musk, Replit CEO Amjad Masad, Epic Games CEO Tim Sweeney, and Y Combinator CEO Garry Tan. The petition organizers argue that Huang was removed without sufficient due process and are calling for his return pending an independent investigation into the circumstances surrounding his departure.\n\nHuang resigned on November 12, 2026, following his admission of an extramarital affair with a chip industry executive who is reportedly under investigation by U.S. intelligence for suspected ties to Chinese espionage. Subsequent reports have alleged that Huang was involved in multiple extramarital affairs. In the wake of his resignation, Nvidia’s board appointed CFO Colette Kress as interim CEO while initiating a search for a permanent successor. The leadership transition has triggered a sharp decline in Nvidia’s stock price and raised significant concerns regarding the future of AI industry funding, which had been heavily influenced by Huang's tenure.",
+      "takeaways": [
+        "**Petition Metrics:** The campaign to reinstate Jensen Huang reached 115,000 signatures, including support from 5,965 current and 1,108 former Nvidia staff.",
+        "**Leadership Transition:** Nvidia CFO Colette Kress has been named interim CEO following Huang's resignation on November 12, 2026.",
+        "**Core Allegations:** Huang's resignation followed his admission of an affair with a chip executive suspected by U.S. intelligence of being a Chinese spy.",
+        "**Industry Impact:** The departure has resulted in a sharp decline in Nvidia's stock price and is projected to create a significant funding gap for AI startups.",
+        "**Congressional Oversight:** The former CEO has agreed to provide testimony before the U.S. Congress regarding the scandal."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "b61bf08332389a3a",
     "canonicalUrl": "https://siliconangle.com/2026/11/14/att-uses-agentic-ai-to-reinvent-business-processes-from-the-ground-up/",
     "title": "AT&T uses agentic AI to reinvent business processes from the ground up",
@@ -69,7 +98,7 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Cmpnd has released dspy-wsp , a prototype optimizer that brings weight-space programming to DSPy . Weight-space programming is a technique in which a frontier LLM reads another model’s weights and edits them directly. There are no gradients, no training loop and no fine-tuning dataset. dspy-wsp packages this as WeightSpace , an optimizer that plugs into any DSPy program and metric. In Cmpnd’s tests, about $5 to $10 of GPT-6-Astra calls improved every decision model they tried. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR What it is: A DSPy optimizer ( WeightSpace ) where a writer LLM edits a student model’s weights. MIT license, pip install dspy-wsp , needs DSPy 3.5. Size: Tested on open decision models from 0.6B to 9B parameters. One 25-pass run edited a single layer or head. Runs on: One Mac for all experiments. 2B models used about 6 GB of memory. d1-omni-600M needs 4 GB or more (Mac or GPU). Performance: WeightSpace alone added 1.9 to 16.1 points on Typed Decisions. With ReAnchor, gains were 6.5 to 20.0 points. Best: d1-omni-600M rose from 50.9% to 69.1% (+18.3) with WeightSpace + ReAnchor. Worst: Clef-Flash (9B) gained only +1.9 from WeightSpace alone. With the original paper’s stricter rule, d1-omni-600M gained just +2.8. Bottom line: Best: a cheap, gradient-free edit that ships as a small, verifiable patch. Worst: very experimental, slow (78 to 167 minutes per run) and weakest on larger models. What is weight-space programming? Weight-space programming (WSP) treats a neural network’s weights as a program that can be read and rewritten. The idea comes from MIT research: Sparks of Weight-Space Programming . A frontier model (the research team used GPT-6-Astra) looks at weight tensors, reasons about what each part computes, and changes them to match a goal written in plain English. The research team stresses that WSP names an emerging capability, not a fixed method. Gradients were banned in their experiments, but the concept does not rule them out. How is it different from fine-tuning or prompt optimization? It helps to compare the 3 levers developers usually pull: Prompt optimization (DSPy’s MIPROv2, GEPA ) edits text: instructions and examples. The model’s weights never change. Fine-tuning (DSPy’s BootstrapFinetune, used inside BetterTogether ) changes weights with gradient descent. It need",
     "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
+    "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Cmpnd has released dspy-wsp, an open-source (MIT licensed) prototype optimizer for the DSPy framework that implements 'Weight-Space Programming' (WSP). Unlike traditional fine-tuning, which relies on gradient descent and training loops, WSP utilizes a frontier LLM—specifically GPT-6-Astra in Cmpnd's testing—to directly read and edit the weight tensors of a student model based on plain-English goals. The tool is designed to be model-agnostic, requiring only DSPy 3.5, and is intended for optimizing decision models ranging from 0.6B to 9B parameters.\n\nTechnical performance varies significantly by model size and configuration. In experiments, the WeightSpace optimizer improved performance on 'Typed Decisions' by 1.9 to 16.1 points, with gains reaching 6.5 to 20.0 points when combined with the ReAnchor technique. The d1-omni-600M model saw the most significant improvement, increasing from 50.9% to 69.1% accuracy. Resource requirements are relatively modest, with 2B parameter models consuming approximately 6 GB of memory and 600M models requiring 4 GB, allowing for execution on standard Mac hardware. However, the process is computationally slow, with runtimes ranging from 78 to 167 minutes per optimization pass.\n\nWhile WSP offers a gradient-free alternative to fine-tuning, Cmpnd notes that the method is currently experimental and shows diminishing returns on larger models, such as the 9B parameter Clef-Flash, which saw only a 1.9-point gain. The optimizer functions by editing a single layer or head per 25-pass run, producing a small, verifiable patch rather than a full model checkpoint. Deployment and specification details are accessible via the GPULeaderboard.com Chrome extension.",
@@ -10823,34 +10852,6 @@
         "These results establish META-IR as an effective pathway toward building LLMs capable of sustained, adaptive safety alignment under dynamic and evolving threat environments."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ea5d7d455e759c80",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10109",
-    "title": "The Infrastructure Divide: Analyzing Community Stance on Data Center Development via Reddit",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "b3b12dfeb199204b",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yoko Koyama, Gongfan Chen, Mansi Saxena",
-    "contentSnippet": "arXiv:2611.10109v1 Announce Type: new Abstract: The rapid expansion of AI-driven data center construction has outpaced public engagement: an estimated $64 billion in U.S. data center projects were blocked or delayed by local opposition between May 2024 and March 2025, yet the concerns driving this resistance remain poorly characterized. Prior engagement methods such as surveys and hearings are introduced late in the planning process, and no study has systematically mined social media to measure community stance at scale. To address this gap, this study presents an LLM-powered opinion-mining framework and applies it to 798 Reddit posts and 102,328 associated comments spanning a decade. An open-source large language model, guided by a Chain-of-Stance prompting framework and three domain-specific labeling rules, classified stance at 83% of the human inter-reviewer agreement ceiling. Opposition dominated discourse volume rather than disapproval: against posts outnumbered favor posts 2.6:1 and generated 8.5 times more comments, and this gap widened significantly over 86 weeks. Topic modeling of opposition arguments resolved into four reproducible clusters, resource consumption and scarcity (42.8%), contested siting processes and secrecy (34.2%), political opposition to data centers (13%), and political and corporate accountability (8%). Engagement analysis revealed that posts with emotional or provocative political framing attracted the most engagement, while key technical concerns (e.g., water, power) were dispersed across lower-engagement comment threads. These findings give local leaders, developers, and policy makers a quantified, continuously updatable basis for prioritizing concerns and policy levers, supporting a shift from opposition to negotiated, verifiable partnership for data center development.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10109",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10109.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10109v1 Announce Type: new Abstract: The rapid expansion of AI-driven data center construction has outpaced public engagement: an estimated $64 billion in U.S. Data center projects were blocked or delayed by local opposition between May 2024 and March 2025, yet the concerns driving this resistance remain poorly characterized. Prior engagement methods such as surveys and hearings are introduced late in the planning process, and no study has systematically mined social media to measure community stance at scale.\n\nTo address this gap, this study presents an LLM-powered opinion-mining framework and applies it to 798 Reddit posts and 102,328 associated comments spanning a decade. An open-source large language model, guided by a Chain-of-Stance prompting framework and three domain-specific labeling rules, classified stance at 83% of the human inter-reviewer agreement ceiling. Opposition dominated discourse volume rather than disapproval: against posts outnumbered favor posts 2.6:1 and generated 8.5 times more comments, and this gap widened significantly over 86 weeks.",
-      "takeaways": [
-        "Topic modeling of opposition arguments resolved into four reproducible clusters, resource consumption and scarcity (42.8%), contested siting processes and secrecy (34.2%), political opposition to data centers (13%), and political and corporate accountability (8%).",
-        "Engagement analysis revealed that posts with emotional or provocative political framing attracted the most engagement, while key technical concerns (e.g., water, power) were dispersed across lower-engagement comment threads.",
-        "These findings give local leaders, developers, and policy makers a quantified, continuously updatable basis for prioritizing concerns and policy levers, supporting a shift from opposition to negotiated, verifiable partnership for data center development."
-      ],
-      "impact": "Breakthrough",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
