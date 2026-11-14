@@ -1,5 +1,264 @@
 [
   {
+    "id": "845199e0cd65445d",
+    "canonicalUrl": "https://siliconangle.com/2026/11/13/nices-next-generation-cognigy-bets-the-hard-part-of-ai-agents-is-running-them-not-building-them/",
+    "title": "NiCE’s next-generation Cognigy bets the hard part of AI agents is running them, not building them",
+    "publishedAt": "2026-11-14T00:49:43.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.902Z",
+    "contentHash": "3bd3ec0c8f2fb32f",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Zeus Kerravala",
+    "contentSnippet": "UPDATED 19:49 EST / NOVEMBER 13 2026\n\nNiCE’s next-generation Cognigy bets the hard part of AI agents is running them, not building them\n\nThe contact center has been the low-hanging fruit for the artificial intelligence industry. Ask any information technology or business leader what they want to use agentic AI for, and they will say it’s to improve the customer experience, which starts with the contact center.\n\nHowever, to date, the industry has spent the past two years arguing over which AI agent is the smartest. That’s the wrong debate. Model capabilities are improving so quickly and are getting so much cheaper that raw intelligence and reasoning are becoming the least differentiated part of the stack.\n\nThe real challenge for enterprises is operating a fleet of AI agents reliably across complete customer journeys, with the visibility and control a large business requires. Without that, the human, or worse, the customer, is left connecting the dots among the outputs of the growing number of agents they are communicating with.\n\nThat’s the thesis behind the next generation of NiCE Cognigy , which NiCE Ltd. launched this week . The release includes a redesigned Agentic Experience Studio, an AI Assist companion spanning the building, testing and improvement of agents, reusable “skills” that package instructions and tools, turn-by-turn tracing and native voice-to-voice model support.\n\nDefault speech-to-text, text-to-speech and large language models are now included in the per-conversation price, with premium models from Deepgram, ElevenLabs and Anthropic available with a few clicks and billed by usage.\n\nAhead of the launch, I attended an analyst briefing with Nhu Ho, senior product marketing manager at NiCE Cognigy, and with Clement Boutier, director of product management, who leads the team that built the release and owns the platform roadmap.\n\nHere are the important points from this release:\n\nCapable is not the same as dependable\n\nHo opened with a chart showing how long AI can work on its own before a human has to step in. In 2020, it was seconds; in 2024, it was minutes; and this year it’s roughly 16 hours. The footnote was interesting, as it calculated that figure at a 50% success rate. “Capable and dependable do not always mean the same thing,” Ho said. “That is exactly where the platform matters.”\n\nFor CX leaders, that’s a solid benchmark to consider. A 50",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "NiCE Ltd. has launched a next-generation version of its Cognigy platform, shifting its strategic focus from model intelligence to the operational reliability of AI agents in contact centers. The release introduces a redesigned Agentic Experience Studio, an AI Assist companion for development and testing, reusable \"skills\" for tool orchestration, and native voice-to-voice model support. By integrating default speech-to-text, text-to-speech, and LLMs into a per-conversation pricing model—while offering premium integrations with Deepgram, ElevenLabs, and Anthropic—NiCE aims to position Cognigy as the governance and orchestration layer for enterprises that require deterministic control over customer journeys.\n\nThe platform supports a hybrid deployment model, allowing businesses to combine traditional natural language understanding (NLU) flows with autonomous agentic behavior. This \"evolutionary\" approach enables companies to maintain deterministic workflows for sensitive tasks like payment processing or data scrubbing while delegating complex interactions to LLMs. Technical enhancements include turn-by-turn tracing, a simulator for multivariate testing of up to 10 variants using \"LLM-as-judge\" metrics, and support for the Model Context Protocol. NiCE is also collaborating with Meta and Sierra on the forthcoming Personal Agent Protocol, aiming to establish Cognigy as the secure \"front door\" for consumer-facing AI agents interacting with enterprise systems.",
+      "takeaways": [
+        "**Operational Benchmarking:** NiCE reports that while AI autonomy has improved, current systems reach a 50% success rate at approximately 16 hours of operation, highlighting the necessity of human-in-the-loop guardrails for enterprise contact centers.",
+        "**Hybrid Architecture:** The platform allows for mixed-mode deployments where deterministic flows (e.g., credit card scrubbing) act as a protective layer before data reaches an LLM, preventing the need for a full \"rip-and-replace\" of existing infrastructure.",
+        "**Economic Optimization:** The new Simulator tool enables data-backed model selection by comparing variants based on latency and token consumption, allowing users to optimize for cost per resolved conversation.",
+        "**Interoperability:** Cognigy now functions as both a Model Context Protocol client and server, supporting agent-to-agent connections, including integrations with Microsoft-built agents.",
+        "**Voice Capabilities:** The platform now supports native voice-to-voice models, which allow agents to delegate tool calls to separate models while maintaining continuous, natural-sounding speech."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "96048276e5de0ccf",
+    "canonicalUrl": "https://www.theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+    "title": "Amazon has a plan to index the world’s online shopping data",
+    "publishedAt": "2026-11-13T23:49:11.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.064Z",
+    "contentHash": "3be806e6169e03fb",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Stevie Bonifield",
+    "contentSnippet": "Amazon has plans to build a vault of data on every product sold anywhere on the internet, even products Amazon doesn’t sell, and make the information available through its own site, according to Reuters. The project, called the “World Product Graph,” is meant to make it less likely that shoppers leave Amazon to do their product research on Reddit or Google, and make it more likely shoppers end up at Amazon even if they’re searching for a product sold elsewhere. The same goes for AI agents — if Amazon has the largest stockpile of shopping data, AI agents may rely on its index of products over others, so even people shopping with bots will end up on its pages. Links to outside retailers’ products have already started popping up on Amazon through the “shop direct” feature it launched last year. The company also has its own AI shopping assistant, Alexa for Shopping, previously called Rufus. The World Product Graph project would also be aimed at fixing issues with the AI by providing it more data. According to Reuters, an internal Amazon document on the project says “Many Rufus answers are factually wrong or incomplete” and running users’ Amazon searches with the AI is expensive. Adding more data is reportedly supposed to make the system more accurate and able to use cheaper models. Whether this actually ships is still up in the air. The internal document reportedly says the project “depends on discovering how brands organize their products on their own websites,” which could involve Amazon crawling other retailers’ sites. Reuters says it’s unclear “if or when this plan may be implemented,” but said the document on it included an October 1st, 2027 release date. Amazon said in a statement to Reuters that “Draft, outdated documents often paint an incomplete picture and the existence of a brainstorming document such as this one doesn’t necessarily reflect our current plans.”",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/acastro_STK103__03.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon is reportedly developing an internal initiative titled the “World Product Graph,” a project designed to index comprehensive data on products sold across the entire internet, including items not currently listed on Amazon’s marketplace. The primary strategic objective is to capture consumer traffic that currently migrates to search engines like Google or social platforms like Reddit for product research. By centralizing this data, Amazon aims to ensure that both human shoppers and AI agents—specifically its own shopping assistant, Rufus (now branded as Alexa for Shopping)—prioritize Amazon’s ecosystem as the primary source for product discovery and purchasing.\n\nTechnically, the project seeks to address significant performance deficits within the Rufus AI, which internal documents describe as frequently providing factually incorrect or incomplete responses. Amazon anticipates that by ingesting a broader dataset of external product information, it can improve the accuracy of its AI models while simultaneously reducing the high computational costs associated with current query processing. The initiative relies on the ability to crawl and interpret how external brands structure their product data on proprietary websites. While an internal document cited an October 1, 2027, release date, Amazon has characterized the report as based on outdated brainstorming materials that do not necessarily reflect current development roadmaps.",
+      "takeaways": [
+        "**Project Goal:** Create a comprehensive index of global online shopping data to reduce user reliance on external search engines and social platforms for product research.",
+        "**AI Optimization:** Improve the accuracy of the 'Rufus' (Alexa for Shopping) assistant and lower inference costs by training on a wider, external product dataset.",
+        "**Implementation Strategy:** Utilize web crawling techniques to discover and map how third-party brands organize product information on their own websites.",
+        "**Internal Status:** Amazon officially stated that the document cited by Reuters is a 'draft, outdated' brainstorming file and does not confirm a finalized product launch."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "91ab97e44683e9c3",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/",
+    "title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1",
+    "publishedAt": "2026-11-13T23:22:09.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.412Z",
+    "contentHash": "72d3390b6cdacfa6",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "WonGu Rho",
+    "contentSnippet": "GS Caltex uses Amazon SageMaker Canvas and Amazon SageMaker Pipelines to connect process engineers’ models to production workflows. The South Korean energy and chemical company divides model development and operations between engineers with complementary skills. Process engineers build and validate models in SageMaker Canvas without writing code, drawing on their process knowledge. Machine learning (ML) engineers configure SageMaker Pipelines workflows for deployment and scheduled inference. Moving assets from SageMaker Canvas into SageMaker Pipelines still required integration work. ML engineers had to set data paths for production, supply the model configuration, and connect preprocessing and inference jobs. GS Caltex automated this handoff while reusing the assets created in SageMaker Canvas. GS Caltex reports that its ML engineers now deploy models within a few hours, compared with about a week before. The company runs batch inference every 30 minutes, reducing the need for continuously running endpoints. GS Caltex reports that this has meaningfully lowered its inference costs. This post explains how GS Caltex connects SageMaker Canvas to SageMaker Pipelines and reuses validated preprocessing flows and models in production. Solution overview The machine learning operations (MLOps) workflow has two paths: preparing a new model version for deployment, and running batch inference with the deployed model. From a validated model to a repeatable workflow You can use SageMaker Canvas to prepare data visually, build models, and generate batch predictions. You can also register validated models in Amazon SageMaker Model Registry from SageMaker Canvas. GS Caltex built a separate handoff process to turn these assets into executable SageMaker Pipelines steps. Process engineers understand the variables and data behind a process and assess whether a model’s predictions are useful. ML engineers turn the resulting assets into production jobs and manage model versions and execution history. Area What is prepared in SageMaker Canvas What is managed in the production workflow Data preparation A preprocessing flow built with Data Wrangler Preprocessing jobs in Amazon SageMaker Processing Model development A trained model and evaluation results Model versions and approval status in Model Registry Prediction Validation of model predictions Batch inference every 30 minutes usi",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/10/ML-21878-1.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "GS Caltex, a South Korean energy and chemical firm, has optimized its MLOps pipeline by integrating Amazon SageMaker Canvas with Amazon SageMaker Pipelines. The workflow bifurcates responsibilities: process engineers utilize the no-code SageMaker Canvas interface to build, validate, and register models, while ML engineers manage the production deployment via SageMaker Pipelines. This architecture allows the company to reuse preprocessing flows and model assets directly from Canvas, significantly streamlining the transition from experimental validation to production-ready execution.\n\nBy automating the handoff between these two environments, GS Caltex has reduced model deployment timelines from approximately one week to a few hours. The production architecture utilizes scheduled batch inference every 30 minutes rather than maintaining continuously running endpoints, a shift the company reports has meaningfully lowered overall inference costs. The integration involves mapping SageMaker Canvas assets—specifically Data Wrangler preprocessing flows and Model Registry entries—into executable SageMaker Processing and batch inference jobs.",
+      "takeaways": [
+        "**Deployment Efficiency:** GS Caltex reduced model deployment time from one week to a few hours by automating the handoff between SageMaker Canvas and SageMaker Pipelines.",
+        "**Inference Strategy:** The company transitioned to batch inference every 30 minutes, eliminating the need for continuously running endpoints and reducing inference costs.",
+        "**Role-Based Workflow:** Process engineers handle data preparation and model validation in SageMaker Canvas without code, while ML engineers manage production deployment, versioning, and execution history in SageMaker Pipelines.",
+        "**Asset Reuse:** The system reuses Data Wrangler preprocessing flows and models registered in the Amazon SageMaker Model Registry to ensure consistency between development and production."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4cb58a6ed2a63999",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+    "title": "datasette-cluster-map 0.19",
+    "publishedAt": "2026-11-13T23:02:45.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.904Z",
+    "contentHash": "a53e7b2914ff38b2",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "13th November 2026 Release datasette-cluster-map 0.19 — Datasette plugin that shows a map for any data with latitude/longitude columns One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header.\n\nHere's a map of power plants owned by California's PG&E , also demonstrating Datasette's recently redesigned facets :\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 13th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released version 0.19 of the datasette-cluster-map plugin, a long-standing tool designed to visualize datasets containing latitude and longitude columns on interactive maps. This update ensures compatibility with Datasette 1.0a42, the latest alpha release of the core platform.\n\nTechnically, the plugin now relies on the new datasette-leaflet dependency. This architectural change is specifically implemented to ensure that OpenStreetMap tile requests include a referrer header, addressing previous limitations in how map data was fetched and authenticated. The release continues to support Datasette's recently redesigned faceting features, allowing users to filter and explore geospatial data alongside categorical metadata.",
+      "takeaways": [
+        "**Version Compatibility:** The plugin is updated to support Datasette 1.0a42.",
+        "**Dependency Update:** Now utilizes the datasette-leaflet library to manage map tile requests.",
+        "**Security/Privacy:** Tile requests to OpenStreetMap now include a referrer header.",
+        "**Core Functionality:** Enables map-based visualization for any database table containing latitude and longitude columns."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a53b6d6797d1d8ce",
+    "canonicalUrl": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+    "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+    "publishedAt": "2026-11-13T22:43:00.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.064Z",
+    "contentHash": "99a9636ae5eb13fb",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Marina Temkin, Dominic-Madori Davis",
+    "contentSnippet": "It was the resignation heard across the world. Jensen Huang, Nvidia’s embattled CEO who co-founded and led the company for 33 years, had officially stepped down . “It’s like a bomb went off,” one neocloud founder told TechCrunch when he first heard the news.\n\nOver the last several years, Nvidia has been a prolific investor , pouring tens of billions into startups annually and participating in 105 rounds this year alone, often as the largest investor, according to PitchBook. “If that direction changes, it’ll be a big blow to so many young companies,” said Maria Davidson, founder of Relational Capital.\n\nHuang’s absence leaves the startup ecosystem without one of its biggest champions and with far less capital for now, investors say, which could have a massive impact on dealmaking, valuations, funding, and even competition.\n\n“Nvidia is carrying almost every AI-native startup from application to neocloud,” Dawn Capital’s Shamillah Bankiya told TechCrunch.\n\nMost of the significant decisions to invest in startups often came from Jensen himself, according to Umesh Padval, managing partner at Seligman Ventures. Padval has known Huang since serving on the board of Mellanox Technologies, a networking chipmaker Nvidia acquired for approximately $7 billion in 2020. While there is hope that Huang’s eventual successor will resume his dealmaking spree, investors aren’t hopeful that it will happen in the short term.\n\nNvidia’s interim CEO, Colette Kress, is expected to institute some changes , especially when it comes to Nvidia’s investments into AI startups at the crux of the billion-dollar data center build-out . Huang’s rampant dealmaking in this sphere has been a source of concern for Wall Street.\n\n“She’s much more conservative,” one investor said of Kress. “I don’t think she’s going to commit the same amount of money to keep the early-stage ecosystem going.”\n\nNvidia’s biggest bets were backing neoclouds, inference providers, and open weight models, which are expensive for smaller companies to build. “Jensen’s initiatives are a big reason an ecosystem has emerged despite that,” Zain Javaid, co-founder of the hardware company Ghost, said.\n\nFor instance, Nvidia backed CoreWeave when it was still private and participated in two of Crusoe’s rounds, including its $1.4 billion Series E. It bought Hugging Face this year for $13 billion (expected to close in 2027) and holds inve",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang has resigned after 33 years, creating significant uncertainty for the AI startup ecosystem. Under Huang, Nvidia became a prolific venture investor, participating in 105 funding rounds in the current year alone. The company’s investment strategy frequently involved acting as the lead investor for capital-intensive infrastructure firms, neocloud providers, and open-weight model developers. Notable investments include CoreWeave, Crusoe (including a $1.4 billion Series E), Mistral AI, Lambda, Black Forest Labs, and an $800 million investment in Reflection AI’s $2 billion Series B round. Nvidia also reached a $13 billion agreement to acquire Hugging Face, expected to close in 2027.\n\nInterim CEO Colette Kress is expected to shift toward a more conservative investment strategy, moving away from the aggressive, founder-led dealmaking style that characterized Huang’s tenure. Investors note that Huang’s presence on a cap table often served as a signal of stability, encouraging other VCs to participate in high-valuation rounds for pre-revenue infrastructure startups. With Nvidia likely to reduce check sizes and become more selective, industry analysts anticipate a potential cooling of valuations for AI-native startups. While some hope that Big Tech rivals like Google, Amazon, or Microsoft might fill the funding void, experts like Battery Ventures' Dharmesh Thakker suggest these competitors are unlikely to match Nvidia’s willingness to bankroll pre-revenue infrastructure companies at the same scale.",
+      "takeaways": [
+        "**Investment Volume:** Nvidia participated in 105 startup funding rounds in the current year, often serving as the largest investor.",
+        "**Key Portfolio Assets:** Nvidia holds significant stakes in CoreWeave, Crusoe, Mistral AI, Lambda, Black Forest Labs, and has a pending $13 billion acquisition of Hugging Face.",
+        "**Strategic Shift:** Interim CEO Colette Kress is expected to adopt a more conservative investment approach, potentially reducing the capital allocated to early-stage AI infrastructure startups.",
+        "**Market Impact:** Nvidia’s previous investment model often involved providing $100 million to $500 million in GPU-linked funding to startups, which helped secure the company's CUDA ecosystem dominance.",
+        "**Historical Context:** Nvidia acquired Mellanox Technologies for approximately $7 billion in 2020, a deal facilitated by Jensen Huang."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e1058067669e2b5f",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+    "title": "datasette-leaflet 0.3",
+    "publishedAt": "2026-11-13T22:30:54.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.904Z",
+    "contentHash": "f85cc4c2598e3820",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "13th November 2026 Release datasette-leaflet 0.3 — Datasette plugin adding the Leaflet JavaScript library OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header . Datasette table pages used the Referrer-Policy: no-referrer HTTP header, causing plugins that loaded tiles from OpenStreetMap to violate that policy.\n\ndatasette-leaflet is the plugin that loads a bundled Leaflet so other Datasette plugins can depend on it. It now sets the referrer policy on the tile requests themselves to strict-origin-when-cross-origin , passing the host but not the full path to the page.\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 13th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released version 0.3 of datasette-leaflet, a plugin designed to bundle the Leaflet JavaScript library for use by other Datasette plugins. The update specifically addresses a compatibility issue with OpenStreetMap's tile server usage policy, which requires a referrer header for tile requests.\n\nPreviously, Datasette table pages utilized a 'Referrer-Policy: no-referrer' HTTP header, which prevented plugins from correctly authenticating tile requests against OpenStreetMap. Version 0.3 resolves this by explicitly setting the referrer policy on individual tile requests to 'strict-origin-when-cross-origin'. This configuration ensures that the host information is passed to the tile server while omitting the full page path, maintaining compliance with OpenStreetMap's requirements.",
+      "takeaways": [
+        "**Version Update:** datasette-leaflet 0.3 released on November 13, 2026.",
+        "**Policy Fix:** Updated tile request headers to 'strict-origin-when-cross-origin' to satisfy OpenStreetMap's referrer policy requirements.",
+        "**Functionality:** The plugin serves as a dependency provider for other Datasette plugins requiring the Leaflet JavaScript library.",
+        "**Technical Constraint:** Previous 'no-referrer' policy on Datasette table pages caused failures when loading OpenStreetMap tiles."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "762061e9584cb869",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
+    "title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard",
+    "publishedAt": "2026-11-13T22:30:12.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.412Z",
+    "contentHash": "8fbfec9e347e9eed",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Aswath Ram A Srinivasan",
+    "contentSnippet": "Coding agents such as Claude Code and OpenAI Codex CLI work in tasks. A developer asks for a change, and the agent reads files, edits code, and runs tests until the work is done. One task can take a few model calls or dozens. What the developer pays for is the task, not one call. The price per token alone doesn’t tell you what a whole task costs. The total depends on how many turns a model needs, how much history each turn replays, and how often a task has to be retried or never finishes. You pay for every attempt, including attempts on tasks that never finish. So when you route a coding agent’s requests between models, judge the routing by cost per solved task: the total cost of your runs divided by the number of runs whose tests pass. NVIDIA NeMo Switchyard is an open source library that helps an AI agent choose which model handles each request. You define the models that it can use and the strategy that it follows. Its LiteLLM integration supports two strategies. Stage routing reads the recent tool activity and results in the request history, and then picks one of two candidate models. Random routing picks from the configured models, with optional weights, for traffic splits and A/B comparisons. Another option you can explore is LiteLLM, who also recently shipped a native built-in Switchyard stage router as an auto-router strategy. In this post, you use the AWS Cloud Development Kit (AWS CDK) to deploy LiteLLM, an open source gateway for large language models (LLMs), with the Switchyard routing plugin in your AWS account. LiteLLM calls the models on Amazon Bedrock . You then use the sample’s benchmark runners to measure cost per solved task for a routed model group and for single-model baseline groups, so that you can evaluate routing against your own workloads. Note: The sample installs switchyard-server 0.3.0 from crates.io and runs the published LiteLLM v1.102.0 image. NVIDIA documents switchyard-server 0.3.0 as a demo and evaluation component, and its configuration can change between releases. This sample uses the experimental Switchyard LiteLLM integration and its configuration and APIs may change between releases. This is sample code, for non-production usage. Work with your security and legal teams to meet your organizational security, regulatory, and compliance requirements before deployment. Deploy the sample in a non-production account and test ",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/11/ML-22318-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "NVIDIA and AWS released a reference deployment utilizing the open-source NVIDIA NeMo Switchyard library combined with LiteLLM on Amazon Bedrock to route coding agent requests across multiple models. Coding agents like Claude Code and OpenAI Codex CLI execute tasks requiring multiple turns, where total cost is driven by turn count, history replay size, and retry frequency rather than isolated per-token pricing. Consequently, NeMo Switchyard evaluates routing efficiency using cost per solved task, calculated as total run costs divided by the number of runs passing tests.\n\nThe system integrates via an experimental LiteLLM plugin supporting two routing strategies: stage routing, which analyzes recent tool activity and request history to select between two candidate models, and random routing, which distributes traffic using optional weights for A/B testing. The associated AWS Cloud Development Kit (AWS CDK) sample deploys LiteLLM using the published LiteLLM v1.102.0 image and switchyard-server 0.3.0 from crates.io to benchmark routed model groups against single-model baseline groups.\n\nNVIDIA designates switchyard-server 0.3.0 and its LiteLLM integration as experimental, demo, and evaluation components intended solely for non-production usage, noting that configurations and APIs are subject to change between releases.",
+      "takeaways": [
+        "**Core Metric:** Coding agent routing efficiency is measured by cost per solved task, defined as total run expenditures divided by the count of successfully tested runs.",
+        "**Switchyard Strategies:** NVIDIA NeMo Switchyard integrates with LiteLLM to support stage routing—which examines recent tool activity and history to pick between two candidate models—and random routing for traffic splits and A/B comparisons.",
+        "**Deployment Stack:** The reference architecture uses the AWS Cloud Development Kit (AWS CDK) to deploy LiteLLM on Amazon Bedrock, invoking switchyard-server 0.3.0 and LiteLLM v1.102.0.",
+        "**Production Caveats:** NVIDIA and the sample documentation explicitly classify switchyard-server 0.3.0 and the experimental LiteLLM integration as non-production demo and evaluation tools with unstable APIs."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "41586052132a21c1",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/",
+    "title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime",
+    "publishedAt": "2026-11-13T22:02:39.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.412Z",
+    "contentHash": "8bdd52c32dbc213a",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Evandro Franco",
+    "contentSnippet": "Agents today review code, process claims, and run unattended for hours. Many also sit behind interactive experiences where a person waits for the first response. Amazon Bedrock AgentCore runtime gives these agents a fully managed, serverless environment: each session runs in its own isolated microVM, the platform scales to zero when there’s no work, and you only pay for the resources your sessions consume. AgentCore runtime with platformVersion set to “V2” changes how sessions start. Instead of initializing your container for every session, it prepares your environment once, snapshots it, and restores that snapshot for each new session. Session start times are faster and more consistent. V2 also reclaims memory your sessions don’t use, so your bill tracks what your agent uses. For most agents, switching to V2 is all it takes. Some agents need restructuring to get the full benefit, and for chat and voice experiences even 2 seconds is too slow. This post explains how V2 starts a session, how to measure session start time, and how to keep work off the first request, including build hooks, which AgentCore runtime now supports. We cover four patterns, from changes to your agent’s code to starting sessions before users need them. Which pattern do you need? Your situation What to do Section A new session in about 2 seconds is fine Switch to V2 and do all initialization before app.run() Keep work off the first request Your agent needs large files, a CLI, or a browser early, and can’t hold them in its process Add a build hook to load and prime them while the snapshot is built Working with hooks You need sub-second, and users engage before they send their first request (opening the app or a chat window) Start the session in the background when the user engages Pre-warm on user engagement How V2 starts a session AgentCore runtime runs each session in a new microVM. On V1, AgentCore pulls your container image from Amazon Elastic Container Registry (Amazon ECR), starts the container, and runs your initialization code before it can process the first request. The image pull dominates, so cold start grows with image size. V2 does that work once. When you create or update a runtime, AgentCore runtime starts your container in a fresh microVM and waits for the first healthy ping ( GET /ping ), which must arrive within 120 seconds. It then clears the operating system’s file cac",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/13/ML-22099-1.png",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon Bedrock AgentCore runtime has introduced 'platformVersion V2', a serverless architecture update designed to reduce session cold start times by replacing container initialization with snapshot restoration. In the previous V1 architecture, each session required pulling a container image from Amazon Elastic Container Registry (ECR) and executing initialization code, causing latency to scale linearly with image size. V2 optimizes this by preparing the environment once, snapshotting it, and restoring that snapshot for subsequent sessions, while also implementing memory reclamation to align billing with actual resource consumption.\n\nTo achieve optimal performance, the runtime now supports build hooks, allowing developers to load and prime large dependencies—such as CLI tools, browsers, or large files—during the snapshot creation phase rather than at runtime. For applications requiring sub-second latency, the documentation recommends pre-warming sessions by initiating them in the background as soon as a user engages with the interface, such as upon opening a chat window, rather than waiting for the first user request.",
+      "takeaways": [
+        "**V2 Architecture:** Replaces per-session container initialization with snapshot restoration to improve startup consistency and speed.",
+        "**Initialization Constraint:** V2 requires a healthy ping (GET /ping) from the container within 120 seconds during the initial snapshot creation phase.",
+        "**Optimization Patterns:** Recommends moving initialization logic before app.run(), utilizing build hooks for heavy dependencies, and implementing background session pre-warming for sub-second requirements.",
+        "**Billing Impact:** V2 introduces memory reclamation, ensuring users are billed only for the resources actively consumed by the agent session."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c7c1adfef40b0ae1",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/",
+    "title": "OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures",
+    "publishedAt": "2026-11-13T21:53:40.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.412Z",
+    "contentHash": "8caa0593ea3dce4b",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Malav Shastri",
+    "contentSnippet": "You can deploy OpenFold3-preview from Amazon SageMaker JumpStart . The OpenFold Consortium and the AlQuraishi Lab at Columbia University developed OpenFold3 as an open source biomolecular structure prediction model. With a few lines of code, you can typically deploy OpenFold3 into your own AWS account. You can then predict the 3D structures of proteins, DNA, RNA, small-molecule ligands, and the complexes they form. The endpoint runs with network isolation, which you can use to help keep your sequences within your AWS account. Computational drug discovery teams now use structure prediction as a core part of their work. Teams use it in target identification, antibody and protein engineering, and structure-based virtual screening. Teams have found running these models challenging. You need GPU infrastructure, a working CUDA and PyTorch stack, large model checkpoints, and a serving layer that handles requests that take minutes rather than milliseconds. SageMaker JumpStart can handle much of that work for you. OpenFold3 runs in an AWS-maintained container on a managed Amazon SageMaker AI endpoint. The endpoint is designed to handle request queuing and GPU warmup, and you can add autoscaling. In this post, we show you how to: Deploy OpenFold3-preview on a SageMaker asynchronous inference endpoint. Submit structure prediction jobs and interpret the results, including predicted structures and confidence scores. Run several predictions in parallel on multi-GPU instances . Supply your own multiple sequence alignments (MSAs) to improve prediction accuracy while helping keep your sequences private. Help reduce costs by scaling your endpoint to zero when it’s idle. Overview of OpenFold3 OpenFold3 is an all-atom structure prediction model. It predicts the joint 3D structure of a set of molecules from their sequences. It isn’t limited to single protein chains: It can fold multi-chain protein complexes, protein–nucleic acid assemblies, and protein–ligand complexes in one prediction. Attribute Details Developer OpenFold Consortium / AlQuraishi Lab, Columbia University Model type All-atom biomolecular structure prediction Inputs Protein, DNA, and RNA sequences. Small-molecule ligands as SMILES Outputs Predicted structures in mmCIF format, with confidence metrics (pLDDT, PAE, PDE) Version OpenFold3 0.4.1, of3-p2-155k checkpoint License Apache 2.0 JumpStart model ID huggingface",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The OpenFold Consortium and the AlQuraishi Lab at Columbia University have released OpenFold3-preview (version 0.4.1, of3-p2-155k checkpoint) on Amazon SageMaker JumpStart. This open-source, all-atom biomolecular structure prediction model is designed to predict the 3D joint structures of proteins, DNA, RNA, and small-molecule ligands, including complex multi-chain assemblies and protein-nucleic acid interactions. The model is available under the Apache 2.0 license and can be deployed directly into AWS accounts via SageMaker JumpStart, which manages the underlying GPU infrastructure, CUDA/PyTorch stacks, and serving layers.\n\nBy deploying OpenFold3 on SageMaker asynchronous inference endpoints, users can perform structure-based virtual screening, antibody engineering, and target identification while maintaining data privacy through network isolation. The deployment supports custom multiple sequence alignments (MSAs) to enhance prediction accuracy and includes features such as GPU warmup, request queuing, and autoscaling, including the ability to scale to zero during idle periods to reduce costs. Outputs are provided in mmCIF format, accompanied by standard confidence metrics including pLDDT, PAE, and PDE.",
+      "takeaways": [
+        "**Model Capabilities:** Predicts 3D structures for proteins, DNA, RNA, and small-molecule ligands (via SMILES input) in multi-chain or complex assemblies.",
+        "**Deployment Architecture:** Runs on managed Amazon SageMaker AI endpoints using AWS-maintained containers with support for asynchronous inference and multi-GPU parallelization.",
+        "**Output Metrics:** Generates structures in mmCIF format with associated confidence scores: pLDDT (predicted Local Distance Difference Test), PAE (Predicted Aligned Error), and PDE (Predicted Distance Error).",
+        "**Cost Optimization:** Supports autoscaling configurations that allow the endpoint to scale to zero when idle.",
+        "**Data Security:** Enables private, network-isolated inference, allowing users to supply their own MSAs while keeping sequences within their AWS environment."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "48af5fa4b3bcd43e",
     "canonicalUrl": "https://siliconangle.com/2026/11/13/mirendil-raises-1b-in-funding-to-speed-up-ai-model-development/",
     "title": "Mirendil raises $1B in funding to speed up AI model development",
@@ -11,7 +270,7 @@
     "author": "Maria Deutscher",
     "contentSnippet": "UPDATED 16:22 EST / NOVEMBER 13 2026\n\nMirendil raises $1B in funding to speed up AI model development\n\nMirendil Inc., a provider of software that speeds up artificial intelligence development, has raised $1 billion in early-stage funding.\n\nThe startup stated on Thursday that Kleiner Perkins and Clearlake Capital jointly led the Series A investment. They were joined by more than a half-dozen others including Google LLC.\n\nMirendil was launched last year by two former Google DeepMind and Anthropic PBC researchers. Chief Executive Officer Behnam Neyshabur is a co-inventor of SAM , a popular algorithm that makes AI models better at tasks they were not specifically trained to perform. Chief Technology Officer Harsh Mehta, in turn, spent his time at Google DeepMind and Anthropic working on pretraining projects. Pretraining is a term for the initial phase of the AI development workflow.\n\nMirendil’s first product, Lor, is a platform that automates many of the tasks involved in model training runs. The company says that the software does so by splitting work among hundreds of AI agents.\n\nLarge language model development involves a significant amount of trial and error. Researchers create multiple versions of an algorithm that differ from one another in small ways and compare them to find the most performant variant. According to Mirendil, Lor can automate that workflow. If an error crops up during the evaluation, the platform fixes it automatically.\n\nEarlier this year, Mirendil asked one of its researchers to build a coding model that can compete with leading open-source LLMs. Usually, such projects are carried out by teams of specialists. Mirendil says that its automation technology enabled the researcher to build the model without any help from colleagues. The project cost $10 million and took about 3.5 months to complete.\n\nThe company’s agents wrote more than 99% of the code that powers the model, which is called Mirendil-Base. They set up infrastructure, found a suitable training algorithm and collected training data from the web. The agents then refined both the training dataset and Mirendil-Base’s architecture to boost output quality.\n\nThe LLM is the foundation of a specialized coding model called Fern that the company unveiled last month. According to Mirendil, it’s designed to automate programming challenges commonly encountered by AI labs. Fern can process 10",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Mirendil Inc., a startup focused on accelerating AI model development, has secured $1 billion in Series A funding led by Kleiner Perkins and Clearlake Capital, with participation from Google and others. Founded last year by former Google DeepMind and Anthropic researchers Behnam Neyshabur (CEO) and Harsh Mehta (CTO), the company aims to automate the AI training lifecycle. Neyshabur is known for co-inventing the SAM algorithm, while Mehta brings expertise in pretraining workflows.\n\nThe company’s core platform, Lor, utilizes fleets of hundreds of AI agents to automate model training, infrastructure setup, data collection, and error correction. Mirendil demonstrated the platform's efficacy by having a single researcher build 'Mirendil-Base,' a coding-focused LLM, in 3.5 months for $10 million. The company claims agents wrote over 99% of the code for this model. Mirendil-Base serves as the foundation for 'Fern,' a specialized coding model capable of processing 10 million input tokens per prompt—reportedly 10 times the capacity of Claude Opus 5.5—equivalent to 500,000 lines of code.\n\nFern is built on a version of Mirendil-Base containing 100 billion to 500 billion parameters. Mirendil has also previewed larger iterations of the base model, ranging from 500 billion to 10 trillion parameters, which the company intends to leverage for future, more capable LLM development.",
@@ -41,7 +300,7 @@
     "contentSnippet": "November 13, 2026 Vahab Mirrokni, Google Fellow and VP, Google Research\n\nWe share recent results from Antigravity’s /teamwork multiagent systems, which enhance human-AI collaborations to solve open problems across mathematics, chemistry, systems software, and ML engineering. All of this work is done in collaboration with human experts, and we are making these tools available externally.\n\nOver the past several weeks, teams across Google and academic partner institutions have tackled open problems in math, science, and complex systems engineering that had remained open for years. Using Gemini 4 Argon , Gemini 4 Carbon , Gemini 4 Hydrogen and multi-agent workflows such as Antigravity’s /teamwork (building on various Gemini models), these collaborations have produced new innovations across information theory, formal verifications, molecular structure discoveries, and kernel optimization, along with several production infrastructure gains at Google. We are making these agentic tools available in Antigravity’s /teamwork (alongside /boost and other agents) so that researchers and developers can apply them to their own work.\n\nFrontier research and systems engineering require navigating vast literature, building custom computational pipelines, testing against physical measurements, and verifying every step. Progress comes from an interactive discovery loop where researchers frame questions and define the theoretical or physical constraints, while long-horizon agents write custom solvers, explore large search spaces, test candidate designs, and check long chains of logic.\n\nScaling long-horizon reasoning\n\nTwo limits of current language models motivate /teamwork's design . First, model generation can be unpredictable, leaving a gap between a single attempt and finding the correct answer. The system bridges this gap by pairing parallel exploration with dedicated falsifiers (e.g., the Lean 4 proof checker, unmodified software test suites, execution simulators, web search, or hardware counters) to automatically verify which candidate solutions work.\n\nSecond, AI models often lose track of details over multi-day tasks because attention disperses across growing context windows. To prevent this, /teamwork partitions context by construction: each specialized agent receives only the exact files and tools it needs for a specific step. Coordinators hand off tasks to fresh successo",
     "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/AntigravityTeamwork_HeroFinal.jpg",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "Google DeepMind",
     "entryType": "RESEARCH_PAPER",
     "summary": {
       "tldr": "Google Research has unveiled /teamwork, a multi-agent system designed to facilitate human-AI collaboration on complex open problems in mathematics, science, and systems engineering. The platform leverages the Gemini 4 model family—specifically Argon, Carbon, and Hydrogen—to execute long-horizon reasoning tasks. By utilizing specialized agentic harnesses like 'Stellar Colosseum' and '/boost,' the system automates the discovery loop by pairing parallel model exploration with external falsifiers, such as the Lean 4 proof checker, software test suites, and hardware counters. This architecture addresses model unpredictability and context degradation by partitioning tasks into specialized, isolated contexts where coordinators hand off work to fresh successor agents.\n\nIn recent applications, /teamwork has achieved significant breakthroughs, including the formal proof of the 2013 Courtade–Kumar conjecture in information theory, which involved generating 50 million lines of Lean 4 code. Other notable results include resolving a 2014 open question in quantum computing regarding n-bit Boolean functions, achieving near-optimal sample bounds for adaptive data analysis, and developing a deterministic algorithm for Boolean matrix multiplication that surpasses the cubic-time barrier. The system also produced a C implementation for n-bit integer multiplication that matches the GNU Multiple Precision Arithmetic Library (GMP) bit-for-bit up to a billion bits. These tools are being integrated into the Antigravity platform for external researcher and developer access.",
@@ -59,6 +318,36 @@
     }
   },
   {
+    "id": "754f24889ed9e00a",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+    "title": "ChatGPT Wallet lets OpenAI’s Dots agents make purchases for you",
+    "publishedAt": "2026-11-13T20:45:10.000Z",
+    "fetchedAt": "2026-11-14T01:56:18.064Z",
+    "contentHash": "a7e10f6f499b3067",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Stevie Bonifield",
+    "contentSnippet": "After launching its Dots AI agents platform earlier this year, OpenAI is launching a wallet for the agents. ChatGPT Wallet is rolling out starting today for ChatGPT Pro subscribers in the US aged 18 and older using a US billing address and “eligible US-issued American Express, Chase, Mastercard and Visa cards.” After adding a card to the wallet, your Dots agents can use it to buy things in response to your prompts, but they’ll check in with you each time before checking out. OpenAI’s support page says every purchase with ChatGPT Wallet requires a security check with biometric verification like Face ID or a fingerprint scan. [Image: Users have to approve every purchase from ChatGPT Wallet. https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/openai-chatgpt-wallet-approval-pop-up.jpeg?quality=90&strip=all] [Media: https://twitter.com/ChatGPT/status/2121283151729496235?a=Dzv0TkF6sRIc6NCqEso&s=20] After you review the AI agent’s purchase and sign off on it, OpenAI says that, similar to using tap to pay, Apple Pay, or Google Wallet, it substitutes your credit card details with a payment token, so your actual card info isn’t shared with your Dots agent or the business you’re buying from. Eventually, OpenAI says it expects “users to be able to delegate purchases entirely to their agent by setting clear parameters—such as spending limits, purchase categories, or time periods—and pre-approve those purchases.” ChatGPT Wallet might not work everywhere. Some retailers have restrictions on AI agents or block them altogether. Earlier this year, Amazon blocked Meta’s Muse agents. OpenAI says that in order for agents to use ChatGPT Wallet, “websites need to ensure agents are not inadvertently blocked, and payment and risk systems need to recognize legitimate purchases made by agents.”",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/STKS539_AI_AGENTS_SHOPPING_B.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI is launching ChatGPT Wallet to enable its Dots AI agents platform to make purchases on behalf of users. The feature is rolling out for ChatGPT Pro subscribers in the US who are 18 and older, possess a US billing address, and use eligible US-issued American Express, Chase, Mastercard, or Visa cards.\n\nEvery purchase requires a security check using biometric verification such as Face ID or a fingerprint scan before checkout. Similar to Apple Pay or Google Wallet, the system substitutes actual credit card details with a payment token so that raw card information is not shared with the agent or merchant. OpenAI plans to introduce full delegation capabilities where users can pre-approve purchases by setting parameters like spending limits, time periods, or purchase categories.\n\nThe system faces friction from retail platforms, as some merchants restrict or block AI agents entirely—mirroring Amazon's earlier blocking of Meta's Muse agents. OpenAI noted that websites must ensure agents are not inadvertently blocked and that payment and risk systems must adapt to recognize legitimate agent-driven transactions.",
+      "takeaways": [
+        "**Eligibility Restrictions:** ChatGPT Wallet is initially available exclusively to US-based ChatGPT Pro subscribers aged 18 and older using eligible American Express, Chase, Mastercard, and Visa cards with a US billing address.",
+        "**Security Mechanism:** Every agent-initiated transaction requires mandatory biometric verification (such as Face ID or fingerprint scan) for user approval prior to checkout.",
+        "**Tokenized Privacy:** The wallet replaces real credit card details with a payment token, preventing both the Dots agent and the merchant from accessing raw credit card data.",
+        "**Future Delegation:** OpenAI plans to introduce automated pre-approval parameters allowing agents to make purchases independently based on user-defined spending limits, category restrictions, and time windows.",
+        "**Merchant Friction:** Adoption depends on retailer infrastructure; websites must configure payment and risk systems to recognize legitimate AI agent purchases and avoid blocking them, similar to Amazon's blockade of Meta's Muse agents."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "b96c8f1ce3eaba55",
     "canonicalUrl": "https://techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation/",
     "title": "AI agent startup LangChain hits $3B valuation",
@@ -70,7 +359,7 @@
     "author": "Julie Bort",
     "contentSnippet": "Posted: 11:37 AM PST · November 13, 2026 Image Credits: Getty Images Julie Bort AI agent startup LangChain hits $3B valuation Agent management startup LangChain has raised a $300 million Series C at a $3 billion valuation led by CapitalG, with participation from investors, including Singapore’s GIC, DFJ Growth, IVP, and Sapphire Ventures, the company announced on Friday.\n\nThat’s more than double its $1.25 billion valuation when it raised $125 million about a year ago , led by IVP.\n\nLangChain began in 2022 as a popular open source project that handled the kinds of tasks that early-stage LLMs found difficult, like searching the web, calling APIs, and interacting with databases. As the frontier AI labs delivered harnesses that now competently do those tasks, LangChain turned its focus toward managing AI agents. It has apparently found its stride in this highly competitive area with a simple message: letting businesses own their own intelligence.\n\nWith its open source roots, the startup says its agent creation and management software, LangSmith, is not trying to lock users into any particular model, cloud, or ecosystem, unlike the major clouds or frontier AI labs. It also promises that LangSmith will contain agent behavior and is easy to use.\n\nTrue, there are plenty of other startups pitching similar advantages these days and also doing well ( case in point is newcomer Mintive ). However, LangChain has had a head start and now claims 7,000 LangSmith customers, including big-name startups like Harvey, Rippling, and Clay, and enterprises like Nvidia, Toyota, and Salesforce.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related AI Amazon’s new AI agent will shop third-party sites for you\n\n<img width=\"530\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?w=530\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"Robot concept or robot hand chatbot pressing computer keyboard enter\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg 2058w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resize=150,106 150w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resize=300,212 300w, https://techcrunch.com/wp-content/uploads/2023/02/GettyImages-1065679054.jpg?resiz",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "LangChain, the AI agent management startup, has secured $300 million in a Series C funding round, bringing its total valuation to $3 billion. The round was led by CapitalG, with participation from GIC, DFJ Growth, IVP, and Sapphire Ventures. This valuation represents a significant increase from the $1.25 billion valuation the company reached approximately one year ago following a $125 million funding round led by IVP.\n\nOriginally launched in 2022 as an open-source project designed to assist early-stage LLMs with tasks like web searching and API integration, LangChain has pivoted its primary focus toward the management of AI agents. Its core product, LangSmith, is positioned as a model-agnostic platform that allows businesses to build and manage agents without being locked into specific cloud providers or proprietary AI ecosystems. The company claims to have reached 7,000 customers for LangSmith, including major enterprises such as Nvidia, Toyota, and Salesforce, as well as startups like Harvey, Rippling, and Clay.",
@@ -175,9 +464,9 @@
   {
     "id": "6669a4d19d8d9722",
     "canonicalUrl": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
-    "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh oh, Jensen!",
+    "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!",
     "publishedAt": "2026-11-13T18:40:30.000Z",
-    "fetchedAt": "2026-11-13T21:46:30.821Z",
+    "fetchedAt": "2026-11-14T01:56:18.064Z",
     "contentHash": "ed2d950f5a19b2f5",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
@@ -187,13 +476,13 @@
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Research conducted by Will DePue of the nonprofit Unemployment Labs suggests that leading Chinese AI models, specifically DeepSeek’s V4 and Moonshot AI’s Kimi K3, exhibit technical 'fingerprints' consistent with training on Nvidia Blackwell GPUs. These chips are currently subject to U.S. export bans intended to restrict China's access to advanced AI compute. The findings imply that despite strict regulatory frameworks, Chinese frontier labs are successfully utilizing high-end hardware, potentially through offshore data centers or illicit smuggling networks.\n\nEpoch AI estimates that approximately two million advanced Nvidia chips entered China during 2024 and 2025 via diversion schemes. A significant portion of this compute is reportedly accessed through offshore facilities, with Malaysia emerging as a major hub, having imported 275,000 Nvidia accelerators in the same period. The situation is further complicated by allegations involving Nvidia CEO Jensen Huang and his professional ties to Alice Huang, an executive at Megaspeed—a firm accused of facilitating the smuggling of banned chips into China. These developments have triggered scrutiny regarding Nvidia’s corporate liability and the efficacy of U.S. export controls, which currently lack stringent requirements for tracking the end-use of chips once they leave the manufacturer's direct control.",
+      "tldr": "Research conducted by Will DePue of Unemployment Labs indicates that prominent Chinese open-weight AI models, specifically DeepSeek’s V4 and Moonshot AI’s Kimi K3, exhibit technical fingerprints consistent with training on Nvidia Blackwell GPUs. These chips are currently subject to U.S. export bans intended to restrict China’s access to frontier-level compute. The findings suggest that despite stringent U.S. regulations, Chinese labs are successfully leveraging high-end hardware, either through illicit smuggling operations or by utilizing offshore data centers in jurisdictions like Malaysia, which saw an influx of 275,000 Nvidia accelerators in 2024 and 2025.\n\nThe situation is compounded by a corporate scandal involving Nvidia CEO Jensen Huang, who has departed the company following reports of an affair with Alice Huang, an executive at Megaspeed. Megaspeed and its subsidiary, Speedmatrix, have been implicated in investigations by U.S. and Singaporean authorities regarding the smuggling of restricted chips into China. While Nvidia has previously vouched for the legitimacy of Megaspeed’s data centers, the potential for corporate liability regarding export control violations remains a significant regulatory risk. Meanwhile, Epoch AI estimates that approximately two million advanced chips entered China via various evasion schemes during 2024 and 2025, highlighting the limitations of current export enforcement.",
       "takeaways": [
-        "**Model Fingerprinting:** Analysis of model weights by Unemployment Labs indicates that DeepSeek V4 and Moonshot Kimi K3 were likely trained on Blackwell-class hardware.",
-        "**Smuggling Volume:** Epoch AI estimates that 2 million advanced Nvidia chips were diverted into China throughout 2024 and 2025.",
-        "**Offshore Hubs:** Malaysia imported 275,000 Nvidia AI accelerators in 2024-2025, serving as a primary conduit for Chinese firms to access compute outside mainland jurisdiction.",
-        "**Regulatory Loophole:** Current U.S. export controls do not mandate that companies track the downstream usage of chips once they are sold, allowing for the use of offshore data centers to bypass domestic restrictions.",
-        "**Stockpile Status:** Approximately 600,000 H200 chips are reportedly held in Hong Kong, awaiting clearance for import into mainland China."
+        "**Model Fingerprinting:** Analysis of model weights by Will DePue suggests that DeepSeek V4 and Moonshot Kimi K3 were trained using restricted Nvidia Blackwell architecture.",
+        "**Offshore Compute:** Data from Epoch AI indicates 275,000 Nvidia AI accelerators were imported into Malaysia in 2024-2025, serving as a potential hub for Chinese firms to bypass mainland export restrictions.",
+        "**Smuggling Volume:** Estimates suggest approximately two million advanced AI chips entered China in 2024 and 2025 through illicit supply chain channels.",
+        "**Corporate Liability:** Nvidia CEO Jensen Huang has left the company amid allegations of an affair with Alice Huang, an executive at Megaspeed, a firm under investigation for smuggling banned chips into China.",
+        "**Inventory Stockpile:** Approximately 600,000 H200 chips are reportedly held in Hong Kong, awaiting clearance for import into mainland China."
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 4,
@@ -300,7 +589,7 @@
     "author": "Hugging Face Blog",
     "contentSnippet": "Truly useful AI assistants need to be able to help users who ask misguided questions—not just users who ask the right question with the right amount of detail. We’re releasing XYBench , a benchmark of 8K+ questions that tests how AI assistants respond to requests based on misconceptions, such as asking how to thicken frosting that keeps sliding off cupcakes when the real problem is that the cupcakes are still too warm to frost. XYBench won the Best Resource Paper Award at EMNLP 2026.\n\nA mismatch between the approach someone asks about and the goal they want to achieve is known as the XY problem : a person wants to accomplish X, assumes a particular approach Y will work, and asks for help with Y. In the cupcake example, the person is so committed to making the frosting stick that they fail to consider the warmth of the cupcake as the true problem to be addressed.\n\nDeveloped with researchers at Carnegie Mellon, NVIDIA, and Johns Hopkins, XYBench exposes a critical gap in LLMs' ability to troubleshoot problems: recognizing when a user's request is based on an implicit misconception and appropriately redirecting them toward a solution that addresses their actual goal. Drawing on 8,115 real-world questions spanning programming and everyday activities such as cooking and home repair, we introduce a benchmark that measures whether models identify these misconceptions and are able to prioritize effective solutions in their responses.\n\nThe models we evaluated on XYBench – Claude Sonnet 4.6, GPT-5, Gemini 3.1 Pro, Qwen3.5-9B, and DeepSeek-V4 Pro – often suggested a solution to the user’s problem but kept their answers focused on the original, mistaken approach. Unlike human reference answers, all five models were less likely to steer users away from that approach and toward a solution suited to their goal.\n\nPeople use AI systems with different levels of knowledge and may not always know how best to approach a problem. We hope XYBench helps researchers measure whether model improvements make assistants better at recognizing mistaken assumptions, explaining why a proposed approach might not work, and suggesting more effective alternatives—even when users don't know the right questions to ask.\n\nBuilding XYBench\n\nWe built XYBench from four sources: 1,557 questions from Stack Overflow, 184 from Stack Exchange, 102 manually curated examples, and 6,272 questions generated fr",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "DeepSeek",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "XYBench is a new benchmark designed to evaluate how AI assistants handle the 'XY problem,' where a user asks for help with a misguided approach (Y) rather than their actual underlying goal (X). Developed by researchers from Carnegie Mellon, NVIDIA, and Johns Hopkins, and awarded the Best Resource Paper at EMNLP 2026, the dataset comprises 8,115 real-world questions spanning programming, cooking, and home repair. It aims to measure whether models can identify implicit misconceptions, explain why a proposed approach is flawed, and redirect users toward effective solutions.\n\nThe benchmark evaluates models—including Claude Sonnet 4.6, GPT-5, Gemini 3.1 Pro, Qwen3.5-9B, and DeepSeek-V4 Pro—across three metrics: pragmatic solution (presence of answers for X and Y), pragmatic emphasis (focus on X vs. Y), and misconception identification. Automated evaluation is performed using Claude Sonnet 4.5 as a judge, with human validation showing 74.2–100% agreement across metrics. Results indicate that while models frequently provide solutions to the stated request (75–86% on Stack Overflow), they struggle to prioritize the underlying goal, focusing on it in only 35–41% of responses.\n\nExperiments revealed a significant 'capability gap' between recognition and generation: while models correctly identified superior, goal-focused advice in 71–84% of multiple-choice scenarios, they failed to produce such advice in open-ended generation. Furthermore, providing models with the explicit underlying goal did not close the performance gap compared to human benchmarks, suggesting that current models struggle to act on inferred intent even when it is provided. The current dataset is limited to English-language procedural queries, with future work planned for multilingual and conversational contexts.",
@@ -358,19 +647,21 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Perplexity has released pplx-decider-v1.3 and pplx-decider-flash-v1.3 , the latest versions of its open-weight decision models. Perplexity Decider v1.3 is a decision model that returns probabilities, not generated text. It answers yes/no, multiple-choice and score questions about a text or image input. The main addition is Locate, which extracts exact text spans by type or instruction. Weights ship under Apache 2.0 on Hugging Face . Both models also run in the Perplexity Decisions API and on OpenRouter . You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 27B on Qwen3.8-27B ; Flash is 4B on Qwen3.5-4B . Hugging Face lists 26B and 5B params. API input: under 256K tokens. Local default: 32,768. Runs on: a CUDA GPU fitting ~49 GiB of BF16 weights (v1.3) or ~8.5 GiB (Flash). No quantized variants. Performance: leads TypeSafe’s Jev 1.14 on most of Perplexity’s self-reported evaluations. Best: 91.6% mean accuracy on 63 query-classification tasks. Worst: Locate averages 69.0, its lowest absolute score. Flash trails Jev 1.14 in finance, programming and law. Bottom line: Best: a 0.27% answer-flip rate and $26.47 per 1M production requests. Worst: every figure is self-reported. What is Perplexity Decider v1.3? Decider is Perplexity’s family of decision models, inspired by TypeSafe’s Jev . Each request has a shared ‘state’ plus one or more questions with labeled options. The model returns a probability per option instead of writing an answer. v1.3 succeeds v1.2 and Flash v1.2 . Flash v1.3 is distilled from the large model. How does Decider v1.3 work? Perplexity adapts a generative LLM backbone into a classifier. The output layer starts from the base model’s LM head, pruned to option tokens (A, B, C). A linear decision head reads the hidden state at a <|marker|> token and outputs option probabilities. Full-attention layers are made bidirectional, which Perplexity’s ablations showed helps. v1.3 also changes attention between questions. In v1.2, every question saw every other question, so answers could shift. In v1.3, the state sees all questions, but each question sees only the state and itself. All questions about one input still run in a single forward pass. Training runs in 3 stages: a full fine-tune on hundreds of public datasets a LoRA specialization adapter a LoRA vision adapter Weights are averaged acro",
     "category": "Robotics & Hardware",
-    "lab": "DeepSeek",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Perplexity has released pplx-decider-v1.3 and pplx-decider-flash-v1.3 , the latest versions of its open-weight decision models. Perplexity Decider v1.3 is a decision model that returns probabilities, not generated text. It answers yes/no, multiple-choice and score questions about a text or image input.\n\nThe main addition is Locate, which extracts exact text spans by type or instruction. Weights ship under Apache 2.0 on Hugging Face . Both models also run in the Perplexity Decisions API and on OpenRouter .",
+      "tldr": "Perplexity has released pplx-decider-v1.3 and its distilled counterpart, pplx-decider-flash-v1.3, as open-weight decision models under the Apache 2.0 license. Unlike standard generative LLMs, these models function as classifiers that return probabilities for yes/no, multiple-choice, and scoring tasks rather than generating text. The v1.3 release introduces a 'Locate' feature for extracting specific text spans based on instructions. The models are built on Qwen backbones, with the 27B version (v1.3) utilizing Qwen3.8-27B and the 4B version (Flash) utilizing Qwen3.5-4B. Weights are available on Hugging Face, and the models are accessible via the Perplexity Decisions API and OpenRouter.\n\nTechnically, the architecture adapts a generative LLM backbone by pruning the LM head to specific option tokens and adding a linear decision head that reads hidden states. Perplexity modified the attention mechanism from v1.2; while v1.2 allowed all questions to attend to one another, v1.3 restricts each question to attend only to the shared state and itself, preventing cross-question answer shifting while maintaining single-pass inference. The models support up to 256K tokens for API inputs and 32,768 tokens for local defaults. Training involves a three-stage process: a full fine-tune on public datasets, followed by LoRA specialization and vision adapters. The models require approximately 49 GiB of VRAM for the 27B version and 8.5 GiB for the Flash version in BF16 precision.",
       "takeaways": [
-        "You can check the deployment options and specs here through our GPULeaderboard.com chrome extension .",
-        "TL;DR Size: 27B on Qwen3.8-27B ; Flash is 4B on Qwen3.5-4B .",
-        "Hugging Face lists 26B and 5B params.",
-        "API input: under 256K tokens."
+        "**Model Architecture:** The 27B model is based on Qwen3.8-27B, while the 4B Flash model is distilled from the larger version using Qwen3.5-4B.",
+        "**Performance Metrics:** The v1.3 model achieves a 91.6% mean accuracy on 63 query-classification tasks, with a 0.27% answer-flip rate, outperforming TypeSafe’s Jev 1.14 in most internal benchmarks.",
+        "**Inference Requirements:** The 27B model requires ~49 GiB of BF16 VRAM, while the 4B Flash model requires ~8.5 GiB; no quantized variants are currently provided.",
+        "**Attention Mechanism:** v1.3 implements bidirectional full-attention layers and restricts inter-question attention to prevent answer interference, unlike the v1.2 architecture.",
+        "**Pricing:** The API is priced at $26.47 per 1 million production requests."
       ],
       "impact": "High",
-      "readTimeMinutes": 5,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -770,6 +1061,28 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "a99dfdd20d85acbb",
+    "canonicalUrl": "https://openai.com/business/customer-stories/shield",
+    "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+    "publishedAt": "2026-11-13T08:00:00.000Z",
+    "fetchedAt": "2026-11-14T01:56:19.576Z",
+    "contentHash": "8f9b60dabe8f2940",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   },
@@ -4821,6 +5134,68 @@
       "impact": "High",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "eb7d817012e6cca4",
+    "canonicalUrl": "https://arxiv.org/abs/2611.16728",
+    "title": "EgoX: Egocentric Cross-Embodiment Manipulation with Embodiment Dreaming",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.381Z",
+    "contentHash": "8c8022a0d0299030",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Yaru Niu, Binghong Chen, Changwei Yao, Shangtao Li",
+    "contentSnippet": "Authors: Yaru Niu , Binghong Chen , Changwei Yao , Shangtao Li , Zhenlong Fang , Revanth Krishna Senthilkumaran , Shuai Zhou , Yuemin Mao , Kalie Ching , Po-Ju Chao , Yudong Luo , Peiqi Yu , Heng Zhang , Hao Zhang , Bingqing Chen , Chen Qiu , H. Eric Tseng , Ye Yuan , Umar Iqbal , Changliu Liu , Jonathan Francis , Ding Zhao\n\nAbstract: Generalist manipulation policies can benefit from the complementary experience of humans, real robots, and simulated agents. However, differences in morphology, sensing, and control interfaces make it difficult to learn effectively from their combined demonstrations. We introduce EgoX, an egocentric cross-embodiment learning framework that organizes heterogeneous demonstrations through semantically corresponding observation and action modalities. EgoX pretrains a Modularized Cross-Embodiment Transformer with Embodiment Dreaming (MXT+) on this mixture and fine-tunes it on target-embodiment demonstrations. Within each embodiment, MXT+ assigns a dedicated tokenizer to each observation modality and a dedicated expert to each action modality, with a Transformer trunk shared across embodiments. A training-only embodiment-dreaming objective predicts latent representations of future visual and proprioceptive states, encouraging the shared trunk to model each embodiment's dynamics. Across 13 task-embodiment pairs spanning five tasks and six robot embodiments, including five physical robots and one simulated humanoid, cross-embodiment pretraining raises MXT+'s average normalized task progress from 0.63 to 0.80 over training from scratch. The gains are particularly pronounced under out-of-distribution conditions, where average task progress increases from 0.53 to 0.77. Ablations demonstrate the benefits of broader pretraining mixtures, modular interfaces, and embodiment dreaming, with dreaming producing more similar latent geometry across embodiments. Project page: this http URL .",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.16728",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16728",
+    "summary": {
+      "tldr": "EgoX is a cross-embodiment learning framework developed by a research team including Yaru Niu, Ding Zhao, and others, designed to unify heterogeneous robot manipulation demonstrations. The framework utilizes a Modularized Cross-Embodiment Transformer with Embodiment Dreaming (MXT+) to bridge the gap between human, real-robot, and simulated agent data. By employing dedicated tokenizers for observation modalities and expert heads for action modalities within a shared Transformer trunk, EgoX enables a generalist policy that can be fine-tuned for specific target embodiments.\n\nThe core technical innovation, 'embodiment dreaming,' is a training-only objective that forces the shared Transformer trunk to predict latent representations of future visual and proprioceptive states. This process aligns the latent geometry across different robot morphologies. In empirical testing across 13 task-embodiment pairs—covering five distinct tasks and six embodiments (five physical robots and one simulated humanoid)—the MXT+ model improved average normalized task progress from 0.63 to 0.80 compared to training from scratch. Performance gains were even more significant in out-of-distribution scenarios, where task progress improved from 0.53 to 0.77.",
+      "takeaways": [
+        "**Model Architecture:** MXT+ utilizes a shared Transformer trunk with embodiment-specific tokenizers for observations and expert heads for actions.",
+        "**Embodiment Dreaming:** A training-only objective that predicts future latent visual and proprioceptive states to harmonize dynamics across different robot morphologies.",
+        "**Performance Metrics:** Cross-embodiment pretraining increased average normalized task progress from 0.63 to 0.80 across 13 task-embodiment pairs.",
+        "**OOD Robustness:** Under out-of-distribution conditions, the framework improved average task progress from 0.53 to 0.77.",
+        "**Scope:** The study evaluated the framework across five physical robots and one simulated humanoid, spanning five distinct manipulation tasks."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "31b24889af668b0a",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17336",
+    "title": "Back to Pixels: Lifting Latent Video Diffusion into Pixel Space",
+    "publishedAt": "2026-11-12T00:00:00.000Z",
+    "fetchedAt": "2026-11-14T01:56:17.381Z",
+    "contentHash": "13e01589d57ec835",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Yanke Song, Shuo Chen, Chris Rockwell, Guande He",
+    "contentSnippet": "Authors: Yanke Song , Shuo Chen , Chris Rockwell , Guande He , Nan Liu , Desai Xie , Tianpei Gu , Yong-Hyun Park , Aryan V S , Dennis Yuren Menn , Ming-Hsuan Yang , Xun Huang\n\nAbstract: Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block. We present PixVid, a simple yet effective method that lifts a pretrained latent video model to directly generate every frame in pixel space. PixVid keeps the diffusion transformer and replaces the VAE decoder with a convolutional head that renders its outputs into pixels. We find that predicting clean video rather than velocity, together with a larger noise shift, is key to quality. Finetuned from Wan2.1-14B, PixVid is competitive with the latent baseline within $\\sim 1.3$M training clips. Working framewise in pixels, it generates at $2\\times$ higher resolution with the same per-frame token count, keeps depth-conditioned video editing aligned under fast motion, and responds to each action at the next frame. Project page: this https URL\n\nNotes: Project Page: this https URL",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.17336",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17336",
+    "summary": {
+      "tldr": "Researchers including Yanke Song, Shuo Chen, and Xun Huang have introduced PixVid, a method designed to transition video generation from compressed latent spaces to direct pixel-space synthesis. By replacing the standard Variational Autoencoder (VAE) decoder of a pretrained latent video model with a convolutional head, PixVid enables the generation of individual frames rather than multi-frame blocks. The model is finetuned from the Wan2.1-14B architecture and achieves performance parity with its latent-space predecessor after training on approximately 1.3 million clips.\n\nTechnically, PixVid shifts the generation objective from velocity prediction to clean video prediction, incorporating a larger noise shift to maintain output quality. This architectural change allows for 2x higher resolution generation while maintaining the same per-frame token count as the original latent model. Because the system operates on a frame-by-frame basis, it eliminates the latency associated with waiting for multi-frame block completion, improving responsiveness for interactive applications and enhancing alignment in depth-conditioned video editing tasks, particularly during fast motion.",
+      "takeaways": [
+        "**Base Architecture:** Finetuned from the Wan2.1-14B latent video diffusion transformer.",
+        "**Core Innovation:** Replaces the VAE decoder with a convolutional head to render outputs directly in pixel space.",
+        "**Training Scale:** Achieves competitive performance with latent baselines after training on ~1.3 million clips.",
+        "**Performance Gains:** Enables 2x higher resolution generation at the same per-frame token count and supports frame-level interactivity.",
+        "**Methodological Shift:** Utilizes clean video prediction instead of velocity prediction, paired with a larger noise shift."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -10446,362 +10821,6 @@
       ],
       "impact": "High",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "470fd816a601682f",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10219",
-    "title": "Multi-GPU MoE Inference with Adaptive Expert Offloading",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "59f603572ffe9775",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "William X. Zheng, Zhongjie Chen, Shuo Yang, Ziming Mao, Xiaoze Fan, Yi Pan, Kunjun Li, Hanfei Yu, Chenfeng Xu, Yang Zhou, Rishabh Iyer, Ion Stoica",
-    "contentSnippet": "arXiv:2611.10219v1 Announce Type: new Abstract: Modern Mixture-of-Experts (MoE) inference is constrained by GPU memory. This constraint is mitigated by expert offloading, which stores part of the model's weight in host memory and executes on demand. Though MoE architecture has computation sparsity, more GPUs are needed for serving increasingly larger frontier models. However, existing expert offloading systems overlook this need and fail to scale performance with additional GPUs. We present AdaOffload, a general and efficient multi-GPU hybrid expert execution framework that effectively handles heterogeneous hardware and workloads. We co-design GPU-CPU parallelism and GPU-CPU co-execution for decode and prefill with online workload observation that adapts to different hardware, workload, and batch size heterogeneity. We evaluated AdaOffload on five different platforms with varying GPU capability (L4, Pro6000, B200), number of GPUs, CPU capability, and NUMA topology on three different frontier open-weight models (284B to 753B). AdaOffload achieves $1.9\\times$ to $15.5\\times$ throughput speedups across different models over state-of-the-art systems.",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10219",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10219.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10219v1 Announce Type: new Abstract: Modern Mixture-of-Experts (MoE) inference is constrained by GPU memory. This constraint is mitigated by expert offloading, which stores part of the model's weight in host memory and executes on demand. Though MoE architecture has computation sparsity, more GPUs are needed for serving increasingly larger frontier models.\n\nHowever, existing expert offloading systems overlook this need and fail to scale performance with additional GPUs. We present AdaOffload, a general and efficient multi-GPU hybrid expert execution framework that effectively handles heterogeneous hardware and workloads. We co-design GPU-CPU parallelism and GPU-CPU co-execution for decode and prefill with online workload observation that adapts to different hardware, workload, and batch size heterogeneity.",
-      "takeaways": [
-        "We evaluated AdaOffload on five different platforms with varying GPU capability (L4, Pro6000, B200), number of GPUs, CPU capability, and NUMA topology on three different frontier open-weight models (284B to 753B).",
-        "AdaOffload achieves $1.9\\times$ to $15.5\\times$ throughput speedups across different models over state-of-the-art systems."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "acbe0024ae9edab4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10233",
-    "title": "ProofDiff: Auditable Argument-Level Comparison of AI-Generated Mathematical Proofs",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "240e66f8d20e73cf",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Matan Tsafrir, Esdras Medeiros, Jorge Poco, Kevin Gomez, Eduardo V. Teixeira, Claudio Silva",
-    "contentSnippet": "arXiv:2611.10233v1 Announce Type: new Abstract: Mathematical understanding depends on the route from hypotheses to conclusion: how the parts of a proof function and which dependencies carry the argument forward. This structure can persist when wording or notation changes, while a small alteration to a hypothesis or inference can produce a different argument beneath similar prose. Formal verification can establish that a rewrite proves the same theorem, but not whether it follows the same mathematical route. Comparing informal proofs, especially those produced or revised by generative models, therefore requires reconstructing which claims, dependencies, and reasoning steps are preserved, reorganized, or replaced. We present ProofDiff, a system for comparing informal mathematical documents. It is designed to support human review, not to certify mathematical correctness. Given two documents, ProofDiff independently constructs a source-grounded argument map for each and proposes correspondences between the resulting maps. Each map captures the document's claims and reasoning steps and records the typed relations that connect them. An integrated human-review layer allows reviewers to revise the maps and correspondences while preserving an auditable history. Comparing the two argument maps provides a basis for inspecting whether the documents follow the same mathematical route and where their claims or dependencies differ. We demonstrate ProofDiff on four illustrative pairs of AI-generated proofs, ranging from a detailed proof and its concise revision to proofs using different mathematical strategies.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10233",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10233.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10233v1 Announce Type: new Abstract: Mathematical understanding depends on the route from hypotheses to conclusion: how the parts of a proof function and which dependencies carry the argument forward. This structure can persist when wording or notation changes, while a small alteration to a hypothesis or inference can produce a different argument beneath similar prose. Formal verification can establish that a rewrite proves the same theorem, but not whether it follows the same mathematical route.\n\nComparing informal proofs, especially those produced or revised by generative models, therefore requires reconstructing which claims, dependencies, and reasoning steps are preserved, reorganized, or replaced. We present ProofDiff, a system for comparing informal mathematical documents. It is designed to support human review, not to certify mathematical correctness.",
-      "takeaways": [
-        "Given two documents, ProofDiff independently constructs a source-grounded argument map for each and proposes correspondences between the resulting maps.",
-        "Each map captures the document's claims and reasoning steps and records the typed relations that connect them.",
-        "An integrated human-review layer allows reviewers to revise the maps and correspondences while preserving an auditable history.",
-        "Comparing the two argument maps provides a basis for inspecting whether the documents follow the same mathematical route and where their claims or dependencies differ."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "934ec100f23d3dd9",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10234",
-    "title": "ScreenProof: Where Is This Screen Wrong? Finding UI Faults Without a Reference",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "8a4cd0db33b3b93a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Huiming Sun, Yue Li, Kangning Yang, Ruineng Li, Jie Cai, Lan Fu, Yunwan Fu, Jinlong Li, Jinglin Shen",
-    "contentSnippet": "arXiv:2611.10234v1 Announce Type: new Abstract: A phone screen can be wrong in ways that need no reference: a label that runs off the screen, letters that touch, a line that breaks one character before its end, one button with sharp corners among round ones. We ask whether a model can box every such fault on a screenshot, given no target design and no reference image. Such a critic could serve as a cheap first pass over generated pages before a designer reviews them, but only if it stays silent on clean pages. ScreenProof poses this target-free critique over three families of faults: general faults, local style faults (one element breaks the style its page sets) and text layout faults (letter spacing, line height, line breaks). A data engine makes each fault in page code and records the changed element's box, and hard negatives change every sibling alike. No frontier judge is reliable: frontier models flag 18-62% of clean real screenshots and 18-82% of clean generated pages, find 47-72% of text layout faults, and rarely find a foreign icon (5-19%). Our small critic ProofJudge (Qwen3.5-9B with LoRA), trained on code-made pages with one to four faults each and keeping a finding only when it is confident, reaches F1 0.48, the highest of all judges (Gemini 4 Argon 0.37; open models at most 0.15; 0.46 even without the confidence cut), and is the only fault-finding judge within 15% false alarms on clean pages (2% real, 9% generated), the property such a first pass needs, at about a hundredth of Argon's cost. It finds the most general faults (59%) but fewer local style faults than Argon (25% against 41%) and fewer text layout faults than the API judges (43%; Gemini 4 Argon 47%). Against a named brand the task is harder still: models know a design language about as well as its public documentation states it.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10234",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10234.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10234v1 Announce Type: new Abstract: A phone screen can be wrong in ways that need no reference: a label that runs off the screen, letters that touch, a line that breaks one character before its end, one button with sharp corners among round ones. We ask whether a model can box every such fault on a screenshot, given no target design and no reference image. Such a critic could serve as a cheap first pass over generated pages before a designer reviews them, but only if it stays silent on clean pages.\n\nScreenProof poses this target-free critique over three families of faults: general faults, local style faults (one element breaks the style its page sets) and text layout faults (letter spacing, line height, line breaks). A data engine makes each fault in page code and records the changed element's box, and hard negatives change every sibling alike. No frontier judge is reliable: frontier models flag 18-62% of clean real screenshots and 18-82% of clean generated pages, find 47-72% of text layout faults, and rarely find a foreign icon (5-19%).",
-      "takeaways": [
-        "Our small critic ProofJudge (Qwen3.5-9B with LoRA), trained on code-made pages with one to four faults each and keeping a finding only when it is confident, reaches F1 0.48, the highest of all judges (Gemini 4 Argon 0.37; open models at most 0.15; 0.46 even without the confidence cut), and is the only fault-finding judge within 15% false alarms on clean pages (2% real, 9% generated), the property such a first pass needs, at about a hundredth of Argon's cost.",
-        "It finds the most general faults (59%) but fewer local style faults than Argon (25% against 41%) and fewer text layout faults than the API judges (43%; Gemini 4 Argon 47%).",
-        "Against a named brand the task is harder still: models know a design language about as well as its public documentation states it."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "02fd877a7b3c74e0",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10238",
-    "title": "CoRA-Bench: Evaluating Evidence Preservation by Context Selectors Under Token Budgets",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "369a556cdd834e19",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Huzaifa Pardawala, Siddhant Sukhani, Sudheer Chava, Agam Shah",
-    "contentSnippet": "arXiv:2611.10238v1 Announce Type: new Abstract: Context selection can reduce input length during long-input inference but can remove evidence required to answer a query. We introduce CoRA-Bench, a benchmark for evaluating evidence preservation under shared token budgets. We compare head and tail truncation, BM25, dense retrieval, dense retrieval with reranking, LLMLingua-2, and Provence across BABILong, LOONG Financial Spotlight, a custom NoLiMa diagnostic, and LongMemEval. Evidence-preservation results reveal task-dependent tradeoffs: BM25 achieves 0.921 supporting-fact recall on BABILong at 128K, dense retrieval and dense reranking each achieve 0.908 needle recall on NoLiMa at 64K, and dense retrieval achieves 0.993 answer-bearing-turn recall on LongMemEval at 64K. Evidence, token retention, and complementary reader evaluations use the same selected contexts. Reader evaluations use dataset-native answer metrics and three runs on the same questions, with paired bootstrap confidence intervals. At a 32K budget, BM25 achieves 46.20% BABILong answer accuracy and dense retrieval achieves 71.13% LongMemEval accuracy. The results show that method rankings vary across evidence types and between evidence recall and downstream accuracy.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10238",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10238.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10238v1 Announce Type: new Abstract: Context selection can reduce input length during long-input inference but can remove evidence required to answer a query. We introduce CoRA-Bench, a benchmark for evaluating evidence preservation under shared token budgets. We compare head and tail truncation, BM25, dense retrieval, dense retrieval with reranking, LLMLingua-2, and Provence across BABILong, LOONG Financial Spotlight, a custom NoLiMa diagnostic, and LongMemEval.\n\nEvidence-preservation results reveal task-dependent tradeoffs: BM25 achieves 0.921 supporting-fact recall on BABILong at 128K, dense retrieval and dense reranking each achieve 0.908 needle recall on NoLiMa at 64K, and dense retrieval achieves 0.993 answer-bearing-turn recall on LongMemEval at 64K. Evidence, token retention, and complementary reader evaluations use the same selected contexts. Reader evaluations use dataset-native answer metrics and three runs on the same questions, with paired bootstrap confidence intervals.",
-      "takeaways": [
-        "At a 32K budget, BM25 achieves 46.20% BABILong answer accuracy and dense retrieval achieves 71.13% LongMemEval accuracy.",
-        "The results show that method rankings vary across evidence types and between evidence recall and downstream accuracy."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "81c57607249cf25c",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10261",
-    "title": "Is Recursive Self-Improvement Safe?",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "e0172805426a0d73",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Vincent Conitzer",
-    "contentSnippet": "arXiv:2611.10261v1 Announce Type: new Abstract: The phrase recursive self-improvement (RSI) refers to the idea of an AI system designing and creating another, better AI system, which in turn designs and creates an even better one, and so on. While the idea has a long history, it has always been an abstract, futuristic idea -- until recently. Today's frontier AI has attained a set of abilities, including in programming, mathematics, research, tool use, and working coherently over extended periods of time, that make RSI seem plausible. AI companies are starting to pursue it, but many of the involved people are also expressing concerns, asking whether humanity should really set this in motion and under what conditions. I will discuss the situation, argue that we do not even have clear frameworks for thinking about the likely outcomes of RSI, and do a quick game-theoretic analysis of how to choose whether to initiate RSI when another party is making the same choice.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10261",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10261.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10261v1 Announce Type: new Abstract: The phrase recursive self-improvement (RSI) refers to the idea of an AI system designing and creating another, better AI system, which in turn designs and creates an even better one, and so on. While the idea has a long history, it has always been an abstract, futuristic idea -- until recently. Today's frontier AI has attained a set of abilities, including in programming, mathematics, research, tool use, and working coherently over extended periods of time, that make RSI seem plausible.",
-      "takeaways": [
-        "AI companies are starting to pursue it, but many of the involved people are also expressing concerns, asking whether humanity should really set this in motion and under what conditions.",
-        "I will discuss the situation, argue that we do not even have clear frameworks for thinking about the likely outcomes of RSI, and do a quick game-theoretic analysis of how to choose whether to initiate RSI when another party is making the same choice."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fd4092e3115c0e96",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09933",
-    "title": "BIBIMBAP: A Benchmark for Instructional BIM-Based Automated Programming",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "a7e47aad0353ada9",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Clemens Kujat, Bharathi Kannan Nithyanantham, Stefan Telgmann, Tobias Sesterhenn, Joern Ploennigs, Stefan L\\\"udtke, Christian Bartelt",
-    "contentSnippet": "arXiv:2611.09933v1 Announce Type: new Abstract: Large Language Models (LLMs) are emerging as natural-language interfaces for Building Information Modeling (BIM), successfully achieving information retrieval, but no benchmark exists to evaluate their ability to edit Industry Foundation Classes (IFC). We introduce BIBIMBAP, a Text-to-BIM benchmark with 100 curated tasks covering Create-Read-Update-Delete (CRUD) operations across spatial, geometric, topological, numeric, and conceptual categories. Each task includes a natural-language prompt, an IFC model, expected structured outputs, and test scripts for automated evaluation. Baseline results show limited performance (best: 50.2%) and frequent failures in constraint preservation and spatial reasoning, with some correct outputs achieved despite flawed reasoning.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09933",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09933.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09933v1 Announce Type: new Abstract: Large Language Models (LLMs) are emerging as natural-language interfaces for Building Information Modeling (BIM), successfully achieving information retrieval, but no benchmark exists to evaluate their ability to edit Industry Foundation Classes (IFC). We introduce BIBIMBAP, a Text-to-BIM benchmark with 100 curated tasks covering Create-Read-Update-Delete (CRUD) operations across spatial, geometric, topological, numeric, and conceptual categories. Each task includes a natural-language prompt, an IFC model, expected structured outputs, and test scripts for automated evaluation.",
-      "takeaways": [
-        "Baseline results show limited performance (best: 50.2%) and frequent failures in constraint preservation and spatial reasoning, with some correct outputs achieved despite flawed reasoning."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9983fa00ce473502",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09936",
-    "title": "How Many Examples, and Which Ones? A Study of In-Context Learning for Natural Language Inference",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "c4a39b791cf54465",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Georgos Dikaios, Isidoros Perikos, Ioannis Hatzilygeroudis",
-    "contentSnippet": "arXiv:2611.09936v1 Announce Type: new Abstract: Natural language inference (NLI) is a fundamental task of natural language processing and crucial for evaluating the strengths and weaknesses of AI methods. Research has mostly focused on encoder or encoder-decoder architectures. However, the field of decoder-only Large Language Models (LLMs) remains underexplored. While prior work has mainly investigated complex sampling and prompting techniques, the effectiveness of a minimalistic prompting approach is yet to be examined in decoder-only LLMs. In this work, we examine and provide a comprehensive benchmark of LLMs (Llama, Mistral, Gemma, and Phi 4) in this domain, across the MNLI, QNLI and SciTail datasets. The performance of these models was evaluated using zero-shot and few-shot prompting strategies with simple and direct prompts. The results of the article indicate that LLMs generally perform exceptionally well when they are provided with a simple, straightforward prompt, challenging the notion that complex prompting techniques are always required for NLI tasks. Additionally, we find that the choice of demonstration label in one-shot prompting significantly affects performance for most models, with entailment-primed examples performing best. Our findings also show that the use of a few representative examples, in the case of few-shot, produced performance comparable or superior to prompts with higher example counts, although the efficacy of the prompting techniques is model and dataset-dependent. Moreover, our simple prompting approach consistently matched or outperformed more elaborate methods such as ICS and MCQ-based prompting.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09936",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09936.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09936v1 Announce Type: new Abstract: Natural language inference (NLI) is a fundamental task of natural language processing and crucial for evaluating the strengths and weaknesses of AI methods. Research has mostly focused on encoder or encoder-decoder architectures. However, the field of decoder-only Large Language Models (LLMs) remains underexplored.\n\nWhile prior work has mainly investigated complex sampling and prompting techniques, the effectiveness of a minimalistic prompting approach is yet to be examined in decoder-only LLMs. In this work, we examine and provide a comprehensive benchmark of LLMs (Llama, Mistral, Gemma, and Phi 4) in this domain, across the MNLI, QNLI and SciTail datasets. The performance of these models was evaluated using zero-shot and few-shot prompting strategies with simple and direct prompts.",
-      "takeaways": [
-        "The results of the article indicate that LLMs generally perform exceptionally well when they are provided with a simple, straightforward prompt, challenging the notion that complex prompting techniques are always required for NLI tasks.",
-        "Additionally, we find that the choice of demonstration label in one-shot prompting significantly affects performance for most models, with entailment-primed examples performing best.",
-        "Our findings also show that the use of a few representative examples, in the case of few-shot, produced performance comparable or superior to prompts with higher example counts, although the efficacy of the prompting techniques is model and dataset-dependent.",
-        "Moreover, our simple prompting approach consistently matched or outperformed more elaborate methods such as ICS and MCQ-based prompting."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6f5139196ce92d6d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09938",
-    "title": "DramaGrow: A Regime-Aware Benchmark for Auditing LLM Judges of Multi-Episode Drama",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "c8f8c0841c11ea0b",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Hui Zhang, Yibo Su",
-    "contentSnippet": "arXiv:2611.09938v1 Announce Type: new Abstract: LLMs can now draft complete multi-episode dramas, and LLM judges are increasingly used to evaluate them. Assessing the reliability of these judges is difficult because drama quality encompasses specification-backed errors, reproducible preferences, and legitimate disagreement among human raters. Most existing evaluations reduce these cases to a single score from one judge call and leave tie calibration, call-to-call variation, and the vote margin underlying the human reference unreported. We introduce DramaGrow, a regime-aware benchmark and audit protocol for AI-generated Chinese five-episode drama. The benchmark assigns verifiable constraint violations, four-of-five preferences, and within-panel disagreements to separate denominators and evidence rules. It contains 800 episodes, 120 byte-preserving interventions, and 1,155 blinded five-rater records, including a frozen extension with 114 supermajority pairs and 21 disagreement pairs. On the frozen sets of 114 preference pairs and 35 constraint interventions, the repeated absolute-score rubrics yield overlapping performance, with mean accuracies of 53.8-55.8% and three-call agreement of 29.8-32.5%, and their accuracy falls from 71.6-71.9% to 34.8-37.1% as the tie band widens. DirectPair-GLM reaches 85.1% preference accuracy, 89.5% constraint F1, and 81.9% Detect+Locate on the same items, and exact subpanel enumeration identifies four-of-five as the smallest stable human vote margin. Evaluation protocol, tie calibration, judge-call variation, and panel margin therefore affect performance as much as rubric design. We will release the specification packages, scripts, interventions, anonymized human votes and rationales, frozen judge runs, and analysis code.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09938",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09938.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09938v1 Announce Type: new Abstract: LLMs can now draft complete multi-episode dramas, and LLM judges are increasingly used to evaluate them. Assessing the reliability of these judges is difficult because drama quality encompasses specification-backed errors, reproducible preferences, and legitimate disagreement among human raters. Most existing evaluations reduce these cases to a single score from one judge call and leave tie calibration, call-to-call variation, and the vote margin underlying the human reference unreported.\n\nWe introduce DramaGrow, a regime-aware benchmark and audit protocol for AI-generated Chinese five-episode drama. The benchmark assigns verifiable constraint violations, four-of-five preferences, and within-panel disagreements to separate denominators and evidence rules. It contains 800 episodes, 120 byte-preserving interventions, and 1,155 blinded five-rater records, including a frozen extension with 114 supermajority pairs and 21 disagreement pairs.",
-      "takeaways": [
-        "On the frozen sets of 114 preference pairs and 35 constraint interventions, the repeated absolute-score rubrics yield overlapping performance, with mean accuracies of 53.8-55.8% and three-call agreement of 29.8-32.5%, and their accuracy falls from 71.6-71.9% to 34.8-37.1% as the tie band widens.",
-        "DirectPair-GLM reaches 85.1% preference accuracy, 89.5% constraint F1, and 81.9% Detect+Locate on the same items, and exact subpanel enumeration identifies four-of-five as the smallest stable human vote margin.",
-        "Evaluation protocol, tie calibration, judge-call variation, and panel margin therefore affect performance as much as rubric design.",
-        "We will release the specification packages, scripts, interventions, anonymized human votes and rationales, frozen judge runs, and analysis code."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1d099c8ea4eaaa76",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09939",
-    "title": "Rethinking Supervision Targets for Multimodal LLM Unlearning: Less Private Information, Reduced Distribution Shift",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "bc04f1988f334570",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Leijiang Gu, Zhen Zeng, Feng Li, Le Zhang, Zenglin Shi",
-    "contentSnippet": "arXiv:2611.09939v1 Announce Type: new Abstract: Multimodal Large Language Models (MLLMs) can memorize and reproduce sensitive information from their training data, posing significant privacy risks. Their ability to encode knowledge across both textual and visual modalities further complicates the selective removal of such private information. Many existing methods guide model unlearning by training the model toward constructed labels or output distributions, which we refer to as supervision targets. However, these methods often suffer from a trade-off between forgetting effectiveness and model utility. We identify supervision target limitations as a key factor in this trade-off and empirically show that targets containing more private information lead to insufficient forgetting, while larger distribution shifts from the original output distribution are associated with greater utility degradation. Motivated by these findings, we propose FFN-Perturbed Self-Distillation (FPD), which starts from the teacher's original output distribution as a zero-shift reference and selectively perturbs FFN activations associated with private information across textual and visual modalities. By precisely reducing private information from the teacher's original output distribution, FPD constructs supervision targets with less private information and reduced distribution shift. Extensive experiments on S-MLLMUn Bench demonstrate that FPD achieves a better forgetting-utility trade-off than existing methods.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09939",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09939.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09939v1 Announce Type: new Abstract: Multimodal Large Language Models (MLLMs) can memorize and reproduce sensitive information from their training data, posing significant privacy risks. Their ability to encode knowledge across both textual and visual modalities further complicates the selective removal of such private information. Many existing methods guide model unlearning by training the model toward constructed labels or output distributions, which we refer to as supervision targets.\n\nHowever, these methods often suffer from a trade-off between forgetting effectiveness and model utility. We identify supervision target limitations as a key factor in this trade-off and empirically show that targets containing more private information lead to insufficient forgetting, while larger distribution shifts from the original output distribution are associated with greater utility degradation. Motivated by these findings, we propose FFN-Perturbed Self-Distillation (FPD), which starts from the teacher's original output distribution as a zero-shift reference and selectively perturbs FFN activations associated with private information across textual and visual modalities.",
-      "takeaways": [
-        "By precisely reducing private information from the teacher's original output distribution, FPD constructs supervision targets with less private information and reduced distribution shift.",
-        "Extensive experiments on S-MLLMUn Bench demonstrate that FPD achieves a better forgetting-utility trade-off than existing methods."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a9d8a0e6d008fdba",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09941",
-    "title": "Topic-Aware Multi-Task Mental Health Classification with Active Learning-Based Stepwise Relabeling for Social Media Conversations",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "89cad6cd2a9ddca2",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Revathy Iswarya Sekaran, Vansh Bhardwaj, Aveek Sahana, Utkarshani Jaimini",
-    "contentSnippet": "arXiv:2611.09941v1 Announce Type: new Abstract: Mental health conditions affect millions of people worldwide, yet many cases go undetected until they reach a critical stage. Social media platforms like Reddit have become spaces where people openly share their experiences, but the support is often provided by individuals without clinical training. Existing multi-task approaches jointly model emotion and sentiment for mental health classification but frequently rely on noisy labels generated by pre-trained models and overlook topic information as a useful signal. This paper introduces two key contributions: First, an existing Core Fusion Network framework is extended by adding Topic alongside existing Mental Health Condition, Emotion, and Sentiment Classification tasks, with topic labels derived from the therapist-client interactions in the CounselChat dataset. Second, an Active Learning-based Stepwise Relabeling approach is proposed to refine a small subset of noisy emotion and topic labels using pre-trained models in two stages: targeting medium-uncertainty samples first, followed by high-uncertainty samples. The predictions above a confidence threshold (0.7) are accepted to prevent error propagation. The experiments are conducted on the SuicideWatch and Mental Health dataset of 54,412 Reddit posts collected from five mental health subreddits, evaluating domain-specific transformer encoders including MentalBERT and MentalRoBERTa. The proposed Active Learning-based Stepwise Relabeling, when applied to Core Fusion Network with MentalRoBERTa, improves Mental Health Condition by 0.09%, Emotion by 0.51%, Sentiment by 0.35%, and Topic Classification by 1.57% over the baseline Core Fusion Network. The results suggest that the proposed framework significantly reduces label noise in multi-task mental health classification, and that topic information provides additional context.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09941",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09941.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09941v1 Announce Type: new Abstract: Mental health conditions affect millions of people worldwide, yet many cases go undetected until they reach a critical stage. Social media platforms like Reddit have become spaces where people openly share their experiences, but the support is often provided by individuals without clinical training. Existing multi-task approaches jointly model emotion and sentiment for mental health classification but frequently rely on noisy labels generated by pre-trained models and overlook topic information as a useful signal.\n\nThis paper introduces two key contributions: First, an existing Core Fusion Network framework is extended by adding Topic alongside existing Mental Health Condition, Emotion, and Sentiment Classification tasks, with topic labels derived from the therapist-client interactions in the CounselChat dataset. Second, an Active Learning-based Stepwise Relabeling approach is proposed to refine a small subset of noisy emotion and topic labels using pre-trained models in two stages: targeting medium-uncertainty samples first, followed by high-uncertainty samples. The predictions above a confidence threshold (0.7) are accepted to prevent error propagation.",
-      "takeaways": [
-        "The experiments are conducted on the SuicideWatch and Mental Health dataset of 54,412 Reddit posts collected from five mental health subreddits, evaluating domain-specific transformer encoders including MentalBERT and MentalRoBERTa.",
-        "The proposed Active Learning-based Stepwise Relabeling, when applied to Core Fusion Network with MentalRoBERTa, improves Mental Health Condition by 0.09%, Emotion by 0.51%, Sentiment by 0.35%, and Topic Classification by 1.57% over the baseline Core Fusion Network.",
-        "The results suggest that the proposed framework significantly reduces label noise in multi-task mental health classification, and that topic information provides additional context."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1a0d0d5b7c43ff65",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09942",
-    "title": "MedToolFault and MedGuard: evaluating and improving clinical agent reliability",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "805166a446876269",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Zaifu Zhan, Min Zeng, Sicheng Zhou, Xiaoyi Chen, Kai Yu, Meijia Song, Yifan Wu, Yang Ruan, Saeid Cheshmi, Mengyuan Cui, Rui Zhang",
-    "contentSnippet": "arXiv:2611.09942v1 Announce Type: new Abstract: Clinical agents must retrieve patient-specific evidence and correctly update records despite unreliable tool responses. We introduce MedToolFault, a fault-injection benchmark linking six tool-failure classes to answer correctness, required state changes and forbidden mutations in public clinical-agent tasks. We also introduce MedGuard, a tool-layer method that verifies read evidence and attributes ambiguous writes through public interfaces. Across 127,861 formal episode evaluations, we assess fault recovery, mechanism controls, task expansion, constrained tool budgets and external question answering. Across nine model configurations, unguarded agents fail in 32.2-67.8% of fault-injected evaluations on tasks each configuration solves without faults. MedGuard improves paired safe success by 13.7-46.6 percentage points on these tasks.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09942",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09942.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09942v1 Announce Type: new Abstract: Clinical agents must retrieve patient-specific evidence and correctly update records despite unreliable tool responses. We introduce MedToolFault, a fault-injection benchmark linking six tool-failure classes to answer correctness, required state changes and forbidden mutations in public clinical-agent tasks. We also introduce MedGuard, a tool-layer method that verifies read evidence and attributes ambiguous writes through public interfaces.\n\nAcross 127,861 formal episode evaluations, we assess fault recovery, mechanism controls, task expansion, constrained tool budgets and external question answering. Across nine model configurations, unguarded agents fail in 32.2-67.8% of fault-injected evaluations on tasks each configuration solves without faults. MedGuard improves paired safe success by 13.7-46.6 percentage points on these tasks.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "838f6bebe43dcedd",
-    "canonicalUrl": "https://arxiv.org/abs/2611.09945",
-    "title": "A Model Organism for Studying Unverbalized Evaluation Awareness",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "1208a1ae52a6a378",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Daniel Donnelly, Evan Chapple, Haritz Puerto, Sahar Abdelnabi",
-    "contentSnippet": "arXiv:2611.09945v1 Announce Type: new Abstract: Large language models can recognize when they are being evaluated and change their behavior accordingly, undermining the reliability of safety benchmarks. Evaluation awareness (EA) is usually measured by having an LLM judge scan reasoning traces for explicit statements of recognition, but this signal is increasingly unreliable. Recent frontier-model system cards report a drop in verbalized rates between releases, which is indistinguishable from awareness that has gone unverbalized. Interpretability methods could detect such unverbalized evaluation awareness (UEA) in individual interactions, but lack instance-level ground truth. Asking the model alters the input, and dataset labels do not reveal whether it recognized a particular prompt as an evaluation. We address this gap with a model organism. Using synthetic document fine-tuning, SFT, and DPO, we train Qwen3.5-27B to emit a marker (a designated token) in its final response when it recognizes an evaluation, while suppressing the marker and verbalized awareness in its reasoning. The marker largely tracks the evaluation concept as it can be strongly modulated by evaluation framing in the system prompt. When not told whether it is being evaluated, the organism recognizes evaluations from test-question cues, mirroring what its base model often verbalizes. Using the marker as a label, we benchmark linear probes, the Jacobian Lens, and Activation Oracles, built on the base model and blind to the marker. None recovers the label reliably. These results suggest that current interpretability methods are not yet reliable UEA detectors, even when recognition relies on simple cues. Our model organism offers a testbed for improving them.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.09945",
-    "pdfUrl": "https://arxiv.org/pdf/2611.09945.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.09945v1 Announce Type: new Abstract: Large language models can recognize when they are being evaluated and change their behavior accordingly, undermining the reliability of safety benchmarks. Evaluation awareness (EA) is usually measured by having an LLM judge scan reasoning traces for explicit statements of recognition, but this signal is increasingly unreliable. Recent frontier-model system cards report a drop in verbalized rates between releases, which is indistinguishable from awareness that has gone unverbalized.\n\nInterpretability methods could detect such unverbalized evaluation awareness (UEA) in individual interactions, but lack instance-level ground truth. Asking the model alters the input, and dataset labels do not reveal whether it recognized a particular prompt as an evaluation. We address this gap with a model organism.",
-      "takeaways": [
-        "Using synthetic document fine-tuning, SFT, and DPO, we train Qwen3.5-27B to emit a marker (a designated token) in its final response when it recognizes an evaluation, while suppressing the marker and verbalized awareness in its reasoning.",
-        "The marker largely tracks the evaluation concept as it can be strongly modulated by evaluation framing in the system prompt.",
-        "When not told whether it is being evaluated, the organism recognizes evaluations from test-question cues, mirroring what its base model often verbalizes.",
-        "Using the marker as a label, we benchmark linear probes, the Jacobian Lens, and Activation Oracles, built on the base model and blind to the marker."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3fbc376b3e646d4d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10044",
-    "title": "CulturalCrosswords: A Multilingual Benchmark comprised of Answer Constraints and Grid Completion",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.465Z",
-    "contentHash": "765b39cd09515bbd",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Isaac Saxton-Knight, Gabriel Saxton-Knight, Diego Oliveira, Tidor-Vlad Pricope, Aston Garratt, Jocelyn D'Arcy",
-    "contentSnippet": "arXiv:2611.10044v1 Announce Type: new Abstract: When several answers fit a riddle, exact-match scoring can penalise a valid response. CulturalCrosswords tests how answer constraints affect large language models (LLMs) solving cultural riddles, whose solutions draw on knowledge specific to a community. We constructed 53 crosswords from crowdsourced riddles in 42 languages and evaluated 11 LLM configurations on five versions of each clue set: plain batches, batches with lengths, batches with lengths and partial-answer hints, and crosswords requesting an answer list or a completed grid. On 962 clues with alternative answers, lengths improve agreement with the reference by 22.8 percentage points, compared with 8.4 points when accepted alternatives also receive credit. Part of the gain therefore appears to come from selecting a required answer form. Crossword input increases the share of all crossings with compatible answers by 9.7 points; requiring a completed grid reveals large differences between models. The benchmark distinguishes agreement with a reference from the ability to produce answers that fit together and occupy the correct cells.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10044",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10044.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10044v1 Announce Type: new Abstract: When several answers fit a riddle, exact-match scoring can penalise a valid response. CulturalCrosswords tests how answer constraints affect large language models (LLMs) solving cultural riddles, whose solutions draw on knowledge specific to a community. We constructed 53 crosswords from crowdsourced riddles in 42 languages and evaluated 11 LLM configurations on five versions of each clue set: plain batches, batches with lengths, batches with lengths and partial-answer hints, and crosswords requesting an answer list or a completed grid.\n\nOn 962 clues with alternative answers, lengths improve agreement with the reference by 22.8 percentage points, compared with 8.4 points when accepted alternatives also receive credit. Part of the gain therefore appears to come from selecting a required answer form. Crossword input increases the share of all crossings with compatible answers by 9.7 points; requiring a completed grid reveals large differences between models.",
-      "takeaways": [
-        "The benchmark distinguishes agreement with a reference from the ability to produce answers that fit together and occupy the correct cells."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   }
