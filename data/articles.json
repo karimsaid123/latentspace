@@ -1,5 +1,34 @@
 [
   {
+    "id": "13482003797f2776",
+    "canonicalUrl": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+    "title": "An overview of Jensen Huang’s messy days",
+    "publishedAt": "2026-11-15T13:00:00.000Z",
+    "fetchedAt": "2026-11-15T18:55:06.348Z",
+    "contentHash": "bfffe44c977ff02e",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on Jensen Huang’s resignation and the fallout from Nvidia’s leadership crisis, follow Terrence O’Brien. The Stepback arrives in our subscribers’ inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started On October 29th, The New York Times reported that Nvidia co-founder and showman CEO Jensen Huang appeared to be the target of a Chinese spy plot. Any major tech CEO potentially being compromised by the Chinese government is concerning — especially Jensen Huang. “If you could draw the network diagram of the entire US AI ecosystem, Nvidia would be at the center of that,” Kyle Chan, a foreign policy fellow at the Brookings Institution’s John L. Thornton China Center, previously told The Verge. “If you could draw the diagram of the entire Nvidia ecosystem, a single man is standing at the heart of all of that.” The Times reported that Jensen Huang had developed a “close relationship” with Alice Huang (no relation), an executive at Singapore-based data center company Megaspeed. Alice Huang had been on the American government’s radar for some time, perhaps as early as 2024. Her company was investigated by the US Commerce Department over suspicions it was illegally smuggling Nvidia’s AI chips into China in violation of US government trade restrictions. Singapore authorities confiscated her passport back in June of 2025, eventually barring her from the country, after she reportedly gave “inaccurate information” to police. And perhaps more concerningly, some US officials believed she was passing information, possibly about Nvidia’s designs or the White House’s deliberations over trade restrictions, directly back to Beijing. This made her relationship with Jensen Huang concerning for multiple reasons. Nvidia’s chips are considered crucial to America’s AI superiority and a matter of national security by the White House. The government has restricted the sale of Nvidia’s most advanced chips to China since the Biden administration. But Jensen Huang has routinely pushed to loosen those trade restrictions. Meanwhile, he had gotten quite cozy with President Trump, once even putting him on speakerphone on-stage at the All-In Summit. Then last week, things escalated quickly. On Friday, November 6th, the Times reported that Alice Huang was specifically recrui",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2301620664.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jensen Huang has resigned as CEO of Nvidia following a series of scandals involving extramarital affairs and alleged national security compromises. The crisis began in late October 2025 when reports emerged that Huang had a relationship with Alice Huang, an executive at Singapore-based Megaspeed—a firm under US Commerce Department investigation for allegedly smuggling Nvidia chips into China. Following reports that Alice Huang was recruited by China’s Ministry of State Security to spy on him, Jensen Huang admitted to an affair on November 8th. The situation deteriorated further on November 11th when reports surfaced of a second affair with an internal direct report, Kimberly Powell, Nvidia’s VP of Healthcare. By November 12th, Huang resigned, with CFO Colette Kress appointed as interim CEO and Harvey Jones named the company’s first-ever board chair.\n\nThe leadership transition has triggered significant market volatility, with Nvidia’s stock price falling from an all-time high of $239.24 on October 6th to $162.85 by November 13th. The company, which has invested $99 billion in AI infrastructure and announced plans for $500 billion in data center financing, now faces an ongoing board investigation and potential congressional scrutiny. Analysts suggest the company may undergo a major structural reorganization, as the board seeks to address the unusual management model where Huang maintained approximately 60 direct reports. Further complications include a shareholder lawsuit and potential civil or criminal liability regarding the company's compliance with US export restrictions to China, following allegations that Nvidia misled investors about its China-based revenue.",
+      "takeaways": [
+        "**Leadership Changes:** Colette Kress is serving as interim CEO, and Harvey Jones has been appointed as Nvidia's first board chair to oversee the search for a permanent successor.",
+        "**Market Impact:** Nvidia stock dropped from a peak of $239.24 on October 6th to $162.85 on November 13th following the resignation.",
+        "**Corporate Governance:** The board is expected to overhaul Nvidia’s management structure, specifically addressing the previous CEO's practice of maintaining 60 direct reports.",
+        "**Regulatory Exposure:** Nvidia faces potential congressional investigations and legal risks regarding the alleged smuggling of chips to China via Megaspeed and discrepancies in reported China-based revenue."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "eba8c0480eb85e20",
     "canonicalUrl": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
     "title": "Understanding Positional Embeddings in Modern LLMs",
@@ -12,7 +41,7 @@
     "contentSnippet": "This article explains how LLMs encode and process token position information by covering classic and contemporary methods like RoPE. It’s essentially a comprehensive journey where we will work through the mechanisms with visual examples, a little math, and a small PyTorch implementation. And, of course, we will then also look at how modern architectures adapt or omit explicit positional encodings. Below, you can find a preview of which positional embedding choices are used in 2026 open-weight models. We will discuss these choices later after covering the underlying mechanisms. Figure 1: A preview of the gallery’s 2026 architectures, grouped by positional encoding. Architecture figures taken from my LLM gallery . But why spending so much time writing/reading about this rather minor building block? LLMs keep evolving, and as I was preparing a new article on the latest LLM architecture trends this year, I realized that I never covered the positional information methods used in LLMs in any article so far. So, instead of letting the other article get out of hand, I thought it might make sense to publish this as a standalone building block for the upcoming LLM architecture and trends analysis. Also, over the years, many readers have asked me for a tutorial on relative positional embeddings (aka RoPE) to follow up on the learned absolute embeddings used in GPT. It’s been on my TODO list for a long time, so I finally revisited my old draft and put this walkthrough together, which will cover different positional methods in LLMs; (finally) how RoPE works; what methods are used by recent open LLMs. Note that this article assumes some familiarity with basic LLM architectures and works well as a follow-up to Build a Large Language Model (From Scratch) . If the concepts and computation of the attention internals, particularly query, key, and value vectors, are a little fuzzy, I recommend checking my self-attention walkthrough as a refresher: The article is also very technical and likely too detailed for some. However, I really wanted to have this foundation out there for future articles to reference. And no worries, the next one will return to a more comfortable style. PS: I started experimenting with Substack’s new “perks” system. As a thank-you to supporters, I’ve added image exports and metadata from the architecture gallery for you to use in your own analyses. PPS: If",
     "imageUrl": "https://substackcdn.com/image/fetch/$s_!8RKL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb461a2cb-11ab-474a-affe-0ee99e5a8782_2850x2777.png",
     "category": "Open Source & Research",
-    "lab": "DeepSeek",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This technical article by Sebastian Raschka provides a comprehensive overview of how modern large language models encode and process token position information, bridging classic methods with contemporary techniques like Rotary Position Embedding (RoPE). Written as a foundational building block for an upcoming analysis of 2026 LLM architecture trends, the guide breaks down the underlying mechanisms through math, visual examples, and a small PyTorch implementation.\n\nThe piece addresses reader requests for a detailed walkthrough of relative positional embeddings compared to the learned absolute embeddings used in early models like GPT, while also examining how newer architectures adapt or entirely omit explicit positional encodings. It serves as a technical companion piece to Raschka's book *Build a Large Language Model (From Scratch)* and self-attention tutorials, establishing reference foundations for upcoming open-weight model landscape analyses.",
@@ -10833,30 +10862,6 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f932ce86887297f1",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
-    "title": "Quoting Prompting Claude Fable 5.2",
-    "publishedAt": "2026-11-10T05:34:14.000Z",
-    "fetchedAt": "2026-11-11T23:16:02.659Z",
-    "contentHash": "9c554f9c24f4dedb",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic’s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else’s, even when that duplicated existing code. When the prompt said the code base was the model’s own, it often consolidated duplicated code and sometimes made related fixes without being asked. If you want the model to improve the structure as it works, say that the code is its own: You are the owner and long-term maintainer of this codebase, and its design is up to you. The ownership sentence makes the model much more likely to consolidate duplicated code into one shared function. In Anthropic’s testing on small coding tasks, the model consolidated duplicated code in under 10 percent of runs without the sentence and in about 75 percent of runs with it. — Prompting Claude Fable 5.2 , Anthropic documentation Tags: prompt-engineering , anthropic , generative-ai , ai , llms , claude-mythos-fable",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic’s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else’s, even when that duplicated existing code. When the prompt said the code base was the model’s own, it often consolidated duplicated code and sometimes made related fixes without being asked.\n\nIf you want the model to improve the structure as it works, say that the code is its own: You are the owner and long-term maintainer of this codebase, and its design is up to you. The ownership sentence makes the model much more likely to consolidate duplicated code into one shared function. In Anthropic’s testing on small coding tasks, the model consolidated duplicated code in under 10 percent of runs without the sentence and in about 75 percent of runs with it.",
-      "takeaways": [
-        "— Prompting Claude Fable 5.2 , Anthropic documentation Tags: prompt-engineering , anthropic , generative-ai , ai , llms , claude-mythos-fable."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
