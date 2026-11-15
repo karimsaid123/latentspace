@@ -1,5 +1,61 @@
 [
   {
+    "id": "a8381ccf0f4a6c26",
+    "canonicalUrl": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+    "title": "Where was Nvidia’s security team?",
+    "publishedAt": "2026-11-15T00:08:07.000Z",
+    "fetchedAt": "2026-11-15T04:26:09.535Z",
+    "contentHash": "c2185378fac8c6d4",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Connie Loizos",
+    "contentSnippet": "Outsiders had little reason to notice when Nvidia’s longtime chief security officer and head of product security stepped down in August. Just two and a half months later, CEO Jensen Huang himself left the company over growing questions about his extramarital relationships — starting with an executive at Megaspeed, a Singapore data center company that U.S. investigators suspect of funneling Nvidia chips to China, then widening to reports about two separate affairs with Nvidia employees.\n\nAt the time, David Reber, who spent four years as CSO and seven at Nvidia overall, said he was leaving for health reasons. “This wasn’t a pivot I had planned. But I know what needs to come first: family and health,” he wrote on LinkedIn in late August, disclosing that he’d been diagnosed with young-onset Parkinson’s more than two years ago.\n\nReber’s replacement, Saša Zdjelar, previously spent 17 years at ExxonMobil in Houston, leaving as a senior IT manager before spending one year at Salesforce and several years at the cybersecurity company ReversingLabs. Zdjelar didn’t respond to questions Thursday about the transition or what the security team knew.\n\nNothing public connects Reber’s or Zdjelar’s role changes to the Megaspeed matter, but it seems fair to wonder what Nvidia’s security team knew about the government’s scrutiny of Megaspeed and about Huang’s relationships, and whether anyone raised concerns. Reber didn’t respond to questions Thursday. Nvidia also has not answered our related questions.\n\nRelationships between a CEO and his employees typically fall to HR, legal and the board, not security. But security specialists say any affair — even one inside the office — can give a foreign intelligence service leverage over an exec who wants it kept quiet. And Huang’s relationship with an executive at Megaspeed, a company under federal investigation, wasn’t an office matter at all. (Megaspeed has denied any wrongdoing.)\n\nStill, spotting the clues isn’t easy. The way intelligence services collect information, much of it through everyday conversation rather than hacking, makes it especially difficult for security teams to identify risks, according to retired senior intelligence officer Nicholas Eftimiades, who says he has trained more than 1,000 corporate security professionals.\n\nSome people inside Nvidia clearly knew parts of the picture. Nvidia’s top lawyer was engaged with ",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia CEO Jensen Huang resigned in October following reports of multiple extramarital affairs, including a relationship with an executive at Megaspeed, a Singapore-based data center firm currently under U.S. federal investigation for allegedly funneling Nvidia chips to China. These revelations followed the August departure of Nvidia’s longtime Chief Security Officer, David Reber, who cited a diagnosis of young-onset Parkinson’s disease. While Nvidia’s legal team was reportedly aware of the Megaspeed inquiry over a year ago, it remains unclear if the company’s security apparatus was informed of the CEO’s personal relationships or the potential counterintelligence risks they posed.\n\nIndustry experts, including former intelligence officer Nicholas Eftimiades, note that corporate security teams often struggle to identify risks stemming from human intelligence operations, which frequently rely on long-term relationship cultivation rather than traditional cyber-hacking. The situation highlights a broader debate regarding the scope of corporate security, which is often limited to physical and cyber-defense rather than monitoring insider threats or executive vulnerabilities. As the Nvidia board conducts an independent investigation alongside federal inquiries, the case serves as a high-profile example of the challenges U.S. firms face regarding foreign intelligence efforts to gain policy and export control insights.",
+      "takeaways": [
+        "**Leadership Transition:** David Reber served as Nvidia’s CSO for four years before stepping down in August; he was replaced by Saša Zdjelar, a former IT manager at ExxonMobil and executive at ReversingLabs.",
+        "**Alleged Conflicts:** Reports indicate Jensen Huang engaged in multiple affairs, including one with a direct-report vice president and another with an executive at Megaspeed, a company under federal scrutiny for potential export control violations.",
+        "**Intelligence Tactics:** Experts like Nicholas Eftimiades emphasize that foreign intelligence services, particularly those linked to China, increasingly utilize long-term human relationship cultivation and technical tools like IMSI catchers to gain policy insights and influence.",
+        "**Security Scope:** Corporate security specialists argue that many firms underfund security and define it too narrowly, focusing on facility and cyber protection while neglecting the monitoring of executive vulnerabilities and insider threats."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e9477865501b0215",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+    "title": "datasette-llm 0.1a11",
+    "publishedAt": "2026-11-14T23:59:28.000Z",
+    "fetchedAt": "2026-11-15T04:26:10.088Z",
+    "contentHash": "21aad6c9cdf68e3f",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "14th November 2026 Release datasette-llm 0.1a11 — LLM integration plugin for other plugins to depend on datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.\n\nThis release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol.\n\nThis means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this:\n\nAnd you'll get a local server running a Datasette Agent instance powered by your local model!\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 14th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released datasette-llm version 0.1a11, an intermediate plugin designed to standardize LLM configuration across the Datasette ecosystem. This update introduces native support for OpenAI-compatible endpoints, enabling users to integrate any LLM provider that adheres to the OpenAI API protocol directly into their Datasette instances.\n\nThe release facilitates local model integration by allowing Datasette to interface with popular local inference engines such as LM Studio, Ollama, and llama.cpp (which recently reached v1.0.0). Users can deploy a local Datasette Agent instance powered by these models using the 'uvx' command-line tool, effectively bridging local model execution with Datasette's data exploration and management capabilities.",
+      "takeaways": [
+        "**Plugin Architecture:** datasette-llm 0.1a11 functions as an intermediate dependency layer for other Datasette plugins requiring LLM access.",
+        "**Endpoint Compatibility:** The plugin now supports any LLM host utilizing the OpenAI pseudo-standard web protocol.",
+        "**Local Deployment:** Integration is verified for local inference backends including LM Studio, Ollama, and llama.cpp v1.0.0.",
+        "**Execution Method:** Users can initiate a Datasette Agent instance via the 'uvx' package runner."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "e86112d5f8734949",
     "canonicalUrl": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
     "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
@@ -82,6 +138,34 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "4f7f1f7fcbbee0ff",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+    "title": "datasette-vega 0.7",
+    "publishedAt": "2026-11-14T17:09:09.000Z",
+    "fetchedAt": "2026-11-15T04:26:10.088Z",
+    "contentHash": "331ad8f7dd79699f",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "14th November 2026 Release datasette-vega 0.7 — Datasette plugin for visualizing data using Vega A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018!\n\nI finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite .\n\n(Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.)\n\nSince it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite .\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 14th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released version 0.7 of datasette-vega, a plugin for the Datasette data exploration tool that enables data visualization using Vega-Lite. This update marks the first release of the plugin since July 2018, primarily focusing on restoring compatibility with the latest Datasette alpha versions.\n\nThe update includes cosmetic refinements specifically designed to improve functionality within Datasette Lite, the browser-based, client-side version of Datasette. This release coincides with new capabilities in Datasette Lite that now support the execution of JavaScript-based plugins, allowing users to render charts directly from tables or custom SQL queries within the browser environment.",
+      "takeaways": [
+        "**Plugin Functionality:** Enables rendering of charts using Vega-Lite against data stored in Datasette tables or custom SQL queries.",
+        "**Compatibility:** Updated to support the latest Datasette alpha releases and Datasette Lite.",
+        "**Technical Milestone:** First update to the plugin since its initial release in July 2018.",
+        "**Platform Integration:** Leverages new support for JavaScript plugins within the Datasette Lite environment."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
       "generatedWith": "gemini",
       "summaryVersion": 2
     }
@@ -10772,84 +10856,6 @@
         "However, higher model consistency did not necessarily correspond to agreement with human judgments or reliable detection of rare high-severity cases.",
         "Label-flipped demonstration experiments also revealed model-specific sensitivity to misleading in-context examples, while explanatory demonstrations did not consistently improve performance.",
         "Overall, LLMs show promise as scalable complements to expert annotation, but require careful evaluation before use in high-stakes mental health applications."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "eb3f2f67ccdccb1d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10049",
-    "title": "LoRazor: Trimming Adapter Execution for Efficient Multi-LoRA Serving",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "26177da65e10c0e6",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Xiang Li, Pengcheng Wang, Azam Ikram, Saurabh Bagchi",
-    "contentSnippet": "arXiv:2611.10049v1 Announce Type: new Abstract: LoRA offers a parameter-efficient adaptation strategy, supporting multi-user workloads via customized adapters on a shared backbone. However, serving concurrent requests with different adapters introduces substantial computation and memory-management overhead. We ask the research question: Do all requests need their adapters throughout the whole generation process? Our motivational study reveals that employing LoRA adapters at every decoding step is unnecessary, releasing them early has limited impact on accuracy while substantially accelerating generation. Although skipping adapters early offers theoretical workload reduction, translating these computational savings into concrete throughput gains requires tailored GPU kernels. We present LoRazor, a multi-LoRA serving framework that combines early adapter release with active-row aware GPU kernels. LoRazor determines when to permanently release a request's adapter and continue decoding with the backbone alone. By dynamically resizing LoRA kernel launches as adapters are released, LoRazor trims idle GPU blocks. Across two backbones and four tasks, LoRazor achieves up to 3.02x request throughput and 2.53x output-token throughput over vLLM multi-LoRA, with a mean relative task-accuracy decrease of 2.89%.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10049",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10049.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10049v1 Announce Type: new Abstract: LoRA offers a parameter-efficient adaptation strategy, supporting multi-user workloads via customized adapters on a shared backbone. However, serving concurrent requests with different adapters introduces substantial computation and memory-management overhead. We ask the research question: Do all requests need their adapters throughout the whole generation process?\n\nOur motivational study reveals that employing LoRA adapters at every decoding step is unnecessary, releasing them early has limited impact on accuracy while substantially accelerating generation. Although skipping adapters early offers theoretical workload reduction, translating these computational savings into concrete throughput gains requires tailored GPU kernels. We present LoRazor, a multi-LoRA serving framework that combines early adapter release with active-row aware GPU kernels.",
-      "takeaways": [
-        "LoRazor determines when to permanently release a request's adapter and continue decoding with the backbone alone.",
-        "By dynamically resizing LoRA kernel launches as adapters are released, LoRazor trims idle GPU blocks.",
-        "Across two backbones and four tasks, LoRazor achieves up to 3.02x request throughput and 2.53x output-token throughput over vLLM multi-LoRA, with a mean relative task-accuracy decrease of 2.89%."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ff68b136f69282fa",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10054",
-    "title": "AYO: A Safe and Privacy-Preserving Platform for Studying Children's Interaction with LLMs",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "9177772f6eae990e",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Huiwen Alex Yang, Rachel Skwersky, Bill D. Thompson, Celeste Kidd",
-    "contentSnippet": "arXiv:2611.10054v1 Announce Type: new Abstract: Children and adolescents are increasingly interacting with generative AI and large language models (LLMs), yet little is known about how these interactions may influence their development, beliefs, and behavior. Existing research has relied heavily on surveys, while direct study of children's interactions with LLMs presents substantial challenges related to safety, privacy, consent, and experimental control. We introduce AYO (AI Youth Open Science), an open-source platform designed for safe and systematic research on children's interactions with conversational AI. AYO provides a child-friendly interface, configurable age-based safety guardrails, researcher monitoring, and privacy-preserving data practices. These capabilities enable cross-sectional, longitudinal, and experimental research on how children use and respond to LLMs and how AI design may shape trust, epistemic judgment, curiosity, and other aspects of development. AYO provides the infrastructure to generate evidence that guides safer AI systems, educational practices, and policies for children growing up with AI.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10054",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10054.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10054v1 Announce Type: new Abstract: Children and adolescents are increasingly interacting with generative AI and large language models (LLMs), yet little is known about how these interactions may influence their development, beliefs, and behavior. Existing research has relied heavily on surveys, while direct study of children's interactions with LLMs presents substantial challenges related to safety, privacy, consent, and experimental control. We introduce AYO (AI Youth Open Science), an open-source platform designed for safe and systematic research on children's interactions with conversational AI.\n\nAYO provides a child-friendly interface, configurable age-based safety guardrails, researcher monitoring, and privacy-preserving data practices. These capabilities enable cross-sectional, longitudinal, and experimental research on how children use and respond to LLMs and how AI design may shape trust, epistemic judgment, curiosity, and other aspects of development. AYO provides the infrastructure to generate evidence that guides safer AI systems, educational practices, and policies for children growing up with AI.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "868cd9841af624b4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10089",
-    "title": "META-IR: Meta-Introspective Reasoning for Adaptive Safety Alignment in LLM",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "b2f3d7a14544ff48",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Mahabubur Rahman Miraj, Hongyu Huang, Nankun Mu, Chao Chen, Shanqin Yi",
-    "contentSnippet": "arXiv:2611.10089v1 Announce Type: new Abstract: Large Language Models (LLMs) remain vulnerable to jailbreak attacks and harmful-content prompts, particularly under adversarial distribution shifts where static alignment pipelines fail to generalize. Although introspective methods such as STAIR strengthen refusal consistency, they depend on fixed self-evaluation policies that cannot rapidly adapt to evolving manipulation strategies. To overcome these limitations, this paper introduces META-IR, a meta-introspective reasoning framework that enhances safety alignment through meta-learning-driven adaptation. It employs a dual-loop architecture: an inner introspective loop that performs structured risk analysis, self-assessment, and reflective correction via SI-MCTS, and an outer meta-learning loop that optimizes the introspection policy across diverse jailbreak task families to enable rapid generalization to unseen attacks. A dynamic jailbreak simulation module further exposes the model to progressively harder adversarial prompts, enabling continual self-improvement without human supervision. Experiments across multiple models (Llama-3.1-8B-Instruct and Qwen-2-7B-Instruct) and a broad suite of safety, helpfulness, generalization, and introspection metrics demonstrate that META-IR substantially improves adaptation speed, robustness, and reasoning stability compared with all baseline models. These results establish META-IR as an effective pathway toward building LLMs capable of sustained, adaptive safety alignment under dynamic and evolving threat environments.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10089",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10089.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10089v1 Announce Type: new Abstract: Large Language Models (LLMs) remain vulnerable to jailbreak attacks and harmful-content prompts, particularly under adversarial distribution shifts where static alignment pipelines fail to generalize. Although introspective methods such as STAIR strengthen refusal consistency, they depend on fixed self-evaluation policies that cannot rapidly adapt to evolving manipulation strategies. To overcome these limitations, this paper introduces META-IR, a meta-introspective reasoning framework that enhances safety alignment through meta-learning-driven adaptation.\n\nIt employs a dual-loop architecture: an inner introspective loop that performs structured risk analysis, self-assessment, and reflective correction via SI-MCTS, and an outer meta-learning loop that optimizes the introspection policy across diverse jailbreak task families to enable rapid generalization to unseen attacks. A dynamic jailbreak simulation module further exposes the model to progressively harder adversarial prompts, enabling continual self-improvement without human supervision. Experiments across multiple models (Llama-3.1-8B-Instruct and Qwen-2-7B-Instruct) and a broad suite of safety, helpfulness, generalization, and introspection metrics demonstrate that META-IR substantially improves adaptation speed, robustness, and reasoning stability compared with all baseline models.",
-      "takeaways": [
-        "These results establish META-IR as an effective pathway toward building LLMs capable of sustained, adaptive safety alignment under dynamic and evolving threat environments."
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
