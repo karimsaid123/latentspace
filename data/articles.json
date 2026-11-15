@@ -1,5 +1,61 @@
 [
   {
+    "id": "eba8c0480eb85e20",
+    "canonicalUrl": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+    "title": "Understanding Positional Embeddings in Modern LLMs",
+    "publishedAt": "2026-11-15T12:10:37.000Z",
+    "fetchedAt": "2026-11-15T12:13:56.870Z",
+    "contentHash": "d82be059fc216056",
+    "sourceId": "ahead-of-ai",
+    "sourceName": "Ahead of AI",
+    "author": "Sebastian Raschka, PhD",
+    "contentSnippet": "This article explains how LLMs encode and process token position information by covering classic and contemporary methods like RoPE. It’s essentially a comprehensive journey where we will work through the mechanisms with visual examples, a little math, and a small PyTorch implementation. And, of course, we will then also look at how modern architectures adapt or omit explicit positional encodings. Below, you can find a preview of which positional embedding choices are used in 2026 open-weight models. We will discuss these choices later after covering the underlying mechanisms. Figure 1: A preview of the gallery’s 2026 architectures, grouped by positional encoding. Architecture figures taken from my LLM gallery . But why spending so much time writing/reading about this rather minor building block? LLMs keep evolving, and as I was preparing a new article on the latest LLM architecture trends this year, I realized that I never covered the positional information methods used in LLMs in any article so far. So, instead of letting the other article get out of hand, I thought it might make sense to publish this as a standalone building block for the upcoming LLM architecture and trends analysis. Also, over the years, many readers have asked me for a tutorial on relative positional embeddings (aka RoPE) to follow up on the learned absolute embeddings used in GPT. It’s been on my TODO list for a long time, so I finally revisited my old draft and put this walkthrough together, which will cover different positional methods in LLMs; (finally) how RoPE works; what methods are used by recent open LLMs. Note that this article assumes some familiarity with basic LLM architectures and works well as a follow-up to Build a Large Language Model (From Scratch) . If the concepts and computation of the attention internals, particularly query, key, and value vectors, are a little fuzzy, I recommend checking my self-attention walkthrough as a refresher: The article is also very technical and likely too detailed for some. However, I really wanted to have this foundation out there for future articles to reference. And no worries, the next one will return to a more comfortable style. PS: I started experimenting with Substack’s new “perks” system. As a thank-you to supporters, I’ve added image exports and metadata from the architecture gallery for you to use in your own analyses. PPS: If",
+    "imageUrl": "https://substackcdn.com/image/fetch/$s_!8RKL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb461a2cb-11ab-474a-affe-0ee99e5a8782_2850x2777.png",
+    "category": "Open Source & Research",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "This technical article by Sebastian Raschka provides a comprehensive overview of how modern large language models encode and process token position information, bridging classic methods with contemporary techniques like Rotary Position Embedding (RoPE). Written as a foundational building block for an upcoming analysis of 2026 LLM architecture trends, the guide breaks down the underlying mechanisms through math, visual examples, and a small PyTorch implementation.\n\nThe piece addresses reader requests for a detailed walkthrough of relative positional embeddings compared to the learned absolute embeddings used in early models like GPT, while also examining how newer architectures adapt or entirely omit explicit positional encodings. It serves as a technical companion piece to Raschka's book *Build a Large Language Model (From Scratch)* and self-attention tutorials, establishing reference foundations for upcoming open-weight model landscape analyses.",
+      "takeaways": [
+        "**Core Topic:** Technical breakdown of positional encoding mechanisms in LLMs, contrasting classic learned absolute embeddings with contemporary relative methods like RoPE.",
+        "**Implementation Support:** Includes visual examples, mathematical formulations, and a small PyTorch code implementation to demonstrate self-attention internal computations.",
+        "**Contextual Purpose:** Published as a standalone foundational reference to support an upcoming 2026 open-weight LLM architecture and industry trends analysis."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "26c55bd270eff60d",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/15/bland-tofu-1-full-duplex-speech-to-speech-model/",
+    "title": "Bland Launches Tofu-1, a Full-Duplex Speech-to-Speech Model for Calls",
+    "publishedAt": "2026-11-15T10:06:21.000Z",
+    "fetchedAt": "2026-11-15T12:13:57.942Z",
+    "contentHash": "75c49d50cfafd6cf",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Bland, the San Francisco voice-AI company, has released Tofu-1 , a full-duplex speech-to-speech model in research preview. The Tofu-1 speech-to-speech model targets calls from moving cars, hospital rooms and weak-signal lines. It listens while it speaks and reasons while it talks. For phone-agent teams, one model now handles audio in and audio out, with no transcript between. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . What is Tofu-1? Tofu-1 is a full-duplex speech-to-speech model from Bland that hears, reasons and replies in audio during phone calls. It is the first release in a planned family of Bland speech-to-speech models. How does Tofu-1 differ from a cascade voice agent? Most voice agents are cascades. They turn speech into text, pass it to a language model, then turn the reply back into speech. Tofu-1 listens to the audio directly , so tone, hesitation and background sound stay available to the model. Bland has not published the internal architecture. Audio understanding Bland lists 3 audio skills on its product page: Speaker tracking: tells speakers apart and works out who each one is addressing. Noise separation: separates voices from a crying child, a TV, highway traffic, a hospital intercom or keypad tones. Paralinguistics: hears hesitation, frustration and urgency. Full duplex and thinking while talking Callers can interrupt or correct Tofu-1 mid-sentence. While it works on a request, it keeps the conversation moving. It reports the result only when the work is done. It never claims a task is finished early. Scene generation Because Tofu-1 models the sound of a call, it can also produce one. That includes a second speaker, the room around them and line noise. What is Bland’s ‘TV Test’? The TV Test asks one question: can the model follow the caller while ignoring speech from another scene? TV audio is often louder than the caller. Bland marks its TV Test walkthrough as illustrative, not recorded model output. How does Tofu-1 compare with other full-duplex models? Feature Bland Tofu-1 OpenAI GPT-Live-1 NVIDIA NemotronLabs VoiceChat 11B Block Dessa Type Full-duplex speech-to-speech Full-duplex voice model Full-duplex speech-to-speech Full-duplex speech-to-speech Parameters Not disclosed Not disclosed 11B Not disclosed Weights Closed Closed Open (OpenMDW 1.1) Not released Training data Millio",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "San Francisco-based voice-AI company Bland has released Tofu-1, a full-duplex speech-to-speech model currently in research preview. Unlike traditional cascade voice agents that rely on intermediate speech-to-text and text-to-speech conversion steps, Tofu-1 processes audio directly. This architecture allows the model to maintain access to paralinguistic cues such as tone, hesitation, and background noise, while enabling the model to listen, reason, and speak simultaneously. The model is designed specifically for challenging telephony environments, including moving vehicles, hospital settings, and connections with weak signal integrity.\n\nTechnically, Tofu-1 features three primary audio processing capabilities: speaker tracking for identifying interlocutors and their targets, noise separation to isolate voices from environmental interference like highway traffic or intercoms, and paralinguistic analysis to detect user frustration or urgency. The model supports full-duplex interaction, allowing callers to interrupt or correct the agent mid-sentence without breaking the conversation flow. Additionally, the model can generate synthetic call environments, including background room noise and line interference. While Bland has not disclosed the internal architecture or parameter count, they have positioned Tofu-1 as the first in a planned family of speech-to-speech models, with deployment specifications available via the GPULeaderboard.com Chrome extension.",
+      "takeaways": [
+        "**Architecture:** Tofu-1 utilizes a direct speech-to-speech pipeline, bypassing the latency and data loss associated with traditional text-based cascade models.",
+        "**Audio Capabilities:** The model includes specific features for speaker tracking, noise separation (e.g., crying children, TV audio, keypad tones), and paralinguistic detection.",
+        "**Competitive Landscape:** Tofu-1 is positioned against OpenAI's GPT-Live-1, NVIDIA's NemotronLabs VoiceChat 11B, and Block Dessa's model, with Tofu-1 currently maintaining closed weights.",
+        "**TV Test:** Bland utilizes a 'TV Test' benchmark to evaluate the model's ability to maintain focus on a caller while ignoring louder, competing speech from a television background."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "a8381ccf0f4a6c26",
     "canonicalUrl": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
     "title": "Where was Nvidia’s security team?",
@@ -39,7 +95,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "14th November 2026 Release datasette-llm 0.1a11 — LLM integration plugin for other plugins to depend on datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.\n\nThis release adds support for OpenAI-compatible endpoints, so you can configure Datasette to use an LLM hosted anywhere that talks the OpenAI pseudo-standard web protocol.\n\nThis means that if you're running local models with LM Studio or Ollama or llama.cpp (which just hit v1.0.0 ) you can run Datasette via uvx like this:\n\nAnd you'll get a local server running a Datasette Agent instance powered by your local model!\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 14th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "OpenAI",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Simon Willison has released datasette-llm version 0.1a11, an intermediate plugin designed to standardize LLM configuration across the Datasette ecosystem. This update introduces native support for OpenAI-compatible endpoints, enabling users to integrate any LLM provider that adheres to the OpenAI API protocol directly into their Datasette instances.\n\nThe release facilitates local model integration by allowing Datasette to interface with popular local inference engines such as LM Studio, Ollama, and llama.cpp (which recently reached v1.0.0). Users can deploy a local Datasette Agent instance powered by these models using the 'uvx' command-line tool, effectively bridging local model execution with Datasette's data exploration and management capabilities.",
@@ -154,7 +210,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "14th November 2026 Release datasette-vega 0.7 — Datasette plugin for visualizing data using Vega A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018!\n\nI finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite .\n\n(Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.)\n\nSince it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite .\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 14th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Simon Willison has released version 0.7 of datasette-vega, a plugin for the Datasette data exploration tool that enables data visualization using Vega-Lite. This update marks the first release of the plugin since July 2018, primarily focusing on restoring compatibility with the latest Datasette alpha versions.\n\nThe update includes cosmetic refinements specifically designed to improve functionality within Datasette Lite, the browser-based, client-side version of Datasette. This release coincides with new capabilities in Datasette Lite that now support the execution of JavaScript-based plugins, allowing users to render charts directly from tables or custom SQL queries within the browser environment.",
@@ -10798,64 +10854,6 @@
       "tldr": "Claude Fable 5.2 pays close attention to who owns the code it works on. In Anthropic’s testing on small coding tasks, the model tended to add to the existing structure when the prompt said nothing about ownership or presented the code base as someone else’s, even when that duplicated existing code. When the prompt said the code base was the model’s own, it often consolidated duplicated code and sometimes made related fixes without being asked.\n\nIf you want the model to improve the structure as it works, say that the code is its own: You are the owner and long-term maintainer of this codebase, and its design is up to you. The ownership sentence makes the model much more likely to consolidate duplicated code into one shared function. In Anthropic’s testing on small coding tasks, the model consolidated duplicated code in under 10 percent of runs without the sentence and in about 75 percent of runs with it.",
       "takeaways": [
         "— Prompting Claude Fable 5.2 , Anthropic documentation Tags: prompt-engineering , anthropic , generative-ai , ai , llms , claude-mythos-fable."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "036a8aedd8fa7bc1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10045",
-    "title": "Don't Blame The Preferences: Examining The Emergence of Sycophancy in LLM Training",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "3986bae71d454c91",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Chao Peter Yang, Catherine Zehr, Pranav Bijith, Brandon Fain",
-    "contentSnippet": "arXiv:2611.10045v1 Announce Type: new Abstract: AI sycophancy, the tendency of large language models (LLMs) to flatter users and affirm their beliefs, can undermine accuracy and contribute to misinformation, dependence, and overconfidence. Although prior work has benchmarked sycophancy in released models and proposed mitigations, its origins during training remain poorly understood. Preference alignment methods such as RLHF and DPO are often blamed, but their effects are rarely compared with earlier training stages. We investigate sycophancy across the training pipelines of three model families and three benchmarks. We find that sycophancy is largely established by the end of supervised fine-tuning (SFT), rather than introduced by preference alignment. Across all nine model benchmark combinations, SFT checkpoints attain at least 92% of preference aligned models' sycophancy scores and at least 85% of final models' scores; on average, they are about as sycophantic as final models. Preference alignment increases sycophancy in only four of nine cases, by an average of 4.2 percentage points when it does. To probe the underlying causes, we isolate model representations associated with sycophancy using mechanistic interpretability and measure their activation on training datasets from each stage. SFT datasets show roughly the same average activation as other training data but contribute substantially more examples, and the highest-scoring individual datasets all come from SFT. Our findings suggest that addressing sycophancy requires interventions throughout the training pipeline, particularly in data selection and augmentation for pre-training and SFT.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10045",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10045.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10045v1 Announce Type: new Abstract: AI sycophancy, the tendency of large language models (LLMs) to flatter users and affirm their beliefs, can undermine accuracy and contribute to misinformation, dependence, and overconfidence. Although prior work has benchmarked sycophancy in released models and proposed mitigations, its origins during training remain poorly understood. Preference alignment methods such as RLHF and DPO are often blamed, but their effects are rarely compared with earlier training stages.\n\nWe investigate sycophancy across the training pipelines of three model families and three benchmarks. We find that sycophancy is largely established by the end of supervised fine-tuning (SFT), rather than introduced by preference alignment. Across all nine model benchmark combinations, SFT checkpoints attain at least 92% of preference aligned models' sycophancy scores and at least 85% of final models' scores; on average, they are about as sycophantic as final models.",
-      "takeaways": [
-        "Preference alignment increases sycophancy in only four of nine cases, by an average of 4.2 percentage points when it does.",
-        "To probe the underlying causes, we isolate model representations associated with sycophancy using mechanistic interpretability and measure their activation on training datasets from each stage.",
-        "SFT datasets show roughly the same average activation as other training data but contribute substantially more examples, and the highest-scoring individual datasets all come from SFT.",
-        "Our findings suggest that addressing sycophancy requires interventions throughout the training pipeline, particularly in data selection and augmentation for pre-training and SFT."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "50653b36e1edda3c",
-    "canonicalUrl": "https://arxiv.org/abs/2611.10048",
-    "title": "Veterans' Mental Health Crisis Severity Annotation: Do LLMs Agree More Than Human Experts?",
-    "publishedAt": "2026-11-10T05:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "878ebfe7956eb3d5",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "K M Sajjadul Islam, Pranav Yaramalla, Nadiyah Johnson, Mark Flower, Praveen Madiraju, Zeno Franco",
-    "contentSnippet": "arXiv:2611.10048v1 Announce Type: new Abstract: Large language models (LLMs) offer a scalable approach for annotating mental health and crisis-related social media content, but their reliability in safety-critical tasks remains unclear. This study evaluates LLM-based crisis-severity annotation of veteran-related social media posts against annotations from eight Veteran Subject Matter Experts (SMEs). Using 149 tweets and five severity categories, we evaluate 15 open-source and 10 proprietary LLMs across eight prompt variants, examining annotation performance, inter-model agreement, prompt sensitivity, and high-severity crisis detection. Human reviewers showed higher ordinal than nominal agreement ({\\alpha} = 0.494), indicating that disagreements often occurred between neighboring severity levels. In contrast, selected LLMs demonstrated substantially higher inter-model consistency, with ordinal agreement ({\\alpha}) reaching 0.8336 under the baseline prompt. Proprietary models generally showed better agreement with expert annotations and greater stability than open-source models. GPT-5.6-Terra achieved the best overall performance, while the open-source Qwen2.5-7B showed the strongest performance in identifying Acute Crisis with Suicidal Ideation cases. However, higher model consistency did not necessarily correspond to agreement with human judgments or reliable detection of rare high-severity cases. Label-flipped demonstration experiments also revealed model-specific sensitivity to misleading in-context examples, while explanatory demonstrations did not consistently improve performance. Overall, LLMs show promise as scalable complements to expert annotation, but require careful evaluation before use in high-stakes mental health applications.",
-    "category": "Open Source & Research",
-    "lab": "OpenAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.10048",
-    "pdfUrl": "https://arxiv.org/pdf/2611.10048.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.10048v1 Announce Type: new Abstract: Large language models (LLMs) offer a scalable approach for annotating mental health and crisis-related social media content, but their reliability in safety-critical tasks remains unclear. This study evaluates LLM-based crisis-severity annotation of veteran-related social media posts against annotations from eight Veteran Subject Matter Experts (SMEs). Using 149 tweets and five severity categories, we evaluate 15 open-source and 10 proprietary LLMs across eight prompt variants, examining annotation performance, inter-model agreement, prompt sensitivity, and high-severity crisis detection.\n\nHuman reviewers showed higher ordinal than nominal agreement ({\\alpha} = 0.494), indicating that disagreements often occurred between neighboring severity levels. In contrast, selected LLMs demonstrated substantially higher inter-model consistency, with ordinal agreement ({\\alpha}) reaching 0.8336 under the baseline prompt. Proprietary models generally showed better agreement with expert annotations and greater stability than open-source models.",
-      "takeaways": [
-        "GPT-5.6-Terra achieved the best overall performance, while the open-source Qwen2.5-7B showed the strongest performance in identifying Acute Crisis with Suicidal Ideation cases.",
-        "However, higher model consistency did not necessarily correspond to agreement with human judgments or reliable detection of rare high-severity cases.",
-        "Label-flipped demonstration experiments also revealed model-specific sensitivity to misleading in-context examples, while explanatory demonstrations did not consistently improve performance.",
-        "Overall, LLMs show promise as scalable complements to expert annotation, but require careful evaluation before use in high-stakes mental health applications."
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
