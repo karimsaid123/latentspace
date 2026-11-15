@@ -1,5 +1,166 @@
 [
   {
+    "id": "2e8f421d2ee2a3df",
+    "canonicalUrl": "https://openai.com/index/step-toward-defining-the-standard-model",
+    "title": "A step toward defining the Standard Model on a lattice",
+    "publishedAt": "2026-11-15T22:00:01.000Z",
+    "fetchedAt": "2026-11-15T23:18:16.082Z",
+    "contentHash": "ceb9c9ce83118afc",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Researchers are investigating a candidate nonperturbative lattice definition for the Standard Model. The development of this theoretical framework was supported by the use of GPT-6 Astra to assist in formalizing the proof.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "33b95c2112c46efd",
+    "canonicalUrl": "https://openai.com/index/our-new-blog-for-science",
+    "title": "Our new blog for science",
+    "publishedAt": "2026-11-15T22:00:00.000Z",
+    "fetchedAt": "2026-11-15T23:18:16.082Z",
+    "contentHash": "1b1b58abf7577a7b",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI has launched a dedicated science blog to document research findings, practical methodologies, and personal accounts from researchers utilizing AI tools to accelerate scientific discovery.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9bfb2ab667837ec0",
+    "canonicalUrl": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
+    "title": "Is bad news for Jensen Huang also bad news for the AI industry?",
+    "publishedAt": "2026-11-15T21:56:35.000Z",
+    "fetchedAt": "2026-11-15T23:18:15.387Z",
+    "contentHash": "d0dc4d1d75bd2a40",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "We didn’t see this coming. Or at least, I didn’t — a week ago, when I wrote about Nvidia’s board opening an investigation into then-CEO Jensen Huang, I assumed his job was safe.\n\nOn the latest episode of TechCrunch’s Equity podcast , Rebecca Bellan, Tim De Chant, and I discussed how Huang’s ouster went down and what it means for the larger AI economy. While Tim said he saw it coming (albeit not this quickly), Rebecca said, “I didn’t think it was going to happen at all.”\n\n“Jensen is Nvidia, right?” she added. “And so much of this economy is riding on Nvidia.”\n\nSimilarly, I marveled at how quickly Huang’s support seemed to crumble, with more scandals seeming to emerge every day. (At the same time, there are many who’d still like to see him return .) And we also took a moment to wonder what will happen to Nvidia’s investments in the larger AI ecosystem.\n\nKeep reading for a preview of our conversation, edited for length and clarity; you can listen to the whole episode here .\n\nTim De Chant: I figured this was coming. I didn’t think it would happen this quickly. I thought there would be at least a few days.\n\nRebecca Bellan: I didn’t think it was going to happen at all. I mean, Jensen is Nvidia, right? And so much of this economy is riding on Nvidia. And we’ve got nothing but the last few years of data to show us that billionaires can do whatever the hell they want. So it was surprising to me — it almost restored my faith in humanity, that he resigned.\n\nBut someone said to me, “If this were Elon, nothing would happen.” He would not be resigning. Nothing would be going down\n\nAnthony Ha: Which is interesting, because I would have said, as of a week ago, or even just a few days ago, that Jensen is in the same category as Elon. I mean, no one is quite as special as Elon is, but it’s a big, incredibly successful company. Like you said — in a lot of ways, the entire AI economy is built on top of Nvidia.\n\nAnd for most people, Jensen Huang is Nvidia. He’s the biggest shareholder. He has family members who work at the company, and probably most importantly, there was no succession plan in place. So this was not something that they were prepared for at all.\n\nRebecca: I think we should actually take a step back, because we just launched into this conversation assuming — rightly so — that our listeners will know what the heck we’re talking about.\n\nBut for those who somehow don",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jensen Huang has resigned as CEO of Nvidia following a series of scandals, including an admitted affair with an executive at a customer firm, Megaspeed, which allegedly has ties to Chinese intelligence. The resignation follows a rapid collapse of board support after reports surfaced regarding his personal conduct and potential national security implications. Nvidia CFO Collette Kress has been appointed as interim CEO, a move interpreted by analysts as a caretaker measure focused on expense management rather than long-term strategic leadership.\n\nThe fallout centers on concerns regarding Huang’s advocacy for loosening chip export restrictions to China, which critics argue prioritized sales over national security. Intelligence reports regarding Huang’s relationship with an individual linked to Chinese intelligence had reportedly been circulating for nearly a year. The situation reached a breaking point following a Bloomberg report on November 9, which alleged that Nvidia’s head attorney inquired about a Department of Commerce investigation into the matter, signaling to the board and government officials that the issue extended beyond personal misconduct into potential corporate interference.\n\nNvidia’s current market position is critical to the broader AI economy, as the company controls approximately 80% of the AI GPU market. The firm holds $99 billion in investments, $25 billion in commitments, and $36 billion in cloud service commitments, with significant stakes in major AI entities including OpenAI, Anthropic, CoreWeave, and Nebius. Analysts are now questioning the future of Nvidia’s aggressive investment strategy and its role as the primary infrastructure provider for the global AI ecosystem.",
+      "takeaways": [
+        "**Market Dominance:** Nvidia currently holds an estimated 80% share of the AI GPU market.",
+        "**Financial Exposure:** Nvidia’s investment portfolio includes $99 billion in investments, $25 billion in commitments, and $36 billion in cloud service commitments.",
+        "**Key Portfolio Companies:** Nvidia’s investment reach includes major AI players such as OpenAI, Anthropic, CoreWeave, and Nebius.",
+        "**Interim Leadership:** CFO Collette Kress has assumed the role of interim CEO, with observers characterizing the appointment as a temporary measure to stabilize operations.",
+        "**Escalation Timeline:** The situation accelerated significantly following a November 9 Bloomberg report detailing the involvement of Nvidia’s legal counsel in inquiries regarding a Department of Commerce investigation."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7310523931ec31d7",
+    "canonicalUrl": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed",
+    "title": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
+    "publishedAt": "2026-11-15T20:43:49.000Z",
+    "fetchedAt": "2026-11-15T23:18:15.388Z",
+    "contentHash": "eadcfada15cbc793",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "The drama around Nvidia co-founder and former CEO Jensen Huang is evolving quickly. The latest edition of our Stepback newsletter should get you up to speed, but there have already been a number of new developments since this morning. That includes rumors that Jensen Huang might be trying to find a path back to CEO, and a statement from Megaspeed claiming that Alice Huang hasn’t worked for the company since August of 2025, which raises more questions than it answers. * Some big names, including Elon Musk and Epic Games CEO Tim Sweeney, have publicly thrown their support behind a public letter demanding Nvidia “bring Jensen back.” * The public letter calling for Jensen Huang to be reinstated has over 150,000 signatures, but it’s difficult to verify their authenticity. Business Insider reports that signatures include “Tim Cruise, Hollywood actor” and “Xi Jingping,” likely a misspelling of Chinese president Xi Jinping. * The Financial Times reports that Jensen Huang has discussed the possibility of returning as CEO with close allies, as some Silicon Valley insiders and employees attempt to pressure the board. * Not all believe Jensen Huang should be allowed to return to his seat. According to the Financial Times, one ally acknowledged that, “Having an affair with a subordinate is a fireable offense.” * 23andMe founder Anne Wojcicki told Bloomberg that “Power corrupts, and people start to think they are invincible … We are all complicit in making these people think they are gods. And people do stupid things when they think they are untouchable.” * Wojcicki endured a messy public divorce from Google co-founder Sergey Brin, after it was revealed he was having an affair with an employee. * According to Bloomberg, many women in Silicon Valley see Jensen Huang as simply another example of a rich man abusing their position and “leveraging power to pursue sexual relationships with their employees.” * Megaspeed released a statement saying that Alice Huang left the company “effective Aug. 30, 2025, and currently has no role with the company,” adding that “Megaspeed does not comment on Ms. Huang’s personal and private matters.”",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Nvidia_Jensen_huang_03.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia co-founder Jensen Huang is reportedly exploring a return to the CEO position amid internal and external pressure, according to reports from the Financial Times. This movement is supported by a public letter demanding his reinstatement, which has garnered over 150,000 signatures, though the authenticity of these signatures has been questioned due to the inclusion of names like 'Tim Cruise' and 'Xi Jingping.' High-profile figures including Elon Musk and Epic Games CEO Tim Sweeney have publicly backed the campaign for his return.\n\nControversy persists regarding the circumstances of his departure, specifically allegations of an affair with a subordinate, which allies acknowledge is a fireable offense. Simultaneously, the company Megaspeed issued a statement clarifying that Alice Huang has held no role at the firm since August 30, 2025, declining further comment on her private matters. The situation has drawn broader criticism from Silicon Valley figures like 23andMe founder Anne Wojcicki, who characterized the behavior as a recurring pattern of powerful executives abusing their positions.",
+      "takeaways": [
+        "**Public Support:** Elon Musk and Epic Games CEO Tim Sweeney have publicly endorsed the campaign to reinstate Jensen Huang as CEO.",
+        "**Petition Integrity:** The public letter demanding Huang's return claims over 150,000 signatures, though reports indicate the list includes clearly falsified entries such as 'Tim Cruise' and 'Xi Jingping'.",
+        "**Employment Status:** Megaspeed officially stated that Alice Huang ceased all roles with the company effective August 30, 2025.",
+        "**Ethical Criticism:** 23andMe founder Anne Wojcicki publicly criticized the culture of executive entitlement, citing the incident as an example of leaders believing they are 'untouchable'."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e13a4bd95b8b6ac7",
+    "canonicalUrl": "https://techcrunch.com/2026/11/15/snl-gathers-all-the-tech-tycoons-for-a-lesson-in-dating-and-spycraft/",
+    "title": "SNL gathers all the tech tycoons for a lesson in dating and spycraft",
+    "publishedAt": "2026-11-15T20:20:57.000Z",
+    "fetchedAt": "2026-11-15T23:18:15.387Z",
+    "contentHash": "59d0f84beceb7a2b",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "While awkward, creepy tech executives have become a recurring theme on Saturday Night Live, this week’s episode gave the cast a chance to show off all their impressions at once.\n\nIn a single sketch, we got James Austin Johnson as Peter Thiel, Ben Marshall as Sam Altman, Jane Wickline as Dario Amodei, Jeremy Culhane as Elon Musk, Andrew Dismukes as Mark Zuckerberg — and eventually, the recently departed Bowen Yang joined the fun as Jensen Huang.\n\nHuang’s ouster from Nvidia (after admitting to an affair with a suspected Chinese spy) could have serious implications for the tech industry ; it also provided a hook for some obvious jokes about rich nerds being easy marks for women (or men) who are out of their league.\n\nIn the sketch, a CIA agent played by host John Mulaney (hilarious as ever, if not entirely confident about how to pronounce “Palantir” or “Nvidia”) attempts to painstakingly explain why these execs should be suspicious when someone attractive suddenly seems interested in them romantically. For Altman and Thiel’s sake, he added, “I hope this is obvious: Even though you’re gay, you can still be tricked by a spy.”\n\nJohnson’s version of Thiel pushed back, insisting that tech tycoons deserve more respect, given all they’ve done for the country. “Name one time technology has let us down,” he said, giving Mulaney a chance to remind viewers about flights being halted all across the United States on Friday night.\n\n“Okay, name one more time,” the fictional Thiel said, leading to an obligatory mention of Microsoft Outlook going down on Thursday . When asked for a third example, Mulaney said, “No, I’m done naming times.”\n\n“Look, I get it,” he said. “I can’t imagine how disorienting this has been for you, to go from being bug-eyed weirdos to being gods. I mean, never in the history of our species have people as pale and as strange as you a) survived, and b) been given all the world’s wealth and power.”\n\nTopics AI , Jensen Huang , Media & Entertainment , nvidia , Saturday night live , SNL When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nAnthony Ha is TechCrunch’s weekend editor. Previously, he worked as a tech reporter at Adweek, a senior editor at VentureBeat, a local government reporter at the Hollister Free Lance, and vice president of content at a VC firm. He lives in New York C",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Saturday Night Live’s recent episode featured a sketch parodying prominent technology executives, including Peter Thiel (James Austin Johnson), Sam Altman (Ben Marshall), Dario Amodei (Jane Wickline), Elon Musk (Jeremy Culhane), Mark Zuckerberg (Andrew Dismukes), and Jensen Huang (Bowen Yang). The sketch centers on a CIA agent, played by host John Mulaney, attempting to warn these executives about the risks of being targeted by foreign intelligence operatives, using the fictionalized premise of Jensen Huang’s departure from Nvidia due to an affair with a suspected Chinese spy.\n\nThe dialogue highlights the cultural perception of tech leaders, with Mulaney’s character critiquing their transition from \"bug-eyed weirdos\" to figures of immense global wealth and power. The sketch incorporates satirical references to recent real-world technical failures, including the nationwide flight groundings and the Microsoft Outlook outage, as counterpoints to the executives' claims of technological reliability.",
+      "takeaways": [
+        "**Cast Impressions:** The sketch featured James Austin Johnson as Peter Thiel, Ben Marshall as Sam Altman, Jane Wickline as Dario Amodei, Jeremy Culhane as Elon Musk, Andrew Dismukes as Mark Zuckerberg, and Bowen Yang as Jensen Huang.",
+        "**Satirical Premise:** The narrative hook involves a fictionalized scandal where Jensen Huang is ousted from Nvidia following an affair with a suspected Chinese spy.",
+        "**Technical References:** The script explicitly references the recent Microsoft Outlook global outage and the U.S. nationwide flight grounding as examples of technological failure.",
+        "**Character Dynamics:** John Mulaney portrays a CIA agent tasked with briefing the executives on counter-intelligence and the risks of romantic exploitation."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "6c2c64409dfbba0f",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+    "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+    "publishedAt": "2026-11-15T19:15:43.000Z",
+    "fetchedAt": "2026-11-15T23:18:15.388Z",
+    "contentHash": "cd32ab35b53d1b6f",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "Unsurprisingly, following the scandal involving now-former Nvidia CEO Jensen Huang and a suspected Chinese spy, Congress is looking to further restrict exports of AI chips. Both Democrats and Republicans have voiced support for various measures and bills that would tighten rules and have demanded that Huang and other Nvidia leaders testify before Congress. Senate Minority Leader Chuck Schumer has already said that Huang and the Trump administration need to answer to Congress. Senate Banking Committee Chairman Tim Scott has also sent letters to both Huang and Commerce Secretary Howard Lutnick calling on them to publicly testify to the committee. Bills such as the Remote Access Security Act, first introduced in the House in April 2025 but stalled in the Senate, are receiving renewed interest. While that specific bill might not become law, House Speaker Mike Johnson has said there is “growing consensus in Congress on limiting chip exports to China,” according to Reuters. Johnson has also said that he personally supports efforts to restrict China’s access to powerful AI chips from companies like Nvidia.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25545717/STK481_STK432_CONGRESS_GOVERNMENT_CIVRGINIA_D.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Following a scandal involving former Nvidia CEO Jensen Huang and allegations of a suspected Chinese spy, the U.S. Congress is accelerating efforts to tighten export controls on high-performance AI chips. Senate Minority Leader Chuck Schumer and Senate Banking Committee Chairman Tim Scott have formally demanded that Huang and Commerce Secretary Howard Lutnick provide public testimony regarding the security implications of these exports. The legislative push is bipartisan, with House Speaker Mike Johnson confirming a growing consensus to restrict China's access to advanced semiconductor technology.\n\nLegislative activity is centering on the revival of stalled measures, specifically the Remote Access Security Act, which was originally introduced in the House in April 2025. While the specific text of that bill may not pass in its current form, leadership is signaling that new, more stringent regulatory frameworks are imminent. These efforts aim to close perceived loopholes in existing export regimes that have allowed powerful AI hardware to reach Chinese entities, with lawmakers emphasizing the national security risks posed by current trade policies.",
+      "takeaways": [
+        "**Congressional Oversight:** Senate Banking Committee Chairman Tim Scott has issued formal requests for public testimony from Nvidia leadership and Commerce Secretary Howard Lutnick.",
+        "**Legislative Focus:** The Remote Access Security Act, introduced in April 2025, has been identified as a primary vehicle for renewed legislative interest in export restrictions.",
+        "**Bipartisan Consensus:** House Speaker Mike Johnson has publicly confirmed that both parties are aligning on the necessity of limiting AI chip exports to China.",
+        "**Security Context:** The legislative urgency is directly linked to a scandal involving former Nvidia CEO Jensen Huang and a suspected Chinese intelligence operative."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "13482003797f2776",
     "canonicalUrl": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
     "title": "An overview of Jensen Huang’s messy days",
@@ -33,15 +194,15 @@
     "canonicalUrl": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
     "title": "Understanding Positional Embeddings in Modern LLMs",
     "publishedAt": "2026-11-15T12:10:37.000Z",
-    "fetchedAt": "2026-11-15T12:13:56.870Z",
-    "contentHash": "d82be059fc216056",
+    "fetchedAt": "2026-11-15T23:18:15.385Z",
+    "contentHash": "d5ab1c9287ecac54",
     "sourceId": "ahead-of-ai",
     "sourceName": "Ahead of AI",
     "author": "Sebastian Raschka, PhD",
     "contentSnippet": "This article explains how LLMs encode and process token position information by covering classic and contemporary methods like RoPE. It’s essentially a comprehensive journey where we will work through the mechanisms with visual examples, a little math, and a small PyTorch implementation. And, of course, we will then also look at how modern architectures adapt or omit explicit positional encodings. Below, you can find a preview of which positional embedding choices are used in 2026 open-weight models. We will discuss these choices later after covering the underlying mechanisms. Figure 1: A preview of the gallery’s 2026 architectures, grouped by positional encoding. Architecture figures taken from my LLM gallery . But why spending so much time writing/reading about this rather minor building block? LLMs keep evolving, and as I was preparing a new article on the latest LLM architecture trends this year, I realized that I never covered the positional information methods used in LLMs in any article so far. So, instead of letting the other article get out of hand, I thought it might make sense to publish this as a standalone building block for the upcoming LLM architecture and trends analysis. Also, over the years, many readers have asked me for a tutorial on relative positional embeddings (aka RoPE) to follow up on the learned absolute embeddings used in GPT. It’s been on my TODO list for a long time, so I finally revisited my old draft and put this walkthrough together, which will cover different positional methods in LLMs; (finally) how RoPE works; what methods are used by recent open LLMs. Note that this article assumes some familiarity with basic LLM architectures and works well as a follow-up to Build a Large Language Model (From Scratch) . If the concepts and computation of the attention internals, particularly query, key, and value vectors, are a little fuzzy, I recommend checking my self-attention walkthrough as a refresher: The article is also very technical and likely too detailed for some. However, I really wanted to have this foundation out there for future articles to reference. And no worries, the next one will return to a more comfortable style. PS: I started experimenting with Substack’s new “perks” system. As a thank-you to supporters, I’ve added image exports and metadata from the architecture gallery for you to use in your own analyses. PPS: If",
-    "imageUrl": "https://substackcdn.com/image/fetch/$s_!8RKL!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb461a2cb-11ab-474a-affe-0ee99e5a8782_2850x2777.png",
+    "imageUrl": "https://substack-post-media.s3.amazonaws.com/public/images/2a036907-4c1e-473b-8d82-20f2c777df5f_2912x1632.png",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "DeepSeek",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This technical article by Sebastian Raschka provides a comprehensive overview of how modern large language models encode and process token position information, bridging classic methods with contemporary techniques like Rotary Position Embedding (RoPE). Written as a foundational building block for an upcoming analysis of 2026 LLM architecture trends, the guide breaks down the underlying mechanisms through math, visual examples, and a small PyTorch implementation.\n\nThe piece addresses reader requests for a detailed walkthrough of relative positional embeddings compared to the learned absolute embeddings used in early models like GPT, while also examining how newer architectures adapt or entirely omit explicit positional encodings. It serves as a technical companion piece to Raschka's book *Build a Large Language Model (From Scratch)* and self-attention tutorials, establishing reference foundations for upcoming open-weight model landscape analyses.",
@@ -10710,158 +10871,6 @@
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c666f797a6314377",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13684v1",
-    "title": "BypassGym: A Benchmark for Evaluating AI Agents' Endpoint Defense Evasion Capabilities",
-    "publishedAt": "2026-11-10T07:31:48.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "43fe3a9fb310280f",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Weifeng Yuan",
-    "contentSnippet": "Artificial intelligence agents increasingly automate cybersecurity tasks, including offensive operations. Frequent attacks across the web make endpoint detection and response (EDR) a critical defense, but whether AI agents can evade it remains unclear. Benchmarks evaluate the offensive capabilities of large language model (LLM) agents in areas such as penetration testing and vulnerability discovery. One important capability that these benchmarks do not address is defense evasion, specifically whether an agent can develop a program that executes a payload without being blocked or terminated by a deployed EDR. We introduce BypassGym, to our knowledge the first benchmark to systematically evaluate this capability on real endpoints. Given command-and-control (C2) shellcode, an agent must generate and compile a loader that executes the payload without being blocked or terminated. A supplementary evasion knowledge skill provides domain knowledge and supports comparisons with and without this input. BypassGym is built on Proxmox VE(PVE), so the evaluation environment runs real Windows systems and EDR products inside virtual machines and returns structured detection feedback to the agent. We evaluate 5 lightweight model backends against 6 EDR products and 3 payloads, and find that even these simple models generate successful submissions, with DeepSeek-V4.1 Flash reaching 17/18 successful runs and Bitdefender allowing only 5 of 15 runs to pass. These results provide a systematic measurement of current AI agents' endpoint defense evasion capabilities and identify areas for defenders to investigate.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13684",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13684.pdf",
-    "summary": {
-      "tldr": "Artificial intelligence agents increasingly automate cybersecurity tasks, including offensive operations. Frequent attacks across the web make endpoint detection and response (EDR) a critical defense, but whether AI agents can evade it remains unclear. Benchmarks evaluate the offensive capabilities of large language model (LLM) agents in areas such as penetration testing and vulnerability discovery.\n\nOne important capability that these benchmarks do not address is defense evasion, specifically whether an agent can develop a program that executes a payload without being blocked or terminated by a deployed EDR. We introduce BypassGym, to our knowledge the first benchmark to systematically evaluate this capability on real endpoints. Given command-and-control (C2) shellcode, an agent must generate and compile a loader that executes the payload without being blocked or terminated.",
-      "takeaways": [
-        "A supplementary evasion knowledge skill provides domain knowledge and supports comparisons with and without this input.",
-        "BypassGym is built on Proxmox VE(PVE), so the evaluation environment runs real Windows systems and EDR products inside virtual machines and returns structured detection feedback to the agent.",
-        "We evaluate 5 lightweight model backends against 6 EDR products and 3 payloads, and find that even these simple models generate successful submissions, with DeepSeek-V4.1 Flash reaching 17/18 successful runs and Bitdefender allowing only 5 of 15 runs to pass.",
-        "These results provide a systematic measurement of current AI agents' endpoint defense evasion capabilities and identify areas for defenders to investigate."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c80838f46e535c12",
-    "canonicalUrl": "https://simonwillison.net/2026/Nov/10/muse-ember/",
-    "title": "Introducing Our Smallest, Most Efficient Model: Muse Ember",
-    "publishedAt": "2026-11-10T07:28:21.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.464Z",
-    "contentHash": "4d1db27a4297ce6d",
-    "sourceId": "simon-willison",
-    "sourceName": "Simon Willison AI",
-    "author": "Simon Willison AI",
-    "contentSnippet": "Introducing Our Smallest, Most Efficient Model: Muse Ember Meta AI just launched their entry in the Claude Haiku/GPT Luna category: Muse Ember, which they describe as: [...] our smallest and most efficient model designed for complex reasoning execution and the work agents repeat all day: tool calls, coding subtasks, routing, extraction, and long document parsing. For shorter prompts it's priced the same as GPT-6 Luna and Claude Haiku 5.5 - both are $0.10/million input tokens and $0.50/million output. Today's other big model release, Claude Fable 5.2, is 80x that price at $8/$40. The pricing is a little less straightforward as prompts get longer, though. Luna, Ember, and Haiku all support up to a million input tokens, but they also all have a threshold after which the price goes up. Taking that threshold into account Ember is priced between the two others: Model Prompt size Input ($/M) Cached input Output GPT-6 Luna ≤272k $0.10 $0.01 $0.50 >272k $0.20 $0.02 $0.75 Muse Ember 1.0 ≤200k $0.10 $0.004 $0.50 >200k $0.30 $0.012 $1.50 Claude Haiku 5.5 ≤100k $0.10 $0.01 $0.50 >100k $0.50 $0.05 $2.50 But comparing price-per-token doesn't really make sense these days, when reasoning tokens mean that different models might use dramatically different numbers of tokens to solve the same problem. For that, one measure that's useful is the Artificial Analysis. And even more useful than that is their Intelligence Index vs. Cost per Task chart, which shows the following for those three models: The Muse Ember models sit right on that Pareto line - the line at which you can only improve one dimension by giving up another. Meta call this out in their announcement: It also sits on the efficiency frontier of the full Artificial Analysis leaderboard: no model scores higher for less per task. (That grey dot on the Pareto line in the middle of the green area is GPT-6.1 Terra (low) - clearly I should be paying more attention to the Terra family!) Muse Ember has six reasoning levels - minimal, low, medium, high, xhigh, and max - so I rendered six pelicans riding bicycles . The \"high\" reasoning level failed to return a full SVG, and the other SVGs were surprising in that the reasoning level didn't cleanly map to the visual quality of the response. Here's the \"max\" one, but the others are worth a look too: The Ember pelicans are comparable in quality to those I got from Muse Wonder , whic",
-    "imageUrl": "https://static.simonwillison.net/static/2026/muse-ember.webp",
-    "category": "LLMs & GenAI",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Introducing Our Smallest, Most Efficient Model: Muse Ember Meta AI just launched their entry in the Claude Haiku/GPT Luna category: Muse Ember, which they describe as: [...] our smallest and most efficient model designed for complex reasoning execution and the work agents repeat all day: tool calls, coding subtasks, routing, extraction, and long document parsing. For shorter prompts it's priced the same as GPT-6 Luna and Claude Haiku 5.5 - both are $0.10/million input tokens and $0.50/million output. Today's other big model release, Claude Fable 5.2, is 80x that price at $8/$40.\n\nThe pricing is a little less straightforward as prompts get longer, though. Luna, Ember, and Haiku all support up to a million input tokens, but they also all have a threshold after which the price goes up. Taking that threshold into account Ember is priced between the two others: Model Prompt size Input ($/M) Cached input Output GPT-6 Luna ≤272k $0.10 $0.01 $0.50 >272k $0.20 $0.02 $0.75 Muse Ember 1.0 ≤200k $0.10 $0.004 $0.50 >200k $0.30 $0.012 $1.50 Claude Haiku 5.5 ≤100k $0.10 $0.01 $0.50 >100k $0.50 $0.05 $2.50 But comparing price-per-token doesn't really make sense these days, when reasoning tokens mean that different models might use dramatically different numbers of tokens to solve the same problem.",
-      "takeaways": [
-        "For that, one measure that's useful is the Artificial Analysis.",
-        "And even more useful than that is their Intelligence Index vs.",
-        "Cost per Task chart, which shows the following for those three models: The Muse Ember models sit right on that Pareto line - the line at which you can only improve one dimension by giving up another.",
-        "Meta call this out in their announcement: It also sits on the efficiency frontier of the full Artificial Analysis leaderboard: no model scores higher for less per task."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "775ac0a390011ca0",
-    "canonicalUrl": "https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages/",
-    "title": "Otter AI can now follow conversations across 30+ languages",
-    "publishedAt": "2026-11-10T07:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.003Z",
-    "contentHash": "1ca85f1c68677161",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Lauren Forristal",
-    "contentSnippet": "Otter AI just added support for 27 languages and revealed an upcoming feature that can follow along if speakers switch between languages.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Otter AI just added support for 27 languages and revealed an upcoming feature that can follow along if speakers switch between languages.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f3fc54cd1d78c100",
-    "canonicalUrl": "https://openai.com/index/ai-effect-on-freelance-work",
-    "title": "Work at the Frontier: AI’s effect on freelance work",
-    "publishedAt": "2026-11-10T07:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "c95a89c755d48801",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b29d39b1550d73ae",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13655v1",
-    "title": "Toward Pseudorange-Based PNT with Starlink: A Mock Fused LEO GNSS Implementation",
-    "publishedAt": "2026-11-10T06:55:16.000Z",
-    "fetchedAt": "2026-11-11T16:51:15.094Z",
-    "contentHash": "dc11fa209d5fdb74",
-    "sourceId": "arxiv-xai",
-    "sourceName": "arXiv xAI & Autonomous Systems",
-    "author": "Samuel C. Morgan",
-    "contentSnippet": "We present experimental results from Starlink for pseudorange-based positioning, navigation, and timing (PNT), emulating a system that fuses a primary communications mission with a secondary low-Earth orbit (LEO) PNT mission. Legacy global navigation satellite system (GNSS) constellations faceinherent vulnerabilities and signal limitations, prompting growing interest in broadband LEO constellations---such as SpaceX's Starlink---for resilient PNT. However, opportunistic use of stand-alone Starlink signals fails to achieve GNSS-competitive accuracy due to frame timing irregularities and reliance on uncorrected poor-quality publicly available ephemeris data. To overcome these limitations, we present a mock implementation of a fused LEO GNSS architecture. Our method extracts time-of-arrival observables from live Starlink Ku-band downlinks and pairs them with high-fidelity, beam-specific orbit and clock models distributed as if provided natively by the constellation operator. In a field campaign, and despite constraints imposed by consumer-grade receiver hardware, the method yields 95% error bounds of 2.33 m horizontally (semi-major axis), 3.37 m vertically, and 11.19 ns in timing, with the actual solution errors falling well within these bounds.",
-    "category": "Robotics & Hardware",
-    "lab": "SpaceX & xAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13655",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13655.pdf",
-    "summary": {
-      "tldr": "We present experimental results from Starlink for pseudorange-based positioning, navigation, and timing (PNT), emulating a system that fuses a primary communications mission with a secondary low-Earth orbit (LEO) PNT mission. Legacy global navigation satellite system (GNSS) constellations faceinherent vulnerabilities and signal limitations, prompting growing interest in broadband LEO constellations---such as SpaceX's Starlink---for resilient PNT. However, opportunistic use of stand-alone Starlink signals fails to achieve GNSS-competitive accuracy due to frame timing irregularities and reliance on uncorrected poor-quality publicly available ephemeris data.\n\nTo overcome these limitations, we present a mock implementation of a fused LEO GNSS architecture. Our method extracts time-of-arrival observables from live Starlink Ku-band downlinks and pairs them with high-fidelity, beam-specific orbit and clock models distributed as if provided natively by the constellation operator. In a field campaign, and despite constraints imposed by consumer-grade receiver hardware, the method yields 95% error bounds of 2.33 m horizontally (semi-major axis), 3.37 m vertically, and 11.19 ns in timing, with the actual solution errors falling well within these bounds.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "4a942a24791977cd",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/09/meta-muse-ember-small-agent-model/",
-    "title": "Meta Releases Muse Ember, a 1M-Context Model for High-Volume Agent Work",
-    "publishedAt": "2026-11-10T06:36:10.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.463Z",
-    "contentHash": "2177b061f6a7110d",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Asif Razzaq",
-    "contentSnippet": "Meta Superintelligence Labs has released Muse Ember , its smallest and most efficient model. Meta Muse Ember is a hosted multimodal reasoning model built for the repetitive steps inside agents. Meta lists tool calls, coding subtasks, routing, extraction and long document parsing as targets. It scores 36 on the Artificial Analysis Intelligence Index, level with Claude Haiku 5.5 at max effort. Meta puts its cost at about $0.14 per index task. TL;DR Size: 1M-token context window, up to 512K output tokens. Runs on: Meta’s hosted infrastructure only (Meta Model API and Muse Code). Weights are private, so there is no local GPU, laptop or quantized option. Performance: Ties Claude Haiku 5.5 (max) at 36 on the AA Intelligence Index, ahead of GPT-6 Luna (28). Best: AutomationBench-AA at 37.8, versus 20.2 for GPT-6 Luna and 13.9 for Claude Haiku 5.5. Worst: FrontierCode 2.0-AA at 27.2, behind Claude Haiku 5.5 at 34.9. Bottom line: Best: Haiku-level intelligence at $0.136 per task versus $0.411. Worst: closed weights and weaker on mergeable real-repo code. What is Meta Muse Ember? Muse Ember is a small reasoning model from Meta for high-volume agent subtasks. It is the fourth model under the Muse brand , after Spark, Glimmer and Wonder. Meta positions it below its larger models. Muse Wonder handles the hardest problems and Muse Spark covers coding and agentic workflows. Ember takes repeatable coding and agent tasks at scale. Meta’s own framing: Muse Wonder plans, Muse Ember handles the volume. How does Muse Ember work? Muse Ember is the first model Meta trained using Muse Wonder Full, its largest model. The model natively accepts text, images, audio and video. That lets an agent read screenshots, charts, scanned pages, voice memos and meeting recordings without a separate model. It also operates desktop apps from screenshots. The 1M-token context window fits a full codebase or document set in one call. Output runs up to 512K tokens, 4x the 128K cap on both rivals. How does Muse Ember perform on benchmarks? All results below are at max reasoning effort, as reported by Meta. Some come from Artificial Analysis (AA), others from Meta’s internal suite. Agents : On AutomationBench-AA , 657 Zapier business workflows, Ember completes 37.8% of tasks. GPT-6 Luna reaches 20.2% and Claude Haiku 5.5 reaches 13.9%. On Agents’ Last Exam (internal), Ember scores 61.6 versus 57.1 and 5",
-    "category": "Robotics & Hardware",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Meta Superintelligence Labs has released Muse Ember , its smallest and most efficient model. Meta Muse Ember is a hosted multimodal reasoning model built for the repetitive steps inside agents. Meta lists tool calls, coding subtasks, routing, extraction and long document parsing as targets.\n\nIt scores 36 on the Artificial Analysis Intelligence Index, level with Claude Haiku 5.5 at max effort. Meta puts its cost at about $0.14 per index task. TL;DR Size: 1M-token context window, up to 512K output tokens.",
-      "takeaways": [
-        "Runs on: Meta’s hosted infrastructure only (Meta Model API and Muse Code).",
-        "Weights are private, so there is no local GPU, laptop or quantized option.",
-        "Performance: Ties Claude Haiku 5.5 (max) at 36 on the AA Intelligence Index, ahead of GPT-6 Luna (28).",
-        "Best: AutomationBench-AA at 37.8, versus 20.2 for GPT-6 Luna and 13.9 for Claude Haiku 5.5."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   }
