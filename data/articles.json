@@ -1,5 +1,208 @@
 [
   {
+    "id": "a22318abd9f9f947",
+    "canonicalUrl": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+    "title": "Apple launches new app to study how people use AI for health",
+    "publishedAt": "2026-11-16T01:30:00.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.138Z",
+    "contentHash": "7b777277e65d8e4c",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Ivan Mehta",
+    "contentSnippet": "Big AI labs like OpenAI and Anthropic have made their bets on offering chatbots that can answer health-related queries with specialized features. Apple is debuting a new study to understand how people use AI for health. But it isn’t quite following other AI startups just yet; it wants to study how clinically grounded answers can help people.\n\nThe iPhone maker is partnering with healthcare-focused AI company OpenEvidence to launch a new study app. Apple is inviting users in the U.S. over 21, using iPhone 15 or later, and running iOS 26 or later, with Apple Intelligence enabled. The company is aiming to run this study with up to 200,000 participants for more than 12 months.\n\nThe new app will allow users to ask health-related questions, as they do with ChatGPT or Claude, with answers grounded in clinical data, from sources including The New England Journal of Medicine, Journal of the American Medical Association, and Nature. Apple said that the app will try to give simplified answers to everyday medical questions. Users can rate those answers and provide feedback about the responses; they’ll also be asked to participate in monthly surveys.\n\nParticipants can share data from HealthKit such as resting heart rate, activity, sleep, or lab results to get more personalized and pointed suggestions from the app. The company said the app can also help prepare participants better for a doctor’s visit, and it will guide users to specific providers for answers related to concerning medical issues.\n\nApple specified that the data will be anonymized before sending it to a secure third-party cloud provider, and it won’t be used to train any kind of AI models. The company said that OpenEvidence deletes the query and response data after 24 hours.\n\n“At Apple, we believe responsible innovation starts with scientific rigor and clinical grounding. Health is deeply personal, and conducting a dedicated research study is the most thoughtful way to understand how people engage with, comprehend, and evaluate health AI in everyday life,” Sumbul Desai, M.D., Apple’s vice president of Health and Fitness, said in a statement, adding, “Insights from this study will help advance the broader scientific conversation and ensure that as technology evolves, we continue building trusted tools that genuinely support people wherever they are on their health journey.”\n\nThe app is available to download s",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple has launched a new research study app in partnership with healthcare-focused AI firm OpenEvidence to evaluate how users interact with clinically grounded AI for health-related queries. The study is open to U.S. residents aged 21 and older who own an iPhone 15 or later, are running iOS 26 or later, and have Apple Intelligence enabled. Apple aims to enroll up to 200,000 participants for a duration exceeding 12 months to assess the efficacy and user comprehension of AI-generated medical information.\n\nThe app provides answers sourced from peer-reviewed clinical literature, including The New England Journal of Medicine, the Journal of the American Medical Association, and Nature. Participants can opt to integrate HealthKit data—such as resting heart rate, sleep metrics, activity levels, and lab results—to receive personalized suggestions. The system is designed to simplify complex medical information and assist users in preparing for clinical consultations. Apple emphasizes that all data is anonymized before transmission to a third-party cloud provider, and explicitly states that query data is not used for AI model training and is deleted by OpenEvidence within 24 hours.",
+      "takeaways": [
+        "**Eligibility Requirements:** Participants must be U.S. residents over 21, using an iPhone 15 or later, running iOS 26 or later, with Apple Intelligence enabled.",
+        "**Data Privacy:** Query and response data are deleted by OpenEvidence within 24 hours and are not utilized for training any AI models.",
+        "**Clinical Grounding:** AI responses are derived from high-impact medical journals including The New England Journal of Medicine, JAMA, and Nature.",
+        "**Study Scope:** Apple intends to recruit up to 200,000 participants for a study period lasting over 12 months.",
+        "**HealthKit Integration:** Users can share biometric data such as resting heart rate, sleep, and activity to receive more personalized health suggestions."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c57d5fdb338c13eb",
+    "canonicalUrl": "https://www.theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools",
+    "title": "Apple’s new study looks to improve the effectiveness of AI health tools",
+    "publishedAt": "2026-11-16T01:26:56.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.139Z",
+    "contentHash": "890b9c00c128b156",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Andrew Liszewski",
+    "contentSnippet": "Apple announced a new study today with the goal of better understanding how people interact with conversational AI health tools and how useful their responses actually are. The company is conducting the Apple Health AI Usage Study in collaboration with OpenEvidence, a clinical AI platform used by healthcare professionals that generates answers based on medical information from sources like The New England Journal of Medicine. Participants will use a new iOS app to ask medical questions and then rate the responses based on criteria including accuracy, detail, and relevance. The app is now available for download, and enrollment starts today, with Apple looking for up to 200,000 people to contribute. Participants 21 and older must be based in the US, and although the app doesn’t use Apple Intelligence, it does require an iPhone 15 Pro running iOS 26 or later. Study participants can use the app to ask health-related questions and receive easily understandable responses with links to peer-reviewed clinical sources. The app relies on text-based prompts, and while dictation is an option using the iOS keyboard, the app isn’t integrated with Siri or Apple Intelligence. [Image: Participants in the study will be given the opportunity to rate responses to health questions from the app. https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/applestudy2.jpg?quality=90&strip=all] During enrolment, participants are given the option to share Apple HealthKit data, like their activity, sleep, or clinical lab results, so responses will include more context about their own personal health. But privacy is a priority, and Apple says it has taken measures to ensure users’ information remains confidential and the data collected won’t be used to train AI models. The aim is to improve the design and functionality of AI-powered health tools so they can deliver relevant health information that’s easier for users to understand and act on. “At Apple, we believe responsible innovation starts with scientific rigor and clinical grounding. Health is deeply personal, and conducting a dedicated research study is the most thoughtful way to understand how people engage with, comprehend, and evaluate health AI in everyday life. Insights from this study will help advance the broader scientific conversation and ensure that as technology evolves, we continue building trusted tools that genu",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/applestudy1b.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Apple has launched the Apple Health AI Usage Study, a research initiative aimed at evaluating the efficacy and user interaction patterns of conversational AI in a clinical context. Conducted in partnership with OpenEvidence, a clinical AI platform that sources medical information from publications like The New England Journal of Medicine, the study seeks to enroll up to 200,000 US-based participants aged 21 and older. The project utilizes a dedicated iOS app where users submit medical queries and provide feedback on response accuracy, detail, and relevance.\n\nTechnically, the study app operates independently of Apple Intelligence and Siri, requiring an iPhone 15 Pro running iOS 26 or later. While the app supports text-based prompts and standard iOS keyboard dictation, it does not integrate with Apple’s native AI ecosystem. Participants may optionally share Apple HealthKit data—including sleep, activity, and lab results—to provide the AI with personalized context. Apple has explicitly stated that data collected during this study will not be utilized for training future AI models, emphasizing privacy and clinical grounding as core design principles for the research.",
+      "takeaways": [
+        "**Study Scope:** Apple is seeking 200,000 US-based participants aged 21+ to evaluate conversational AI health responses.",
+        "**Technical Requirements:** The study app requires an iPhone 15 Pro running iOS 26 or later and is not integrated with Siri or Apple Intelligence.",
+        "**Data Privacy:** Apple confirmed that information collected during the study will not be used to train AI models.",
+        "**Platform Integration:** The app utilizes OpenEvidence, which sources medical information from peer-reviewed clinical literature such as The New England Journal of Medicine.",
+        "**Optional Data Sharing:** Participants can choose to share HealthKit data, including lab results, sleep, and activity, to receive context-aware medical responses."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7890886c01383a50",
+    "canonicalUrl": "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup/",
+    "title": "AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities",
+    "publishedAt": "2026-11-16T00:00:28.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.949Z",
+    "contentHash": "85e511d00ccd3492",
+    "sourceId": "nvidia-blog",
+    "sourceName": "NVIDIA AI News",
+    "author": "NVIDIA Writers",
+    "contentSnippet": "Over two days at COEX, more than 2,000 attendees converged for AI Day Seoul, bringing together Korea’s industry leaders, startups and developer communities advancing physical AI and AI agents. At the plenary sessions, Deepu Talla, vice president of robotics and edge AI at NVIDIA, said Korea is “punching above its weight,” with Doosan Robotics, Hyundai Motor Group, LG Electronics and SK Group — as well as startups like Real World and Luda Robotics — using NVIDIA platforms to bring general-purpose robotics into the real world. Jonathan Cohen, vice president of applied research at NVIDIA, showed how enterprises can build agents they own and control. Breakout sessions featured speakers from Coupang Intelligent Cloud, Doosan Robotics, LG AI Research, LG Electronics, NAVER Cloud, SK Telecom and Upstage. “It was a genuinely enjoyable time to have candid conversations,” said Hyunho Yang, research engineer for omnimodal foundation models at SK Telecom. “Seeing the passion of fellow AI developers was a real source of inspiration for me.” Community leaders share how they build with open models and tools at AI Day Seoul. The Agentic AI 10x Bootcamp Community Day brought together Pseudo Lab, Python Korea, PyTorchKR, HAERAE, Hugging Face KREW, Graph User Group, Womxn Who Code Korea, Dnol (Datayanolja) and other developer communities. Five finalists from the Hangul Day hackathon, co-hosted with Fastcampus, built agents trained on the Korean language and culture with the OpenShell runtime. The winning team, FlyGate, received an NVIDIA DGX Spark system. More than 500 developers also took part in full-day NVIDIA Deep Learning Institute workshops and NVIDIA Certification exams in Korean. Workshops covered deploying and optimizing AI inference at scale, building end-to-end robotics workflows with the NVIDIA Isaac platform and developing secure AI agents. Certification included the new AI Model and Application Development exam. The Physical AI Startup Connect event included pitches from 10 NVIDIA Inception startups: AIM Intelligence, Avikus, GoLe Robotics, MOVIN, Neubility, ROAI, ROBROS, TESOLLO, TwelveLabs and XYZ. The AI for Science Forum brought together the Korea Institute of Science and Technology Information, Korean universities and NVIDIA Research. AI Day Seoul sessions will soon be available on NVIDIA On-Demand .",
+    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/11/ai-day-seoul-wrapup-1920x1080-1.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AI Day Seoul, held at the COEX convention center, convened over 2,000 attendees to focus on the development of physical AI and autonomous agents within the South Korean technology ecosystem. NVIDIA executives, including VP of Robotics and Edge AI Deepu Talla and VP of Applied Research Jonathan Cohen, highlighted the integration of NVIDIA platforms by major Korean conglomerates—specifically Doosan Robotics, Hyundai Motor Group, LG Electronics, and SK Group—alongside startups like Real World and Luda Robotics to advance general-purpose robotics.\n\nThe event featured technical sessions from organizations including Coupang Intelligent Cloud, NAVER Cloud, and Upstage, alongside a community-focused 'Agentic AI 10x Bootcamp.' A hackathon co-hosted with Fastcampus saw five finalists develop agents trained on Korean language and culture using the OpenShell runtime, with the winning team, FlyGate, awarded an NVIDIA DGX Spark system. Additionally, over 500 developers participated in NVIDIA Deep Learning Institute workshops covering AI inference optimization, the NVIDIA Isaac platform for robotics, and secure agent development, while 10 NVIDIA Inception startups pitched their technologies during the Physical AI Startup Connect session.",
+      "takeaways": [
+        "**Corporate Partners:** Major Korean entities utilizing NVIDIA platforms include Doosan Robotics, Hyundai Motor Group, LG Electronics, and SK Group.",
+        "**Hackathon Outcome:** The team FlyGate won the Hangul Day hackathon for their Korean-language agent, receiving an NVIDIA DGX Spark system.",
+        "**Startup Participants:** Ten NVIDIA Inception startups pitched at the event, including AIM Intelligence, Avikus, GoLe Robotics, MOVIN, Neubility, ROAI, ROBROS, TESOLLO, TwelveLabs, and XYZ.",
+        "**Developer Engagement:** Over 500 developers completed NVIDIA Deep Learning Institute workshops and certification exams, including the new AI Model and Application Development certification.",
+        "**Community Collaboration:** The event involved nine major developer communities, including Pseudo Lab, Python Korea, PyTorchKR, and Hugging Face KREW."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "3c506afcbc502083",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/15/datasette-maplibre/",
+    "title": "datasette-maplibre 0.1a0",
+    "publishedAt": "2026-11-15T23:58:36.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "dc625a1f495302ba",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "15th November 2026 Release datasette-maplibre 0.1a0 — Visualize geospatial data in Datasette using MapLibre GL and OpenFreeMap The first new Datasette geospatial plugin in quite a while! This one combines the excellent MapLibre GL library with OpenFreeMap , the free vector map server operated by Zsolt Ero (you should sponsor Zsolt on GitHub .)\n\nI built most of this with a single prompt to Claude Fable 5.2:\n\nLook at datasette-cluster-map and datasette-leaflet-geojson plugins, then look at ~/dev/tools/openfreemap-demo.html - then build a brand new Datasette plugin that uses maplibreGL and openfreemap and combines the features of those other two plugins - but be creative and think outside the box for other useful features the plugin might have\n\n\"Be creative and think outside the box\" resulted in a few neat ideas - my favorite is that it displays SVG previews of GeoJSON shapes, then loads a WebGL preview only when they scroll into view.\n\nI also had Claude build a comprehensive demo which works in the latest Datasette Lite, so you can visit this link to load the plugin and a demo database in your browser via Pyodide and WebAssembly.\n\nI like this demo page showing both GeoJSON shapes and lat/lon points on the same map:\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 15th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released datasette-maplibre 0.1a0, a new geospatial plugin for the Datasette ecosystem that integrates MapLibre GL with the OpenFreeMap vector map server. The plugin is designed to consolidate functionality from existing tools like datasette-cluster-map and datasette-leaflet-geojson, providing a unified interface for visualizing both GeoJSON shapes and latitude/longitude coordinate points on a single map.\n\nDeveloped primarily using Claude Fable 5.2, the plugin features an optimization for performance: it renders SVG previews of GeoJSON shapes initially, deferring the loading of the resource-intensive WebGL preview until the user scrolls the element into view. The project is fully compatible with Datasette Lite, allowing users to run the plugin and interact with demo databases directly in the browser via Pyodide and WebAssembly.",
+      "takeaways": [
+        "**Plugin Architecture:** Combines MapLibre GL for rendering with OpenFreeMap as the vector map provider.",
+        "**Performance Optimization:** Implements lazy-loading for WebGL map previews by using SVG placeholders for GeoJSON shapes until they enter the viewport.",
+        "**Development Methodology:** Built using a single prompt to Claude Fable 5.2, referencing existing codebase patterns from datasette-cluster-map and datasette-leaflet-geojson.",
+        "**Deployment:** Supports in-browser execution via Datasette Lite, leveraging Pyodide and WebAssembly for client-side geospatial data visualization."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "04196bef9b67627d",
+    "canonicalUrl": "https://techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market/",
+    "title": "Indian chip startup Bharat Semi lands $24M seed round as it eyes global AI sensor market",
+    "publishedAt": "2026-11-15T23:30:00.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.138Z",
+    "contentHash": "d70923d206341b82",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Jagmeet Singh",
+    "contentSnippet": "Bharat Semi , an Indian semiconductor startup, has raised $24 million in seed funding to develop AI-enabled image sensors, as it seeks to win customers in the United States and elsewhere.\n\nThe investment comes as the nearly five-year-old, pre-revenue startup says it has secured design wins with U.S. defense technology company General Atomics and India’s Kaynes Semicon. Its image sensors, however, remain under development, with the startup targeting its initial commercial production in 2027.\n\nIndia has committed billions of dollars to build up a domestic semiconductor industry, with a hope to become an alternative manufacturing hub as U.S. companies look to diversify supply chains beyond China. The country, however, has yet to establish itself as a major chip manufacturing hub. Meanwhile, the AI boom is also giving Indian startups such as Bharat Semi an opportunity to develop specialized chips for global markets.\n\nThe New Delhi-based startup is developing programmable image sensors that combine image capture, processing, and AI capabilities on a single chip, reducing the need to send visual data to separate processors. The move could cut system costs by at least 70% compared with conventional setups that use a separate image sensor, image signal processor, and a system-on-chip, co-founder Vrinda Kapoor (pictured above, right) said in an interview.\n\n“Our aim here is to move from sensors to sense-making solutions,” Kapoor told TechCrunch.\n\nKapoor, a South Park Commons fellow who earlier worked in healthcare technology, co-founded Bharat Semi in late 2021 with Vinayak Dalmia (pictured above, left), the startup’s managing director, who previously worked at McKinsey and in private equity. Its chief technology officer, Boyd Fowler, previously held the same role at image-sensor maker OmniVision.\n\nBharat Semi is targeting smart homes, industrial automation, surveillance, and aerospace. Without disclosing specifics, Kapoor pointed to air conditioners that could detect when a room is empty and adjust automatically and drones that could process visual information — even with the absence of more expensive computing hardware elsewhere in the system.\n\nThe startup’s first-generation sensors are already in prototyping, while its second-generation sensors, which will incorporate more advanced AI capabilities, are expected to reach the prototype stage by mid-2027, Kapoor said.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "New Delhi-based semiconductor startup Bharat Semi has secured $24 million in an all-equity seed funding round led by Info Edge Group, South Park Commons, and Indus Bridge Ventures. The company, founded in 2021 by Vrinda Kapoor and Vinayak Dalmia, is developing programmable image sensors that integrate image capture, processing, and AI capabilities onto a single chip. By eliminating the need for separate image signal processors and system-on-chips, the startup claims its architecture can reduce system costs by at least 70% for applications in smart homes, industrial automation, surveillance, and aerospace.\n\nBharat Semi currently operates as a fabless entity with 75 employees, including a small engineering and business development team in Santa Clara, California. The company has secured design wins with General Atomics and Kaynes Semicon, though its products remain in the prototyping phase. The first generation of sensors is currently being prototyped, with second-generation sensors featuring advanced AI capabilities expected to reach the prototype stage by mid-2027, followed by commercial availability by the end of that year. The startup intends to use the new capital to scale its engineering team and finalize product development, with plans to grow its U.S. headcount to approximately 20 by 2027.",
+      "takeaways": [
+        "**Funding & Investors:** Raised $24 million in an all-equity seed round led by Info Edge Group, South Park Commons, and Indus Bridge Ventures, with participation from Valour Capital, Micromax, and Gaingels.",
+        "**Technical Architecture:** Developing programmable image sensors that combine capture, processing, and AI on a single chip, targeting a 70% reduction in system costs compared to traditional multi-chip setups.",
+        "**Commercial Timeline:** First-generation sensors are in prototyping; second-generation sensors with advanced AI are expected to reach the prototype stage by mid-2027, with commercial availability by year-end 2027.",
+        "**Strategic Partnerships:** Secured design wins with U.S. defense contractor General Atomics and Indian firm Kaynes Semicon; maintains a separate, ongoing development project for a semiconductor fabrication facility in partnership with the U.S. Space Force.",
+        "**Operational Footprint:** Employs 75 people across India and the U.S., with plans to expand the Santa Clara office to 20 employees and initiate hiring in Europe."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "0139ca5c534e35bb",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/15/datasette/",
+    "title": "datasette 1.0a43",
+    "publishedAt": "2026-11-15T23:20:27.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "6f56f886ab3713a4",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: datasette 1.0a43 I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone , which is now 53% complete. The biggest 1.0 item in this release is streaming support for output renderers - the built-in TSV and CSV export mechanisms now use this as well, and plugins can register themselves as capable of streaming every row in a table in one go via the new Response.stream() method. There are a couple of security fixes, one of which I deemed deserving of a GitHub advisory : private stored queries could be exposed, granting access to the title and SQL of the query (but not allowing that query to be executed). There are dozens of smaller improvements. The row page JSON representation finally has a design suitable for 1.0 . A new <datasette-copy-button> Web Component provides copy-schema in various places. JSON in columns on the row page can be pretty-printed. There's a new DatasetteModal.confirm() JavaScript utility method. Plus dozens of bug fixes, including contributions by Zihan Dai , Peter Olkhovets , Ilya Khalafi , and Ankita Advitot . The feature I'm most excited about is a pretty tiny one: I've added CSS multi-page view transitions to Datasette! Here's the commit - key CSS is as follows: /* Enable cross-document view transitions, for anyone without prefers-reduced-motion */ @media ( prefers-reduced-motion : no-preference ) { @view-transition { navigation : auto ; } } /* .facet-results should morph from old position to new */ html : active-view-transition . content > . facet-results { view-transition-name : facet-results ; } /* So should a .table-wrapper, provided it contains .rows-and-columns */ html : active-view-transition . table-wrapper : has ( > table . rows-and-columns ) { view-transition-name : rows-table ; } With that in place, navigations within Datasette - still staunchly a multi-page application - feel more like an SPA. This works on Safari and Chrome at the moment and I believe supports for Firefox is due to land in Firefox 162 on December 8th 2026 (seeing as they are no longer feature-flagged in Firefox Nightly.) Tags: security , datasette , css , browsers , annotated-release-notes , firefox , javascript , safari , chrome",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Datasette 1.0a43 has been released, marking the project as 53% complete toward its 1.0 milestone. The update introduces streaming support for output renderers, allowing built-in TSV and CSV exports to stream data, and provides a new Response.stream() method for plugin developers to stream entire table rows in a single operation. The release also addresses a security vulnerability, documented in a GitHub advisory, where private stored queries could have their titles and SQL exposed to unauthorized users, though the queries themselves remained unexecutable.\n\nTechnical enhancements include a finalized JSON representation for row pages, a new Web Component for schema copying, and a JavaScript utility, DatasetteModal.confirm(). The release also integrates CSS multi-page view transitions, enabling SPA-like navigation behavior within the multi-page application framework. This feature is currently supported in Safari and Chrome, with Firefox support expected in version 162, scheduled for release on December 8, 2026. The update includes numerous bug fixes contributed by Zihan Dai, Peter Olkhovets, Ilya Khalafi, and Ankita Advitot.",
+      "takeaways": [
+        "**Milestone Progress:** The Datasette 1.0 release is now 53% complete, with development assisted by Claude Fable 5.2.",
+        "**Streaming Architecture:** New Response.stream() method allows plugins to stream full table rows, now utilized by default TSV and CSV export mechanisms.",
+        "**Security Fix:** A GitHub advisory was issued for a vulnerability that allowed the exposure of private stored query titles and SQL definitions.",
+        "**UI/UX Improvements:** Added CSS multi-page view transitions to mimic SPA navigation, alongside pretty-printing for JSON columns and a new DatasetteModal.confirm() JS utility.",
+        "**Browser Compatibility:** View transitions are active in Safari and Chrome, with Firefox 162 support slated for December 8, 2026."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9f458effb436880f",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/15/datasette-2/",
+    "title": "datasette 0.65.6",
+    "publishedAt": "2026-11-15T23:18:17.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "13ebd099ec5ed0d0",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "15th November 2026 Release datasette 0.65.6 — An open source multi-tool for exploring and publishing data I backported a minor security fix from 1.0a43:\n\nFixed a security issue where a database registered using add_database(db, name=..., route=...) with a route that differs from its name could be downloaded from /<route>.db by actors who were denied access to it. [...]\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 15th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released Datasette version 0.65.6, an open-source tool designed for data exploration and publishing. This update serves as a backport of a specific security fix originally implemented in the 1.0a43 alpha release.\n\nThe patch addresses a vulnerability involving the add_database(db, name=..., route=...) function. Previously, if a database was registered with a route that differed from its assigned name, unauthorized actors could potentially download the database file via the / .db endpoint, even if they were explicitly denied access to that specific database.",
+      "takeaways": [
+        "**Version:** Datasette 0.65.6",
+        "**Release Date:** November 15, 2026",
+        "**Vulnerability:** Unauthorized database download via / .db endpoint when route and name parameters in add_database() do not match.",
+        "**Origin of Fix:** Backported from Datasette 1.0a43"
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "2e8f421d2ee2a3df",
     "canonicalUrl": "https://openai.com/index/step-toward-defining-the-standard-model",
     "title": "A step toward defining the Standard Model on a lattice",
@@ -115,7 +318,7 @@
     "author": "Anthony Ha",
     "contentSnippet": "While awkward, creepy tech executives have become a recurring theme on Saturday Night Live, this week’s episode gave the cast a chance to show off all their impressions at once.\n\nIn a single sketch, we got James Austin Johnson as Peter Thiel, Ben Marshall as Sam Altman, Jane Wickline as Dario Amodei, Jeremy Culhane as Elon Musk, Andrew Dismukes as Mark Zuckerberg — and eventually, the recently departed Bowen Yang joined the fun as Jensen Huang.\n\nHuang’s ouster from Nvidia (after admitting to an affair with a suspected Chinese spy) could have serious implications for the tech industry ; it also provided a hook for some obvious jokes about rich nerds being easy marks for women (or men) who are out of their league.\n\nIn the sketch, a CIA agent played by host John Mulaney (hilarious as ever, if not entirely confident about how to pronounce “Palantir” or “Nvidia”) attempts to painstakingly explain why these execs should be suspicious when someone attractive suddenly seems interested in them romantically. For Altman and Thiel’s sake, he added, “I hope this is obvious: Even though you’re gay, you can still be tricked by a spy.”\n\nJohnson’s version of Thiel pushed back, insisting that tech tycoons deserve more respect, given all they’ve done for the country. “Name one time technology has let us down,” he said, giving Mulaney a chance to remind viewers about flights being halted all across the United States on Friday night.\n\n“Okay, name one more time,” the fictional Thiel said, leading to an obligatory mention of Microsoft Outlook going down on Thursday . When asked for a third example, Mulaney said, “No, I’m done naming times.”\n\n“Look, I get it,” he said. “I can’t imagine how disorienting this has been for you, to go from being bug-eyed weirdos to being gods. I mean, never in the history of our species have people as pale and as strange as you a) survived, and b) been given all the world’s wealth and power.”\n\nTopics AI , Jensen Huang , Media & Entertainment , nvidia , Saturday night live , SNL When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nAnthony Ha is TechCrunch’s weekend editor. Previously, he worked as a tech reporter at Adweek, a senior editor at VentureBeat, a local government reporter at the Hollister Free Lance, and vice president of content at a VC firm. He lives in New York C",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Saturday Night Live’s recent episode featured a sketch parodying prominent technology executives, including Peter Thiel (James Austin Johnson), Sam Altman (Ben Marshall), Dario Amodei (Jane Wickline), Elon Musk (Jeremy Culhane), Mark Zuckerberg (Andrew Dismukes), and Jensen Huang (Bowen Yang). The sketch centers on a CIA agent, played by host John Mulaney, attempting to warn these executives about the risks of being targeted by foreign intelligence operatives, using the fictionalized premise of Jensen Huang’s departure from Nvidia due to an affair with a suspected Chinese spy.\n\nThe dialogue highlights the cultural perception of tech leaders, with Mulaney’s character critiquing their transition from \"bug-eyed weirdos\" to figures of immense global wealth and power. The sketch incorporates satirical references to recent real-world technical failures, including the nationwide flight groundings and the Microsoft Outlook outage, as counterpoints to the executives' claims of technological reliability.",
@@ -202,7 +405,7 @@
     "contentSnippet": "This article explains how LLMs encode and process token position information by covering classic and contemporary methods like RoPE. It’s essentially a comprehensive journey where we will work through the mechanisms with visual examples, a little math, and a small PyTorch implementation. And, of course, we will then also look at how modern architectures adapt or omit explicit positional encodings. Below, you can find a preview of which positional embedding choices are used in 2026 open-weight models. We will discuss these choices later after covering the underlying mechanisms. Figure 1: A preview of the gallery’s 2026 architectures, grouped by positional encoding. Architecture figures taken from my LLM gallery . But why spending so much time writing/reading about this rather minor building block? LLMs keep evolving, and as I was preparing a new article on the latest LLM architecture trends this year, I realized that I never covered the positional information methods used in LLMs in any article so far. So, instead of letting the other article get out of hand, I thought it might make sense to publish this as a standalone building block for the upcoming LLM architecture and trends analysis. Also, over the years, many readers have asked me for a tutorial on relative positional embeddings (aka RoPE) to follow up on the learned absolute embeddings used in GPT. It’s been on my TODO list for a long time, so I finally revisited my old draft and put this walkthrough together, which will cover different positional methods in LLMs; (finally) how RoPE works; what methods are used by recent open LLMs. Note that this article assumes some familiarity with basic LLM architectures and works well as a follow-up to Build a Large Language Model (From Scratch) . If the concepts and computation of the attention internals, particularly query, key, and value vectors, are a little fuzzy, I recommend checking my self-attention walkthrough as a refresher: The article is also very technical and likely too detailed for some. However, I really wanted to have this foundation out there for future articles to reference. And no worries, the next one will return to a more comfortable style. PS: I started experimenting with Substack’s new “perks” system. As a thank-you to supporters, I’ve added image exports and metadata from the architecture gallery for you to use in your own analyses. PPS: If",
     "imageUrl": "https://substack-post-media.s3.amazonaws.com/public/images/2a036907-4c1e-473b-8d82-20f2c777df5f_2912x1632.png",
     "category": "Open Source & Research",
-    "lab": "DeepSeek",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This technical article by Sebastian Raschka provides a comprehensive overview of how modern large language models encode and process token position information, bridging classic methods with contemporary techniques like Rotary Position Embedding (RoPE). Written as a foundational building block for an upcoming analysis of 2026 LLM architecture trends, the guide breaks down the underlying mechanisms through math, visual examples, and a small PyTorch implementation.\n\nThe piece addresses reader requests for a detailed walkthrough of relative positional embeddings compared to the learned absolute embeddings used in early models like GPT, while also examining how newer architectures adapt or entirely omit explicit positional encodings. It serves as a technical companion piece to Raschka's book *Build a Large Language Model (From Scratch)* and self-attention tutorials, establishing reference foundations for upcoming open-weight model landscape analyses.",
@@ -241,6 +444,62 @@
       ],
       "impact": "High",
       "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "81dba6fe40f7c0eb",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/15/datasette-apps/",
+    "title": "datasette-apps 0.4a0",
+    "publishedAt": "2026-11-15T04:02:45.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "36194c2feca0322c",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "15th November 2026 Release datasette-apps 0.4a0 — Apps that live inside Datasette Datasette Apps are sandboxed HTML and JavaScript applications that live inside Datasette - think Claude Artifacts, but these ones can run SQL queries against your data.\n\n0.4a0 adds support for linking: you can link to an app with #fragments in the URL and the app can see and use those, plus supported URL schemes are reported back to Datasette Agent so it can help write apps that link to each other.\n\nThis means you can have e.g. an app that shows details about a specific record, and a completely separate app that searches those records and links to their representations in the first app.\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 15th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison has released version 0.4a0 of datasette-apps, a framework for running sandboxed HTML and JavaScript applications directly within the Datasette ecosystem. These applications function similarly to Claude Artifacts but are specifically designed to execute SQL queries against the underlying data hosted in Datasette instances.\n\nThe 0.4a0 update introduces a linking mechanism that allows apps to communicate via URL #fragments. This enables modular workflows where separate applications can interact; for instance, a search-focused app can link to a record-detail app using these fragments. Furthermore, the update includes a reporting feature where supported URL schemes are exposed to the Datasette Agent, facilitating the creation of interconnected app ecosystems.",
+      "takeaways": [
+        "**Core Functionality:** Sandboxed HTML/JS apps capable of running SQL queries against Datasette data.",
+        "**New Linking Mechanism:** Apps can now utilize URL #fragments for state passing and inter-app navigation.",
+        "**Agent Integration:** Datasette Agent can now query supported URL schemes to assist in building linked application workflows.",
+        "**Release Version:** 0.4a0, released on November 15, 2026."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "d47427f5a2b9c3b3",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/15/datasette-agent/",
+    "title": "datasette-agent 0.6a0",
+    "publishedAt": "2026-11-15T03:49:47.000Z",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "754eaae926d5fb67",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "15th November 2026 Release datasette-agent 0.6a0 — An LLM-powered agent for Datasette Accumulated small fixes for Datasette Agent, my agent plugin for Datasette that lets you ask questions about your data. Most notably, it now adds an agent prompt directly to the Datasette homepage, with support for hash-mentions of tables and queries:\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 15th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "imageUrl": "https://static.simonwillison.net/static/cors-allow/2026/datasette-agent-homepage.webp",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison released version 0.6a0 of datasette-agent, an LLM-powered plugin designed to facilitate natural language querying of data stored within Datasette instances. This update introduces a dedicated agent prompt interface directly on the Datasette homepage, streamlining the user experience for interacting with underlying datasets.\n\nThe 0.6a0 release includes a series of minor bug fixes and functional improvements, most notably the integration of hash-mention support. Users can now reference specific tables and saved queries using hash-mentions within the agent prompt, allowing for more precise context-setting when querying structured data.",
+      "takeaways": [
+        "**Version:** datasette-agent 0.6a0 released on November 15, 2026.",
+        "**Core Feature:** Added an agent prompt interface directly to the Datasette homepage.",
+        "**Syntax Support:** Implemented hash-mention functionality for referencing tables and queries within the agent prompt."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
       "generatedWith": "gemini",
       "summaryVersion": 2
     }
@@ -393,14 +652,14 @@
     "canonicalUrl": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
     "title": "datasette-vega 0.7",
     "publishedAt": "2026-11-14T17:09:09.000Z",
-    "fetchedAt": "2026-11-15T04:26:10.088Z",
-    "contentHash": "331ad8f7dd79699f",
+    "fetchedAt": "2026-11-16T02:52:02.605Z",
+    "contentHash": "419b2a655afe6a50",
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
-    "contentSnippet": "14th November 2026 Release datasette-vega 0.7 — Datasette plugin for visualizing data using Vega A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018!\n\nI finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite .\n\n(Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.)\n\nSince it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite .\n\nRecent articles Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 The U.S. Census Bureau and “Super Intelligence” - 2nd November 2026 This is a beat by Simon Willison, posted on 14th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "contentSnippet": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite ) against data in a table or custom query. The last release was in July 2018! I finally bumped it for compatibility with the latest Datasette alphas, plus some cosmetic tweaks to make it work better with Datasette Lite . (Datasette Lite just gained the ability to run JavaScript plugins like this! I'll write more about that soon.) Since it works with Datasette Lite, the live demo in the README now links to this demo on Datasette Lite . Tags: datasette , datasette-lite",
     "category": "LLMs & GenAI",
-    "lab": "Anthropic",
+    "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Simon Willison has released version 0.7 of datasette-vega, a plugin for the Datasette data exploration tool that enables data visualization using Vega-Lite. This update marks the first release of the plugin since July 2018, primarily focusing on restoring compatibility with the latest Datasette alpha versions.\n\nThe update includes cosmetic refinements specifically designed to improve functionality within Datasette Lite, the browser-based, client-side version of Datasette. This release coincides with new capabilities in Datasette Lite that now support the execution of JavaScript-based plugins, allowing users to render charts directly from tables or custom SQL queries within the browser environment.",
@@ -1722,6 +1981,62 @@
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "8ec2a585eb84c870",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17867v1",
+    "title": "UltraBERT-JEV: Encoder models for System One Applications",
+    "publishedAt": "2026-11-13T07:58:46.000Z",
+    "fetchedAt": "2026-11-16T02:52:03.492Z",
+    "contentHash": "ad23ff346e98b3da",
+    "sourceId": "arxiv-deepseek",
+    "sourceName": "arXiv DeepSeek & Reasoning Research",
+    "author": "Astarag Mohapatra",
+    "contentSnippet": "We study encoder models that pick one of several options in a single forward pass, without generating text. This technical report compares recipes for fine-tuning UltraBERT-380M with one mask per option. The four recipes differ in how an option is scored and how the scores become probabilities; one follows the expert gate of DeepSeek-V3. Trained on the same data as Qwen3-0.6B with the LLM-as-Jev recipe (67.6% test accuracy), the encoder reaches 69.7% to 72.1%. Scoring an option by \"yes\" minus \"no\" instead of \"yes\" alone gives the larger gain, from 69.7% to 71.3% on the test set and from 57.8% to 59.6% on external benchmarks (56.1% for the decoder). Sigmoid normalisation adds 0.8 test points; a square-root softplus adds none. One request at a time on an NVIDIA A100, the encoder takes 29 ms per decision against 68 ms, but uses more peak memory (2.8 against 2.2 GiB). An auxiliary head, trained on human-marked evidence and on labels selected with a reward adapted from SelfCite, predicts in the same pass the sentences annotated as support for the answer.",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "arXiv:2611.17867",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17867.pdf",
+    "summary": {
+      "tldr": "We study encoder models that pick one of several options in a single forward pass, without generating text. This technical report compares recipes for fine-tuning UltraBERT-380M with one mask per option. The four recipes differ in how an option is scored and how the scores become probabilities; one follows the expert gate of DeepSeek-V3.\n\nTrained on the same data as Qwen3-0.6B with the LLM-as-Jev recipe (67.6% test accuracy), the encoder reaches 69.7% to 72.1%. Scoring an option by \"yes\" minus \"no\" instead of \"yes\" alone gives the larger gain, from 69.7% to 71.3% on the test set and from 57.8% to 59.6% on external benchmarks (56.1% for the decoder). Sigmoid normalisation adds 0.8 test points; a square-root softplus adds none.",
+      "takeaways": [
+        "One request at a time on an NVIDIA A100, the encoder takes 29 ms per decision against 68 ms, but uses more peak memory (2.8 against 2.2 GiB).",
+        "An auxiliary head, trained on human-marked evidence and on labels selected with a reward adapted from SelfCite, predicts in the same pass the sentences annotated as support for the answer."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "62502669a1f91926",
+    "canonicalUrl": "https://arxiv.org/abs/2611.17846v1",
+    "title": "Is Abliteration Getting Harder? Not Uniformly: Refusal Removal by Direction-Based Ablation and ARA in Heretic on the Qwen3.8, Gemma 4, Olmo 3.1 and Mistral Small 3.2 LLMs Versus Their Predecessors",
+    "publishedAt": "2026-11-13T07:29:43.000Z",
+    "fetchedAt": "2026-11-16T02:52:03.493Z",
+    "contentHash": "54f2fd302bcc42e7",
+    "sourceId": "arxiv-mistral",
+    "sourceName": "arXiv Mistral & Mixtral Research",
+    "author": "Richard J. Young",
+    "contentSnippet": "Abliteration, a fine-tuning-free weight edit, removes refusal from open-weight large language models (LLMs). The developer of Arbitrary-Rank Ablation (ARA), an optimisation-based variant, reports that direction-based abliteration, which ablates a refusal direction, increasingly fails on newer models. On five release pairs, refusal removal did not become uniformly harder. Qwen2.5-32B and Qwen3.8-27B, Gemma-2-27B and Gemma-4-31B, OLMo-2-32B and Olmo-3.1-32B, Mistral-Small-2409 and Mistral-Small-3.2, and Qwen2.5-7B and Qwen3.5-4B were edited in Heretic 2.0 by three or four direction-based methods (difference-in-means, MPOA, SOM and, on the small pair, J-space) and ARA under the same prompts, nominal search budget, first-token KL divergence cap and selection rule; removal counted as harder when the automatic WildGuard judge found more of 972 held-out harmful prompts (JailbreakBench, XSTest, StrongREJECT, HarmBench and an author-compiled malicious-code bank) still refused. After direction-based removal, newer releases retained -1 to +37 percentage points more refusal, and after ARA -26 to +34. With run-to-run variance included, between-pair heterogeneity of the direction-based effect ranged from high to low with the scale and variance model (I^2 20-80%). ARA lost less effectiveness than direction-based methods in Gemma and OLMo and more in Qwen; each verdict rests on one ARA run, and some changed with the divergence budget or variance model. In Gemma the direction-based increase came from the malicious-code bank and reversed on public sets. Contrary to prediction, keyword counts at the tool's window did not undercount judged refusal on average, but differed by a mean 7 points per model. Audits of a single pair, method or prompt source can reach opposite conclusions. Whether a newer model resisted removal depended on the release pair, method and budget, not on generation alone.",
+    "category": "Open Source & Research",
+    "lab": "Mistral AI",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "arXiv:2611.17846",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17846.pdf",
+    "summary": {
+      "tldr": "Abliteration, a fine-tuning-free weight edit, removes refusal from open-weight large language models (LLMs). The developer of Arbitrary-Rank Ablation (ARA), an optimisation-based variant, reports that direction-based abliteration, which ablates a refusal direction, increasingly fails on newer models. On five release pairs, refusal removal did not become uniformly harder.\n\nQwen2.5-32B and Qwen3.8-27B, Gemma-2-27B and Gemma-4-31B, OLMo-2-32B and Olmo-3.1-32B, Mistral-Small-2409 and Mistral-Small-3.2, and Qwen2.5-7B and Qwen3.5-4B were edited in Heretic 2.0 by three or four direction-based methods (difference-in-means, MPOA, SOM and, on the small pair, J-space) and ARA under the same prompts, nominal search budget, first-token KL divergence cap and selection rule; removal counted as harder when the automatic WildGuard judge found more of 972 held-out harmful prompts (JailbreakBench, XSTest, StrongREJECT, HarmBench and an author-compiled malicious-code bank) still refused. After direction-based removal, newer releases retained -1 to +37 percentage points more refusal, and after ARA -26 to +34. With run-to-run variance included, between-pair heterogeneity of the direction-based effect ranged from high to low with the scale and variance model (I^2 20-80%).",
+      "takeaways": [
+        "ARA lost less effectiveness than direction-based methods in Gemma and OLMo and more in Qwen; each verdict rests on one ARA run, and some changed with the divergence budget or variance model.",
+        "In Gemma the direction-based increase came from the malicious-code bank and reversed on public sets.",
+        "Contrary to prediction, keyword counts at the tool's window did not undercount judged refusal on average, but differed by a mean 7 points per model.",
+        "Audits of a single pair, method or prompt source can reach opposite conclusions."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -10607,269 +10922,6 @@
       "tldr": "Amazon-owned Ring is pushing into robotics with the launch of a home security drone and a rolling robot designed to patrol and protect businesses.",
       "takeaways": [],
       "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1d8889c9661cfe54",
-    "canonicalUrl": "https://www.theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot",
-    "title": "Hands-on with Ring’s new AI drone camera for your home",
-    "publishedAt": "2026-11-10T13:30:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.003Z",
-    "contentHash": "847cd79dfa6ac777",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Jennifer Pattison Tuohy",
-    "contentSnippet": "Ring’s new Drone Cam is a flying indoor security camera. Ring is finally shipping a flying indoor drone camera. For real this time. The Ring Drone Cam will arrive on January 27th, 2027, for $249.99 , Ring founder Jamie Siminoff said at a launch event in New York City this week. If it does actually ship, it will arrive almost six years after the company announced its first flying camera, the Ring Always Home Cam. Designed to patrol inside your home when you're not there, the Drone Cam is an AI-powered drone that can react to triggers from Ring sensors, such as detecting motion, a door opening, a water leak, or an alarm sounding. When triggered, it flies along preprogrammed routes to a set location, … Read the full story at The Verge.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DSC01268.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Ring’s new Drone Cam is a flying indoor security camera. Ring is finally shipping a flying indoor drone camera. The Ring Drone Cam will arrive on January 27th, 2027, for $249.99 , Ring founder Jamie Siminoff said at a launch event in New York City this week.\n\nIf it does actually ship, it will arrive almost six years after the company announced its first flying camera, the Ring Always Home Cam. Designed to patrol inside your home when you're not there, the Drone Cam is an AI-powered drone that can react to triggers from Ring sensors, such as detecting motion, a door opening, a water leak, or an alarm sounding. When triggered, it flies along preprogrammed routes to a set location, … Read the full story at The Verge.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "50c5ba9bb10ae7d0",
-    "canonicalUrl": "https://arxiv.org/abs/2611.14059v1",
-    "title": "HandsOnAid: Building and Evaluating an Offline First-Aid Assistant for Emergency Response Scenarios",
-    "publishedAt": "2026-11-10T13:25:28.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "6faa5238f7719f04",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Rezwan Islam Salvi",
-    "contentSnippet": "Emergencies can occur where there is no phone signal and no ambulance nearby. A small language model on a phone can be helpful in such situations, but its advice needs to be safe and accurate. We built HandsOnAid, a 4-bit Gemma 2B model fine-tuned with QLoRA on FirstAidQA dataset, a corpus of 5,550 first-aid question-answer pairs. We compared seven configurations, including the base, 4-bit and 8-bit fine-tuned models, and versions with a length floor, safety gate, or retrieval. We used a 41-pair question-answer bank with medically reviewed references that followed ANZCOR guidelines, and a strict 0-5 score rubric, with twelve safety overrides. Four frontier LLM judges (GPT-5.6 Sol, Claude Opus 5, DeepSeek V4 Pro, GLM-5.3) blindly scored every answer, with 45 hidden controls used to check judge reliability. Fine-tuning improved the mean score by +1.08 over the base model to 2.34. The best configuration scored 2.51 out of 5 which was the fine-tuned 4-bit model with retrieval. A medical professional also conducted a blind evaluation of 40 answers across the base, the 4-bit fine-tuned, and the retrieval configurations, and the scores were similar to the LLM judges' average scores. A keyword audit found limited coverage of several details of ANZCOR guidelines in the training corpus, that are required by the rubric, which suggests that missing information in the training data could be a cause of the low scores. On a smartphone device (Pixel 7 Pro) with six CPU threads and no network connection, the 4-bit fine-tuned model produced its first displayable text in 6.86 seconds and a complete answer in 14.88 seconds on average over ten questions.",
-    "category": "Business & Big Tech",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.14059",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14059.pdf",
-    "summary": {
-      "tldr": "Emergencies can occur where there is no phone signal and no ambulance nearby. A small language model on a phone can be helpful in such situations, but its advice needs to be safe and accurate. We built HandsOnAid, a 4-bit Gemma 2B model fine-tuned with QLoRA on FirstAidQA dataset, a corpus of 5,550 first-aid question-answer pairs.\n\nWe compared seven configurations, including the base, 4-bit and 8-bit fine-tuned models, and versions with a length floor, safety gate, or retrieval. We used a 41-pair question-answer bank with medically reviewed references that followed ANZCOR guidelines, and a strict 0-5 score rubric, with twelve safety overrides. Four frontier LLM judges (GPT-5.6 Sol, Claude Opus 5, DeepSeek V4 Pro, GLM-5.3) blindly scored every answer, with 45 hidden controls used to check judge reliability.",
-      "takeaways": [
-        "Fine-tuning improved the mean score by +1.08 over the base model to 2.34.",
-        "The best configuration scored 2.51 out of 5 which was the fine-tuned 4-bit model with retrieval.",
-        "A medical professional also conducted a blind evaluation of 40 answers across the base, the 4-bit fine-tuned, and the retrieval configurations, and the scores were similar to the LLM judges' average scores.",
-        "A keyword audit found limited coverage of several details of ANZCOR guidelines in the training corpus, that are required by the rubric, which suggests that missing information in the training data could be a cause of the low scores."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8ae2f5a54b01804f",
-    "canonicalUrl": "https://arxiv.org/abs/2611.14051v1",
-    "title": "Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study",
-    "publishedAt": "2026-11-10T13:17:04.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "a41debf42c11a8d2",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Zhikun Tao",
-    "contentSnippet": "Reusing key--value (KV) caches across language model updates could avoid repeated computation of shared context, but changes in model weights raise a fundamental question about what these caches preserve. We investigate direct cache reuse across four model updates, with a detailed study of DeepSeek-V4-Flash to Flash-0731. Our central finding is that caches can retain useful task information without faithfully reproducing the updated model's behavior. Retrieval accuracy varies substantially across updates, ranging from near-native performance to large losses. With source caches already available, reuse achieves median time-to-first-token speedups of $2.10$--$5.08\\times$ on three longer-prefix QA benchmarks. To characterize the behavioral differences behind these outcomes, we introduce Functional Cache Divergence, which compares next-token distributions under reused and native caches. Direct KV cache reuse better preserves native model behavior in natural-text continuation, whereas compatibility degrades with increasing prefix length in single-token retrieval tasks. Answer-margin analyses help explain how correct retrieval decisions survive substantial internal state changes. Yet even agreement on the first generated token does not ensure agreement in answer content or stopping behavior. These findings establish task utility and fidelity to native inference as distinct criteria for evaluating cross-version KV cache reuse.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.14051",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14051.pdf",
-    "summary": {
-      "tldr": "Reusing key--value (KV) caches across language model updates could avoid repeated computation of shared context, but changes in model weights raise a fundamental question about what these caches preserve. We investigate direct cache reuse across four model updates, with a detailed study of DeepSeek-V4-Flash to Flash-0731. Our central finding is that caches can retain useful task information without faithfully reproducing the updated model's behavior.\n\nRetrieval accuracy varies substantially across updates, ranging from near-native performance to large losses. With source caches already available, reuse achieves median time-to-first-token speedups of $2.10$--$5.08\\times$ on three longer-prefix QA benchmarks. To characterize the behavioral differences behind these outcomes, we introduce Functional Cache Divergence, which compares next-token distributions under reused and native caches.",
-      "takeaways": [
-        "Direct KV cache reuse better preserves native model behavior in natural-text continuation, whereas compatibility degrades with increasing prefix length in single-token retrieval tasks.",
-        "Answer-margin analyses help explain how correct retrieval decisions survive substantial internal state changes.",
-        "Yet even agreement on the first generated token does not ensure agreement in answer content or stopping behavior.",
-        "These findings establish task utility and fidelity to native inference as distinct criteria for evaluating cross-version KV cache reuse."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "697debda975c1875",
-    "canonicalUrl": "https://techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns/",
-    "title": "Cyberattacks threaten to make open source AI a little less open, Hugging Face exec warns",
-    "publishedAt": "2026-11-10T13:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.003Z",
-    "contentHash": "cbdfd6105ca81f8d",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Rebecca Bellan",
-    "contentSnippet": "Hugging Face executive Irene Solaiman warns that growing cyberattacks on open AI platforms could force tighter security restrictions, threatening the accessibility that makes open source communities valuable to developers worldwide.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Hugging Face executive Irene Solaiman warns that growing cyberattacks on open AI platforms could force tighter security restrictions, threatening the accessibility that makes open source communities valuable to developers worldwide.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f321c904268bcef2",
-    "canonicalUrl": "https://deepmind.google/blog/introducing-alphaproof-code/",
-    "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
-    "publishedAt": "2026-11-10T12:02:28.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.900Z",
-    "contentHash": "1c42584cfa6ecdb8",
-    "sourceId": "deepmind",
-    "sourceName": "Google DeepMind",
-    "author": "Google DeepMind",
-    "contentSnippet": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
-    "imageUrl": "https://lh3.googleusercontent.com/hn6AiI6lYFo6chi1mL6uJ9nOW9UXfsAKnSyOApiie2urHNU2tmSPUmGn0hNfWyYLRcsWCGjCIrBZSCt1ihZmvW-LDJPfyolsr5w-yvzlknZVzmaH=w528-h297-n-nu-rw-lo",
-    "category": "LLMs & GenAI",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
-      "takeaways": [],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0f0020abcf733229",
-    "canonicalUrl": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
-    "title": "Helping caregivers use AI in everyday life",
-    "publishedAt": "2026-11-10T12:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "ea9bbe1eca228194",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. Cities, helping them build practical AI skills for everyday life.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d0f9bf46fa9dba7c",
-    "canonicalUrl": "https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/",
-    "title": "Opening the datasets behind our AI weather models",
-    "publishedAt": "2026-11-10T11:13:04.000Z",
-    "fetchedAt": "2026-11-13T15:52:02.847Z",
-    "contentHash": "bbb5c122a0fd1839",
-    "sourceId": "deepmind",
-    "sourceName": "Google DeepMind",
-    "author": "Google DeepMind",
-    "contentSnippet": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
-    "imageUrl": "https://lh3.googleusercontent.com/ggsqfaBnOayx-i7z9Kj8AeZruz8BSo0N7tsnqwH8Z3REnHcDKBt-QSA3DR4UUM8lcwklWihSARoEN2AyQFhoRFGFlk2-0-xGuKt_rtGoFwpJg8LHVQ=w528-h297-n-nu-rw-lo",
-    "category": "LLMs & GenAI",
-    "lab": "Google DeepMind",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Foundational precipitation and geostationary satellite datasets to observe the planet clearly.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e256465192882f91",
-    "canonicalUrl": "https://arxiv.org/abs/2611.13873v1",
-    "title": "Transparency Disclosures for Chain-of-Thought Monitorability",
-    "publishedAt": "2026-11-10T10:33:11.000Z",
-    "fetchedAt": "2026-11-11T16:51:14.550Z",
-    "contentHash": "e07b727092c149c8",
-    "sourceId": "arxiv-deepmind",
-    "sourceName": "arXiv Google DeepMind Research",
-    "author": "Jacob Davies",
-    "contentSnippet": "Chain-of-thought (CoT) monitoring is one of the most valuable tools for monitoring advanced AI systems, but it is under threat. We argue that frontier AI developers should report specific indicators to make these threats trackable and to better facilitate coordination to preserve CoT monitorability. We identify five indicators that are both highly relevant and reasonably feasible to disclose, one for each link in a five-step chain on which CoT monitoring depends. The first, third-party CoT access and base architecture specifications, also underpins external verification of the rest. The others span CoT quality (naturalness and faithfulness) and monitoring effectiveness (detection and uplift). An audit of current disclosures by Anthropic, OpenAI, and Google DeepMind shows that no developer covers the full set, but that every indicator has been reported by at least one frontier developer. Because current disclosures rely largely on developers' own evaluations, we also recommend that a cross-developer audit be repeated with deeper access than public disclosures allow, either by embedded evaluators working within developers or by an Independent Verification Organization.",
-    "category": "Business & Big Tech",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.13873",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13873.pdf",
-    "summary": {
-      "tldr": "Chain-of-thought (CoT) monitoring is one of the most valuable tools for monitoring advanced AI systems, but it is under threat. We argue that frontier AI developers should report specific indicators to make these threats trackable and to better facilitate coordination to preserve CoT monitorability. We identify five indicators that are both highly relevant and reasonably feasible to disclose, one for each link in a five-step chain on which CoT monitoring depends.\n\nThe first, third-party CoT access and base architecture specifications, also underpins external verification of the rest. The others span CoT quality (naturalness and faithfulness) and monitoring effectiveness (detection and uplift). An audit of current disclosures by Anthropic, OpenAI, and Google DeepMind shows that no developer covers the full set, but that every indicator has been reported by at least one frontier developer.",
-      "takeaways": [
-        "Because current disclosures rely largely on developers' own evaluations, we also recommend that a cross-developer audit be repeated with deeper access than public disclosures allow, either by embedded evaluators working within developers or by an Independent Verification Organization."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "991ad48e8559b2fe",
-    "canonicalUrl": "https://openai.com/index/introducing-businesses-chatgpt",
-    "title": "Introducing Businesses in ChatGPT",
-    "publishedAt": "2026-11-10T10:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "7c8932bb544e4d56",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "69d4d9d74efa0162",
-    "canonicalUrl": "https://openai.com/index/closing-ai-guidance-gap-education",
-    "title": "Closing the AI guidance gap in education",
-    "publishedAt": "2026-11-10T09:00:00.000Z",
-    "fetchedAt": "2026-11-10T21:50:18.899Z",
-    "contentHash": "e6187f0229e7fa58",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "New ThinkYoung research and lessons from OpenAI’s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "New ThinkYoung research and lessons from OpenAI’s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
-      "takeaways": [],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9092d5eb66f29547",
-    "canonicalUrl": "https://openai.com/index/singapore-airlines-travel-work",
-    "title": "Singapore Airlines elevates travel & work with OpenAI technology",
-    "publishedAt": "2026-11-10T08:00:00.000Z",
-    "fetchedAt": "2026-11-11T08:45:06.681Z",
-    "contentHash": "eedc230878c143ad",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
-      "takeaways": [],
-      "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
