@@ -1,5 +1,444 @@
 [
   {
+    "id": "48003ca6dcdc0ce9",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/",
+    "title": "Introducing Amazon SageMaker HyperPod Global Inference Gateway: One endpoint across Regions and clusters",
+    "publishedAt": "2026-11-20T22:35:24.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.120Z",
+    "contentHash": "bd2078801eddcecd",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Dmitry Soldatkin",
+    "contentSnippet": "During a traffic peak, a request can sit in a queue on a saturated HyperPod cluster while GPUs on another cluster, sometimes in another AWS Region, sit idle. You have already paid for that capacity, but your requests can’t reach it. In Introducing Amazon SageMaker HyperPod Inference Gateway , we showed how the Inference Gateway gives each Amazon SageMaker HyperPod cluster a single, GPU-aware endpoint. It reads real-time signals such as key-value (KV) cache utilization and queue depth to place every request on the best-suited pod. That solves routing inside one cluster, but not across clusters. Today, SageMaker HyperPod introduces the Global Inference Gateway. It is one SageMaker-managed gateway that routes across every cluster you register, in one Region or across Regions. The gateway picks the cluster and carries the request over the AWS backbone, with automatic failover and authentication through AWS Signature Version 4 (SigV4) and AWS Identity and Access Management (IAM). Inside each cluster, the Inference Gateway keeps picking the pod, unchanged. The Global Inference Gateway is the second tier of the architecture we described in part 1. The challenge: Capacity spread across clusters and Regions Models are getting larger, and the GPU capacity to serve them is harder to find. To get enough of it, you spread it across more clusters and more Regions. Consider a team that serves four models across five HyperPod clusters in two Regions. Without the Inference Gateway, clients track 20 endpoints: one per model per cluster. The Inference Gateway cuts that to five, one per cluster. But each client still picks a cluster itself. That choice has costs: Uneven load. During peaks, requests queue in one Region while GPUs in the other Region are idle. Manual failover. When a cluster fails, an engineer changes configuration to move traffic away from it. Custom plumbing. Spreading traffic across Regions means building and maintaining load balancers, DNS, and cross-Region networking yourself. The team needs one endpoint that sends each request to the best-suited cluster and moves traffic off a failed cluster on its own. Key benefits The Global Inference Gateway helps you get more from the GPU capacity you already have, with less to operate. Put idle GPUs to work. During a peak, requests overflow to clusters with available capacity in the same Region or another one, instead ",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/ML-22376-1-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Amazon has introduced the SageMaker HyperPod Global Inference Gateway, a managed service designed to unify GPU inference across multiple clusters and AWS Regions. By providing a single endpoint for registered clusters, the gateway eliminates the need for clients to manage individual endpoints for every model-cluster combination. It utilizes real-time telemetry, including KV cache utilization and queue depth, to dynamically route traffic to the most suitable cluster, effectively addressing the issue of idle GPU capacity during localized traffic spikes.\n\nThe architecture functions as a second tier to the existing local Inference Gateway, which handles pod-level routing within a single cluster. The Global Inference Gateway operates over the AWS backbone, incorporating automatic failover capabilities and security via AWS Signature Version 4 (SigV4) and AWS Identity and Access Management (IAM). This system removes the operational burden of manual load balancing, custom DNS configuration, and cross-Region networking, allowing organizations to treat geographically dispersed GPU resources as a single, cohesive pool.",
+      "takeaways": [
+        "**Routing Logic:** Uses real-time signals like KV cache utilization and queue depth to place requests on the optimal cluster.",
+        "**Security Integration:** Authenticates traffic using AWS Signature Version 4 (SigV4) and AWS Identity and Access Management (IAM).",
+        "**Operational Efficiency:** Replaces the need for managing individual endpoints per model per cluster, reducing complexity for multi-Region deployments.",
+        "**Resiliency:** Features automatic failover to redirect traffic away from unhealthy clusters without manual configuration changes."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "2aee5e087d981364",
+    "canonicalUrl": "https://siliconangle.com/2026/11/20/anthropic-researcher-claims-to-have-proven-riemann-hypothesis-using-claude/",
+    "title": "Anthropic researcher claims to have proven Riemann hypothesis using Claude",
+    "publishedAt": "2026-11-20T21:28:11.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.544Z",
+    "contentHash": "0cf750816e978e11",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 16:28 EST / NOVEMBER 20 2026\n\nAnthropic researcher claims to have proven Riemann hypothesis using Claude\n\nAn Anthropic PBC researcher claims to have used Claude to prove the Riemann hypothesis, which is widely considered to be the most important open question in mathematics.\n\nLevent Alpöge announced his discovery today on his personal website. Anthropic has not published an official announcement about the news. The company floated on the Nasdaq a day earlier in a landmark public offering that raised over $93 billion.\n\n“I believe I have, working with Claude, discovered a proof of the Riemann hypothesis,” Alpöge wrote in a four-page statement. “What I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater.”\n\nThe Riemann hypothesis was proposed in the mid-1800s by its namesake, the mathematician Bernhard Riemann. It focuses on a specific mathematical function, the Riemann zeta function, that was discovered more than a century earlier. A function is similar to a software program: It takes a piece of data as input and outputs another piece of data. A function’s input and output can be numbers, other functions and many other mathematical objects.\n\nThe Riemann zeta function’s input and output are both complex numbers. Complex numbers share similarities with regular numbers, but also have many additional properties. When the inputs and outputs of the Riemann zeta function are visualized, they resemble a three-dimensional spiral.\n\nThe Riemann hypothesis is concerned with a specific section of that 3D spiral. In that section, the complex numbers outputted by the Riemann zeta function all equal zero. The hypothesis argues that the inputs from which those outputs are derived all include the value ½.\n\nThe hypothesis is considered to be the most important open problem in mathematics for multiple reasons. The first is that although it focuses on a single, not overly complicated mathematical function, its implications extend to a far bigger topic: prime numbers. If the Riemann hypothesis is correct, a seemingly random aspect of prime numbers is in fact regulated by a pattern.\n\nAnother factor behind the hypothesis’ importance is that hundreds of theorems operate on the assumption that it’s true. If the Riemann hypothesis is correct, those theorems are correct as well.\n\nAlpöge wrote that Claude proved not o",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Levent Alpöge, a researcher at Anthropic, has claimed to have proven the Riemann hypothesis—a foundational open problem in mathematics concerning the distribution of prime numbers—using the company's Claude AI model. The announcement follows Anthropic's recent Nasdaq IPO, which raised over $93 billion. Alpöge asserts that the proof covers both the standard Riemann hypothesis and its generalized variant, suggesting that the model is capable of addressing even broader mathematical conjectures in the future.\n\nThe proof is reportedly massive, spanning over 250,000 pages, and has not yet been released in full. However, Alpöge has published a machine-verifiable version of the proof written in Lean, a programming language designed for formal mathematical verification. The Lean implementation consists of millions of lines of code; because Lean proofs function as software programs, the argument is considered verified if the code executes without error. The Riemann hypothesis itself posits that all non-trivial zeros of the Riemann zeta function have a real part equal to ½, a discovery that would validate hundreds of dependent mathematical theorems.",
+      "takeaways": [
+        "**Proof Scale:** The generated proof document exceeds 250,000 pages in length.",
+        "**Verification Method:** A formal version of the proof has been implemented in the Lean programming language, consisting of millions of lines of code.",
+        "**Scope of Discovery:** The claim includes a proof for both the standard Riemann hypothesis and the generalized Riemann hypothesis.",
+        "**Corporate Context:** The announcement occurred one day after Anthropic's Nasdaq IPO, which raised more than $93 billion."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cc88c546d1214b65",
+    "canonicalUrl": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+    "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
+    "publishedAt": "2026-11-20T20:59:08.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.794Z",
+    "contentHash": "96fae9e505a85b47",
+    "sourceId": "arstechnica-tech",
+    "sourceName": "Ars Technica",
+    "author": "\n                    Dan Goodin\n                ",
+    "contentSnippet": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered was an ecosystem that leaked highly sensitive data like a sieve.\n\nThe exposure was found through an ingenious experiment designed to test if sensitive information can leak through the vast chain of widely used AI services and how that information is exploited when it does. Many of today’s AI apps use services such as OpenRouter or Vercel that act as brokers. These “AI routers,” sometimes also known as “AI gateways,” receive large numbers of prompts sent from AI app end users and route them to an available inference engine based on criteria such as the one charging the lowest price or being best suited for the given task. Instead of using Anthropic, OpenAI, or another big provider, the developer hires an AI router to find the most suitable model.\n\nSecurity breaches, prompt theft, and privacy violations\n\nTo test for potential leakage, researcher HD Moore assembled a collection of AWS access keys, functioning credentials tied to empty AWS accounts, passwords for services such as SSH, and unique URLs, DNS names, and private git repository references. None of the secrets had ever been used before, and he controlled the infrastructure that received any requests using the credentials. He then seeded each secret into exactly one prompt sent to a single provider. In the event any of the secrets were leaked, these “canaries”—so called because they resemble the role of that bird when taken into coal mines—would allow Moore to identify each link in the chain that was responsible.\n\nThe findings are striking. They included:\n\nEvidence that at least three AI providers were compromised by attackers who used their access to siphon prompts they received\n\nMultiple resellers in the inference marketplace that logged the prompts and somehow passed them along to people who used the credentials\n\nMultiple cases of AI providers not following end-user privacy settings embedded into flags specifying terms such as Zero Data Retention (ZDR) or “no data collection”\n\n“We sent nearly two million AI prompts containing unique, trackable secrets to AI providers, then watched where those secrets surfaced,” Moore, the chief research officer of security firm Dragos, wrote Thursday . “What we found reve",
+    "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "HD Moore, Chief Research Officer at Dragos, conducted a large-scale security audit of the AI inference supply chain by injecting 2 million unique 'canary' secrets—including AWS access keys, SSH passwords, and private repository URLs—into prompts sent across various AI routers, resellers, and hosting providers. The experiment revealed that sensitive data is frequently exposed, logged, and exfiltrated at multiple hops within the inference stack, as prompts are decrypted at each intermediary node to facilitate routing and model selection decisions.",
+      "takeaways": [
+        "**Compromised Providers:** Attackers successfully siphoned credentials from three separate hosting providers, using stolen AWS keys 'tens of thousands' of times to probe S3 buckets, secrets managers, and AWS Bedrock configurations.",
+        "**Front-Door Exfiltration:** Evidence suggests attackers compromised providers at the 'front door' of the inference stack, as some keys were stolen even when the provider rejected the request before model execution.",
+        "**Privacy Flag Failure:** Multiple providers ignored 'Zero Data Retention' (ZDR) and 'no data collection' flags, with one unnamed Chinese AI lab scraping secret URLs from two-thirds of prompts explicitly marked for no data retention.",
+        "**Reseller Logging:** Several inference resellers were identified as malicious actors that log user prompts to harvest credentials, confirmed by Moore through A/B testing requests across different sellers for the same underlying model.",
+        "**Data Flow Leakage:** Prompts sent to US-based hosting providers were found to flow back to foreign labs, effectively bypassing geographic data residency expectations for customers."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8332904eb70bcbc5",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/how-standard-bank-group-automates-ai-risk-assessment-for-generative-ai/",
+    "title": "How Standard Bank Group automates AI risk assessment for generative AI",
+    "publishedAt": "2026-11-20T20:37:31.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.120Z",
+    "contentHash": "1b4e74a22b78a7f5",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Tala Qraitem",
+    "contentSnippet": "This post is co-written with Tala Qraitem from AWS and Jörg Fischer from Standard Bank Group Having an AI policy is one thing. Proving, one use case at a time, that AI systems follow it is another. Every new generative AI application adds one more system to prove. Teams can now build one in days, but each still needs a risk committee’s approval before it reaches customers or employees. When that approval depends on reviewers reading documents and testing the system by hand, governance becomes the slowest step in the pipeline. Standard Bank Group chose to automate that proof. Working with AWS Professional Services, the bank deployed an automated assessment that scores each generative AI use case against international AI standards and its own policies. The assessment produces reports and a dashboard that show what is already in place, what is working well, and what still needs mitigation. This post explains how the assessment runs on AWS and what Standard Bank Group learned from its first runs. Governing AI with the framework you already have Standard Bank Group didn’t need a new AI policy. Like most large banks, it already had an established model risk practice that covers concerns such as explainability and fairness, and a change risk process that assesses each new use case according to its level of risk before it goes live. Generative AI increases the complexity, because models and tooling change every three to six months, yet each use case still needs to meet the same high security and compliance bar. “At Standard Bank, this assessment demonstrates how we are working with AWS to embed intelligent, automated risk management into our AI journey, allowing us to accelerate meaningful business value while maintaining the trust and controls that banking demands. We believe responsible AI is not about slowing innovation down but enabling it to build and scale with confidence.” — Jörg Fischer, Group Chief Information and AI Officer, Standard Bank Group The goal was to automate evidence gathering and testing, then feed the results into the approval gates Standard Bank Group already runs. Review and approval stay with the risk committee, but the committee now bases each decision on consistent evidence, collected the same way across use cases. How the assessment works Figure 1 shows how the assessment’s components fit together in Standard Bank Group’s AWS account, fr",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/19/ML-22493-1.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Standard Bank Group, in collaboration with AWS Professional Services, has implemented an automated AI risk assessment framework to streamline the governance of generative AI applications. By integrating automated evidence gathering and testing into existing model risk and change risk processes, the bank aims to reduce the manual review burden that typically delays deployment. The system evaluates each generative AI use case against both international AI standards and the bank’s internal compliance policies, generating standardized reports and dashboards that provide risk committees with consistent data for decision-making.\n\nThe architecture leverages the bank's existing AWS environment to address the rapid evolution of generative AI models and tooling, which typically update every three to six months. Rather than replacing the human-led risk committee, the automated framework serves as a prerequisite for approval, ensuring that all applications meet the bank's security and compliance requirements before reaching customers or employees. According to Jörg Fischer, Group Chief Information and AI Officer at Standard Bank Group, this approach is designed to accelerate the scaling of AI initiatives while maintaining institutional trust and control.",
+      "takeaways": [
+        "**Governance Integration:** The system maps generative AI assessments directly into Standard Bank Group’s pre-existing model risk and change risk management frameworks.",
+        "**Operational Goal:** The primary objective is to replace manual document review and hand-testing with automated evidence collection to accelerate the approval pipeline.",
+        "**Technical Scope:** The framework produces centralized dashboards and reports that highlight existing controls, performance metrics, and required risk mitigations for each use case.",
+        "**Strategic Rationale:** The bank identified that the rapid 3-to-6-month release cycle of AI models and tools necessitates automated compliance to prevent governance from becoming a bottleneck."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8ece5e32cabe185a",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents/",
+    "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
+    "publishedAt": "2026-11-20T20:22:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.120Z",
+    "contentHash": "df7b49a507d8d5ae",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Keith Mascarenhas",
+    "contentSnippet": "Organizations across financial services, insurance, healthcare, and the public sector depend on document processing. They turn scanned files and paper forms into structured data their systems can act on. As generative AI has matured, these organizations want more than accurate text extraction. They want to describe the information they need in their own words and get dependable, auditable answers from complex documents. Today, we are announcing the general availability of Amazon Textract Insights , a new generative AI feature of Amazon Textract available through a new API within Amazon Textract. With Amazon Textract Insights, you describe the fields you want in natural language and submit a document or a mixed, multi-document packet. You receive structured results in which each value carries a confidence score and page-level grounding, with no model training required. The challenge of extracting data from mixed packets Many of the high-value document workloads involve diverse, mixed packets rather than clean, single-purpose files. A mortgage file, for example, typically arrives as a single scan holding a W-2, payslips, bank statements, and a page of handwritten notes. Each has its own layout and appears in no fixed order. Claims files and onboarding packages can look very similar: typed forms, dense tables, scanned receipts, and free-text letters interleaved in one file. Teams usually take one of two approaches, and each has trade-offs. The first is a custom pipeline that combines optical character recognition, document splitting, classification, a foundation model prompt, and a review step. The team must integrate, scale, and operate all of it. The second is a general-purpose large language model used by default. It returns fluent answers but does not reliably cite the source page or give a confidence score. Without a traceable source and a calibrated score, it is hard to know which values to accept automatically and which to review. This uncertainty often limits how far teams can automate. Amazon Textract Insights is built for reliable document processing, bringing this entire workflow into a single asynchronous request on Amazon Textract. Rather than assembling and operating a custom pipeline, your team works through one managed API and moves directly to the data it needs. How Amazon Textract Insights works With Amazon Textract Insights, you define what t",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/18/ML-22308-2.jpg",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has announced the general availability of Amazon Textract Insights, a generative AI feature integrated directly into the Amazon Textract API. Designed for document-heavy sectors like finance, insurance, and healthcare, the service allows users to extract structured data from complex, mixed-document packets—such as mortgage files containing interleaved W-2s, payslips, and handwritten notes—using natural language descriptions. The system eliminates the need for custom pipelines that combine OCR, document classification, and foundation model prompting, instead providing a single asynchronous API request that returns structured results.\n\nTechnically, Amazon Textract Insights differentiates itself from general-purpose LLMs by providing verifiable output. Every extracted value is accompanied by a confidence score and page-level grounding, allowing organizations to automate data ingestion with higher auditability. By moving the entire workflow into a managed service, Amazon aims to solve the 'black box' problem of standard LLMs, which often lack source citations and calibrated confidence metrics, thereby enabling higher levels of automated processing without requiring additional model training.",
+      "takeaways": [
+        "**Service Integration:** Amazon Textract Insights is now generally available as a new API feature within the existing Amazon Textract service.",
+        "**Core Capability:** Users can extract specific fields from mixed, multi-document packets using natural language prompts without performing custom model training.",
+        "**Verifiability:** Each extracted data point includes a confidence score and page-level grounding to ensure auditability and source traceability.",
+        "**Workflow Efficiency:** The service replaces multi-step custom pipelines (OCR, splitting, classification, and LLM prompting) with a single asynchronous API request."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "05d06a2ae37185a1",
+    "canonicalUrl": "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/",
+    "title": "Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.",
+    "publishedAt": "2026-11-20T19:53:41.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.791Z",
+    "contentHash": "ac3609c6d7083e56",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Tim De Chant",
+    "contentSnippet": "Spotify founder Daniel Ek is backing Europa Fusion, a stealthy fusion power startup founded by an AI researcher who is taking a different approach to developing a fusion power plant.\n\nThe U.K.-based startup was founded in February, though sources told TechCrunch that the founder, Nantas Nardelli, has been working on the idea for longer. The people asked not to be identified because the information isn’t public. Bloomberg first reported Ek’s backing of Europa Fusion.\n\nNardelli has extensive experience in the AI world, having previously worked at Google DeepMind, Facebook AI Research, and Microsoft Research Cambridge. Recently, he was head of machine learning at Pacific Fusion , the fusion power startup based in Fremont, California.\n\nPacific Fusion recently broke ground on a demonstration facility in New Mexico. Like most fusion startups of its size , Pacific Fusion leans heavily on physical devices to test its theories and improve its simulations.\n\nNardelli apparently didn’t agree with the focus on hardware, instead thinking that fusion startups should invest in a more simulation- and data-heavy approach, a source familiar with his thinking told TechCrunch.\n\nLike Pacific Fusion, Europa Fusion will pursue a pulsed-power approach to fusion. Pulsed-power reactors use massive, perfectly timed surges of electrical current to compress fuel targets until the atoms inside fuse and release energy.\n\nFusion power has the potential to be a significant energy source in the coming decades, but to date, no one has built a power plant capable of supplying electricity to the grid. If fusion power becomes commercially viable, though, it could possibly be a significant source of carbon-free power that draws on nearly limitless fuel supplies. The technology also has the potential to alleviate concerns about AI’s energy consumption.\n\nFusion’s ability to generate electricity without exacerbating climate change apparently drove Nardelli’s pivot from AI.\n\n“My original background is in electronics and control engineering,” he wrote on his website . “I used to build robots for a living. One day I’ll be back to that, but it’s time to fix climate change for good.”\n\nTopics AI , Climate , Exclusive , fusion power , Startups When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nTim De Chant is a senior climate rep",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Spotify founder Daniel Ek is backing Europa Fusion, a U.K.-based fusion power startup founded in February by Nantas Nardelli. Nardelli, a former AI researcher with tenures at Google DeepMind, Facebook AI Research, and Microsoft Research Cambridge, previously served as the head of machine learning at Pacific Fusion. The startup aims to differentiate itself from competitors by prioritizing a simulation- and data-heavy development methodology over the hardware-centric approach common in the current fusion sector.\n\nEuropa Fusion intends to utilize a pulsed-power reactor architecture, which involves using precisely timed electrical current surges to compress fuel targets to induce fusion. This approach mirrors the technical strategy of Pacific Fusion, but Nardelli’s pivot from AI to fusion is predicated on the belief that advanced computational modeling can accelerate the path to commercial viability. The company's mission is to develop a carbon-free energy source capable of supplying the grid, potentially addressing the high energy demands of AI infrastructure.",
+      "takeaways": [
+        "**Founder Background:** Nantas Nardelli is a former researcher at Google DeepMind, Facebook AI Research, and Microsoft Research Cambridge, and was formerly the head of machine learning at Pacific Fusion.",
+        "**Technical Strategy:** Europa Fusion focuses on a simulation- and data-heavy development model, diverging from the hardware-first approach used by many existing fusion startups.",
+        "**Reactor Architecture:** The company is pursuing a pulsed-power approach, which uses massive, timed electrical surges to compress fuel targets to trigger fusion.",
+        "**Funding:** The startup has secured backing from Spotify founder Daniel Ek."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "81e856d23e6ca940",
+    "canonicalUrl": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+    "title": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+    "publishedAt": "2026-11-20T19:32:08.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.791Z",
+    "contentHash": "e0ef1c2c274d5552",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Tim Fernholz",
+    "contentSnippet": "It’s a big week for Levent Alpöge: The mathematician saw his employer, Anthropic, become the first publicly traded frontier AI lab. He also appears to have solved one of the most important problems in mathematics.\n\n“The precise timing is horrible,” he wrote in an essay announcing his findings and describing how he messaged Anthropic CEO Dario Amodei last Sunday night to ask how to announce that he had found a Lean-compilable solution to the Riemann Hypothesis, which dates back to 1859 and is among the Millennium Prize math problems.\n\nThe Hypothesis conjectures that there is a hidden structure underlying the appearance of prime numbers. If the claimed result holds true, we’re entering sublime-mysteries-of-the-universe territory.\n\nMaybe the best way to understand how exciting this is to the mathematics community is to watch the experts puzzling through the result in a chat on Zulip . Mathematicians like Chris Birkbeck, a number theorist at the University of East Anglia, are posting thoughts like this …\n\nThe cohomology bound is proved by what looks like an automorphy-lifting argument. It genuinely uses the existence of Galois representations attached to regular algebraic, polarized cuspidal automorphic representations of GL_n over CM fields, along with base change, Jacquet–Shalika, Clozel’s purity, Bernstein–Zelevinsky, the main theorem of CM, Deligne–Ribet and more.\n\nFor my part, I tapped out of mathematics at college calculus, so I can’t help decode exactly what that means.\n\nBut that comment was followed by 20 readers reacting 🤯.\n\nIt will be a while before the mathematics community feels like it has a handle on the proof, but most appear confident that the formalized Lean result will hold. Lean is an an open-source coding language used to express mathematical ideas as code, allowing proofs to be formally verified. Several participants in the Zulip chat, including MIT mathematician Andrew Sutherland, say they have successfully confirmed that Alpöge’s solution can be compiled successfully.\n\nAlpöge appeared in his essay to feel a bit guilty about releasing the proof without a truly human-intelligible explanation, but his obsession with the problem since childhood made him feel he “could not live” if he waited to release the finding.\n\nAlpöge described a “stream-of-consciousness jaunt through the experience of finding all the pieces of the argument through incred",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Levent Alpöge, a mathematician at Anthropic, has claimed a solution to the 167-year-old Riemann Hypothesis, one of the seven Millennium Prize problems. Alpöge utilized the AI model Claude to assist in the derivation, describing the process as a \"stream-of-consciousness\" collaboration. The proof has been formalized in Lean, an open-source language for mathematical verification, and has been successfully compiled by independent mathematicians, including MIT’s Andrew Sutherland. The proof reportedly relies on an automorphy-lifting argument involving Galois representations, base change, and various established theorems in number theory.\n\nSimultaneously, Stanford postdoc Alessandro Masullo has released a separate, human-authored proof of the General Riemann Hypothesis. Unlike Alpöge’s Lean-verified work, Masullo’s proof is a traditional manuscript representing 12 years of independent research, which has not yet undergone formal verification. The mathematical community is currently evaluating both submissions, with experts noting that while the Lean compilation of Alpöge’s work is a significant technical milestone, the underlying mathematical logic remains under intense peer review to ensure it is human-intelligible and logically sound.",
+      "takeaways": [
+        "**Lean Verification:** Alpöge’s proof of the Riemann Hypothesis has been successfully compiled and verified using the Lean theorem prover, a process confirmed by independent mathematicians including Andrew Sutherland.",
+        "**Technical Methodology:** The proof utilizes an automorphy-lifting argument, incorporating concepts such as regular algebraic polarized cuspidal automorphic representations of GL_n over CM fields, Clozel’s purity, and Bernstein–Zelevinsky theory.",
+        "**Parallel Research:** NYU mathematician Tristan Buckmaster collaborated with Alpöge on a separate proof regarding the Navier-Stokes equations, released alongside the Riemann Hypothesis findings.",
+        "**Human-Only Alternative:** Stanford postdoc Alessandro Masullo released a 12-year, human-authored proof of the General Riemann Hypothesis, which is currently being reviewed by the community but lacks formal Lean verification."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "9a1d8ce7a277b0cf",
+    "canonicalUrl": "https://siliconangle.com/2026/11/20/ai-data-infrastructure-deals-shrink-year-to-30-days-sc26/",
+    "title": "AI deals shrink to as little as 30 days as the data layer sets the pace",
+    "publishedAt": "2026-11-20T19:27:47.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.544Z",
+    "contentHash": "f35b716cc6c0e6f2",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Kelly Knight",
+    "contentSnippet": "UPDATED 14:27 EST / NOVEMBER 20 2026\n\nAI deals shrink to as little as 30 days as the data layer sets the pace\n\nArtificial intelligence has turned data infrastructure from a back-office purchase into the bottleneck that decides how fast GPUs pay off. As hyperscalers, neoclouds and enterprises race to expand their data layers, the way that infrastructure gets bought is changing just as fast.\n\nThe storage industry’s longtime performance specialist sees that shift as its opening. DataDirect Networks Inc. built its reputation on scale and speed, and those traits now carry more weight in AI infrastructure , according to Kevin Delane (pictured), president and chief revenue officer of DDN.\n\n“When you look at the data layer, performance in the data layer drives value. So yes, it has to be simple, it has to be reliable. Those are table stakes, but performance drives business value,” Delane said.\n\nDelane spoke with theCUBE Research’s Rebecca Knight and John Furrier at SC26 , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how AI infrastructure sales cycles have grown more complex and faster, DDN’s tighter ecosystem work with partners such as Nvidia Corp. and Super Micro Computer Inc., and the company’s hiring for a direct, results-driven culture. (* Disclosure below.)\n\nFaster, more complex AI deals reshape the data layer\n\nThe way companies buy AI infrastructure has changed along with the technology. Deals at neocloud providers no longer go to a single enterprise buyer. They now involve the off-taker renting the capacity, the cloud operator and the integration software layer, Delane explained. Timelines have shrunk just as sharply, from six months to a year for a traditional enterprise sale to as little as 30 days.\n\n“The sales cycle is more complex for sure. The speed is insane,” Delane said. “Sometimes these things are 30 days and you have to be ready to turn things around and really work with your customers and partners quickly.”\n\nDDN is answering with tighter ecosystem work. Its decade-long partnership with Nvidia anchors the strategy, and joint offerings with Super Micro , such as the Enterprise AI HyperPOD, aim to replace a data center buildout with a ready-to-run AI stack. At SC26, DDN also introduced software-defined EXAScaler deployment to give enterprise AI customers more choice of hardware.\n\n“It takes the com",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "DataDirect Networks (DDN) President and CRO Kevin Delane reported at SC26 that AI infrastructure sales cycles have compressed significantly, dropping from traditional 6-12 month windows to as little as 30 days. This acceleration is driven by the critical role of the data layer in maximizing GPU utilization, where performance bottlenecks directly impact the return on investment for hyperscalers and enterprise AI deployments. DDN is responding to this market pressure by shifting its hiring focus toward technical and implementation staff rather than traditional sales roles, aiming to support rapid, results-driven deployments.\n\nTo address the complexity of modern AI infrastructure, DDN is deepening its ecosystem integration with partners like Nvidia and Super Micro Computer. Key offerings include the Enterprise AI HyperPOD, designed to replace custom data center buildouts with a pre-configured, ready-to-run stack that can be operational in approximately three hours. Additionally, DDN has introduced a software-defined version of its EXAScaler deployment to increase hardware flexibility for enterprise customers. Performance benchmarks cited by Delane for DDN’s Managed Lustre service on Google Cloud indicate a 70% improvement in training performance and a 40% increase in overall GPU efficiency.",
+      "takeaways": [
+        "**Sales Cycle Compression:** AI infrastructure procurement timelines have shrunk from 6-12 months to as little as 30 days due to the urgency of GPU utilization.",
+        "**Deployment Speed:** The DDN and Super Micro Enterprise AI HyperPOD is marketed to enable enterprise AI pod setup within 3 hours.",
+        "**Performance Benchmarks:** DDN’s Managed Lustre service on Google Cloud demonstrated 70% better training performance and 40% higher GPU efficiency.",
+        "**Strategic Pivot:** DDN is prioritizing the hiring of technical and implementation personnel over sales staff to support a three-fold growth trajectory.",
+        "**Product Expansion:** DDN introduced software-defined EXAScaler deployments to provide customers with greater hardware choice."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cf3b0c6c1cbc2369",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/20/ravi-vakil/",
+    "title": "Quoting Ravi Vakil",
+    "publishedAt": "2026-11-20T19:21:49.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.546Z",
+    "contentHash": "65b6af4a55cadf4a",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "20th November 2026 Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft.\n\n— Ravi Vakil , Hurried Announcement: Alessandro Masullo GRH\n\nRecent articles Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 This is a quotation collected by Simon Willison, posted on 20th November 2026 .",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Stanford professor Ravi Vakil has announced that mathematician Alessandro Masullo has developed a proposed proof for the Generalized Riemann Hypothesis (GRH). The proof, which is entirely human-authored and contains no AI-generated content, has been under rigorous review by Brian Conrad for several months. Conrad has provided extensive feedback that is currently being incorporated into the manuscript.\n\nWhile the initial plan involved bringing Masullo to Stanford for a one-year residency to refine the documentation before a formal announcement, the current strategy has shifted toward releasing the draft publicly. The announcement was shared by Simon Willison on November 20, 2026, noting that the proof is currently looking promising as it undergoes final adjustments.",
+      "takeaways": [
+        "**Core Subject:** Alessandro Masullo has authored a proposed proof for the Generalized Riemann Hypothesis.",
+        "**Review Process:** Brian Conrad has spent months providing detailed feedback on the proof, which is currently being integrated.",
+        "**Methodology:** The proof is explicitly stated to be entirely human-authored with no AI involvement.",
+        "**Strategic Shift:** The release plan moved from a year-long residency at Stanford for polishing to an immediate public release of the current draft."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "3afdf5a7b1a6fd8a",
+    "canonicalUrl": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+    "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+    "publishedAt": "2026-11-20T18:50:19.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.792Z",
+    "contentHash": "f6ce929e87ffef33",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Lauren Feiner",
+    "contentSnippet": "President Donald Trump promised to put a “tremendous tax” on companies that build data centers outside of the US, even as states and cities around the country are placing restrictions on new applications to build them. “We’re not going to allow our companies to build data centers outside of our country,” Trump said at a press conference Friday following his summit with China President Xi Jinping and Russia President Vladimir Putin. “They allowed that to happen with chips and everything else, and it was very destructive to our country. It’s where we started going behind.” Should the US allow data centers to be built outside of the country, Trump warned, “China will take them all.” [Media: https://www.youtube.com/watch?v=VD-KP5xTESY] Trump didn’t share many details behind the plan, and apparently was floating the proposal publicly for the first time. “I don’t know if that’s a breaking story. But I haven’t even said that to my people,” Trump said, flanked by Vice President JD Vance and Secretary of State Marco Rubio. “But I’m telling them now. They’re here. Many of them are here.” Trump’s promise could be difficult to fulfill with a new Democratic majority Congress being sworn in within a couple of months. Even members of his own party recognize that the data center buildout has become an unpopular issue across the board. With states installing moratoriums and new restrictions on data center proposals, companies may be forced to look outside of the country, but Trump’s threat is an attempt to make that a less attractive alternative. Here’s a transcript of the key part of Trump’s remarks: > Whoever wins SI wins. And you ought to take advantage of the data centers. Make them pay you. Make them pay your community. But take advantage. Don’t shut them off. And there’s always somebody else in this country. But if it’s not this country, there’s somebody else outside. > We’re not going to allow our companies to build data centers outside of our country. We’re not going to allow that to happen. You know, they allowed that to happen with chips and everything else, and it was very destructive to our country. It’s where we started going behind. > So I just, I don’t know if that’s a breaking story. But I haven’t even said that to my people, but I’m telling them now. They’re here. Many of them are here. And we’re not going to allow companies to build data centers in other co",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/09/STK466_ELECTION_2024_CVirginia_E.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "President Donald Trump has proposed a \"tremendous tax\" on U.S. companies that construct AI data centers outside of the United States. Speaking at a press conference alongside Vice President JD Vance and Secretary of State Marco Rubio, Trump framed the policy as a strategic necessity to prevent China from gaining a competitive advantage in AI infrastructure, drawing a parallel to the historical offshoring of semiconductor manufacturing.\n\nThe proposal, which Trump indicated had not yet been formally vetted by his administration, arrives as domestic data center development faces increasing scrutiny and local moratoriums across various U.S. jurisdictions. While Trump encouraged local communities to \"take advantage\" of data center projects by extracting payments, his threat of taxation serves as a deterrent against the industry seeking international alternatives to avoid domestic regulatory hurdles. The implementation of such a policy faces significant legislative uncertainty, particularly with a Democratic majority Congress set to be sworn in shortly.",
+      "takeaways": [
+        "**Policy Proposal:** President Trump threatened a \"tremendous tax\" on U.S. firms that build AI data centers in foreign countries.",
+        "**Strategic Rationale:** The administration views domestic data center retention as critical to preventing China from securing a technological lead in AI infrastructure.",
+        "**Legislative Context:** The proposal faces potential friction from an incoming Democratic majority Congress and existing local-level moratoriums on data center construction.",
+        "**Administrative Status:** Trump stated the proposal was floated publicly for the first time and had not yet been discussed with his internal policy staff."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "001e6b6e613bbaaf",
+    "canonicalUrl": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+    "title": "The most misunderstood graph in AI just got a major update",
+    "publishedAt": "2026-11-20T18:15:15.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.793Z",
+    "contentHash": "3e04d38e1b285ad7",
+    "sourceId": "mit-tech-ai",
+    "sourceName": "MIT Technology Review",
+    "author": "Grace Huckins",
+    "contentSnippet": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The report is an update to the organization’s time horizon plot, which was widely shared— and widely misinterpreted , owing to the complexity of the measures it used. METR evaluated models by having them attempt a large suite of tasks, each of which had also been completed by humans. Each task’s difficulty was scored by how long it took the human testers to finish it—and then models were rated according to the length of the tasks that they could complete. That plot showed that AI systems were rapidly improving—every four months, the length of the tasks that frontier models could successfully complete doubled. The updated plot adds more tasks—some that are estimated to take humans far longer than those in the original suite, and others that are more open-ended. One of the biggest questions in AI right now is the extent to which progress on “verifiable” tasks—where it’s possible to check automatically whether an AI system has succeeded or failed—carry over into tasks on which success or failure is harder to measure. We know how to teach neural networks how to do verifiable tasks: Researchers have the systems attempt one many times, strengthen the neural pathways that contribute to success, and weaken the pathways that contribute to failures. That’s why AI systems have become so good at coding and math, two domains where it’s possible to determine automatically whether a solution does or doesn’t work. It’s much harder to apply this technique, known as reinforcement learning, to tasks where success is less well defined or takes longer to ascertain—such as choosing a new research direction. For the same reason, it’s tough to evaluate AI performance on these tasks, so METR’s original time horizon plot didn’t include any of them. But it’s precisely this type of task that will prove essential if AI systems are to automate research and development. And AI research and development is an especially hot topic right now. Parts of the AI community are still reeling from a different, heavily redacted METR report from earlier this month, which claimed that AI might be speeding up the pace of AI progress at Anthropic by a factor ",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The AI evaluation nonprofit METR has released an update to its 'time horizon' plot, a metric designed to track AI capability growth by comparing model performance against human-timed task completion. The original plot, which suggested that frontier model capabilities doubled every four months, relied on verifiable tasks where success is easily automated. The updated report expands this suite to include more open-ended and time-intensive tasks, revealing that while AI continues to show exponential improvement in verifiable domains like coding and mathematics, progress is less consistent in areas requiring subjective judgment or long-term research planning.\n\nThis discrepancy highlights a fundamental limitation in current reinforcement learning (RL) methodologies. Because RL relies on clear success/failure signals to strengthen or weaken neural pathways, models excel at tasks with objective, verifiable outcomes. However, this approach struggles with tasks where success is ill-defined or requires extended evaluation, such as determining novel research directions. METR’s update aims to address these gaps, as the ability to automate R&D is considered a critical frontier for future AI development. The report follows recent industry discourse surrounding a separate, redacted METR study that suggested AI-driven automation could significantly accelerate the pace of research at organizations like Anthropic.",
+      "takeaways": [
+        "**Metric Methodology:** METR evaluates AI by measuring the time required for humans to complete specific tasks and then assessing the model's ability to complete tasks of equivalent duration.",
+        "**Capability Growth:** The original METR time horizon plot indicated that the complexity of tasks successfully completed by frontier models doubled every four months.",
+        "**RL Limitations:** Reinforcement learning is highly effective for verifiable tasks like coding and math but remains difficult to apply to open-ended research tasks where success is hard to define.",
+        "**Research Focus:** The updated plot incorporates longer-duration and more open-ended tasks to better assess AI's potential for automating research and development."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b2ca41e27ffcd523",
+    "canonicalUrl": "https://siliconangle.com/2026/11/20/model-plane-shifts-prem-agentic-ai-favors-owning-compute-sc26/",
+    "title": "Own, don’t rent: Why agentic AI is pulling cloud computing back on-prem",
+    "publishedAt": "2026-11-20T17:46:33.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.544Z",
+    "contentHash": "52bc279ab52d2a60",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Kelly Knight",
+    "contentSnippet": "UPDATED 12:46 EST / NOVEMBER 20 2026\n\nOwn, don’t rent: Why agentic AI is pulling cloud computing back on-prem\n\nAgentic AI is reviving an argument over renting versus owning compute, and the model plane — the layer that decides where AI models run — sits at the center of it. Open-source efforts such as Upbound Inc.’s Modelplane route inference across clouds, but many enterprises want the models on hardware they control.\n\nThat shift favors companies that built early for on-premises cloud infrastructure. Oxide Computer Co., which raised $445 million in October to expand rack production, built its business on the idea that enterprises at scale will want to own their computers, according to Bryan Cantrill (pictured), co-founder and chief technology officer at Oxide.\n\n“Cloud computing is great, but the model shouldn’t be exclusively to rent it. You get to a certain scale, as it turns out, you want to own your own computer,” Cantrill said.\n\nCantrill spoke with theCUBE Research’s John Furrier at SC26 , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed renting versus owning compute, why agentic workloads are moving on-prem and multi-tenancy for isolating those workloads.\n\nAgentic workloads move on-prem\n\nAgentic workloads are driving an explosion in compute demand, and much of it is CPU-heavy work that enterprises would rather own than rent. Economics remains the main reason to bring it in-house, but where models live is a close second, Cantrill explained. That makes the model plane as much a data governance decision as an infrastructure one.\n\n“There is a real enterprise drive towards open-weight models, and I think you’re going to see more and more of that as people want to run the models on-prem and allow their data to not actually leave,” Cantrill said.\n\nSecurity is the other half. Oxide stripped the UEFI BIOS and baseboard management controller out of its rack to shrink the attack surface, and built public cloud-grade multi-tenancy in from the start. Those early design choices give enterprises a perimeter for isolating agentic workloads, according to Cantrill.\n\n“I think multi-tenancy means you’ve got potentially adversarial tenants that are going to be on the same resource,” Cantrill said. “They’re going to be sharing the same computer, sharing the same network, and they need to do that … without violating the conf",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Oxide Computer Co. is positioning its on-premises cloud infrastructure as the optimal environment for agentic AI workloads, citing economic and security advantages over public cloud rental models. CTO Bryan Cantrill, speaking at SC26, argued that as enterprises scale, the need to maintain data sovereignty and control over model execution environments drives a shift toward owning hardware. Oxide recently secured $445 million in October to scale its rack production, targeting organizations that require elastic compute capabilities within their own data centers.\n\nTechnically, Oxide’s hardware architecture is designed to minimize the attack surface by removing traditional UEFI BIOS and baseboard management controllers. The platform incorporates public cloud-grade multi-tenancy, specifically engineered to isolate potentially adversarial agentic workloads sharing the same physical resources. Beyond AI, the infrastructure is designed to support legacy virtualization workloads, providing a migration path for enterprises seeking alternatives to Broadcom’s VMware pricing models.",
+      "takeaways": [
+        "**Funding:** Oxide Computer Co. raised $445 million in October 2026 to expand its rack production capacity.",
+        "**Security Architecture:** Oxide hardware eliminates UEFI BIOS and baseboard management controllers to reduce the attack surface for on-premises deployments.",
+        "**Multi-tenancy:** The platform is built to support adversarial multi-tenancy, allowing multiple AI agents to share compute and network resources without compromising data confidentiality.",
+        "**Market Positioning:** Oxide is targeting enterprises looking to move away from VMware virtualization while simultaneously hosting open-weight AI models to ensure data remains within the corporate perimeter."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "229f48cda6413102",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/20/radixark-daisyrose-27b-agentic-model/",
+    "title": "RadixArk Ships DaisyRose-27B, a 27B Agentic Coding Model Trained With Reinforcement Learning Only",
+    "publishedAt": "2026-11-20T17:42:29.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.545Z",
+    "contentHash": "0e0e4e39156a9c32",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "This week RadixArk released DaisyRose-27B , its first open-weight model. DaisyRose-27B is an agentic coding model from RadixArk, post-trained from Qwen3.8-27B with reinforcement learning (RL). The model card page states that it used RL only, with no SFT or distillation. It ships under Apache 2.0 as a drop-in replacement for the base model. The main result: Terminal Bench 4.1 pass@1 rises from 5.6 to 12.0. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 27.8B dense parameters (0.46B vision encoder, 0.42B MTP head), 262,144-token context. Runs on: 1 GPU. BF16 is about 52 GB, FP8 about 29 GB, NVFP4 about 23 GB (Blackwell only). Listed targets: H200, B200, GB300, RTX PRO 6000, RTX 5090, DGX Spark. GGUF also available. Performance: Beats its Qwen3.8-27B base on all 7 reported benchmarks. Best: IFBench 82.4, the top score among the 9 models RadixArk compared. Worst: HLE (text only) 34.3, only +0.4 over the base and below Inkling 2 Small’s 44.1. Bottom line: Best: Terminal Bench 4.1 more than doubles after 18 days of RL. Worst: it still trails much larger MoE models on hard agentic tasks. What is DaisyRose-27B? DaisyRose-27B keeps the Qwen3.8-27B architecture unchanged. The model card lists 64 decoder layers in a 3:1 pattern. Three Gated DeltaNet linear-attention layers alternate with 1 full-attention layer. Hidden size is 5,120. A 27-layer vision encoder handles images. One multi-token-prediction layer supports speculative decoding. Input is text and images, output is text, and it is a thinking model. How was DaisyRose-27B trained? RadixArk built about 1,200 curated tasks with Eigent AI , chosen from thousands of candidates. Each task targets a specific failure of the base model. Each sandbox attempt allows up to 1.5 hours, 100+ tool calls and 256k+ output tokens. Agent sessions reach up to 1M tokens, per the blog . Training ran on Miles , RadixArk’s open-source RL framework, in fully asynchronous mode. The run used 144 H200 GPUs for 18 days. Of those, 128 handled agent inference and 16 handled training. Total compute was 63,000 GPU-hours. RadixArk reports 37% MFU on its internal backend. An open-source Megatron-based trainer reached 16%. End-to-end throughput was 16.8k tokens/s versus 8.3k, a 2.0x speedup. RadixArk says this cut GPU time by 57%. Sandboxes ran on AgentENV . RadixArk reports about 94",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "This week RadixArk released DaisyRose-27B , its first open-weight model. DaisyRose-27B is an agentic coding model from RadixArk, post-trained from Qwen3.8-27B with reinforcement learning (RL). The model card page states that it used RL only, with no SFT or distillation.\n\nIt ships under Apache 2.0 as a drop-in replacement for the base model. The main result: Terminal Bench 4.1 pass@1 rises from 5.6 to 12.0. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension .",
+      "takeaways": [
+        "TL;DR Size: 27.8B dense parameters (0.46B vision encoder, 0.42B MTP head), 262,144-token context.",
+        "BF16 is about 52 GB, FP8 about 29 GB, NVFP4 about 23 GB (Blackwell only).",
+        "Listed targets: H200, B200, GB300, RTX PRO 6000, RTX 5090, DGX Spark.",
+        "Performance: Beats its Qwen3.8-27B base on all 7 reported benchmarks."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "fc059eec5b023eb8",
+    "canonicalUrl": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
+    "title": "Chips can survive the space environment — can their financing?",
+    "publishedAt": "2026-11-20T17:40:01.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.791Z",
+    "contentHash": "67528f810b5b4eb6",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Tim Fernholz",
+    "contentSnippet": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?",
+    "category": "Business & Big Tech",
+    "lab": "SpaceX & xAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "675650dffca0c9d4",
+    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+    "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+    "publishedAt": "2026-11-20T16:34:13.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.792Z",
+    "contentHash": "fe6d7dd973456d95",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Robert Hart",
+    "contentSnippet": "Anthropic went public on November 19th, 2026. | Photo: Getty Images Anthropic mathematician Levent Alp&ouml;ge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval already unleashed by OpenAI's previous, often inelegant forays into the field. Alp&ouml;ge's solution has yet to be verified independently. Anthropic has not commented or involved itself in Alp&ouml;ge's announcement. In a document on his website , Alp&ouml;ge says he texted Anthropic CEO Dario Amodei abo … Read the full story at The Verge.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2305894185.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Anthropic went public on November 19th, 2026. | Photo: Getty Images Anthropic mathematician Levent Alp&ouml;ge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval already unleashed by OpenAI's previous, often inelegant forays into the field.\n\nAlp&ouml;ge's solution has yet to be verified independently. Anthropic has not commented or involved itself in Alp&ouml;ge's announcement. In a document on his website , Alp&ouml;ge says he texted Anthropic CEO Dario Amodei abo … Read the full story at The Verge.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "f27b1f34ce20932c",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+    "title": "Quoting Levent Alpöge",
+    "publishedAt": "2026-11-20T16:30:48.000Z",
+    "fetchedAt": "2026-11-20T22:48:36.546Z",
+    "contentHash": "7bc0a1e683d218ca",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...] Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line. — Levent Alpöge , alpo.ge/remark.pdf Tags: anthropic , claude , generative-ai , mathematics , ai , llms , levent-alpoge",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions.\n\nIt is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...] Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.",
+      "takeaways": [
+        "— Levent Alpöge , alpo.ge/remark.pdf Tags: anthropic , claude , generative-ai , mathematics , ai , llms , levent-alpoge."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "c24425d23a4f3b97",
     "canonicalUrl": "https://siliconangle.com/2026/11/20/anthropic-goes-public-but-is-it-too-late-to-save-the-ai-trade/",
     "title": "Anthropic goes public, but is it too late to save the AI trade?",
@@ -100,7 +539,7 @@
     "contentSnippet": "There was a dayslong Outlook outage. A nationwide ground stop for only the second time in 25 years. Banks seemed to suddenly stop working. Even iCloud couldn’t stay up and running. This week, it felt like the technological world simply collapsed. And it felt like this might be the beginning of something even bigger. On this episode of The Vergecast, Nilay and David go through the week’s many calamities, and try to explain both what happened in each case — which was generally much milder than the conspiracy theories would have you believe — and why all these small issues might still add up to something worth worrying about. In a world filled with more AI and fewer humans, we’re going to see new kinds of problems and often struggle to find the fixes. After that, the hosts discuss the latest in the Jensen Huang / Nvidia scandal, which is increasingly less about affairs and more about the allegedly very big business of illegally smuggling chips to China. Huang will not be back as Nvidia CEO anytime soon, no matter what a bunch of X users want, and the fallout of his exit seems likely to only increase. Finally, in the lightning round, it’s time for Brendan Carr is a Dummy, Nilay’s experience with his always-listening Apple Watch, Google’s inability to name products, and much more. Watch | Listen | Get ad-free In case you missed it this week: We also talked about e-readers, computer chips, GTA VI, and the world after GTA VI. And we want to hear all your thoughts about all of it! Call the Hotline at 866-VERGE11, send us an email at vergecast@theverge.com, and tell us everything that’s on your mind. And make sure you subscribe so you don’t miss an episode!",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/VRG_VST_111926_Site.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This episode of The Vergecast, hosted by Nilay Patel and David Pierce, analyzes a series of high-profile technological service disruptions that occurred within a single week, including outages affecting Microsoft Outlook, iCloud, and a nationwide ground stop. The hosts argue that while individual incidents were less severe than public speculation suggested, the cumulative frequency of these failures highlights systemic vulnerabilities in an increasingly automated, AI-driven infrastructure where human oversight is diminishing.\n\nThe discussion shifts to Nvidia, specifically addressing the ongoing controversy surrounding CEO Jensen Huang. The hosts clarify that the situation has evolved beyond personal allegations to focus on the significant business implications of illegal chip smuggling to China. They emphasize that Huang’s departure as CEO is definitive, despite social media speculation to the contrary, and suggest that the resulting corporate fallout is expected to intensify.",
@@ -128,7 +567,7 @@
     "author": "Lauren Forristal",
     "contentSnippet": "Tech companies are racing to figure out how AI can make everyday work a little easier.\n\nFrom notetakers to webcams that follow your movements, here are AI-powered gadgets worth checking out if you want to upgrade your workspace.\n\nFlowtica Scribe Pen ($159)\n\nIf you’re constantly scribbling notes during meetings, Flowtica’s Scribe could save you from having to type everything up afterward.\n\nThe AI-powered pen combines traditional handwriting with audio recording. You can use its built-in gel pen to take notes, tap the side to highlight important points, and press the end of the pen to start recording audio. Once the meeting is over, its AI can transcribe the conversation, summarize key takeaways, and create a to-do list based on what was discussed.\n\nYou can even ask the AI questions about the meeting to find specific information without having to go through the entire recording.\n\nThe Scribe comes with a built-in microphone and 32GB of onboard storage. It can also identify up to 15 different speakers and supports 92 languages.\n\nAnker Soundcore Work ($159)\n\nAnker’s AI-powered recording pin, Soundcore Work , is designed to capture conversations, meetings, and quick voice memos without taking up much space on your desk.\n\nPriced at $159, the coin-sized device comes with a puck-shaped charging case and can record for up to eight hours on a single charge, extending to 32 hours when used with its case. Anker also claims a recording range of up to five meters, making it useful for capturing conversations around a meeting table.\n\nThe companion app handles transcription and uses AI to turn recordings into more organized notes and summaries. Users also get 300 minutes of free audio transcription each month.\n\nIf you need more recording capacity or access to additional AI features, Anker offers optional subscription plans, including Pro ($99 per year) and Unlimited ($239 per year).\n\nLogitech MX Keypad ($99)\n\nLogitech’s MX Keypad brings AI shortcuts directly to your desk, with dedicated buttons that let you launch your preferred AI assistant or trigger specific productivity tools with a single press. If you frequently switch between different apps and AI assistants, having these shortcuts within reach could make your workday easier.\n\nThe keypad can be configured to work with tools such as GitHub Copilot and Claude Code, along with a range of popular productivity and creative",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "This briefing covers six hardware products integrating AI for home office productivity, ranging from transcription tools to smart furniture. The Flowtica Scribe Pen ($159) and Anker Soundcore Work ($159) focus on meeting capture; the Scribe Pen features 32GB storage, 15-speaker identification, and 92-language support, while the Soundcore Work offers an 8-hour battery (32 hours with case) and 300 minutes of free monthly transcription. Amazon’s Kindle Scribe Colorsoft ($629) targets professionals with AI-driven handwriting cleanup, document summarization, and cross-note search capabilities.\n\nProductivity and environmental hardware include the Logitech MX Keypad ($99), which provides dedicated physical shortcuts for tools like GitHub Copilot, Claude Code, and Adobe Creative Suite. The Insta360 Link 2 Pro ($249) is a 4K webcam utilizing AI for intelligent subject tracking, group framing, and noise cancellation. Finally, the Autonomous Desk Pro ($599) functions as an AI-monitored standing desk that tracks user posture, suggests movement intervals, and monitors environmental metrics such as CO2 levels.",
@@ -173,6 +612,28 @@
       "readTimeMinutes": 3,
       "generatedWith": "gemini",
       "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7ad44f990f0c53ef",
+    "canonicalUrl": "https://openai.com/index/combatting-adversarial-distillation",
+    "title": "Combatting adversarial distillation",
+    "publishedAt": "2026-11-20T10:00:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:37.101Z",
+    "contentHash": "d0ad00f6ddc85b8d",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
     }
   },
   {
@@ -1941,26 +2402,26 @@
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2/",
     "title": "Amazon SageMaker Inference: 2026 launches in review, part 2",
     "publishedAt": "2026-11-20T00:34:07.000Z",
-    "fetchedAt": "2026-11-20T07:24:23.729Z",
-    "contentHash": "595025d5184aa44b",
+    "fetchedAt": "2026-11-20T22:48:35.120Z",
+    "contentHash": "4f2f93b1b0855a11",
     "sourceId": "aws-ml",
     "sourceName": "AWS Machine Learning",
     "author": "Aryaman Kothari",
-    "contentSnippet": "Once a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them. For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework. For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape. Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts. To keep each section concrete, we follow one hypothetical team through the blog post. In the spring, they launched a customer support assistant on a 70B-parameter model behind a single SageMaker AI endpoint, using the launches from part 1. By the fall, they need to support more product lines, adopt a larger reasoning model, serve customers in a second Region, and keep their GPU bill flat. The launches at a glance Figure 1: The five stages in this post and the launches in each Choose the right configuration from wherever you work The team picked its first configuration from a benchmark run in April. Since then, they have added four LoRA (Low-Rank Adaptation) adapters, one for each product line, and the product team has set a target of 500 milliseconds for time to first token (TTFT) at peak load. The April configuration was never tested against either change. The engineers who will re-run the analysis work in notebooks and coding agents, and few of them use the console. Inference recommendations launched in April as an API. Four updates since then make it available in more of the places teams work, and let it answer two harder questions: how many adapters an endpoint can carry, and how much concurrency it can take before it misses a latency target. A new agent skill brings the same expertise into coding agents. Inference recommendations in SageMaker AI Studio (July 2026) Blog: Laun",
-    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/19/ML-22497-1.png",
+    "contentSnippet": "From first endpoint to global fleet: 13 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26. Once a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them. For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework. For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape. Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts. To keep each section concrete, we follow one hypothetical team through the blog post. In the spring, they launched a customer support assistant on a 70B-parameter model behind a single SageMaker AI endpoint, using the launches from part 1. By the fall, they need to support more product lines, adopt a larger reasoning model, serve customers in a second Region, and keep their GPU bill flat. The launches at a glance Figure 1: The five stages in this post and the launches in each Choose the right configuration from wherever you work The team picked its first configuration from a benchmark run in April. Since then, they have added four LoRA (Low-Rank Adaptation) adapters, one for each product line, and the product team has set a target of 500 milliseconds for time to first token (TTFT) at peak load. The April configuration was never tested against either change. The engineers who will re-run the analysis work in notebooks and coding agents, and few of them u",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/Screenshot-2026-11-20-at-3.27.51%E2%80%AFPM.png",
     "category": "Robotics & Hardware",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Once a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them.\n\nFor HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework. For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape.",
+      "tldr": "From first endpoint to global fleet: 13 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26.\n\nOnce a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them.",
       "takeaways": [
-        "Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts.",
-        "To keep each section concrete, we follow one hypothetical team through the blog post.",
-        "In the spring, they launched a customer support assistant on a 70B-parameter model behind a single SageMaker AI endpoint, using the launches from part 1.",
-        "By the fall, they need to support more product lines, adopt a larger reasoning model, serve customers in a second Region, and keep their GPU bill flat."
+        "For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking.",
+        "The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework.",
+        "For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape.",
+        "Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts."
       ],
       "impact": "High",
-      "readTimeMinutes": 3,
+      "readTimeMinutes": 7,
       "generatedWith": "heuristic"
     }
   },
@@ -2007,6 +2468,72 @@
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "8145fefb47ff1ca9",
+    "canonicalUrl": "https://openai.com/business/customer-stories/hebbia",
+    "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+    "publishedAt": "2026-11-20T00:00:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:37.101Z",
+    "contentHash": "2aac48a05cd79ccc",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "c1a2af93db54bfcf",
+    "canonicalUrl": "https://openai.com/index/introducing-medchembench",
+    "title": "Can AI help scientists identify promising drug candidates?",
+    "publishedAt": "2026-11-20T00:00:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:37.101Z",
+    "contentHash": "f5d2e2b9672fadee",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "824c03b970f1dc58",
+    "canonicalUrl": "https://huggingface.co/blog/inkling2mini",
+    "title": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup",
+    "publishedAt": "2026-11-20T00:00:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:37.106Z",
+    "contentHash": "2f05b58bc5d93e02",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup.",
       "takeaways": [],
       "impact": "Notable",
       "readTimeMinutes": 1,
@@ -3623,7 +4150,7 @@
         "The answer is important because it can help us calibrate our anxieties and develop the most effective possible responses to this emerging technology."
       ],
       "impact": "Breakthrough",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -6486,6 +7013,36 @@
       "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "fb863575ba5ebd3c",
+    "canonicalUrl": "https://arxiv.org/abs/2611.26627",
+    "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+    "publishedAt": "2026-11-19T00:00:00.000Z",
+    "fetchedAt": "2026-11-20T22:48:35.093Z",
+    "contentHash": "e7b19b3db62e778f",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Tuna Han Salih Meral, Kaan Oktay, Alec Helbling, Atakan Kara",
+    "contentSnippet": "Authors: Tuna Han Salih Meral , Kaan Oktay , Alec Helbling , Atakan Kara , Duen Horng Chau , Pinar Yanardag\n\nAbstract: Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.\n\nNotes: Project page: this https URL",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.26627",
+    "pdfUrl": "https://arxiv.org/pdf/2611.26627",
+    "summary": {
+      "tldr": "Researchers Tuna Han Salih Meral et al. demonstrate that reinforcement learning (RL) post-training in diffusion transformers—specifically for visual quality, text rendering, and compositional accuracy—functions primarily as a form of activation steering rather than learning complex, input-dependent transformations. By applying a fixed set of steering vectors to the block outputs of frozen base models, the authors show that these input-independent shifts can replicate the performance gains of traditional RL-tuned models. The study focuses on SD3.5-M, where the steering vectors utilize 65x fewer parameters (0.29M) compared to standard RL-tuned LoRA adapters (18.8M).\n\nExperimental results indicate that these static vectors recover 90.0% to 96.3% of the reward gains across six RL-tuned image models and between 89.8% and 111.9% for two video models. When initialized at zero and trained via online RL, the steering vectors outperformed weight-based RL on specific metrics including text rendering (OCR) and human preference (PickScore) on SD3.5-M. The findings suggest that current RL post-training methods for diffusion models are largely steering the pretrained generator toward capabilities it already possesses, rather than developing new, prompt-dependent logic.",
+      "takeaways": [
+        "**Parameter Efficiency:** Steering vectors require only 0.29M parameters, compared to 18.8M for standard RL-tuned LoRA, representing a 65x reduction in parameter count.",
+        "**Performance Recovery:** Static steering vectors recover 90.0–96.3% of reward gains for image models and up to 111.9% for video models compared to full RL-tuned checkpoints.",
+        "**Methodology:** The vectors are added to the block outputs of frozen base models and are identical for every prompt, token, and sampling seed, proving that input-independent shifts drive the majority of RL gains.",
+        "**Benchmark Superiority:** Initialized at zero and trained with online RL, the steering vectors outperformed weight-based RL on OCR and PickScore metrics for SD3.5-M."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -10286,559 +10843,6 @@
         "Across multiple world models, environments, and PTQ methods, WM-Quant substantially improves planning success at low bit-widths, approaching full-precision performance at W4A4."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "475f1cf7a6e873f2",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21895",
-    "title": "World-Grounded Reinforcement Learning for Pollution-Aware Bird Movement Modeling Using a Multi-Instance DQN Framework",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "e181979b76de117e",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Shivin Mangal, Divyansh Chawla, Anshu Garg, Isshaan Singh",
-    "contentSnippet": "arXiv:2611.21895v1 Announce Type: new Abstract: Birds are modeled as environmentally sensitive agents whose movement reflects real-world air quality conditions, where AQI serves as a measurable world feedback signal representing pollution-driven consequences. Instead of relying on human preference or synthetic rewards, the system uses environmental outcomes as the primary training signal, enabling policy learning grounded in ecological impact. We propose a multi-instance reinforcement learning simulation in which agents navigate a 2D grid representation of India integrated with a precomputed AQI matrix and geographic state boundaries. The framework combines bird call metadata from the Xeno-canto dataset, spatial discretization, and real environmental data to learn adaptive navigation strategies under pollution constraints. To ensure scalability and efficiency, repeated real-time API queries are replaced by a structured AQI mapping that enables fast lookup during training and execution. Multiple baselines, including Monte Carlo, Q-Learning, and Value Iteration, are evaluated for comparison. Deep Q-Network demonstrates stronger stability, adaptability, and cumulative performance across varying environmental conditions, establishing a scalable foundation for world-feedback driven ecological decision modeling.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21895",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21895.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21895v1 Announce Type: new Abstract: Birds are modeled as environmentally sensitive agents whose movement reflects real-world air quality conditions, where AQI serves as a measurable world feedback signal representing pollution-driven consequences. Instead of relying on human preference or synthetic rewards, the system uses environmental outcomes as the primary training signal, enabling policy learning grounded in ecological impact. We propose a multi-instance reinforcement learning simulation in which agents navigate a 2D grid representation of India integrated with a precomputed AQI matrix and geographic state boundaries.\n\nThe framework combines bird call metadata from the Xeno-canto dataset, spatial discretization, and real environmental data to learn adaptive navigation strategies under pollution constraints. To ensure scalability and efficiency, repeated real-time API queries are replaced by a structured AQI mapping that enables fast lookup during training and execution. Multiple baselines, including Monte Carlo, Q-Learning, and Value Iteration, are evaluated for comparison.",
-      "takeaways": [
-        "Deep Q-Network demonstrates stronger stability, adaptability, and cumulative performance across varying environmental conditions, establishing a scalable foundation for world-feedback driven ecological decision modeling."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3e69db26a39e52e1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.23718v1",
-    "title": "HypoLoop: Revising Weight-Editing Plans from Scientific Feedback",
-    "publishedAt": "2026-11-18T02:20:07.000Z",
-    "fetchedAt": "2026-11-19T08:51:58.588Z",
-    "contentHash": "bb44488124817c07",
-    "sourceId": "arxiv-deepseek",
-    "sourceName": "arXiv DeepSeek & Reasoning Research",
-    "author": "Mengran Li",
-    "contentSnippet": "Scientific experiments continually reveal prediction errors. Effective updates depend on which parameters change and which errors drive the correction. We introduce HypoLoop, a family of native weight-editing methods that connects these choices to experimental feedback. Fixed, numerically adaptive, and LLM-guided policies produce editing plans; numerical solvers compute weight patches, and internal validation selects the deployed predictor. Successive observations and validation records support revisions to editable locations and fitting rules. Experiments cover 22 scientific tasks and both DeepSeek and Claude. On Burgers, reallocating a matched parameter budget reduces error by 58.80% and 47.72% relative to fixed locations. On DIODE, positive-residual weighting reduces absolute relative error (AbsRel) by 13.35% in internal cross-validation, with the same 33 editable coordinates. Revising the complete plan across rounds lowers final AbsRel by 10.59% relative to keeping the initial plan fixed. SpaceNet7 and Make3D connect accepted edits to improved spatial predictions. These results show how experimental evidence can shape the update problem itself. Code: https://github.com/limengran98/HypoLoop.",
-    "category": "Open Source & Research",
-    "lab": "DeepSeek",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.23718",
-    "pdfUrl": "https://arxiv.org/pdf/2611.23718.pdf",
-    "summary": {
-      "tldr": "Scientific experiments continually reveal prediction errors. Effective updates depend on which parameters change and which errors drive the correction. We introduce HypoLoop, a family of native weight-editing methods that connects these choices to experimental feedback.\n\nFixed, numerically adaptive, and LLM-guided policies produce editing plans; numerical solvers compute weight patches, and internal validation selects the deployed predictor. Successive observations and validation records support revisions to editable locations and fitting rules. Experiments cover 22 scientific tasks and both DeepSeek and Claude.",
-      "takeaways": [
-        "On Burgers, reallocating a matched parameter budget reduces error by 58.80% and 47.72% relative to fixed locations.",
-        "On DIODE, positive-residual weighting reduces absolute relative error (AbsRel) by 13.35% in internal cross-validation, with the same 33 editable coordinates.",
-        "Revising the complete plan across rounds lowers final AbsRel by 10.59% relative to keeping the initial plan fixed.",
-        "SpaceNet7 and Make3D connect accepted edits to improved spatial predictions."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b330164a6f0ccccf",
-    "canonicalUrl": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
-    "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future  deals in doubt",
-    "publishedAt": "2026-11-18T01:44:21.000Z",
-    "fetchedAt": "2026-11-18T02:35:41.425Z",
-    "contentHash": "353105393b303944",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Dominic-Madori Davis, Marina Temkin",
-    "contentSnippet": "Nvidia’s equity in private companies continues to grow: it revealed its stakes are now worth $65.5 billion on Tuesday , up from the $22 billion reported in January. The increase includes both new investments and significant markups of existing portfolio companies.\n\nThe company invested $16 billion into equities in the past quarter alone, it said, and $58 billion in the past nine months of its fiscal year. This amount includes buying shares in public and private companies, yet it shows how the chipmaker made massive bets over the course of the year, especially compared to last year ; in November 2025, the company reported spending $5 billion buying equity in the first nine months of that fiscal year.\n\nBut it’s unclear if this growth will continue under the interim CEO and Jensen Huang’s successor.\n\nNvidia stated in late 2023 that the goal of its corporate investing is to expand the AI ecosystem by backing startups it considers to be “game changers and market makers.” Over the nearly three years that followed, the chipmaker has invested in nearly 350 startups, according to PitchBook. The companies Nvidia backed include Anthropic, OpenAI; neolabs like Thinking Machines and Reflection; neoclouds, like Lambda, Nscale, and Crusoe; as well as other companies developing AI infrastructure, robotics startups, and applications.\n\nIt’s also become a big financier of the data center build out, reporting $118 billion in guarantees with $105 billion of that the backstop it supplied for OpenAI’s $500 billion data center in Ohio.\n\nThe company made those commitments by allocating a meaningful portion of its excess cash flows. In Tuesday’s earning call, Kress said Nvidia would continue providing financing assistance to strong customers and that “as the market matures and additional sources of capital become available,” the company would be “rigorously evaluating future investments, commitments, and guarantees.”\n\nBut the question for the VC ecosystem is whether the company will continue to back startups at anywhere near the same level without Huang at the helm.\n\nHuang’s rampant dealmaking has reportedly been a source of concern for Kress. Investors have told TechCrunch that they anticipate that she will take a more conservative approach to startup investing, becoming more selective with new investments and writing smaller-sized checks into its existing portfolio companies.\n\n“We ",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Nvidia’s equity portfolio in private and public companies has surged to a valuation of $65.5 billion, a significant increase from the $22 billion reported in January. The company deployed $16 billion into equities in the most recent quarter and $58 billion over the first nine months of its fiscal year, marking a sharp rise from the $5 billion invested during the same period in the previous fiscal year. This capital deployment, which spans nearly 350 startups according to PitchBook, includes investments in major AI entities such as Anthropic and OpenAI, as well as infrastructure providers like Lambda, Nscale, and Crusoe.\n\nBeyond direct equity stakes, Nvidia has committed $118 billion in financial guarantees to support data center infrastructure, including a $105 billion backstop for OpenAI’s $500 billion Ohio data center project. CFO Colette Kress indicated that while the company will continue to support strong customers, it plans to \"rigorously evaluate\" future commitments as the market matures. With Jensen Huang’s departure, industry analysts and investors anticipate a shift toward a more conservative investment strategy, with Kress signaling a focus on returning excess free cash flow to shareholders rather than maintaining the previous pace of aggressive startup financing.",
-      "takeaways": [
-        "**Portfolio Growth:** Nvidia’s equity stake valuation rose from $22 billion in January to $65.5 billion as of the latest report.",
-        "**Capital Deployment:** The company invested $58 billion in equities over the first nine months of the fiscal year, compared to $5 billion in the same period the prior year.",
-        "**Infrastructure Backstops:** Nvidia reported $118 billion in total financial guarantees, with $105 billion specifically allocated to OpenAI’s Ohio data center project.",
-        "**Strategic Shift:** CFO Colette Kress signaled a potential pullback in startup investment, prioritizing the return of excess free cash flow to shareholders.",
-        "**Portfolio Scope:** Nvidia has backed nearly 350 startups, including Anthropic, OpenAI, and various AI infrastructure and robotics firms."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "bae6f1125392c7cb",
-    "canonicalUrl": "https://arxiv.org/abs/2611.23683v1",
-    "title": "JEV vs. LLMs: A Comparative Analysis for Phishing Email Detection",
-    "publishedAt": "2026-11-18T01:17:07.000Z",
-    "fetchedAt": "2026-11-19T08:51:58.589Z",
-    "contentHash": "4598cd52d8a04d4b",
-    "sourceId": "arxiv-meta",
-    "sourceName": "arXiv Meta AI & FAIR Research",
-    "author": "Muhammad Mahir Malik",
-    "contentSnippet": "Phishing remains a major source of credential theft and fraudulent payments, and email security systems must classify large message volumes reliably, quickly, and at manageable cost. Large Language Models (LLMs) offer flexible text understanding, but their token-based generation increases response time and API cost, and the reliability of their confidence values requires measurement. Jev 1.13, a typed decision model from TypeSafe AI, instead returns a structured outcome with a confidence value. This paper compares Jev 1.13 with Gemini 3.5 Flash-Lite, NVIDIA Nemotron 3 Ultra, and Meta Llama 4 Maverick on a labelled dataset of 1500 emails, covering classification performance, decision latency, token consumption, API cost, and probability calibration. Jev achieves the highest accuracy (79.67%), precision (71.43%), recall (97.97%), and F1 score (82.62%). It also records the shortest batch time (173.88 seconds), the lowest token count (597,895), the lowest cost (USD 0.015103 per 1000 decisions), and the lowest Brier score (0.1698) and ECE (0.1594). These results suggest that Jev is a promising option for fast, structured, high-volume triage. LLMs retain the advantage of generating explanations, which we do not evaluate, and all four systems require further validation before standalone deployment.",
-    "category": "Robotics & Hardware",
-    "lab": "Meta AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.23683",
-    "pdfUrl": "https://arxiv.org/pdf/2611.23683.pdf",
-    "summary": {
-      "tldr": "Phishing remains a major source of credential theft and fraudulent payments, and email security systems must classify large message volumes reliably, quickly, and at manageable cost. Large Language Models (LLMs) offer flexible text understanding, but their token-based generation increases response time and API cost, and the reliability of their confidence values requires measurement. Jev 1.13, a typed decision model from TypeSafe AI, instead returns a structured outcome with a confidence value.\n\nThis paper compares Jev 1.13 with Gemini 3.5 Flash-Lite, NVIDIA Nemotron 3 Ultra, and Meta Llama 4 Maverick on a labelled dataset of 1500 emails, covering classification performance, decision latency, token consumption, API cost, and probability calibration. Jev achieves the highest accuracy (79.67%), precision (71.43%), recall (97.97%), and F1 score (82.62%). It also records the shortest batch time (173.88 seconds), the lowest token count (597,895), the lowest cost (USD 0.015103 per 1000 decisions), and the lowest Brier score (0.1698) and ECE (0.1594).",
-      "takeaways": [
-        "These results suggest that Jev is a promising option for fast, structured, high-volume triage.",
-        "LLMs retain the advantage of generating explanations, which we do not evaluate, and all four systems require further validation before standalone deployment."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ceeb5bf897d71eb6",
-    "canonicalUrl": "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/",
-    "title": "Nvidia promises that revenue will keep soaring — for now",
-    "publishedAt": "2026-11-18T00:16:50.000Z",
-    "fetchedAt": "2026-11-18T02:35:41.425Z",
-    "contentHash": "c070df94698d6e73",
-    "sourceId": "techcrunch-ai",
-    "sourceName": "TechCrunch AI",
-    "author": "Julie Bort",
-    "contentSnippet": "Despite the turmoil at Nvidia following the departure of its disgraced founder and CEO Jensen Huang , the company — as expected — delivered a solid quarter on Tuesday. More importantly, Nvidia reassured investors that its streak of record-breaking revenue won’t stop.\n\nOn Tuesday, CFO-turned-interim CEO Colette Kress reported revenue of $115.8 billion, up 103% from the year-ago quarter and a beat above the company’s guidance. Nvidia had told Wall Street to expect $108 billion in revenue for its third quarter of fiscal 2027. Kress also projected an even bigger fourth quarter, with revenue expected to reach $130 billion, plus or minus 3%.\n\nShe also said full-year revenue is on track to exceed expectations.\n\n“We are raising our fiscal year 2028 outlook. We expect revenue to grow approximately 75% year over year, up from 70% and off what is now a higher fiscal 2027 base,” Kress said on the quarterly conference call on Tuesday. “Our outlook considers data center readiness, the strength and durability of end customer demand, and our customers’ access to capital.”\n\nThe company also reminded investors that it was using some of its billions in cash to buy back shares. In September 2026, Nvidia increased its share buyback program by $150 billion. It spent $28.1 billion on its own shares during the quarter and still had another $227.3 billion remaining in the kitty for additional repurchases.\n\nIronically, Nvidia could also benefit from the plunge in its share price following Huang’s resignation last week, should shares remain depressed over the longer term. The stock is down about 10% since his departure. Investors, however, celebrated Tuesday’s quarterly results, sending shares up about 4% in after-hours trading.\n\nKress stressed that the company was in good shape now and for the foreseeable future, even without Huang at the helm.\n\n“We have the best technologists on the planet with a world-class multi-year roadmap,” Kress stressed. “From a business perspective, it’s business as usual. We’ve engaged with our customers, we’ve engaged with our suppliers, our partners. They’re all 100% behind us.”\n\nShe added that the company has secured memory and advanced packaging capacity and is working with its chip manufacturer, TSMC, to “narrow the supply and demand gaps.”\n\nTopics AI , nvidia , TC When you purchase through links in our articles, we may earn a small commission . This d",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Nvidia reported fiscal Q3 2027 revenue of $115.8 billion, a 103% year-over-year increase that surpassed the company's previous guidance of $108 billion. Interim CEO Colette Kress projected Q4 revenue to reach $130 billion (±3%) and raised the fiscal year 2028 outlook, now anticipating 75% year-over-year growth, up from the previously stated 70%. This performance follows the recent departure of founder and CEO Jensen Huang, which triggered a 10% decline in share price prior to the earnings announcement.\n\nFinancially, Nvidia continues to leverage its cash reserves for aggressive share repurchases. In September 2026, the company expanded its buyback program by $150 billion; it executed $28.1 billion in repurchases during the quarter, leaving $227.3 billion remaining in the authorization. Kress emphasized that the company's operational trajectory remains unchanged, citing secured memory and advanced packaging capacity, alongside ongoing collaboration with TSMC to mitigate supply-demand imbalances.\n\nDespite the leadership transition, Nvidia maintains that its multi-year product roadmap remains intact. Kress noted that customer and supplier relationships remain stable, with the company prioritizing data center readiness and capital access for its end customers. Following the earnings report, Nvidia shares rose approximately 4% in after-hours trading.",
-      "takeaways": [
-        "**Financial Performance:** Reported $115.8 billion in Q3 fiscal 2027 revenue, exceeding guidance of $108 billion.",
-        "**Growth Outlook:** Raised fiscal 2028 revenue growth forecast to approximately 75% year-over-year.",
-        "**Capital Allocation:** Spent $28.1 billion on share buybacks in the quarter, with $227.3 billion remaining in the authorized program.",
-        "**Supply Chain:** Interim CEO Colette Kress confirmed secured memory and advanced packaging capacity, with active efforts to close supply-demand gaps via TSMC."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "a1de396d3910fa2e",
-    "canonicalUrl": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
-    "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:19.050Z",
-    "contentHash": "c3faa25c750c0655",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "184d931227f2504d",
-    "canonicalUrl": "https://openai.com/index/the-silent-consensus",
-    "title": "The Silent Consensus",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-18T19:03:53.500Z",
-    "contentHash": "8d12092b68bfc1ab",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "68ddb817fe4001c0",
-    "canonicalUrl": "https://openai.com/index/advancing-chip-design-with-our-models",
-    "title": "Advancing chip design with OpenAI models",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-18T19:03:53.500Z",
-    "contentHash": "428ef03c1a3f2d9d",
-    "sourceId": "openai",
-    "sourceName": "OpenAI News",
-    "author": "OpenAI News",
-    "contentSnippet": "OpenAI models optimized circuits used in Jalapeño silicon and improved RISC‑V core designs, showing progress in AI-assisted chip design with GPT‑6 Astra.",
-    "category": "LLMs & GenAI",
-    "lab": "OpenAI",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "OpenAI models optimized circuits used in Jalapeño silicon and improved RISC‑V core designs, showing progress in AI-assisted chip design with GPT‑6 Astra.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ec56b5eff9affb1c",
-    "canonicalUrl": "https://huggingface.co/blog/moe-expert-streaming",
-    "title": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-18T19:03:53.503Z",
-    "contentHash": "07f52eaf4c75e1ac",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5b89a2db7f60ae90",
-    "canonicalUrl": "https://huggingface.co/blog/rumble-2-flash",
-    "title": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-18T19:03:53.503Z",
-    "contentHash": "9834ce8f2472794c",
-    "sourceId": "huggingface",
-    "sourceName": "Hugging Face Blog",
-    "author": "Hugging Face Blog",
-    "contentSnippet": "",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Rumble-2-Flash: an open 0.5B speech model for 40+ languages.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9374f0f56752c820",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24789",
-    "title": "HINT-WAM: Hindsight-Informed Training for World Action Models",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "1bc4b25ef23b66cc",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Phuong Tuan Dat, Qi Li, Xinchao Wang",
-    "contentSnippet": "World action models (WAMs) have shown promising generalization and data efficiency in robot manipulation by coupling action generation with predictions of future visual dynamics. Translating these capabilities into reliable task execution, however, remains a challenge for existing post-training methods. Offline supervised fine-tuning provides dense supervision on expert trajectories, but its flow-matching action expert is trained only on noised demonstration actions and never on the intermediate states produced by its own sampler; task-specific adaptation can also compromise pretrained capabilities. On-policy reinforcement learning trains on the policy's own behavior, yet sparse task rewards make exploration and credit assignment difficult, while dense reward shaping still provides scalar evaluations rather than direct action targets. We introduce HINT-WAM, the first on-policy self-distillation framework that supervises the action expert on its own sampling trajectories using hindsight, the future video of the demonstration, as privileged information available to the WAM itself. For each demonstration observation, the student generates its action through its own denoising trajectory, and at the states along this trajectory the same model acts as a teacher conditioned additionally on this hindsight, providing a conditional action distribution as a dense training target, while the student sees only deployment-time inputs and needs no environmental rewards or simulator interaction. To transfer this supervision to a flow-matching action expert, HINT-WAM distills the teacher into the student with an energy score, a distribution-level objective that matches the teacher's action distribution from the student's own samples rather than regressing its velocity field. The project web is available in https://tuandattt.github.io/hintwam/.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24789",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24789",
-    "summary": {
-      "tldr": "Researchers have introduced HINT-WAM (Hindsight-Informed Training for World Action Models), a novel on-policy self-distillation framework designed to improve robot manipulation by addressing the limitations of offline supervised fine-tuning and traditional reinforcement learning. While existing methods often suffer from distribution shift—where the action expert is trained on expert trajectories but fails to handle the intermediate states generated by its own sampler—HINT-WAM enables the model to supervise its own action generation process. By utilizing 'hindsight' (the future video of a demonstration) as privileged information, the framework allows the model to act as both student and teacher, providing dense action targets without requiring environmental rewards or simulator interaction.\n\nThe technical core of HINT-WAM involves a flow-matching action expert that is distilled using an energy-score objective. During training, the student generates actions through its own denoising trajectory while the teacher, conditioned on the hindsight video, provides a conditional action distribution. Instead of regressing the velocity field, the framework uses a distribution-level objective to match the teacher's action distribution based on the student's own samples. This approach allows the model to learn from its own behavior while maintaining the generalization capabilities of the pretrained World Action Model, effectively bridging the gap between demonstration-based training and reliable task execution.",
-      "takeaways": [
-        "**Framework Mechanism:** HINT-WAM uses on-policy self-distillation where the model acts as both student (deployment-time inputs) and teacher (conditioned on hindsight video).",
-        "**Objective Function:** The method employs an energy-score objective to match action distributions rather than regressing the velocity field of the flow-matching expert.",
-        "**Data Efficiency:** The framework eliminates the need for environmental rewards or simulator interaction by leveraging privileged hindsight information from demonstration trajectories.",
-        "**Problem Addressed:** The approach mitigates distribution shift inherent in offline supervised fine-tuning, where models are trained on expert data but fail to generalize to their own generated intermediate states."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "222994fca2a8cc54",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24651",
-    "title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "e1087f5d2642e7d2",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Zhenqing Ling, Qirui Jiao, Daoyuan Chen, Cheng Chen",
-    "contentSnippet": "Authors: Zhenqing Ling , Qirui Jiao , Daoyuan Chen , Cheng Chen , Xinji Mai , Haowen Gao , Zhuo Zhang , Xuchen Pan , Mengsu Ding , Jiaji Deng , Yuexiang Xie , Xiaoming Qin , Weirui Kuang , Zhaoyang Liu , Yaliang Li , Bolin Ding , Jingren Zhou\n\nAbstract: We present Piccolo, a family of multimodal decision models (0.8B to 27B) that coevolves model capabilities and training data via Agentic Data Engineering and recursive self-improvement (RSI). The models predict probabilities over candidate answers for general-purpose text and visual judgments, agent harnesses, data workflows, and interactive games. Piccolo-27B tops the Decision Index Vision Full leaderboard with a score of 75.59, while Piccolo-9B and Piccolo-4B achieve 68.35 and 67.46, respectively. All three rank first on the Private benchmark in their respective model-size categories. Research agents analyze model behavior, construct training data, conduct experiments, and use the results to refine subsequent proposals. Semantic slices and a shared research memory connect these actions across the model family's development. With training recipes comprising hundreds of thousands of examples, data selection and feedback-driven refinement are central to the self-improvement process. Our large-scale RSI exploration yields three counter-intuitive insights for decision-model development: (1) Backbone-recipe co-adaptation outweighs raw model recency: earlier backbones can surpass newer generations on visual tasks under identical recipes; (2) Targeted data curation enables 4B-9B models to rival 27B baselines on specialized workflows; and (3) Continuous loss reduction can decouple from and even degrade discrete decision accuracy. Together with the released weights and tools from the Data-Juicer and AgentScope ecosystems, Piccolo provides an actionable blueprint for building frontier decision models and scaling data-driven RSI.\n\nNotes: 22 pages, 13 figures, 11 tables. Project page and blog: this https URL",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24651",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24651",
-    "summary": {
-      "tldr": "A research team led by Jingren Zhou and colleagues from Alibaba Group has introduced Piccolo, a family of multimodal decision models ranging from 0.8B to 27B parameters. Designed for general-purpose text and visual judgments, agent harnesses, data workflows, and interactive games, the models utilize a methodology called Agentic Data Engineering and recursive self-improvement (RSI). This process employs research agents to analyze model behavior, generate training data, and conduct iterative experiments, supported by a shared research memory and semantic slicing to refine model development across the family.\n\nPerformance metrics highlight the 27B model achieving a score of 75.59 on the Decision Index Vision Full leaderboard, while the 9B and 4B variants secured scores of 68.35 and 67.46, respectively, each ranking first in their size categories on the Private benchmark. The research identifies three key findings: backbone-recipe co-adaptation is more critical than model recency for visual tasks; targeted data curation allows smaller 4B-9B models to match 27B baselines in specialized workflows; and continuous loss reduction does not always correlate with, and can sometimes degrade, discrete decision accuracy. The project includes released weights and tools integrated with the Data-Juicer and AgentScope ecosystems.",
-      "takeaways": [
-        "**Model Performance:** Piccolo-27B leads the Decision Index Vision Full leaderboard with a 75.59 score, while 9B and 4B models top their respective size categories on the Private benchmark.",
-        "**Methodology:** The models are developed using Agentic Data Engineering and recursive self-improvement (RSI), where research agents autonomously construct training data and refine proposals.",
-        "**Counter-intuitive Findings:** The study concludes that backbone-recipe co-adaptation is more impactful than model recency, and that continuous loss reduction can negatively impact discrete decision accuracy.",
-        "**Ecosystem Integration:** The project provides open weights and tools compatible with the existing Data-Juicer and AgentScope frameworks.",
-        "**Scale:** The research encompasses a model family spanning 0.8B to 27B parameters, supported by training recipes consisting of hundreds of thousands of examples."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "01aa7d7aa09cd93d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24669",
-    "title": "Movie2Game-Bench: Holistic Evaluation of Film-to-Game Adaptation Beyond Playability",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "dfb7ba8d8f96d06f",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Jialing Xie, Yifan Zhou, Yiwen Zhang, Junjun He",
-    "contentSnippet": "Adapting a film into a game requires selecting source elements and translating them into player actions, rules, and feedback. We introduce Movie2Game-Bench (M2G-bench), a benchmark for evaluating film-to-game adaptation beyond playability. M2G-bench combines general evaluation, movie-specific evaluation, and playtesting by three GUI model players. The protocol connects source content to gameplay steps and implementation evidence, capturing both content preservation and interactive realization. The benchmark comprises 22 films and 658 source-specific reference items. Evaluating 14 models on the same films with their selected primary harnesses reveals complementary strengths in game quality, adaptation, and player experience. A shared weakness concerns playable sequences: this category has the lowest content-presence mean in all 14 models, averaging 37.9 out of 100 compared with 54.8 for iconic elements. Among judgments of retained emotionaldevelopment content, narrative choices account for 60.0% and scenario operation for 7.2%. These findings identify two linked priorities for film-to-game adaptation: preserving source situations that can support gameplay and connecting retained content to player actions and consequences.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24669",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24669",
-    "summary": {
-      "tldr": "Adapting a film into a game requires selecting source elements and translating them into player actions, rules, and feedback. We introduce Movie2Game-Bench (M2G-bench), a benchmark for evaluating film-to-game adaptation beyond playability. M2G-bench combines general evaluation, movie-specific evaluation, and playtesting by three GUI model players.\n\nThe protocol connects source content to gameplay steps and implementation evidence, capturing both content preservation and interactive realization. The benchmark comprises 22 films and 658 source-specific reference items. Evaluating 14 models on the same films with their selected primary harnesses reveals complementary strengths in game quality, adaptation, and player experience.",
-      "takeaways": [
-        "A shared weakness concerns playable sequences: this category has the lowest content-presence mean in all 14 models, averaging 37.9 out of 100 compared with 54.8 for iconic elements.",
-        "Among judgments of retained emotionaldevelopment content, narrative choices account for 60.0% and scenario operation for 7.2%.",
-        "These findings identify two linked priorities for film-to-game adaptation: preserving source situations that can support gameplay and connecting retained content to player actions and consequences."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d3d0a7939e72e636",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24941",
-    "title": "UltraTex: Aligning Physical Knowledge for High-Fidelity PBR Texture Generation",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "7a1184a4df32ccc8",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Jingzhi Bao, Xiaohe Ma, Hong Li, Yuanming Hu",
-    "contentSnippet": "Generating physically based rendering (PBR) texture maps for a 3D mesh from a single reference image is highly ambiguous, as the observed appearance entangles material identity, surface reflectance, and illumination. While current generative methods produce realistic albedo maps, they still struggle to infer accurate metallic and roughness attributes for relighting. We present UltraTex, a cascaded multi-view framework that moves beyond appearance matching by integrating physical knowledge into multi-view diffusion-based PBR generation. UltraTex first jointly predicts albedo and world-space shading normals to generate more detailed albedo maps, and then predicts metallic-roughness (MR) maps conditioned on the generated albedo, reference image, and material semantic priors. To inject material semantics, a lightweight adapter transforms hidden-layer features of a vision-language model (VLM) into intrinsic material representation tokens, providing part-level knowledge anchors for MR estimation. To model material-light interaction, photometric representation alignment guides intermediate diffusion features toward ground-truth material renderings under controlled lighting. This makes metallic and roughness variations observable through highlight intensity, specular sharpness, and local reflectance contrast, providing stronger guidance for fine-grained material prediction without explicit lighting supervision. Extensive experiments show that UltraTex generates high-quality textures and outperforms existing open-source and commercial methods in visual fidelity, material accuracy, and physical plausibility.",
-    "category": "Ethics & Policy",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24941",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24941",
-    "summary": {
-      "tldr": "Generating physically based rendering (PBR) texture maps for a 3D mesh from a single reference image is highly ambiguous, as the observed appearance entangles material identity, surface reflectance, and illumination. While current generative methods produce realistic albedo maps, they still struggle to infer accurate metallic and roughness attributes for relighting. We present UltraTex, a cascaded multi-view framework that moves beyond appearance matching by integrating physical knowledge into multi-view diffusion-based PBR generation.\n\nUltraTex first jointly predicts albedo and world-space shading normals to generate more detailed albedo maps, and then predicts metallic-roughness (MR) maps conditioned on the generated albedo, reference image, and material semantic priors. To inject material semantics, a lightweight adapter transforms hidden-layer features of a vision-language model (VLM) into intrinsic material representation tokens, providing part-level knowledge anchors for MR estimation. To model material-light interaction, photometric representation alignment guides intermediate diffusion features toward ground-truth material renderings under controlled lighting.",
-      "takeaways": [
-        "This makes metallic and roughness variations observable through highlight intensity, specular sharpness, and local reflectance contrast, providing stronger guidance for fine-grained material prediction without explicit lighting supervision.",
-        "Extensive experiments show that UltraTex generates high-quality textures and outperforms existing open-source and commercial methods in visual fidelity, material accuracy, and physical plausibility."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6ef8d8194ead901e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24362",
-    "title": "PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "964baba9027ccb33",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Lipeng He, Yihan Wang, Jiawen Zhang, N. Asokan",
-    "contentSnippet": "Large language model (LLM) agents routinely interact with untrusted external data, exposing them to indirect prompt injection (IPI) attacks that hijack agents into executing attacker-chosen tasks. To uncover these vulnerabilities at scale, automated red-teaming methods often leverage reinforcement learning (RL) to generate attacks that achieve high attack success rates (ASR). Model developers use the attacks discovered during internal red-teaming to harden agents through adversarial training before deployment, a collaborative offensive-defensive process known in cybersecurity as purple-teaming. However, we show that achieving high ASR during red-teaming does not guarantee robustness gains from subsequent adversarial training. Specifically, we find that two state-of-the-art RL-based red-teaming methods, RL-Hammer and PISmith, suffer from mode collapse, repeatedly discovering similar attack strategies whose additional successes add no additional robustness improvements to adversarial training. To address this gap, we introduce PIPETTE, a unified prompt injection purple-teaming framework that effectively converts red-teaming discoveries into defender robustness improvements. PIPETTE employs a dictionary learning-based reward that encourages broader coverage of attack strategies during red-teaming. It also integrates an on-policy adversarial training pipeline tailored to IPI defense, enabling agents to resist attacks while completing legitimate user tasks. Extensive evaluations across agentic benchmarks (AgentDojo and ASB) demonstrate that PIPETTE produces defenders that achieve near-zero attack success rates on static attacks and can withstand strong adaptive attacks, while maintaining benign task utility close to that of the undefended baseline.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24362",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24362",
-    "summary": {
-      "tldr": "Large language model (LLM) agents routinely interact with untrusted external data, exposing them to indirect prompt injection (IPI) attacks that hijack agents into executing attacker-chosen tasks. To uncover these vulnerabilities at scale, automated red-teaming methods often leverage reinforcement learning (RL) to generate attacks that achieve high attack success rates (ASR). Model developers use the attacks discovered during internal red-teaming to harden agents through adversarial training before deployment, a collaborative offensive-defensive process known in cybersecurity as purple-teaming.\n\nHowever, we show that achieving high ASR during red-teaming does not guarantee robustness gains from subsequent adversarial training. Specifically, we find that two state-of-the-art RL-based red-teaming methods, RL-Hammer and PISmith, suffer from mode collapse, repeatedly discovering similar attack strategies whose additional successes add no additional robustness improvements to adversarial training. To address this gap, we introduce PIPETTE, a unified prompt injection purple-teaming framework that effectively converts red-teaming discoveries into defender robustness improvements.",
-      "takeaways": [
-        "PIPETTE employs a dictionary learning-based reward that encourages broader coverage of attack strategies during red-teaming.",
-        "It also integrates an on-policy adversarial training pipeline tailored to IPI defense, enabling agents to resist attacks while completing legitimate user tasks.",
-        "Extensive evaluations across agentic benchmarks (AgentDojo and ASB) demonstrate that PIPETTE produces defenders that achieve near-zero attack success rates on static attacks and can withstand strong adaptive attacks, while maintaining benign task utility close to that of the undefended baseline."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2ce81d0e61aacc28",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24869",
-    "title": "WorldRuler: Interactive World Modeling under Configurable Rules",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "269688017b1d91c9",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Mingliang Zhai, Chuanhao Li, Jiaming Tan, Zhen Li",
-    "contentSnippet": "Rules govern how player actions change interactive worlds. Different rules create distinct gameplay experiences within similar scenes and action spaces. For customizable gameplay, generative world models must follow user-defined rules beyond real-world behaviors. However, realizing user-defined rules presents two challenges: Rule-State Persistence and Rule-to-Visual Realization. The former requires preserving rule definitions, dependencies, and world states across saving and loading, so that restored worlds follow the established rules. The latter requires accurately realizing rule-induced changes on designated objects and attributes, particularly when affected objects are unseen. In this paper, we propose WorldRuler, which organizes rule definitions, dependencies, and object states in an executable 3D rule graph and connects rule execution, video generation, and perceptual feedback in a closed loop. The graph supports joint saving and restoration of rules and world states, while dynamic object binding grounds rule-specified entities in visual instances and uses stored states to constrain generation from their first appearance. We further introduce object attribute state replacement and counterfactual reconstruction training, enabling accurate attribute control and compatible appearance and motion changes while limiting interference with unrelated content. We develop an automated data collection and annotation pipeline using GTA-V and Habitat to construct RuleVerse, a dataset of rule-driven interactions with detailed state and event annotations, including cases where rules take effect before affected objects become visible. Extensive experiments demonstrate the effectiveness of WorldRuler in preserving rule-state consistency across saving and loading and accurately realizing rule outcomes on designated objects and attributes.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24869",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24869",
-    "summary": {
-      "tldr": "Rules govern how player actions change interactive worlds. Different rules create distinct gameplay experiences within similar scenes and action spaces. For customizable gameplay, generative world models must follow user-defined rules beyond real-world behaviors.\n\nHowever, realizing user-defined rules presents two challenges: Rule-State Persistence and Rule-to-Visual Realization. The former requires preserving rule definitions, dependencies, and world states across saving and loading, so that restored worlds follow the established rules. The latter requires accurately realizing rule-induced changes on designated objects and attributes, particularly when affected objects are unseen.",
-      "takeaways": [
-        "In this paper, we propose WorldRuler, which organizes rule definitions, dependencies, and object states in an executable 3D rule graph and connects rule execution, video generation, and perceptual feedback in a closed loop.",
-        "The graph supports joint saving and restoration of rules and world states, while dynamic object binding grounds rule-specified entities in visual instances and uses stored states to constrain generation from their first appearance.",
-        "We further introduce object attribute state replacement and counterfactual reconstruction training, enabling accurate attribute control and compatible appearance and motion changes while limiting interference with unrelated content.",
-        "We develop an automated data collection and annotation pipeline using GTA-V and Habitat to construct RuleVerse, a dataset of rule-driven interactions with detailed state and event annotations, including cases where rules take effect before affected objects become visible."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f1de3598137d3c4a",
-    "canonicalUrl": "https://arxiv.org/abs/2611.23808",
-    "title": "PReMind: When Personal Memory Meets Visual Hazards",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "2084ecd076019f7c",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Yeongtak Oh, Donghyeok Lee, Joonhee Oh, Jaewon Jeong",
-    "contentSnippet": "Personalized vision-language assistants use visual observations and personal memories to provide advice tailored to the user. When the observed scene contains a physical hazard, personal context, such as allergies, medical conditions, or mobility constraints, can change what help is appropriate. Responding appropriately therefore requires recognizing the visible hazard and applying the relevant person's information. We introduce PReMind-Bench, a diagnostic benchmark that evaluates this combination across diverse hazards and personal-memory conditions. It separately measures memory access, grounding, abstention, and hazard response, and assesses joint success on interdependency cases. Existing models often satisfy one requirement while failing the other, and training only for safety or personalization leaves a gap in joint success. We therefore propose PReMind, a two-phase reinforcement learning framework that combines on-demand and forced-call interactions (memory always retrieved) to jointly train grounded memory use and hazard response. At 4B, PReMind raises joint success from 12.9% to 28.6% over its base on the interdependency set and improves hazard adequacy and correct abstention on the main test. Joint-success gains persist under forced-call evaluation and under a second LLM judge across three Phase II seeds; averaged over these seeds, joint success also improves on unseen hazard groups. These findings highlight the need to evaluate and train personal assistants to connect visual evidence with the relevant person's context.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.23808",
-    "pdfUrl": "https://arxiv.org/pdf/2611.23808",
-    "summary": {
-      "tldr": "Personalized vision-language assistants use visual observations and personal memories to provide advice tailored to the user. When the observed scene contains a physical hazard, personal context, such as allergies, medical conditions, or mobility constraints, can change what help is appropriate. Responding appropriately therefore requires recognizing the visible hazard and applying the relevant person's information.\n\nWe introduce PReMind-Bench, a diagnostic benchmark that evaluates this combination across diverse hazards and personal-memory conditions. It separately measures memory access, grounding, abstention, and hazard response, and assesses joint success on interdependency cases. Existing models often satisfy one requirement while failing the other, and training only for safety or personalization leaves a gap in joint success.",
-      "takeaways": [
-        "We therefore propose PReMind, a two-phase reinforcement learning framework that combines on-demand and forced-call interactions (memory always retrieved) to jointly train grounded memory use and hazard response.",
-        "At 4B, PReMind raises joint success from 12.9% to 28.6% over its base on the interdependency set and improves hazard adequacy and correct abstention on the main test.",
-        "Joint-success gains persist under forced-call evaluation and under a second LLM judge across three Phase II seeds; averaged over these seeds, joint success also improves on unseen hazard groups.",
-        "These findings highlight the need to evaluate and train personal assistants to connect visual evidence with the relevant person's context."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "784762b034f6e15b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24576",
-    "title": "Late Entry in Looped Language Models",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "59f1e0a130eff3fc",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Ziqi Jin, Jiaxi Li, Weiwen Xu, Aixin Sun",
-    "contentSnippet": "Looped language models deepen reasoning at a compact parameter count by iterating a shared layer stack T times per token, turning recurrence depth directly into sequential decoding latency. Conventional early-exit decoding halts after initial passes without cache completion, truncating cached key-value states of past tokens to shallow depth. We study the opposite strategy, late entry, where new tokens skip initial passes and enter directly into the final K T alongside subsequent steps at zero extra serial calls. Projecting these finished T-pass wake states inside the existing output GEMM (Wake verification, governed by logit-margin tolerance tau in [0, inf]) unifies greedy-exact T-pass decoding (tau = 0, matching K = T block decoding within bf16 reduction order), margin-gated verification (tau > 0), and non-rollback lossy late entry (tau = inf) inside a single static CUDA graph. On Ouro-2.6B (T = 4), K = 2 Wake reaches 5.2x greedy-exact speedup at tau = 0 (+26% over K = 4 block decoding on GSM8K) and 6.8x at tau = inf (+16.9 points over trained early exit at matched speed). Scaling test-time recurrence across T in {8, 16, 32, 64} on Huginn-3.5B cuts K = T/4 rollbacks 21.5x with depth, driving greedy-exact (tau = 0) speedups to 6.1x (T = 32) and 8.4x (T = 64, +153% over K = 64 block) and tau = inf speedups to 10.6 to 12.5x.",
-    "category": "Open Source & Research",
-    "lab": "NVIDIA",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24576",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24576",
-    "summary": {
-      "tldr": "Looped language models deepen reasoning at a compact parameter count by iterating a shared layer stack T times per token, turning recurrence depth directly into sequential decoding latency. Conventional early-exit decoding halts after initial passes without cache completion, truncating cached key-value states of past tokens to shallow depth. We study the opposite strategy, late entry, where new tokens skip initial passes and enter directly into the final K T alongside subsequent steps at zero extra serial calls.\n\nProjecting these finished T-pass wake states inside the existing output GEMM (Wake verification, governed by logit-margin tolerance tau in [0, inf]) unifies greedy-exact T-pass decoding (tau = 0, matching K = T block decoding within bf16 reduction order), margin-gated verification (tau > 0), and non-rollback lossy late entry (tau = inf) inside a single static CUDA graph. On Ouro-2.6B (T = 4), K = 2 Wake reaches 5.2x greedy-exact speedup at tau = 0 (+26% over K = 4 block decoding on GSM8K) and 6.8x at tau = inf (+16.9 points over trained early exit at matched speed). Scaling test-time recurrence across T in {8, 16, 32, 64} on Huginn-3.5B cuts K = T/4 rollbacks 21.5x with depth, driving greedy-exact (tau = 0) speedups to 6.1x (T = 32) and 8.4x (T = 64, +153% over K = 64 block) and tau = inf speedups to 10.6 to 12.5x.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d526b6e1aa1638a1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24098",
-    "title": "RoughCut-Bench: A Benchmark for Automatic Video Rough-Cut with Large Vision-Language Models",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "db38afb8d659aa38",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Ruisi Zhao, You Li, Sihan Chen, Aosong Cheng",
-    "contentSnippet": "Video rough-cut is a core stage in media production workflows, organizing raw media materials into an initial video cut. Despite recent advances in large vision-language models (LVLMs) for video-related tasks, automatic rough-cut remains underexplored, without a comprehensive benchmark for evaluation or mature workflows for producing executable cut plans. To address the evaluation gap, we introduce RoughCut-Bench, which covers two practical settings: (1) a visually driven setting over video cases, covering highlight detection and selection, source-video ordering, and adherence to user requirements when provided; and (2) a speech-driven setting over automatic speech recognition (ASR) transcripts, covering filler removal, expression deduplication, and low-value content trimming. Across these settings, the benchmark contains 101 visually driven cases, including 831 raw videos with 1,476 highlight annotations. It also includes 84 speech-driven cases, each consisting of an ASR transcript with annotated cleanup spans. The evaluation compares cut plans with these annotations in both settings and additionally uses a human-aligned agentic evaluator to assess rendered-cut quality in the visual setting. To apply LVLMs to automatic rough-cut, we further propose agentic workflows that guide them to produce structured cut plans from input materials. Experiments show that current LVLMs remain limited in producing expert-aligned cut plans. Our benchmark, code, and prompts are released at https://whalesong-zrs.github.io/RoughCut-Bench-Project-Page.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24098",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24098",
-    "summary": {
-      "tldr": "Video rough-cut is a core stage in media production workflows, organizing raw media materials into an initial video cut. Despite recent advances in large vision-language models (LVLMs) for video-related tasks, automatic rough-cut remains underexplored, without a comprehensive benchmark for evaluation or mature workflows for producing executable cut plans. To address the evaluation gap, we introduce RoughCut-Bench, which covers two practical settings: (1) a visually driven setting over video cases, covering highlight detection and selection, source-video ordering, and adherence to user requirements when provided; and (2) a speech-driven setting over automatic speech recognition (ASR) transcripts, covering filler removal, expression deduplication, and low-value content trimming.\n\nAcross these settings, the benchmark contains 101 visually driven cases, including 831 raw videos with 1,476 highlight annotations. It also includes 84 speech-driven cases, each consisting of an ASR transcript with annotated cleanup spans. The evaluation compares cut plans with these annotations in both settings and additionally uses a human-aligned agentic evaluator to assess rendered-cut quality in the visual setting.",
-      "takeaways": [
-        "To apply LVLMs to automatic rough-cut, we further propose agentic workflows that guide them to produce structured cut plans from input materials.",
-        "Experiments show that current LVLMs remain limited in producing expert-aligned cut plans.",
-        "Our benchmark, code, and prompts are released at https://whalesong-zrs.github.io/RoughCut-Bench-Project-Page."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b41abea1d30c4c3d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.24681",
-    "title": "DrawScore: Evaluating Generated CAD Models against Engineering Drawings",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "1420f204ff0d6915",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Haorui Chen, Shiteng Lu, Zhanyu Guo, Zaixi Li",
-    "contentSnippet": "Automatic CAD generation is commonly evaluated with volumetric IoU, Chamfer Distance, and surface F-score, which barely penalize local errors that occupy only a small fraction of a part's volume or surface area, such as a misplaced hole or a slot on the wrong face, even though such errors are critical to manufacturing. We formalize these metrics in a unified integral form and show that the weight of a local error decays as the (k+q)-th power of its size, where k is the dimension of the integration domain and q is determined by the penalty function. Guided by this analysis, we propose DrawScore, which projects both models into three orthographic views with visible and hidden lines, as in engineering drawings, and applies a saturating penalty along the projected curves, so that the weight of a local error decays only linearly. Controlled experiments confirm the predicted decay orders, and on outputs of existing CAD generation agents, DrawScore exposes errors in outputs that IoU rates as nearly perfect. DrawScore further improves generation as a reinforcement learning reward and, for CAD generation from engineering drawings, serves as a test-time verifier without 3D ground truth or an additional reward model. Our code is available at https://github.com/UESTC-Simon/DrawScore.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.24681",
-    "pdfUrl": "https://arxiv.org/pdf/2611.24681",
-    "summary": {
-      "tldr": "Automatic CAD generation is commonly evaluated with volumetric IoU, Chamfer Distance, and surface F-score, which barely penalize local errors that occupy only a small fraction of a part's volume or surface area, such as a misplaced hole or a slot on the wrong face, even though such errors are critical to manufacturing. We formalize these metrics in a unified integral form and show that the weight of a local error decays as the (k+q)-th power of its size, where k is the dimension of the integration domain and q is determined by the penalty function. Guided by this analysis, we propose DrawScore, which projects both models into three orthographic views with visible and hidden lines, as in engineering drawings, and applies a saturating penalty along the projected curves, so that the weight of a local error decays only linearly.\n\nControlled experiments confirm the predicted decay orders, and on outputs of existing CAD generation agents, DrawScore exposes errors in outputs that IoU rates as nearly perfect. DrawScore further improves generation as a reinforcement learning reward and, for CAD generation from engineering drawings, serves as a test-time verifier without 3D ground truth or an additional reward model. Our code is available at https://github.com/UESTC-Simon/DrawScore.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "042c74e7b6715132",
-    "canonicalUrl": "https://arxiv.org/abs/2611.23824",
-    "title": "Evidence-Based Credit Assignment for Search-Augmented Language Models",
-    "publishedAt": "2026-11-18T00:00:00.000Z",
-    "fetchedAt": "2026-11-19T08:51:56.163Z",
-    "contentHash": "242e2d8e7cd98a65",
-    "sourceId": "hf-daily-papers",
-    "sourceName": "Hugging Face Daily Papers",
-    "author": "Wen Wang, Jindong Wang, Jiahua Bao, Tu Yongsiqi",
-    "contentSnippet": "Reinforcement learning from terminal answer rewards enables search-augmented language models to interleave reasoning and retrieval without step-level annotations, yet outcome supervision assigns identical credit to every search in a trajectory regardless of whether it retrieved useful information. This limitation is especially severe when all sampled rollouts for a question fail, collapsing group-centered outcome advantages to zero even when trajectories gather markedly different evidence. We present Evidence-based Credit Assignment (ECA), which augments terminal outcome rewards with a training-only auxiliary signal measuring how retrieved documents improve the likelihood of a reference answer. Rather than scoring the full dialogue prefix, ECA queries a frozen snapshot of the current policy under an evidence-only prompt containing solely the question and the deduplicated documents observed so far, isolating the utility of retrieved passages from surface variations in generated thoughts or search queries. Within this framework, we compare two return formulations, ECA-Step (which accumulates step-clipped potential increments) and ECA-Horizon (which preserves the telescoping horizon gain in potential), paired with cross-fold group normalization, novelty gating, and search-local token assignment. Across seven Search QA benchmarks, ECA-Horizon improves strict macro exact match over an outcome-only GRPO baseline by 1.03 and 4.80 percentage points on Qwen2.5-3B- and 7B-Instruct, respectively, outperforming both RLOO and GiGPO. Zero-shot evaluation on MultiHop-RAG further demonstrates strong transfer to multi-hop inference queries.",
-    "category": "Business & Big Tech",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "2611.23824",
-    "pdfUrl": "https://arxiv.org/pdf/2611.23824",
-    "summary": {
-      "tldr": "Reinforcement learning from terminal answer rewards enables search-augmented language models to interleave reasoning and retrieval without step-level annotations, yet outcome supervision assigns identical credit to every search in a trajectory regardless of whether it retrieved useful information. This limitation is especially severe when all sampled rollouts for a question fail, collapsing group-centered outcome advantages to zero even when trajectories gather markedly different evidence. We present Evidence-based Credit Assignment (ECA), which augments terminal outcome rewards with a training-only auxiliary signal measuring how retrieved documents improve the likelihood of a reference answer.\n\nRather than scoring the full dialogue prefix, ECA queries a frozen snapshot of the current policy under an evidence-only prompt containing solely the question and the deduplicated documents observed so far, isolating the utility of retrieved passages from surface variations in generated thoughts or search queries. Within this framework, we compare two return formulations, ECA-Step (which accumulates step-clipped potential increments) and ECA-Horizon (which preserves the telescoping horizon gain in potential), paired with cross-fold group normalization, novelty gating, and search-local token assignment. Across seven Search QA benchmarks, ECA-Horizon improves strict macro exact match over an outcome-only GRPO baseline by 1.03 and 4.80 percentage points on Qwen2.5-3B- and 7B-Instruct, respectively, outperforming both RLOO and GiGPO.",
-      "takeaways": [
-        "Zero-shot evaluation on MultiHop-RAG further demonstrates strong transfer to multi-hop inference queries."
-      ],
-      "impact": "High",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
