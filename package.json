@@ -8,12 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "test": "tsx --test test/*.test.ts",
-    "sync": "tsx scripts/sync-feeds.ts"
+    "sync": "tsx scripts/sync-feeds.ts",
+    "train:markets": "tsx scripts/train-xgboost.ts"
   },
   "dependencies": {
     "katex": "^0.19.1",
     "lucide-react": "^1.65.0",
-    "next": "16.4.3",
+    "next": "^16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "rss-parser": "^3.13.0"
@@ -25,7 +26,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "^16.4.6",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

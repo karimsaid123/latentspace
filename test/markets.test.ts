@@ -2,6 +2,7 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { 
   TICKER_DEFINITIONS, 
+  TRAINED_MODEL_ARTIFACT,
   calculateArticleSentiment, 
   correlateArticlesForTicker, 
   runXGBoostQuantModel,
@@ -10,6 +11,11 @@ import {
   calculateVolatility,
   calculate30dChannel
 } from '../src/lib/xgboost-engine';
+import {
+  evaluateGBDTWithAttribution,
+  extractQuantFeatureVector,
+  OHLCVBar,
+} from '../src/lib/xgboost-gbdt';
 import { 
   VERIFIED_MARKET_SNAPSHOT, 
   getMarketOverview 
@@ -205,6 +211,146 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     const tsla = overview.stocks.find(s => s.symbol === 'TSLA');
     assert.ok(tsla);
     assert.equal(tsla.category, 'AUTONOMOUS_ROBOTICS');
+    assert.ok(overview.modelValidation && overview.modelValidation.trainingSamples > 10000);
+    assert.ok(overview.macroRegime && overview.macroRegime.vixLevel > 0);
+  });
+
+  it('rejects naive substring false positives in entity news correlation', () => {
+    const trapArticles = [
+      {
+        id: 'trap-1',
+        title: 'Operating on an updated architecture designed for agent swarms',
+        contentSnippet: 'Swarm coordination across robotic arms improves warehouse picking.',
+        sourceName: 'TechWire',
+        publishedAt: new Date().toISOString(),
+        canonicalUrl: 'https://example.com/swarm',
+      },
+      {
+        id: 'trap-2',
+        title: 'Airbnb says it is launching an AI travel agent using Muse and Instinct',
+        contentSnippet: 'The workflow runs across multi-node n2 and n3 Kubernetes workers.',
+        sourceName: 'TechCrunch',
+        publishedAt: new Date().toISOString(),
+        canonicalUrl: 'https://example.com/airbnb',
+      },
+      {
+        id: 'trap-3',
+        title: 'Midterm elections 2026: dramatic shifts in voter turnout and gig workers',
+        contentSnippet: 'No hardware or chip makers were involved in this poll.',
+        sourceName: 'The Verge',
+        publishedAt: new Date().toISOString(),
+        canonicalUrl: 'https://example.com/midterm',
+      },
+    ];
+
+    for (const sym of ['ARM', 'AMD', 'TSM', 'NOW', 'NET', 'MU'] as TickerSymbol[]) {
+      const def = TICKER_DEFINITIONS.find(t => t.symbol === sym)!;
+      const matches = correlateArticlesForTicker(trapArticles, def);
+      assert.equal(matches.length, 0, `${sym} should have 0 false-positive matches, got ${matches.map(m => m.title).join('; ')}`);
+    }
+  });
+
+  it('handles negation, financial risk signals, and driver tags in sentiment NLP', () => {
+    const secProbe = calculateArticleSentiment('', 'Nvidia stock extends rout as SEC accounting probe deepens');
+    assert.ok(secProbe.score <= -0.5, `Expected strongly bearish score, got ${secProbe.score}`);
+    assert.equal(secProbe.label, 'BEARISH');
+    assert.ok(secProbe.drivers.length >= 1);
+
+    const negated = calculateArticleSentiment('', 'Company avoids accounting probe and clears regulatory hurdle');
+    assert.ok(negated.score > secProbe.score, 'Negated/avoided probe must score higher than active probe');
+  });
+
+  it('verifies trained GBDT artifact and exact zero-drift Saabas Tree-Path attribution', () => {
+    assert.ok(TRAINED_MODEL_ARTIFACT.directionModel.trees.length >= 20);
+    assert.ok(TRAINED_MODEL_ARTIFACT.volatilityModel.trees.length >= 20);
+    assert.ok(TRAINED_MODEL_ARTIFACT.validationMetrics.directionOosAccuracyPct > 50);
+
+    // Build synthetic 60-day OHLCV bars
+    const bars: OHLCVBar[] = [];
+    let price = 150;
+    for (let i = 0; i < 60; i++) {
+      price = price * (1 + (i % 3 === 0 ? -0.015 : 0.012));
+      bars.push({ t: 20000 + i, o: price * 0.99, h: price * 1.02, l: price * 0.98, c: price, v: 25_000_000 });
+    }
+    const extracted = extractQuantFeatureVector(
+      bars,
+      { vixLevel: 24.5, vixSma20: 19.0, vixChange5dPct: 22, qqqChange5dPct: -3.5, smhChange5dPct: -5.2 },
+      true
+    );
+
+    const evalRes = evaluateGBDTWithAttribution(TRAINED_MODEL_ARTIFACT.directionModel, extracted.directionVector, 6);
+    const reconstructed = evalRes.baseScore + evalRes.attributions.reduce((a, b) => a + b, 0);
+    assert.ok(
+      Math.abs(reconstructed - evalRes.rawScore) < 1e-6,
+      `Saabas attribution sum (${reconstructed}) must equal rawScore (${evalRes.rawScore})`
+    );
+    assert.ok(evalRes.treeTraces.length >= 1 && evalRes.treeTraces.length <= 6);
+  });
+
+  it('builds complete Glass-Box DecisionTree and dynamic per-stock feature importance', () => {
+    const bars: OHLCVBar[] = [];
+    let p = 200;
+    for (let i = 0; i < 80; i++) {
+      p = p * (1 + Math.sin(i * 0.3) * 0.015);
+      bars.push({ t: 20000 + i, o: p * 0.995, h: p * 1.015, l: p * 0.985, c: p, v: 18_000_000 });
+    }
+
+    const newsNow = new Date().toISOString();
+    const nvdaNews = [
+      {
+        articleId: 'live-1',
+        title: 'Nvidia stock drops on SEC accounting probe report',
+        sourceName: 'Yahoo Finance',
+        publishedAt: newsNow,
+        sentiment: -0.82,
+        correlationWeight: 0.95,
+        catalystType: 'Regulatory & Export Dynamics',
+        summarySnippet: 'SEC probe weighs on shares.',
+        url: 'https://finance.yahoo.com/news/nvda',
+        stream: 'MARKET_NEWS' as const,
+        matchType: 'DIRECT' as const,
+        sentimentDrivers: ['Accounting probe'],
+      },
+    ];
+
+    const withNews = runXGBoostQuantModel('NVDA', 'NVIDIA Corporation', -5.2, nvdaNews, bars.slice(-15).map(b => b.c), -2.0, p, {
+      ohlcvBars: bars,
+      macro: { vixLevel: 28, vixSma20: 20, vixChange5dPct: 30, qqqChange5dPct: -4, smhChange5dPct: -6 },
+    });
+
+    const noNews = runXGBoostQuantModel('ASML', 'ASML Holding N.V.', -1.1, [], bars.slice(-15).map(b => b.c), -2.0, p, {
+      ohlcvBars: bars,
+      macro: { vixLevel: 16, vixSma20: 17, vixChange5dPct: -5, qqqChange5dPct: 1.5, smhChange5dPct: 2.0 },
+    });
+
+    const tree = withNews.decisionTree!;
+    assert.ok(tree);
+    assert.equal(tree.steps.length, 5);
+    assert.deepEqual(
+      tree.steps.map(s => s.id),
+      ['MARKET_MOOD', 'PRICE_TREND', 'STRETCH_CHECK', 'NEWS_CATALYSTS', 'SECTOR_RISK']
+    );
+    for (const step of tree.steps) {
+      assert.equal(step.chosenBranch.isTaken, true);
+      assert.equal(step.alternativeBranch.isTaken, false);
+      assert.ok(step.question.length > 10);
+    }
+    const newsStep = tree.steps.find(s => s.id === 'NEWS_CATALYSTS')!;
+    assert.equal(newsStep.evidenceArticles?.length, 1);
+    assert.ok((newsStep.evidenceArticles![0].modelImpactPctPts ?? 0) < 0);
+    assert.equal(tree.finalProbabilityPct, withNews.upProbabilityPct);
+    assert.ok(tree.verdictHeadline.length > 5);
+
+    // Verify dynamic per-stock feature importance differs when inputs differ
+    assert.notEqual(
+      withNews.featureImportance.newsSentiment,
+      noNews.featureImportance.newsSentiment,
+      'Feature importance should dynamically reflect stock-specific news and macro drivers'
+    );
+    const sum1 = Object.values(withNews.featureImportance).reduce((a, b) => a + b, 0);
+    const sum2 = Object.values(noNews.featureImportance).reduce((a, b) => a + b, 0);
+    assert.ok(Math.abs(sum1 - 1.0) < 0.02);
+    assert.ok(Math.abs(sum2 - 1.0) < 0.02);
   });
 });
 

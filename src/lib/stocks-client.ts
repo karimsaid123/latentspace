@@ -1,17 +1,27 @@
-import { 
-  TickerSymbol, 
-  StockAnalysis, 
-  MarketOverviewResponse 
+import {
+  TickerSymbol,
+  StockAnalysis,
+  MarketOverviewResponse,
+  MacroRegimeSnapshot,
 } from '@/types/market';
-import { 
-  TICKER_DEFINITIONS, 
-  correlateArticlesForTicker, 
-  runXGBoostQuantModel 
+import {
+  TICKER_DEFINITIONS,
+  TRAINED_MODEL_ARTIFACT,
+  TickerMapping,
+  correlateArticlesForTicker,
+  runXGBoostQuantModel,
 } from './xgboost-engine';
+import {
+  MacroContextInput,
+  OHLCVBar,
+  calculateSMAValue,
+} from './xgboost-gbdt';
+import { VERIFIED_BENCHMARK_SNAPSHOT } from './benchmark-client';
+import { container } from '@/core/container';
+import { decodeHtmlEntities } from './sanitize';
 import rawArticles from '../../data/articles.json';
 import { logger } from './logger';
 
-// In-memory cache for market telemetry to prevent spamming endpoints
 interface CacheEntry {
   timestamp: number;
   data: MarketOverviewResponse;
@@ -20,7 +30,6 @@ interface CacheEntry {
 let cachedMarketOverview: CacheEntry | null = null;
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
-// Verified deterministic fallback snapshot for offline resilience & CI testing
 export const VERIFIED_MARKET_SNAPSHOT: Record<TickerSymbol, {
   price: number;
   changeAmount: number;
@@ -333,162 +342,419 @@ export const VERIFIED_MARKET_SNAPSHOT: Record<TickerSymbol, {
   }
 };
 
-/**
- * Attempts to fetch live quotes from Yahoo Finance API for a symbol.
- * Falls back to VERIFIED_MARKET_SNAPSHOT if network is offline or fails.
- */
-async function fetchSingleTickerQuote(symbol: TickerSymbol): Promise<{
+function sanitizeHttpUrl(raw: unknown): string | null {
+  if (typeof raw !== 'string' || !raw.trim()) return null;
+  try {
+    const parsed = new URL(raw.trim());
+    if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+      return parsed.toString();
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function formatCompactVolume(vol: number | undefined, fallback: string): string {
+  if (typeof vol !== 'number' || !Number.isFinite(vol) || vol <= 0) return fallback;
+  if (vol >= 1_000_000_000) return `${(vol / 1_000_000_000).toFixed(2)}B`;
+  if (vol >= 1_000_000) return `${(vol / 1_000_000).toFixed(1)}M`;
+  if (vol >= 1_000) return `${(vol / 1_000).toFixed(0)}K`;
+  return String(Math.round(vol));
+}
+
+async function fetchYahooChartOHLCV(
+  symbol: string,
+  range: '3mo' | '1y' = '1y',
+  timeoutMs = 3000
+): Promise<{
   price: number;
   changeAmount: number;
   changePercent: number;
+  bars: OHLCVBar[];
   sparkline: number[];
+  volume?: number;
   high52w?: number;
   low52w?: number;
-}> {
-  const fallback = VERIFIED_MARKET_SNAPSHOT[symbol];
-
+} | null> {
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2500); // Strict 2.5s timeout
-
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=1mo&interval=1d`;
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=${range}&interval=1d`;
     const res = await fetch(url, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
       },
-      signal: controller.signal
+      signal: AbortSignal.timeout(timeoutMs),
     });
-
-    clearTimeout(timeout);
-
-    if (!res.ok) {
-      throw new Error(`Yahoo Finance responded with status ${res.status}`);
-    }
+    if (!res.ok) return null;
 
     const data = await res.json();
-    const meta = data?.chart?.result?.[0]?.meta;
-    const rawQuotes = data?.chart?.result?.[0]?.indicators?.quote?.[0]?.close || [];
+    const result = data?.chart?.result?.[0];
+    const meta = result?.meta;
+    const timestamps: number[] = result?.timestamp || [];
+    const quote = result?.indicators?.quote?.[0] || {};
 
-    if (!meta || typeof meta.regularMarketPrice !== 'number') {
-      throw new Error('Missing expected price structure from Yahoo API');
+    if (!meta || typeof meta.regularMarketPrice !== 'number') return null;
+
+    const bars: OHLCVBar[] = [];
+    for (let i = 0; i < timestamps.length; i++) {
+      const o = quote.open?.[i];
+      const h = quote.high?.[i];
+      const l = quote.low?.[i];
+      const c = quote.close?.[i];
+      const v = quote.volume?.[i] ?? 0;
+      if (
+        typeof c === 'number' &&
+        Number.isFinite(c) &&
+        c > 0
+      ) {
+        bars.push({
+          t: Math.floor(timestamps[i] / 86400),
+          o: typeof o === 'number' && Number.isFinite(o) ? o : c,
+          h: typeof h === 'number' && Number.isFinite(h) ? h : c,
+          l: typeof l === 'number' && Number.isFinite(l) ? l : c,
+          c,
+          v: typeof v === 'number' && Number.isFinite(v) ? v : 0,
+        });
+      }
     }
 
     const price = meta.regularMarketPrice;
-    const validQuotes = rawQuotes.filter((p: any): p is number => typeof p === 'number' && !isNaN(p) && p > 0);
+    const closes = bars.map((b) => b.c);
+    const yesterday =
+      closes.length >= 2
+        ? closes[closes.length - 2]
+        : typeof meta.previousClose === 'number'
+          ? meta.previousClose
+          : price;
 
-    // Yahoo Finance /chart endpoint: meta.chartPreviousClose is the 30-day baseline start price!
-    // For the actual 24h market move, we use meta.regularMarketChangePercent (or compute from the penultimate daily quote).
-    const yesterday = validQuotes.length >= 2
-      ? validQuotes[validQuotes.length - 2]
-      : (typeof meta.previousClose === 'number' ? meta.previousClose : fallback.price);
+    const changePercent =
+      typeof meta.regularMarketChangePercent === 'number'
+        ? meta.regularMarketChangePercent
+        : yesterday > 0
+          ? ((price - yesterday) / yesterday) * 100
+          : 0;
+    const changeAmount =
+      typeof meta.regularMarketChange === 'number'
+        ? meta.regularMarketChange
+        : price - yesterday;
 
-    const changePercent = typeof meta.regularMarketChangePercent === 'number'
-      ? meta.regularMarketChangePercent
-      : (yesterday > 0 ? ((price - yesterday) / yesterday) * 100 : fallback.changePercent);
-
-    const changeAmount = typeof meta.regularMarketChange === 'number'
-      ? meta.regularMarketChange
-      : (price - yesterday);
-
-    // Filter nulls or NaN in sparkline
-    const validSparkline = validQuotes.slice(-15); // Last 15 trading days
-    const sparkline = validSparkline.length >= 5 ? validSparkline : fallback.sparkline;
+    const sparkline = closes.slice(-15).map((c) => Math.round(c * 100) / 100);
 
     return {
       price: Math.round(price * 100) / 100,
       changeAmount: Math.round(changeAmount * 100) / 100,
       changePercent: Math.round(changePercent * 100) / 100,
+      bars,
       sparkline,
-      high52w: meta.fiftyTwoWeekHigh || fallback.high52w,
-      low52w: meta.fiftyTwoWeekLow || fallback.low52w
+      volume: typeof meta.regularMarketVolume === 'number' ? meta.regularMarketVolume : undefined,
+      high52w: meta.fiftyTwoWeekHigh,
+      low52w: meta.fiftyTwoWeekLow,
     };
-  } catch (err: any) {
-    // Graceful fallback to verified snapshot
-    return {
-      price: fallback.price,
-      changeAmount: fallback.changeAmount,
-      changePercent: fallback.changePercent,
-      sparkline: fallback.sparkline,
-      high52w: fallback.high52w,
-      low52w: fallback.low52w
-    };
+  } catch {
+    return null;
   }
 }
 
+async function fetchTickerQuoteWithFallback(symbol: TickerSymbol): Promise<{
+  price: number;
+  changeAmount: number;
+  changePercent: number;
+  sparkline: number[];
+  bars: OHLCVBar[];
+  volumeFormatted: string;
+  todayVolume?: number;
+  high52w?: number;
+  low52w?: number;
+}> {
+  const fallback = VERIFIED_MARKET_SNAPSHOT[symbol];
+  const live = await fetchYahooChartOHLCV(symbol, '1y', 3200);
+
+  if (live && live.bars.length >= 5) {
+    return {
+      price: live.price,
+      changeAmount: live.changeAmount,
+      changePercent: live.changePercent,
+      sparkline: live.sparkline.length >= 5 ? live.sparkline : fallback.sparkline,
+      bars: live.bars,
+      volumeFormatted: formatCompactVolume(live.volume, fallback.volume),
+      todayVolume: live.volume,
+      high52w: live.high52w || fallback.high52w,
+      low52w: live.low52w || fallback.low52w,
+    };
+  }
+
+  const fallbackBars: OHLCVBar[] = fallback.sparkline.map((c, idx) => ({
+    t: idx + 1,
+    o: c,
+    h: c * 1.01,
+    l: c * 0.99,
+    c,
+    v: 1_000_000,
+  }));
+
+  return {
+    price: fallback.price,
+    changeAmount: fallback.changeAmount,
+    changePercent: fallback.changePercent,
+    sparkline: fallback.sparkline,
+    bars: fallbackBars,
+    volumeFormatted: fallback.volume,
+    high52w: fallback.high52w,
+    low52w: fallback.low52w,
+  };
+}
+
+interface RawMarketArticle {
+  id?: string;
+  title?: string;
+  sourceName?: string;
+  source?: { name?: string };
+  publisher?: string;
+  publishedAt?: string;
+  pubDate?: string;
+  canonicalUrl?: string;
+  link?: string;
+  url?: string;
+  contentSnippet?: string;
+  description?: string;
+  lab?: string;
+  relatedTickers?: string[];
+  __isMarketNews?: boolean;
+  stream?: string;
+  summary?: { tldr?: string; takeaways?: string[]; impact?: string };
+  aiSummary?: { tldr?: string; takeaways?: string[]; impact?: string };
+}
+
+interface YahooSearchNewsItem {
+  uuid?: string;
+  title?: string;
+  link?: string;
+  publisher?: string;
+  providerPublishTime?: number;
+  relatedTickers?: string[];
+}
+
+async function fetchLiveTickerNews(ticker: TickerMapping): Promise<RawMarketArticle[]> {
+  try {
+    const url = `https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(ticker.symbol)}&newsCount=6&quotesCount=0`;
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+      },
+      signal: AbortSignal.timeout(2500),
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { news?: YahooSearchNewsItem[] };
+    const rawNews: YahooSearchNewsItem[] = Array.isArray(json?.news) ? json.news : [];
+
+    const firstCompanyWord = ticker.companyName.split(/[\s.,]/)[0].toLowerCase();
+    const filtered: RawMarketArticle[] = [];
+
+    for (const item of rawNews) {
+      const title = decodeHtmlEntities(String(item?.title || '')).trim();
+      const safeUrl = sanitizeHttpUrl(item?.link);
+      if (!title || !safeUrl) continue;
+
+      const relatedTickers: string[] = Array.isArray(item?.relatedTickers) ? item.relatedTickers : [];
+      const titleMatchesEntity =
+        ticker.strictPatterns.some((re) => re.test(title)) ||
+        (firstCompanyWord.length >= 4 && new RegExp(`\\b${firstCompanyWord}\\b`, 'i').test(title));
+      const explicitlyTaggedAndRelevant =
+        relatedTickers.includes(ticker.symbol) &&
+        (titleMatchesEntity || ticker.ecosystemPatterns?.some((re) => re.test(title)));
+
+      if (!titleMatchesEntity && !explicitlyTaggedAndRelevant) continue;
+
+      const pubEpoch = typeof item?.providerPublishTime === 'number' ? item.providerPublishTime * 1000 : Date.now();
+      filtered.push({
+        id: `yf-${ticker.symbol}-${item?.uuid || pubEpoch}`,
+        title,
+        sourceName: decodeHtmlEntities(String(item?.publisher || 'Yahoo Finance')),
+        publishedAt: new Date(pubEpoch).toISOString(),
+        canonicalUrl: safeUrl,
+        contentSnippet: '',
+        relatedTickers,
+        __isMarketNews: true,
+      });
+    }
+    return filtered;
+  } catch {
+    return [];
+  }
+}
+
+async function fetchMacroBenchmarks(): Promise<MacroContextInput> {
+  const [vix, qqq, smh] = await Promise.all([
+    fetchYahooChartOHLCV('^VIX', '3mo', 2500),
+    fetchYahooChartOHLCV('QQQ', '3mo', 2500),
+    fetchYahooChartOHLCV('SMH', '3mo', 2500),
+  ]);
+
+  const computeRet5 = (bars: OHLCVBar[] | undefined, fallback: number) => {
+    if (!bars || bars.length < 6) return fallback;
+    const last = bars[bars.length - 1].c;
+    const prev5 = bars[bars.length - 6].c;
+    return prev5 > 0 ? Math.round(((last / prev5) - 1) * 10000) / 100 : fallback;
+  };
+
+  const vixLevel = vix?.price ?? 20.0;
+  const vixCloses = vix?.bars.map((b) => b.c) ?? [vixLevel];
+  const vixSma20 = calculateSMAValue(vixCloses, 20) || vixLevel;
+  const vixChange5dPct = computeRet5(vix?.bars, 0);
+
+  return {
+    vixLevel,
+    vixSma20,
+    vixChange5dPct,
+    qqqChange5dPct: computeRet5(qqq?.bars, 0),
+    smhChange5dPct: computeRet5(smh?.bars, 0),
+    qqqChange1dPct: qqq?.changePercent ?? 0,
+    smhChange1dPct: smh?.changePercent ?? 0,
+  };
+}
+
+async function getLiveResearchArticles(): Promise<RawMarketArticle[]> {
+  try {
+    await container.bootstrap();
+    await container.syncEdgeState();
+    const repoArticles = await container.articleRepo.list({ limit: 400 });
+    if (repoArticles && repoArticles.length > 0) {
+      return repoArticles as unknown as RawMarketArticle[];
+    }
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    logger.warn('Falling back to static articles corpus for markets', { error: message });
+  }
+  return Array.isArray(rawArticles) ? (rawArticles as RawMarketArticle[]) : [];
+}
+
 /**
- * Builds the complete Market Overview, correlating current LatentSpace
- * articles with stock tickers and executing the XGBoost model.
+ * Builds the complete Market Overview, correlating live financial news + LatentSpace
+ * research dispatches with 1y OHLCV telemetry and executing the trained XGBoost model.
  */
 export async function getMarketOverview(forceFresh = false): Promise<MarketOverviewResponse> {
   const now = Date.now();
 
-  if (!forceFresh && cachedMarketOverview && (now - cachedMarketOverview.timestamp) < CACHE_TTL_MS) {
+  if (!forceFresh && cachedMarketOverview && now - cachedMarketOverview.timestamp < CACHE_TTL_MS) {
     return cachedMarketOverview.data;
   }
 
-  const articles = Array.isArray(rawArticles) ? rawArticles : [];
-  const stocks: StockAnalysis[] = [];
-  let aggregateSentiment = 0;
+  const [articles, macroBase, tickerResults] = await Promise.all([
+    getLiveResearchArticles(),
+    fetchMacroBenchmarks(),
+    Promise.all(
+      TICKER_DEFINITIONS.map(async (def) => {
+        const [quoteData, liveNews] = await Promise.all([
+          fetchTickerQuoteWithFallback(def.symbol),
+          fetchLiveTickerNews(def),
+        ]);
+        const fallback = VERIFIED_MARKET_SNAPSHOT[def.symbol];
+        return { def, quoteData, fallback, liveNews, liveNewsCount: liveNews.length };
+      })
+    ),
+  ]);
 
-  // 1. Fetch live quotes and correlated articles for all tickers in parallel
-  const rawTickerData = await Promise.all(
-    TICKER_DEFINITIONS.map(async (def) => {
-      const liveData = await fetchSingleTickerQuote(def.symbol);
-      const fallback = VERIFIED_MARKET_SNAPSHOT[def.symbol];
-      const correlated = correlateArticlesForTicker(articles, def);
-      return { def, liveData, fallback, correlated };
-    })
-  );
+  const enrichedResults = tickerResults.map((item) => ({
+    ...item,
+    correlated: correlateArticlesForTicker(articles, item.def, item.liveNews),
+  }));
 
-  // 2. Compute tech sector composite mean return for Relative Alpha calculations
-  const totalChange = rawTickerData.reduce((acc, item) => acc + item.liveData.changePercent, 0);
-  const techSectorMeanChange = rawTickerData.length > 0 ? totalChange / rawTickerData.length : 0;
+  // Compute live market breadth (% of tracked tech stocks trading above their 20-day SMA)
+  let aboveSma20Count = 0;
+  for (const item of enrichedResults) {
+    const closes = item.quoteData.bars.map((b) => b.c);
+    const sma20 = calculateSMAValue(closes, Math.min(20, closes.length));
+    if (item.quoteData.price >= sma20) aboveSma20Count++;
+  }
+  const marketBreadthPct = Math.round((aboveSma20Count / Math.max(1, enrichedResults.length)) * 100);
 
-  // 3. Execute 6-Tree GBDT Quant Model with Multi-Horizon Indicators
+  const macro: MacroContextInput = {
+    ...macroBase,
+    marketBreadthPct,
+  };
+
+  const totalChange = enrichedResults.reduce((acc, item) => acc + item.quoteData.changePercent, 0);
+  const techSectorMeanChange = enrichedResults.length > 0 ? totalChange / enrichedResults.length : 0;
+
   const resolvedStocks: StockAnalysis[] = [];
+  let aggregateSentiment = 0;
+  let totalLiveNewsCount = 0;
 
-  for (const item of rawTickerData) {
+  for (const item of enrichedResults) {
+    totalLiveNewsCount += item.liveNewsCount;
+
+    const topBench = item.def.benchmarkLab
+      ? VERIFIED_BENCHMARK_SNAPSHOT.find((b) => b.creator.lab === item.def.benchmarkLab)
+      : undefined;
+
     const prediction = runXGBoostQuantModel(
       item.def.symbol,
       item.def.companyName,
-      item.liveData.changePercent,
+      item.quoteData.changePercent,
       item.correlated,
-      item.liveData.sparkline,
+      item.quoteData.sparkline,
       techSectorMeanChange,
-      item.liveData.price
+      item.quoteData.price,
+      {
+        ohlcvBars: item.quoteData.bars,
+        macro,
+        todayVolume: item.quoteData.todayVolume,
+        benchmarkRank: topBench
+          ? {
+              modelName: topBench.name,
+              rank: topBench.metrics.rank,
+              intelligenceIndex: topBench.evaluations.intelligenceIndex,
+            }
+          : undefined,
+      }
     );
 
     aggregateSentiment += prediction.signalScore;
 
-    const analysis: StockAnalysis = {
+    const attributedArticles =
+      prediction.decisionTree?.steps.find((s) => s.id === 'NEWS_CATALYSTS')?.evidenceArticles ||
+      item.correlated;
+
+    resolvedStocks.push({
       symbol: item.def.symbol,
       companyName: item.def.companyName,
       category: item.def.category,
       sectorLabel: item.def.sectorLabel,
-      currentPrice: item.liveData.price,
-      changeAmount: item.liveData.changeAmount,
-      changePercent: item.liveData.changePercent,
+      currentPrice: item.quoteData.price,
+      changeAmount: item.quoteData.changeAmount,
+      changePercent: item.quoteData.changePercent,
       currency: 'USD',
       marketCapFormatted: item.fallback.marketCap,
-      volumeFormatted: item.fallback.volume,
-      sparkline: item.liveData.sparkline,
-      high52w: item.liveData.high52w,
-      low52w: item.liveData.low52w,
+      volumeFormatted: item.quoteData.volumeFormatted,
+      sparkline: item.quoteData.sparkline,
+      high52w: item.quoteData.high52w,
+      low52w: item.quoteData.low52w,
       prediction,
-      correlatedArticles: item.correlated,
-      lastModelRun: new Date().toISOString()
-    };
-
-    resolvedStocks.push(analysis);
+      correlatedArticles: attributedArticles,
+      lastModelRun: new Date().toISOString(),
+    });
   }
 
-  const meanSentiment = resolvedStocks.length > 0 
-    ? aggregateSentiment / resolvedStocks.length 
-    : 0;
-
+  const meanSentiment = resolvedStocks.length > 0 ? aggregateSentiment / resolvedStocks.length : 0;
   let macroSentimentLabel = 'NEUTRAL_EQUILIBRIUM';
-  if (meanSentiment > 0.25) macroSentimentLabel = 'BULLISH_EXPANSION_PHASE';
+  if (meanSentiment > 0.2) macroSentimentLabel = 'BULLISH_EXPANSION_PHASE';
   else if (meanSentiment < -0.2) macroSentimentLabel = 'BEARISH_CONTRACTION_PHASE';
+
+  const macroRegime: MacroRegimeSnapshot = {
+    vixLevel: Math.round(macro.vixLevel * 100) / 100,
+    vixChange5dPct: macro.vixChange5dPct,
+    qqqChange1dPct: Math.round((macro.qqqChange1dPct ?? 0) * 100) / 100,
+    qqqChange5dPct: macro.qqqChange5dPct,
+    smhChange1dPct: Math.round((macro.smhChange1dPct ?? 0) * 100) / 100,
+    smhChange5dPct: macro.smhChange5dPct,
+    marketBreadthPct,
+    regimeLabel:
+      macro.vixLevel >= 26
+        ? 'HIGH_FEAR_STRESS'
+        : macro.vixLevel >= 19
+          ? 'ELEVATED_CAUTION'
+          : 'CALM_RISK_ON',
+  };
 
   const overview: MarketOverviewResponse = {
     timestamp: new Date().toISOString(),
@@ -496,14 +762,17 @@ export async function getMarketOverview(forceFresh = false): Promise<MarketOverv
     macroSentimentLabel,
     activeDispatchesCount: articles.length,
     stocks: resolvedStocks,
-    disclaimer: 'STRICTLY NOT FINANCIAL ADVICE (NFA). Machine learning model output and algorithmic news correlation for educational, research and entertainment purposes only.'
+    disclaimer:
+      'STRICTLY NOT FINANCIAL ADVICE (NFA). Trained Histogram-XGBoost model output and algorithmic news correlation for educational, research and entertainment purposes only.',
+    macroRegime,
+    modelValidation: TRAINED_MODEL_ARTIFACT.validationMetrics,
+    liveNewsCount: totalLiveNewsCount,
   };
 
   cachedMarketOverview = {
     timestamp: now,
-    data: overview
+    data: overview,
   };
 
   return overview;
 }
-

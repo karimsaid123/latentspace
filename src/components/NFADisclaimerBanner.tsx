@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { AlertTriangle, ShieldAlert, X } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 
 interface NFADisclaimerBannerProps {
   className?: string;
@@ -50,7 +50,7 @@ export default function NFADisclaimerBanner({ className = '' }: NFADisclaimerBan
 
       <div className="pt-3 text-[11px] sm:text-xs font-sans text-black/80 leading-relaxed space-y-1.5">
         <p>
-          <strong className="font-mono text-black font-bold uppercase">[DISCLAIMER NOTICE]:</strong> All trajectory predictions, confidence metrics, and sentiment evaluations are deterministic algorithmic outputs computed by a lightweight Gradient Boosted Decision Tree (XGBoost) model correlating real-time arXiv research dispatches with public equity price action.
+          <strong className="font-mono text-black font-bold uppercase">[DISCLAIMER NOTICE]:</strong> All trajectory predictions, upside odds, and 30-day price channels are outputs from a walk-forward trained multi-head Histogram-XGBoost ensemble correlating 1-year market OHLCV structure, VIX &amp; sector regimes, live financial headlines, and LatentSpace AI research dispatches, presented with transparent Glass-Box decision trees.
         </p>
         <p className="text-black/70">
           This system possesses <strong className="text-black font-semibold">zero fiduciary duty</strong> and does not constitute investment, financial, tax, or legal advice. Equities and semiconductor markets involve substantial risk of principal loss. For educational, algorithmic research, and entertainment purposes only.

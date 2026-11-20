@@ -1,18 +1,10 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, Suspense } from 'react';
-import Link from 'next/link';
-import { 
-  TrendingUp, 
-  TrendingDown, 
-  Cpu, 
-  Search, 
-  RefreshCw, 
-  Filter, 
-  Radio, 
-  Sparkles,
-  Layers,
-  ArrowRight
+import React, { useState, useEffect, useMemo } from 'react';
+import {
+  Cpu,
+  Search,
+  RefreshCw,
 } from 'lucide-react';
 import { StockAnalysis, MarketOverviewResponse, MarketCategory } from '@/types/market';
 import NFADisclaimerBanner from '@/components/NFADisclaimerBanner';
@@ -23,15 +15,17 @@ import GlobalHeader from '@/components/GlobalHeader';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 
+type SortMode = 'DEFAULT' | 'MOST_BULLISH' | 'MOST_BEARISH' | 'MOST_NEWS' | 'BIGGEST_MOVERS';
+
 export default function MarketsPage() {
   const [marketData, setMarketData] = useState<MarketOverviewResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<MarketCategory | 'ALL'>('ALL');
+  const [sortMode, setSortMode] = useState<SortMode>('DEFAULT');
   const [selectedStock, setSelectedStock] = useState<StockAnalysis | null>(null);
 
-  // Fetch telemetry from /api/markets
   const fetchMarketTelemetry = async (isManual = false) => {
     if (isManual) setIsRefreshing(true);
     try {
@@ -49,26 +43,40 @@ export default function MarketsPage() {
   };
 
   useEffect(() => {
-    fetchMarketTelemetry();
+    let active = true;
+    (async () => {
+      try {
+        const res = await fetch('/api/markets');
+        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        const data: MarketOverviewResponse = await res.json();
+        if (active) setMarketData(data);
+      } catch (err) {
+        console.error('Failed to load market telemetry, using fallback', err);
+      } finally {
+        if (active) setIsLoading(false);
+      }
+    })();
+    return () => {
+      active = false;
+    };
   }, []);
 
-  // Filter stocks based on search and filters
   const filteredStocks = useMemo(() => {
     if (!marketData) return [];
 
-    return marketData.stocks.filter((stock) => {
-      // Category filter
+    const filtered = marketData.stocks.filter((stock) => {
       if (selectedCategory !== 'ALL' && stock.category !== selectedCategory) {
         return false;
       }
 
-      // Search query filter
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
         const matchesSymbol = stock.symbol.toLowerCase().includes(q);
         const matchesName = stock.companyName.toLowerCase().includes(q);
         const matchesSector = stock.sectorLabel.toLowerCase().includes(q);
-        const matchesCatalyst = stock.correlatedArticles.some(a => a.title.toLowerCase().includes(q));
+        const matchesCatalyst = stock.correlatedArticles.some((a) =>
+          a.title.toLowerCase().includes(q)
+        );
         if (!matchesSymbol && !matchesName && !matchesSector && !matchesCatalyst) {
           return false;
         }
@@ -76,14 +84,38 @@ export default function MarketsPage() {
 
       return true;
     });
-  }, [marketData, selectedCategory, searchQuery]);
+
+    if (sortMode === 'MOST_BULLISH') {
+      return [...filtered].sort(
+        (a, b) => (b.prediction.upProbabilityPct ?? 50) - (a.prediction.upProbabilityPct ?? 50)
+      );
+    }
+    if (sortMode === 'MOST_BEARISH') {
+      return [...filtered].sort(
+        (a, b) => (a.prediction.upProbabilityPct ?? 50) - (b.prediction.upProbabilityPct ?? 50)
+      );
+    }
+    if (sortMode === 'MOST_NEWS') {
+      return [...filtered].sort(
+        (a, b) => b.correlatedArticles.length - a.correlatedArticles.length
+      );
+    }
+    if (sortMode === 'BIGGEST_MOVERS') {
+      return [...filtered].sort(
+        (a, b) => Math.abs(b.changePercent) - Math.abs(a.changePercent)
+      );
+    }
+
+    return filtered;
+  }, [marketData, selectedCategory, searchQuery, sortMode]);
+
+  const macro = marketData?.macroRegime;
+  const val = marketData?.modelValidation;
 
   return (
     <div className="min-h-screen bg-[#faf9f6] text-black font-mono selection:bg-black selection:text-white flex flex-col">
-      {/* Unified Zero-Shift Global Navigation */}
       <GlobalHeader active="markets" />
 
-      {/* Ticker Tape Strip */}
       {marketData && (
         <TickerTape
           stocks={marketData.stocks}
@@ -92,31 +124,31 @@ export default function MarketsPage() {
         />
       )}
 
-      {/* Main Container */}
       <main className="flex-1 max-w-[1700px] mx-auto w-full px-6 sm:px-12 py-8">
         <ScrollReveal yOffset={20}>
-          {/* NFA Disclaimer Banner */}
           <NFADisclaimerBanner />
 
-          {/* Title & Description */}
-          <div className="pb-6 border-b-2 border-black flex flex-col md:flex-row md:items-end justify-between gap-6">
+          {/* Title & Macro Regime Telemetry */}
+          <div className="pb-6 border-b-2 border-black flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div>
               <div className="flex items-center gap-2 text-[10px] sm:text-xs text-black/60 uppercase tracking-widest mb-2 font-bold">
                 <Cpu className="w-4 h-4 text-black" />
-                <span>GLOBAL TECH & SILICON // RESEARCH CORRELATION // XGBOOST GBDT</span>
+                <span>
+                  TRAINED HISTOGRAM-XGBOOST // GLASS-BOX DECISION TREES // LIVE NEWS FUSION
+                </span>
               </div>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-black leading-none">
                 Global Tech Markets
               </h1>
               <p className="mt-3 text-xs sm:text-sm font-sans font-medium text-black/70 max-w-3xl leading-relaxed">
-                Comprehensive algorithmic synthesis correlating frontier AI research, compute scaling laws, and technological catalysts with 30 leading tech equities across semiconductors, hyperscalers, autonomous robotics, cybersecurity, and enterprise cloud platforms.
+                Walk-forward validated Histogram-XGBoost multi-head models combining 1-year OHLCV price structure, CBOE VIX &amp; sector benchmarks, live breaking financial news, and frontier AI research into open, readable decision trees for 30 leading tech equities.
               </p>
             </div>
 
-            {/* Macro Telemetry Box */}
-            <div className="p-4 border border-black bg-white shrink-0 font-mono text-xs space-y-1.5 min-w-[260px]">
-              <div className="text-[10px] text-black/50 font-bold uppercase tracking-wider pb-1 border-b border-black/10 flex items-center justify-between">
-                <span>[MACRO REGIME]</span>
+            {/* Upgraded Macro Telemetry Box */}
+            <div className="p-4 border-2 border-black bg-white shrink-0 font-mono text-xs space-y-1.5 min-w-[290px]">
+              <div className="text-[10px] text-black/55 font-bold uppercase tracking-wider pb-1 border-b border-black/10 flex items-center justify-between">
+                <span>[MACRO &amp; MODEL TELEMETRY]</span>
                 <button
                   onClick={() => fetchMarketTelemetry(true)}
                   disabled={isRefreshing}
@@ -128,28 +160,66 @@ export default function MarketsPage() {
                 </button>
               </div>
 
-              <div className="flex justify-between items-center pt-1">
-                <span className="text-black/60">DISPATCHES CORRELATED:</span>
-                <span className="font-bold text-black">{marketData?.activeDispatchesCount || 0}</span>
-              </div>
+              {macro && (
+                <div className="grid grid-cols-3 gap-2 py-1 border-b border-black/10 text-[10px]">
+                  <div>
+                    <span className="text-black/50 block">VIX FEAR</span>
+                    <span
+                      className={`font-black ${
+                        macro.vixLevel >= 26
+                          ? 'text-rose-700 dark:text-rose-400'
+                          : macro.vixLevel < 19
+                            ? 'text-emerald-700 dark:text-emerald-400'
+                            : 'text-black'
+                      }`}
+                    >
+                      {macro.vixLevel.toFixed(1)}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-black/50 block">QQQ 1D</span>
+                    <span
+                      className={`font-black ${
+                        macro.qqqChange1dPct >= 0
+                          ? 'text-emerald-700 dark:text-emerald-400'
+                          : 'text-rose-700 dark:text-rose-400'
+                      }`}
+                    >
+                      {macro.qqqChange1dPct >= 0 ? '+' : ''}
+                      {macro.qqqChange1dPct.toFixed(1)}%
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-black/50 block">BREADTH</span>
+                    <span className="font-black text-black">{macro.marketBreadthPct}% &gt;20d</span>
+                  </div>
+                </div>
+              )}
 
-              <div className="flex justify-between items-center">
-                <span className="text-black/60">MACRO SENTIMENT:</span>
-                <span className={`font-bold ${
-                  (marketData?.macroSentimentScore || 0) >= 0 ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'
-                }`}>
-                  {(marketData?.macroSentimentScore || 0) >= 0 ? '+' : ''}{marketData?.macroSentimentScore?.toFixed(2) || '0.00'}
+              <div className="flex justify-between items-center pt-0.5">
+                <span className="text-black/60">LIVE NEWS + PAPERS:</span>
+                <span className="font-bold text-black">
+                  {marketData?.liveNewsCount ?? 0} LIVE / {marketData?.activeDispatchesCount ?? 0} AI
                 </span>
               </div>
 
-              <div className="text-[10px] font-bold text-black bg-black/5 px-2 py-1 border border-black/15 text-center mt-2 uppercase">
-                {marketData?.macroSentimentLabel || 'CALIBRATING'}
+              {val && (
+                <div className="flex justify-between items-center">
+                  <span className="text-black/60">OOS WALK-FORWARD:</span>
+                  <span className="font-bold text-emerald-700 dark:text-emerald-400">
+                    {val.directionOosAccuracyPct.toFixed(1)}% DIR · {val.volRegimeOosAccuracyPct.toFixed(1)}% VOL
+                  </span>
+                </div>
+              )}
+
+              <div className="text-[10px] font-bold text-black bg-black/5 px-2 py-1 border border-black/15 text-center mt-1.5 uppercase">
+                {macro?.regimeLabel?.replace(/_/g, ' ') || marketData?.macroSentimentLabel || 'CALIBRATING'}
               </div>
             </div>
           </div>
 
-          {/* Instant Search & Filter Bar */}
-          <div className="mt-6 space-y-4">
+          {/* Search, Sector Filter & Sort Bar */}
+          <div className="mt-6 space-y-3">
             <div className="relative flex items-center border-2 border-black bg-white shadow-xs">
               <div className="pl-4 pr-2 text-black/40">
                 <Search className="w-5 h-5 text-black" />
@@ -158,7 +228,7 @@ export default function MarketsPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="SEARCH TICKER OR COMPANY (E.G. 'NVDA', 'MICROSOFT', 'TSMC', 'BLACKWELL')..."
+                placeholder="SEARCH TICKER, COMPANY, OR NEWS CATALYST (E.G. 'NVDA', 'SEC', 'ASML', 'BLACKWELL')..."
                 className="w-full py-3.5 pr-10 bg-transparent font-mono text-xs sm:text-sm uppercase tracking-wider text-black placeholder-black/35 focus:outline-none"
               />
               {searchQuery && (
@@ -172,8 +242,8 @@ export default function MarketsPage() {
             </div>
 
             {/* Category / Sector Filter */}
-            <div 
-              className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0" 
+            <div
+              className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <span className="text-[10px] text-black font-bold shrink-0 tracking-wider">
@@ -186,11 +256,11 @@ export default function MarketsPage() {
                 { id: 'AUTONOMOUS_ROBOTICS', label: 'AUTONOMOUS & ROBOTICS' },
                 { id: 'CONSUMER_PLATFORMS', label: 'CONSUMER & PLATFORMS' },
                 { id: 'AI_ENTERPRISE', label: 'ENTERPRISE & SAAS' },
-                { id: 'CLOUD_CYBER', label: 'CLOUD & CYBER' }
+                { id: 'CLOUD_CYBER', label: 'CLOUD & CYBER' },
               ].map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id as any)}
+                  onClick={() => setSelectedCategory(cat.id as MarketCategory | 'ALL')}
                   className={`h-7.5 sm:h-8 px-2.5 sm:px-3 border text-[10px] sm:text-[11px] font-bold tracking-wider shrink-0 cursor-pointer transition-colors flex items-center justify-center ${
                     selectedCategory === cat.id
                       ? 'border-black bg-black text-[#faf9f6]'
@@ -201,6 +271,35 @@ export default function MarketsPage() {
                 </button>
               ))}
             </div>
+
+            {/* Sort Controls */}
+            <div
+              className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth overscroll-x-contain -mx-6 px-6 sm:mx-0 sm:px-0"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <span className="text-[10px] text-black/65 font-bold shrink-0 tracking-wider">
+                SORT BY:
+              </span>
+              {[
+                { id: 'DEFAULT', label: 'DEFAULT' },
+                { id: 'MOST_BULLISH', label: 'MOST BULLISH ODDS' },
+                { id: 'MOST_BEARISH', label: 'MOST BEARISH ODDS' },
+                { id: 'MOST_NEWS', label: 'MOST NEWS' },
+                { id: 'BIGGEST_MOVERS', label: 'BIGGEST 24H MOVERS' },
+              ].map((s) => (
+                <button
+                  key={s.id}
+                  onClick={() => setSortMode(s.id as SortMode)}
+                  className={`h-7 px-2.5 border text-[10px] font-bold tracking-wider shrink-0 cursor-pointer transition-colors flex items-center justify-center ${
+                    sortMode === s.id
+                      ? 'border-[#ff8000] bg-[#ff8000]/15 text-black'
+                      : 'border-black/20 bg-white text-black/70 hover:border-black hover:text-black'
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
 
@@ -208,7 +307,7 @@ export default function MarketsPage() {
         <div className="py-8">
           {isLoading ? (
             <div className="py-24 text-center font-mono text-xs text-black/40">
-              SYNTHESIZING MARKET TELEMETRY & RUNNING GBDT ENSEMBLE...
+              SYNTHESIZING 1Y OHLCV TELEMETRY, LIVE NEWS &amp; TRAINED XGBOOST TREES...
             </div>
           ) : filteredStocks.length === 0 ? (
             <div className="p-16 border-2 border-dashed border-black/20 text-center font-mono">
@@ -219,6 +318,7 @@ export default function MarketsPage() {
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedCategory('ALL');
+                  setSortMode('DEFAULT');
                 }}
                 className="mt-3 px-3 py-1.5 border border-black text-xs font-bold hover:bg-black hover:text-white transition-colors cursor-pointer"
               >
@@ -239,15 +339,13 @@ export default function MarketsPage() {
         </div>
       </main>
 
-      {/* Stock Detail Modal */}
       <StockDetailModal
         stock={selectedStock}
         onClose={() => setSelectedStock(null)}
+        modelValidation={marketData?.modelValidation}
       />
 
-      {/* Footer */}
       <Footer />
     </div>
   );
 }
-
