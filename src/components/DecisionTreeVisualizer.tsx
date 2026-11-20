@@ -254,8 +254,13 @@ export default function DecisionTreeVisualizer({
 
   const upProb = Math.min(99, Math.max(1, tree.finalProbabilityPct));
   const downProb = Math.round((100 - upProb) * 10) / 10;
-  const isBullLean = upProb >= 53;
-  const isBearLean = upProb <= 47;
+  const pred = stock.prediction;
+  const dir = pred.predictedDirection ?? (upProb >= 52.5 ? 'UP' : upProb <= 47.5 ? 'DOWN' : 'FLAT');
+  const exp30d = pred.expectedReturn30dPct ?? 0;
+  const exp5d = pred.expectedReturn5dPct ?? 0;
+  const targetPrice = pred.expected30dChannel?.base ?? stock.currentPrice;
+  const isBullLean = dir === 'UP';
+  const isBearLean = dir === 'DOWN';
 
   const selectedTree = tree.trainedTrees[selectedTreeIdx] || tree.trainedTrees[0];
 
@@ -305,10 +310,36 @@ export default function DecisionTreeVisualizer({
           <div className="p-4 border-2 border-black bg-white">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
               <div>
-                <span className="text-[10px] uppercase tracking-widest text-black/55 font-bold block">
-                  FINAL MODEL VERDICT · {tree.horizonLabel}
-                </span>
-                <h3 className="text-base sm:text-lg font-black text-black mt-0.5">
+                <div className="flex items-center gap-2 flex-wrap mb-1">
+                  <span className="text-[10px] uppercase tracking-widest text-black/55 font-bold">
+                    FINAL MODEL VERDICT · {tree.horizonLabel}
+                  </span>
+                  <span className="px-1.5 py-0.5 border border-black bg-black text-[#faf9f6] text-[9px] font-black">
+                    {pred.confidencePercent}% CONFIDENCE
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span
+                    className={`px-2 py-0.5 border text-xs font-black ${
+                      isBullLean
+                        ? 'border-emerald-600/50 bg-emerald-500/12 text-emerald-800 dark:text-emerald-300'
+                        : isBearLean
+                          ? 'border-rose-600/50 bg-rose-500/12 text-rose-800 dark:text-rose-300'
+                          : 'border-blue-600/40 bg-blue-500/10 text-blue-800 dark:text-blue-300'
+                    }`}
+                  >
+                    {isBullLean
+                      ? `↑ PREDICTED RISE ${exp30d >= 0 ? '+' : ''}${exp30d.toFixed(1)}% (30D)`
+                      : isBearLean
+                        ? `↓ PREDICTED DROP ${exp30d.toFixed(1)}% (30D)`
+                        : `↔ SIDEWAYS ${exp30d >= 0 ? '+' : ''}${exp30d.toFixed(1)}% (30D)`}
+                  </span>
+                  <span className="text-xs font-bold text-black">
+                    TARGET: ${targetPrice.toFixed(2)} · 5D EST: {exp5d >= 0 ? '+' : ''}
+                    {exp5d.toFixed(1)}%
+                  </span>
+                </div>
+                <h3 className="text-sm sm:text-base font-black text-black mt-1.5">
                   {tree.verdictHeadline}
                 </h3>
               </div>

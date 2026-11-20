@@ -202,6 +202,9 @@ export interface XGBoostPrediction {
   expected30dChannel?: PriceChannel30d;
   paperVelocityScore?: number;
   upProbabilityPct?: number;
+  predictedDirection?: 'UP' | 'DOWN' | 'FLAT';
+  expectedReturn5dPct?: number;
+  expectedReturn30dPct?: number;
   peerOutperformProbPct?: number;
   highVolRegimeProbPct?: number;
   forecastVolAnnualized?: number;

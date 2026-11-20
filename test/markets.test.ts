@@ -340,6 +340,13 @@ describe('AI & Silicon Markets Quant Engine Suite', () => {
     assert.ok((newsStep.evidenceArticles![0].modelImpactPctPts ?? 0) < 0);
     assert.equal(tree.finalProbabilityPct, withNews.upProbabilityPct);
     assert.ok(tree.verdictHeadline.length > 5);
+    assert.ok(withNews.predictedDirection === 'UP' || withNews.predictedDirection === 'DOWN' || withNews.predictedDirection === 'FLAT');
+    assert.equal(typeof withNews.expectedReturn30dPct, 'number');
+    assert.equal(typeof withNews.expectedReturn5dPct, 'number');
+    if (withNews.expected30dChannel && withNews.expectedReturn30dPct !== undefined) {
+      const expectedBase = Math.round(p * (1 + withNews.expectedReturn30dPct / 100) * 100) / 100;
+      assert.ok(Math.abs(withNews.expected30dChannel.base - expectedBase) <= 0.05);
+    }
 
     // Verify dynamic per-stock feature importance differs when inputs differ
     assert.notEqual(

@@ -97,13 +97,17 @@ export function calculate30dChannel(
   currentPrice: number,
   dailyVol: number,
   signalScore: number,
-  forecastAnnualizedVol?: number
+  forecastAnnualizedVol?: number,
+  explicitReturn30dPct?: number
 ): PriceChannel30d {
   const effectiveDailyVol =
     forecastAnnualizedVol && forecastAnnualizedVol > 0
       ? forecastAnnualizedVol / 100 / Math.sqrt(252)
       : dailyVol;
-  const drift = currentPrice * (signalScore * 0.055);
+  const drift =
+    explicitReturn30dPct !== undefined
+      ? currentPrice * (explicitReturn30dPct / 100)
+      : currentPrice * (signalScore * 0.055);
   const spread = Math.max(
     currentPrice * 0.03,
     currentPrice * (effectiveDailyVol * Math.sqrt(21) * 1.28)
@@ -1117,12 +1121,26 @@ export function runXGBoostQuantModel(
     ? Math.round(Math.min(130, Math.max(12, Math.exp(predLogVol))) * 10) / 10
     : ind.realizedVol20d;
 
+  const edge = (upProbabilityPct - 50) / 50;
+  const monthlySigmaPct = Math.min(22, Math.max(5, forecastVolAnnualized / Math.sqrt(12)));
+  const expectedReturn30dPct =
+    Math.round(Math.max(-18, Math.min(18, edge * monthlySigmaPct * 0.75)) * 10) / 10;
+  const expectedReturn5dPct =
+    Math.round(expectedReturn30dPct * Math.sqrt(5 / 21) * 10) / 10;
+  const predictedDirection: 'UP' | 'DOWN' | 'FLAT' =
+    upProbabilityPct >= 52.5 && expectedReturn30dPct > 0
+      ? 'UP'
+      : upProbabilityPct <= 47.5 && expectedReturn30dPct < 0
+        ? 'DOWN'
+        : 'FLAT';
+
   const normalizedSignal = Math.round(Math.max(-1, Math.min(1, (upProbabilityPct - 50) / 28)) * 100) / 100;
   const expected30dChannel = calculate30dChannel(
     currentPrice,
     ind.dailyVol,
     normalizedSignal,
-    forecastVolAnnualized
+    forecastVolAnnualized,
+    expectedReturn30dPct
   );
 
   // Dynamic per-stock feature importance (derived from actual Tree-Path + News + Vol contributions)
@@ -1527,6 +1545,9 @@ export function runXGBoostQuantModel(
     expected30dChannel,
     paperVelocityScore,
     upProbabilityPct,
+    predictedDirection,
+    expectedReturn5dPct,
+    expectedReturn30dPct,
     peerOutperformProbPct,
     highVolRegimeProbPct,
     forecastVolAnnualized,

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StockAnalysis, ModelTrajectory } from '@/types/market';
-import { TrendingUp, TrendingDown, ArrowUpRight, Cpu, Radio, GitBranch } from 'lucide-react';
+import { TrendingUp, TrendingDown, Minus, Zap, ArrowUpRight, Cpu, Radio, GitBranch } from 'lucide-react';
 
 interface StockCardProps {
   stock: StockAnalysis;
@@ -40,7 +40,39 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
   };
 
   const traj = trajectoryConfig[stock.prediction.trajectory];
-  const upProb = stock.prediction.upProbabilityPct ?? 50;
+  const pred = stock.prediction;
+  const upProb = pred.upProbabilityPct ?? 50;
+  const dir = pred.predictedDirection ?? (upProb >= 52.5 ? 'UP' : upProb <= 47.5 ? 'DOWN' : 'FLAT');
+  const exp30d = pred.expectedReturn30dPct ?? 0;
+  const exp5d = pred.expectedReturn5dPct ?? 0;
+  const targetPrice = pred.expected30dChannel?.base ?? stock.currentPrice;
+  const isVolatile = pred.trajectory === 'HIGH_VOLATILITY_CHURN';
+
+  const dirStyle =
+    dir === 'UP'
+      ? {
+          border: 'border-emerald-600/50',
+          bg: 'bg-emerald-500/12',
+          text: 'text-emerald-800 dark:text-emerald-300',
+          headline: `↑ RISE ${exp30d >= 0 ? '+' : ''}${exp30d.toFixed(1)}%`,
+          Icon: TrendingUp,
+        }
+      : dir === 'DOWN'
+        ? {
+            border: 'border-rose-600/50',
+            bg: 'bg-rose-500/12',
+            text: 'text-rose-800 dark:text-rose-300',
+            headline: `↓ DROP ${exp30d.toFixed(1)}%`,
+            Icon: TrendingDown,
+          }
+        : {
+            border: 'border-blue-600/40',
+            bg: 'bg-blue-500/10',
+            text: 'text-blue-800 dark:text-blue-300',
+            headline: `↔ FLAT ${exp30d >= 0 ? '+' : ''}${exp30d.toFixed(1)}%`,
+            Icon: Minus,
+          };
+  const DirIcon = dirStyle.Icon;
 
   const sparkline = stock.sparkline;
   const minPrice = Math.min(...sparkline);
@@ -121,22 +153,60 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
           </div>
         </div>
 
-        {/* XGBoost Trajectory & Calibrated Upside Odds */}
-        <div className="my-3 p-3 border border-black/20 bg-black/[0.02]">
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <span className="text-[10px] tracking-widest text-black/60 uppercase font-bold flex items-center gap-1">
+        {/* XGBoost Directional Prediction & Confidence Callout */}
+        <div className="my-3 p-3 border border-black/25 bg-black/[0.02]">
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <span className="text-[10px] tracking-widest text-black/65 uppercase font-bold flex items-center gap-1">
               <Cpu className="w-3 h-3 text-black" />
-              <span>[XGBOOST 5D OUTLOOK]</span>
+              <span>[XGBOOST PREDICTION]</span>
             </span>
-            <span className="text-[10px] font-black text-black">
-              {upProb.toFixed(0)}% UP ODDS · {stock.prediction.confidencePercent}% CONF
+            <span className="px-1.5 py-0.5 border border-black bg-black text-[#faf9f6] text-[10px] font-black">
+              {pred.confidencePercent}% CONFIDENCE
             </span>
           </div>
 
-          <div
-            className={`px-2 py-1 border font-bold text-xs uppercase tracking-wider text-center ${traj.border} ${traj.bg} ${traj.text}`}
-          >
-            {traj.label}
+          {/* Primary Hero Forecast Banner: Clear UP / DOWN + % Move + Target */}
+          <div className={`p-2.5 border-2 ${dirStyle.border} ${dirStyle.bg} flex items-center justify-between gap-2`}>
+            <div className="flex items-center gap-2 min-w-0">
+              <DirIcon className={`w-5 h-5 shrink-0 ${dirStyle.text}`} />
+              <div className="min-w-0">
+                <div className={`text-sm sm:text-base font-black tracking-tight leading-none ${dirStyle.text}`}>
+                  {dirStyle.headline}
+                </div>
+                <div className="text-[9px] text-black/65 font-bold mt-1">
+                  30D EST. · 5D: {exp5d >= 0 ? '+' : ''}
+                  {exp5d.toFixed(1)}%
+                </div>
+              </div>
+            </div>
+
+            <div className="text-right shrink-0">
+              <div className="text-xs font-black text-black leading-none">
+                TARGET ${targetPrice.toFixed(2)}
+              </div>
+              <div className="text-[9px] font-bold text-black/65 mt-1">
+                {upProb.toFixed(0)}% UP ODDS
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary Phase + Volatility Warning Row */}
+          <div className="mt-2 flex items-center justify-between gap-1.5 flex-wrap text-[9px] font-bold">
+            <span className={`px-1.5 py-0.5 border uppercase tracking-wider ${traj.border} ${traj.bg} ${traj.text}`}>
+              {isVolatile
+                ? dir === 'UP'
+                  ? 'UPSIDE LEAN'
+                  : dir === 'DOWN'
+                    ? 'DOWNSIDE LEAN'
+                    : 'CHOPPY RANGE'
+                : traj.label}
+            </span>
+            {isVolatile && (
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 border border-[#ff8000]/50 bg-[#ff8000]/15 text-[#b85a00] dark:text-[#ff9933] uppercase">
+                <Zap className="w-2.5 h-2.5" />
+                <span>HIGH VOLATILITY</span>
+              </span>
+            )}
           </div>
 
           {/* Mini Calibrated Upside Gauge */}
@@ -144,11 +214,16 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
             <div className="relative h-2 w-full bg-black/10 overflow-hidden">
               <div
                 className={`h-full ${
-                  upProb >= 53 ? 'bg-emerald-600' : upProb <= 47 ? 'bg-rose-600' : 'bg-blue-600'
+                  dir === 'UP' ? 'bg-emerald-600' : dir === 'DOWN' ? 'bg-rose-600' : 'bg-blue-600'
                 }`}
                 style={{ width: `${Math.min(98, Math.max(2, upProb))}%` }}
               />
               <div className="absolute top-0 bottom-0 w-px bg-black" style={{ left: '50%' }} />
+            </div>
+            <div className="flex justify-between text-[8px] text-black/45 font-bold mt-0.5">
+              <span>0% DOWN</span>
+              <span>50%</span>
+              <span>100% UP</span>
             </div>
           </div>
 
