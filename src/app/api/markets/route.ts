@@ -28,13 +28,15 @@ export async function GET(request: NextRequest) {
     const data = await getMarketOverview(isFreshRequested);
     return NextResponse.json(data, {
       headers: {
-        'Cache-Control': isFreshRequested 
-          ? 'no-cache, no-store, must-revalidate' 
-          : 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400',
+        'X-Markets-Schema': 'v2',
+        'Cache-Control': isFreshRequested
+          ? 'no-cache, no-store, must-revalidate'
+          : 'public, max-age=30, s-maxage=120, stale-while-revalidate=180',
       },
     });
-  } catch (err: any) {
-    logger.error('Failed to retrieve market telemetry', { error: err?.message });
+  } catch (err: unknown) {
+    const error = err instanceof Error ? err.message : 'Unknown error';
+    logger.error('Failed to retrieve market telemetry', { error });
     return NextResponse.json(
       { error: 'Failed to retrieve market telemetry' },
       { status: 500 }

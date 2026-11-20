@@ -17,6 +17,18 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 type SortMode = 'DEFAULT' | 'MOST_BULLISH' | 'MOST_BEARISH' | 'MOST_NEWS' | 'BIGGEST_MOVERS';
 
+const MARKETS_API_VERSION = '2';
+
+function hasCompleteMarketSchema(data: MarketOverviewResponse | null | undefined): boolean {
+  const firstPred = data?.stocks?.[0]?.prediction;
+  return Boolean(
+    data?.modelValidation &&
+      firstPred?.decisionTree &&
+      firstPred?.predictedDirection !== undefined &&
+      firstPred?.expectedReturn30dPct !== undefined
+  );
+}
+
 export default function MarketsPage() {
   const [marketData, setMarketData] = useState<MarketOverviewResponse | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +41,9 @@ export default function MarketsPage() {
   const fetchMarketTelemetry = async (isManual = false) => {
     if (isManual) setIsRefreshing(true);
     try {
-      const url = isManual ? `/api/markets?fresh=1&t=${Date.now()}` : '/api/markets';
+      const url = isManual
+        ? `/api/markets?v=${MARKETS_API_VERSION}&fresh=1&t=${Date.now()}`
+        : `/api/markets?v=${MARKETS_API_VERSION}`;
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
       const data: MarketOverviewResponse = await res.json();
@@ -46,9 +60,18 @@ export default function MarketsPage() {
     let active = true;
     (async () => {
       try {
-        const res = await fetch('/api/markets');
+        const res = await fetch(`/api/markets?v=${MARKETS_API_VERSION}`);
         if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
-        const data: MarketOverviewResponse = await res.json();
+        let data: MarketOverviewResponse = await res.json();
+        if (!hasCompleteMarketSchema(data)) {
+          const freshRes = await fetch(
+            `/api/markets?v=${MARKETS_API_VERSION}&fresh=1&t=${Date.now()}`,
+            { cache: 'no-store' }
+          );
+          if (freshRes.ok) {
+            data = await freshRes.json();
+          }
+        }
         if (active) setMarketData(data);
       } catch (err) {
         console.error('Failed to load market telemetry, using fallback', err);

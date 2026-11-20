@@ -41,11 +41,19 @@ export default function StockCard({ stock, onOpenDetails }: StockCardProps) {
 
   const traj = trajectoryConfig[stock.prediction.trajectory];
   const pred = stock.prediction;
-  const upProb = pred.upProbabilityPct ?? 50;
-  const dir = pred.predictedDirection ?? (upProb >= 52.5 ? 'UP' : upProb <= 47.5 ? 'DOWN' : 'FLAT');
-  const exp30d = pred.expectedReturn30dPct ?? 0;
-  const exp5d = pred.expectedReturn5dPct ?? 0;
   const targetPrice = pred.expected30dChannel?.base ?? stock.currentPrice;
+  const derived30d =
+    stock.currentPrice > 0
+      ? Math.round(((targetPrice - stock.currentPrice) / stock.currentPrice) * 1000) / 10
+      : 0;
+  const exp30d = pred.expectedReturn30dPct ?? derived30d;
+  const exp5d = pred.expectedReturn5dPct ?? Math.round(exp30d * Math.sqrt(5 / 21) * 10) / 10;
+  const upProb =
+    pred.upProbabilityPct ??
+    Math.round(Math.min(95, Math.max(5, 50 + pred.signalScore * 28)) * 10) / 10;
+  const dir =
+    pred.predictedDirection ??
+    (exp30d >= 0.3 || upProb >= 52.5 ? 'UP' : exp30d <= -0.3 || upProb <= 47.5 ? 'DOWN' : 'FLAT');
   const isVolatile = pred.trajectory === 'HIGH_VOLATILITY_CHURN';
 
   const dirStyle =
