@@ -1,5 +1,153 @@
 [
   {
+    "id": "6b1a37a3501d8c9a",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
+    "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
+    "publishedAt": "2026-11-21T01:06:42.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.794Z",
+    "contentHash": "0c02eebc202a1b82",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Hillary Lovric",
+    "contentSnippet": "Turn one person’s process into your team’s process, get more done in the Quick web app, and get more complete answers from agents working together. AWS Quick is the AI workspace built only for work. Today, we are releasing updates that help your team get more of its everyday work done: Build, see, and improve business processes, all through conversation. Describe a process in chat and Quick builds a flow to orchestrate agents, skills, and tools with access to structured data, knowledge, and apps. New deterministic steps help make your workflows consistent and verifiable, now with longer-running workflows and support for large data volumes. Triage your day and keep agents working in the Quick web app. The updated web app puts what needs your attention and a daily briefing on your home screen, adds the agents and skills you use on desktop, and keeps your work running after you close the tab. Complete work spanning multiple agents through a single prompt. With multi-agent orchestration, several specialized agents work on your request at the same time, and Quick combines what they find into one response. Bring more of your data into Quick. Connect to Meta ads and Amplitude, then ask in natural language and combine the answers with your other sources. Skills on web, security and governance improvements, and more languages: Turn the way you do a task into a skill Quick can reuse, now in the Quick web app. Set configurable content safety and sensitive-information controls for user prompts. Support for Japanese, German, Chinese (Simplified and Traditional), and Vietnamese. AI assistants make individuals faster, but the gains often stay with one person. The way one analyst builds the monthly report rarely becomes the way the team builds it, and work waits until someone is back at their desk. This release helps your team turn what one person knows into a process everyone can rely on, and keeps work moving when you step away. Turn one person’s process into your team’s process AWS Quick Flows already helps teams automate and standardize business processes so people can focus on their most important work. Now you can build, run, and refine flows entirely in chat. And your flows can take on more of your tough work, whether you start it from the web, desktop, or mobile app. For example, here is how flows could support a finance team. Maya is a financial planning and analys",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/Screenshot-2026-11-20-at-4.58.42%E2%80%AFPM.png",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AWS has announced a series of updates to AWS Quick, its AI-powered workspace platform, aimed at transitioning individual workflows into standardized team processes. The update introduces conversational flow building, allowing users to describe business processes in chat to orchestrate agents, tools, and data. These workflows now include deterministic steps to ensure consistency and verifiability, with enhanced support for longer-running processes and larger data volumes.\n\nThe updated web application features a redesigned home screen providing daily briefings and prioritized tasks, while enabling background execution so workflows continue after browser tabs are closed. A key technical addition is multi-agent orchestration, which allows multiple specialized agents to process a single prompt simultaneously and synthesize findings into a unified response. New data connectors for Meta Ads and Amplitude have been added, alongside expanded language support for Japanese, German, Chinese (Simplified and Traditional), and Vietnamese.\n\nSecurity and governance have been bolstered with configurable content safety and sensitive-information controls for user prompts. The platform now allows users to convert individual tasks into reusable 'skills' directly within the web interface, aiming to institutionalize knowledge across teams rather than keeping it siloed with individual analysts.",
+      "takeaways": [
+        "**Multi-Agent Orchestration:** Users can now trigger multiple specialized agents with a single prompt, with the system synthesizing individual outputs into a consolidated response.",
+        "**Deterministic Workflows:** New workflow capabilities support longer-running processes and larger data volumes with deterministic steps for verifiable, consistent execution.",
+        "**New Data Integrations:** AWS Quick now supports native connections to Meta Ads and Amplitude, allowing natural language querying across these data sources.",
+        "**Language Expansion:** The platform has added support for Japanese, German, Chinese (Simplified and Traditional), and Vietnamese.",
+        "**Governance Controls:** Administrators can now implement configurable content safety and sensitive-information filters for user-generated prompts."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "674b00c087f71d3d",
+    "canonicalUrl": "https://siliconangle.com/2026/11/20/three-insights-missed-thecubes-coverage-dell-technologies-new-york-symposium-dellnewyorksymposium/",
+    "title": "Three insights you may have missed from theCUBE’s coverage of the Dell Technologies New York Symposium",
+    "publishedAt": "2026-11-21T00:21:22.000Z",
+    "fetchedAt": "2026-11-21T03:42:45.299Z",
+    "contentHash": "50d2472f98ab76c4",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Victoria Gayton",
+    "contentSnippet": "UPDATED 19:21 EST / NOVEMBER 20 2026\n\nThree insights you may have missed from theCUBE’s coverage of the Dell Technologies New York Symposium\n\nAI operational readiness requires more than selecting the right servers, storage and computing capacity.\n\nThose considerations are particularly consequential for financial institutions , where reliability, regulatory obligations and the need to demonstrate returns on technology investments shape deployment decisions. Meanwhile, AI is changing the threat landscape, giving less sophisticated attackers access to capabilities that once required considerably greater resources, according to John Scimone , president and chief security officer of Dell Technologies Inc.\n\n“I think the pyramid still exists, but undoubtedly, the cost of entry and the barriers to entry have crumbled,” he told theCUBE . “Said another way, the least sophisticated attack tomorrow is more sophisticated than the world will have ever seen a year ago.”\n\nScimone spoke with theCUBE Research’s Dave Vellante during the Dell Technologies New York Symposium , part of SiliconANGLE Media’s exclusive coverage on theCUBE. Across the event , Dell executives and cloud infrastructure providers examined the economics of enterprise AI, the operational challenges of scaling infrastructure and the decisions shaping AI adoption.\n\nHere is theCUBE’s complete video discussion with John Scimone:\n\nHere are three insights you might have missed from theCUBE’s coverage of the Dell Technologies New York Symposium:\n\nInsight #1: Enterprise AI requires a new operating and economic model.\n\nDell has spent nearly two years running fully autonomous agents internally, capturing institutional knowledge in machine-readable skill files that guide their behavior. The effort is part of a broader reorganization of work around AI agents, according to John Roese , global chief technology officer and chief AI officer of Dell.\n\n“It doesn’t mean you can’t use frontier models and open models,” he said during the event . “It just means that when you design your AI system, you need to realize that the thing that is your moat is not the actual tools. It’s not even the models. It’s the special knowledge that’s now manifesting in these new forms that really capture what you know and do differently than your competitors.”\n\nHere is theCUBE’s complete video discussion with John Roese:\n\nThe financial side of A",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "At the Dell Technologies New York Symposium, Dell executives and industry partners detailed the evolving operational and economic requirements for enterprise AI. Dell CTO John Roese revealed that the company has spent nearly two years developing autonomous agents internally, utilizing machine-readable skill files to capture institutional knowledge, which he identifies as the primary competitive moat rather than the underlying models themselves. CFO David Kennedy emphasized that financial readiness now requires shifting from variable token consumption models to more predictable, efficient usage patterns, often by leveraging open-weight models for repetitive financial tasks to control costs.\n\nInfrastructure strategy is shifting toward a distributed model spanning data centers, cloud environments, and the edge to manage rising inference costs. Dell SVP Kyle Dufresne noted that organizations are increasingly pushing inference to the edge to maintain performance and cost-efficiency. Simultaneously, supply chain constraints for AI-critical components—including processors, memory, and rack-level cooling—are causing project delays of 60 to 120 days, prompting Dell to urge earlier collaborative planning with clients. Security remains a critical concern, with Dell CSO John Scimone warning that the barrier to entry for sophisticated cyberattacks has collapsed, rendering even \"least sophisticated\" future attacks more dangerous than historical precedents.",
+      "takeaways": [
+        "**Internal AI Strategy:** Dell has spent two years building autonomous agents that utilize machine-readable skill files to codify institutional knowledge.",
+        "**Supply Chain Delays:** Demand for AI server components like cooling, networking, and processors is currently causing project lead-time delays of 60 to 120 days.",
+        "**Market Access:** Comet Cloud Inc. is targeting small-to-medium businesses excluded by major cloud providers' multiyear contract requirements by offering isolated, dedicated compute clusters.",
+        "**Sovereign Infrastructure:** Alpha Compute Corp. is utilizing Dell and Intel hardware to build \"sovereign-by-design\" neocloud enclaves, focusing on data residency and confidential computing requirements.",
+        "**Security Landscape:** Dell CSO John Scimone reports that the cost and technical barriers to entry for cyberattacks have significantly decreased, increasing the threat level for all enterprise deployments."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "756bd32258a5ff4a",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/",
+    "title": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
+    "publishedAt": "2026-11-21T00:14:26.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.794Z",
+    "contentHash": "d8f1632c912c63de",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Ravi Yadav",
+    "contentSnippet": "Customers increasingly self-host large language models (LLMs) on GPUs for control over cost, accuracy, and latency. However, self-hosting often means paying for redundant GPU work because small, isolated caches on each server can’t hold or share the growing context AI agents and chat applications resend. Consider a legal AI assistant that can accumulate hundreds of thousands of tokens of case history in each conversation. When a lawyer returns to a thread after lunch, responses from the LLM can take minutes. The GPU server that picks up the request has none of that history in its memory. So, the GPU recomputes the key-value (KV) attention states for all of those tokens, a step called prefill, before it writes a word. The same pattern slows down resumed coding agents, agentic AI assistants, and document Q&A assistants. Distributed KV caching with Amazon ElastiCache can cut self-hosted LLM inference costs by up to 40% and time to first token (TTFT) by up to 80%. Distributed KV caching extends GPU-local caches with a shared tier beside your GPU fleet so any server can reuse KV state for days across sessions, routing shifts, and server failures. “ Announcing distributed KV caching for self-hosted LLMs with Amazon ElastiCache ” dives into the technical details and the performance benchmarks. This post details the distributed KV caching skill in the Agent Toolkit for AWS. With this skill, you can evaluate and set up distributed KV caching from within your coding agent in a few prompts. The skill guides the agent through checking whether your workload benefits from distributed KV caching, setting up a cache cluster for testing or production workload, and troubleshooting your LLM inference caching. The skill works with Kiro , Claude Code, OpenAI Codex, and other coding agents that support Agent Skills. We walk through how the skill works with four conversations: diagnosing a slow first token, sizing and pricing the cache, setting it up, and fixing a failed transfer. Why a skill for KV caching and what can it do? The benefits for your workload depend on characteristics such as LLM models used, user traffic patterns, and prompt routing choices, and can be complex to estimate. We created the KVTrace tool to get close estimates of the benefits for your workload, from your own model and traffic before you deploy any infrastructure, at no additional charge. The skill simp",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/ML-22449-1.png",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Amazon has introduced a distributed KV caching architecture for self-hosted LLMs using Amazon ElastiCache, designed to mitigate the latency and cost overheads associated with redundant prefill computations. By offloading key-value (KV) attention states to a shared, external cache tier, the system allows GPU fleets to retrieve existing context across different sessions, routing shifts, or server failures. This approach specifically targets long-context applications like legal assistants or coding agents, where recomputing hundreds of thousands of tokens results in significant time-to-first-token (TTFT) delays.\n\nAWS claims this distributed caching strategy can reduce self-hosted LLM inference costs by up to 40% and improve TTFT by up to 80%. To facilitate adoption, AWS released a dedicated 'distributed KV caching skill' within the Agent Toolkit for AWS, which enables coding agents—including Kiro, Claude Code, and OpenAI Codex—to automate the evaluation, cluster setup, and troubleshooting of the caching infrastructure. Additionally, AWS provides a tool called KVTrace, which allows users to estimate potential performance gains and cost savings based on their specific model, traffic patterns, and prompt routing before deploying any infrastructure.",
+      "takeaways": [
+        "**Performance Metrics:** Distributed KV caching can reduce time-to-first-token (TTFT) by up to 80% and lower self-hosted LLM inference costs by up to 40%.",
+        "**Tooling Integration:** The distributed KV caching skill is part of the Agent Toolkit for AWS and is compatible with coding agents such as Kiro, Claude Code, and OpenAI Codex.",
+        "**Estimation Tool:** The KVTrace tool is provided at no additional charge to simulate workload benefits and infrastructure requirements before deployment.",
+        "**Core Functionality:** The architecture extends GPU-local caches with a shared tier via Amazon ElastiCache, enabling persistence of KV states across sessions and server failures."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "536d4386c711aad4",
+    "canonicalUrl": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/",
+    "title": "How Google Duplex evolved to also call businesses for you in Gemini",
+    "publishedAt": "2026-11-20T23:30:30.000Z",
+    "fetchedAt": "2026-11-21T03:42:45.793Z",
+    "contentHash": "c95abd40e0f3ef3a",
+    "sourceId": "google-research",
+    "sourceName": "Google AI Research Blog",
+    "author": "Google AI Research Blog",
+    "contentSnippet": "November 20, 2026 Yossi Matias, Vice President, Google & GM, Google Research, Yaniv Leviathan, Google Fellow, Google Research, and Janet Zhou, Group Product Manager, Google Maps\n\nWhen we introduced Google Duplex in 2018, it pioneered natural voice conversations between AI and local businesses over the phone. Since then, this technology has worked behind the scenes across many Google products. These capabilities are integrated directly in Tasks in Gemini .\n\nCompleting tasks like making dinner reservations or booking a hair appointment is time consuming. Live phone conversations move fast and rarely follow a script. The person on the other end can say almost anything, often revising their thoughts mid-sentence – and people often rely on subtle tone changes to indicate whose turn it is to speak. Pause half a second too long, and it sounds like the call dropped; speak too soon, and you end up talking over each other. Leveraging AI to complete these tasks respectfully over the phone required us to consider high quality speech understanding, contextual reasoning, and speech synthesis working together in a single, low-latency system.\n\nWe introduced Google Duplex nearly a decade ago to help address this challenge. Propelled by advances in foundation models, the Duplex architecture has evolved to power autonomous task completion across many core products, such as Google Search and Maps. This week, we launched Duplex in Tasks in Gemini App , a personal AI collaborator that can help coordinate real-world chores, like calling businesses for you and handling real-world requests on behalf of the user. In this post, we look back at the decade-long architectural evolution that made this possible — moving from early, closed-domain models to a unified stack built entirely with Gemini.\n\nFrom closed-domain calls to Tasks in Gemini\n\nWhat began as a narrow, task-specific system quickly expanded into a shared conversational infrastructure, built in collaboration with teams across Google.\n\nDuring the COVID-19 pandemic, when business hours and services shifted rapidly, Duplex doubled down on verifying merchant info automatically to keep listings accurate. It remains an important data source; for example, business information sourced from Duplex’s phone calls had been shown in Search and Maps over one trillion times , as we shared in 2023.\n\nSimultaneously, we worked with Android and ",
+    "imageUrl": "https://storage.googleapis.com/gweb-research2023-media/original_images/Duplex1-TasksInGeminiHero.png",
+    "category": "Open Source & Research",
+    "lab": "Google DeepMind",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Google has officially integrated its decade-old Duplex technology into 'Tasks in Gemini,' enabling the AI to autonomously place phone calls to businesses on behalf of users. This launch marks the culmination of a ten-year architectural evolution, transitioning from narrow, task-specific recurrent neural networks to a unified stack powered entirely by Gemini. The system is designed to handle real-world complexities such as scheduling appointments, checking service availability, and managing multi-constraint requests like coordinating car maintenance around existing calendar conflicts.\n\nThe technical architecture has progressed through three distinct eras: initial closed-domain models trained on specific task flows; a hybrid phase (circa 2022) using LaMDA paired with deterministic state-tracking guardrails; and the current Gemini-based system. The modern stack utilizes free-text prompting to generalize across business categories without requiring bespoke dialogue models. To address the challenges of live telephony, Google employs custom acoustic models for sub-second latency in noisy environments and pragmatic grounding to interpret social cues, such as polite indirect refusals or conversational pauses, ensuring natural interaction cadence.",
+      "takeaways": [
+        "**Architectural Evolution:** The system moved from pre-transformer recurrent neural networks to a hybrid LaMDA-based stack, and finally to a unified Gemini-powered architecture capable of handling unbounded tasks.",
+        "**Operational Scale:** Data gathered via Duplex phone calls has been surfaced in Google Search and Maps over one trillion times as of 2023.",
+        "**Latency Optimization:** The stack utilizes custom acoustic and conversation cadence models to maintain sub-second response times despite background noise like kitchen clatter or street traffic.",
+        "**Business Controls:** Merchants can opt out of automated calls via Google Business Profile settings or by verbally requesting the AI to stop during a call.",
+        "**Deployment History:** The technology has been integrated into five generations of Pixel devices via 'Call Screen' and 'Hold for Me' features since 2019."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "845fd769a93fbee8",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm/",
+    "title": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
+    "publishedAt": "2026-11-20T23:07:03.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.794Z",
+    "contentHash": "8f43083c11f95437",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Austin Cherian",
+    "contentSnippet": "Keeping a shared Slurm cluster for foundation model development in sync entails keeping several separately maintained pieces of configuration matched to what’s running on the nodes. The cluster’s shape lives on multiple configuration files, its software in custom scripts, its network topology in files that must be edited as nodes change, and its users in a roster that an administrator must maintain and rerun. Over time these pieces drift away from what’s actually running, and nothing tells you when they do. We believe cluster configurations should be managed the way you manage the rest of your AWS infrastructure. You declare what you want through an API or the console, AWS validates it before it’s applied, the cluster is kept in that state continuously, and you can see whether it’s working. During 2026, Amazon SageMaker HyperPod brought that approach to Slurm clusters, with API-driven Slurm configuration, AMI-based configuration, continuous provisioning, automatic topology management, and deep health checks. Today, we launched cluster extensions, which bring the same approach to the software and settings on running nodes, with managed extensions for observability and user management. However, through all of it, you still keep full access to every node in your cluster, including the controller node. You can SSH in, configure nodes directly, and run your own lifecycle scripts. The APIs give you less to maintain, direct access gives you more control, and you choose the balance. In this post, we walk through the features we introduced in 2026 and explain why the software on running nodes needed a different mechanism. We then show how cluster extensions work, through both the API and the console, and follow a platform team through a quarter on a cluster that uses them. A declarative foundation for Slurm cluster operations We can think of a Slurm cluster’s configuration grouped into six layers. Five of them describe the cluster itself: its definition, node setup, capacity, network topology, and hardware health. The sixth covers the software running on its nodes, which we discuss in the next section. The following figure shows the six layers. Earlier in 2026, we brought declarative management to the first five layers. With API-driven Slurm configuration , administrators define node roles, partitions, and Amazon FSx for Lustre and Amazon FSx for OpenZFS mounts in Cr",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/image_43512305-1.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Amazon has introduced managed cluster extensions for SageMaker HyperPod Slurm, extending declarative infrastructure management to the software and settings layer of running nodes. This update builds upon the 2026 rollout of API-driven Slurm configuration, which previously automated node roles, partitions, and storage mounts for Amazon FSx for Lustre and OpenZFS. The new extensions specifically target observability and user management, aiming to eliminate configuration drift that occurs when cluster state deviates from manual configuration files, scripts, and network topology definitions.\n\nThe system categorizes Slurm cluster configuration into six distinct layers: cluster definition, node setup, capacity, network topology, hardware health, and node-level software. While the first five layers were addressed earlier in 2026 through continuous provisioning and automatic topology management, the software layer required a new mechanism to handle the dynamic nature of running nodes. Despite the shift toward API-driven, declarative management, Amazon maintains full user access, allowing administrators to SSH into controller nodes, execute custom lifecycle scripts, and perform direct manual configurations alongside the managed extensions.",
+      "takeaways": [
+        "**Configuration Layers:** Amazon defines Slurm cluster operations across six layers: cluster definition, node setup, capacity, network topology, hardware health, and node-level software.",
+        "**Managed Extensions:** New functionality specifically automates observability and user management tasks on running nodes to prevent configuration drift.",
+        "**Declarative Management:** The system allows administrators to define desired states via API or AWS Console, with AWS performing validation and continuous state enforcement.",
+        "**Administrative Access:** Users retain full root-level access to all nodes, including the controller node, for manual configuration and custom script execution.",
+        "**2026 Infrastructure Rollout:** Previous HyperPod Slurm updates included API-driven configuration, AMI-based setup, continuous provisioning, automatic topology management, and deep health checks."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "48003ca6dcdc0ce9",
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/",
     "title": "Introducing Amazon SageMaker HyperPod Global Inference Gateway: One endpoint across Regions and clusters",
@@ -61,12 +209,12 @@
     "canonicalUrl": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
     "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
     "publishedAt": "2026-11-20T20:59:08.000Z",
-    "fetchedAt": "2026-11-20T22:48:35.794Z",
-    "contentHash": "96fae9e505a85b47",
+    "fetchedAt": "2026-11-21T03:42:44.508Z",
+    "contentHash": "1cdd0c5c7af12c39",
     "sourceId": "arstechnica-tech",
     "sourceName": "Ars Technica",
     "author": "\n                    Dan Goodin\n                ",
-    "contentSnippet": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered was an ecosystem that leaked highly sensitive data like a sieve.\n\nThe exposure was found through an ingenious experiment designed to test if sensitive information can leak through the vast chain of widely used AI services and how that information is exploited when it does. Many of today’s AI apps use services such as OpenRouter or Vercel that act as brokers. These “AI routers,” sometimes also known as “AI gateways,” receive large numbers of prompts sent from AI app end users and route them to an available inference engine based on criteria such as the one charging the lowest price or being best suited for the given task. Instead of using Anthropic, OpenAI, or another big provider, the developer hires an AI router to find the most suitable model.\n\nSecurity breaches, prompt theft, and privacy violations\n\nTo test for potential leakage, researcher HD Moore assembled a collection of AWS access keys, functioning credentials tied to empty AWS accounts, passwords for services such as SSH, and unique URLs, DNS names, and private git repository references. None of the secrets had ever been used before, and he controlled the infrastructure that received any requests using the credentials. He then seeded each secret into exactly one prompt sent to a single provider. In the event any of the secrets were leaked, these “canaries”—so called because they resemble the role of that bird when taken into coal mines—would allow Moore to identify each link in the chain that was responsible.\n\nThe findings are striking. They included:\n\nEvidence that at least three AI providers were compromised by attackers who used their access to siphon prompts they received\n\nMultiple resellers in the inference marketplace that logged the prompts and somehow passed them along to people who used the credentials\n\nMultiple cases of AI providers not following end-user privacy settings embedded into flags specifying terms such as Zero Data Retention (ZDR) or “no data collection”\n\n“We sent nearly two million AI prompts containing unique, trackable secrets to AI providers, then watched where those secrets surfaced,” Moore, the chief research officer of security firm Dragos, wrote Thursday . “What we found reve",
+    "contentSnippet": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered was an ecosystem that leaked highly sensitive data like a sieve. The exposure was found through an ingenious experiment designed to test if sensitive information can leak through the vast chain of widely used AI services and how that information is exploited when it does. Many of today’s AI apps use services such as OpenRouter or Vercel that act as brokers. These “AI routers,” sometimes also known as “AI gateways,” receive large numbers of prompts sent from AI app end users and route them to an available inference engine based on criteria such as the one charging the lowest price or being best suited for the given task. Instead of using Anthropic, OpenAI, or another big provider, the developer hires an AI router to find the most suitable model. Security breaches, prompt theft, and privacy violations To test for potential leakage, researcher HD Moore assembled a collection of Amazon Web Services access keys, functioning credentials tied to empty AWS accounts, passwords for services such as SSH, and unique URLs, DNS names, and private git repository references. None of the secrets had ever been used before, and he controlled the infrastructure that received any requests using the credentials. He then seeded each secret into exactly one prompt sent to a single provider. In the event any of the secrets were leaked, these “canaries”—so called because they resemble the role of that bird when taken into coal mines—would allow Moore to identify each link in the chain that was responsible. Read full article Comments",
     "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
     "category": "Robotics & Hardware",
     "lab": "Anthropic",
@@ -156,7 +304,7 @@
     "author": "Tim De Chant",
     "contentSnippet": "Spotify founder Daniel Ek is backing Europa Fusion, a stealthy fusion power startup founded by an AI researcher who is taking a different approach to developing a fusion power plant.\n\nThe U.K.-based startup was founded in February, though sources told TechCrunch that the founder, Nantas Nardelli, has been working on the idea for longer. The people asked not to be identified because the information isn’t public. Bloomberg first reported Ek’s backing of Europa Fusion.\n\nNardelli has extensive experience in the AI world, having previously worked at Google DeepMind, Facebook AI Research, and Microsoft Research Cambridge. Recently, he was head of machine learning at Pacific Fusion , the fusion power startup based in Fremont, California.\n\nPacific Fusion recently broke ground on a demonstration facility in New Mexico. Like most fusion startups of its size , Pacific Fusion leans heavily on physical devices to test its theories and improve its simulations.\n\nNardelli apparently didn’t agree with the focus on hardware, instead thinking that fusion startups should invest in a more simulation- and data-heavy approach, a source familiar with his thinking told TechCrunch.\n\nLike Pacific Fusion, Europa Fusion will pursue a pulsed-power approach to fusion. Pulsed-power reactors use massive, perfectly timed surges of electrical current to compress fuel targets until the atoms inside fuse and release energy.\n\nFusion power has the potential to be a significant energy source in the coming decades, but to date, no one has built a power plant capable of supplying electricity to the grid. If fusion power becomes commercially viable, though, it could possibly be a significant source of carbon-free power that draws on nearly limitless fuel supplies. The technology also has the potential to alleviate concerns about AI’s energy consumption.\n\nFusion’s ability to generate electricity without exacerbating climate change apparently drove Nardelli’s pivot from AI.\n\n“My original background is in electronics and control engineering,” he wrote on his website . “I used to build robots for a living. One day I’ll be back to that, but it’s time to fix climate change for good.”\n\nTopics AI , Climate , Exclusive , fusion power , Startups When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nTim De Chant is a senior climate rep",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Google DeepMind",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Spotify founder Daniel Ek is backing Europa Fusion, a U.K.-based fusion power startup founded in February by Nantas Nardelli. Nardelli, a former AI researcher with tenures at Google DeepMind, Facebook AI Research, and Microsoft Research Cambridge, previously served as the head of machine learning at Pacific Fusion. The startup aims to differentiate itself from competitors by prioritizing a simulation- and data-heavy development methodology over the hardware-centric approach common in the current fusion sector.\n\nEuropa Fusion intends to utilize a pulsed-power reactor architecture, which involves using precisely timed electrical current surges to compress fuel targets to induce fusion. This approach mirrors the technical strategy of Pacific Fusion, but Nardelli’s pivot from AI to fusion is predicated on the belief that advanced computational modeling can accelerate the path to commercial viability. The company's mission is to develop a carbon-free energy source capable of supplying the grid, potentially addressing the high energy demands of AI infrastructure.",
@@ -175,24 +323,25 @@
   {
     "id": "81e856d23e6ca940",
     "canonicalUrl": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
-    "title": "AI claimed a solution to the 167-year-old Riemann Hypothesis — and a human did, too",
+    "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
     "publishedAt": "2026-11-20T19:32:08.000Z",
-    "fetchedAt": "2026-11-20T22:48:35.791Z",
+    "fetchedAt": "2026-11-21T03:42:44.505Z",
     "contentHash": "e0ef1c2c274d5552",
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Tim Fernholz",
-    "contentSnippet": "It’s a big week for Levent Alpöge: The mathematician saw his employer, Anthropic, become the first publicly traded frontier AI lab. He also appears to have solved one of the most important problems in mathematics.\n\n“The precise timing is horrible,” he wrote in an essay announcing his findings and describing how he messaged Anthropic CEO Dario Amodei last Sunday night to ask how to announce that he had found a Lean-compilable solution to the Riemann Hypothesis, which dates back to 1859 and is among the Millennium Prize math problems.\n\nThe Hypothesis conjectures that there is a hidden structure underlying the appearance of prime numbers. If the claimed result holds true, we’re entering sublime-mysteries-of-the-universe territory.\n\nMaybe the best way to understand how exciting this is to the mathematics community is to watch the experts puzzling through the result in a chat on Zulip . Mathematicians like Chris Birkbeck, a number theorist at the University of East Anglia, are posting thoughts like this …\n\nThe cohomology bound is proved by what looks like an automorphy-lifting argument. It genuinely uses the existence of Galois representations attached to regular algebraic, polarized cuspidal automorphic representations of GL_n over CM fields, along with base change, Jacquet–Shalika, Clozel’s purity, Bernstein–Zelevinsky, the main theorem of CM, Deligne–Ribet and more.\n\nFor my part, I tapped out of mathematics at college calculus, so I can’t help decode exactly what that means.\n\nBut that comment was followed by 20 readers reacting 🤯.\n\nIt will be a while before the mathematics community feels like it has a handle on the proof, but most appear confident that the formalized Lean result will hold. Lean is an an open-source coding language used to express mathematical ideas as code, allowing proofs to be formally verified. Several participants in the Zulip chat, including MIT mathematician Andrew Sutherland, say they have successfully confirmed that Alpöge’s solution can be compiled successfully.\n\nAlpöge appeared in his essay to feel a bit guilty about releasing the proof without a truly human-intelligible explanation, but his obsession with the problem since childhood made him feel he “could not live” if he waited to release the finding.\n\nAlpöge described a “stream-of-consciousness jaunt through the experience of finding all the pieces of the argument through incred",
+    "contentSnippet": "It’s a big week for Levent Alpöge: The mathematician saw his employer, Anthropic, become the first publicly traded frontier AI lab. He also appears to have solved one of the most important problems in mathematics.\n\n“The precise timing is horrible,” he wrote in an essay announcing his findings and describing how he messaged Anthropic CEO Dario Amodei last Sunday night to ask how to announce that he had found a Lean-compilable solution to the Riemann hypothesis, which dates back to 1859 and is among the Millennium Prize math problems.\n\nThe hypothesis conjectures that there is a hidden structure underlying the appearance of prime numbers. If the claimed result holds true, we’re entering sublime-mysteries-of-the-universe territory.\n\nMaybe the best way to understand how exciting this is to the mathematics community is to watch the experts puzzling through the result in a chat on Zulip . Mathematicians like Chris Birkbeck, a number theorist at the University of East Anglia, are posting thoughts like this …\n\nThe cohomology bound is proved by what looks like an automorphy-lifting argument. It genuinely uses the existence of Galois representations attached to regular algebraic, polarized cuspidal automorphic representations of GL_n over CM fields, along with base change, Jacquet–Shalika, Clozel’s purity, Bernstein–Zelevinsky, the main theorem of CM, Deligne–Ribet and more.\n\nFor my part, I tapped out of mathematics at college calculus, so I can’t help decode exactly what that means.\n\nBut that comment was followed by 20 readers reacting 🤯.\n\nIt will be a while before the mathematics community feels like it has a handle on the proof, but most appear confident that the formalized Lean result will hold. Lean is an an open-source coding language used to express mathematical ideas as code, allowing proofs to be formally verified. Several participants in the Zulip chat, including MIT mathematician Andrew Sutherland, say they have successfully confirmed that Alpöge’s solution can be compiled successfully.\n\nAlpöge appeared in his essay to feel a bit guilty about releasing the proof without a truly human-intelligible explanation, but his obsession with the problem since childhood made him feel he “could not live” if he waited to release the finding.\n\nAlpöge described a “stream-of-consciousness jaunt through the experience of finding all the pieces of the argument through incred",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Levent Alpöge, a mathematician at Anthropic, has claimed a solution to the 167-year-old Riemann Hypothesis, one of the seven Millennium Prize problems. Alpöge utilized the AI model Claude to assist in the derivation, describing the process as a \"stream-of-consciousness\" collaboration. The proof has been formalized in Lean, an open-source language for mathematical verification, and has been successfully compiled by independent mathematicians, including MIT’s Andrew Sutherland. The proof reportedly relies on an automorphy-lifting argument involving Galois representations, base change, and various established theorems in number theory.\n\nSimultaneously, Stanford postdoc Alessandro Masullo has released a separate, human-authored proof of the General Riemann Hypothesis. Unlike Alpöge’s Lean-verified work, Masullo’s proof is a traditional manuscript representing 12 years of independent research, which has not yet undergone formal verification. The mathematical community is currently evaluating both submissions, with experts noting that while the Lean compilation of Alpöge’s work is a significant technical milestone, the underlying mathematical logic remains under intense peer review to ensure it is human-intelligible and logically sound.",
+      "tldr": "Levent Alpöge, a mathematician at Anthropic, has released a proof for the 167-year-old Riemann hypothesis, a Millennium Prize problem concerning the distribution of prime numbers. Alpöge utilized Anthropic’s Claude model to assist in the derivation, describing the process as a stream-of-consciousness collaboration. The proof has been formalized in Lean, an open-source language for formal verification, and has been successfully compiled and verified by independent mathematicians, including MIT’s Andrew Sutherland. Alpöge also released a separate proof regarding the Navier-Stokes equations in collaboration with NYU mathematician Tristan Buckmaster.\n\nSimultaneously, Stanford postdoc Alessandro Masullo has released a human-authored proof of the General Riemann hypothesis. Unlike Alpöge’s work, Masullo’s proof has not yet been expressed in Lean, and its validity remains subject to peer review. Stanford professor and American Mathematics Association president Ravi Vakil noted that Masullo’s work is the result of 12 years of independent research. The mathematical community is currently evaluating both submissions, with experts like Chris Birkbeck noting that Alpöge’s proof relies on complex techniques including automorphy-lifting arguments, Galois representations, and base change theorems.",
       "takeaways": [
-        "**Lean Verification:** Alpöge’s proof of the Riemann Hypothesis has been successfully compiled and verified using the Lean theorem prover, a process confirmed by independent mathematicians including Andrew Sutherland.",
-        "**Technical Methodology:** The proof utilizes an automorphy-lifting argument, incorporating concepts such as regular algebraic polarized cuspidal automorphic representations of GL_n over CM fields, Clozel’s purity, and Bernstein–Zelevinsky theory.",
-        "**Parallel Research:** NYU mathematician Tristan Buckmaster collaborated with Alpöge on a separate proof regarding the Navier-Stokes equations, released alongside the Riemann Hypothesis findings.",
-        "**Human-Only Alternative:** Stanford postdoc Alessandro Masullo released a 12-year, human-authored proof of the General Riemann Hypothesis, which is currently being reviewed by the community but lacks formal Lean verification."
+        "**Alpöge Proof Verification:** The Lean-formalized proof of the Riemann hypothesis by Levent Alpöge has been independently compiled and verified by multiple mathematicians.",
+        "**Technical Methodology:** Alpöge’s proof utilizes advanced number theory frameworks, specifically Galois representations attached to regular algebraic, polarized cuspidal automorphic representations of GL_n over CM fields.",
+        "**Competing Claim:** Stanford postdoc Alessandro Masullo released a separate, non-AI-assisted proof of the General Riemann hypothesis, which is currently undergoing community review.",
+        "**Additional Research:** Alpöge and NYU mathematician Tristan Buckmaster concurrently released a proof related to the Navier-Stokes equations.",
+        "**Institutional Context:** The article identifies Anthropic as a publicly traded frontier AI lab, noting significant equity stakes held by Amazon and Google."
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
@@ -212,7 +361,7 @@
     "author": "Kelly Knight",
     "contentSnippet": "UPDATED 14:27 EST / NOVEMBER 20 2026\n\nAI deals shrink to as little as 30 days as the data layer sets the pace\n\nArtificial intelligence has turned data infrastructure from a back-office purchase into the bottleneck that decides how fast GPUs pay off. As hyperscalers, neoclouds and enterprises race to expand their data layers, the way that infrastructure gets bought is changing just as fast.\n\nThe storage industry’s longtime performance specialist sees that shift as its opening. DataDirect Networks Inc. built its reputation on scale and speed, and those traits now carry more weight in AI infrastructure , according to Kevin Delane (pictured), president and chief revenue officer of DDN.\n\n“When you look at the data layer, performance in the data layer drives value. So yes, it has to be simple, it has to be reliable. Those are table stakes, but performance drives business value,” Delane said.\n\nDelane spoke with theCUBE Research’s Rebecca Knight and John Furrier at SC26 , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how AI infrastructure sales cycles have grown more complex and faster, DDN’s tighter ecosystem work with partners such as Nvidia Corp. and Super Micro Computer Inc., and the company’s hiring for a direct, results-driven culture. (* Disclosure below.)\n\nFaster, more complex AI deals reshape the data layer\n\nThe way companies buy AI infrastructure has changed along with the technology. Deals at neocloud providers no longer go to a single enterprise buyer. They now involve the off-taker renting the capacity, the cloud operator and the integration software layer, Delane explained. Timelines have shrunk just as sharply, from six months to a year for a traditional enterprise sale to as little as 30 days.\n\n“The sales cycle is more complex for sure. The speed is insane,” Delane said. “Sometimes these things are 30 days and you have to be ready to turn things around and really work with your customers and partners quickly.”\n\nDDN is answering with tighter ecosystem work. Its decade-long partnership with Nvidia anchors the strategy, and joint offerings with Super Micro , such as the Enterprise AI HyperPOD, aim to replace a data center buildout with a ready-to-run AI stack. At SC26, DDN also introduced software-defined EXAScaler deployment to give enterprise AI customers more choice of hardware.\n\n“It takes the com",
     "category": "Robotics & Hardware",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "DataDirect Networks (DDN) President and CRO Kevin Delane reported at SC26 that AI infrastructure sales cycles have compressed significantly, dropping from traditional 6-12 month windows to as little as 30 days. This acceleration is driven by the critical role of the data layer in maximizing GPU utilization, where performance bottlenecks directly impact the return on investment for hyperscalers and enterprise AI deployments. DDN is responding to this market pressure by shifting its hiring focus toward technical and implementation staff rather than traditional sales roles, aiming to support rapid, results-driven deployments.\n\nTo address the complexity of modern AI infrastructure, DDN is deepening its ecosystem integration with partners like Nvidia and Super Micro Computer. Key offerings include the Enterprise AI HyperPOD, designed to replace custom data center buildouts with a pre-configured, ready-to-run stack that can be operational in approximately three hours. Additionally, DDN has introduced a software-defined version of its EXAScaler deployment to increase hardware flexibility for enterprise customers. Performance benchmarks cited by Delane for DDN’s Managed Lustre service on Google Cloud indicate a 70% improvement in training performance and a 40% increase in overall GPU efficiency.",
@@ -241,7 +390,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "20th November 2026 Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI. The hope was to bring Alessandro to Stanford for a year to polish the writing and then announce it after running it by enough people. Now it seems best to put out the current draft.\n\n— Ravi Vakil , Hurried Announcement: Alessandro Masullo GRH\n\nRecent articles Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 This is a quotation collected by Simon Willison, posted on 20th November 2026 .",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Stanford professor Ravi Vakil has announced that mathematician Alessandro Masullo has developed a proposed proof for the Generalized Riemann Hypothesis (GRH). The proof, which is entirely human-authored and contains no AI-generated content, has been under rigorous review by Brian Conrad for several months. Conrad has provided extensive feedback that is currently being incorporated into the manuscript.\n\nWhile the initial plan involved bringing Masullo to Stanford for a one-year residency to refine the documentation before a formal announcement, the current strategy has shifted toward releasing the draft publicly. The announcement was shared by Simon Willison on November 20, 2026, noting that the proof is currently looking promising as it undergoes final adjustments.",
@@ -354,19 +503,20 @@
     "author": "Asif Razzaq",
     "contentSnippet": "This week RadixArk released DaisyRose-27B , its first open-weight model. DaisyRose-27B is an agentic coding model from RadixArk, post-trained from Qwen3.8-27B with reinforcement learning (RL). The model card page states that it used RL only, with no SFT or distillation. It ships under Apache 2.0 as a drop-in replacement for the base model. The main result: Terminal Bench 4.1 pass@1 rises from 5.6 to 12.0. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 27.8B dense parameters (0.46B vision encoder, 0.42B MTP head), 262,144-token context. Runs on: 1 GPU. BF16 is about 52 GB, FP8 about 29 GB, NVFP4 about 23 GB (Blackwell only). Listed targets: H200, B200, GB300, RTX PRO 6000, RTX 5090, DGX Spark. GGUF also available. Performance: Beats its Qwen3.8-27B base on all 7 reported benchmarks. Best: IFBench 82.4, the top score among the 9 models RadixArk compared. Worst: HLE (text only) 34.3, only +0.4 over the base and below Inkling 2 Small’s 44.1. Bottom line: Best: Terminal Bench 4.1 more than doubles after 18 days of RL. Worst: it still trails much larger MoE models on hard agentic tasks. What is DaisyRose-27B? DaisyRose-27B keeps the Qwen3.8-27B architecture unchanged. The model card lists 64 decoder layers in a 3:1 pattern. Three Gated DeltaNet linear-attention layers alternate with 1 full-attention layer. Hidden size is 5,120. A 27-layer vision encoder handles images. One multi-token-prediction layer supports speculative decoding. Input is text and images, output is text, and it is a thinking model. How was DaisyRose-27B trained? RadixArk built about 1,200 curated tasks with Eigent AI , chosen from thousands of candidates. Each task targets a specific failure of the base model. Each sandbox attempt allows up to 1.5 hours, 100+ tool calls and 256k+ output tokens. Agent sessions reach up to 1M tokens, per the blog . Training ran on Miles , RadixArk’s open-source RL framework, in fully asynchronous mode. The run used 144 H200 GPUs for 18 days. Of those, 128 handled agent inference and 16 handled training. Total compute was 63,000 GPU-hours. RadixArk reports 37% MFU on its internal backend. An open-source Megatron-based trainer reached 16%. End-to-end throughput was 16.8k tokens/s versus 8.3k, a 2.0x speedup. RadixArk says this cut GPU time by 57%. Sandboxes ran on AgentENV . RadixArk reports about 94",
     "category": "Robotics & Hardware",
-    "lab": "OpenAI",
+    "lab": "NVIDIA",
     "entryType": "RESEARCH_PAPER",
     "summary": {
-      "tldr": "This week RadixArk released DaisyRose-27B , its first open-weight model. DaisyRose-27B is an agentic coding model from RadixArk, post-trained from Qwen3.8-27B with reinforcement learning (RL). The model card page states that it used RL only, with no SFT or distillation.\n\nIt ships under Apache 2.0 as a drop-in replacement for the base model. The main result: Terminal Bench 4.1 pass@1 rises from 5.6 to 12.0. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension .",
+      "tldr": "RadixArk has released DaisyRose-27B, an open-weight agentic coding model post-trained exclusively via reinforcement learning (RL) from the Qwen3.8-27B base model. Eschewing supervised fine-tuning (SFT) and distillation, the model utilizes a 27.8B dense parameter architecture, including a 0.46B vision encoder and a 0.42B multi-token prediction (MTP) head. It supports a 262,144-token context window and is released under the Apache 2.0 license. The model is designed as a drop-in replacement for the base Qwen architecture, maintaining 64 decoder layers in a 3:1 Gated DeltaNet linear-attention to full-attention ratio with a hidden size of 5,120.\n\nTraining was conducted over 18 days using RadixArk’s open-source 'Miles' RL framework, consuming 63,000 GPU-hours across 144 H200 GPUs. The process utilized 1,200 curated tasks developed with Eigent AI, allowing for sandbox sessions of up to 1.5 hours and 1M tokens. Performance gains are most notable in Terminal Bench 4.1, where pass@1 scores increased from 5.6 to 12.0. While the model outperformed its base on all seven reported benchmarks—including an IFBench score of 82.4—it continues to trail larger Mixture-of-Experts (MoE) models on complex agentic tasks, specifically recording a 34.3 on the HLE (text-only) benchmark.",
       "takeaways": [
-        "TL;DR Size: 27.8B dense parameters (0.46B vision encoder, 0.42B MTP head), 262,144-token context.",
-        "BF16 is about 52 GB, FP8 about 29 GB, NVFP4 about 23 GB (Blackwell only).",
-        "Listed targets: H200, B200, GB300, RTX PRO 6000, RTX 5090, DGX Spark.",
-        "Performance: Beats its Qwen3.8-27B base on all 7 reported benchmarks."
+        "**Hardware Requirements:** The model runs on a single GPU, with memory footprints of 52 GB (BF16), 29 GB (FP8), and 23 GB (NVFP4, Blackwell-exclusive).",
+        "**Training Efficiency:** RadixArk reported 37% Model Flops Utilization (MFU) using their internal backend, achieving a 2.0x throughput increase (16.8k tokens/s) compared to a standard Megatron-based trainer.",
+        "**Architecture Specs:** The model features 64 decoder layers, a 27-layer vision encoder, and one MTP layer for speculative decoding, supporting both text and image inputs.",
+        "**Benchmark Performance:** Terminal Bench 4.1 pass@1 more than doubled following the 18-day RL training cycle, though HLE performance remains lower than the Inkling 2 Small model."
       ],
       "impact": "High",
-      "readTimeMinutes": 4,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -379,16 +529,23 @@
     "sourceId": "techcrunch-ai",
     "sourceName": "TechCrunch AI",
     "author": "Tim Fernholz",
-    "contentSnippet": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?",
+    "contentSnippet": "The push to build data centers in space faces plenty of obstacles, from tricky engineering to a dearth of rockets that could take chips to orbit. But what about paying for the chips?\n\nThe data center ecosystem currently depends on debt financing, with cloud providers borrowing to build out data centers and then paying back the loans with a share of the revenue.\n\nThose deals typically use the chips as collateral — if the data centers default on their loans, the lenders can take possession of the chips and resell them. That backstop makes it cheaper for companies to finance their chips. Even older chips retain value — according to Compute Credit Index Research , some H100s are selling for about half of their original cost basis from 2023, while some H200 configurations are selling for the same price they did when introduced in 2024.\n\nBut you’re not going to repossess chips installed in a satellite orbiting 300 miles above Earth at 17,500 miles per hour. The Financial Times is reporting that lenders behind SpaceX’s $40 billion chip financing deal asked that none of the chips purchased be used for the company’s orbital data center plans. It’s not clear if they succeeded in getting SpaceX to agree with the provision.\n\nThat may not matter to the company in the near term — SpaceX’s ability to deploy compute at terrestrial ground stations has proven lucrative, and on the company’s most recent earnings call, CEO Elon Musk detailed how he was dispatching engineers from the company’s rocket team to accelerate that build-out by taking on challenges like casting turbine blades for generators at faster than existing suppliers.\n\nHowever, open questions remain about how easy it will be to find land and power to support the data center build-out. Many potential projects face delays and local opposition, while markets wait to see the state of compute demand and the ability of its buyers to turn it into revenue.\n\nMusk, meanwhile, began saying at the beginning of 2026 that he believes space will be the “cheapest” place to operate data centers in two to three years. That’s unlikely until SpaceX can fly its Starship rocket in a fully reusable configuration. In its most recent flight test, the company failed to recover the booster stage but did succeed in landing the orbital stage of the rocket back at its launch facility in Texas. It’s not clear, though, when the second stage wil",
     "category": "Business & Big Tech",
     "lab": "SpaceX & xAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Lenders don't want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "The emerging space-based data center industry faces a significant financial hurdle: the inability to use orbital hardware as loan collateral. Traditional terrestrial data center financing relies on the ability of lenders to repossess and resell chips in the event of a default. According to Compute Credit Index Research, H100 chips retain approximately 50% of their 2023 cost basis, while H200 configurations maintain their original 2024 pricing. Because orbital hardware is inaccessible, lenders involved in SpaceX’s $40 billion chip financing deal reportedly requested that none of the purchased chips be deployed in space, highlighting a fundamental disconnect between space-based infrastructure ambitions and current debt financing models.\n\nSpaceX is currently prioritizing terrestrial compute deployment, with CEO Elon Musk reallocating rocket engineering teams to accelerate ground station build-outs, including internal manufacturing of turbine blades for power generation. While Musk has projected that space will become the most cost-effective location for data centers within two to three years, this remains contingent on achieving full reusability for the Starship launch system. Recent flight tests saw the successful recovery of the orbital stage but failed to recover the booster. Meanwhile, competitors and startups like StarCloud, Cowboy Space Corporation, Sophia Space, and Orbital face higher capital costs for hardware compared to terrestrial firms. Google is pursuing a vertical integration strategy via Project Suncatcher to deploy its proprietary TPU chips in orbit, while SpaceX and Tesla’s joint foundry project, Terafab, remains in the pre-construction phase.",
+      "takeaways": [
+        "**Collateral Risk:** Lenders in SpaceX’s $40 billion financing deal reportedly attempted to restrict the use of financed chips in orbital data centers due to the impossibility of asset repossession.",
+        "**Hardware Depreciation:** Compute Credit Index Research indicates H100 chips retain roughly 50% of their 2023 cost basis, while H200 units currently trade at their original 2024 launch prices.",
+        "**Starship Status:** SpaceX successfully landed the orbital stage of its Starship rocket at its Texas facility during a recent test, but failed to recover the booster stage, leaving the timeline for full reusability uncertain.",
+        "**Foundry Ambitions:** The SpaceX and Tesla joint venture, Terafab, aims to establish a U.S.-based semiconductor foundry but has yet to break ground and requires multi-year, multi-billion dollar investment.",
+        "**Vertical Integration:** Google is bypassing third-party chip financing constraints for space applications by utilizing its proprietary TPU architecture through Project Suncatcher."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -401,17 +558,23 @@
     "sourceId": "verge-ai",
     "sourceName": "The Verge AI",
     "author": "Robert Hart",
-    "contentSnippet": "Anthropic went public on November 19th, 2026. | Photo: Getty Images Anthropic mathematician Levent Alp&ouml;ge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval already unleashed by OpenAI's previous, often inelegant forays into the field. Alp&ouml;ge's solution has yet to be verified independently. Anthropic has not commented or involved itself in Alp&ouml;ge's announcement. In a document on his website , Alp&ouml;ge says he texted Anthropic CEO Dario Amodei abo … Read the full story at The Verge.",
+    "contentSnippet": "Anthropic mathematician Levent Alpöge claims he has proved the Riemann hypothesis, one of mathematics’s most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world’s best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval already unleashed by OpenAI’s previous, often inelegant forays into the field. Alpöge’s solution has yet to be verified independently. Anthropic has not commented or involved itself in Alpöge’s announcement. In a document on his website, Alpöge says he texted Anthropic CEO Dario Amodei about the solution “late Sunday night” and suggests he held off publication until after the company’s IPO on Thursday. The Riemann hypothesis is one of seven Millennium Prize problems, which are widely considered some of the most formidable open challenges in mathematics. First proposed in 1859, the Riemann hypothesis concerns the distribution of prime numbers and how zeroes of a function are involved. It’s regarded as one of the most important unsolved problems in mathematics. A statement on Alpöge’s website says Claude was integral to developing the proof: > I believe I have, working with Claude, discovered a proof1 of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. The Verge reached out to Anthropic but didn’t immediately hear back. Anthropic said it was working on the Riemann Hypothesis with Claude in August, but noted at the time: “We don’t expect that the techniques Claude used will lead to proving the Riemann hypothesis.” Alpöge’s solution, presented in Lean, has only been published on his website and has not yet been publicly accepted by the Clay Mathematics Institute, which administers the Millennium Prize and offers a $1 million bounty for each problem solved. Under the institute’s rules, a proposed solution must be published and withstand at least two years of scrutiny before it can be ",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2305894185.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
     "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "Anthropic went public on November 19th, 2026. | Photo: Getty Images Anthropic mathematician Levent Alp&ouml;ge claims he has proved the Riemann hypothesis, one of mathematics's most notoriously difficult problems, with the help of Claude, cracking a puzzle that has eluded some of the world's best mathematicians for decades. If verified, it would mark yet another seismic achievement for AI in mathematics and add to the upheaval already unleashed by OpenAI's previous, often inelegant forays into the field.\n\nAlp&ouml;ge's solution has yet to be verified independently. Anthropic has not commented or involved itself in Alp&ouml;ge's announcement. In a document on his website , Alp&ouml;ge says he texted Anthropic CEO Dario Amodei abo … Read the full story at The Verge.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "Levent Alpöge, a mathematician associated with Anthropic, has publicly claimed to have proven the Riemann Hypothesis—a Millennium Prize problem dating back to 1859—using the Claude AI model. Alpöge asserts that his methodology also resolves the Generalized Riemann Hypothesis and expects it to extend to the Extended Riemann Hypothesis. The proof has been formalized in the Lean programming language and is currently hosted on Alpöge’s personal website. Anthropic has not officially commented on the claim, and the company previously stated in August that it did not expect Claude’s techniques to successfully prove the Riemann Hypothesis.\n\nVerification of the claim remains pending, as the Clay Mathematics Institute requires a two-year period of scrutiny and general acceptance by the global mathematics community before a solution can be considered for the $1 million Millennium Prize. This announcement follows a series of high-profile AI-driven mathematical claims, including OpenAI’s September report regarding the Navier-Stokes problem, which involved the deployment of 10,000 agents and an expenditure of millions of dollars. Alpöge previously claimed to have solved the Jacobean conjecture using Claude in July, contributing to a broader trend of AI-assisted research that is currently challenging traditional mathematical workflows.",
+      "takeaways": [
+        "**Millennium Prize Status:** The Riemann Hypothesis is one of seven Millennium Prize problems, each carrying a $1 million bounty, with only the Poincaré conjecture having been officially solved in the last 25 years.",
+        "**Formalization Method:** Alpöge’s proof is presented in the Lean proof assistant language, a standard for formal mathematical verification.",
+        "**Verification Requirements:** Per Clay Mathematics Institute rules, any proposed solution must undergo at least two years of public scrutiny and achieve general acceptance within the mathematics community before prize eligibility.",
+        "**Prior AI Claims:** Alpöge previously claimed to have solved the Jacobean conjecture using Claude in July, while OpenAI recently claimed a solution for the Navier-Stokes problem using 10,000 agents."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -424,18 +587,22 @@
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
-    "contentSnippet": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...] Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line. — Levent Alpöge , alpo.ge/remark.pdf Tags: anthropic , claude , generative-ai , mathematics , ai , llms , levent-alpoge",
+    "contentSnippet": "20th November 2026 I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions. It is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...]\n\nClaude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.\n\n— Levent Alpöge , alpo.ge/remark.pdf\n\nRecent articles Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 This is a quotation collected by Simon Willison, posted on 20th November 2026 .",
     "category": "LLMs & GenAI",
     "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too. Claude and I have also formalized the arguments without assumptions.\n\nIt is natural to feel that this is an end, in my case a loss of a principal guiding light, but what I saw during the course of progress so amazed me that I believe it is one dawn across science of something far greater. [...] Claude and I have had a great time together with such breadth in recent months, but this time Claude far outpaced me near the finish line. No, Claude flew, and danced, and sparkled near that finish line.",
+      "tldr": "Levent Alpöge, a researcher, claims to have discovered a proof for the Riemann Hypothesis and the Generalized Riemann Hypothesis through a collaborative effort with Anthropic's Claude model. Alpöge asserts that the methodology is extensible to the Extended Riemann Hypothesis and that the arguments have been fully formalized without reliance on unproven assumptions. The announcement, dated November 20, 2026, suggests that the AI model played a decisive role in the final stages of the proof, with Alpöge describing the model's performance as having \"flown, and danced, and sparkled\" near the conclusion of the work.\n\nThe claim is documented in a PDF hosted on Alpöge's personal website, alpo.ge. While the announcement frames this as a significant scientific milestone, it remains a self-reported claim regarding one of the most famous unsolved problems in mathematics. The context provided by Simon Willison notes the date of the claim as November 20, 2026, alongside other recent technical developments in the AI and software engineering space.",
       "takeaways": [
-        "— Levent Alpöge , alpo.ge/remark.pdf Tags: anthropic , claude , generative-ai , mathematics , ai , llms , levent-alpoge."
+        "**Claimed Proof:** Levent Alpöge asserts he has proven the Riemann Hypothesis and the Generalized Riemann Hypothesis.",
+        "**AI Collaboration:** The proof was developed in collaboration with Anthropic's Claude model, which Alpöge credits with significantly accelerating the final stages of the work.",
+        "**Formalization:** Alpöge states that the arguments have been formalized without assumptions.",
+        "**Documentation:** The details of the claim are hosted in a document titled 'remark.pdf' on the author's personal domain, alpo.ge."
       ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -624,16 +791,22 @@
     "sourceId": "openai",
     "sourceName": "OpenAI News",
     "author": "OpenAI News",
-    "contentSnippet": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
+    "contentSnippet": "November 20, 2026 Combatting adversarial distillation How we’re addressing safety risks of distillation and lessons we’ve learned for strengthening safeguards across the industry.\n\nAs frontier AI models become more capable, safeguards play an increasingly important role in how they can be used responsibly. Adversarial distillation creates a path for bad actors to reproduce these capabilities without appropriate safeguards. An actor may use a frontier model’s outputs without authorization to train another model with similar capabilities, then deploy it without comparable protections. For instance, an adversary might distill a model’s cyber capabilities and use the resulting model to help carry out cyberattacks that the original model would have refused to assist with or that its safeguards would have blocked.\n\nWe’re sharing how OpenAI detects and disrupts adversarial distillation, how we’ve strengthened protections for our models’ protected reasoning, and what we’ve learned that can help strengthen defenses across the industry.\n\nOur approach to adversarial distillation combines adversarial testing, model training, classifiers, and API-level protections with investigations into coordinated attempts to extract model capabilities. These updated safeguards align more closely with those we use for biology and cybersecurity.\n\nWe place particular emphasis on preventing attackers from extracting our models’ protected reasoning: the intermediate steps a model generates internally while working toward an answer, known as its chain-of-thought. These traces can contain information the final answer leaves out, making them especially valuable training data for another model.\n\nW e’ve strengthened our defenses against protected reasoning extraction in GPT‑6.2 Astra and GPT‑6.2 Sol. In an internal adaptive evaluation using strong automated red-teaming , we tested whether attackers could recover protected reasoning the model had generated while answering an earlier prompt. The average attack success rate fell from 54.0% against GPT‑6 Astra with its original safeguards to 0.2% against GPT‑6.2 Astra with its updated safeguards.\n\nWhy distillation is a safety issue\n\nDistillation is a common machine-learning technique in which one model learns from data produced by another. For example, a model can learn from another model’s answers, its reasoning, or its judgments about which answ",
     "category": "LLMs & GenAI",
     "lab": "OpenAI",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "tldr": "OpenAI detailed its methods for combatting adversarial distillation, a process where malicious actors extract frontier model capabilities and internal reasoning traces to train unprotected student models. Focusing on dual-use domains like cybersecurity and biology, the company outlined risks where transferred skills enable offensive capabilities previously blocked by original model safeguards.\n\nTo counter protected reasoning extraction, OpenAI updated its defenses in GPT-6.2 Astra and GPT-6.2 Sol. In internal adaptive evaluations using automated red-teaming, the attack success rate dropped from 54.0% against GPT-6 Astra with original safeguards to 0.2% against GPT-6.2 Astra with updated safeguards. The defense architecture spans request-level controls—including adversarial training, input/output classifiers covering tool-call arguments, and API-level restrictions tying encrypted reasoning to specific conversation histories—and campaign-level investigations tracking coordinated extraction patterns across user and organization boundaries.",
+      "takeaways": [
+        "**Red-Teaming Benchmark Improvement:** The average attack success rate for recovering protected reasoning fell from 54.0% against GPT-6 Astra to 0.2% against GPT-6.2 Astra with updated safeguards during internal adaptive evaluations.",
+        "**Model Generations Evaluated:** The defense updates and evaluations specifically target the GPT-6.2 Astra and GPT-6.2 Sol model families.",
+        "**Exact Reasoning vs. Summaries:** Internal studies showed that student models fine-tuned on exact reasoning traces outperformed students trained on reasoning summaries after supervised fine-tuning and reinforcement learning.",
+        "**API and Tool-Call Safeguards:** Output classifiers scan both assistant messages and tool-call arguments to prevent reasoning leakage, while API controls tie encrypted reasoning strictly to its originating conversation history and prevent older model families from reading GPT-6.2 reasoning."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -2402,21 +2575,21 @@
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2/",
     "title": "Amazon SageMaker Inference: 2026 launches in review, part 2",
     "publishedAt": "2026-11-20T00:34:07.000Z",
-    "fetchedAt": "2026-11-20T22:48:35.120Z",
-    "contentHash": "4f2f93b1b0855a11",
+    "fetchedAt": "2026-11-21T03:42:43.794Z",
+    "contentHash": "16b3fdfbea0965b3",
     "sourceId": "aws-ml",
     "sourceName": "AWS Machine Learning",
     "author": "Aryaman Kothari",
-    "contentSnippet": "From first endpoint to global fleet: 13 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26. Once a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them. For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework. For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape. Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts. To keep each section concrete, we follow one hypothetical team through the blog post. In the spring, they launched a customer support assistant on a 70B-parameter model behind a single SageMaker AI endpoint, using the launches from part 1. By the fall, they need to support more product lines, adopt a larger reasoning model, serve customers in a second Region, and keep their GPU bill flat. The launches at a glance Figure 1: The five stages in this post and the launches in each Choose the right configuration from wherever you work The team picked its first configuration from a benchmark run in April. Since then, they have added four LoRA (Low-Rank Adaptation) adapters, one for each product line, and the product team has set a target of 500 milliseconds for time to first token (TTFT) at peak load. The April configuration was never tested against either change. The engineers who will re-run the analysis work in notebooks and coding agents, and few of them u",
+    "contentSnippet": "From first endpoint to global fleet: 14 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26. Once a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them. For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking. The Inference Gateway and the Global Inference Gateway deliver the routing and multi-Region work, and managed NVIDIA Dynamo is a new serving framework. For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape. Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts. To keep each section concrete, we follow one hypothetical team through the blog post. In the spring, they launched a customer support assistant on a 70B-parameter model behind a single SageMaker AI endpoint, using the launches from part 1. By the fall, they need to support more product lines, adopt a larger reasoning model, serve customers in a second Region, and keep their GPU bill flat. The launches at a glance Figure 1: The five stages in this post and the launches in each Choose the right configuration from wherever you work The team picked its first configuration from a benchmark run in April. Since then, they have added four LoRA (Low-Rank Adaptation) adapters, one for each product line, and the product team has set a target of 500 milliseconds for time to first token (TTFT) at peak load. The April configuration was never tested against either change. The engineers who will re-run the analysis ",
     "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/20/Screenshot-2026-11-20-at-3.27.51%E2%80%AFPM.png",
     "category": "Robotics & Hardware",
     "lab": "Independent",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "From first endpoint to global fleet: 13 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26.\n\nOnce a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them.",
+      "tldr": "From first endpoint to global fleet: 14 more launches for managed endpoints and HyperPod Inference In September, Amazon SageMaker Inference: 2026 year-to-date launches in review covered 13 launches that shortened the path from a model to a production endpoint. Most of them answered one question: how do I get this model serving quickly and reliably? This post covers the 13 launches that came next, bringing the total for 2026 to 26.\n\nOnce a model is in production, the questions change. Teams want to know which configuration the model should run on now that traffic is real, how to fit more models onto GPUs they already pay for, what to do when the next model is too large for one machine, why requests wait in one Region while GPUs sit idle in another, and why latency rose when nobody changed anything. This post takes those questions in the order teams usually meet them.",
       "takeaways": [
         "For HyperPod Inference, it listed additional routing strategies, broader support for model serving frameworks, and expanded multi-Region networking.",
-        "The Inference Gateway delivers the routing, and managed NVIDIA Dynamo is a new serving framework.",
+        "The Inference Gateway and the Global Inference Gateway deliver the routing and multi-Region work, and managed NVIDIA Dynamo is a new serving framework.",
         "For managed endpoints, the roadmap pointed to deeper integration with the rest of the AWS AI landscape.",
         "Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts."
       ],
@@ -2836,12 +3009,12 @@
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-now-detects-latency-drift-idle-gpus-and-missed-optimizations-on-your-inference-endpoints/",
     "title": "Amazon SageMaker AI now detects latency drift, idle GPUs, and missed optimizations on your inference endpoints",
     "publishedAt": "2026-11-19T21:28:18.000Z",
-    "fetchedAt": "2026-11-20T00:11:32.572Z",
-    "contentHash": "c27c3fc55c1988ad",
+    "fetchedAt": "2026-11-21T03:42:43.794Z",
+    "contentHash": "a6962669b9b96703",
     "sourceId": "aws-ml",
     "sourceName": "AWS Machine Learning",
     "author": "Hazim Qudah",
-    "contentSnippet": "Every inference endpoint is well tuned the day it goes into production. Teams choose an instance type, serving configuration, and scaling settings that suit the model and its traffic at launch. With the endpoint serving smoothly, they understandably move on to the next priority. The workload, however, rarely stays still. Traffic patterns evolve, prompts grow longer, serving engines such as vLLM ship new releases, SageMaker inference develops new optimization techniques, and new fine-tuned checkpoints change the resources your model needs. Over time, a well-tuned endpoint quietly drifts. Latency and time to first token edge upward. A configuration that was never quite ideal keeps missing available performance gains. A GPU provisioned for demand that never materialized sits idle week after week. Because nothing has failed, no alarm sounds, and the drift goes unnoticed until users feel it or the bill reflects it. Amazon SageMaker AI now monitors your generative AI inference endpoints and tells you when a change could improve performance or lower cost by using Generative AI optimized inference recommendations  feature with Agentic experience in   Amazon SageMaker Studio . Monitoring is on by default for SageMaker AI inference endpoints using vLLM serving containers and GPU instances, with no setup required, and you can opt out of endpoints. SageMaker AI looks only at operational signals: latency, GPU utilization, and the endpoint’s serving configuration. It does not read your requests or responses. From those signals, it surfaces three kinds of findings: Latency drift: A week-over-week rise in median (p50) end-to-end latency or time to first token. Unused capacity: GPUs you pay for that sit mostly idle. Configuration gaps: A serving container that’s missing newer performance improvements or security patches, or an optimization such as speculative decoding or GPU kernel tuning that your model supports but the endpoint doesn’t use. SageMaker AI sends a finding through AWS Health, with one notification per endpoint that covers that endpoint’s findings. When a notification arrives, you can act on it in one place. It opens the SageMaker AI agentic experience in Amazon SageMaker Studio with the endpoint, and its recent traffic already filled in. From there, you run inference recommendations to benchmark your current configuration against alternatives and compare them ",
+    "contentSnippet": "Every inference endpoint is well tuned the day it goes into production. Teams choose an instance type, serving configuration, and scaling settings that suit the model and its traffic at launch. With the endpoint serving smoothly, they understandably move on to the next priority. The workload, however, rarely stays still. Traffic patterns evolve, prompts grow longer, serving engines such as vLLM ship new releases, SageMaker inference develops new optimization techniques, and new fine-tuned checkpoints change the resources your model needs. Over time, a well-tuned endpoint quietly drifts. Latency and time to first token edge upward. A configuration that was never quite ideal keeps missing available performance gains. A GPU provisioned for demand that never materialized sits idle week after week. Because nothing has failed, no alarm sounds, and the drift goes unnoticed until users feel it or the bill reflects it. Amazon SageMaker AI now monitors your generative AI inference endpoints and tells you when a change could improve performance or lower cost by using Generative AI optimized inference recommendations feature with Agentic experience in   SageMaker JupyterLab . Monitoring is on by default for SageMaker AI inference endpoints using vLLM serving containers and GPU instances, with no setup required, and you can opt out of endpoints. SageMaker AI looks only at operational signals: latency, GPU utilization, and the endpoint’s serving configuration. It does not read your requests or responses. From those signals, it surfaces three kinds of findings: Latency drift: A week-over-week rise in median (p50) end-to-end latency or time to first token. Unused capacity: GPUs you pay for that sit mostly idle. Configuration gaps: A serving container that’s missing newer performance improvements or security patches, or an optimization such as speculative decoding or GPU kernel tuning that your model supports but the endpoint doesn’t use. SageMaker AI sends a finding through AWS Health, with one notification per endpoint that covers that endpoint’s findings. When a notification arrives, you can act on it in one place. It opens the SageMaker AI agentic experience in Amazon SageMaker Studio with the endpoint, and its recent traffic already filled in. From there, you run inference recommendations to benchmark your current configuration against alternatives and compare them side",
     "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/17/ML-22416-1-1.png",
     "category": "Robotics & Hardware",
     "lab": "Independent",
@@ -7046,6 +7219,97 @@
     }
   },
   {
+    "id": "5a7fbd132c54f7e8",
+    "canonicalUrl": "https://arxiv.org/abs/2611.26232",
+    "title": "Time Series Structure Learning with Local Causal Parent Discovery",
+    "publishedAt": "2026-11-19T00:00:00.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.776Z",
+    "contentHash": "5c834b6b2b8f34cd",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Jacqueline Maasch, Shu Wan, Hank Zhu, Huan Liu",
+    "contentSnippet": "Authors: Jacqueline Maasch , Shu Wan , Hank Zhu , Huan Liu , Zhiguang Wang\n\nAbstract: Learning and inference on time series can pose significant statistical challenges, including autocorrelated observations, distribution shift over time, and the curse of dimensionality. These challenges complicate the practical application of causal discovery algorithms, which already suffer from high computational and sample complexity in the general case. To mitigate these issues, this work introduces Iterative Temporal Parent Discovery (ITPD): a sound and complete constraint-based procedure for causal structure learning on multivariate time series with causal nonstationarity. ITPD takes a local-to-global learning approach that discovers the global graph by sequentially discovering the parent set for each variable. ITPD exploits temporal structural priors, graph partitioning, and the local Markov condition to swap higher-order conditional independence tests for lower-order alternatives. With an exact oracle, ITPD performed the least number of tests and used the smallest average conditioning set sizes relative to baselines. In benchmarking simulations, ITPD sat on the Pareto frontier with respect to F1 and wall-clock time and was faster than baselines on large graphs ($\\geq$ 1000 nodes). For graphs with 2000 nodes, ITPD ran $2.3\\times$, $9.1\\times$, and $40.9\\times$ faster than iterative IAMB, DF-PC, and PCMCI, respectively.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.26232",
+    "pdfUrl": "https://arxiv.org/pdf/2611.26232",
+    "summary": {
+      "tldr": "Jacqueline Maasch, Shu Wan, Hank Zhu, Huan Liu, and Zhiguang Wang have introduced Iterative Temporal Parent Discovery (ITPD), a constraint-based algorithm designed for causal structure learning in multivariate time series. The method addresses common statistical hurdles in time series analysis, such as autocorrelation, distribution shifts, and high dimensionality, by employing a local-to-global learning strategy that sequentially identifies the parent set for each variable.\n\nITPD leverages temporal structural priors, graph partitioning, and the local Markov condition to reduce computational complexity, specifically by substituting high-order conditional independence tests with lower-order alternatives. In benchmarking simulations, ITPD demonstrated superior efficiency, particularly on large-scale graphs. For networks containing 2,000 nodes, the algorithm achieved speedups of 2.3x over iterative IAMB, 9.1x over DF-PC, and 40.9x over PCMCI, while maintaining a competitive position on the Pareto frontier for F1 scores and wall-clock time.",
+      "takeaways": [
+        "**Algorithm Methodology:** ITPD utilizes a local-to-global approach that sequentially discovers parent sets for individual variables to reconstruct the global causal graph.",
+        "**Computational Efficiency:** The algorithm is optimized for large graphs, outperforming baselines like PCMCI by 40.9x on 2,000-node datasets.",
+        "**Complexity Reduction:** ITPD minimizes computational overhead by using the local Markov condition to replace high-order conditional independence tests with lower-order alternatives.",
+        "**Performance Benchmarks:** The method consistently sits on the Pareto frontier for F1 accuracy and wall-clock execution time compared to existing causal discovery baselines."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "c00c5116c7b86e54",
+    "canonicalUrl": "https://arxiv.org/abs/2611.26239",
+    "title": "Teaching Vision-Language-Action Models to Stop Safely",
+    "publishedAt": "2026-11-19T00:00:00.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.776Z",
+    "contentHash": "c97ed190507ab0b1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zheyuan Liu, Chuhan Wang, Jinduo Guo, Yue Huang",
+    "contentSnippet": "Authors: Zheyuan Liu , Chuhan Wang , Jinduo Guo , Yue Huang , Xiangchi Yuan , Ningshan Ma , Meng Jiang\n\nAbstract: Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physical response remain challenging. Our evaluation reveals that policies which suppress a task from its initial state can still complete it when taking over partway through execution. Even when the task remains unfinished, the robot may drop a held object, making non-completion an incomplete measure of safety. To address these challenges, we introduce State-Aware Fallback Imitation (SAFI) for tasks where holding provides an appropriate alternative response. SAFI comprises two stages, (1) fallback target construction, which assigns stationary arm commands and consistent gripper targets throughout prohibited-task demonstrations, and (2) joint policy adaptation, which learns these targets alongside the original actions of retained tasks. This supervision teaches an explicit alternative response at intermediate execution states while maintaining the robot's other skills. Extensive experiments with OpenVLA-OFT across LIBERO and BadLIBERO tasks evaluate prohibited completion, physical incidents, and retained-task performance. On the evaluated LIBERO tasks, SAFI reduces aggregate target success after takeover to 1.3\\%, with no recorded physical incidents or action saturation, while preserving high retained-task success.\n\nNotes: A two-stage pipeline that teaches VLAs to stop prohibited tasks safely while preserving permitted skills",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.26239",
+    "pdfUrl": "https://arxiv.org/pdf/2611.26239",
+    "summary": {
+      "tldr": "Researchers Zheyuan Liu, Chuhan Wang, Jinduo Guo, Yue Huang, Xiangchi Yuan, Ningshan Ma, and Meng Jiang have introduced State-Aware Fallback Imitation (SAFI), a two-stage training framework designed to improve safety in Vision-Language-Action (VLA) models. The method addresses the critical failure mode where robots, even when instructed to stop a prohibited task mid-execution, continue to complete the action or drop held objects, leading to physical incidents. SAFI focuses on teaching robots an explicit, safe alternative response—specifically maintaining a stationary arm position and a consistent gripper state—when a prohibited task is interrupted.\n\nThe SAFI pipeline operates through two distinct phases: fallback target construction and joint policy adaptation. In the first stage, the system assigns stationary arm commands and consistent gripper targets to demonstrations of prohibited tasks. In the second stage, the model learns these fallback targets alongside the original actions of permitted tasks, ensuring the robot can transition to a safe state without degrading its existing skill set. The authors evaluated the framework using OpenVLA-OFT across the LIBERO and BadLIBERO benchmarks.\n\nExperimental results demonstrate that SAFI significantly improves safety metrics compared to standard VLA training. On evaluated LIBERO tasks, the method reduced the aggregate target success rate after a takeover command to 1.3%. Furthermore, the researchers reported zero physical incidents and no action saturation during testing, confirming that the model can effectively balance safety-critical interventions with the preservation of high performance on permitted tasks.",
+      "takeaways": [
+        "**Core Methodology:** SAFI utilizes a two-stage process involving fallback target construction and joint policy adaptation to teach robots safe, stationary responses to prohibited task commands.",
+        "**Performance Metric:** In LIBERO task evaluations, SAFI reduced the aggregate target success rate after a mid-execution takeover to 1.3%.",
+        "**Safety Outcomes:** The implementation resulted in zero recorded physical incidents and no action saturation during testing phases.",
+        "**Model Architecture:** The research utilized OpenVLA-OFT as the base model for testing across LIBERO and BadLIBERO datasets.",
+        "**Primary Objective:** The framework specifically addresses the limitation where VLA models fail to safely stop or maintain object control when interrupted during prohibited task execution."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "cef1e86d5ddb495e",
+    "canonicalUrl": "https://arxiv.org/abs/2611.25604",
+    "title": "PAD: Policy-Aware Data Valuation for Autonomous Driving",
+    "publishedAt": "2026-11-19T00:00:00.000Z",
+    "fetchedAt": "2026-11-21T03:42:43.776Z",
+    "contentHash": "2fd56ebda9db3ac7",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Chengkai Xu, Yicheng Guo, Jiaqi Liu, Yiming Cui",
+    "contentSnippet": "Authors: Chengkai Xu , Yicheng Guo , Jiaqi Liu , Yiming Cui , Shiyu Fang , Peng Hang , Hao Zhang , Jian Sun\n\nAbstract: End-to-end autonomous driving increasingly depends on scaling training demonstrations, yet data growth does not guarantee proportional gains. However, additional data do not guarantee better policies: a demonstration that benefits one planner may be redundant or harmful to another. Existing curation methods typically infer data value from intrinsic sample properties or training-dependent proxies that do not measure downstream policy utility. To address this, we introduce \\textbf{Policy-Aware Data Valuation (PAD)}, a framework that assigns each candidate demonstration a utility specific to the target driving policy. PAD combines scene-level calibration feedback with projected policy gradients and a regularized approximation of local training geometry, producing scalable influence-based values for the policy. A controlled group-removal study establishes the directional fidelity of these values, while cross-planner analysis shows that the same candidate pool induces markedly different rankings across planner families. On DiffusionDrive, PAD improves EPDMS over real-only training by $3.5$ points on NavTest and $5.0$ points on NavHard. Policy-specific curation consistently outperforms real-only and full-pool training across diffusion-, regression-, and flow-matching-based planners while substantially reducing scene-level regressions. These results establish policy-aware data valuation as a basis for replacing indiscriminate data accumulation with targeted policy improvement, enabling more efficient and reliable scaling of autonomous-driving systems.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.25604",
+    "pdfUrl": "https://arxiv.org/pdf/2611.25604",
+    "summary": {
+      "tldr": "Researchers Chengkai Xu et al. have introduced Policy-Aware Data Valuation (PAD), a framework designed to optimize training data selection for end-to-end autonomous driving systems. Unlike traditional methods that rely on intrinsic data properties or generic training proxies, PAD calculates the utility of specific demonstrations relative to a target driving policy. The framework integrates scene-level calibration feedback, projected policy gradients, and a regularized approximation of local training geometry to assign influence-based values to candidate demonstrations, effectively identifying which data points will most benefit a specific planner architecture.\n\nIn empirical testing using the DiffusionDrive model, PAD demonstrated significant performance gains over indiscriminate data training. The method improved EPDMS (Expected Planning Deviation Metric Score) by 3.5 points on the NavTest benchmark and 5.0 points on NavHard. The study highlights that data utility is not universal; cross-planner analysis revealed that the same pool of demonstrations yields different rankings when applied to diffusion-based, regression-based, or flow-matching-based planners. By replacing large-scale, indiscriminate data accumulation with targeted curation, PAD reduces scene-level regressions and improves the efficiency of scaling autonomous driving models.",
+      "takeaways": [
+        "**Performance Metrics:** PAD improved EPDMS scores by 3.5 points on NavTest and 5.0 points on NavHard compared to real-only training.",
+        "**Methodological Innovation:** The framework utilizes a combination of scene-level calibration, projected policy gradients, and local training geometry to estimate data utility.",
+        "**Planner Specificity:** The research confirms that data value is planner-dependent, with different rankings produced for diffusion, regression, and flow-matching architectures.",
+        "**Core Objective:** PAD aims to replace indiscriminate data scaling with targeted curation to minimize redundant or harmful training demonstrations."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "02f125d9c6cc4401",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
     "title": "llm-gemini 0.38",
@@ -9033,6 +9297,28 @@
     }
   },
   {
+    "id": "184d931227f2504d",
+    "canonicalUrl": "https://openai.com/index/the-silent-consensus",
+    "title": "The Silent Consensus",
+    "publishedAt": "2026-11-18T10:00:00.000Z",
+    "fetchedAt": "2026-11-21T03:42:45.791Z",
+    "contentHash": "8d12092b68bfc1ab",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "67952d9a918d2536",
     "canonicalUrl": "https://openai.com/index/inside-the-codex-sandbox",
     "title": "Inside the Codex sandbox",
@@ -10598,249 +10884,6 @@
         "The retrieved peers also extend substantially beyond immediate geographic neighborhoods, indicating that the learned representation captures structure beyond local spatial proximity.",
         "High-divergence regions exhibit spatially organized patterns and, in several cases, differences in incident volume relative to peer expectations.",
         "These results support NPD as an internal auditing and prioritization mechanism for identifying regions that warrant further investigation, rather than as direct evidence of underreporting."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "533cd7c8d7d5d0e7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21839",
-    "title": "VisHead-Spec: Head-Routed Visual Attention for Multimodal Speculative Decoding",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "bfa5413448dc2dc3",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Xin Guo, Arushi Rai, Xiang Zhou, Qiang Zhang, Siyu Lin, Xiangjun Fan, Lizhu Zhang",
-    "contentSnippet": "arXiv:2611.21839v1 Announce Type: new Abstract: Speculative decoding accelerates vision-language models(VLMs) while preserving the target model's outputs, but its speedup diminishes under high concurrency serving as the system becomes more compute bounded as the batch size increases. This problem is pronounced for multimodal speculative decoding as the long range of the image tokens in the prompt can significantly increase the computational cost during draft token prediction. The block-diffusion drafters (e.g. DFlash, DSpark) can effectively speed up the draft model efficiency by predicting multiple draft tokens in one forward pass, but their speedup for VLMs under high concurrency is still modest (<9%). In order to understand this gap, we examine the information flow between different modalities from target model to draft model and identify the sparsity pattern of visual attention between the target and draft models: only small set of key-value heads in the draft model need direct visual feature attention in the context and only visual features from top level layers in the target model need to be attended in the context. We therefore propose VisHead-Spec, which selects a small, fixed set of key-value (KV) heads to attend to all image features from top level layers in the target model and restricts the remaining heads to text features. On Qwen3-VL-8B and MMSpec, VisHead-Spec-8 lets 8 of the drafter's 40 KV heads read the image while keeping accepted length within 0.3% of the block-diffusion draft model baseline (i.e. DSpark). At batch size 64, its throughput gain over autoregressive decoding increases to 16.0%, compared with 9.5% for DSpark; at batch size 1, its speedup remains comparable to DSpark.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21839",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21839.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21839v1 Announce Type: new Abstract: Speculative decoding accelerates vision-language models(VLMs) while preserving the target model's outputs, but its speedup diminishes under high concurrency serving as the system becomes more compute bounded as the batch size increases. This problem is pronounced for multimodal speculative decoding as the long range of the image tokens in the prompt can significantly increase the computational cost during draft token prediction. The block-diffusion drafters (e.g.\n\nDFlash, DSpark) can effectively speed up the draft model efficiency by predicting multiple draft tokens in one forward pass, but their speedup for VLMs under high concurrency is still modest (<9%). In order to understand this gap, we examine the information flow between different modalities from target model to draft model and identify the sparsity pattern of visual attention between the target and draft models: only small set of key-value heads in the draft model need direct visual feature attention in the context and only visual features from top level layers in the target model need to be attended in the context. We therefore propose VisHead-Spec, which selects a small, fixed set of key-value (KV) heads to attend to all image features from top level layers in the target model and restricts the remaining heads to text features.",
-      "takeaways": [
-        "On Qwen3-VL-8B and MMSpec, VisHead-Spec-8 lets 8 of the drafter's 40 KV heads read the image while keeping accepted length within 0.3% of the block-diffusion draft model baseline (i.e.",
-        "At batch size 64, its throughput gain over autoregressive decoding increases to 16.0%, compared with 9.5% for DSpark; at batch size 1, its speedup remains comparable to DSpark."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5fc00e6251daef23",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21847",
-    "title": "Inventa: Decentralized Self-Improving Agents for Autonomous Scientific Discovery",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "f2a5a3bd7f38a730",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Prithwish Jana, Nikos Kanakaris, Purak Jain, Anoop Deoras, Sahika Genc",
-    "contentSnippet": "arXiv:2611.21847v1 Announce Type: new Abstract: Large language model (LLM) agents can generate research ideas and improve scientific discovery through iterative experimentation. However, increasing the number of agents or iterations does not automatically translate to producing more diverse or feasible ideas. Agents may converge on similar candidates, propagate unsupported claims through shared memory components and repeatedly apply search strategies that no longer yield any improvements. We introduce Inventa, a framework for automated scientific discovery that employs autonomous research units and verified shared knowledge. Each unit creates a lineage of candidate ideas using a mutator agent. A local orchestrator agent periodically adapts the mutator's harness. When progress stalls, the orchestrator agent replaces its model or restarts the idea evolution process. Verifiers evaluate each candidate idea and record verified improvements, useful components and constraint violations in a shared knowledge, the only channel between units. We evaluate Inventa on five benchmarks spanning the research cycle, covering retrieval (ScholarCatalyst), ideation (IdeaBench), proposal writing (IdeaScientist), and scientific law discovery (EurekaBench, SciLaws-Bench). It leads all five, achieving 73.6% on EurekaBench versus 56.2% for CORAL. On IdeaBench, it discovers 26.0 novel ideas per paper, compared with 18.6 for ResearchAgent, with 82% fewer model calls.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21847",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21847.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21847v1 Announce Type: new Abstract: Large language model (LLM) agents can generate research ideas and improve scientific discovery through iterative experimentation. However, increasing the number of agents or iterations does not automatically translate to producing more diverse or feasible ideas. Agents may converge on similar candidates, propagate unsupported claims through shared memory components and repeatedly apply search strategies that no longer yield any improvements.\n\nWe introduce Inventa, a framework for automated scientific discovery that employs autonomous research units and verified shared knowledge. Each unit creates a lineage of candidate ideas using a mutator agent. A local orchestrator agent periodically adapts the mutator's harness.",
-      "takeaways": [
-        "When progress stalls, the orchestrator agent replaces its model or restarts the idea evolution process.",
-        "Verifiers evaluate each candidate idea and record verified improvements, useful components and constraint violations in a shared knowledge, the only channel between units.",
-        "We evaluate Inventa on five benchmarks spanning the research cycle, covering retrieval (ScholarCatalyst), ideation (IdeaBench), proposal writing (IdeaScientist), and scientific law discovery (EurekaBench, SciLaws-Bench).",
-        "It leads all five, achieving 73.6% on EurekaBench versus 56.2% for CORAL."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0c08a7839cbd9816",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21849",
-    "title": "When Does Discrete Ricci Curvature Help? An Edge-Level Analysis of Curvature-Enhanced GCNs for PPI Prediction",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "42bdc32e495fdefd",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Clara Joswig, Elham Gholamzadeh, Ghazal Mostofi, Nico Scherf",
-    "contentSnippet": "arXiv:2611.21849v1 Announce Type: new Abstract: Curvature-enhanced graph convolutional networks (CGCN) incorporate Ollivier-Ricci curvature (ORC), grounded in optimal transport theory, into message passing, motivated by the claim that curvature-weighted edges alleviate \"over-squashing\" at structural bottlenecks. But does CGCN's improvement actually come from mitigating over-squashing? We investigate this on four real-world protein-protein interaction (PPI) datasets, comparing CGCN against a standard GCN at the level of individual edges rather than aggregate metrics alone. While CGCN improves aggregate AUC, AUPR, and F1 across all four datasets, this gain is concentrated almost entirely on low-degree edges, while performance on low-curvature (bottleneck) edges systematically degrades in three of four datasets, the opposite of what the over-squashing motivation predicts. Examining the learned edge-weight function directly, together with clustering-validity metrics, edge-distance ratios, and a layer-depth ablation across four depths, we find evidence for an alternative account: curvature-weighting sharpens the separation between clusters, which improves intra-cluster predictions at the cost of inter-cluster (bottleneck) ones. We test this account against topologically defined communities rather than the classification labels used elsewhere. Additionally, we offer practical guidance on when to prefer CGCN over standard GCN, depending on whether intra- or inter-cluster predictions matter most.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21849",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21849.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21849v1 Announce Type: new Abstract: Curvature-enhanced graph convolutional networks (CGCN) incorporate Ollivier-Ricci curvature (ORC), grounded in optimal transport theory, into message passing, motivated by the claim that curvature-weighted edges alleviate \"over-squashing\" at structural bottlenecks. But does CGCN's improvement actually come from mitigating over-squashing? We investigate this on four real-world protein-protein interaction (PPI) datasets, comparing CGCN against a standard GCN at the level of individual edges rather than aggregate metrics alone.\n\nWhile CGCN improves aggregate AUC, AUPR, and F1 across all four datasets, this gain is concentrated almost entirely on low-degree edges, while performance on low-curvature (bottleneck) edges systematically degrades in three of four datasets, the opposite of what the over-squashing motivation predicts. Examining the learned edge-weight function directly, together with clustering-validity metrics, edge-distance ratios, and a layer-depth ablation across four depths, we find evidence for an alternative account: curvature-weighting sharpens the separation between clusters, which improves intra-cluster predictions at the cost of inter-cluster (bottleneck) ones. We test this account against topologically defined communities rather than the classification labels used elsewhere.",
-      "takeaways": [
-        "Additionally, we offer practical guidance on when to prefer CGCN over standard GCN, depending on whether intra- or inter-cluster predictions matter most."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "eb9b8a69cc583f76",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21852",
-    "title": "The Hidden Cost of MoE Diffusion Decoding: Profiling and Fixing the Sampler",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "3880b8527bd7448c",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Harshit Samrat, Ramakrishna Paramahamsa Kompella",
-    "contentSnippet": "arXiv:2611.21852v1 Announce Type: new Abstract: Masked diffusion language models (dLLMs) decode by iteratively denoising a full canvas of tokens, so every forward pass runs a per-token sampling and stopping pipeline over the entire canvas-by-vocabulary logits tensor. We profile single-user decoding of a 26B-parameter diffusion Mixture-of-Experts model on a bandwidth-bound edge accelerator (NVIDIA GB10) and report a result that is easy to miss: after weight quantisation, this logits pipeline, not the expert GEMMs, is the single largest consumer of decode time. Unlike autoregressive decoding, where sampling touches one position's logits per committed token, diffusion decoding processes S times as many logit entries per output token, where S is the number of denoising steps. We show this pipeline is largely redundant or fusable and remove it in two lossless tiers: a bit-exact tier whose output is byte-identical to the reference decoder, and an accuracy-parity tier using a fused single-pass entropy kernel and Gumbel-max sampling. Combined with a W4A16 expert kernel, the full stack reaches 2.4-2.7 times end-to-end speedup over bf16 at unchanged benchmark accuracy on GSM8K, HumanEval, and MATH, on a single 273 GB/s device. We confirm the finding on a second, independently built diffusion MoE (LLaDA2.0-mini: pipeline 28.8% of decode, fused W4A16 3.3 times at accuracy parity) and show it disappears on a dense diffusion model (3.6%). The cost is specific to MoE diffusion, where quantisation makes the backbone cheap. Code and quantised weights are released.",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21852",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21852.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21852v1 Announce Type: new Abstract: Masked diffusion language models (dLLMs) decode by iteratively denoising a full canvas of tokens, so every forward pass runs a per-token sampling and stopping pipeline over the entire canvas-by-vocabulary logits tensor. We profile single-user decoding of a 26B-parameter diffusion Mixture-of-Experts model on a bandwidth-bound edge accelerator (NVIDIA GB10) and report a result that is easy to miss: after weight quantisation, this logits pipeline, not the expert GEMMs, is the single largest consumer of decode time. Unlike autoregressive decoding, where sampling touches one position's logits per committed token, diffusion decoding processes S times as many logit entries per output token, where S is the number of denoising steps.\n\nWe show this pipeline is largely redundant or fusable and remove it in two lossless tiers: a bit-exact tier whose output is byte-identical to the reference decoder, and an accuracy-parity tier using a fused single-pass entropy kernel and Gumbel-max sampling. Combined with a W4A16 expert kernel, the full stack reaches 2.4-2.7 times end-to-end speedup over bf16 at unchanged benchmark accuracy on GSM8K, HumanEval, and MATH, on a single 273 GB/s device. We confirm the finding on a second, independently built diffusion MoE (LLaDA2.0-mini: pipeline 28.8% of decode, fused W4A16 3.3 times at accuracy parity) and show it disappears on a dense diffusion model (3.6%).",
-      "takeaways": [
-        "The cost is specific to MoE diffusion, where quantisation makes the backbone cheap.",
-        "Code and quantised weights are released."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "c63be6bc2e441a3f",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21857",
-    "title": "tmol: a GPU-accelerated implementation of the Rosetta energy function for machine learning",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "1e02cd9f23ac1541",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Andrew Leaver-Fay, Kieran Didi, Jeff Flatten, Alex Ford, Guangfeng Zhou, Nathaniel Corley, Hahnbeom Park, Maxwell W. Kazman, Rafael I. Brent, Joseph Kleinhenz, Henry Solberg, Andrew M. Watkins, Brian Kuhlman, David Baker, Frank DiMaio",
-    "contentSnippet": "arXiv:2611.21857v1 Announce Type: new Abstract: Physics-inspired forcefields complement generative machine learning models, showing better generalization beyond the training distribution. However, these forcefields are typically slow to evaluate, and their derivatives are difficult to integrate into ML frameworks. We introduce tmol, a GPU-native PyTorch library implementing the state-of-the-art RosettaGenFF forcefield. tmol supports efficient batched differentiable scoring and whole-structure refinement with up to 362-fold throughput increase (batched). Used as a reward in generative protein design, tmol increases hydrogen bonds and water bridges at designed interfaces.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21857",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21857.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21857v1 Announce Type: new Abstract: Physics-inspired forcefields complement generative machine learning models, showing better generalization beyond the training distribution. However, these forcefields are typically slow to evaluate, and their derivatives are difficult to integrate into ML frameworks. We introduce tmol, a GPU-native PyTorch library implementing the state-of-the-art RosettaGenFF forcefield.",
-      "takeaways": [
-        "Tmol supports efficient batched differentiable scoring and whole-structure refinement with up to 362-fold throughput increase (batched).",
-        "Used as a reward in generative protein design, tmol increases hydrogen bonds and water bridges at designed interfaces."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ed4e11ac2f6c88ea",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21865",
-    "title": "PromptPack: Training-Free Augmentation of Diffusion Editors for Intent-Aligned Spatial and Semantic Control",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "e65d3c125844f27e",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Sophia Zalewski, Mustafa Munir, Enting Liu, Anjul Patney, David Dynerman",
-    "contentSnippet": "arXiv:2611.21865v1 Announce Type: new Abstract: Many image-editing tasks require confining changes to intended spatial regions while exactly preserving user-designated source content. Instruction-driven editing pipelines often leave such user-intent underspecified, while inpainting editors condition generation on explicitly defined edit support but not on the spatial assignment of individual edit concepts. PromptPack addresses both limitations by equipping diffusion editors with two explicit 'Edit Guides': an edit-role partition that labels each pixel as 'Keep,' 'Permit,' or 'Modify' to specify where edits may occur, and a regional-prompt assignment that maps spatial regions to text prompts to specify which concepts apply where. These guides may be manually specified or, for source-object edits, automatically derived from a text-grounded SAM 3 mask. Without retraining, PromptPack injects independently embedded regional prompts into the editor's fixed-length text sequence and uses the Edit Guides to spatially mask attention, gate flow updates, and restore protected source pixels. We integrate PromptPack into FlowEdit FLUX, FlowEdit SD3, and FLUX Kontext and demonstrate improved requested-concept placement and protected-content preservation across all three integrations on PIE-Bench++. In a pairwise user study, PromptPack achieves an 87% preference rate over FlowEdit FLUX, establishing PromptPack as a practical, training-free interface for intent-aligned diffusion editing.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21865",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21865.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21865v1 Announce Type: new Abstract: Many image-editing tasks require confining changes to intended spatial regions while exactly preserving user-designated source content. Instruction-driven editing pipelines often leave such user-intent underspecified, while inpainting editors condition generation on explicitly defined edit support but not on the spatial assignment of individual edit concepts. PromptPack addresses both limitations by equipping diffusion editors with two explicit 'Edit Guides': an edit-role partition that labels each pixel as 'Keep,' 'Permit,' or 'Modify' to specify where edits may occur, and a regional-prompt assignment that maps spatial regions to text prompts to specify which concepts apply where.\n\nThese guides may be manually specified or, for source-object edits, automatically derived from a text-grounded SAM 3 mask. Without retraining, PromptPack injects independently embedded regional prompts into the editor's fixed-length text sequence and uses the Edit Guides to spatially mask attention, gate flow updates, and restore protected source pixels. We integrate PromptPack into FlowEdit FLUX, FlowEdit SD3, and FLUX Kontext and demonstrate improved requested-concept placement and protected-content preservation across all three integrations on PIE-Bench++.",
-      "takeaways": [
-        "In a pairwise user study, PromptPack achieves an 87% preference rate over FlowEdit FLUX, establishing PromptPack as a practical, training-free interface for intent-aligned diffusion editing."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "803d7ea154858a2b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21879",
-    "title": "Adaptive Memory for Online Reinforcement Learning under Sparse Model Changes",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "2faf54ad89bb1711",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Sreejeet Maity, Sukanya Modak, Leonardo F. Toso",
-    "contentSnippet": "arXiv:2611.21879v1 Announce Type: new Abstract: We study the discounted reinforcement learning (RL) problem in a setting where the underlying environment changes between deployments. Each deployment provides $H$ observations from a fixed MDP. The reward function and transition kernel are fixed within each deployment. Across deployments, at most an $\\epsilon >0$ fraction of the reward and transition kernel entries may change. In this setting, learning each model to deploy from scratch may discard useful observations from past deployments, whereas pooling all past observations can bias the estimates of entries that have already changed. We then propose an algorithm that for each state and action pair, selects how much history to reuse to estimate the reward and probabilities of the next state. We start with observations from the current deployment and add earlier deployment observations one at a time, the most recent first. After each addition, we check whether a single average reward agrees with the estimates from all histories considered until that point. We apply the same check to the distribution of next states. For each estimate, we leverage the last history that passes these aforementioned checks. The optimal control policy is then computed on top of the fitted MDP. We characterize the average gap between the optimal return and the return of the learner's policies over a finite number of deployments. We demonstrate that when $0< |S|\\epsilon \\leq 2$, with $|S|$ being the cardinality of the state space, our algorithm needs only the observations from the most recent $O(1/\\epsilon)$ deployments, and achieves a long-run average gap of at most $\\widetilde{O}(\\sqrt{\\epsilon/H})$.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21879",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21879.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21879v1 Announce Type: new Abstract: We study the discounted reinforcement learning (RL) problem in a setting where the underlying environment changes between deployments. Each deployment provides $H$ observations from a fixed MDP. The reward function and transition kernel are fixed within each deployment.\n\nAcross deployments, at most an $\\epsilon >0$ fraction of the reward and transition kernel entries may change. In this setting, learning each model to deploy from scratch may discard useful observations from past deployments, whereas pooling all past observations can bias the estimates of entries that have already changed. We then propose an algorithm that for each state and action pair, selects how much history to reuse to estimate the reward and probabilities of the next state.",
-      "takeaways": [
-        "We start with observations from the current deployment and add earlier deployment observations one at a time, the most recent first.",
-        "After each addition, we check whether a single average reward agrees with the estimates from all histories considered until that point.",
-        "We apply the same check to the distribution of next states.",
-        "For each estimate, we leverage the last history that passes these aforementioned checks."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "7b19045232fa1cb8",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21880",
-    "title": "Cancellation-Free Constrained SquareCB for Safe Controller Selection",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "c342ac12a97f3122",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Kartik Pandit, Sourav Ganguly, Arnob Ghosh",
-    "contentSnippet": "arXiv:2611.21880v1 Announce Type: new Abstract: We study constrained contextual bandits, in which a learner chooses one of $K$ actions in each round to minimize loss while keeping the expected cost of its play below a budget. Existing reductions to online regression weight the cost by a Lagrange multiplier learned from past constraint residuals, so slack in some rounds can offset violations in others. We instead run SquareCB proposed in \\citep{foster2020beyond} with a rectified weight on the cost: it is zero when the estimated cost is within the budget, and otherwise just large enough to bring it back to the budget. Under realizability and Slater's condition with margin $\\delta$, the algorithm attains regret $O(\\sqrt{KT\\,\\mathrm{Reg}_{\\mathsf{Sq}}(T)}/\\delta)$ and cancellation-free violation $\\sum_t(V_c^{p_t}-b)^+=O(\\sqrt{KT\\,\\mathrm{Reg}_{\\mathsf{Sq}}(T)})$, where $\\mathrm{Reg}_{\\mathsf{Sq}}$ is the error of the regression oracle. The same bounds hold when the budget must be met in every context, potentially adversarially chosen contexts. In controller selection for a safe-control-gym quadrotor and a BOPTEST building, the violation is 6 to 9 times lower than that of primal-dual and virtual-queue baselines, with a lower or comparable regret.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21880",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21880.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21880v1 Announce Type: new Abstract: We study constrained contextual bandits, in which a learner chooses one of $K$ actions in each round to minimize loss while keeping the expected cost of its play below a budget. Existing reductions to online regression weight the cost by a Lagrange multiplier learned from past constraint residuals, so slack in some rounds can offset violations in others. We instead run SquareCB proposed in \\citep{foster2020beyond} with a rectified weight on the cost: it is zero when the estimated cost is within the budget, and otherwise just large enough to bring it back to the budget.\n\nUnder realizability and Slater's condition with margin $\\delta$, the algorithm attains regret $O(\\sqrt{KT\\,\\mathrm{Reg}_{\\mathsf{Sq}}(T)}/\\delta)$ and cancellation-free violation $\\sum_t(V_c^{p_t}-b)^+=O(\\sqrt{KT\\,\\mathrm{Reg}_{\\mathsf{Sq}}(T)})$, where $\\mathrm{Reg}_{\\mathsf{Sq}}$ is the error of the regression oracle. The same bounds hold when the budget must be met in every context, potentially adversarially chosen contexts. In controller selection for a safe-control-gym quadrotor and a BOPTEST building, the violation is 6 to 9 times lower than that of primal-dual and virtual-queue baselines, with a lower or comparable regret.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "94c2e3f10080cb96",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21882",
-    "title": "WM-Quant: Rollout-Aware Post-Training Quantization for JEPA-Style World Models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "9d4774ce48115f5e",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "William Hammer, Andrew Heuer, Nikhil Krishna, Matthew Grenier, Ramtin Zand",
-    "contentSnippet": "arXiv:2611.21882v1 Announce Type: new Abstract: We present WM-Quant, to our knowledge, the first post-training quantization (PTQ) framework designed specifically for JEPA-style world models. Although world models typically feature relatively few parameters, action planning algorithms often require thousands of inferences, which can quickly become computationally expensive. PTQ is a natural way to reduce this cost. However, we show that in world models using autoregressive model predictive control (MPC) rollouts, quantization error can compound with each predictor step, resulting in action rankings from the quantized model becoming near-random. WM-Quant addresses this with three components that build on existing PTQ methods: early-encoder precision, control-path preservation, and rollout-aware scaling. Early-encoder precision protects accurate latent state and goal information to mitigate long-term error propagation. Control-path preservation allows the world model predictor to distinguish between fine-grained actions, significantly improving action rankings and execution. Rollout-aware scaling jointly calibrates encoder and per-step predictor activation ranges with respect to an entire rollout rather than a single prediction, reducing the cumulative rollout error. Across multiple world models, environments, and PTQ methods, WM-Quant substantially improves planning success at low bit-widths, approaching full-precision performance at W4A4.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21882",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21882.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21882v1 Announce Type: new Abstract: We present WM-Quant, to our knowledge, the first post-training quantization (PTQ) framework designed specifically for JEPA-style world models. Although world models typically feature relatively few parameters, action planning algorithms often require thousands of inferences, which can quickly become computationally expensive. PTQ is a natural way to reduce this cost.\n\nHowever, we show that in world models using autoregressive model predictive control (MPC) rollouts, quantization error can compound with each predictor step, resulting in action rankings from the quantized model becoming near-random. WM-Quant addresses this with three components that build on existing PTQ methods: early-encoder precision, control-path preservation, and rollout-aware scaling. Early-encoder precision protects accurate latent state and goal information to mitigate long-term error propagation.",
-      "takeaways": [
-        "Control-path preservation allows the world model predictor to distinguish between fine-grained actions, significantly improving action rankings and execution.",
-        "Rollout-aware scaling jointly calibrates encoder and per-step predictor activation ranges with respect to an entire rollout rather than a single prediction, reducing the cumulative rollout error.",
-        "Across multiple world models, environments, and PTQ methods, WM-Quant substantially improves planning success at low bit-widths, approaching full-precision performance at W4A4."
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
