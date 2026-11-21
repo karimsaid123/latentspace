@@ -1,5 +1,63 @@
 [
   {
+    "id": "fe5d4f6020be9d6a",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/21/openai-gpt-live-1-1-api-standby-mode/",
+    "title": "OpenAI Ships GPT-Live-1.1 for Voice Agents, Cuts Idle Cost to $0.02/Min",
+    "publishedAt": "2026-11-21T11:46:17.000Z",
+    "fetchedAt": "2026-11-21T11:59:29.430Z",
+    "contentHash": "fe189f04b7623ca5",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "OpenAI has made GPT-Live-1.1 available in its API under the model ID gpt-live-1.1 . The GPT-Live-1.1 voice model is a full-duplex model for multilingual conversations. It can listen while it speaks. OpenAI team states that it speaks with more natural and consistent accents across languages and completes tasks more reliably. The release also adds standby, a cheaper billing state for idle sessions. For teams running voice agents, idle time on a call now costs less. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: Live sessions hold a 128,000-token default context window . Runs on: OpenAI’s cloud only, via v1/live/sessions . Clients connect over WebRTC or WebSocket. No open weights, no quantized variants. Performance: OpenAI claims better accents, transcription, letter and number handling, and task completion than GPT-Live-1. No scores published. Best: Standby bills idle WebRTC time at $0.02 per minute versus $0.05 active , a 60% lower rate. Worst: OpenAI published 0 benchmark scores for 1.1. Image, video and structured outputs are not supported. Bottom line: Best: cheaper always-on voice sessions. Worst: quality gains are self-reported with no numbers. What is GPT-Live-1.1? GPT-Live-1.1 is a full-duplex speech model from OpenAI that hears and speaks in 1 stream. It follows GPT-Live-1, which reached the API on September 10, 2026 . As per the OpenAI forum announcement , it has powered ChatGPT Plus and Pro voice since October 15. Inputs and outputs are audio and text. Image and video are not supported. Streaming and function calling work. Structured outputs, fine-tuning and predicted outputs do not. How does GPT-Live-1.1 work? The GPT-Live family replaces the usual cascade of speech-to-text, an LLM and text-to-speech. OpenAI says the model reasons over incoming and outgoing audio together in a single model . It also handles turn detection and returns ASR transcripts natively. Deeper work is delegated. The voice model can hand reasoning and tool calls to a backend text model. OpenAI names GPT-6 Astra for complex issues and Luna for high-volume tasks. Third-party backends also work. The Live conversations guide sets delegation.type to client or responses . Responses mode uses OpenAI models. Client mode connects your own backend. Instructions can run up to 16,384 tokens. What changed from GPT-Live-1? O",
+    "category": "Robotics & Hardware",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI has released GPT-Live-1.1 (model ID: gpt-live-1.1), a full-duplex voice model designed for multilingual, real-time conversational agents. The model, which has powered ChatGPT Plus and Pro voice features since October 15, 2026, replaces traditional cascaded speech-to-text and text-to-speech pipelines by reasoning over audio streams natively. It supports a 128,000-token context window and allows for function calling, though it lacks support for image, video, structured outputs, fine-tuning, or predicted outputs.\n\nA primary commercial update in this release is the introduction of a 'standby' billing state for idle WebRTC sessions, which costs $0.02 per minute compared to the $0.05 per minute rate for active sessions, representing a 60% cost reduction for idle time. The model architecture supports native ASR transcript generation and allows developers to delegate complex reasoning or high-volume tasks to backend models such as GPT-6 Astra or Luna via the 'responses' or 'client' delegation modes. Instructions are limited to 16,384 tokens.\n\nDespite the release, OpenAI has not published quantitative benchmark scores for GPT-Live-1.1, relying on self-reported improvements in accent consistency, transcription accuracy, and task completion reliability compared to the original GPT-Live-1. The model is available exclusively via OpenAI’s cloud API (v1/live/sessions) with no open weights or quantized variants provided.",
+      "takeaways": [
+        "**Pricing:** Idle WebRTC sessions are billed at $0.02/min, a 60% reduction from the $0.05/min active session rate.",
+        "**Architecture:** The model uses a full-duplex, single-stream approach for audio input/output, bypassing traditional cascaded ASR/TTS pipelines.",
+        "**Context & Limits:** The model supports a 128,000-token context window and a 16,384-token limit for system instructions.",
+        "**Delegation:** Developers can route reasoning tasks to external backends like GPT-6 Astra or Luna using 'client' or 'responses' delegation modes.",
+        "**Compatibility:** The model supports WebRTC and WebSocket connections but excludes support for image, video, and structured output formats."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8df2b0aafffddec9",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/20/baseten-bison-1-groundhog-1-gemma-4-decision-models/",
+    "title": "Baseten Releases Bison-1 and Groundhog-1, Topping Decision Model Index",
+    "publishedAt": "2026-11-21T04:01:04.000Z",
+    "fetchedAt": "2026-11-21T11:59:29.430Z",
+    "contentHash": "191c4172ccfd333d",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Baseten has released bison-1 and groundhog-1, 2 open-weight decision models built on Google’s Gemma 4 . Decision models do not write text. They return calibrated probabilities for yes/no, choice and score questions. The Baseten bison-1 decision model scores 76 on the Artificial Analysis Decision Index v2.1 . That ranks #1 of 19. Both models raise context from 16k to 128k tokens and accept images. For routing, triage and guardrail pipelines, that means full policies and histories in one call. TL;DR Size: bison-1 is 31B dense. groundhog-1 is a 26B MoE with about 4B active. Both take 128k tokens (131,072). Runs on: Baseten Model APIs, plus open BF16 weights on Hugging Face. No inference GPU or quantized builds are listed. BF16 weights alone are about 62 GB (bison-1) and 52 GB (groundhog-1), by our arithmetic. Performance: bison-1 scores 76 on AA Decision Index v2.1, 1 point above Liquid AI’s d1.2-ultra (75). Best: When2Call, 98 (rank #1). Worst: AA-Omniscience-Decision v1.1, 60 (rank #11). Bottom line: Best: top-ranked, best-calibrated decisions (Brier 0.14) over 128k tokens at $0.10 per 1M input tokens. Worst: groundhog-1 has no official index score yet, and every number is self-reported. What are bison-1 and groundhog-1? bison-1 is a 31B decision model from Baseten that post-trains Gemma 4 31B to return calibrated probabilities. groundhog-1 is the cheaper sibling. It fine-tunes Gemma 4 26B-A4B , a mixture-of-experts model with about 4B active parameters per token. Both join Baseten’s existing lineup: mammoth-1 (27B), elephant-1 (9B) and joey-1 (2B). Those 3 sit on Qwen backbones. The new pair is Baseten’s first on what it calls an American backbone. How does a decision model work? A request carries 1 state and any number of questions . The state is text, optionally with images. Each question has a type: noul (yes/no), choice (named options) or score (ordered levels). The model answers every question in a single prefill pass. It returns P(yes), or the chosen option with a probabilities field. No output tokens are generated. Baseten’s earlier launch post lists ticket triage, spam detection, jailbreak guardrails and LLM routing as target tasks. Requests longer than the trained limit are refused, not truncated. Pipelines that assume silent truncation will need a length check. Why is bison-1 better calibrated? Baseten credits two sources: the Gemma base and more “",
+    "category": "Robotics & Hardware",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Baseten has launched bison-1 and groundhog-1, two open-weight decision models built on Google’s Gemma 4 architecture. Unlike generative LLMs, these models are designed specifically to return calibrated probabilities for yes/no, choice, and score-based queries without generating text. Bison-1 is a 31B dense model, while groundhog-1 is a 26B Mixture-of-Experts (MoE) model with approximately 4B active parameters per token. Both models support a 128k token context window and multimodal inputs (text and images), enabling complex tasks like policy evaluation and full-history analysis in a single inference pass.\n\nTechnically, these models function by processing a single state and multiple questions simultaneously, returning probabilities (e.g., P(yes) or specific choice likelihoods) rather than output tokens. Bison-1 currently holds the #1 spot on the Artificial Analysis Decision Index v2.1 with a score of 76, outperforming Liquid AI’s d1.2-ultra (75). The models are available via Baseten Model APIs and as open BF16 weights on Hugging Face, with weights requiring approximately 62 GB for bison-1 and 52 GB for groundhog-1. Pricing for the API is set at $0.10 per 1 million input tokens.",
+      "takeaways": [
+        "**Model Architecture:** Bison-1 is a 31B dense model; groundhog-1 is a 26B MoE model with 4B active parameters, both utilizing Google's Gemma 4 as the base.",
+        "**Benchmark Performance:** Bison-1 achieved a 76 on the Artificial Analysis Decision Index v2.1, ranking first among 19 models, with a Brier score of 0.14.",
+        "**Context & Input:** Both models support a 128k token context window and accept image inputs, with requests exceeding this limit resulting in refusal rather than truncation.",
+        "**API Pricing:** Baseten offers these models via API at a rate of $0.10 per 1 million input tokens.",
+        "**Task Specialization:** Designed for non-generative tasks including ticket triage, spam detection, jailbreak guardrails, and LLM routing."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "6b1a37a3501d8c9a",
     "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
     "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
@@ -332,7 +390,7 @@
     "author": "Tim Fernholz",
     "contentSnippet": "It’s a big week for Levent Alpöge: The mathematician saw his employer, Anthropic, become the first publicly traded frontier AI lab. He also appears to have solved one of the most important problems in mathematics.\n\n“The precise timing is horrible,” he wrote in an essay announcing his findings and describing how he messaged Anthropic CEO Dario Amodei last Sunday night to ask how to announce that he had found a Lean-compilable solution to the Riemann hypothesis, which dates back to 1859 and is among the Millennium Prize math problems.\n\nThe hypothesis conjectures that there is a hidden structure underlying the appearance of prime numbers. If the claimed result holds true, we’re entering sublime-mysteries-of-the-universe territory.\n\nMaybe the best way to understand how exciting this is to the mathematics community is to watch the experts puzzling through the result in a chat on Zulip . Mathematicians like Chris Birkbeck, a number theorist at the University of East Anglia, are posting thoughts like this …\n\nThe cohomology bound is proved by what looks like an automorphy-lifting argument. It genuinely uses the existence of Galois representations attached to regular algebraic, polarized cuspidal automorphic representations of GL_n over CM fields, along with base change, Jacquet–Shalika, Clozel’s purity, Bernstein–Zelevinsky, the main theorem of CM, Deligne–Ribet and more.\n\nFor my part, I tapped out of mathematics at college calculus, so I can’t help decode exactly what that means.\n\nBut that comment was followed by 20 readers reacting 🤯.\n\nIt will be a while before the mathematics community feels like it has a handle on the proof, but most appear confident that the formalized Lean result will hold. Lean is an an open-source coding language used to express mathematical ideas as code, allowing proofs to be formally verified. Several participants in the Zulip chat, including MIT mathematician Andrew Sutherland, say they have successfully confirmed that Alpöge’s solution can be compiled successfully.\n\nAlpöge appeared in his essay to feel a bit guilty about releasing the proof without a truly human-intelligible explanation, but his obsession with the problem since childhood made him feel he “could not live” if he waited to release the finding.\n\nAlpöge described a “stream-of-consciousness jaunt through the experience of finding all the pieces of the argument through incred",
     "category": "Business & Big Tech",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Levent Alpöge, a mathematician at Anthropic, has released a proof for the 167-year-old Riemann hypothesis, a Millennium Prize problem concerning the distribution of prime numbers. Alpöge utilized Anthropic’s Claude model to assist in the derivation, describing the process as a stream-of-consciousness collaboration. The proof has been formalized in Lean, an open-source language for formal verification, and has been successfully compiled and verified by independent mathematicians, including MIT’s Andrew Sutherland. Alpöge also released a separate proof regarding the Navier-Stokes equations in collaboration with NYU mathematician Tristan Buckmaster.\n\nSimultaneously, Stanford postdoc Alessandro Masullo has released a human-authored proof of the General Riemann hypothesis. Unlike Alpöge’s work, Masullo’s proof has not yet been expressed in Lean, and its validity remains subject to peer review. Stanford professor and American Mathematics Association president Ravi Vakil noted that Masullo’s work is the result of 12 years of independent research. The mathematical community is currently evaluating both submissions, with experts like Chris Birkbeck noting that Alpöge’s proof relies on complex techniques including automorphy-lifting arguments, Galois representations, and base change theorems.",
@@ -2594,7 +2652,7 @@
         "Inference recommendations now run from Amazon SageMaker AI Studio, the SageMaker Python SDK, and the coding agents engineers already use, and endpoints can now route requests across Regions and accounts."
       ],
       "impact": "High",
-      "readTimeMinutes": 7,
+      "readTimeMinutes": 3,
       "generatedWith": "heuristic"
     }
   },
@@ -10832,60 +10890,6 @@
         "We test this across three models (8B-9B) and confirm the prediction: the theory-derived configuration (TPO-S, $\\varepsilon = 0.05$) is competitive with the strongest baselines, attaining the highest mean IFEval score among the compared methods on all three, validating that the predicted finite attractor is a usable operating point rather than proposing a new state-of-the-art loss."
       ],
       "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f6a510991eb42ea4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21769",
-    "title": "Learning Calibrated and Samplable Predictive Distributions of Surface-Ocean $\\Delta p$CO$_2$ Using Tabular Diffusion Models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "59abeac232affb81",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Gabriele Accarino, Mohammad M. Amirian, Thea H. Heimdal, Amanda R. Fay, Galen A. McKinley, Viviana Acquaviva",
-    "contentSnippet": "arXiv:2611.21769v1 Announce Type: new Abstract: The ocean absorbs almost 30% of anthropogenic CO$_2$ emissions, but quantifying this sink requires estimating surface-ocean CO$_2$ from observations that are sparse in space and time. Most existing machine-learning estimates of this field are deterministic, giving a single value per grid point, with uncertainty approximated post hoc via residuals, ensembles, or prescribed distributions. We instead learn a conditional predictive distribution for each observation: using Treeffuser, a conditional diffusion model with gradient-boosted-tree score functions, we estimate the full predictive distribution of $\\Delta p$CO$_2$ (the sea-air $p$CO$_2$ difference) from 13 environmental, spatial, and temporal predictors. On a held-out SOCAT test set, Treeffuser attains the lowest continuous ranked probability score among the uncertainty-quantification methods evaluated (8.229 $\\mu$atm) and the coverage closest to the nominal 68% / 95% levels (0.686 / 0.930), while retaining point-prediction skill comparable to a deterministic XGBoost baseline (RMSE 18.4 vs. 17.7 $\\mu$atm; $R^2$ 0.77 vs. 0.79). These results show that conditional diffusion can provide well-calibrated, observation-level uncertainties while largely preserving point-prediction skill. Because Treeffuser is generative, its samples can support probabilistic analyses of $\\Delta p$CO$_2$; extending this to spatially coherent field reconstruction will require modeling dependence across grid cells and evaluation on spatially held-out data.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21769",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21769.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21769v1 Announce Type: new Abstract: The ocean absorbs almost 30% of anthropogenic CO$_2$ emissions, but quantifying this sink requires estimating surface-ocean CO$_2$ from observations that are sparse in space and time. Most existing machine-learning estimates of this field are deterministic, giving a single value per grid point, with uncertainty approximated post hoc via residuals, ensembles, or prescribed distributions. We instead learn a conditional predictive distribution for each observation: using Treeffuser, a conditional diffusion model with gradient-boosted-tree score functions, we estimate the full predictive distribution of $\\Delta p$CO$_2$ (the sea-air $p$CO$_2$ difference) from 13 environmental, spatial, and temporal predictors.\n\nOn a held-out SOCAT test set, Treeffuser attains the lowest continuous ranked probability score among the uncertainty-quantification methods evaluated (8.229 $\\mu$atm) and the coverage closest to the nominal 68% / 95% levels (0.686 / 0.930), while retaining point-prediction skill comparable to a deterministic XGBoost baseline (RMSE 18.4 vs. 17.7 $\\mu$atm; $R^2$ 0.77 vs. These results show that conditional diffusion can provide well-calibrated, observation-level uncertainties while largely preserving point-prediction skill.",
-      "takeaways": [
-        "Because Treeffuser is generative, its samples can support probabilistic analyses of $\\Delta p$CO$_2$; extending this to spatially coherent field reconstruction will require modeling dependence across grid cells and evaluation on spatially held-out data."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f12089328b506c64",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21825",
-    "title": "Urban Representation Learning for Identifying Potential Disparities in Crime Reporting",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "d1ef62f378f57f45",
-    "sourceId": "arxiv-lg",
-    "sourceName": "arXiv cs.LG (Machine Learning)",
-    "author": "Jorge Valverde-Rebaza, Carlos Paez De La Cruz, Pedro P\\'erez-Collado, Daniel S\\'anchez-Cata\\~no, Eashley Mart\\'inez-Vergara",
-    "contentSnippet": "arXiv:2611.21825v1 Announce Type: new Abstract: Open crime data support urban safety analysis but reflect reported incidents rather than the complete distribution of criminal activity, potentially introducing spatial distortions in downstream analysis. We propose a self-supervised urban representation learning framework for identifying unusual reporting patterns relative to representation-similar peers using only georeferenced crime records. The method constructs complementary hourly, weekly, and static reporting profiles, learns scale-specific representations under geographic self-supervision, and integrates them into a unified latent space. Neighbor Profile Divergence (NPD) is then used to quantify disagreement between each region's reporting profile and those of its retrieved peers. Experiments on more than 1.8 million crime records from Mexico City, aggregated into 1,058 H3 regions, show that the proposed representation achieves a mean Silhouette score of 0.4052, compared with 0.2863 for Hex2Vec. NPD rankings remain highly stable across neighborhood sizes, with Spearman correlations from 0.9720 to 0.9951, while most high-divergence candidates persist across configurations. The retrieved peers also extend substantially beyond immediate geographic neighborhoods, indicating that the learned representation captures structure beyond local spatial proximity. High-divergence regions exhibit spatially organized patterns and, in several cases, differences in incident volume relative to peer expectations. These results support NPD as an internal auditing and prioritization mechanism for identifying regions that warrant further investigation, rather than as direct evidence of underreporting.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21825",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21825.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21825v1 Announce Type: new Abstract: Open crime data support urban safety analysis but reflect reported incidents rather than the complete distribution of criminal activity, potentially introducing spatial distortions in downstream analysis. We propose a self-supervised urban representation learning framework for identifying unusual reporting patterns relative to representation-similar peers using only georeferenced crime records. The method constructs complementary hourly, weekly, and static reporting profiles, learns scale-specific representations under geographic self-supervision, and integrates them into a unified latent space.\n\nNeighbor Profile Divergence (NPD) is then used to quantify disagreement between each region's reporting profile and those of its retrieved peers. Experiments on more than 1.8 million crime records from Mexico City, aggregated into 1,058 H3 regions, show that the proposed representation achieves a mean Silhouette score of 0.4052, compared with 0.2863 for Hex2Vec. NPD rankings remain highly stable across neighborhood sizes, with Spearman correlations from 0.9720 to 0.9951, while most high-divergence candidates persist across configurations.",
-      "takeaways": [
-        "The retrieved peers also extend substantially beyond immediate geographic neighborhoods, indicating that the learned representation captures structure beyond local spatial proximity.",
-        "High-divergence regions exhibit spatially organized patterns and, in several cases, differences in incident volume relative to peer expectations.",
-        "These results support NPD as an internal auditing and prioritization mechanism for identifying regions that warrant further investigation, rather than as direct evidence of underreporting."
-      ],
-      "impact": "Notable",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
