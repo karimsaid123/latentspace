@@ -1,5 +1,118 @@
 [
   {
+    "id": "fee23103aa934302",
+    "canonicalUrl": "https://siliconangle.com/2026/11/21/sovereignty-data-not-chips-stuttgart-sovereign-ai-factory-sc26/",
+    "title": "Sovereignty starts with data, not chips, says Stuttgart AI factory chief",
+    "publishedAt": "2026-11-21T21:48:11.000Z",
+    "fetchedAt": "2026-11-21T23:43:07.633Z",
+    "contentHash": "5a8315ba38ff2ce1",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Sloane Kali Faye",
+    "contentSnippet": "UPDATED 16:48 EST / NOVEMBER 21 2026\n\nSovereignty starts with data, not chips, says Stuttgart AI factory chief\n\nA sovereign AI factory is only as valuable as the companies that can actually get onto it. Across Europe, publicly funded AI factories are racing to give startups and small manufacturers supercomputer-class GPUs without pushing them into lock-in or loose data handling.\n\nIn Stuttgart, the HammerHAI AI factory is taking shape around a system from Hewlett Packard Enterprise Co. using Nvidia Corp. Grace Blackwell chips. The center’s pitch leans as much on people as on processors, according to Bastian Koller (pictured), managing director of the High-Performance Computing Center Stuttgart.\n\n“It’s very important to bring them there because everybody’s talking about AI, but we focus especially on SMEs and startups,” Koller said. “So some startups know what they want, some startups want to try and they need help and support.”\n\nKoller spoke with theCUBE Research’s John Furrier and Amit Eyal Govrin at SC26 , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how HammerHAI avoids lock-in, its pragmatic approach to sovereignty and a concierge model that pairs each customer with a consistent contact. (* Disclosure below.)\n\nBuilding a sovereign AI factory without lock-in\n\nIndustrial users no longer want shell programming; they expect the look and feel of a hyperscaler, which raises fresh demands on security and access. The center has already worked with customers on existing systems while it waits on the new hardware, and several have produced success stories. Rather than holding onto them, it designs its services so workloads can leave, according to Koller.\n\n“The idea is to evolve the system and the services in a way that they can simply move from us to a hyperscaler or from hyperscaler back,” Koller said. “Because what we are doing is, we give them a boost, we push them forward.”\n\nThat pragmatism extends to sovereignty itself. The Stuttgart center runs an ISO-certified environment with TISAX Level 3 certification for automotive work. Full independence, down to European chips, is not realistic in the near term, Koller explained.\n\n“We cannot now say, okay, come back in 10 years when we have a sovereign processor or a sovereign GPU or something like this,” Koller said. “We have to look for the data.”\n\nEfficiency is ",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The HammerHAI AI factory in Stuttgart, led by managing director Bastian Koller of the High-Performance Computing Center Stuttgart, is deploying a new supercomputing infrastructure based on Hewlett Packard Enterprise (HPE) systems utilizing Nvidia Grace Blackwell GPUs. The facility aims to provide European startups and small-to-medium enterprises (SMEs) with high-performance computing resources while prioritizing data sovereignty and avoiding vendor lock-in. Rather than pursuing full hardware independence, the center focuses on data control and portability, ensuring that workloads can be migrated between the facility and commercial hyperscalers.\n\nTechnically, the new system represents a significant efficiency upgrade, doubling the performance of its predecessor while reducing power consumption from 3.2 megawatts to approximately 700 kilowatts, with additional waste heat recovery. The center operates under ISO-certified standards and maintains TISAX Level 3 certification to support automotive industry requirements. To bridge the gap between complex infrastructure and user needs, the facility employs a 'concierge model' that assigns dedicated contacts to customers, ensuring that the system architecture is informed by real-world user workflows rather than purely theoretical design.",
+      "takeaways": [
+        "**Hardware Architecture:** The HammerHAI facility is built on HPE systems powered by Nvidia Grace Blackwell chips.",
+        "**Energy Efficiency:** The new system delivers double the performance of the previous 3.2-megawatt infrastructure while operating at a 700-kilowatt power draw.",
+        "**Compliance Standards:** The facility maintains ISO certification and TISAX Level 3 certification, specifically to accommodate automotive sector data security requirements.",
+        "**Operational Model:** The center utilizes a concierge service model to provide hands-on support for SMEs and startups, prioritizing workload portability to prevent vendor lock-in."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "7289e21f33e265e9",
+    "canonicalUrl": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+    "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+    "publishedAt": "2026-11-21T21:37:10.000Z",
+    "fetchedAt": "2026-11-21T23:43:06.644Z",
+    "contentHash": "e00934c68f0ae6a6",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "Posted: 1:37 PM PST · November 21, 2026 <img width=\"1024\" height=\"683\" src=\"https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?w=1024\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"The Signal app logo can be seen on the display of a smartphone while a finger taps on the application icon.\" style=\"object-fit:cover;\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg 4000w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=150,100 150w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=300,200 300w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=768,512 768w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=680,454 680w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=1200,800 1200w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=1280,854 1280w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=430,287 430w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=720,480 720w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=900,600 900w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=800,534 800w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=1536,1025 1536w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=2048,1366 2048w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=668,446 668w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=562,375 562w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=925,617 925w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=708,472 708w, https://techcrunch.com/wp-content/uploads/2026/05/signal-app-icon-phone.jpg?resize=50,33 50w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /> Image Credits: Matthias Balk/picture alliance / Getty Images Anthony Ha Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance Signal announced Friday that it’s limi",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Signal has announced new restrictions on mobile screenshots within its messaging application, extending existing Windows-based protections to its Android and iOS platforms. Signal President Meredith Whittaker framed the move as a necessary defense against the \"existential threat\" posed by OS-level agentic AI, which can scan, capture, and store sensitive user data from the screen, effectively bypassing the app's end-to-end encryption guarantees.\n\nWhittaker noted that when operating systems integrate AI agents capable of monitoring screen content, the data becomes accessible to local databases or remote servers outside of Signal's control. While the new restrictions aim to mitigate this risk, the feature remains optional; users retain the ability to disable the screenshot block, though doing so explicitly compromises the app's privacy model. Whittaker acknowledged that this is an incomplete solution, as it does not address alternative methods by which AI agents might access application data.",
+      "takeaways": [
+        "**Platform Expansion:** Signal is extending its screenshot-blocking feature, previously exclusive to Windows, to its Android and iOS mobile applications.",
+        "**Privacy Rationale:** The update is a direct response to OS-level agentic AI capabilities that can capture and exfiltrate screen data, undermining Signal's privacy guarantees.",
+        "**User Control:** The screenshot restriction is not mandatory; users can toggle the setting off, though Signal warns this action breaks their privacy protections.",
+        "**Technical Limitation:** Signal leadership admits the measure is an \"incomplete\" defense, as it does not prevent other, more sophisticated methods for AI agents to access in-app data."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8ed913cfa76c678b",
+    "canonicalUrl": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+    "title": "A tale of two Nvidias",
+    "publishedAt": "2026-11-21T21:07:42.000Z",
+    "fetchedAt": "2026-11-21T23:43:06.644Z",
+    "contentHash": "028c86f89424366f",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "We got two very different pictures of Nvidia this week, depending on whether you were focused on the company’s latest earnings report or the tech executives loudly calling for former CEO Jensen Huang’s return.\n\nOn the latest episode of TechCrunch’s Equity podcast , Kirsten Korosec, Tim De Chant, and I discussed the latest news from the AI chipmaker, which reported soaring revenue and insisted that it has no plans for Huang to return.\n\nKirsten described this as “the tale of two Nvidias this week,” with the company’s current executives assuring investors, “Hey, we’ve got this.” At the same time, “You’ve got Elon Musk and others out there really pushing to bring Jensen back , circulating a petition, Jensen himself saying that he’s prepared to come back.” (The company’s falling stock price certainly suggests that Wall Street isn’t feeling reassured.)\n\nKeep reading for a preview of our conversation, edited for length and clarity.\n\nKirsten Korosec: Nvidia will no longer sell its H200 chips in China . This was coming directly from the interim CEO Colette Kress, and that coincides with the Trump administration also talking about closing off what we have discussed in the past, which is this idea of remote access — really closing and tightening all these restrictions [so] the chips can’t make it into China.\n\nWhat was happening is that data centers were being set up right outside, in countries like Malaysia and elsewhere, and then companies within China were remote accessing these chips, and so that’s now also been shut down.\n\nA lot is happening on the China front that is so much bigger than Nvidia, but Nvidia came out publicly and said, “Nope, we’re shutting this part down.” I’ll be very curious to see if this changes, maybe in the first half of 2027.\n\nTim De Chant: I’d love to be a fly on the wall in some of these Trump administration conversations, because they were much more stringent in terms of export controls at the end of the first Trump administration, and that continued through the Biden administration, where they really restricted Nvidia’s ability to export chips to China. I think that something changed in the last couple of years that really opened Nvidia’s ability to sell in the country.\n\nAnthony Ha: One of the things that really surprised me as we were preparing for this episode was [learning that critics] of Nvidia’s stance towards China estimate that 20",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia is currently navigating a dual-narrative crisis involving internal leadership instability and tightening geopolitical export controls. While the company reported strong financial results that exceeded market expectations, it simultaneously faces public pressure from high-profile tech figures, including Elon Musk, who are campaigning for the return of former CEO Jensen Huang. Nvidia’s board has officially rejected these calls, maintaining that current leadership is in control, though analysts note the company's public stance has shifted rapidly in recent weeks, fueling speculation about internal board dynamics and potential parallels to the leadership volatility previously seen at OpenAI.\n\nSimultaneously, Nvidia has confirmed it will cease sales of its H200 chips to China. This move aligns with intensifying U.S. government restrictions aimed at closing loopholes that previously allowed Chinese entities to access advanced hardware via remote access from data centers located in third-party countries like Malaysia. Industry observers estimate that approximately 20% of Nvidia’s business may be tied to the Chinese market through these indirect channels, suggesting that a full enforcement of these export controls could significantly impact the company’s long-term revenue, despite current financial guidance remaining robust.",
+      "takeaways": [
+        "**Export Control Policy:** Nvidia has officially halted the sale of H200 chips to China to comply with tightening U.S. restrictions on both direct hardware exports and remote access to compute resources.",
+        "**Market Exposure:** Analysts estimate that up to 20% of Nvidia’s total business is indirectly linked to the Chinese market, posing a potential risk to future revenue if current loopholes are fully closed.",
+        "**Leadership Conflict:** A public campaign, supported by figures like Elon Musk, is calling for the reinstatement of former CEO Jensen Huang, despite the current board’s explicit denial of such plans.",
+        "**Financial Performance:** Despite geopolitical headwinds and leadership drama, Nvidia’s most recent quarterly earnings beat market expectations, with the company maintaining a strong pipeline and positive financial guidance."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "ec8e761e0eb8542f",
+    "canonicalUrl": "https://www.theverge.com/tech/1039554/un-regulations-killer-robots",
+    "title": "The UN fails to agree on rules regulating ‘killer robots’",
+    "publishedAt": "2026-11-21T20:03:37.000Z",
+    "fetchedAt": "2026-11-21T23:43:06.645Z",
+    "contentHash": "d94e7d4dc4e79b6c",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "One of the items on the agenda for UN diplomats meeting in Geneva this week was working towards rules regarding the use of autonomous weapons, or so-called “killer robots.” Eventually, representatives left the meetings agreeing to “start discussing options” after a largely fruitless week of negotiations. According to NPR: > Before the negotiations got underway, the International Committee of the Red Cross, the guardian of the Geneva Conventions, said it was urgent for legally binding rules to be drafted within a year. That call was backed by the U.N. secretary-general and by Pope Leo. The compromise reached was that countries would instead have two years to propose regulations. Negotiations between countries on which regulations to adopt and how to enforce them will likely drag on well beyond that. Additionally, room was left for some of those yet-to-be-adopted regulations to remain “optional.” Humanitarian organizations and some countries see a need to urgently adopt legally binding rules as semi-autonomous weapons and drones have been responsible for a significant number of civilian deaths in conflicts around the globe, including in Ukraine, Gaza, and Sudan. According to NPR, Russia, Israel, and the US proved to be the primary obstructions: > On day one, Russia delayed proceedings by objecting to the meeting’s agenda. Then the United States proposed a five-year window to discuss nonbinding, optional guidelines for autonomous weapons.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13611631/503831564.jpg.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "UN diplomats meeting in Geneva failed to establish a framework for regulating autonomous weapons, commonly referred to as “killer robots,” instead agreeing only to begin discussing potential options. Despite urgent calls from the International Committee of the Red Cross (ICRC), the UN secretary-general, and the Pope for legally binding regulations to be drafted within one year, the resulting compromise grants nations a two-year window to propose guidelines. Humanitarian groups argue that immediate, binding rules are essential given the documented civilian casualties caused by semi-autonomous drones and weapons systems in active conflict zones, including Ukraine, Gaza, and Sudan.\n\nThe negotiations faced significant procedural and ideological friction, primarily from Russia, the United States, and Israel. Russia initiated delays on the first day by challenging the meeting's agenda, while the United States advocated for a five-year timeline focused on nonbinding, optional guidelines. The final consensus leaves open the possibility that any future regulations may remain voluntary, suggesting that substantive enforcement mechanisms remain unlikely in the near term.",
+      "takeaways": [
+        "**Regulatory Timeline:** Member states have been granted two years to propose regulations, extending beyond the one-year deadline requested by the International Committee of the Red Cross.",
+        "**Primary Obstructionists:** Russia, the United States, and Israel were identified as the main countries resisting the implementation of immediate, legally binding rules.",
+        "**US Proposal:** The United States pushed for a five-year discussion period centered on nonbinding, optional guidelines rather than a treaty.",
+        "**Conflict Context:** Humanitarian concerns are driven by the use of semi-autonomous weapons in ongoing conflicts in Ukraine, Gaza, and Sudan."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "5a6f40ac15fccc68",
     "canonicalUrl": "https://siliconangle.com/2026/11/21/inference-two-thirds-ai-workloads-chip-deployment-positron-sc26/",
     "title": "Inference now drives two-thirds of AI workloads, changing where chips get deployed",
@@ -185,7 +298,7 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Thinking Machines Lab has released Inkling 2 Mini , an open-weight looped transformer with 26.4B total parameters. The model reuses its middle layers 3 times per token instead of adding more weights. That keeps the checkpoint near 20GB, small enough for a 32GB Mac or 1 NVIDIA DGX Spark. For developers, Inkling 2 Mini is a local option for agentic coding, tool use and document work. It ships under Apache 2.0 on Hugging Face , with hosted inference and fine-tuning on Tinker . TL;DR Size: 26.4B total, 3.4B active (5.4B effective per token with looping), up to 1M-token context. Runs on: Apple silicon with 32GB+ memory, 1 NVIDIA DGX Spark, or GPUs with 32GB+ VRAM. GGUF builds via Unsloth and llama.cpp. Performance: 20.1 on the Artificial Analysis Index, tied with Qwen3.8-27B (self-reported). Best: 79.2% on SWE-bench Verified (bash only). Worst: 15.2% on HLE-Diamond and 50.0% on MultiChallenge. Bottom line: Best: strong agentic coding from a 20GB checkpoint. Worst: weaker knowledge recall and multi-turn instruction following. What is Inkling 2 Mini? Inkling 2 Mini is a sparse Mixture-of-Experts model from Thinking Machines that loops its middle layers. It accepts text and images and returns text only. It follows Inkling 2 Small, a 594B-parameter model released on November 5. How does the looped transformer work? The model stores 24 layers, grouped into 4 blocks of 6. The first and last blocks run once. The 2 middle blocks run 3 times with shared weights. That gives 48 layer applications per token from 24 layers of weights. Each pass after the first receives a “message” from the previous pass. Thinking Machines carries it with Attention Residuals and a learned gate. Feed-forward layers use 128 experts, with 8 routed per token. Looping the middle layers gave a 1.51x to 1.91x compute-equivalent gain. Looping the last layers gave only 1.24x to 1.36x. The middle-loop variant won 27 of 28 evaluations. Looping costs training compute but saves inference. An unlooped baseline used 7.5% less training compute. It needed 140% more inference compute to match the looped model’s loss on 512k-token agentic traces. How was Inkling 2 Mini trained? Training began with 384 experts per layer, with 8 active per token. At midtraining, the team pruned two-thirds of them and kept the 128 most-used experts. A 1T-token distillation run from a larger internal Inkling model then healed the pr",
     "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Thinking Machines Lab has released Inkling 2 Mini, a 26.4B parameter sparse Mixture-of-Experts (MoE) model that utilizes a looped transformer architecture to achieve high performance with a 20GB checkpoint. By reusing its middle layers three times per token, the model effectively simulates 48 layer applications from only 24 physical layers. This design allows the model to run on consumer hardware, specifically Apple silicon with 32GB of RAM or a single NVIDIA DGX Spark, while supporting a context window of up to 1 million tokens. The model is released under an Apache 2.0 license on Hugging Face, with fine-tuning and inference support available via the Tinker platform.\n\nTechnically, the model architecture consists of 24 layers grouped into four blocks of six, where the middle two blocks are looped. Each pass incorporates Attention Residuals and a learned gate to pass information between iterations. The feed-forward layers utilize 128 experts, with 8 routed per token. During training, the model began with 384 experts per layer before pruning to 128, followed by a 1T-token distillation from a larger internal model. Benchmarks show a score of 20.1 on the Artificial Analysis Index, tying it with Qwen3.8-27B, and a 79.2% success rate on SWE-bench Verified (bash only). However, the model exhibits limitations in knowledge recall and multi-turn instruction following, scoring 15.2% on HLE-Diamond and 50.0% on MultiChallenge.",
@@ -469,12 +582,12 @@
     "canonicalUrl": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
     "title": "Researcher plants 2m canaries into the AI supply chain. A privacy disaster surfaced.",
     "publishedAt": "2026-11-20T20:59:08.000Z",
-    "fetchedAt": "2026-11-21T03:42:44.508Z",
-    "contentHash": "1cdd0c5c7af12c39",
+    "fetchedAt": "2026-11-21T23:43:06.646Z",
+    "contentHash": "6715f7825bc38103",
     "sourceId": "arstechnica-tech",
     "sourceName": "Ars Technica",
     "author": "\n                    Dan Goodin\n                ",
-    "contentSnippet": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered was an ecosystem that leaked highly sensitive data like a sieve. The exposure was found through an ingenious experiment designed to test if sensitive information can leak through the vast chain of widely used AI services and how that information is exploited when it does. Many of today’s AI apps use services such as OpenRouter or Vercel that act as brokers. These “AI routers,” sometimes also known as “AI gateways,” receive large numbers of prompts sent from AI app end users and route them to an available inference engine based on criteria such as the one charging the lowest price or being best suited for the given task. Instead of using Anthropic, OpenAI, or another big provider, the developer hires an AI router to find the most suitable model. Security breaches, prompt theft, and privacy violations To test for potential leakage, researcher HD Moore assembled a collection of Amazon Web Services access keys, functioning credentials tied to empty AWS accounts, passwords for services such as SSH, and unique URLs, DNS names, and private git repository references. None of the secrets had ever been used before, and he controlled the infrastructure that received any requests using the credentials. He then seeded each secret into exactly one prompt sent to a single provider. In the event any of the secrets were leaked, these “canaries”—so called because they resemble the role of that bird when taken into coal mines—would allow Moore to identify each link in the chain that was responsible. Read full article Comments",
+    "contentSnippet": "Researchers planted 2 million digital tripwires in requests sent through a sprawling network of AI services to find out what happened to sensitive information entrusted to them. What they discovered was an ecosystem that leaked highly sensitive data like a sieve. The exposure was found through an ingenious experiment designed to test if sensitive information can leak through the vast chain of widely used AI services and how that information is exploited when it does. Many of today’s AI apps use services such as OpenRouter or Vercel that act as brokers. These “AI routers,” sometimes also known as “AI gateways,” receive large numbers of prompts sent from AI app end users and route them to an available inference engine based on criteria such as the one charging the lowest price or being best suited for the given task. Instead of using Anthropic, OpenAI, or another big provider, the developer hires an AI router to find the most suitable model. Update, Nov 21: Posts on both Hacker News and X report that OpenRouter has sent customers an email notifying them that some of their prompts may have been read. OpenRouter cited the research and said that it received a report that the potential exposure involved prompts sent to MiniMax, a China-based model provider. OpenRouter said the researchers' planted URLs were accessed whether the prompts were sent to MiniMax directly or through three other resellers: AtlasCloud, Novita, and StreamLake. OpenRouter has removed a \"Zero Data Retention\" label from MiniMax-model endpoints. Hat tip: Sulat.com . Read full article Comments",
     "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/ai-privacy-leakage-1152x648.jpg",
     "category": "Robotics & Hardware",
     "lab": "Anthropic",
@@ -2761,6 +2874,30 @@
     }
   },
   {
+    "id": "8b57b72566ad3c58",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/20/llm-gemini/",
+    "title": "llm-gemini 0.38.1",
+    "publishedAt": "2026-11-20T03:01:57.000Z",
+    "fetchedAt": "2026-11-21T23:43:07.635Z",
+    "contentHash": "4ab5499ab1ca97e8",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: llm-gemini 0.38.1 Gemini 4 Carbon only supports low , medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level. I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release. The xhigh setting for Hydrogen makes a significant difference. I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 output tokens, cost 23.61 cents, and produced a pelican that's competitive with Gemini 4 Neon: Tags: gemini , llm , llm-reasoning , pelican-riding-a-bicycle , ai , llms , google , generative-ai",
+    "category": "LLMs & GenAI",
+    "lab": "Google DeepMind",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Release: llm-gemini 0.38.1 Gemini 4 Carbon only supports low , medium and high reasoning levels - but Gemini 4 Hydrogen and Gemini 4 Neon both have an extra xhigh level. I missed that when I added those models to the llm-gemini plugin, which is now fixed in this dot release. The xhigh setting for Hydrogen makes a significant difference.",
+      "takeaways": [
+        "I updated my Gemini 4 comparison grid - note how Hydrogen at high used 5,311 output tokens and cost 3.99 cents, but the same model at xhigh used 31,477 output tokens, cost 23.61 cents, and produced a pelican that's competitive with Gemini 4 Neon: Tags: gemini , llm , llm-reasoning , pelican-riding-a-bicycle , ai , llms , google , generative-ai."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "478ea25aeed3c997",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
     "title": "Token fraud is here and it’s BAD (YouTube)",
@@ -4540,14 +4677,14 @@
   {
     "id": "f46395ef7c321e9e",
     "canonicalUrl": "https://siliconangle.com/2026/11/19/scientific-simulation-meets-ai-sovereignty-cloud-act-sc26/",
-    "title": "Enterprises fear AI success more than failure, because success means lock-in they can’t escape",
+    "title": "Sovereign AI guide finds every hyperscaler exposed under the U.S. CLOUD Act",
     "publishedAt": "2026-11-19T12:24:40.000Z",
-    "fetchedAt": "2026-11-19T17:55:20.029Z",
-    "contentHash": "2a9eb420df0d0fdb",
+    "fetchedAt": "2026-11-21T23:43:07.633Z",
+    "contentHash": "64de4a60f9534fe2",
     "sourceId": "siliconangle-ai",
     "sourceName": "SiliconANGLE AI",
     "author": "Jonathan Anthony",
-    "contentSnippet": "The supercomputing world built its reputation on scientific simulation, but the artificial intelligence infrastructure now filling the same data centers raises a harder question. When models turn data into revenue, control over that data and the intelligence it produces becomes a board-level concern few companies discuss publicly. A new buyer’s guide sets out to measure […] The post Enterprises fear AI success more than failure, because success means lock-in they can’t escape appeared first on SiliconANGLE .",
+    "contentSnippet": "The supercomputing world built its reputation on scientific simulation, but the artificial intelligence infrastructure now filling the same data centers raises a harder question. When models turn data into revenue, control over that data and the intelligence it produces becomes a board-level concern few companies discuss publicly. A new buyer’s guide sets out to measure […] The post Sovereign AI guide finds every hyperscaler exposed under the U.S. CLOUD Act appeared first on SiliconANGLE .",
     "category": "Business & Big Tech",
     "lab": "Independent",
     "entryType": "DISPATCH",
@@ -10757,146 +10894,6 @@
         "Code is available at https://github.com/behavioral-data/ANGEL-UserSim."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f06dadbc11f68d9e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21823",
-    "title": "TUSI: A Citation-Grounded Graph-Based Benchmark",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "af1650327dadb25c",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Marzieh Karimi, Mehran Safayani, Alireza Basiri",
-    "contentSnippet": "arXiv:2611.21823v1 Announce Type: new Abstract: Evaluating retrieval-augmented generation (RAG) systems in Persian law remains challenging because benchmarks lack realism, grounding, and coverage of legal reasoning. Existing resources are either synthetically generated from statutory texts, lacking natural information needs, or derived from informal legal question--answer sources without explicit linkage to authoritative legal documents, making them unsuitable for rigorous evaluation of grounded legal reasoning. To address this gap, we introduce TUSI-Bench, a structured Persian legal benchmark designed for the evaluation of RAG-based systems. TUSI-Bench is built upon a multi-layered legal knowledge framework containing 7,261 legal articles and integrating codified statutes, legal commentaries, doctrinal writings, and Supreme Court unification rulings. We also construct a legal knowledge graph linking articles and concepts for structure-aware retrieval. Based on this foundation, TUSI-Bench provides two complementary evaluation tasks: (i) TUSI-QA, an open-ended question answering benchmark containing 1,999 questions that requires grounded responses with explicit legal citations, and (ii) TUSI-Bar, a multiple-choice benchmark containing approximately 500 four-option questions derived from Iranian Bar examination questions. Furthermore, we propose a graph-based retrieval baseline that leverages relational structure within the legal knowledge graph. Experimental results demonstrate that incorporating graph-based relations improves retrieval recall by up to 8 percentage points compared to standard baselines, highlighting the importance of structured legal representations for RAG systems. The proposed benchmark provides a standardized resource for evaluating grounded legal reasoning in Persian and enables future research on structured legal intelligence.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21823",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21823.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21823v1 Announce Type: new Abstract: Evaluating retrieval-augmented generation (RAG) systems in Persian law remains challenging because benchmarks lack realism, grounding, and coverage of legal reasoning. Existing resources are either synthetically generated from statutory texts, lacking natural information needs, or derived from informal legal question--answer sources without explicit linkage to authoritative legal documents, making them unsuitable for rigorous evaluation of grounded legal reasoning. To address this gap, we introduce TUSI-Bench, a structured Persian legal benchmark designed for the evaluation of RAG-based systems.\n\nTUSI-Bench is built upon a multi-layered legal knowledge framework containing 7,261 legal articles and integrating codified statutes, legal commentaries, doctrinal writings, and Supreme Court unification rulings. We also construct a legal knowledge graph linking articles and concepts for structure-aware retrieval. Based on this foundation, TUSI-Bench provides two complementary evaluation tasks: (i) TUSI-QA, an open-ended question answering benchmark containing 1,999 questions that requires grounded responses with explicit legal citations, and (ii) TUSI-Bar, a multiple-choice benchmark containing approximately 500 four-option questions derived from Iranian Bar examination questions.",
-      "takeaways": [
-        "Furthermore, we propose a graph-based retrieval baseline that leverages relational structure within the legal knowledge graph.",
-        "Experimental results demonstrate that incorporating graph-based relations improves retrieval recall by up to 8 percentage points compared to standard baselines, highlighting the importance of structured legal representations for RAG systems.",
-        "The proposed benchmark provides a standardized resource for evaluating grounded legal reasoning in Persian and enables future research on structured legal intelligence."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "08caf200ea761acb",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21878",
-    "title": "Knowing Which, Not How Much: Language Models Order Party Positions They Cannot Place",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "559c3139563e7a8e",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Yousef Attia, Jaros{\\l}aw A. Chudziak",
-    "contentSnippet": "arXiv:2611.21878v1 Announce Type: new Abstract: Language models are increasingly asked where real actors stand: what a party's platform prioritises, what an institution has committed to. Such judgments are gradable, carrying both an order and a magnitude. Nearly every benchmark that tests them asks about one entity at a time, then reads that score as the model's knowledge of the domain. Order and magnitude, however, need not be acquired together. Text about social entities carries far more comparison than measurement, so a model may hold a dependable ordering with no anchored scale beneath it. We ask whether a model can place a documented social position on a scale or only order the actors it compares, and what that means for how such knowledge is measured. We test this on party positions in Japan and South Korea, where the Comparative Manifesto Project's coded data supplies a rare external answer key. Asked to order four parties, models beat the strongest fixed-answer baseline by more than a factor of two; asked to place one party on the same scale, they fall below it. The ordering survives inside those failed placements, and supplying the coded values lifts placement to near ceiling. Comparative and absolute questions about the same fact therefore measure different things here, and for party issue salience a benchmark built from one cannot speak for the other.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21878",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21878.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21878v1 Announce Type: new Abstract: Language models are increasingly asked where real actors stand: what a party's platform prioritises, what an institution has committed to. Such judgments are gradable, carrying both an order and a magnitude. Nearly every benchmark that tests them asks about one entity at a time, then reads that score as the model's knowledge of the domain.\n\nOrder and magnitude, however, need not be acquired together. Text about social entities carries far more comparison than measurement, so a model may hold a dependable ordering with no anchored scale beneath it. We ask whether a model can place a documented social position on a scale or only order the actors it compares, and what that means for how such knowledge is measured.",
-      "takeaways": [
-        "We test this on party positions in Japan and South Korea, where the Comparative Manifesto Project's coded data supplies a rare external answer key.",
-        "Asked to order four parties, models beat the strongest fixed-answer baseline by more than a factor of two; asked to place one party on the same scale, they fall below it.",
-        "The ordering survives inside those failed placements, and supplying the coded values lifts placement to near ceiling.",
-        "Comparative and absolute questions about the same fact therefore measure different things here, and for party issue salience a benchmark built from one cannot speak for the other."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3a3051a1e38ae41a",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21891",
-    "title": "Call-Efficient ICD-10 Code Prediction via Supervised Candidate Generation and Selective LLM Invocation",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "823d3c8b44effea5",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Ilia Kopanichuk, Daniil Kartashev, Yuri Bolkonsky, Petr Anokhin, Vladimir Makharev, Iaroslav Bespalov, Dmitry V. Dylov",
-    "contentSnippet": "arXiv:2611.21891v1 Announce Type: new Abstract: Automatic assignment of ICD-10 codes from short clinical diagnosis text is a practical medical text classification and normalization task. The task is difficult because diagnosis phrases are short and noisy, the ICD-10 label space is hierarchical, and the class distribution is strongly imbalanced. This paper presents a call-efficient ICD-10 code prediction pipeline that combines transformer embeddings, tree-based supervised candidate generation, candidate-level reranking, and a gated LLM assistance. The evaluation uses a leakage-safe validation protocol: model and threshold selection are based on out-of-fold cross-validation predictions, while final reporting is performed on a locked test set with no shared source-file groups. The supervised conditional parent-code candidate generator reaches 74.32% Top-1 accuracy on the locked test set and 93.05% Top-10 candidate coverage. A direct zero-shot GPT-5.6-Sol baseline reaches 81.01% Top-1 accuracy, but requires an invocation of this large model for every diagnosis. The final deployable system, Pre-LLM fusion, reaches 81.24% OOF-CV accuracy and 83.19% locked-test accuracy while calling the LLM for only 31.97% of cases. This improves the locked-test error rate from 25.68% for the supervised parent-code baseline to 16.81%, corresponding to a 34.5% relative error reduction. The results show that the most effective role of the LLM is controlled reranking on uncertain examples rather than unrestricted coding or full-dataset invocation.",
-    "category": "Open Source & Research",
-    "lab": "OpenAI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21891",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21891.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21891v1 Announce Type: new Abstract: Automatic assignment of ICD-10 codes from short clinical diagnosis text is a practical medical text classification and normalization task. The task is difficult because diagnosis phrases are short and noisy, the ICD-10 label space is hierarchical, and the class distribution is strongly imbalanced. This paper presents a call-efficient ICD-10 code prediction pipeline that combines transformer embeddings, tree-based supervised candidate generation, candidate-level reranking, and a gated LLM assistance.\n\nThe evaluation uses a leakage-safe validation protocol: model and threshold selection are based on out-of-fold cross-validation predictions, while final reporting is performed on a locked test set with no shared source-file groups. The supervised conditional parent-code candidate generator reaches 74.32% Top-1 accuracy on the locked test set and 93.05% Top-10 candidate coverage. A direct zero-shot GPT-5.6-Sol baseline reaches 81.01% Top-1 accuracy, but requires an invocation of this large model for every diagnosis.",
-      "takeaways": [
-        "The final deployable system, Pre-LLM fusion, reaches 81.24% OOF-CV accuracy and 83.19% locked-test accuracy while calling the LLM for only 31.97% of cases.",
-        "This improves the locked-test error rate from 25.68% for the supervised parent-code baseline to 16.81%, corresponding to a 34.5% relative error reduction.",
-        "The results show that the most effective role of the LLM is controlled reranking on uncertain examples rather than unrestricted coding or full-dataset invocation."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "78204bedcb7d081e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21921",
-    "title": "Latent Fact Composition under Next-Token Training",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "b04920e6e66f8229",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Tianyi Zhang, Feiying Chen",
-    "contentSnippet": "arXiv:2611.21921v1 Announce Type: new Abstract: Controlled studies of latent two-hop reasoning train transformers to predict only the answer, whereas language models are trained to predict every token. We ask whether a model trained on every token learns to answer two-hop questions whose intermediate entity appears in no two-hop training example. We build a synthetic corpus with such questions. On this corpus every term of the loss can be computed exactly. A looped transformer, a standard transformer and DiscoLoop answer almost none of these questions. We therefore introduce the Baton family of looped transformers. They pass the intermediate entity to the second loop as a token embedding. When trained to predict only the answer, two of its three variants answer these questions almost perfectly. We then relate the success and failure of each model to three design conditions. Experiments that change one condition at a time agree with this hypothesis. When Baton is trained on every token, however, its accuracy on these questions rises and then declines. We further split the gradient of the next-token loss into three terms. Removing the two terms that depend on the particular training set raises the peak accuracy but does not remove the decline. The decline arises in the second hop while the model still recalls both facts.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21921",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21921.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21921v1 Announce Type: new Abstract: Controlled studies of latent two-hop reasoning train transformers to predict only the answer, whereas language models are trained to predict every token. We ask whether a model trained on every token learns to answer two-hop questions whose intermediate entity appears in no two-hop training example. We build a synthetic corpus with such questions.\n\nOn this corpus every term of the loss can be computed exactly. A looped transformer, a standard transformer and DiscoLoop answer almost none of these questions. We therefore introduce the Baton family of looped transformers.",
-      "takeaways": [
-        "They pass the intermediate entity to the second loop as a token embedding.",
-        "When trained to predict only the answer, two of its three variants answer these questions almost perfectly.",
-        "We then relate the success and failure of each model to three design conditions.",
-        "Experiments that change one condition at a time agree with this hypothesis."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "94772cd512e7f429",
-    "canonicalUrl": "https://arxiv.org/abs/2611.22009",
-    "title": "DiagTrace: An Interactive Benchmark for Clinical Decision Making",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "1688068d4af43af7",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Yufan Wang, Rui Yang, Yi Lin, Chunhua Weng, Yifan Peng",
-    "contentSnippet": "arXiv:2611.22009v1 Announce Type: new Abstract: Large language models (LLMs) have shown strong performance on medical question answering and diagnostic reasoning benchmarks. However, existing evaluations typically provide all patient information upfront and assess only the final diagnosis or rationale. This setup ignores the need to acquire diagnostic evidence incrementally from incomplete information in real-world diagnosis. To bridge this gap, we introduce DiagTrace, a source-grounded benchmark for evaluating whether LLMs can reconstruct the documented diagnostic trajectory through interactive information seeking. Each benchmark instance is built from a PubMed Central case report and includes an initial presentation, an event bank, a clinical course, and diagnostic references. DiagTrace contains 510 cases across eight specialties, with 225 used to evaluate four LLMs on clinical-course alignment, interaction quality, and efficiency. Results reveal trade-offs in coverage, source-consistent ordering, and turn use.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.22009",
-    "pdfUrl": "https://arxiv.org/pdf/2611.22009.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.22009v1 Announce Type: new Abstract: Large language models (LLMs) have shown strong performance on medical question answering and diagnostic reasoning benchmarks. However, existing evaluations typically provide all patient information upfront and assess only the final diagnosis or rationale. This setup ignores the need to acquire diagnostic evidence incrementally from incomplete information in real-world diagnosis.\n\nTo bridge this gap, we introduce DiagTrace, a source-grounded benchmark for evaluating whether LLMs can reconstruct the documented diagnostic trajectory through interactive information seeking. Each benchmark instance is built from a PubMed Central case report and includes an initial presentation, an event bank, a clinical course, and diagnostic references. DiagTrace contains 510 cases across eight specialties, with 225 used to evaluate four LLMs on clinical-course alignment, interaction quality, and efficiency.",
-      "takeaways": [
-        "Results reveal trade-offs in coverage, source-consistent ordering, and turn use."
-      ],
-      "impact": "High",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
