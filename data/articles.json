@@ -1,5 +1,91 @@
 [
   {
+    "id": "06c62bbf6e86ef33",
+    "canonicalUrl": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
+    "title": "Meta ads is now available in AWS Quick",
+    "publishedAt": "2026-11-22T01:59:13.000Z",
+    "fetchedAt": "2026-11-22T04:41:26.538Z",
+    "contentHash": "8ff07f8c52078821",
+    "sourceId": "aws-ml",
+    "sourceName": "AWS Machine Learning",
+    "author": "Chris Geiger",
+    "contentSnippet": "Marketers have never had more data to act on. Take an apparel brand that advertises on Meta technologies: campaign results live in Meta Ads Manager, briefs and creative assets in shared storage, and inventory, customer lifetime value, and in-store purchases in a data lake. Analysts export reports, merge spreadsheets, and rebuild the same deck each week, and the data ages before anyone acts on it. When the team does decide what to change, someone returns to Ads Manager to update campaigns, ad sets, budgets, and audiences by hand. As a result, teams judge campaigns on metrics alone, and the path from insight to action stays slow and manual. Today, AWS Quick added a Meta ads AI connector. The connector gives Quick access to ads Model Context Protocol (MCP) server operations. Meta ads customers can use natural language to create, manage, and analyze campaigns within Quick, while staying connected to the Meta ad management network. Marketers can complete tasks with support from AI, such as pulling insights to understand ads performance, creating product catalogs, and editing existing or creating new campaigns. Quick can also combine Meta ad management data with first- and third-party data sources to create dashboards, documents, slide decks, and automated workflows. “Meta ads AI connector through Quick gives our marketing teams one place to go from campaign planning to execution. It lets us act on business insights directly in our ads, without the handoffs and tool switching that slow campaigns down. With fal.ai’s image, audio, and video models in the same workflow, we’ll test more creative ideas and spend more time reaching customers.” — Tina Sang, Head of Marketing at fal Demo: Meta ads in Quick The video shows how to install the Meta ads connector from Customize > Connectors in AWS Quick, sign in with Facebook, and choose which Pages, Businesses, and Instagram accounts AWS Quick can access. It then runs two example prompts. One turns past campaign results into an eight-slide launch-plan deck. The other builds a dashboard comparing spend, leads, and cost per lead for two ad sets, with recommended tests to run next. Connecting Meta ads to Quick and running prompts for performance analysis, campaign creation, and a shareable deck Example use cases and prompts The following use cases demonstrate how Meta advertisers can use the connector with Quick, along with sam",
+    "imageUrl": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/18/ML-22411-1.jpg",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "AWS Quick has integrated a new Meta ads AI connector, enabling marketers to manage, analyze, and execute advertising campaigns directly within the Quick interface. By leveraging the Model Context Protocol (MCP), the connector allows users to interface with Meta’s ad management network using natural language prompts. This integration aims to eliminate manual data exports and tool switching by centralizing campaign planning, execution, and reporting within a single workflow.\n\nThe connector facilitates the synthesis of Meta ad performance data with first- and third-party data sources to generate automated dashboards, slide decks, and documents. Users can perform tasks such as pulling performance insights, managing product catalogs, and creating or editing ad campaigns. The workflow also supports integration with external generative AI models, such as those from fal.ai, to incorporate image, audio, and video assets directly into the campaign creation process. The setup process requires users to install the connector via the 'Customize Connectors' menu in AWS Quick and authenticate via Facebook to grant access to specific Pages, Businesses, and Instagram accounts.",
+      "takeaways": [
+        "**Integration Mechanism:** The connector utilizes the Model Context Protocol (MCP) to bridge AWS Quick with Meta’s ad management network.",
+        "**Functional Scope:** Users can execute natural language prompts to generate launch-plan slide decks, build performance dashboards, and modify campaign budgets or audiences.",
+        "**Workflow Consolidation:** The tool allows for the combination of Meta ad data with external first- and third-party data sources to automate reporting and campaign workflows.",
+        "**Creative Integration:** The platform supports the inclusion of generative AI models from fal.ai for the production of image, audio, and video creative assets within the ad management workflow."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "eaf0a1df2e81af46",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/21/columbia-certik-tensorlean-formal-verification-gpu-kernels/",
+    "title": "A Team of Researchers from Columbia and CertiK Introduce TensorLean for Formal Verification of GPU Kernels",
+    "publishedAt": "2026-11-22T01:51:43.000Z",
+    "fetchedAt": "2026-11-22T04:41:28.291Z",
+    "contentHash": "b37daa15be59d61f",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Researchers from Columbia University and CertiK have introduced TensorLean , a framework for formal verification of GPU kernels at the PTX level. TensorLean is a Lean-based verifier that proves compiled kernels match a tensor-level math spec. The research team checked 149 kernel instances , including every kernel of FlashAttention-2, -3 and -4 plus DeepGEMM. It proved 83 correct. The remaining 66 led to 38 correctness bugs. TL;DR Size: 1.8K-line PTX parser. Specs total 10,278 lines against 151,285 lines of kernel source, a ratio near 15:1. Runs on: A 16-core workstation. It checks PTX compiled for A100, H100 and B200 kernels. Performance: 83 of 149 kernel instances proved correct, 38 bugs found across 6 projects. Best: Caught a FlashAttention-4 data race that never appeared in 17,760 test runs. What is TensorLean? TensorLean is a formal verification framework for GPU kernels at the PTX level. It starts from unmodified source code. A developer writes a tensor-level spec in Lean. TensorLean then proves 4 properties: no data races, termination, correct output within tolerance, and untouched memory elsewhere. How does TensorLean verify a GPU kernel? Specs build on Lean’s Mathlib. Tensor operators follow PyTorch names, so @ means torch.matmul . Each spec has 5 parts: spec_math , spec_mut , spec_layout , spec_tol and requires . The math stays separate from the memory layout. The pipeline runs in 7 steps: Start from unmodified source. Write the tensor-level spec. Compile to PTX and load a PTX semantics. Build a happens-before graph to check races and termination. Symbolically execute to get final memory, identical across schedules. Lower the spec to PTX-memory level. Discharge proofs with Lean’s kernel, Z3 and cvc5. Which techniques make it scale? Concurrency to sequential: Race-freedom proofs on the happens-before graph cover all CTAs, threads and loop iterations symbolically. Loop invariants over semirings: Closed forms for tiled, accumulating loops, such as online softmax, need 1 SMT query per loop. Tolerance proofs: Algebraic error is proved zero. Round-off error is bounded separately, then combined. Assertions as hints: Developers add tensorlean_assert in source. Each is proved once, then reused. What bugs did TensorLean find? The GitHub README lists 38 bugs, all reported upstream. FlashAttention accounts for 23. Liger Kernel has 7, TileOPs 3, TileLang 2, Deep",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Researchers from Columbia University and CertiK have unveiled TensorLean, a formal verification framework designed to validate GPU kernels at the PTX (Parallel Thread Execution) level. By utilizing the Lean theorem prover, the framework verifies that compiled kernels align with high-level tensor math specifications. The system operates on unmodified source code, requiring developers to write tensor-level specifications that define four core properties: absence of data races, guaranteed termination, output correctness within specified tolerances, and memory safety (ensuring no unintended memory modification).\n\nIn a comprehensive evaluation, the team applied TensorLean to 149 kernel instances across six projects, including FlashAttention-2, -3, and -4, as well as DeepGEMM. The framework successfully proved 83 instances correct while identifying 38 distinct correctness bugs. Notably, TensorLean detected a data race in FlashAttention-4 that had remained hidden through 17,760 standard test runs. The verification pipeline involves a 1.8K-line PTX parser and utilizes Lean’s Mathlib, Z3, and cvc5 to discharge proofs. The system supports kernels compiled for NVIDIA A100, H100, and B200 architectures and maintains a specification-to-source code ratio of approximately 1:15, with 10,278 lines of specifications covering 151,285 lines of kernel source.",
+      "takeaways": [
+        "**Verification Scope:** TensorLean proved 83 out of 149 kernel instances correct and identified 38 bugs across projects including FlashAttention, Liger Kernel, TileOPs, TileLang, and DeepGEMM.",
+        "**Technical Architecture:** The framework uses a 7-step pipeline that includes building a happens-before graph for race detection, symbolic execution, and discharging proofs via Lean’s kernel, Z3, and cvc5.",
+        "**Scalability Techniques:** The system employs symbolic race-freedom proofs across all CTAs and threads, uses loop invariants over semirings for tiled loops, and separates algebraic error proofs from round-off error bounds.",
+        "**Hardware Support:** The framework is compatible with kernels compiled for NVIDIA A100, H100, and B200 GPUs and runs on standard 16-core workstation hardware.",
+        "**Specification Structure:** Each specification consists of five components: spec_math, spec_mut, spec_layout, spec_tol, and requires, allowing for the separation of mathematical logic from memory layout."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "dc9b4a0c426ddc42",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/21/muru/",
+    "title": "Muru",
+    "publishedAt": "2026-11-21T23:56:28.000Z",
+    "fetchedAt": "2026-11-22T04:41:28.291Z",
+    "contentHash": "78049a21fc68428d",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Muru Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since. Muru is his new, AI-assisted Rust server that aims to provide the best possible tools for running ASGI and WSGI Python apps both in development and production. As he did with wrapture , he's been publishing an extraordinarily detailed account of the project as he works on it - as part of his development process. Here's everything he's published so far, all in the last three weeks: 2026-11-04 — Twenty years of mod_wsgi, and what comes next 2026-11-05 — A first look at Muru 2026-11-07 — Muru: looking inside the workers 2026-11-08 — Muru: how it fits together 2026-11-09 — Muru: import once, fork many 2026-11-10 — Muru: HTTPS in development 2026-11-11 — Muru: WSGI and ASGI together 2026-11-11 — AI as a lifestyle choice 2026-11-12 — Muru: releases, not restarts 2026-11-13 — Muru: canaries without a service mesh 2026-11-14 — Muru: a better tenant in a container 2026-11-15 — Muru: working with Kubernetes, not around it 2026-11-16 — Muru: scaling from what the workers report 2026-11-17 — Muru: scaling to zero 2026-11-18 — Muru: overlays on a schedule 2026-11-19 — Muru: noticing and responding 2026-11-20 — Muru: a toolbar on every page 2026-11-21 — Muru: tracing in the toolbar That post about AI as a lifestyle choice is particularly worth a read: The AI may be doing a lot of the work on the surface, but deciding what isn't good enough yet is still down to me, and twenty years of getting things wrong with mod_wsgi turns out to be useful for that. I am prepared to put in the hard work to keep polishing Muru until it is something I would trust, and something you would too. Tags: graham-dumpleton , modwsgi , python , wsgi , ai , rust , asgi , generative-ai , llms , ai-assisted-programming",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Graham Dumpleton, the creator of mod_wsgi, has introduced Muru, an AI-assisted server written in Rust designed to serve both ASGI and WSGI Python applications in production and development environments. Drawing on two decades of experience with mod_wsgi, Dumpleton is developing Muru with a heavy reliance on AI-assisted programming, documenting the process through a series of technical deep dives published between November 4 and November 21, 2026.\n\nMuru’s architecture focuses on modern deployment paradigms, specifically targeting containerized environments and Kubernetes integration. Key technical features detailed in the project documentation include an 'import once, fork many' execution model, native HTTPS support for development, and built-in canary deployment capabilities that function without the need for a traditional service mesh. The server also implements advanced operational features such as scaling to zero, scheduled overlays, and a diagnostic toolbar that provides real-time tracing directly on served pages.\n\nDumpleton emphasizes that while AI accelerates the development of Muru, his long-term experience in Python web server architecture remains the primary filter for quality and reliability. The project aims to provide a robust, production-ready alternative to existing Python application servers by addressing common pain points in container orchestration and application lifecycle management.",
+      "takeaways": [
+        "**Core Architecture:** Muru is a Rust-based server supporting both ASGI and WSGI standards, designed to optimize Python application performance in production.",
+        "**Kubernetes Integration:** The server is built to operate natively within Kubernetes, featuring scaling-to-zero capabilities and worker-reported scaling metrics.",
+        "**Operational Features:** Includes built-in canary deployment support, HTTPS for development, and a diagnostic toolbar for in-page tracing.",
+        "**Development Methodology:** The project is being developed using AI-assisted coding, with Dumpleton publishing daily technical logs detailing the implementation of specific features like process management and container tenancy."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "fee23103aa934302",
     "canonicalUrl": "https://siliconangle.com/2026/11/21/sovereignty-data-not-chips-stuttgart-sovereign-ai-factory-sc26/",
     "title": "Sovereignty starts with data, not chips, says Stuttgart AI factory chief",
@@ -11,7 +97,7 @@
     "author": "Sloane Kali Faye",
     "contentSnippet": "UPDATED 16:48 EST / NOVEMBER 21 2026\n\nSovereignty starts with data, not chips, says Stuttgart AI factory chief\n\nA sovereign AI factory is only as valuable as the companies that can actually get onto it. Across Europe, publicly funded AI factories are racing to give startups and small manufacturers supercomputer-class GPUs without pushing them into lock-in or loose data handling.\n\nIn Stuttgart, the HammerHAI AI factory is taking shape around a system from Hewlett Packard Enterprise Co. using Nvidia Corp. Grace Blackwell chips. The center’s pitch leans as much on people as on processors, according to Bastian Koller (pictured), managing director of the High-Performance Computing Center Stuttgart.\n\n“It’s very important to bring them there because everybody’s talking about AI, but we focus especially on SMEs and startups,” Koller said. “So some startups know what they want, some startups want to try and they need help and support.”\n\nKoller spoke with theCUBE Research’s John Furrier and Amit Eyal Govrin at SC26 , during an exclusive broadcast on theCUBE, SiliconANGLE Media’s livestreaming studio. They discussed how HammerHAI avoids lock-in, its pragmatic approach to sovereignty and a concierge model that pairs each customer with a consistent contact. (* Disclosure below.)\n\nBuilding a sovereign AI factory without lock-in\n\nIndustrial users no longer want shell programming; they expect the look and feel of a hyperscaler, which raises fresh demands on security and access. The center has already worked with customers on existing systems while it waits on the new hardware, and several have produced success stories. Rather than holding onto them, it designs its services so workloads can leave, according to Koller.\n\n“The idea is to evolve the system and the services in a way that they can simply move from us to a hyperscaler or from hyperscaler back,” Koller said. “Because what we are doing is, we give them a boost, we push them forward.”\n\nThat pragmatism extends to sovereignty itself. The Stuttgart center runs an ISO-certified environment with TISAX Level 3 certification for automotive work. Full independence, down to European chips, is not realistic in the near term, Koller explained.\n\n“We cannot now say, okay, come back in 10 years when we have a sovereign processor or a sovereign GPU or something like this,” Koller said. “We have to look for the data.”\n\nEfficiency is ",
     "category": "Robotics & Hardware",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "The HammerHAI AI factory in Stuttgart, led by managing director Bastian Koller of the High-Performance Computing Center Stuttgart, is deploying a new supercomputing infrastructure based on Hewlett Packard Enterprise (HPE) systems utilizing Nvidia Grace Blackwell GPUs. The facility aims to provide European startups and small-to-medium enterprises (SMEs) with high-performance computing resources while prioritizing data sovereignty and avoiding vendor lock-in. Rather than pursuing full hardware independence, the center focuses on data control and portability, ensuring that workloads can be migrated between the facility and commercial hyperscalers.\n\nTechnically, the new system represents a significant efficiency upgrade, doubling the performance of its predecessor while reducing power consumption from 3.2 megawatts to approximately 700 kilowatts, with additional waste heat recovery. The center operates under ISO-certified standards and maintains TISAX Level 3 certification to support automotive industry requirements. To bridge the gap between complex infrastructure and user needs, the facility employs a 'concierge model' that assigns dedicated contacts to customers, ensuring that the system architecture is informed by real-world user workflows rather than purely theoretical design.",
@@ -10813,88 +10899,6 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "08936e9fbb83a6b3",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21705",
-    "title": "Disambiguating Moral Circuits and Moral Features in Language Models: Moral content, normative judgment or cue words? Evidence from 14 models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "3c25d5b8a27fb87e",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Davide Liga, Liuwen Yu, Matteo Magnini",
-    "contentSnippet": "arXiv:2611.21705v1 Announce Type: new Abstract: Interpretability methods can locate the attention heads and sparse autoencoder (SAE) features that change the answer a language model gives to a moral prompt, e.g., whether \"Stealing medicine for a dying child is morally\" continues with \"justified\" or \"wrong\". Such a component could respond to moral content, to the judgment of conduct by any norm, or to the word \"morally\" in the prompt. We built 227 minimal pairs of short phrases, validated by five annotators, whose two versions differ in a moral standard, in another kind of norm (prudence, etiquette, aesthetics or evidence) or in a descriptive quality, and showed them to 14 open-weight models (Llama, Gemma and Qwen, 1B to 14B, base and instruction-tuned), with and without the word \"morally\". In every model, the heads that change the moral answer belong to an evaluation circuit the models use for every kind of normative judgment we tested: these heads carry the same share of the effect for moral as for other normative pairs (pooled ratio 1.00, 97.5% confidence interval [0.92, 1.07], with the word; 0.90, [0.84, 0.96], without it), and the models need them as much for both. The models need these heads also when nothing in the prompt asks for a judgment, and on 400 scenarios of the ETHICS benchmark, where removing them takes away 37 to 39% of the difference between acceptable and unacceptable scenarios, against 1 to 3% for ten random heads. The SAE features we located respond mostly to the word \"morally\" rather than to what the phrase is about. The models represent the category of a pair (the standard the annotators assigned to it): it can be read from their hidden states, and, in the eight models we tested, removing the direction that carries it weakens the moral verdict by a few percent, and more than the other verdicts in seven of them. We release the pairs, the ratings, the code, the trained SAE dictionaries and the result files.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21705",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21705.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21705v1 Announce Type: new Abstract: Interpretability methods can locate the attention heads and sparse autoencoder (SAE) features that change the answer a language model gives to a moral prompt, e.g., whether \"Stealing medicine for a dying child is morally\" continues with \"justified\" or \"wrong\". Such a component could respond to moral content, to the judgment of conduct by any norm, or to the word \"morally\" in the prompt. We built 227 minimal pairs of short phrases, validated by five annotators, whose two versions differ in a moral standard, in another kind of norm (prudence, etiquette, aesthetics or evidence) or in a descriptive quality, and showed them to 14 open-weight models (Llama, Gemma and Qwen, 1B to 14B, base and instruction-tuned), with and without the word \"morally\".\n\nIn every model, the heads that change the moral answer belong to an evaluation circuit the models use for every kind of normative judgment we tested: these heads carry the same share of the effect for moral as for other normative pairs (pooled ratio 1.00, 97.5% confidence interval [0.92, 1.07], with the word; 0.90, [0.84, 0.96], without it), and the models need them as much for both. The models need these heads also when nothing in the prompt asks for a judgment, and on 400 scenarios of the ETHICS benchmark, where removing them takes away 37 to 39% of the difference between acceptable and unacceptable scenarios, against 1 to 3% for ten random heads. The SAE features we located respond mostly to the word \"morally\" rather than to what the phrase is about.",
-      "takeaways": [
-        "The models represent the category of a pair (the standard the annotators assigned to it): it can be read from their hidden states, and, in the eight models we tested, removing the direction that carries it weakens the moral verdict by a few percent, and more than the other verdicts in seven of them.",
-        "We release the pairs, the ratings, the code, the trained SAE dictionaries and the result files."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d2d497c5d0500fd1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21804",
-    "title": "Corrupting Ties: Investigating Robustness to Bias Injection Across Multi-Agent Network Topologies",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "e348a3a6696bdedb",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Cl\\'ea Chataigner, Mina Arzaghi, Florian Carichon, Pablo Piantanida, Golnoosh Farnadi",
-    "contentSnippet": "arXiv:2611.21804v1 Announce Type: new Abstract: AI systems are increasingly deployed in high-stakes decision-making contexts, where interactions among components can introduce fairness risks that remain undetected when auditing components or collective outcomes in isolation. As LLM-based multi-agent systems become more prevalent, understanding how biased information propagates through agent interactions is essential for assessing their fairness. We introduce a controlled bias injection framework that replaces selected agent responses with predefined biased ones, enabling an intervention-based analysis of how network topology and injection configurations shape system behavior. We propose decision divergence metrics that quantify the effects of these interventions at the agent, network, and system levels, and evaluate five topologies on three binary classification tasks using LLMs from the Qwen and Gemma families. Sequential networks show the greatest divergence, whereas fully connected and mesh networks show less. Injection position also matters: in star networks, injecting the central agent has larger effects than injecting peripheral agents. Models further differ in whether divergence follows the injected bias. These findings highlight the role of network structure in the propagation of biased information and motivate topology-aware auditing of fairness risks in multi-agent systems.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21804",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21804.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21804v1 Announce Type: new Abstract: AI systems are increasingly deployed in high-stakes decision-making contexts, where interactions among components can introduce fairness risks that remain undetected when auditing components or collective outcomes in isolation. As LLM-based multi-agent systems become more prevalent, understanding how biased information propagates through agent interactions is essential for assessing their fairness. We introduce a controlled bias injection framework that replaces selected agent responses with predefined biased ones, enabling an intervention-based analysis of how network topology and injection configurations shape system behavior.\n\nWe propose decision divergence metrics that quantify the effects of these interventions at the agent, network, and system levels, and evaluate five topologies on three binary classification tasks using LLMs from the Qwen and Gemma families. Sequential networks show the greatest divergence, whereas fully connected and mesh networks show less. Injection position also matters: in star networks, injecting the central agent has larger effects than injecting peripheral agents.",
-      "takeaways": [
-        "Models further differ in whether divergence follows the injected bias.",
-        "These findings highlight the role of network structure in the propagation of biased information and motivate topology-aware auditing of fairness risks in multi-agent systems."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b5db91667baeb402",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21808",
-    "title": "SimAI: Mechanistic User Simulation through Psychological Network Models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "093d3c9dc5c21cb8",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Cheng Li, Adhyyan Narang, Jiayi Yuan, John F. Buss, Jina Suh, Devon Sandel-Fernandez, Yulia Tsvetkov, Adam M. Kuczynski, Tim Althoff",
-    "contentSnippet": "arXiv:2611.21808v1 Announce Type: new Abstract: Realistic user simulation enables the study of human interactions when direct experimentation is costly or potentially harmful. However, existing simulators largely overlook the psychological mechanisms that drive user behavior. We introduce SimAI, a framework for mechanistic user simulation that models how psychological factors interact to shape user responses. To overcome the challenge of supervising open-ended behavior, we propose a graph reconstruction objective that provides graph-level rewards based on how well simulated conversations reflect the underlying psychological relationships. To support this approach, we construct PSYCHE, a dataset of 18,576 profile-network pairs derived from 516 psychotherapy cases. Automatic evaluations show that SimAI achieves greater simulation and behavioral diversity than existing patient simulators while maintaining strong profile alignment. In an interactive study with 30 mental-health professionals and trainees, SimAI receives the highest average ratings for conversational authenticity, realistic help-seeking behavior, and clinical training utility. Beyond simulation quality, SimAI enables realistic clinical training and uncovers safety failures in prolonged AI interactions with vulnerable users. Code is available at https://github.com/behavioral-data/ANGEL-UserSim.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21808",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21808.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21808v1 Announce Type: new Abstract: Realistic user simulation enables the study of human interactions when direct experimentation is costly or potentially harmful. However, existing simulators largely overlook the psychological mechanisms that drive user behavior. We introduce SimAI, a framework for mechanistic user simulation that models how psychological factors interact to shape user responses.\n\nTo overcome the challenge of supervising open-ended behavior, we propose a graph reconstruction objective that provides graph-level rewards based on how well simulated conversations reflect the underlying psychological relationships. To support this approach, we construct PSYCHE, a dataset of 18,576 profile-network pairs derived from 516 psychotherapy cases. Automatic evaluations show that SimAI achieves greater simulation and behavioral diversity than existing patient simulators while maintaining strong profile alignment.",
-      "takeaways": [
-        "In an interactive study with 30 mental-health professionals and trainees, SimAI receives the highest average ratings for conversational authenticity, realistic help-seeking behavior, and clinical training utility.",
-        "Beyond simulation quality, SimAI enables realistic clinical training and uncovers safety failures in prolonged AI interactions with vulnerable users.",
-        "Code is available at https://github.com/behavioral-data/ANGEL-UserSim."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   }
