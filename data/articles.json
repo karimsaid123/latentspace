@@ -1,5 +1,122 @@
 [
   {
+    "id": "9804f4f24cde802b",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/",
+    "title": "NVIDIA Releases Alpamayo 2 Edge: A 2B Reasoning VLA for DRIVE Thor",
+    "publishedAt": "2026-11-22T18:37:57.000Z",
+    "fetchedAt": "2026-11-22T20:17:20.194Z",
+    "contentHash": "46d5bb9b00175b81",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "NVIDIA has released Alpamayo 2 Edge , a compact reasoning vision-language-action (VLA) model for autonomous driving. Alpamayo 2 Edge is a 2B-parameter model that plans trajectories and explains them inside the vehicle. It targets NVIDIA DRIVE AGX Thor , not a datacenter GPU. The goal: reasoning-based planning within onboard compute and latency budgets. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 2B-class. Card breakdown: 2.45B backbone + 0.2B action expert (HF metadata says 3B). Context length: not disclosed (measured prompt: 3,236 tokens). Runs on: NVIDIA DRIVE AGX Thor with the FP8 + TensorRT Edge-LLM recipe. BF16 PyTorch needs 16 GB+ GPU memory, validated on 1x H100 80GB. Performance: Strong closed-loop driver for its size; mid-pack on reasoning QA. Best: 15.15 km per at-fault incident in AlpaSim, about 60x Qwen-Drive-1.0 4B (0.25 km). Worst: nuReasoning numeric score of 48.67; LingoQA 75.2 trails Alpamayo 2 Super (79.2). Bottom line: Best: reasoning-based planning at 160 to 190 ms on in-car hardware. Worst: only H100 validated, and real-time Thor speed needs the FP8 recipe. What is Alpamayo 2 Edge? Alpamayo 2 Edge is an open NVIDIA VLA model that turns surround-camera video into a 6.4-second plan. It is the in-car member of the Alpamayo family , next to the 34B cloud model Alpamayo 2 Super . Per the model card , the 2.45B backbone pairs a 1.96B language model with a 0.41B SigLIP2 encoder. A 0.2B diffusion action expert sits on top. The backbone comes from NVIDIA Cosmos 3 Edge and is Nemotron-based. NVIDIA markets the model as 2B, while Hugging Face metadata shows 3B. What goes in and what comes out? For trajectory prediction, the model reads 6 cameras and 22 frames per observation. The 2 front cameras give 5 frames each, the other 4 give 3 each. It also takes a navigation instruction and 20 historical ego poses. Output is 64 waypoints from 0.1 to 6.4 seconds. The action expert predicts acceleration and curvature, then a unicycle model integrates them. The text output is a Chain-of-Causation (CoC) reasoning trace. The model also answers free-form questions about a driving scene. How does adaptive reasoning work? During routine driving, the model emits special <NOMINAL> tokens instead of a full reasoning trace. It writes CoC reasoning only when a scene needs it. Fewer tokens means less c",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "NVIDIA has released Alpamayo 2 Edge, a 2B-parameter vision-language-action (VLA) model specifically engineered for the NVIDIA DRIVE AGX Thor platform. Designed for onboard autonomous driving, the model performs trajectory planning and scene explanation within strict latency constraints. It functions as the edge-deployed counterpart to the 34B-parameter Alpamayo 2 Super cloud model, utilizing a backbone derived from NVIDIA Cosmos 3 Edge and Nemotron architecture. The model is designed to process surround-camera video to generate a 6.4-second trajectory plan, outputting 64 waypoints alongside a Chain-of-Causation (CoC) reasoning trace.\n\nTechnically, the model architecture consists of a 2.45B backbone—comprising a 1.96B language model and a 0.41B SigLIP2 encoder—paired with a 0.2B diffusion-based action expert. Input data includes 6 camera feeds (22 frames total), navigation instructions, and 20 historical ego poses. For real-time in-car performance, the model requires an FP8 + TensorRT Edge-LLM recipe to achieve inference speeds of 160 to 190 ms on DRIVE AGX Thor hardware. While BF16 PyTorch execution has been validated on a single H100 80GB GPU, it requires over 16 GB of VRAM. The model employs adaptive reasoning, emitting special tokens during routine driving and reserving full CoC traces for complex scenarios to minimize token count and latency.\n\nIn performance benchmarks, Alpamayo 2 Edge achieved 15.15 km per at-fault incident in the AlpaSim environment, significantly outperforming Qwen-Drive-1.0 4B (0.25 km). However, it trails the larger Alpamayo 2 Super in LingoQA scores (75.2 vs 79.2) and recorded a nuReasoning numeric score of 48.67. While marketed as a 2B model, Hugging Face metadata indicates a 3B parameter count. The model is currently limited by its reliance on H100 validation for development, with real-time deployment contingent on the specific FP8 optimization recipe.",
+      "takeaways": [
+        "**Architecture Composition:** 2.45B backbone (1.96B language model + 0.41B SigLIP2 encoder) plus a 0.2B diffusion action expert.",
+        "**Input/Output Specs:** Processes 6 cameras (22 frames), navigation instructions, and 20 ego poses to output 64 waypoints (0.1 to 6.4 seconds).",
+        "**Performance Metrics:** Achieved 15.15 km per at-fault incident in AlpaSim and a 75.2 score on LingoQA.",
+        "**Latency Targets:** Operates at 160 to 190 ms on DRIVE AGX Thor hardware using the FP8 + TensorRT Edge-LLM recipe.",
+        "**Adaptive Reasoning:** Emits special tokens for routine driving and full Chain-of-Causation traces only for complex scenes to reduce compute load."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b51af88d58d8138d",
+    "canonicalUrl": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
+    "title": "Why data centers are at the center of the Big Tech backlash",
+    "publishedAt": "2026-11-22T18:08:43.000Z",
+    "fetchedAt": "2026-11-22T20:17:19.131Z",
+    "contentHash": "61678e7c27827fb7",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "In his new book “Hyperscale,” journalist Paris Marx investigates the impact of data centers and generative AI, taking readers inside the data centers themselves and explaining how computing infrastructure that goes back decades recently became a political landmine.\n\nThe book is well-timed, to put it mildly, as data center backlash seems to have been one of the motivators for the massive blue wave seen in the recent midterm elections . And those debates are likely to continue as Democrats wield more governmental power .\n\nIn an interview with TechCrunch, Marx described the data center buildout as “fundamentally unsustainable” and “completely out of line with a livable planet,” while also arguing that these facilities make for an obvious target amidst broader anger at the tech industry. After all, if a data center is being built in your community, “it’s very physical, it’s very material.”\n\n“It doesn’t matter what side of the political spectrum that you’re on,“ Marx said. “You are going to feel the effects of that in your quality of life, in your power bill, potentially in your access to water, potentially in what you hear around your community, if these air conditioning units on the roofs of data centers are making a lot of noise.”\n\nHe also suggested that data center opposition is only the most visible piece of a wider movement targeting “the physical manifestations of the tech industry, […] whether it’s the opposition to Flock cameras rolling out across the United States, or the smart glasses that Meta is trying to put on people’s faces, or even the self-driving cars that Waymo is rolling out.”\n\nDuring our conversation (which I’ve edited for length and clarity), Marx and I discussed data centers’ environmental impact, how tech companies are responding to community resistance, and what it’s actually like inside a data center.\n\nI liked your description of trying to get access to the inside of a “hyperscale” data center and then eventually taking a tour [of one]. Could you talk a little bit more about what that experience was like? How did you get in? What surprised you when you actually got in?\n\nGetting inside of a hyperscale data center was not the easiest task in the world. I spoke to some researchers who have been doing research on data centers for a number of years longer than I had, and they told me that before the generative AI moment, and before all the a",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "In his book 'Hyperscale,' journalist Paris Marx examines the environmental and social impact of the global data center buildout, framing the infrastructure as a 'fundamentally unsustainable' manifestation of Big Tech’s expansionist ambitions. Marx argues that the physical presence of these facilities—which consume vast quantities of electricity and water—has turned them into political flashpoints, citing community resistance in regions like Chile, Ireland, and Oregon as evidence of a growing backlash against the tech industry's resource demands.\n\nTechnically, Marx describes the modern hyperscale data center as a highly securitized, utilitarian environment characterized by extreme noise levels from cooling fans and strict access controls requiring passport verification and key-card authentication for every internal door. The book highlights specific instances of resource strain, such as data centers consuming over 20% of Ireland’s electricity, leading to a 2022 grid connection moratorium in Dublin, and Google’s usage of 29% of the water supply in The Dalles, Oregon. Marx contends that the current trajectory of AI-driven infrastructure expansion is disconnected from tangible societal benefits, prioritizing corporate power over local community stability and environmental sustainability.",
+      "takeaways": [
+        "**Ireland Grid Impact:** Data centers in Ireland consume over 20% of the country's total electricity, prompting a 2022 moratorium on new grid connections in the Dublin area.",
+        "**Oregon Water Usage:** Google’s data center operations in The Dalles, Oregon, were revealed to account for 29% of the city's total water consumption.",
+        "**Security Protocols:** Access to modern hyperscale facilities requires advance passport submission and multi-layered physical security, including key-card access for every individual door within the facility.",
+        "**Operational Environment:** Server rooms are described as utilitarian, high-temperature environments with extreme noise levels generated by cooling fans, necessitating hearing protection for extended stays.",
+        "**Community Resistance:** Opposition to data centers is categorized by Marx as part of a broader movement against the physical manifestations of Big Tech, including Flock cameras, Meta smart glasses, and Waymo autonomous vehicles."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "28c764e2cf8a36ef",
+    "canonicalUrl": "https://www.theverge.com/games/1039770/binding-of-isaac-ai-music",
+    "title": "Binding of Isaac developer removes AI music from Repentance Plus",
+    "publishedAt": "2026-11-22T17:25:20.000Z",
+    "fetchedAt": "2026-11-22T20:17:19.132Z",
+    "contentHash": "283cdbe466408517",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "The Binding of Isaac: Repentance Plus has spent the last few days getting review-bombed on Steam after it was discovered that a particular segment of the game used AI music. Reddit user ShweetsStuff discovered the songs used during a Grand Theft Auto-themed section. They found several audio files with Suno metadata that pointed back to the tracks on Suno’s site. Creator Edmund McMillen took to X to apologize and claimed he “had no idea” the in-game GTA parody used generative AI music. Adding to the drama, Valve requires developers to disclose how and when they use generative AI in the development process, and Nicalis, Inc., the studio behind Repentance Plus, doesn’t appear to have mentioned the AI music anywhere. [Media: https://twitter.com/edmundmcmillen/status/2124169167880470745?s=20] Within hours of the discovery, Nicalis shared on X that Repentance Plus had been updated and the generated music files had been removed. While reviews on Steam have yet to rebound, and the game is still rated as “overwhelmingly negative,” users on X seem to be giving McMillen the benefit of the doubt, likely because he’s been quite outspoken on AI in game development, calling it “uninspired and bland” in a TikTok from 2024. [Media: https://twitter.com/nicalis/status/2124241453266169887]",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/j7yPmbNCP4I-HD.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The Binding of Isaac: Repentance Plus faced significant community backlash and Steam review-bombing following the discovery of AI-generated music within a Grand Theft Auto-themed segment of the game. Reddit user ShweetsStuff identified the tracks by locating Suno metadata embedded in the audio files, which linked directly to the Suno platform. This discovery triggered immediate scrutiny regarding compliance with Valve’s mandatory disclosure policies for generative AI usage in software development, which the publisher, Nicalis, Inc., reportedly failed to satisfy.\n\nCreator Edmund McMillen publicly apologized on X, stating he was unaware that generative AI had been utilized in the game's development. McMillen has previously expressed public disdain for AI in game design, characterizing it as \"uninspired and bland\" in a 2024 TikTok. In response to the controversy, Nicalis, Inc. issued an update to remove the AI-generated audio files within hours of the initial discovery. Despite the removal, the game’s Steam rating remains \"overwhelmingly negative\" as of the latest reports.",
+      "takeaways": [
+        "**Discovery Method:** Reddit user ShweetsStuff identified the AI music by finding Suno metadata embedded within the game's audio files.",
+        "**Regulatory Compliance:** The publisher, Nicalis, Inc., failed to disclose the use of generative AI to Valve, violating Steam's mandatory disclosure requirements for AI-integrated software.",
+        "**Remediation:** Nicalis, Inc. released an update to remove the AI-generated tracks within hours of the public discovery.",
+        "**Creator Stance:** Edmund McMillen, the game's creator, publicly disavowed the use of AI, citing his previously stated belief that such tools produce \"uninspired and bland\" content."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "e8029993afd719ae",
+    "canonicalUrl": "https://www.theverge.com/column/1039139/vibe-coding-gadgets-tv-camera",
+    "title": "The vibe-coding revolution is coming to all the gadgets",
+    "publishedAt": "2026-11-22T13:00:00.000Z",
+    "fetchedAt": "2026-11-22T20:17:19.132Z",
+    "contentHash": "8e076ecb0c0f6c7e",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "David Pierce",
+    "contentSnippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the vibe-hacking of everything, follow David Pierce. The Stepback arrives in our subscribers’ inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Like so many things with AI, it’s not that large language models opened up some wholly new capability. For as long as there have been gadgets, a few users have been hacking, modding, jailbreaking, and tweaking them to their liking. What is new is that it’s easy now. People all over the world are discovering that they can use large language models to hack their hardware simply by prompting Claude Code or Codex to do it. It has led to a boom in developer-friendly gadgets and created a market for better software on just about every device you can think of. For one developer in India who goes by Gathin T, the whole thing started almost on a whim. “One afternoon, I was fiddling with my TV, and it was just really shitty,” he tells me. His was a set made by Xiaomi and running Android TV, with so many ads and so much interface chaos it was hard to even change inputs. And he got to thinking: If you can install another launcher on your Android phone, maybe you can do the same to your TV. “The first thing that came to mind was to remove the bloatware from the TV,” he says. “Then I thought, why not make it look better?” Gathin prompted Claude Code and discovered that with a couple of permissions tweaks and a toggle of USB debugging mode, his chatbot could control his TV as long as they were on the same Wi-Fi network. An hour and a half later, Gathin had redesigned his TV to his liking — no more onscreen ads, a simpler interface, easier access to his PlayStation on another input. He posted on X about what he’d done and promptly went viral. So Gathin put together his work, bought a domain, and launched CleanYourTV as a tool for helping other people solve their own television interfaces. It became one of the most popular repositories on GitHub, got thousands of pull requests and feature ideas, and inspired countless people to point their own chatbot at their big screen. Gathin is careful to note that the only TVs that work this easily are based on Android. (He has Claude Code-d his way through other operating systems, but those involve more explicit jailbreaking and rooting, so he’s more reluctant to ",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/AI_vibe_coding_hacker_hardware.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The rise of 'vibe-coding'—using LLMs like Claude Code and Codex to reverse-engineer, modify, and jailbreak consumer hardware—is transforming the landscape of device customization. Developers and non-technical users are increasingly leveraging AI to bypass bloatware, unlock hidden APIs, and repackage firmware for devices ranging from Android-based TVs and cameras to synthesizers and gaming consoles. A notable example is the 'CleanYourTV' project, which allows users to strip ads and simplify interfaces on Xiaomi Android TVs by automating USB debugging and permission tweaks via LLM-generated scripts.\n\nThis trend has triggered a defensive response from manufacturers, particularly in the gaming sector, where companies are moving toward more invasive DRM and cloud-streaming architectures to prevent decompilation. Industry experts like former Take-Two AI head Luke Dicken suggest this will lead to a broader industry shift toward platform-level lockdowns. Conversely, some manufacturers are embracing the trend; for instance, M-Vave released open-source firmware for its FM-1 synthesizer to accommodate the hacker community. Meanwhile, the hardware ecosystem is shifting toward modular, developer-friendly platforms like ESP32 modules (e.g., M5Stack PaperMono), which are increasingly being used to build bespoke, single-purpose consumer devices, a movement Meta is currently supporting through its Muse Gadgets program.",
+      "takeaways": [
+        "**CleanYourTV Methodology:** Uses LLMs to automate the removal of bloatware and interface customization on Android-based TVs by toggling USB debugging and modifying system permissions.",
+        "**Gaming Industry Response:** Executives anticipate a shift toward more invasive DRM and streaming-only models to mitigate the risks of AI-assisted decompilation and unauthorized platform porting.",
+        "**Hardware Shift:** The community is increasingly favoring ESP32-based modules over traditional jailbreaking, as these platforms are designed for custom firmware and modular functionality.",
+        "**Corporate Adoption:** Meta is actively entering the space with its 'Muse Gadgets' program, providing a pathway for users to deploy custom AI-driven software on ESP32 hardware.",
+        "**Risk Profile:** Vibe-coding carries significant bricking risks, leading developers like Gathin T to implement automated backup and verification agents within their tools to mitigate potential system failures."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 4,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "fd57cd1bbb506cd3",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/22/best-personal-ai-agents-2026/",
     "title": "Best Personal AI Agents in 2026: OpenClaw, Hermes Agent, Gemini Spark and More, Compared on Memory, Security and Cost",
@@ -91,12 +208,12 @@
     "canonicalUrl": "https://www.marktechpost.com/2026/11/21/columbia-certik-tensorlean-formal-verification-gpu-kernels/",
     "title": "A Team of Researchers from Columbia and CertiK Introduce TensorLean for Formal Verification of GPU Kernels",
     "publishedAt": "2026-11-22T01:51:43.000Z",
-    "fetchedAt": "2026-11-22T04:41:28.291Z",
-    "contentHash": "b37daa15be59d61f",
+    "fetchedAt": "2026-11-22T20:17:20.194Z",
+    "contentHash": "432c0aafb1e07bb9",
     "sourceId": "marktechpost",
     "sourceName": "MarkTechPost AI",
     "author": "Michal Sutter",
-    "contentSnippet": "Researchers from Columbia University and CertiK have introduced TensorLean , a framework for formal verification of GPU kernels at the PTX level. TensorLean is a Lean-based verifier that proves compiled kernels match a tensor-level math spec. The research team checked 149 kernel instances , including every kernel of FlashAttention-2, -3 and -4 plus DeepGEMM. It proved 83 correct. The remaining 66 led to 38 correctness bugs. TL;DR Size: 1.8K-line PTX parser. Specs total 10,278 lines against 151,285 lines of kernel source, a ratio near 15:1. Runs on: A 16-core workstation. It checks PTX compiled for A100, H100 and B200 kernels. Performance: 83 of 149 kernel instances proved correct, 38 bugs found across 6 projects. Best: Caught a FlashAttention-4 data race that never appeared in 17,760 test runs. What is TensorLean? TensorLean is a formal verification framework for GPU kernels at the PTX level. It starts from unmodified source code. A developer writes a tensor-level spec in Lean. TensorLean then proves 4 properties: no data races, termination, correct output within tolerance, and untouched memory elsewhere. How does TensorLean verify a GPU kernel? Specs build on Lean’s Mathlib. Tensor operators follow PyTorch names, so @ means torch.matmul . Each spec has 5 parts: spec_math , spec_mut , spec_layout , spec_tol and requires . The math stays separate from the memory layout. The pipeline runs in 7 steps: Start from unmodified source. Write the tensor-level spec. Compile to PTX and load a PTX semantics. Build a happens-before graph to check races and termination. Symbolically execute to get final memory, identical across schedules. Lower the spec to PTX-memory level. Discharge proofs with Lean’s kernel, Z3 and cvc5. Which techniques make it scale? Concurrency to sequential: Race-freedom proofs on the happens-before graph cover all CTAs, threads and loop iterations symbolically. Loop invariants over semirings: Closed forms for tiled, accumulating loops, such as online softmax, need 1 SMT query per loop. Tolerance proofs: Algebraic error is proved zero. Round-off error is bounded separately, then combined. Assertions as hints: Developers add tensorlean_assert in source. Each is proved once, then reused. What bugs did TensorLean find? The GitHub README lists 38 bugs, all reported upstream. FlashAttention accounts for 23. Liger Kernel has 7, TileOPs 3, TileLang 2, Deep",
+    "contentSnippet": "Researchers from Columbia University and CertiK have introduced TensorLean , a framework for formal verification of GPU kernels at the PTX level. TensorLean is a Lean-based verifier that proves compiled kernels match a tensor-level math spec. The research team checked 149 kernel instances , including every kernel of FlashAttention-2, -3 and -4 plus DeepGEMM. It proved 83 correct. The remaining 66 led to 38 correctness bugs. You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 1.8K-line PTX parser. Specs total 10,278 lines against 151,285 lines of kernel source, a ratio near 15:1. Runs on: A 16-core workstation. It checks PTX compiled for A100, H100 and B200 kernels. Performance: 83 of 149 kernel instances proved correct, 38 bugs found across 6 projects. Best: Caught a FlashAttention-4 data race that never appeared in 17,760 test runs. What is TensorLean? TensorLean is a formal verification framework for GPU kernels at the PTX level. It starts from unmodified source code. A developer writes a tensor-level spec in Lean. TensorLean then proves 4 properties: no data races, termination, correct output within tolerance, and untouched memory elsewhere. How does TensorLean verify a GPU kernel? Specs build on Lean’s Mathlib. Tensor operators follow PyTorch names, so @ means torch.matmul . Each spec has 5 parts: spec_math , spec_mut , spec_layout , spec_tol and requires . The math stays separate from the memory layout. The pipeline runs in 7 steps: Start from unmodified source. Write the tensor-level spec. Compile to PTX and load a PTX semantics. Build a happens-before graph to check races and termination. Symbolically execute to get final memory, identical across schedules. Lower the spec to PTX-memory level. Discharge proofs with Lean’s kernel, Z3 and cvc5. Which techniques make it scale? Concurrency to sequential: Race-freedom proofs on the happens-before graph cover all CTAs, threads and loop iterations symbolically. Loop invariants over semirings: Closed forms for tiled, accumulating loops, such as online softmax, need 1 SMT query per loop. Tolerance proofs: Algebraic error is proved zero. Round-off error is bounded separately, then combined. Assertions as hints: Developers add tensorlean_assert in source. Each is proved once, then reused. What bugs did TensorLean find? The GitHub README lists 38 bugs, ",
     "category": "Robotics & Hardware",
     "lab": "NVIDIA",
     "entryType": "DISPATCH",
@@ -111,6 +228,34 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1a10f1676d46fc01",
+    "canonicalUrl": "https://openai.com/index/perplexity-and-intelligence",
+    "title": "Perplexity and Intelligence",
+    "publishedAt": "2026-11-22T00:00:00.000Z",
+    "fetchedAt": "2026-11-22T20:17:20.724Z",
+    "contentHash": "86f350cd5c50e9bd",
+    "sourceId": "openai",
+    "sourceName": "OpenAI News",
+    "author": "OpenAI News",
+    "contentSnippet": "November 22, 2026 Research Safety Perplexity and Intelligence By Jakub Pachocki, Chief Scientist at OpenAI\n\nFrom afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly harnessing the intelligence coming from a much simpler and less interpretable process: training a compressor (or, equivalently ⁠ (opens in a new window) , predictor) on a very large corpus of data. 1\n\nI believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at OpenAI. Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing shared ⁠ (opens in a new window) safety measures across the industry. We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts.\n\nA simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to pretrain a model (compressor) on a large unstructured dataset, then applies a variety of techniques—like prompting, finetuning or reinforcement learning—in different contexts to elicit the latent capabilities of that model. Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed “ an alien mind ⁠ ”) and the subsequent targeted elicitation.\n\nThe primary way we measure progress on this key “intelligence substrate” has remained remarkably constant over the years—we have been tracking the perplexity of the models on a held-out dataset. 2 , 3 Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions. The plot opening this blog post shows how this metric evolved for our models starting with GPT‑3.5.\n\nThe range of capabilities of models th",
+    "category": "LLMs & GenAI",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Jakub Pachocki, Chief Scientist at OpenAI, argues that perplexity (cross-entropy loss) should serve as the industry-standard metric for tracking AI progress and establishing shared safety benchmarks. Pachocki posits that modern AI development is fundamentally the process of training a compressor on massive datasets, where lower perplexity consistently correlates with the emergence of transformative, latent capabilities. By publishing OpenAI’s internal perplexity trajectory, he aims to foster industry-wide transparency and encourage developers to agree on common development limits based on these metrics until monitoring capabilities, such as successors to chain-of-thought (CoT) monitors, reach sufficient maturity.\n\nOpenAI’s internal data shows a clear correlation between decreasing log-perplexity and model capability leaps: GPT-3.5 reached ~0.99, GPT-4 hit ~0.91, and current models have surpassed 0.8. Pachocki highlights that models reaching ~0.76 log-perplexity have demonstrated the ability to solve groundbreaking mathematical problems. He projects that the next major capability threshold will likely emerge within the 0.68–0.7 log-perplexity window. While acknowledging that perplexity does not capture all advancements—notably excluding CoT reasoning gains—he argues it remains the most reliable \"intelligence substrate\" metric for predicting the emergence of new, potentially dangerous capabilities as AI begins to accelerate its own algorithmic research.",
+      "takeaways": [
+        "**Performance Benchmarks:** OpenAI models have progressed from GPT-3.5 (~0.99 log-perplexity) and GPT-4 (~0.91) to current models below 0.8, with a significant breakthrough in mathematical reasoning observed at ~0.76.",
+        "**Future Projections:** Pachocki anticipates a new wave of transformative capabilities as models reach the 0.68–0.7 log-perplexity range, potentially as early as 2027.",
+        "**Proposed Safety Framework:** OpenAI advocates for an industry-wide standard that sets concrete development limits based on perplexity, requiring specific monitoring milestones (e.g., advanced CoT monitors) before proceeding to lower loss thresholds.",
+        "**Metric Limitations:** Perplexity does not account for non-pretraining gains like chain-of-thought reasoning, and cross-lab comparisons remain difficult due to disparate evaluation datasets and training mixtures."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 4,
       "generatedWith": "gemini",
       "summaryVersion": 2
     }
@@ -435,14 +580,14 @@
     "canonicalUrl": "https://www.marktechpost.com/2026/11/21/thinking-machines-inkling-2-mini-looped-transformer/",
     "title": "Meet Thinking Machines Inkling 2 Mini: 26B Looped MoE Runs on a 32GB Mac",
     "publishedAt": "2026-11-21T12:13:50.000Z",
-    "fetchedAt": "2026-11-21T18:57:40.876Z",
-    "contentHash": "2c30e776ba5a9914",
+    "fetchedAt": "2026-11-22T20:17:20.194Z",
+    "contentHash": "1673bd7a578ec2be",
     "sourceId": "marktechpost",
     "sourceName": "MarkTechPost AI",
     "author": "Asif Razzaq",
-    "contentSnippet": "Thinking Machines Lab has released Inkling 2 Mini , an open-weight looped transformer with 26.4B total parameters. The model reuses its middle layers 3 times per token instead of adding more weights. That keeps the checkpoint near 20GB, small enough for a 32GB Mac or 1 NVIDIA DGX Spark. For developers, Inkling 2 Mini is a local option for agentic coding, tool use and document work. It ships under Apache 2.0 on Hugging Face , with hosted inference and fine-tuning on Tinker . TL;DR Size: 26.4B total, 3.4B active (5.4B effective per token with looping), up to 1M-token context. Runs on: Apple silicon with 32GB+ memory, 1 NVIDIA DGX Spark, or GPUs with 32GB+ VRAM. GGUF builds via Unsloth and llama.cpp. Performance: 20.1 on the Artificial Analysis Index, tied with Qwen3.8-27B (self-reported). Best: 79.2% on SWE-bench Verified (bash only). Worst: 15.2% on HLE-Diamond and 50.0% on MultiChallenge. Bottom line: Best: strong agentic coding from a 20GB checkpoint. Worst: weaker knowledge recall and multi-turn instruction following. What is Inkling 2 Mini? Inkling 2 Mini is a sparse Mixture-of-Experts model from Thinking Machines that loops its middle layers. It accepts text and images and returns text only. It follows Inkling 2 Small, a 594B-parameter model released on November 5. How does the looped transformer work? The model stores 24 layers, grouped into 4 blocks of 6. The first and last blocks run once. The 2 middle blocks run 3 times with shared weights. That gives 48 layer applications per token from 24 layers of weights. Each pass after the first receives a “message” from the previous pass. Thinking Machines carries it with Attention Residuals and a learned gate. Feed-forward layers use 128 experts, with 8 routed per token. Looping the middle layers gave a 1.51x to 1.91x compute-equivalent gain. Looping the last layers gave only 1.24x to 1.36x. The middle-loop variant won 27 of 28 evaluations. Looping costs training compute but saves inference. An unlooped baseline used 7.5% less training compute. It needed 140% more inference compute to match the looped model’s loss on 512k-token agentic traces. How was Inkling 2 Mini trained? Training began with 384 experts per layer, with 8 active per token. At midtraining, the team pruned two-thirds of them and kept the 128 most-used experts. A 1T-token distillation run from a larger internal Inkling model then healed the pr",
+    "contentSnippet": "Thinking Machines Lab has released Inkling 2 Mini , an open-weight looped transformer with 26.4B total parameters. The model reuses its middle layers 3 times per token instead of adding more weights. That keeps the checkpoint near 20GB, small enough for a 32GB Mac or 1 NVIDIA DGX Spark. For developers, Inkling 2 Mini is a local option for agentic coding, tool use and document work. It ships under Apache 2.0 on Hugging Face , with hosted inference and fine-tuning on Tinker . You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 26.4B total, 3.4B active (5.4B effective per token with looping), up to 1M-token context. Runs on: Apple silicon with 32GB+ memory, 1 NVIDIA DGX Spark, or GPUs with 32GB+ VRAM. GGUF builds via Unsloth and llama.cpp. Performance: 20.1 on the Artificial Analysis Index, tied with Qwen3.8-27B (self-reported). Best: 79.2% on SWE-bench Verified (bash only). Worst: 15.2% on HLE-Diamond and 50.0% on MultiChallenge. Bottom line: Best: strong agentic coding from a 20GB checkpoint. Worst: weaker knowledge recall and multi-turn instruction following. What is Inkling 2 Mini? Inkling 2 Mini is a sparse Mixture-of-Experts model from Thinking Machines that loops its middle layers. It accepts text and images and returns text only. It follows Inkling 2 Small, a 594B-parameter model released on November 5. How does the looped transformer work? The model stores 24 layers, grouped into 4 blocks of 6. The first and last blocks run once. The 2 middle blocks run 3 times with shared weights. That gives 48 layer applications per token from 24 layers of weights. Each pass after the first receives a “message” from the previous pass. Thinking Machines carries it with Attention Residuals and a learned gate. Feed-forward layers use 128 experts, with 8 routed per token. Looping the middle layers gave a 1.51x to 1.91x compute-equivalent gain. Looping the last layers gave only 1.24x to 1.36x. The middle-loop variant won 27 of 28 evaluations. Looping costs training compute but saves inference. An unlooped baseline used 7.5% less training compute. It needed 140% more inference compute to match the looped model’s loss on 512k-token agentic traces. How was Inkling 2 Mini trained? Training began with 384 experts per layer, with 8 active per token. At midtraining, the team pruned two-thirds of them and kept the 128 ",
     "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
+    "lab": "Google DeepMind",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Thinking Machines Lab has released Inkling 2 Mini, a 26.4B parameter sparse Mixture-of-Experts (MoE) model that utilizes a looped transformer architecture to achieve high performance with a 20GB checkpoint. By reusing its middle layers three times per token, the model effectively simulates 48 layer applications from only 24 physical layers. This design allows the model to run on consumer hardware, specifically Apple silicon with 32GB of RAM or a single NVIDIA DGX Spark, while supporting a context window of up to 1 million tokens. The model is released under an Apache 2.0 license on Hugging Face, with fine-tuning and inference support available via the Tinker platform.\n\nTechnically, the model architecture consists of 24 layers grouped into four blocks of six, where the middle two blocks are looped. Each pass incorporates Attention Residuals and a learned gate to pass information between iterations. The feed-forward layers utilize 128 experts, with 8 routed per token. During training, the model began with 384 experts per layer before pruning to 128, followed by a 1T-token distillation from a larger internal model. Benchmarks show a score of 20.1 on the Artificial Analysis Index, tying it with Qwen3.8-27B, and a 79.2% success rate on SWE-bench Verified (bash only). However, the model exhibits limitations in knowledge recall and multi-turn instruction following, scoring 15.2% on HLE-Diamond and 50.0% on MultiChallenge.",
@@ -10765,142 +10910,6 @@
       ],
       "impact": "Breakthrough",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "0154c5df13dbb3a1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21647",
-    "title": "FieldGuide: A Corpus Map for Token-Efficient Agentic Document Exploration",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "11c93de4c09e14f2",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Nick Hagar",
-    "contentSnippet": "arXiv:2611.21647v1 Announce Type: new Abstract: Generative AI agents can help journalists explore large document collections. But exploratory workflows can require substantial token use and time, especially when the task is broad and the relevant subquestions are not yet known. This paper introduces FieldGuide, an agent-facing corpus map that organizes a document collection into a topic hierarchy and exposes tools for corpus orientation, scoped search, and bounded reading. I evaluate FieldGuide on five journalistic document-exploration tasks using 38 Chicago Police Department public-records documents, comparing it with raw-file access and retrieval-augmented generation. Across the five tasks, FieldGuide used 27% fewer tokens and 41% less elapsed time than raw-file access; relative to RAG, it used 38% fewer tokens and 21% less elapsed time. An accuracy audit identified four minor issues in FieldGuide's responses, comparable to the other conditions. In blind ratings of generated reporting leads, FieldGuide's mean ratings were higher than RAG's and lower than the raw-file condition's. These descriptive results suggest that corpus orientation may reduce runtime token use and elapsed time without severe accuracy failures. They also motivate further study of whether selective access limits broad, cross-document discovery.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21647",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21647.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21647v1 Announce Type: new Abstract: Generative AI agents can help journalists explore large document collections. But exploratory workflows can require substantial token use and time, especially when the task is broad and the relevant subquestions are not yet known. This paper introduces FieldGuide, an agent-facing corpus map that organizes a document collection into a topic hierarchy and exposes tools for corpus orientation, scoped search, and bounded reading.\n\nI evaluate FieldGuide on five journalistic document-exploration tasks using 38 Chicago Police Department public-records documents, comparing it with raw-file access and retrieval-augmented generation. Across the five tasks, FieldGuide used 27% fewer tokens and 41% less elapsed time than raw-file access; relative to RAG, it used 38% fewer tokens and 21% less elapsed time. An accuracy audit identified four minor issues in FieldGuide's responses, comparable to the other conditions.",
-      "takeaways": [
-        "In blind ratings of generated reporting leads, FieldGuide's mean ratings were higher than RAG's and lower than the raw-file condition's.",
-        "These descriptive results suggest that corpus orientation may reduce runtime token use and elapsed time without severe accuracy failures.",
-        "They also motivate further study of whether selective access limits broad, cross-document discovery."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "3dbf0fdc2c833cc8",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21648",
-    "title": "Can an LLM dream? Testing the overfitted brain hypothesis on an agent with text memory",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "549f525012113518",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Eric Zou",
-    "contentSnippet": "arXiv:2611.21648v1 Announce Type: new Abstract: Hoel (2021) proposed that dreams distort replayed experience so that the brain does not overfit to recent events. We test this hypothesis on an LLM agent (Claude Opus 5.5) that stores what it learns in a text memory and rewrites that memory each night from the day's conversation transcript. The agent goes through ten simulated days of conversation built from LongMemEval. We corrupt 5, 10, 20 or 40 percent of the transcript's turns before each nightly rewrite in one of two ways. Detail corruption changes one or two details in a turn to plausible wrong ones, or replaces the turn with one by the same speaker from an earlier day. Random-text corruption replaces half of the selected turns with a passage of Moby-Dick and inserts Moby-Dick words into the other half. A size limit on the memory, rising from 19,500 to 117,000 tokens over ten nights, set from human free-recall data, forces it to forget. We learned that corruption did not help the agent apply what it learned in earlier conversations to new tasks in any of 30 runs (ten conditions, three different conversation histories). Replacing details in 40 percent of turns lowered recall from 76 to 60 percent. Random text had no consistent effect on recall, with a paired difference of 0 $\\pm$ 2 points at 40 percent, because the model recognized it as corrupted and left it out of memory. Replaced details were stored as fact even when another turn held the correct value, and the agent answered 40 percent of those questions correctly, compared with 75 percent without corruption. These results suggest that a pretrained model can separate corrupted text from real events, so a fair test needs a learner that cannot make this separation as easily, such as a model fine-tuned on the corrupted days or an agent whose days take place in an invented world.",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21648",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21648.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21648v1 Announce Type: new Abstract: Hoel (2021) proposed that dreams distort replayed experience so that the brain does not overfit to recent events. We test this hypothesis on an LLM agent (Claude Opus 5.5) that stores what it learns in a text memory and rewrites that memory each night from the day's conversation transcript. The agent goes through ten simulated days of conversation built from LongMemEval.\n\nWe corrupt 5, 10, 20 or 40 percent of the transcript's turns before each nightly rewrite in one of two ways. Detail corruption changes one or two details in a turn to plausible wrong ones, or replaces the turn with one by the same speaker from an earlier day. Random-text corruption replaces half of the selected turns with a passage of Moby-Dick and inserts Moby-Dick words into the other half.",
-      "takeaways": [
-        "A size limit on the memory, rising from 19,500 to 117,000 tokens over ten nights, set from human free-recall data, forces it to forget.",
-        "We learned that corruption did not help the agent apply what it learned in earlier conversations to new tasks in any of 30 runs (ten conditions, three different conversation histories).",
-        "Replacing details in 40 percent of turns lowered recall from 76 to 60 percent.",
-        "Random text had no consistent effect on recall, with a paired difference of 0 $\\pm$ 2 points at 40 percent, because the model recognized it as corrupted and left it out of memory."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a04a3a9fe21268d9",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21649",
-    "title": "Literary Language Mashup: Curating Fictions with Large Language Models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "9549299720e09bdc",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Manzanarez Gerardo Aleman, Monroy Raul, Garcia Flores Jorge, Calvo Hiram",
-    "contentSnippet": "arXiv:2611.21649v1 Announce Type: new Abstract: In this paper, we propose an alternative approach to human evaluation of literary fictions by employing LLMs themselves as evaluators within the GrAImes framework. We apply this methodology to assess human-written and AI-generated microfictions in Spanish, to five PhD professors in literature and sixteen literary enthusiasts, and to short stories in both Spanish and English. By comparing the evaluations performed by LLMs with those of human judges, we examine the degree of alignment and divergence between both perspectives, thereby assessing the feasibility of LLMs as auxiliary literary evaluators. Our analysis focuses on the alignment of responses from LLMs with those of human evaluators, providing insights into the potential of LLMs in literary assessment. The conducted experiments reveal that while LLMs cannot be regarded as substitutes for human judges in the evaluation of literary microfictions and short stories, with a Krippendorff's alpha reliability coefficient less than 0.66, they can serve as a valuable tool that offers an initial perspective on the editorial quality of the texts in question. Overall, this study contributes to the ongoing discourse on the role of artificial intelligence in literature, underlining both its methodological constraints and its potential as a complementary resource for literary evaluation.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21649",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21649.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21649v1 Announce Type: new Abstract: In this paper, we propose an alternative approach to human evaluation of literary fictions by employing LLMs themselves as evaluators within the GrAImes framework. We apply this methodology to assess human-written and AI-generated microfictions in Spanish, to five PhD professors in literature and sixteen literary enthusiasts, and to short stories in both Spanish and English. By comparing the evaluations performed by LLMs with those of human judges, we examine the degree of alignment and divergence between both perspectives, thereby assessing the feasibility of LLMs as auxiliary literary evaluators.\n\nOur analysis focuses on the alignment of responses from LLMs with those of human evaluators, providing insights into the potential of LLMs in literary assessment. The conducted experiments reveal that while LLMs cannot be regarded as substitutes for human judges in the evaluation of literary microfictions and short stories, with a Krippendorff's alpha reliability coefficient less than 0.66, they can serve as a valuable tool that offers an initial perspective on the editorial quality of the texts in question. Overall, this study contributes to the ongoing discourse on the role of artificial intelligence in literature, underlining both its methodological constraints and its potential as a complementary resource for literary evaluation.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "682426ab741ce42c",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21650",
-    "title": "From Preference Data to Personalization: Tracing Sycophancy in Large Language Models",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "1990bd03baeaf6a2",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Himaghna Bhattacharjee, Yasha Sheynin, Shivam Singhal, Arjun Subramonian, Ankur Samanta, Julian Michael, Smitha Milli, Maximilian Nickel, Claudia Shi",
-    "contentSnippet": "arXiv:2611.21650v1 Announce Type: new Abstract: Sycophancy in large language models is often measured as agreement with the user, yet agreement can be appropriate when the user's claim is valid, their preference is genuine, or their experience warrants acknowledgment. We study sycophancy as inappropriate agreement: validating a claim, preference, or self-assessment when the context calls for correction, qualification, or resistance. We introduce a validity-aware sycophancy grader and SycoDrift, a persona-targeted evaluation set of 3,298 validity-annotated probes with controlled annotations for user openness and stakes. We use this framework to analyze three sources of agreement pressure: human preference data, automated judge specification, and in-context personalization. First, preference for validating responses in human datasets (Chatbot Arena, HH-RLHF, Community Alignment) is weak and concentrated where agreement is often appropriate. Second, in a selected-value, single-model experiment, emphasized judge rubrics produce consistent but modest increases relative to paired suppressed rubrics, demonstrating a plausible mechanism for training-time amplification. Third, in off-policy evaluations across 14 models, inference-time personalization increases inappropriate agreement, with the largest effect from matched user profiles placed directly before the query.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21650",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21650.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21650v1 Announce Type: new Abstract: Sycophancy in large language models is often measured as agreement with the user, yet agreement can be appropriate when the user's claim is valid, their preference is genuine, or their experience warrants acknowledgment. We study sycophancy as inappropriate agreement: validating a claim, preference, or self-assessment when the context calls for correction, qualification, or resistance. We introduce a validity-aware sycophancy grader and SycoDrift, a persona-targeted evaluation set of 3,298 validity-annotated probes with controlled annotations for user openness and stakes.\n\nWe use this framework to analyze three sources of agreement pressure: human preference data, automated judge specification, and in-context personalization. First, preference for validating responses in human datasets (Chatbot Arena, HH-RLHF, Community Alignment) is weak and concentrated where agreement is often appropriate. Second, in a selected-value, single-model experiment, emphasized judge rubrics produce consistent but modest increases relative to paired suppressed rubrics, demonstrating a plausible mechanism for training-time amplification.",
-      "takeaways": [
-        "Third, in off-policy evaluations across 14 models, inference-time personalization increases inappropriate agreement, with the largest effect from matched user profiles placed directly before the query."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "1014edced0c97702",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21651",
-    "title": "Consistency Is Not Correction: Separating Confidence, Abstention, and Recovery in LLM Agents",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "6e2e8191b51292f5",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Khushal Sethi",
-    "contentSnippet": "arXiv:2611.21651v1 Announce Type: new Abstract: A controller that resamples an answer, escalates to a larger model, or abstains is usually justified by a confidence signal. Three claims about such a signal do not follow from one another: it ranks answers (discrimination), it supports withholding some of them (selective prediction), and it changes an answer for the better (correction utility). We give an exact decomposition of the third into gated recoveries minus gated harms, which bounds whether a comparison can succeed before it is run: a gate that only replaces a proposal can act only where the base policy was already wrong, so the initial error count caps the discordant pairs any correct gate can produce. When that cap falls below the count a paired test needs, the experiment cannot return a positive result for a working mechanism, nor distinguish one from a gate that never fired. We measure all three targets on two model scales and find the bound binds. In a small-model suite a perturbation-agreement verifier reaches within-policy AUROC 0.990 (95% interval [0.95, 1.00]) while every episode outcome matches single-sample decoding at 4.32 times the call count. In a controlled 840-episode study no verifier replaced the proposal on any of the 60 GSM8K decisions, so that comparison tested nothing; the entire GSM8K gain across six controllers is one task, and it is the task whose identical temperature-zero repeats disagreed, making it the one answer the service does not reproduce. On the diagnostic set the gate could reach four errors while the test needed six, so even a perfect gate had no significant result available. We report two checks that would have caught this before any budget was spent, and show that tie handling in rankings, tied selection cutoffs, and unequal output limits each move a headline number in the same dataset. The binding constraint on this literature is measurement resolution, not the choice of signal.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21651",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21651.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21651v1 Announce Type: new Abstract: A controller that resamples an answer, escalates to a larger model, or abstains is usually justified by a confidence signal. Three claims about such a signal do not follow from one another: it ranks answers (discrimination), it supports withholding some of them (selective prediction), and it changes an answer for the better (correction utility). We give an exact decomposition of the third into gated recoveries minus gated harms, which bounds whether a comparison can succeed before it is run: a gate that only replaces a proposal can act only where the base policy was already wrong, so the initial error count caps the discordant pairs any correct gate can produce.\n\nWhen that cap falls below the count a paired test needs, the experiment cannot return a positive result for a working mechanism, nor distinguish one from a gate that never fired. We measure all three targets on two model scales and find the bound binds. In a small-model suite a perturbation-agreement verifier reaches within-policy AUROC 0.990 (95% interval [0.95, 1.00]) while every episode outcome matches single-sample decoding at 4.32 times the call count.",
-      "takeaways": [
-        "In a controlled 840-episode study no verifier replaced the proposal on any of the 60 GSM8K decisions, so that comparison tested nothing; the entire GSM8K gain across six controllers is one task, and it is the task whose identical temperature-zero repeats disagreed, making it the one answer the service does not reproduce.",
-        "On the diagnostic set the gate could reach four errors while the test needed six, so even a perfect gate had no significant result available.",
-        "We report two checks that would have caught this before any budget was spent, and show that tie handling in rankings, tied selection cutoffs, and unequal output limits each move a headline number in the same dataset.",
-        "The binding constraint on this literature is measurement resolution, not the choice of signal."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
