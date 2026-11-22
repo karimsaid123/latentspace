@@ -8,7 +8,7 @@
     "color": "#10a37f",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.937Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.375Z"
   },
   {
     "id": "deepmind",
@@ -19,7 +19,7 @@
     "color": "#3b82f6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.938Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.376Z"
   },
   {
     "id": "google-research",
@@ -30,7 +30,7 @@
     "color": "#4285f4",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.939Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.377Z"
   },
   {
     "id": "nvidia-blog",
@@ -41,7 +41,7 @@
     "color": "#76b900",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.939Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.377Z"
   },
   {
     "id": "huggingface",
@@ -52,7 +52,7 @@
     "color": "#f59e0b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.940Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.378Z"
   },
   {
     "id": "hf-daily-papers",
@@ -63,7 +63,7 @@
     "color": "#ffb000",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.511Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.482Z"
   },
   {
     "id": "bair-blog",
@@ -74,7 +74,7 @@
     "color": "#0284c7",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.940Z"
+    "lastFetchedAt": "2026-11-22T13:00:23.378Z"
   },
   {
     "id": "aws-ml",
@@ -85,7 +85,7 @@
     "color": "#ff9900",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.538Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.507Z"
   },
   {
     "id": "semianalysis",
@@ -96,7 +96,7 @@
     "color": "#4f46e5",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.540Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.508Z"
   },
   {
     "id": "the-register-ai",
@@ -107,7 +107,7 @@
     "color": "#d97706",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.543Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.513Z"
   },
   {
     "id": "ieee-spectrum-ai",
@@ -118,7 +118,7 @@
     "color": "#2563eb",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.541Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.511Z"
   },
   {
     "id": "interconnects-ai",
@@ -129,7 +129,7 @@
     "color": "#065f46",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:26.542Z"
+    "lastFetchedAt": "2026-11-22T13:00:16.512Z"
   },
   {
     "id": "ahead-of-ai",
@@ -140,7 +140,7 @@
     "color": "#7c3aed",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.350Z"
+    "lastFetchedAt": "2026-11-22T13:00:17.180Z"
   },
   {
     "id": "the-gradient",
@@ -150,8 +150,8 @@
     "category": "Open Source & Research",
     "color": "#db2777",
     "enabled": true,
-    "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.352Z"
+    "consecutiveFailures": 1,
+    "lastFetchedAt": "2026-11-22T13:00:22.681Z"
   },
   {
     "id": "techcrunch-ai",
@@ -162,7 +162,7 @@
     "color": "#059669",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.353Z"
+    "lastFetchedAt": "2026-11-22T13:00:17.181Z"
   },
   {
     "id": "verge-ai",
@@ -173,7 +173,7 @@
     "color": "#e11d48",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.353Z"
+    "lastFetchedAt": "2026-11-22T13:00:17.182Z"
   },
   {
     "id": "mit-tech-ai",
@@ -184,7 +184,7 @@
     "color": "#6366f1",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.354Z"
+    "lastFetchedAt": "2026-11-22T13:00:17.182Z"
   },
   {
     "id": "arstechnica-tech",
@@ -195,7 +195,7 @@
     "color": "#ea580c",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:27.355Z"
+    "lastFetchedAt": "2026-11-22T13:00:17.183Z"
   },
   {
     "id": "siliconangle-ai",
@@ -206,7 +206,7 @@
     "color": "#b45309",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.290Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.682Z"
   },
   {
     "id": "marktechpost",
@@ -217,7 +217,7 @@
     "color": "#10b981",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.291Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.683Z"
   },
   {
     "id": "simon-willison",
@@ -228,7 +228,7 @@
     "color": "#8b5cf6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.291Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.683Z"
   },
   {
     "id": "arxiv-ai",
@@ -239,7 +239,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.292Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.683Z"
   },
   {
     "id": "arxiv-cl",
@@ -250,7 +250,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.293Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.684Z"
   },
   {
     "id": "arxiv-lg",
@@ -261,7 +261,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-22T04:41:28.293Z"
+    "lastFetchedAt": "2026-11-22T13:00:22.684Z"
   },
   {
     "id": "arxiv-deepseek",
@@ -271,8 +271,8 @@
     "category": "Open Source & Research",
     "color": "#1e40af",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:23.998Z"
   },
   {
     "id": "arxiv-deepmind",
@@ -282,8 +282,8 @@
     "category": "Open Source & Research",
     "color": "#2563eb",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:23.999Z"
   },
   {
     "id": "arxiv-meta",
@@ -293,8 +293,8 @@
     "category": "Open Source & Research",
     "color": "#0284c7",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:24.000Z"
   },
   {
     "id": "arxiv-mistral",
@@ -304,8 +304,8 @@
     "category": "Open Source & Research",
     "color": "#f97316",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:24.000Z"
   },
   {
     "id": "arxiv-moonshot",
@@ -315,8 +315,8 @@
     "category": "LLMs & GenAI",
     "color": "#059669",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:24.001Z"
   },
   {
     "id": "arxiv-xai",
@@ -326,7 +326,7 @@
     "category": "Open Source & Research",
     "color": "#1d9bf0",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-22T04:41:35.048Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-22T13:00:24.001Z"
   }
 ]
