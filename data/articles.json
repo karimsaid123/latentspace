@@ -1,5 +1,91 @@
 [
   {
+    "id": "7d27fffa3906bd9a",
+    "canonicalUrl": "https://www.theverge.com/tech/1039851/major-tech-outages",
+    "title": "We haven’t seen the last of the major tech outages",
+    "publishedAt": "2026-11-22T22:48:02.000Z",
+    "fetchedAt": "2026-11-23T00:57:41.793Z",
+    "contentHash": "33f598766a8c0e1c",
+    "sourceId": "verge-ai",
+    "sourceName": "The Verge AI",
+    "author": "Terrence O’Brien",
+    "contentSnippet": "Over the last week or so, we have seen a nationwide FAA ground stop, a multi-day Outlook outage that brought entire companies to a standstill, and a banking outage at JPMorgan Chase. But the consensus is that there are more to come. Director of National Intelligence Jay Clayton told CNN: > “The American people should be prepared for a great deal of investment in upgrading our systems; they should be prepared for investment in cybersecurity, and they should be prepared that any time there is a step change in technology, a step change in both compute and applications, there will be bumps in the road.” Microsoft President Brad Smith issued a similar warning about further outages to CBS, but sounded a much more ominous tone. > “I think we have to be prepared, frankly, for the coming months because this isn’t the type of thing that just gets done in a couple of weeks … The whole information infrastructure of the world is in effect being upgraded right now.” While the outages over the last week were believed to be caused by cyberattacks, Smith said that AI has made it easier to find flaws, “and then you can either use that knowledge to patch the code, or if you’re a bad actor, you can use that knowledge to try to hack into systems,” he said. The last few months have also seen an increase in attacks on government and commercial systems, including those at the USDA, JP Morgan, and supermarkets. Whether outages are brought on by AI-assisted hackers or human error during the rush to patch an aging system, one thing seems certain: there will be more in the coming months.",
+    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/23318433/akrales_220309_4977_0182.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Recent critical infrastructure failures, including a nationwide FAA ground stop, a multi-day Microsoft Outlook outage, and a JPMorgan Chase banking disruption, signal a period of heightened instability in global information systems. Director of National Intelligence Jay Clayton and Microsoft President Brad Smith have both publicly warned that these incidents are likely to persist as the global information infrastructure undergoes a massive, systemic upgrade. Clayton emphasized that rapid shifts in compute and application technology inherently introduce operational volatility, necessitating significant long-term investment in cybersecurity and system modernization.\n\nMicrosoft President Brad Smith characterized the current environment as a precarious transition period, noting that the global infrastructure upgrade will not be completed in a short timeframe. Smith highlighted the dual-use nature of AI in this context: while AI tools assist in identifying and patching code vulnerabilities, they simultaneously lower the barrier for malicious actors to exploit those same flaws. This technological arms race, combined with the pressure to patch aging legacy systems, has contributed to a recent surge in cyberattacks targeting government agencies like the USDA and commercial entities, suggesting that further outages are an expected byproduct of the current digital transformation cycle.",
+      "takeaways": [
+        "**Recent Incidents:** Major outages have recently impacted the FAA, Microsoft Outlook, and JPMorgan Chase, alongside reported attacks on the USDA and various supermarket chains.",
+        "**AI Dual-Use:** AI is accelerating both the discovery of software vulnerabilities for defensive patching and the exploitation of those same flaws by malicious actors.",
+        "**Systemic Upgrades:** Microsoft President Brad Smith stated that the global information infrastructure is currently undergoing a comprehensive upgrade that will take months, not weeks, to stabilize.",
+        "**Official Outlook:** Director of National Intelligence Jay Clayton explicitly linked the current \"bumps in the road\" to the rapid step-change in compute and application technology."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "90468db0d5a9c8d3",
+    "canonicalUrl": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+    "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+    "publishedAt": "2026-11-22T21:14:07.000Z",
+    "fetchedAt": "2026-11-23T00:57:41.793Z",
+    "contentHash": "db4fc288724e20ec",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Anthony Ha",
+    "contentSnippet": "A new blog post from OpenAI’s chief scientist Jakub Pachocki discusses potential limits on AI development, with a focus on a measurement called perplexity.\n\nSlowing AI development became a particularly hot topic after a former OpenAI and Anthropic researcher said the companies were “gambling with our lives,” and even Anthropic’s IPO filing suggested that the technology could pose “catastrophic or existential risks to society.”\n\nAnthropic CEO Dario Amodei then published a plan to “pace the frontier,” seemingly endorsed by OpenAI CEO Sam Altman and SpaceX CEO Elon Musk. Among other things, Amodei called for companies to agree to “common safety standards as well as limits on the rate of unchecked AI progress.”\n\nBut to establish a speed limit on AI development, you need to agree on how you measure speed. Pachocki’s post — described by Altman as “the most important thing OpenAI has published in a while” — suggests perplexity (not to be confused with the company of the same name ) could be that measurement.\n\nIn Pachochki’s argument, benchmarks that focus on AI’s “downstream capabilities” have quickly become outdated as the technology advances. But perplexity — which “measures how well a model predicts the next token on average; lower perplexity means better predictions” — has remained “informative.”\n\nPachochki’s post includes a chart of how the perplexity of OpenAI’s models has fallen since GPT 3.5.\n\n“GPT‑4, at ~0.91, was proficient at utilizing chain-of-thought reasoning productively, which motivated the subsequent targeted elicitation of this capability and the creation of modern reasoning models,” he wrote. “Now, as we have reached losses below 0.8, we have seen the emergence of transformative capabilities in fields like cybersecurity and mathematics.”\n\nSo in his view, perplexity could provide the basis for “a shared benchmark for general intelligence,” which AI companies could then use to establish “common limits.” With perplexity serving as a standard measurement for AI progress, the companies would commit not to go past a certain threshold “until our ability to understand and monitor AI behavior achieves a certain concrete milestone.”\n\nTopics AI , OpenAI , sam altman When you purchase through links in our articles, we may earn a small commission . This doesn’t affect our editorial independence.\n\nAnthony Ha is TechCrunch’s weekend editor. Previously, he worke",
+    "category": "Business & Big Tech",
+    "lab": "OpenAI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "OpenAI Chief Scientist Jakub Pachocki has proposed using model perplexity as a standardized metric to regulate the pace of AI development. In a post endorsed by CEO Sam Altman as a critical publication, Pachocki argues that while downstream capability benchmarks quickly become obsolete, perplexity—the average measure of a model's ability to predict the next token—remains a consistent and informative indicator of progress.\n\nPachocki’s analysis highlights a correlation between declining perplexity scores and the emergence of advanced reasoning capabilities. Specifically, he notes that GPT-4 achieved a perplexity of approximately 0.91, which enabled effective chain-of-thought reasoning, while models reaching losses below 0.8 have demonstrated transformative capabilities in domains such as mathematics and cybersecurity. The proposal suggests that AI companies could adopt these perplexity thresholds as a shared benchmark to establish voluntary speed limits, pausing development until safety and monitoring milestones are met.",
+      "takeaways": [
+        "**Core Metric:** Perplexity is defined as the average ability of a model to predict the next token, where lower values indicate higher predictive accuracy.",
+        "**Historical Benchmarks:** OpenAI’s GPT-4 model recorded a perplexity score of approximately 0.91.",
+        "**Capability Threshold:** Models achieving perplexity scores below 0.8 have shown the emergence of transformative capabilities in cybersecurity and mathematics.",
+        "**Regulatory Proposal:** The framework suggests using specific perplexity levels as a 'shared benchmark' to trigger mandatory pauses in development until monitoring capabilities reach defined milestones."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "b0c1b6250591975f",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/22/select-styling/",
+    "title": "Select Styling Specimens",
+    "publishedAt": "2026-11-22T19:45:06.000Z",
+    "fetchedAt": "2026-11-23T00:57:43.004Z",
+    "contentHash": "f185069c88296798",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "22nd November 2026 Tool Select Styling Specimens I got frustrated at how HTML <select> boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome:\n\nSo I had Claude Fable 5.2 build me this page showing all of the ways they can be styled:\n\nBuild an HTML page that shows all of the ways a select box can be styled, I plan to take screenshots in every desktop and mobile browser\n\nAfter some experimentation I've decided my favorite CSS for select boxes is this:\n\nHere's what that looks like in the three browsers:\n\nRecent articles Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 Hide your slop PR descriptions behind <details><summary> - 9th November 2026 Qwen 3.8 27B on my laptop can interpret model weights, too - 3rd November 2026 This is a beat by Simon Willison, posted on 22nd November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "imageUrl": "https://static.simonwillison.net/static/2026/select-firefox-safari-chrome.webp",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Simon Willison published a technical reference page on November 22, 2026, documenting CSS styling techniques for HTML select elements to address cross-browser inconsistency and default aesthetic issues in Chrome. The project was generated using Claude Fable 5.2 to create a comprehensive visual catalog of styling variations for cross-platform testing across desktop and mobile browsers.\n\nThe article provides a specific CSS implementation identified by the author as the optimal configuration for standardizing select box appearance. This documentation serves as a practical resource for developers seeking to mitigate browser-specific rendering discrepancies in UI components.",
+      "takeaways": [
+        "**Tooling:** Claude Fable 5.2 was utilized to generate the HTML/CSS reference page.",
+        "**Objective:** The project aims to standardize the appearance of HTML select boxes across different desktop and mobile browser engines.",
+        "**Publication Date:** The article was published on November 22, 2026, by Simon Willison.",
+        "**Context:** The author maintains a $10/month sponsorship model for a curated monthly digest of LLM developments."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "9804f4f24cde802b",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/22/nvidia-alpamayo-2-edge-2b-reasoning-vla-drive-thor/",
     "title": "NVIDIA Releases Alpamayo 2 Edge: A 2B Reasoning VLA for DRIVE Thor",
@@ -99,7 +185,7 @@
     "contentSnippet": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the vibe-hacking of everything, follow David Pierce. The Stepback arrives in our subscribers’ inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started Like so many things with AI, it’s not that large language models opened up some wholly new capability. For as long as there have been gadgets, a few users have been hacking, modding, jailbreaking, and tweaking them to their liking. What is new is that it’s easy now. People all over the world are discovering that they can use large language models to hack their hardware simply by prompting Claude Code or Codex to do it. It has led to a boom in developer-friendly gadgets and created a market for better software on just about every device you can think of. For one developer in India who goes by Gathin T, the whole thing started almost on a whim. “One afternoon, I was fiddling with my TV, and it was just really shitty,” he tells me. His was a set made by Xiaomi and running Android TV, with so many ads and so much interface chaos it was hard to even change inputs. And he got to thinking: If you can install another launcher on your Android phone, maybe you can do the same to your TV. “The first thing that came to mind was to remove the bloatware from the TV,” he says. “Then I thought, why not make it look better?” Gathin prompted Claude Code and discovered that with a couple of permissions tweaks and a toggle of USB debugging mode, his chatbot could control his TV as long as they were on the same Wi-Fi network. An hour and a half later, Gathin had redesigned his TV to his liking — no more onscreen ads, a simpler interface, easier access to his PlayStation on another input. He posted on X about what he’d done and promptly went viral. So Gathin put together his work, bought a domain, and launched CleanYourTV as a tool for helping other people solve their own television interfaces. It became one of the most popular repositories on GitHub, got thousands of pull requests and feature ideas, and inspired countless people to point their own chatbot at their big screen. Gathin is careful to note that the only TVs that work this easily are based on Android. (He has Claude Code-d his way through other operating systems, but those involve more explicit jailbreaking and rooting, so he’s more reluctant to ",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/AI_vibe_coding_hacker_hardware.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "The rise of 'vibe-coding'—using LLMs like Claude Code and Codex to reverse-engineer, modify, and jailbreak consumer hardware—is transforming the landscape of device customization. Developers and non-technical users are increasingly leveraging AI to bypass bloatware, unlock hidden APIs, and repackage firmware for devices ranging from Android-based TVs and cameras to synthesizers and gaming consoles. A notable example is the 'CleanYourTV' project, which allows users to strip ads and simplify interfaces on Xiaomi Android TVs by automating USB debugging and permission tweaks via LLM-generated scripts.\n\nThis trend has triggered a defensive response from manufacturers, particularly in the gaming sector, where companies are moving toward more invasive DRM and cloud-streaming architectures to prevent decompilation. Industry experts like former Take-Two AI head Luke Dicken suggest this will lead to a broader industry shift toward platform-level lockdowns. Conversely, some manufacturers are embracing the trend; for instance, M-Vave released open-source firmware for its FM-1 synthesizer to accommodate the hacker community. Meanwhile, the hardware ecosystem is shifting toward modular, developer-friendly platforms like ESP32 modules (e.g., M5Stack PaperMono), which are increasingly being used to build bespoke, single-purpose consumer devices, a movement Meta is currently supporting through its Muse Gadgets program.",
@@ -587,7 +673,7 @@
     "author": "Asif Razzaq",
     "contentSnippet": "Thinking Machines Lab has released Inkling 2 Mini , an open-weight looped transformer with 26.4B total parameters. The model reuses its middle layers 3 times per token instead of adding more weights. That keeps the checkpoint near 20GB, small enough for a 32GB Mac or 1 NVIDIA DGX Spark. For developers, Inkling 2 Mini is a local option for agentic coding, tool use and document work. It ships under Apache 2.0 on Hugging Face , with hosted inference and fine-tuning on Tinker . You can check the deployment options and specs here through our GPULeaderboard.com chrome extension . TL;DR Size: 26.4B total, 3.4B active (5.4B effective per token with looping), up to 1M-token context. Runs on: Apple silicon with 32GB+ memory, 1 NVIDIA DGX Spark, or GPUs with 32GB+ VRAM. GGUF builds via Unsloth and llama.cpp. Performance: 20.1 on the Artificial Analysis Index, tied with Qwen3.8-27B (self-reported). Best: 79.2% on SWE-bench Verified (bash only). Worst: 15.2% on HLE-Diamond and 50.0% on MultiChallenge. Bottom line: Best: strong agentic coding from a 20GB checkpoint. Worst: weaker knowledge recall and multi-turn instruction following. What is Inkling 2 Mini? Inkling 2 Mini is a sparse Mixture-of-Experts model from Thinking Machines that loops its middle layers. It accepts text and images and returns text only. It follows Inkling 2 Small, a 594B-parameter model released on November 5. How does the looped transformer work? The model stores 24 layers, grouped into 4 blocks of 6. The first and last blocks run once. The 2 middle blocks run 3 times with shared weights. That gives 48 layer applications per token from 24 layers of weights. Each pass after the first receives a “message” from the previous pass. Thinking Machines carries it with Attention Residuals and a learned gate. Feed-forward layers use 128 experts, with 8 routed per token. Looping the middle layers gave a 1.51x to 1.91x compute-equivalent gain. Looping the last layers gave only 1.24x to 1.36x. The middle-loop variant won 27 of 28 evaluations. Looping costs training compute but saves inference. An unlooped baseline used 7.5% less training compute. It needed 140% more inference compute to match the looped model’s loss on 512k-token agentic traces. How was Inkling 2 Mini trained? Training began with 384 experts per layer, with 8 active per token. At midtraining, the team pruned two-thirds of them and kept the 128 ",
     "category": "Robotics & Hardware",
-    "lab": "Google DeepMind",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Thinking Machines Lab has released Inkling 2 Mini, a 26.4B parameter sparse Mixture-of-Experts (MoE) model that utilizes a looped transformer architecture to achieve high performance with a 20GB checkpoint. By reusing its middle layers three times per token, the model effectively simulates 48 layer applications from only 24 physical layers. This design allows the model to run on consumer hardware, specifically Apple silicon with 32GB of RAM or a single NVIDIA DGX Spark, while supporting a context window of up to 1 million tokens. The model is released under an Apache 2.0 license on Hugging Face, with fine-tuning and inference support available via the Tinker platform.\n\nTechnically, the model architecture consists of 24 layers grouped into four blocks of six, where the middle two blocks are looped. Each pass incorporates Attention Residuals and a learned gate to pass information between iterations. The feed-forward layers utilize 128 experts, with 8 routed per token. During training, the model began with 384 experts per layer before pruning to 128, followed by a 1T-token distillation from a larger internal model. Benchmarks show a score of 20.1 on the Artificial Analysis Index, tying it with Qwen3.8-27B, and a 79.2% success rate on SWE-bench Verified (bash only). However, the model exhibits limitations in knowledge recall and multi-turn instruction following, scoring 15.2% on HLE-Diamond and 50.0% on MultiChallenge.",
@@ -10832,84 +10918,6 @@
       "takeaways": [],
       "impact": "High",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "fb1815a123d54c94",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21643",
-    "title": "Sleep2Word: Peripheral-to-EEG Translation via Duration-Aware Wordization",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "481356aa99972db6",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Keondo Park, Arthur Delhaye, Younghoon Na, Hyun-Woo Shin, Hyung-Sin Kim",
-    "contentSnippet": "arXiv:2611.21643v1 Announce Type: new Abstract: Estimating full-night electroencephalography (EEG) spectrograms from peripheral measurements could extend EEG-informed sleep analysis to recordings acquired without EEG. This task requires compact representations of signals with different temporal structures. We introduce Sleep2Word, a framework for translating respiration, electrocardiography (ECG), or photoplethysmography (PPG) into EEG spectrograms through duration-aware physiological words. Building on context-dependent chunking, Sleep2Word groups physiological embeddings into variable-duration chunks and jointly quantizes their content and duration into modality-specific wordbooks. A block-autoregressive translator then predicts target EEG word identities and occurrence-specific duration refinements within fixed-duration blocks. This design accommodates independent source and target wordbooks, limits temporal drift, and shortens the autoregressive decoding path. Trained on over 20K PSG cases across 9 datasets, Sleep2Word consistently outperforms existing spectrogram generation baselines in EEG spectrogram reconstruction, sleep staging, arousal detection, and survival prediction. Compressing full night sequences by up to 69.7%, the learned words yield a favorable accuracy-compute trade-off. Sleep event analysis further shows that the learned words capture physiologically plausible associations across modalities, suggesting their potential for interpretable cross-modal analysis.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21643",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21643.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21643v1 Announce Type: new Abstract: Estimating full-night electroencephalography (EEG) spectrograms from peripheral measurements could extend EEG-informed sleep analysis to recordings acquired without EEG. This task requires compact representations of signals with different temporal structures. We introduce Sleep2Word, a framework for translating respiration, electrocardiography (ECG), or photoplethysmography (PPG) into EEG spectrograms through duration-aware physiological words.\n\nBuilding on context-dependent chunking, Sleep2Word groups physiological embeddings into variable-duration chunks and jointly quantizes their content and duration into modality-specific wordbooks. A block-autoregressive translator then predicts target EEG word identities and occurrence-specific duration refinements within fixed-duration blocks. This design accommodates independent source and target wordbooks, limits temporal drift, and shortens the autoregressive decoding path.",
-      "takeaways": [
-        "Trained on over 20K PSG cases across 9 datasets, Sleep2Word consistently outperforms existing spectrogram generation baselines in EEG spectrogram reconstruction, sleep staging, arousal detection, and survival prediction.",
-        "Compressing full night sequences by up to 69.7%, the learned words yield a favorable accuracy-compute trade-off.",
-        "Sleep event analysis further shows that the learned words capture physiologically plausible associations across modalities, suggesting their potential for interpretable cross-modal analysis."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "6a73c142798d8712",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21644",
-    "title": "MInfoVisQA: A Multilingual Benchmark for Information-Rich Visual Question Answering",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "357e562a942bf7f5",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Changjiang Jiang, Jiang Zhou, Xinbin Yuan, Fan Zhang, Tao Feng, Zhuohan Xie",
-    "contentSnippet": "arXiv:2611.21644v1 Announce Type: new Abstract: Multimodal large language models (MLLMs) excel in vision-language tasks; yet, whether they maintain consistent understanding of information-rich visuals (InfoVis) when the surface language changes remains unclear. To quantify this capability, we introduce MInfoVisQA, a parallel benchmark with 8,960 QA configurations derived from 128 seed instances across 24 languages. We construct seed-matched, language-parallel visuals and QA pairs by disentangling numerical-structural data from text and programmatically synchronizing translated labels. We evaluate 25 MLLMs under two settings: Language-Aligned QA (LQA, matching visual-text languages) and Cross-Language QA (XQA, fixed QA language with varying visual languages). The results show that aggregate accuracy masks substantial robustness gaps: two models with comparable mean LQA accuracy (80.4\\%) exhibit performance spreads of 7.8 and 20.3 percentage points across languages. Moreover, all 25 models score lower with non-English visuals under fixed English QA, underscoring the need for cross-language sensitivity metrics.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21644",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21644.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21644v1 Announce Type: new Abstract: Multimodal large language models (MLLMs) excel in vision-language tasks; yet, whether they maintain consistent understanding of information-rich visuals (InfoVis) when the surface language changes remains unclear. To quantify this capability, we introduce MInfoVisQA, a parallel benchmark with 8,960 QA configurations derived from 128 seed instances across 24 languages. We construct seed-matched, language-parallel visuals and QA pairs by disentangling numerical-structural data from text and programmatically synchronizing translated labels.\n\nWe evaluate 25 MLLMs under two settings: Language-Aligned QA (LQA, matching visual-text languages) and Cross-Language QA (XQA, fixed QA language with varying visual languages). The results show that aggregate accuracy masks substantial robustness gaps: two models with comparable mean LQA accuracy (80.4\\%) exhibit performance spreads of 7.8 and 20.3 percentage points across languages. Moreover, all 25 models score lower with non-English visuals under fixed English QA, underscoring the need for cross-language sensitivity metrics.",
-      "takeaways": [],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "9464adeca7cafea0",
-    "canonicalUrl": "https://arxiv.org/abs/2611.21646",
-    "title": "Limite 1B - Violetto: Technical Report",
-    "publishedAt": "2026-11-18T05:00:00.000Z",
-    "fetchedAt": "2026-11-18T10:40:18.395Z",
-    "contentHash": "3a042337c7ddd6e7",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Mario Prignano, Gabriele Cirillo, Alessio Morosini, Luca Cerovaz, Alessandro Bartolocci, Emanuele Rodol\\`a, Giulio Starace, Francesco Pappone",
-    "contentSnippet": "arXiv:2611.21646v1 Announce Type: new Abstract: We present Limite 1B - Violetto, a one-billion-parameter model designed for high-throughput mathematical reasoning. Limite is trained from scratch on 237 billion tokens from a carefully curated, mathematics-centric corpus and supports context lengths of up to 131k tokens. Its architecture and training recipe were developed together to maximize reasoning capability while keeping training and inference costs low. Post-training combines knowledge distillation, targeted supervised fine-tuning, and RLVR on a curated curriculum. Limite achieves 94.01% on AIME 2026 and 74.25% on BeyondAIME, placing it among models many times its size on our evaluation suite. The model is deliberately only lightly instruction-tuned: it is intended primarily as a single-turn mathematical solver and as a fast, parallel component of larger systems, rather than as a general-purpose assistant. We release the model, its base and value checkpoints, and an optimized serving implementation under the Apache 2.0 license.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.21646",
-    "pdfUrl": "https://arxiv.org/pdf/2611.21646.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.21646v1 Announce Type: new Abstract: We present Limite 1B - Violetto, a one-billion-parameter model designed for high-throughput mathematical reasoning. Limite is trained from scratch on 237 billion tokens from a carefully curated, mathematics-centric corpus and supports context lengths of up to 131k tokens. Its architecture and training recipe were developed together to maximize reasoning capability while keeping training and inference costs low.\n\nPost-training combines knowledge distillation, targeted supervised fine-tuning, and RLVR on a curated curriculum. Limite achieves 94.01% on AIME 2026 and 74.25% on BeyondAIME, placing it among models many times its size on our evaluation suite. The model is deliberately only lightly instruction-tuned: it is intended primarily as a single-turn mathematical solver and as a fast, parallel component of larger systems, rather than as a general-purpose assistant.",
-      "takeaways": [
-        "We release the model, its base and value checkpoints, and an optimized serving implementation under the Apache 2.0 license."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   }
