@@ -145,6 +145,27 @@ export default function BenchmarksPage() {
   const topSpeedModel = speedSorted[0];
   const topCostModel = costSorted.find((m) => (m.evaluations.blendedPricePer1M || 0) > 0) || costSorted[0];
 
+  // Dynamic chart scales so high-speed / wide-range models are never clipped
+  const chartScales = useMemo(() => {
+    const maxIqRaw = Math.max(65, ...models.map((m) => m.evaluations.intelligenceIndex || 0));
+    const minIqRaw = Math.min(...models.map((m) => m.evaluations.intelligenceIndex || 0), 28);
+    const maxSpeedRaw = Math.max(190, ...models.map((m) => m.evaluations.speedTokensPerSecond || 0));
+    const minSpeedRaw = Math.min(...models.map((m) => m.evaluations.speedTokensPerSecond || 0), 20);
+    const maxCostRaw = Math.max(14, ...models.map((m) => m.evaluations.blendedPricePer1M || 0));
+
+    const maxSpeed = Math.ceil(maxSpeedRaw / 50) * 50;
+    const maxIq = Math.ceil(maxIqRaw / 5) * 5;
+    const maxCost = Math.ceil(maxCostRaw / 2) * 2;
+
+    return {
+      maxIq,
+      minIq: Math.max(0, Math.floor(minIqRaw / 5) * 5),
+      maxSpeed,
+      minSpeed: Math.max(0, Math.floor(minSpeedRaw / 10) * 10),
+      maxCost,
+    };
+  }, [models]);
+
   // Sorted list for detailed table
   const tableSortedModels = useMemo(() => {
     const list = [...filteredModels];
@@ -174,7 +195,7 @@ export default function BenchmarksPage() {
     const labs = [
       { id: 'google', name: 'Google DeepMind', labFilter: 'Google DeepMind', desc: 'Gemini 4 Multimodal Frontier & Orbital TPU Acceleration' },
       { id: 'anthropic', name: 'Anthropic', labFilter: 'Anthropic', desc: 'Claude Fable 5.2 & Constitutional AI Agent Swarms' },
-      { id: 'openai', name: 'OpenAI', labFilter: 'OpenAI', desc: 'GPT-6 Astro & High-Throughput Reasoning Matrix' },
+      { id: 'openai', name: 'OpenAI', labFilter: 'OpenAI', desc: 'GPT-6.2 Astra & High-Throughput Reasoning Matrix' },
       { id: 'deepseek', name: 'DeepSeek', labFilter: 'DeepSeek', desc: 'DeepSeek R1 / V4 Reasoning & Ultra-Efficient Open MoE Architecture' },
       { id: 'xai', name: 'SpaceX & xAI', labFilter: 'SpaceX & xAI', desc: 'Grok 4.7 & Colossus Memphis Supercluster Compute' },
       { id: 'mistral', name: 'Mistral AI', labFilter: 'Mistral AI', desc: 'Mistral Large 4 MoE & Sovereign Open Architecture' },
@@ -393,7 +414,7 @@ export default function BenchmarksPage() {
                   <div className="space-y-3.5">
                     {speedSorted.slice(0, 10).map((m) => {
                       const brand = getCompanyBrand(m.creator.lab || m.creator.name);
-                      const percentage = Math.min(100, Math.round((m.evaluations.speedTokensPerSecond / 190) * 100));
+                      const percentage = Math.min(100, Math.round((m.evaluations.speedTokensPerSecond / chartScales.maxSpeed) * 100));
 
                       return (
                         <div key={m.id} className="group">
@@ -424,7 +445,7 @@ export default function BenchmarksPage() {
                 </div>
 
                 <div className="pt-4 mt-6 border-t border-black/10 flex justify-between font-mono text-[8px] uppercase text-black/40">
-                  <span>SCALE: 0 - 200 TOK/S</span>
+                  <span>SCALE: 0 - {chartScales.maxSpeed} TOK/S</span>
                   <span>N = 10 TOP SPEED</span>
                 </div>
               </div>
@@ -531,10 +552,12 @@ export default function BenchmarksPage() {
               {/* Plotted Models */}
               {models.map((m) => {
                 const brand = getCompanyBrand(m.creator.lab || m.creator.name);
-                // X Axis: Speed (20 to 185) -> 5% to 92%
-                const xPct = Math.max(8, Math.min(92, ((m.evaluations.speedTokensPerSecond - 20) / (185 - 20)) * 84 + 8));
-                // Y Axis: Intelligence (28 to 62) -> Inverted (higher = top) -> 10% to 90%
-                const yPct = Math.max(10, Math.min(90, 100 - (((m.evaluations.intelligenceIndex - 28) / (62 - 28)) * 80 + 10)));
+                const speedSpan = Math.max(1, chartScales.maxSpeed - chartScales.minSpeed);
+                const iqSpan = Math.max(1, chartScales.maxIq - chartScales.minIq);
+                // X Axis: Speed (dynamic min..max) -> 8% to 92%
+                const xPct = Math.max(8, Math.min(92, ((m.evaluations.speedTokensPerSecond - chartScales.minSpeed) / speedSpan) * 84 + 8));
+                // Y Axis: Intelligence (dynamic min..max) -> Inverted (higher = top) -> 10% to 90%
+                const yPct = Math.max(10, Math.min(90, 100 - (((m.evaluations.intelligenceIndex - chartScales.minIq) / iqSpan) * 80 + 10)));
                 const isSelected = selectedModelId === m.id;
 
                 return (

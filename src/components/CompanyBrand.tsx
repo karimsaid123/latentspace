@@ -144,6 +144,26 @@ export const COMPANY_BRANDS: Record<string, CompanyBrandInfo> = {
     borderColor: '#F59E0B',
     textColor: '#B45309',
   },
+  alibaba: {
+    id: 'alibaba',
+    name: 'Alibaba Cloud (Qwen)',
+    shortName: 'QWEN',
+    primaryColor: '#FF6A00',
+    accentColor: '#EA580C',
+    bgTint: 'rgba(255, 106, 0, 0.08)',
+    borderColor: '#FF6A00',
+    textColor: '#EA580C',
+  },
+  tencent: {
+    id: 'tencent',
+    name: 'Tencent',
+    shortName: 'TENCENT',
+    primaryColor: '#0052D9',
+    accentColor: '#1D4ED8',
+    bgTint: 'rgba(0, 82, 217, 0.08)',
+    borderColor: '#0052D9',
+    textColor: '#0052D9',
+  },
 };
 
 const DEFAULT_BRAND: CompanyBrandInfo = {
@@ -194,8 +214,14 @@ export function getCompanyBrand(rawKey?: string | null): CompanyBrandInfo {
   if (key.includes('muse')) {
     return COMPANY_BRANDS.muse;
   }
-  if (key.includes('mimo')) {
+  if (key.includes('mimo') || key.includes('xiaomi')) {
     return COMPANY_BRANDS.mimo;
+  }
+  if (key.includes('alibaba') || key.includes('qwen')) {
+    return COMPANY_BRANDS.alibaba;
+  }
+  if (key.includes('tencent') || key.includes('hunyuan') || key.includes('hy4')) {
+    return COMPANY_BRANDS.tencent;
   }
   if (key.includes('huggingface') || key.includes('hf')) {
     return COMPANY_BRANDS.huggingface;
@@ -311,6 +337,23 @@ export function CompanyLogo({
       return (
         <svg viewBox="0 0 24 24" fill={color} className={className}>
           <path d="M8.9 7.7c-2.4.6-4.2 2.5-4.5 4.9-.3 2.8 1.4 5.3 4.1 6.1 2.3.7 4.7.1 6.4-1.5l1.9 1.9c-2.4 2.2-5.7 3.1-8.9 2.2-4-1.2-6.6-4.9-6.1-9.1.5-3.8 3.3-6.8 7.1-7.7 2.4-.6 5-.2 7.1 1l-1.9 2.1c-1.5-.7-3.4-.9-5.2-.4zm4.2 3.1c-1.2.3-2.1 1.3-2.3 2.5-.2 1.4.7 2.7 2.1 3.1 1.2.3 2.4 0 3.3-.8l1.7 1.7c-1.3 1.2-3.1 1.7-4.8 1.3-2.2-.6-3.7-2.7-3.4-5 .3-2.1 2-3.7 4.1-4.1 1.3-.3 2.7-.1 3.8.5l-1.6 1.7c-.8-.5-1.9-.6-2.9-.3zm2.5-1.8l2.2-2.3c2.5 1.5 4.2 4.1 4.5 7.1.3 3.4-1.3 6.6-4.2 8.3l-1.8-1.8c2.1-1.3 3.4-3.6 3.1-6.1-.2-2.2-1.6-4.2-3.8-5.2z" />
+        </svg>
+      );
+
+    case 'alibaba':
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <circle cx="11.5" cy="11.5" r="7.5" />
+          <path d="M16.5 16.5L21 21" />
+          <circle cx="11.5" cy="11.5" r="2.5" fill={color} />
+        </svg>
+      );
+
+    case 'tencent':
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="square" strokeLinejoin="miter" className={className}>
+          <path d="M4 6h16M12 6v13" />
+          <circle cx="12" cy="19" r="1.5" fill={color} />
         </svg>
       );
 
