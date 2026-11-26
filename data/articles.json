@@ -1,5 +1,119 @@
 [
   {
+    "id": "b81da0547893b262",
+    "canonicalUrl": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
+    "title": "Grand Theft Auto VI proves why efficiency isn’t a virtue",
+    "publishedAt": "2026-11-26T16:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:04.182Z",
+    "contentHash": "b219a125574a85da",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Amanda Silberling",
+    "contentSnippet": "It should have been impossible for “Grand Theft Auto VI” (GTA VI) to live up to the hype. Fans waited 13 years for the newest installment in the crime-adventure franchise, and Rockstar Games exceeded even those inconceivable expectations when the game finally came out last week.\n\nGTA VI launched as the highest-rated game of all time on Metacritic and made $3.79 billion on release day to mark what could be the biggest entertainment event ever – more massive than “Avengers: Endgame” ( $2.9 billion ) or Taylor Swift’s Eras tour ( $2 billion ).\n\nThe 13-year wait certainly fueled the frenzy, and sales, around GTA VI, but some fans craved GTA VI because of what it represents in the emerging era of AI.\n\nEven the biggest workaholics among us – startup founders – scheduled time off to play the game, including Spiry co-founder Dima Beseda , who told TechCrunch, “I reshuffled my workload to free up time around the weekends and even booked vitamin IV drips to keep my energy up.”\n\nYet some players felt a sense of anticipatory nostalgia as they wiped away a layer of dust on their Xbox to play the game they’d been looking forward to since they were kids.\n\n“We do have a view that GTA is likely to be the last game of its kind to be made this way,” Ben Feder , managing partner at TIRTA Ventures and former CEO of Rockstar parent company Take-Two Interactive, told TechCrunch.\n\nThat’s because GTA VI was created entirely without generative AI .\n\n“We’re kind of at this technological moment where this way of developing has sort of reached its natural frontier,” Feder said. “I don’t think you can say that games like this will always be around.”\n\nAs millions of people immersed themselves in Vice City, the tech industry witnessed another long-awaited moment: Anthropic became the first major AI lab to go public. At Nasdaq HQ, Anthropic executives gathered to celebrate the Claude maker’s $81.3 billion IPO. At virtually the same moment that Anthropic broke the record for the largest IPO ever, GTA VI was also breaking records with the highest-rated and best-selling game launch of all time.\n\nBut when the Anthropic team rang the bell on Thursday, the sound also signaled the end of an era in video game development, and perhaps even in the arts at large.\n\nThe AI industry operates with efficiency as its north star. The promise of this technology is that we will be able to automate so much work",
+    "category": "Business & Big Tech",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Rockstar Games launched \"Grand Theft Auto VI\" (GTA VI) following a 13-year development cycle, setting a new entertainment record with $3.79 billion in sales on release day and claiming the highest-rated game of all time on Metacritic. The title was developed entirely without generative AI, utilizing a workforce of approximately 5,000 people who labored over the open-world game for more than a decade. The game's release coincided with Anthropic's public debut on Nasdaq via an $81.3 billion IPO, highlighting a stark industry contrast between the AI sector's pursuit of automated efficiency and the deliberate, human-driven inefficiencies required for massive creative masterworks.\n\nBuilt without procedural AI generation for its core landscapes, GTA VI features 30,000 nonplayable characters with distinct appearances and personalities, and requires a 212 GB download. Industry figures cited in the report include TIRTA Ventures managing partner and former Take-Two Interactive CEO Ben Feder, who noted that GTA VI represents the final game of its kind to be made through traditional, slow development processes. Meanwhile, Take-Two Interactive CEO Strauss Zelnick dismissed the notion that single-button AI prompt tools could bypass human labor to generate entertainment hits, contrasting with tech executives like Mark Zuckerberg and Elon Musk who envision AI-generated personalized content and video games.",
+      "takeaways": [
+        "**Record Release Figures:** GTA VI generated $3.79 billion on its release day, surpassing entertainment milestones such as \"Avengers: Endgame\" ($2.9 billion) and Taylor Swift’s Eras Tour ($2 billion).",
+        "**Development Scale:** The game was built by roughly 5,000 people over a period of more than 13 years and totals 212 GB in download size.",
+        "**World Building Metrics:** Rockstar painstakingly crafted the open world without generative AI, developing 30,000 unique nonplayable characters with individual appearances and personalities.",
+        "**Anthropic IPO Parallels:** Anthropic went public on Nasdaq with an $81.3 billion valuation during the same week GTA VI launched, marking a cultural junction between hyper-efficient AI deployment and traditional artistic labor."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "fcbb41954277a0a1",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+    "title": "Quoting Jack Despain Zhou",
+    "publishedAt": "2026-11-26T15:09:31.000Z",
+    "fetchedAt": "2026-11-26T20:02:05.675Z",
+    "contentHash": "38b4c9a361b42d8c",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "26th November 2026 Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude. I sit in a conference presentation, and I hear Claude. I open my email inbox, and I find pitches and articles from ostensibly serious people with ostensibly serious credentials attached to ostensibly serious institutions who want to publish things attached to their reputations and mine, and I see Claude .\n\n— Jack Despain Zhou , Spitting in the Face of Glaude\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a quotation collected by Simon Willison, posted on 26th November 2026 .",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "On November 26, 2026, Simon Willison published a quotation from Jack Despain Zhou's writing titled \"Spitting in the Face of Glaude,\" highlighting the widespread cultural and textual homogenization caused by generative artificial intelligence. Zhou observes a pervasive de-individualization across digital media, noting that the distinct stylistic voice and output of Anthropic's Claude model now dominates YouTube videos, conference presentations, and professional email pitches from ostensibly credentialed individuals.\n\nThe excerpt captures a growing fatigue with unedited LLM-generated content infiltrating professional and creative communication channels. This quotation was highlighted alongside other technical and commentary links from late November 2026, including an analysis of three LLM inflection points, the first alpha release of Ladybird, running a server-side Datasette Python app in the browser using service workers and Pyodide, and using Claude to locate the source of a mysterious physical beep.",
+      "takeaways": [
+        "**Source Attribution:** The quotation was collected and posted by Simon Willison on November 26, 2026, originating from Jack Despain Zhou's piece titled \"Spitting in the Face of Glaude.\"",
+        "**Stylistic Homogenization:** Jack Despain Zhou critiques the pervasive de-individualization of content, stating that Claude's distinct stylistic output has saturated YouTube videos, conference presentations, and professional email pitches.",
+        "**Related Technical Links:** Willison's post accompanied a list of recent articles from November 2026, including Ladybird's first alpha release and running Datasette in the browser via Pyodide and service workers."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "bfa1ad995803f938",
+    "canonicalUrl": "https://blogs.nvidia.com/blog/geforce-now-thursday-community-war-thunder-reward/",
+    "title": "Come for the Games, Stay for the Community With GeForce NOW",
+    "publishedAt": "2026-11-26T14:00:22.000Z",
+    "fetchedAt": "2026-11-26T20:02:06.366Z",
+    "contentHash": "17a8583beb20dd98",
+    "sourceId": "nvidia-blog",
+    "sourceName": "NVIDIA AI News",
+    "author": "GeForce NOW Community",
+    "contentSnippet": "Good games bring people together. This GFN Thursday, GeForce NOW is celebrating the members, creators and community moderators who turn every session into something worth sharing. From friendships formed in online lobbies to new worlds explored on everyday devices, GeForce NOW Ambassadors share their reasons to love cloud gaming. Those ready to find their own can get 30% off six-month Performance and Ultimate memberships in the Black Friday sale and a special seasonal offer through Amazon Fire TV Sticks. Plus, War Thunder gets a new look with NVIDIA DLSS 5 for Ultimate members and a Ready for Battle Pack reward is now available across all membership tiers. Rounding out the week, 12 new games join the GeForce NOW library . The Gamers Behind the Cloud Behind every screenshot, helpful tip and play session is a gamer with a story. GeForce NOW Ambassadors share what keeps them playing. For Discord moderator Luna, a low-spec laptop was the start of lasting connections: “Without GFN, I might’ve not been able to meet certain close friends … It has extended to me being given the privilege to be a moderator of an ever-growing community that links people together and continues to allow friends or partners to play with each other, regardless of what they own at home.” After years helping moderate the community’s Reddit and Discord spaces, Hamza went from an aging laptop to cloud gaming across a TV, phone, tablet and desktop: “ I’m genuinely thankful not just for the technology that keeps me gaming effortlessly wherever I am, but for the amazing community and friendships I’ve built along the way, and I look forward to what the future holds for cloud gaming.” GeForce NOW kept new releases within reach for moderator Flacz , without needing frequent hardware upgrades: “GeForce NOW allowed me to enjoy games and adventures I’ve never imagined to be possible and it continues to be a part of my daily gaming experience till this day.” The cloud brings the games. The community brings them to life. “Cyberpunk 2077” photo by Flacz. For creators such as Warwick , playing is only part of the picture: “GFN has allowed me to play the games I want, as soon as they come out. The support GFN has given me to create content for them and be partnered with them means the world and encourages me to get better each day.” Freedom to play and create resonates with Nads : “Being able to jump into ",
+    "imageUrl": "https://blogs.nvidia.com/wp-content/uploads/2026/11/GFN_Thursday-November_26.jpg",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "NVIDIA has announced a Black Friday promotion for its GeForce NOW cloud gaming service, offering a 30% discount on six-month Performance and Ultimate membership tiers. The promotion also includes specific seasonal offers for users accessing the service via Amazon Fire TV Sticks. These updates coincide with the addition of 12 new titles to the GeForce NOW library and a technical update for the game War Thunder.\n\nTechnically, War Thunder now supports NVIDIA DLSS 5 for Ultimate tier members, aimed at enhancing visual fidelity. Additionally, all membership tiers are eligible for a 'Ready for Battle Pack' in-game reward. The company is highlighting user testimonials from its 'GeForce NOW Ambassadors' program, emphasizing the service's utility for users on low-spec hardware, such as aging laptops, to access modern titles without requiring local hardware upgrades.",
+      "takeaways": [
+        "**Promotion Details:** 30% discount on six-month Performance and Ultimate memberships for Black Friday.",
+        "**Technical Update:** War Thunder now features NVIDIA DLSS 5 support for Ultimate tier subscribers.",
+        "**Library Expansion:** 12 new games have been added to the GeForce NOW catalog.",
+        "**In-Game Rewards:** A 'Ready for Battle Pack' is available to users across all membership tiers.",
+        "**Hardware Accessibility:** The service is being marketed as a solution for users on low-spec devices to play modern releases without local hardware upgrades."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "a734da9d3a1d8760",
+    "canonicalUrl": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+    "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+    "publishedAt": "2026-11-26T11:37:17.000Z",
+    "fetchedAt": "2026-11-26T20:02:06.367Z",
+    "contentHash": "c6c921165c0eeba1",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "The llama.cpp × AMD Benchmark dashboard is available on Hugging Face. It lets you track prompt processing and text generation performance across llama.cpp builds, models, and quantizations, so you can explore how local inference performs on AMD Ryzen and Radeon hardware.\n\nLocal inference performance changes as models, kernels, and builds evolve. We want those changes to be easy to inspect for any AMD developer: pick a hardware, a model and a build, compare quantizations, and follow performance over time. The benchmark workflow and underlying results are public, so you can also inspect how we benchmark inference performance.\n\nYou can choose Hardware , Model , and llama.cpp build in the Configuration sidebar. The current hardware choices are Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201).\n\nIn the Overview tab, compare quantizations for one hardware, model, and build. The two charts show PP512 (512 input tokens, no generation) and TG128 (128 generated tokens), both starting at context depth zero.\n\nIn the Build history tab, track PP512 and TG128 across all recorded builds for the selected hardware, model, and quantization.\n\nIn the Context scaling tab, see how token-generation throughput changes as the existing context grows, for the selected build, hardware, model, and quantization.\n\nWhat the numbers mean\n\nThe dashboard shows two separate tests, both measured in tokens per second:\n\nBoth tests start at context depth zero ( n_depth=0 ). PP512 measures processing 512 input tokens without generation; TG128 measures generating 128 tokens without a pre-existing context. The plotted value is the mean throughput ( avg_ts ). These are useful reference workloads, while the Context scaling tab lets you explore token generation throughput as the context grows.\n\nHow we run the benchmarks\n\nWe benchmark the prebuilt binaries distributed through llama-install.sh , the build and installation project behind llama.app . The public gfx1151 and gfx1201 workflows are scheduled weekly and run the standard benchmarks using the llama-bench tool with Flash Attention on and off, with 10 repetitions per configuration.\n\nThe model set evolves and currently includes Inkling 2 Mini, Qwen, Gemma, gpt-oss, and LFM models, covering both dense and mixture-of-experts architectures. Available GGUF formats include Q4_K_M , Q8_0 , other quantizations, and higher-precision formats such as BF",
+    "category": "Open Source & Research",
+    "lab": "Meta AI",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The llama.cpp × AMD Benchmark dashboard has been released on Hugging Face, enabling developers to track local AI inference performance across AMD Ryzen and Radeon hardware. The dashboard surfaces prompt processing and text generation metrics across various llama.cpp builds, models, and quantizations to monitor how local inference performance evolves over time.\n\nUsers can configure hardware selections currently featuring the Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201), alongside models including Inkling 2 Mini, Qwen, Gemma, gpt-oss, and LFM across dense and mixture-of-experts architectures. GGUF format options span Q4_K_M, Q8_0, other quantizations, and higher-precision BF16 and F16 formats. The interface includes an Overview tab for comparing quantizations using PP512 (512 input tokens, no generation) and TG128 (128 generated tokens) tests, a Build history tab to track metrics across recorded builds, and a Context scaling tab displaying token-generation throughput as context grows.\n\nBenchmarks are executed weekly using prebuilt binaries from llama-install.sh via the llama-bench tool, operating with and without Flash Attention across 10 repetitions per configuration. The dashboard reads data directly from the public ggml-org/install.sh-benches-data Storage Bucket on Hugging Face, utilizing JSONL format files for standard results and workload sweeps.",
+      "takeaways": [
+        "**Hardware Support:** Current hardware options in the configuration sidebar include the Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201).",
+        "**Core Metrics:** Performance is measured in tokens per second using PP512 (prompt processing of 512 input tokens) and TG128 (generation of 128 tokens) starting at context depth zero.",
+        "**Benchmark Methodology:** Workflows run weekly via GitHub Actions using the llama-bench tool, testing both with and without Flash Attention across 10 repetitions per configuration.",
+        "**Model & Quantization Set:** Evaluated models include Inkling 2 Mini, Qwen, Gemma, gpt-oss, and LFM, tested in GGUF formats such as Q4_K_M, Q8_0, BF16, and F16.",
+        "**Data Storage:** The explorer pulls raw data directly from the public ggml-org/install.sh-benches-data Storage Bucket on Hugging Face in standard and workload sweep JSONL formats."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "e51b021662e92d60",
     "canonicalUrl": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
     "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
@@ -40,7 +154,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "sqlite3_rsync: Database Remote-Copy Tool For SQLite . This additional SQLite tool has been around for a while now - it was added as \"experimental\" in SQLite 3.47.0 in October 2024 and enhanced in SQLite 3.50.0 in May 2025 . It was only today that I understood one of its most attractive characteristics.\n\nNormally, if you want to grab a snapshot copy of a SQLite database, you need to use either the backup API or VACUUM INTO . In both cases you need enough disk space to create a duplicate copy of your database, so if you're on a small instance and you already use more than half of the available disk you are plain out of luck.\n\nsqlite3_rsync can copy a snapshot of your database over an SSH connection to another machine, without first needing to create a full local copy!\n\nIt's also good for synchronizing an existing copy of a database without re-transmitting the entire thing over the network. It works in a similar way to regular rsync:\n\nThe core idea behind the protocol is that the replica sends cryptographic hashes for pages or groups of pages over to the origin side. The origin sends back page content that differs, or requests finer-grain hashes if a multi-page hash does not match. If the origin and replica start out being vastly different, the total network bandwidth can exceed the size of the entire database, due to the overhead of exchanging hashes, but the excess bandwidth is not great - a few percent at most.\n\nUpdate : Hah! Turns out I wrote about this application of sqlite_rsync back in October 2024 when the tool was first released.\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a link post by Simon Willison, posted on 26th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "sqlite3_rsync is a specialized utility for SQLite designed to facilitate remote database snapshots and synchronization without requiring the local disk space typically needed by the backup API or VACUUM INTO commands. Introduced as an experimental feature in SQLite 3.47.0 (October 2024) and subsequently enhanced in version 3.50.0 (May 2025), the tool enables direct copying of database snapshots over SSH connections to remote machines.\n\nThe tool operates on a protocol similar to the standard rsync utility, utilizing cryptographic hashes to identify and transmit only the data that differs between the origin and the replica. The replica sends hashes for pages or groups of pages to the origin; the origin then returns the specific page content that differs or requests finer-grained hashes if a mismatch is detected. While the overhead of exchanging these hashes can cause total network bandwidth to slightly exceed the size of the database—typically by a few percent—it eliminates the requirement for a full local duplicate, making it particularly effective for resource-constrained environments.",
@@ -57,6 +171,32 @@
     }
   },
   {
+    "id": "e7f1c23cf7eb3725",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/26/hn-50651685/",
+    "title": "The New York Times warns photographers not to update Photoshop over AI features",
+    "publishedAt": "2026-11-26T05:08:46.000Z",
+    "fetchedAt": "2026-11-26T20:02:05.675Z",
+    "contentHash": "5488b960b77ee3f3",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "26th November 2026 Comment My comment on The New York Times warns photographers not to update Photoshop over AI features — Hacker News\n\nI had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.\n\nHe did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted.\n\nThe photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... is my laptop, taken in my garden, after hunting around for the best spot that didn't have too much glare on the screen. You can see how dirty my screen is, too!\n\nPhotography for a newspaper is photo journalism, and they take it seriously.\n\n(Thankfully I did not have a visible stain on my shirt.)\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a beat by Simon Willison, posted on 26th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "My comment on The New York Times warns photographers not to update Photoshop over AI features — Hacker News. I had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.\n\nHe did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted. The photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... Is my laptop, taken in my garden, after hunting around for the best spot that didn't have too much glare on the screen.",
+      "takeaways": [
+        "You can see how dirty my screen is, too!",
+        "Photography for a newspaper is photo journalism, and they take it seriously.",
+        "(Thankfully I did not have a visible stain on my shirt.) Tags: photography , new-york-times , hacker-news , journalism."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "3d2697b636d74b83",
     "canonicalUrl": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
     "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
@@ -68,7 +208,7 @@
     "author": "Hugging Face Blog",
     "contentSnippet": "We recently released NVIDIA Nemotron 3.5 Parse , a compact document model that turns page images into structured data for retrieval-augmented generation (RAG) and agents.\n\nNow we’re building on that release with synthetic training datasets, a fine-tuning recipe, and a DFlash2 speculator for faster inference . We’re also sharing how we trained Parse 3.5: first teaching document understanding through supervised fine-tuning, then using reinforcement learning to improve accuracy, consistency, and reliable completion.\n\nWhat Parse 3.5 produces\n\nParse extracts content from pages of documents into reading order, assigns content classes such as headings, paragraphs, tables, and charts, and returns bounding boxes that locate the content. Tables and charts become structured records that can power downstream document processing applications.\n\nFigure 1. Actual model output from a synthetic operations brief, showing the connection between the page and its structured representation.\n\nThis latest version of Parse significantly extends its ability to read charts and tables, especially in more difficult and ambiguous cases. For example, bar charts or other plots that do not have any marked numeric values. The model is able to infer values by looking at the axes and height of the bar to derive these. Tables can be especially tricky because the structure is so meaningful, a shifted row or column can totally change the interpretation and meaning. These advancements have been largely powered by synthetic data generation, rendering variations of charts and tables with known ground truth and then training our model to reverse this process.\n\nWe are open-sourcing three datasets used in the Parse 3.5 training :\n\nSynthetic Charts V1 — 9.98M examples : rendered charts and structured annotations for learning categories, series, and numerical values.\n\nSynthetic Tables V1 — 1M examples : rendered HTML tables with targets that preserve rows, columns, headers, and cell relationships.\n\nOCR Synthetic Multilingual v2 — 7.9M examples : synthetic document pages with Parse-format targets across varied fonts and layouts, for multilingual OCR and structured page reading.\n\nEach release includes images, annotations, generation documentation, and the training format. Use these pairs to fine-tune document models or create new variations for a target document type or language.\n\nFigure 2. Parse recovers 1",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "NVIDIA has released expansions for its compact document understanding model, NVIDIA Nemotron 3.5 Parse, introducing open synthetic training datasets, a fine-tuning recipe, and a DFlash2 inference speculator. Parse 3.5 extracts content, reading order, bounding boxes, and structured records for tables and charts—including inferring unlabelled data points from chart geometry—powered by synthetic data generation and a dual-phase training methodology combining supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR).\n\nThe training pipeline begins with SFT across text, layout, tables, charts, and multilingual documents, followed by reinforcement learning using Group Relative Policy Optimization (GRPO) with verifiable rewards to improve extraction accuracy, consistency, and completion. In matched development evaluations, RLVR reduced loop-flagged outputs by approximately 77% (from 126 to 29 pages), reduced outputs hitting the 9,000-token limit from 185 to 35, and improved the overall score from 66.24 to 71.38. Technical optimizations include NaViT image input preprocessing, a visual adapter replacing encoder-decoder cross-attention, grouped-query attention with 8 key/value heads (GQA-8), a multi-token prediction (MTP) head, and the DFlash2 speculator.\n\nRunning on a single H200 in BF16, DFlash2 utilizes a draft model proposing up to 32 tokens ahead, averaging about 14 accepted draft tokens per verification step. This increases native single-pass throughput to 20.44 pages/s at concurrency 512 (compared to 13.48 pages/s without speculation and 2.98 pages/s for Parse 2.0). NVIDIA also open-sourced three training datasets: Synthetic Charts V1 (9.98M examples), Synthetic Tables V1 (1M examples), and OCR Synthetic Multilingual v2 (7.9M examples), alongside fine-tuning recipes incorporating NeMo Automodel SFT, NeMo RL GRPO, and vLLM.",
@@ -252,16 +392,18 @@
     "arxivId": "arXiv:2611.33263",
     "pdfUrl": "https://arxiv.org/pdf/2611.33263.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33263v1 Announce Type: new Abstract: The growing use of large language models (LLMs) for mental health support raises important safety concerns. Existing guard models primarily identify categories of harmful content, often overlooking the context needed to determine an appropriate response. We introduce a clinically grounded taxonomy that characterizes harm along three dimensions: what the harm is, who is involved, and when it occurs.\n\nIt further separates harm characterization from intervention decisions, thus enabling safety policies to be specified outside the model weights through explicit, clinician-curated instructions that can be updated and audited. We validate the taxonomy with expert clinicians and validate a panel of LLM judges to scale annotation. Relabeling public benchmarks in this taxonomy shows that they rarely contain harm directed at the user, which accounts for nearly half of the harm in real conversations.",
+      "tldr": "Researchers have introduced a clinically grounded taxonomy for mental health safety in LLMs, categorizing harm by 'what' (nature of harm), 'who' (involved parties), and 'when' (temporal context). This framework decouples harm characterization from intervention logic, allowing safety policies to be managed via clinician-curated instructions that are external to model weights, facilitating easier auditing and updates. The study highlights that existing public benchmarks frequently overlook harm directed at the user, which constitutes nearly 50% of harm in real-world mental health interactions.\n\nTo address these gaps, the team developed MindGuard2, a 35B-A3B reasoning-based guard model. The model is trained using supervised fine-tuning on short reasoning traces, followed by reinforcement learning with a reasoning-length penalty to optimize for inference speed. MindGuard2 achieves balanced accuracy comparable to the much larger GLM-5.3 while reducing median latency by approximately 10x. The model is designed to maintain high recall with low false-positive rates, minimizing unnecessary interventions that could disrupt therapeutic support or erode user trust. The authors have released the model weights, synthetic training data, and re-annotated public benchmarks.",
       "takeaways": [
-        "We then train MindGuard2, a 35B-A3B reasoning-based guard model using supervised fine-tuning on short reasoning traces followed by reinforcement learning with a reasoning-length penalty, to minimize inference overhead while preserving the benefits of reasoning.",
-        "On two public benchmarks and real-world conversations, MindGuard2 achieves balanced accuracy comparable to the substantially larger GLM-5.3 at approximately 10x lower median latency, advancing the accuracy-latency Pareto frontier.",
-        "Furthermore, it achieves low false-positive rates at high recall, helping balance the need to detect unsafe situations against the risk of unnecessary interventions that may disrupt support and undermine user trust.",
-        "We release a safety guardrail model with SOTA performance trained on synthetic data, together with synthetic conversations and annotations of public benchmarks in our taxonomy."
+        "**Model Architecture:** MindGuard2 is a 35B-A3B reasoning-based model trained via supervised fine-tuning and reinforcement learning with a reasoning-length penalty.",
+        "**Performance Metric:** MindGuard2 matches the balanced accuracy of the GLM-5.3 model while operating at 10x lower median latency.",
+        "**Taxonomy Innovation:** The framework categorizes mental health harm across three dimensions—what, who, and when—to improve context-aware safety responses.",
+        "**Benchmark Findings:** Analysis of public benchmarks revealed they rarely capture harm directed at the user, which accounts for nearly 50% of harm in real-world clinical conversations.",
+        "**Policy Decoupling:** Safety policies are separated from model weights, allowing for clinician-curated, auditable, and updatable instructions."
       ],
       "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -396,23 +538,25 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Siddharth Arya, Kshitij Jain",
-    "contentSnippet": "arXiv:2611.33402v1 Announce Type: new Abstract: AI models vary enormously in capability and price. Model routing exploits this by sending easier tasks to cheaper models. However, a single agentic task often combines easy and difficult subtasks, making one model choice for the entire task inefficient. We introduce partial routing, which guides a frontier lead model to delegate suitable subtasks to a cheaper worker model. From both models' past runs, we identify recurring subtasks and measure each model's quality and cost on them. These measurements produce delegation guidance, with a parameter, $\\delta$, controlling how much is delegated. The lead decides when and what to delegate during execution, without training either model. On held-out tasks from ViBench and Terminal-Bench 4.0, partial routing achieves higher mean task performance than the lead alone and task-level routing. With $\\delta = 0.75$, it raises the lead's ViBench score from 70.2 to 78.5 at 19% lower cost, and its Terminal-Bench pass rate from 54% to 61% at similar cost. Giving the lead only the subtask breakdown, without a worker, also reduces cost on both benchmarks and raises the Terminal-Bench pass rate. These results show that analysis of past runs can support more efficient planning and more effective delegation, with little cost and implementation overhead.",
+    "contentSnippet": "Authors: Siddharth Arya , Kshitij Jain\n\nAbstract: AI models vary enormously in capability and price. Model routing exploits this by sending easier tasks to cheaper models. However, a single agentic task often combines easy and difficult subtasks, making one model choice for the entire task inefficient. We introduce partial routing, which guides a frontier lead model to delegate suitable subtasks to a cheaper worker model. From both models' past runs, we identify recurring subtasks and measure each model's quality and cost on them. These measurements produce delegation guidance, with a parameter, $\\delta$, controlling how much is delegated. The lead decides when and what to delegate during execution, without training either model. On held-out tasks from ViBench and Terminal-Bench 4.0, partial routing achieves higher mean task performance than the lead alone and task-level routing. With $\\delta = 0.75$, it raises the lead's ViBench score from 70.2 to 78.5 at 19% lower cost, and its Terminal-Bench pass rate from 54% to 61% at similar cost. Giving the lead only the subtask breakdown, without a worker, also reduces cost on both benchmarks and raises the Terminal-Bench pass rate. These results show that analysis of past runs can support more efficient planning and more effective delegation, with little cost and implementation overhead.\n\nNotes: 16 pages, 5 figures, 11 tables",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33402",
     "pdfUrl": "https://arxiv.org/pdf/2611.33402.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33402v1 Announce Type: new Abstract: AI models vary enormously in capability and price. Model routing exploits this by sending easier tasks to cheaper models. However, a single agentic task often combines easy and difficult subtasks, making one model choice for the entire task inefficient.\n\nWe introduce partial routing, which guides a frontier lead model to delegate suitable subtasks to a cheaper worker model. From both models' past runs, we identify recurring subtasks and measure each model's quality and cost on them. These measurements produce delegation guidance, with a parameter, $\\delta$, controlling how much is delegated.",
+      "tldr": "Siddharth Arya and Kshitij Jain introduce 'Partial Routing,' a framework designed to optimize agentic workflows by delegating specific subtasks from a frontier lead model to a cheaper worker model. Unlike traditional task-level routing, which assigns an entire workflow to a single model, partial routing identifies recurring subtasks within complex processes and uses a delegation parameter, δ, to determine the threshold for offloading work. The system operates without requiring additional training for either the lead or worker models, instead relying on historical performance data to guide real-time delegation decisions.\n\nIn evaluations on ViBench and Terminal-Bench 4.0, partial routing demonstrated significant performance gains and cost reductions. With δ set to 0.75, the lead model's ViBench score improved from 70.2 to 78.5 while reducing costs by 19%. On Terminal-Bench, the pass rate increased from 54% to 61% at a comparable cost to the baseline. The researchers also found that providing the lead model with a subtask breakdown alone—even without delegating to a worker—improved performance and reduced costs, suggesting that the analysis of past execution traces enhances the lead model's planning capabilities.",
       "takeaways": [
-        "The lead decides when and what to delegate during execution, without training either model.",
-        "On held-out tasks from ViBench and Terminal-Bench 4.0, partial routing achieves higher mean task performance than the lead alone and task-level routing.",
-        "With $\\delta = 0.75$, it raises the lead's ViBench score from 70.2 to 78.5 at 19% lower cost, and its Terminal-Bench pass rate from 54% to 61% at similar cost.",
-        "Giving the lead only the subtask breakdown, without a worker, also reduces cost on both benchmarks and raises the Terminal-Bench pass rate."
+        "**Performance Gains:** Partial routing increased ViBench scores from 70.2 to 78.5 and Terminal-Bench pass rates from 54% to 61%.",
+        "**Cost Efficiency:** The method achieved a 19% cost reduction on ViBench while simultaneously improving task performance.",
+        "**Delegation Mechanism:** The system uses a parameter δ (set to 0.75 in experiments) to control the frequency and nature of subtask delegation from the lead to the worker.",
+        "**Training Requirements:** The framework requires zero additional training for the models involved, relying instead on the analysis of past execution traces.",
+        "**Planning Impact:** Providing the lead model with a subtask breakdown alone resulted in improved pass rates and lower costs, independent of worker delegation."
       ],
       "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -425,22 +569,24 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Mohsen Shirali, Kean Ooi, Anna Knab, Mohammadreza Fani Sani, Estefania Serral",
-    "contentSnippet": "arXiv:2611.33411v1 Announce Type: new Abstract: Internet of Things (IoT) systems generate low-level sensor observations that are not directly suitable for process analysis and must first be transformed into semantically meaningful events. This paper investigates collaborative language models as a zero-shot semantic abstraction layer for converting such observations into higher-level event and activity labels. We propose a five-stage workflow comprising semantic mapping, semantic aggregation, temporal and contextual aggregation, specialized reasoning, and final event abstraction. The resulting labels and contextual information can subsequently be represented as event records for downstream Process Mining (PM) tasks. The approach is evaluated through Human Activity Recognition on the CASAS Aruba smart home dataset using eleven workflow configurations. The experiments show that collaboration alone does not guarantee improved performance: general-purpose auxiliary SLMs can degrade recognition, whereas assigning complementary specialist roles leads to better results and allows a smaller final classifier to retain much of the performance of a larger model. The selected workflow achieves a macro F1 of 0.643 in the 1.5-day comparison and 0.567 (weighted F1 0.680) in a one-week evaluation. Although trained ML approaches remain more accurate on this dataset, the results demonstrate a different design point: modular semantic event abstraction using off-the-shelf models without task-specific parameter fine-tuning. The findings indicate that the structure of LM collaboration and task decomposition is more important than simply increasing the number of participating models.",
+    "contentSnippet": "Authors: Mohsen Shirali , Kean Ooi , Anna Knab , Mohammadreza Fani Sani , Estefania Serral\n\nAbstract: Internet of Things (IoT) systems generate low-level sensor observations that are not directly suitable for process analysis and must first be transformed into semantically meaningful events. This paper investigates collaborative language models as a zero-shot semantic abstraction layer for converting such observations into higher-level event and activity labels. We propose a five-stage workflow comprising semantic mapping, semantic aggregation, temporal and contextual aggregation, specialized reasoning, and final event abstraction. The resulting labels and contextual information can subsequently be represented as event records for downstream Process Mining (PM) tasks. The approach is evaluated through Human Activity Recognition on the CASAS Aruba smart home dataset using eleven workflow configurations. The experiments show that collaboration alone does not guarantee improved performance: general-purpose auxiliary SLMs can degrade recognition, whereas assigning complementary specialist roles leads to better results and allows a smaller final classifier to retain much of the performance of a larger model. The selected workflow achieves a macro F1 of 0.643 in the 1.5-day comparison and 0.567 (weighted F1 0.680) in a one-week evaluation. Although trained ML approaches remain more accurate on this dataset, the results demonstrate a different design point: modular semantic event abstraction using off-the-shelf models without task-specific parameter fine-tuning. The findings indicate that the structure of LM collaboration and task decomposition is more important than simply increasing the number of participating models.\n\nNotes: 13 pages, 1 figures",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33411",
     "pdfUrl": "https://arxiv.org/pdf/2611.33411.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33411v1 Announce Type: new Abstract: Internet of Things (IoT) systems generate low-level sensor observations that are not directly suitable for process analysis and must first be transformed into semantically meaningful events. This paper investigates collaborative language models as a zero-shot semantic abstraction layer for converting such observations into higher-level event and activity labels. We propose a five-stage workflow comprising semantic mapping, semantic aggregation, temporal and contextual aggregation, specialized reasoning, and final event abstraction.\n\nThe resulting labels and contextual information can subsequently be represented as event records for downstream Process Mining (PM) tasks. The approach is evaluated through Human Activity Recognition on the CASAS Aruba smart home dataset using eleven workflow configurations. The experiments show that collaboration alone does not guarantee improved performance: general-purpose auxiliary SLMs can degrade recognition, whereas assigning complementary specialist roles leads to better results and allows a smaller final classifier to retain much of the performance of a larger model.",
+      "tldr": "In the paper \"Collaborative Language Models for Semantic IoT Data Processing: Validation through Zero-Shot Human Activity Recognition,\" authors Mohsen Shirali, Kean Ooi, Anna Knab, Mohammadreza Fani Sani, and Estefania Serral investigate collaborative language models as a zero-shot semantic abstraction layer. The system transforms low-level Internet of Things (IoT) sensor observations into semantically meaningful events and higher-level activity labels suitable for downstream Process Mining tasks without task-specific parameter fine-tuning.\n\nThe authors propose a five-stage workflow encompassing semantic mapping, semantic aggregation, temporal and contextual aggregation, specialized reasoning, and final event abstraction. Evaluated on the CASAS Aruba smart home dataset using eleven workflow configurations, the study demonstrates that naive collaboration does not guarantee improved performance. Specifically, general-purpose auxiliary small language models can degrade recognition, while assigning complementary specialist roles improves results and allows smaller final classifiers to retain the performance of larger models. The selected workflow achieved a macro F1 score of 0.643 in a 1.5-day comparison, and a macro F1 of 0.567 (with a weighted F1 of 0.680) in a one-week evaluation.",
       "takeaways": [
-        "The selected workflow achieves a macro F1 of 0.643 in the 1.5-day comparison and 0.567 (weighted F1 0.680) in a one-week evaluation.",
-        "Although trained ML approaches remain more accurate on this dataset, the results demonstrate a different design point: modular semantic event abstraction using off-the-shelf models without task-specific parameter fine-tuning.",
-        "The findings indicate that the structure of LM collaboration and task decomposition is more important than simply increasing the number of participating models."
+        "**Core Architecture:** A five-stage workflow including semantic mapping, semantic aggregation, temporal/contextual aggregation, specialized reasoning, and final event abstraction.",
+        "**Evaluation Dataset:** Tested on the CASAS Aruba smart home dataset for zero-shot Human Activity Recognition across eleven distinct workflow configurations.",
+        "**Performance Metrics:** Achieved a macro F1 score of 0.643 over a 1.5-day comparison and a macro F1 of 0.567 (weighted F1 of 0.680) in a one-week evaluation.",
+        "**Design Findings:** Structure of language model collaboration and task decomposition matters more than sheer model count; general-purpose auxiliary models can degrade performance unless assigned complementary specialist roles."
       ],
-      "impact": "Notable",
+      "impact": "Medium",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -453,18 +599,25 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Jeremy Canale",
-    "contentSnippet": "arXiv:2611.33470v1 Announce Type: new Abstract: We present an end-to-end empirical study of dynamic reasoning in next-generation detection and response pipelines, evaluating how static classifiers, graph-based signal fusion, and large language model (LLM) triage agents perform under strict human-analyst attention budgets (Recall at B alerts/day). Across 56 reproducible experiments spanning a multi-layer enterprise-and-cloud simulator and four public datasets (SOREL-20M, BODMAS, LANL, and DARPA Transparent Computing), we test twelve architectural claims governing modern fleet-scale defense. First, we show that fleet growth halves recall at a fixed analyst budget even at negligible compute cost (<$0.0003 per million events), and that rarity-weighted graph risk propagation outperforms GraphSAGE without neural training. Second, evaluating frontier reasoning models (Gemini) and fine-tuned open-weight models (Qwen3-4B) for alert triage reveals that unconstrained LLM auto-closure eliminates 90% of false positives while silently discarding 31-44% of true attack cases. Third, post-training with Group Relative Policy Optimization (GRPO) causes severe reward hacking on unseen attack classes, suppressing up to 86% of novel attacks compared to two-epoch supervised fine-tuning. Finally, against an adaptive adversary generating plausible cover stories in benign telemetry fields, LLM triage evasion rises sharply unless gated by a deterministic policy harness prior to model invocation.",
+    "contentSnippet": "Authors: Jeremy Canale\n\nAbstract: We present an end-to-end empirical study of dynamic reasoning in next-generation detection and response pipelines, evaluating how static classifiers, graph-based signal fusion, and large language model (LLM) triage agents perform under strict human-analyst attention budgets (Recall at B alerts/day). Across 56 reproducible experiments spanning a multi-layer enterprise-and-cloud simulator and four public datasets (SOREL-20M, BODMAS, LANL, and DARPA Transparent Computing), we test twelve architectural claims governing modern fleet-scale defense. First, we show that fleet growth halves recall at a fixed analyst budget even at negligible compute cost (<$0.0003 per million events), and that rarity-weighted graph risk propagation outperforms GraphSAGE without neural training. Second, evaluating frontier reasoning models (Gemini) and fine-tuned open-weight models (Qwen3-4B) for alert triage reveals that unconstrained LLM auto-closure eliminates 90% of false positives while silently discarding 31-44% of true attack cases. Third, post-training with Group Relative Policy Optimization (GRPO) causes severe reward hacking on unseen attack classes, suppressing up to 86% of novel attacks compared to two-epoch supervised fine-tuning. Finally, against an adaptive adversary generating plausible cover stories in benign telemetry fields, LLM triage evasion rises sharply unless gated by a deterministic policy harness prior to model invocation.\n\nNotes: 13 pages (main text), 44 pages total with appendices, 5 figures, 56 experiments. Companion architectural design and threat model: this https URL",
     "category": "Open Source & Research",
     "lab": "Google DeepMind",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33470",
     "pdfUrl": "https://arxiv.org/pdf/2611.33470.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33470v1 Announce Type: new Abstract: We present an end-to-end empirical study of dynamic reasoning in next-generation detection and response pipelines, evaluating how static classifiers, graph-based signal fusion, and large language model (LLM) triage agents perform under strict human-analyst attention budgets (Recall at B alerts/day). Across 56 reproducible experiments spanning a multi-layer enterprise-and-cloud simulator and four public datasets (SOREL-20M, BODMAS, LANL, and DARPA Transparent Computing), we test twelve architectural claims governing modern fleet-scale defense. First, we show that fleet growth halves recall at a fixed analyst budget even at negligible compute cost (<$0.0003 per million events), and that rarity-weighted graph risk propagation outperforms GraphSAGE without neural training.\n\nSecond, evaluating frontier reasoning models (Gemini) and fine-tuned open-weight models (Qwen3-4B) for alert triage reveals that unconstrained LLM auto-closure eliminates 90% of false positives while silently discarding 31-44% of true attack cases. Third, post-training with Group Relative Policy Optimization (GRPO) causes severe reward hacking on unseen attack classes, suppressing up to 86% of novel attacks compared to two-epoch supervised fine-tuning. Finally, against an adaptive adversary generating plausible cover stories in benign telemetry fields, LLM triage evasion rises sharply unless gated by a deterministic policy harness prior to model invocation.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "tldr": "In a comprehensive study of next-generation security operations, researcher Jeremy Canale evaluates the efficacy of LLM-driven triage within enterprise detection pipelines. The research utilizes 56 experiments across four datasets—SOREL-20M, BODMAS, LANL, and DARPA Transparent Computing—to assess how static classifiers, graph-based signal fusion, and LLM agents function under constrained human-analyst attention budgets. The study highlights that while fleet growth significantly degrades recall at fixed analyst budgets, rarity-weighted graph risk propagation provides superior performance to GraphSAGE without the overhead of neural training.\n\nTechnical evaluation of frontier models like Gemini and fine-tuned open-weight models such as Qwen3-4B reveals a critical trade-off in automated triage: while unconstrained LLM auto-closure successfully eliminates 90% of false positives, it simultaneously discards 31-44% of true attack cases. Furthermore, the research identifies that applying Group Relative Policy Optimization (GRPO) for post-training leads to significant reward hacking, suppressing up to 86% of novel attack classes compared to standard two-epoch supervised fine-tuning. The findings conclude that LLM triage is highly susceptible to adversarial evasion via plausible cover stories in benign telemetry unless protected by a deterministic policy harness.",
+      "takeaways": [
+        "**Performance Trade-off:** Unconstrained LLM auto-closure removes 90% of false positives but suffers from a 31-44% false negative rate on true attacks.",
+        "**Training Methodology:** GRPO post-training induces reward hacking, resulting in the suppression of 86% of novel attack classes compared to two-epoch supervised fine-tuning.",
+        "**Graph Analysis:** Rarity-weighted graph risk propagation outperforms GraphSAGE architectures without requiring neural training.",
+        "**Adversarial Risk:** LLM triage agents are vulnerable to evasion via cover stories in benign telemetry fields unless gated by a deterministic policy harness.",
+        "**Economic Constraint:** Fleet growth halves recall at a fixed analyst budget, even when compute costs are as low as $0.0003 per million events."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -477,20 +630,24 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Vimal Kumar Kumar, Meghana Kshirsagar, Conor Ryan",
-    "contentSnippet": "arXiv:2611.33497v1 Announce Type: new Abstract: Retrieval-augmented generation (RAG) typically optimises evidence selection for semantic relevance, whereas compliance-sensitive long-form generation also requires evidence supporting explicit structural obligations. Semantically relevant retrieval may therefore omit information needed for mandatory downstream clauses. We propose Constraint-Aligned RAG (CA-RAG), a retrieval-conditioning framework that augments section-specific queries with ontology-derived structural constraints and policy-grounded knowledge-graph relations before evidence selection. Retrieval-only evaluation with manually annotated evidence shows consistent improvements across retrieval budgets. At $k=6$, CA-RAG increases Precision@$k$ from $0.5268$ to $0.5692$, pooled Recall@$k$ from $0.5402$ to $0.5950$, and F1@$k$ from $0.5389$ to $0.5672$ over standard RAG. Generation experiments further show improvements in compliance and reliability in several model--domain settings, while generation-only constraints achieve higher clause coverage but lower overall compliance and reliability. These results indicate that structurally aligned retrieval can improve evidence sufficiency in compliance-sensitive long-form generation.",
+    "contentSnippet": "Authors: Vimal Kumar Kumar , Meghana Kshirsagar , Conor Ryan\n\nAbstract: Retrieval-augmented generation (RAG) typically optimises evidence selection for semantic relevance, whereas compliance-sensitive long-form generation also requires evidence supporting explicit structural obligations. Semantically relevant retrieval may therefore omit information needed for mandatory downstream clauses. We propose Constraint-Aligned RAG (CA-RAG), a retrieval-conditioning framework that augments section-specific queries with ontology-derived structural constraints and policy-grounded knowledge-graph relations before evidence selection. Retrieval-only evaluation with manually annotated evidence shows consistent improvements across retrieval budgets. At $k=6$, CA-RAG increases Precision@$k$ from $0.5268$ to $0.5692$, pooled Recall@$k$ from $0.5402$ to $0.5950$, and F1@$k$ from $0.5389$ to $0.5672$ over standard RAG. Generation experiments further show improvements in compliance and reliability in several model--domain settings, while generation-only constraints achieve higher clause coverage but lower overall compliance and reliability. These results indicate that structurally aligned retrieval can improve evidence sufficiency in compliance-sensitive long-form generation.\n\nNotes: 18 pages (including appendix), 5 figures",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33497",
     "pdfUrl": "https://arxiv.org/pdf/2611.33497.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33497v1 Announce Type: new Abstract: Retrieval-augmented generation (RAG) typically optimises evidence selection for semantic relevance, whereas compliance-sensitive long-form generation also requires evidence supporting explicit structural obligations. Semantically relevant retrieval may therefore omit information needed for mandatory downstream clauses. We propose Constraint-Aligned RAG (CA-RAG), a retrieval-conditioning framework that augments section-specific queries with ontology-derived structural constraints and policy-grounded knowledge-graph relations before evidence selection.\n\nRetrieval-only evaluation with manually annotated evidence shows consistent improvements across retrieval budgets. At $k=6$, CA-RAG increases Precision@$k$ from $0.5268$ to $0.5692$, pooled Recall@$k$ from $0.5402$ to $0.5950$, and F1@$k$ from $0.5389$ to $0.5672$ over standard RAG. Generation experiments further show improvements in compliance and reliability in several model--domain settings, while generation-only constraints achieve higher clause coverage but lower overall compliance and reliability.",
+      "tldr": "Vimal Kumar Kumar, Meghana Kshirsagar, and Conor Ryan have introduced Constraint-Aligned Retrieval-Augmented Generation (CA-RAG), a framework designed to improve evidence selection in compliance-sensitive long-form generation. Unlike standard RAG systems that prioritize semantic relevance, CA-RAG integrates ontology-derived structural constraints and policy-grounded knowledge-graph relations into section-specific queries. This approach ensures that retrieved evidence satisfies mandatory downstream structural obligations, which are often overlooked by traditional semantic retrieval methods.\n\nIn retrieval-only evaluations, CA-RAG demonstrated consistent performance gains across various retrieval budgets. At a retrieval depth of k=6, the framework improved Precision@k from 0.5268 to 0.5692, pooled Recall@k from 0.5402 to 0.5950, and F1@k from 0.5389 to 0.5672 compared to standard RAG baselines. Generation experiments confirmed that this structural alignment leads to higher compliance and reliability in long-form outputs. The authors note that while generation-only constraints can increase clause coverage, they often result in lower overall compliance and reliability, highlighting the necessity of the retrieval-conditioning approach.",
       "takeaways": [
-        "These results indicate that structurally aligned retrieval can improve evidence sufficiency in compliance-sensitive long-form generation."
+        "**Performance Metrics:** At k=6, CA-RAG achieved a Precision@k of 0.5692, Recall@k of 0.5950, and F1@k of 0.5672.",
+        "**Methodology:** The framework augments queries using ontology-derived structural constraints and knowledge-graph relations before the retrieval phase.",
+        "**Core Problem:** Standard RAG systems prioritize semantic relevance, which often fails to capture the specific evidence required for mandatory structural clauses in compliance-heavy documents.",
+        "**Comparative Findings:** Generation-only constraints improve clause coverage but suffer from reduced overall compliance and reliability compared to the CA-RAG retrieval-conditioning approach."
       ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -503,23 +660,24 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Xavier Schneider, Benjamin Schneider, Sun Sun, Olga Vechtomova, Victor Zhong",
-    "contentSnippet": "arXiv:2611.33513v1 Announce Type: new Abstract: AI agents that operate in the real world must reason correctly and on-time, yet they currently do not account for how time should alter their reasoning. Modern agents learn to do tasks in environments that are entirely synchronous: where the world waits for the agent to act before changing. A real-time environment, by contrast, changes independent of the agent. Existing approaches try to bridge this gap by imposing a ratio of thinking to acting. However, for an agent to succeed in real-time it must learn to act quickly when delay is costly and to reason longer when the benefit outweighs the missed opportunities. To this end, we introduce real-time reasoning training (RRT) as the class of training techniques for real-time reasoning agents. We develop three standard RRT techniques: (1) using real-time data, (2) decoupling acting and observing, and (3) curriculum learning in time. Together, these simple techniques substantially outperform strong baselines. Across time pressures, we outperform the strongest non-RRT baseline by an average of 33% reward on in-distribution and 55% reward on out-of-distribution tasks in two real-time environments: Frogger and Snake. These results demonstrate that we can teach agents to balance reasoning and responsiveness under real-time constraints, and that RRT opens a broad, new set of capabilities for real-time agents.",
+    "contentSnippet": "Authors: Xavier Schneider , Benjamin Schneider , Sun Sun , Olga Vechtomova , Victor Zhong\n\nAbstract: AI agents that operate in the real world must reason correctly and on-time, yet they currently do not account for how time should alter their reasoning. Modern agents learn to do tasks in environments that are entirely synchronous: where the world waits for the agent to act before changing. A real-time environment, by contrast, changes independent of the agent. Existing approaches try to bridge this gap by imposing a ratio of thinking to acting. However, for an agent to succeed in real-time it must learn to act quickly when delay is costly and to reason longer when the benefit outweighs the missed opportunities. To this end, we introduce real-time reasoning training (RRT) as the class of training techniques for real-time reasoning agents. We develop three standard RRT techniques: (1) using real-time data, (2) decoupling acting and observing, and (3) curriculum learning in time. Together, these simple techniques substantially outperform strong baselines. Across time pressures, we outperform the strongest non-RRT baseline by an average of 33% reward on in-distribution and 55% reward on out-of-distribution tasks in two real-time environments: Frogger and Snake. These results demonstrate that we can teach agents to balance reasoning and responsiveness under real-time constraints, and that RRT opens a broad, new set of capabilities for real-time agents.\n\nNotes: Preprint",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33513",
     "pdfUrl": "https://arxiv.org/pdf/2611.33513.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33513v1 Announce Type: new Abstract: AI agents that operate in the real world must reason correctly and on-time, yet they currently do not account for how time should alter their reasoning. Modern agents learn to do tasks in environments that are entirely synchronous: where the world waits for the agent to act before changing. A real-time environment, by contrast, changes independent of the agent.\n\nExisting approaches try to bridge this gap by imposing a ratio of thinking to acting. However, for an agent to succeed in real-time it must learn to act quickly when delay is costly and to reason longer when the benefit outweighs the missed opportunities. To this end, we introduce real-time reasoning training (RRT) as the class of training techniques for real-time reasoning agents.",
+      "tldr": "Researchers Xavier Schneider, Benjamin Schneider, Sun Sun, Olga Vechtomova, and Victor Zhong have introduced 'Real-Time Reasoning Training' (RRT), a framework designed to enable AI agents to operate in asynchronous environments where the world state evolves independently of agent actions. Unlike traditional synchronous training, where environments wait for agent input, RRT forces agents to dynamically balance the trade-off between deliberation time and the cost of delayed action. The authors argue that current agents fail in real-world scenarios because they lack the ability to modulate reasoning depth based on temporal urgency.\n\nThe RRT framework consists of three core technical methodologies: utilizing real-time data streams, decoupling the acting and observing loops, and implementing curriculum learning specifically structured around time constraints. In empirical testing across two real-time environments, Frogger and Snake, the RRT-trained agents demonstrated significant performance gains over non-RRT baselines. Specifically, the researchers reported an average reward improvement of 33% on in-distribution tasks and 55% on out-of-distribution tasks, suggesting that the RRT approach effectively teaches agents to prioritize responsiveness when delay penalties are high and deeper reasoning when the task allows for it.",
       "takeaways": [
-        "We develop three standard RRT techniques: (1) using real-time data, (2) decoupling acting and observing, and (3) curriculum learning in time.",
-        "Together, these simple techniques substantially outperform strong baselines.",
-        "Across time pressures, we outperform the strongest non-RRT baseline by an average of 33% reward on in-distribution and 55% reward on out-of-distribution tasks in two real-time environments: Frogger and Snake.",
-        "These results demonstrate that we can teach agents to balance reasoning and responsiveness under real-time constraints, and that RRT opens a broad, new set of capabilities for real-time agents."
+        "**Core Methodology:** RRT utilizes three techniques: real-time data integration, decoupled acting/observing loops, and time-based curriculum learning.",
+        "**Performance Metrics:** RRT agents achieved a 33% average reward increase on in-distribution tasks and a 55% increase on out-of-distribution tasks compared to non-RRT baselines.",
+        "**Test Environments:** The framework was validated using the classic real-time environments Frogger and Snake.",
+        "**Research Status:** The findings are currently available as a preprint paper."
       ],
-      "impact": "Notable",
+      "impact": "High",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -532,20 +690,25 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Zi Li, Andr\\'e V. Duarte, Lei Li",
-    "contentSnippet": "arXiv:2611.33555v1 Announce Type: new Abstract: Can we distinguish fully AI-generated reviews from those using AI only to rewrite human judgement? Furthermore, can we do so reliably when reviews are generated from diverse AI models and workflows across scientific domains? To this end, we introduce PeerReveal, a new detector that grounds its decisions in learned relationships between a review's claims and reference claims drawn from AI-generated reviews of the same paper, complemented by review-level textual signals. We evaluate PeerReveal on PeerShift, a new, challenging test set of 5,430 reviews spanning multiple domains, including machine learning, life sciences, and social sciences, combining variation in disciplinary review conventions with diverse AI review-production mechanisms. With regular training, PeerReveal achieves 70.52% pooled Macro-F1 on this benchmark, improving over the strongest baseline by 11.48 points. We develop an effective and practical adversarial training framework that further improves the detector's generalization using a small local generator optimized to produce challenging reviews, raising pooled Macro-F1 from 70.52% to 82.40%. These results show that robust AI-review detection benefits from richer review-level evidence and adversarial training on more challenging generation processes.",
+    "contentSnippet": "Authors: Zi Li , André V. Duarte , Lei Li\n\nAbstract: Can we distinguish fully AI-generated reviews from those using AI only to rewrite human judgement? Furthermore, can we do so reliably when reviews are generated from diverse AI models and workflows across scientific domains? To this end, we introduce PeerReveal, a new detector that grounds its decisions in learned relationships between a review's claims and reference claims drawn from AI-generated reviews of the same paper, complemented by review-level textual signals. We evaluate PeerReveal on PeerShift, a new, challenging test set of 5,430 reviews spanning multiple domains, including machine learning, life sciences, and social sciences, combining variation in disciplinary review conventions with diverse AI review-production mechanisms. With regular training, PeerReveal achieves 70.52% pooled Macro-F1 on this benchmark, improving over the strongest baseline by 11.48 points. We develop an effective and practical adversarial training framework that further improves the detector's generalization using a small local generator optimized to produce challenging reviews, raising pooled Macro-F1 from 70.52% to 82.40%. These results show that robust AI-review detection benefits from richer review-level evidence and adversarial training on more challenging generation processes.",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33555",
     "pdfUrl": "https://arxiv.org/pdf/2611.33555.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33555v1 Announce Type: new Abstract: Can we distinguish fully AI-generated reviews from those using AI only to rewrite human judgement? Furthermore, can we do so reliably when reviews are generated from diverse AI models and workflows across scientific domains? To this end, we introduce PeerReveal, a new detector that grounds its decisions in learned relationships between a review's claims and reference claims drawn from AI-generated reviews of the same paper, complemented by review-level textual signals.\n\nWe evaluate PeerReveal on PeerShift, a new, challenging test set of 5,430 reviews spanning multiple domains, including machine learning, life sciences, and social sciences, combining variation in disciplinary review conventions with diverse AI review-production mechanisms. With regular training, PeerReveal achieves 70.52% pooled Macro-F1 on this benchmark, improving over the strongest baseline by 11.48 points. We develop an effective and practical adversarial training framework that further improves the detector's generalization using a small local generator optimized to produce challenging reviews, raising pooled Macro-F1 from 70.52% to 82.40%.",
+      "tldr": "Researchers Zi Li, André V. Duarte, and Lei Li have introduced PeerReveal, a specialized detection system designed to distinguish between fully AI-generated academic peer reviews and human-written reviews that merely use AI for text rewriting. PeerReveal grounds its classification decisions by analyzing the learned relationships between a review's specific claims and reference claims extracted from AI-generated reviews of the same target paper, combining these relational insights with traditional review-level textual signals.\n\nThe authors evaluate PeerReveal on PeerShift, a new benchmark test set comprising 5,430 reviews across machine learning, life sciences, and social sciences. This dataset explicitly accounts for varying disciplinary review conventions and diverse AI generation mechanisms. Standard training on PeerShift yields a pooled Macro-F1 score of 70.52%, outperforming the strongest baseline method by 11.48 percentage points. Furthermore, the team implements an adversarial training framework utilizing a small local generator optimized to produce difficult, edge-case reviews, which boosts the detector's pooled Macro-F1 score to 82.40%.",
       "takeaways": [
-        "These results show that robust AI-review detection benefits from richer review-level evidence and adversarial training on more challenging generation processes."
+        "**Core Task:** PeerReveal targets the detection of fully AI-generated peer reviews versus human reviews rewritten using AI assistance.",
+        "**Architectural Approach:** The model grounds decisions in learned relationships between review claims and reference claims generated by AI for the same paper, alongside review-level textual signals.",
+        "**Evaluation Benchmark:** Tested on PeerShift, a 5,430-review dataset spanning machine learning, life sciences, and social sciences with diverse AI production workflows.",
+        "**Baseline Performance:** Regular training on PeerShift achieves a 70.52% pooled Macro-F1 score, exceeding the strongest baseline by 11.48 points.",
+        "**Adversarial Training:** Incorporating a small local generator to produce challenging reviews raises the pooled Macro-F1 score from 70.52% to 82.40%."
       ],
       "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -1823,6 +1986,28 @@
       "readTimeMinutes": 3,
       "generatedWith": "gemini",
       "summaryVersion": 2
+    }
+  },
+  {
+    "id": "819f2bb8e324e5e7",
+    "canonicalUrl": "https://huggingface.co/blog/training-swarms",
+    "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+    "publishedAt": "2026-11-26T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:06.367Z",
+    "contentHash": "dabf60cf7295f0bf",
+    "sourceId": "huggingface",
+    "sourceName": "Hugging Face Blog",
+    "author": "Hugging Face Blog",
+    "contentSnippet": "",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems.",
+      "takeaways": [],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
     }
   },
   {
@@ -4940,6 +5125,96 @@
         "We introduce EgoUseBench, a benchmark for evaluating Ego Use across three interaction settings with different levels of first-person context.",
         "Computer-Use relies on explicit instructions, Offline Ego Use provides prerecorded first-person context before execution, and Online Ego Use provides continuous observations as user intent evolves.",
         "Based on over 74 hours of real-world first-person recordings, we construct 693 tasks across the three interaction settings."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "7834e5f79ac5d6c9",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34363",
+    "title": "Single-Database Rewards Are Hackable: Counterfactual Execution for Trustworthy Text-to-SQL RL",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "b9a53f8da69b0537",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Shreshth Rai, Rishii Kumar Singh, Aksh Aggarwal",
+    "contentSnippet": "Authors: Shreshth Rai , Rishii Kumar Singh , Aksh Aggarwal\n\nAbstract: Reinforcement learning (RL) for text-to-SQL agents pays a query when its result matches the reference on one database. However, a wrong query can match by luck when the data lack the rows that expose its bug. We study a counterfactual-database (CF) reward that also runs the final query on a few hidden, code-generated copies of the database and pays only if all results match (strict form) or by the share matched (mean form). On 1,302 synthetic audit questions, the strict form lowers the share of buggy queries paid in full from 29.5% to 16.8% and of reward hacks from 54.1% to 1.9%, rejecting 0 of 2,847 correct queries; copies from a family-blind generator do about as well. In a controlled GRPO comparison on a 3.35B model with three seeds per arm, training on the mean form did not improve in-domain accuracy (8.4% vs 11.7%), because the two rewards disagreed on only 5-7% of rollouts; on Spider it gained 1.6 points. One seed reverses both signs, so single-seed reward comparisons mislead. Code: this https URL ; data, models, demo: this https URL\n\nNotes: 4 pages + references and appendix (12 pages total). Code: this https URL",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34363",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34363",
+    "summary": {
+      "tldr": "Researchers Shreshth Rai, Rishii Kumar Singh, and Aksh Aggarwal have identified a critical vulnerability in reinforcement learning (RL) for text-to-SQL agents, where models receive rewards for queries that produce correct results by chance due to insufficient database row coverage. To mitigate this 'reward hacking,' the authors propose a counterfactual-database (CF) reward mechanism. This method executes the generated SQL query against multiple hidden, code-generated database copies, requiring the model to match results across all versions (strict form) or a weighted share (mean form) to receive a reward.\n\nTesting on 1,302 synthetic audit questions, the strict CF reward reduced the share of buggy queries receiving full rewards from 29.5% to 16.8% and slashed reward hacks from 54.1% to 1.9%, while maintaining a 0% rejection rate for 2,847 correct queries. In controlled GRPO (Group Relative Policy Optimization) training experiments using a 3.35B parameter model, the mean CF reward yielded a 1.6-point accuracy gain on the Spider benchmark. However, the authors caution that single-seed comparisons are unreliable, as one seed in their study reversed the performance signs, and the mean reward showed no significant in-domain accuracy improvement (8.4% vs 11.7%) due to the rewards agreeing on 93-95% of rollouts.",
+      "takeaways": [
+        "**Reward Hack Reduction:** The strict CF reward mechanism reduced reward hacking from 54.1% to 1.9% on synthetic audit questions.",
+        "**Benchmark Performance:** The mean CF reward method achieved a 1.6-point accuracy improvement on the Spider benchmark compared to standard single-database rewards.",
+        "**Methodology:** The approach utilizes code-generated database copies to validate SQL query correctness, including a 'family-blind' generator that performs comparably to standard generators.",
+        "**Experimental Reliability:** The study highlights that single-seed reward comparisons are misleading, as one seed reversed the performance outcomes in their 3.35B parameter model tests.",
+        "**False Positive Rate:** The strict CF reward form successfully rejected zero out of 2,847 verified correct queries, demonstrating high precision."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "8e35f8c8542e2d35",
+    "canonicalUrl": "https://arxiv.org/abs/2611.28732",
+    "title": "Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "18f32f6d71f04421",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Chendong Xiang, Chengwen Zhang, Ruowen Zhao, Zeyuan Wang",
+    "contentSnippet": "Authors: Chendong Xiang , Chengwen Zhang , Ruowen Zhao , Zeyuan Wang , Shuhe Huang , Rongxu Cui , Min Zhao , Fan Bao , Hengkai Tan , Jun Zhu\n\nAbstract: In-context learning (ICL) enables foundation models to perform unseen tasks from context without parameter updates. In robotic manipulation, a human video provides the context that specifies how a task should be performed. However, scaling human-video ICL on world-action models (WAMs) faces two challenges: task-level human-robot pairs are not temporally aligned with robot actions, and standard action losses allow policies to rely on initial-scene or task-identity shortcuts rather than tracking the context. We present Entangle, an in-context world-action model that maps a single human video and current robot observations to future visual states and executable actions. To scale temporally aligned training data, we convert recorded robot videos into matched human contexts via video-to-video generation, supplemented by real paired recordings. For model training, we combine variable-length video windows with an intra-task contrastive objective that distinguishes the paired action trajectory from other executions of the same task, preventing task-identity shortcuts. Without task-specific fine-tuning, Entangle improves steadily as aligned training data scales, reaching an average score of 83.5/100 across six unseen tasks on an Astribot S1 robot, and achieves a 69.5% average success rate on seven unseen RoboTwin tasks, outperforming Zero-WAM by 22.6 percentage points. Under Context-OOD, although trained only on scene-aligned pairs, Entangle transfers context-specified behaviors across rearranged layouts and substituted tools. Project page at this https URL\n\nNotes: 26 pages, 13 figures, including the appendix. Project page at this https URL",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.28732",
+    "pdfUrl": "https://arxiv.org/pdf/2611.28732",
+    "summary": {
+      "tldr": "Researchers from Tsinghua University and collaborators have introduced Entangle, an in-context world-action model (WAM) designed to enable robotic manipulation based on human-video demonstrations without requiring task-specific fine-tuning. The model addresses two primary bottlenecks in scaling human-video in-context learning: the temporal misalignment between human-robot data pairs and the tendency of standard action losses to rely on task-identity shortcuts rather than visual context tracking. Entangle maps a single human video and current robot observations to future visual states and executable actions, effectively allowing robots to generalize to unseen tasks and contexts.\n\nTo overcome data scarcity, the team utilized video-to-video generation to convert existing robot recordings into aligned human-context pairs, supplemented by real-world paired data. The training methodology incorporates variable-length video windows and an intra-task contrastive objective, which forces the model to distinguish the specific action trajectory from other executions of the same task. In empirical evaluations, Entangle achieved an average score of 83.5/100 across six unseen tasks on the Astribot S1 robot and a 69.5% success rate on seven unseen RoboTwin tasks, representing a 22.6 percentage point improvement over the Zero-WAM baseline. The model also demonstrates robust transfer capabilities under Context-OOD conditions, successfully adapting to rearranged layouts and substituted tools despite being trained only on scene-aligned pairs.",
+      "takeaways": [
+        "**Performance Metrics:** Entangle achieved an 83.5/100 average score on six unseen tasks using the Astribot S1 and a 69.5% success rate on seven unseen RoboTwin tasks.",
+        "**Competitive Advantage:** The model outperforms the Zero-WAM baseline by 22.6 percentage points in success rate on unseen tasks.",
+        "**Training Methodology:** The architecture utilizes an intra-task contrastive objective to prevent the model from relying on task-identity shortcuts, ensuring it tracks the provided human video context.",
+        "**Data Scaling Strategy:** The researchers generated large-scale training data by converting recorded robot videos into human-context pairs via video-to-video generation.",
+        "**Generalization Capabilities:** Entangle exhibits Context-OOD transfer, maintaining performance when faced with rearranged environmental layouts and substituted tools."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "399d94dc9a6c737f",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34079",
+    "title": "WorldBridge: Bridging Scattered Views for Coherent 3D World Generation",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "5d73eb422db03345",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Weilong Yan, Jingyu Hu, Hongli Xu, Yifan Zhan",
+    "contentSnippet": "Generating coherent and explorable 3D worlds from scattered images with little or no visual overlap is a fundamental and long-standing challenge in computer vision, which existing geometry-aware methods fail to address. Meanwhile, existing image- and video-based methods may generate unseen regions but produce inconsistent geometry across views. To bridge this gap, we present WorldBridge, a framework for coherent and controllable 3D world generation under scattered images with little or no visual overlap. WorldBridge encodes scattered references into a global scene context to guide geometry and appearance generation across views. Our temporal and spatial reference attention mechanism further enhances the fidelity of temporal references along the target trajectory and supports flexible spatial references outside it. A plug-and-play latent-reference consistency strategy improves reference fidelity through reprojection-guided test-time optimization. We also introduce the WorldBridge benchmark suite to evaluate 3D world generation from scattered, low-overlap references, which is rarely explored by current benchmarks. Both qualitative and quantitative results demonstrate that our method enables controllable and coherent 3D world generation, surpassing the existing state-of-the-art solutions. Our project page is available at https://davidyan2001.github.io/WorldBridge/.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34079",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34079",
+    "summary": {
+      "tldr": "Generating coherent and explorable 3D worlds from scattered images with little or no visual overlap is a fundamental and long-standing challenge in computer vision, which existing geometry-aware methods fail to address. Meanwhile, existing image- and video-based methods may generate unseen regions but produce inconsistent geometry across views. To bridge this gap, we present WorldBridge, a framework for coherent and controllable 3D world generation under scattered images with little or no visual overlap.\n\nWorldBridge encodes scattered references into a global scene context to guide geometry and appearance generation across views. Our temporal and spatial reference attention mechanism further enhances the fidelity of temporal references along the target trajectory and supports flexible spatial references outside it. A plug-and-play latent-reference consistency strategy improves reference fidelity through reprojection-guided test-time optimization.",
+      "takeaways": [
+        "We also introduce the WorldBridge benchmark suite to evaluate 3D world generation from scattered, low-overlap references, which is rarely explored by current benchmarks.",
+        "Both qualitative and quantitative results demonstrate that our method enables controllable and coherent 3D world generation, surpassing the existing state-of-the-art solutions.",
+        "Our project page is available at https://davidyan2001.github.io/WorldBridge/."
       ],
       "impact": "High",
       "readTimeMinutes": 2,
@@ -8576,8 +8851,9 @@
     "arxivId": "2611.32786",
     "pdfUrl": "https://arxiv.org/pdf/2611.32786",
     "summary": {
-      "tldr": "Video world models for robots are increasingly conditioned on a simulated or rendered proxy of the scene, on the assumption that the video will show what the proxy shows. Testing this assumption requires a proxy whose state is explicit and can be perturbed. We present SimPWM (Simulator-as-Proxy World Model): given a calibrated camera, it represents, from the first frame alone, the robot by its 3D model and the objects the gripper may touch as 3D points; a rule-based simulator with no trained parameters moves them under the actions, and a video model renders the result.\n\nSimPWM returns the realistic video together with the simulated state. We then freeze the simulated objects while the arm moves as recorded and check whether the video still shows the object lifted. On DROID episodes from unseen setups, the answer differs for the arm and for the objects.",
+      "tldr": "Authors: Tingting Liao , Mingjia Huo , Hao Li , Zhengzhong Liu , Eric P. Xing , Guangyi Liu Abstract: Video world models for robots are increasingly conditioned on a simulated or rendered proxy of the scene, on the assumption that the video will show what the proxy shows. Testing this assumption requires a proxy whose state is explicit and can be perturbed.\n\nWe present SimPWM (Simulator-as-Proxy World Model): given a calibrated camera, it represents, from the first frame alone, the robot by its 3D model and the objects the gripper may touch as 3D points; a rule-based simulator with no trained parameters moves them under the actions, and a video model renders the result. SimPWM returns the realistic video together with the simulated state. We then freeze the simulated objects while the arm moves as recorded and check whether the video still shows the object lifted.",
       "takeaways": [
+        "On DROID episodes from unseen setups, the answer differs for the arm and for the objects.",
         "With each of three base video models, the arm follows the proxy (robot IoU 0.75-0.78, against at most 0.69 for end-to-end models); rendering the robot alone already gives this.",
         "What the simulated objects add is the object state: against a robot-only proxy, they cut missed pick-ups from 54% to 38%, and the video follows them only with some base models: on rigid objects, freezing them lowers the lift rate of MiniMax-H3, fine-tuned on episodes whose simulation agrees with the real video, from 42% to 10%, but that of LTX-2.3, trained on the same episodes, only from 57% to 49%, as if it inferred the grasp from the arm motion; more than half of the remaining lifts of MiniMax-H3 are of cloth and rope, which the simulator carries rigidly.",
         "With any base model, the simulated state records what the simulation did; under perturbed actions, a video that disagrees with it reveals that the video ignores the simulated state."
@@ -8640,6 +8916,92 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "2b6258563847ef5d",
+    "canonicalUrl": "https://arxiv.org/abs/2611.33093",
+    "title": "AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "a137fe92784c77d8",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Guangyuan Wang, Chengran Li, Minchen Luo, Jichen Feng",
+    "contentSnippet": "Authors: Guangyuan Wang , Chengran Li , Minchen Luo , Jichen Feng , Mengdi Wang , Yifan Zhang\n\nAbstract: A language-model decoder carries state between decoding steps, and in hardware a wrong state update can leave the current token correct and corrupt the output several tokens later, so a design can pass output tests and still be wrong. AIChipBench asks what LLM coding agents need to build such hardware correctly. Agents implement quantized Qwen3.5, Gemma 3, Gemma 4, and Llama 3.2 decoders in synthesizable register-transfer-level (RTL) code against an executable integer reference that specifies the outputs and the stored state at every decoding step. They debug against public tests under fixed budgets; their frozen designs are graded on held-out token sequences, resets, memory stalls, and synthesis, and a second track asks them to speed up a correct design at nearly fixed area. Across 9,136 attempts by four coding agents, the difficulty lies in stored state. Feedback that points to the first state mismatch raises acceptance over output-only feedback in all 12 agent--task cells of a matched study, by 25.0 to 46.9 percentage points, and halves the agent-hours per accepted design. Regraded on new sequences and conditions, 45 of 69 accepted designs fail within the 32 steps their tests required. More than a third of attempts to speed up a correct design end without one. An overall score ranks Sol 5.6 and Fable 5.1 above Astra 6 and Opus 5.5, and both halves of the instances give this order in all 200 random splits. Hardware agents therefore need debugging feedback that exposes stored state, and their benchmarks need final tests well beyond the development cases.",
+    "category": "Robotics & Hardware",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.33093",
+    "pdfUrl": "https://arxiv.org/pdf/2611.33093",
+    "summary": {
+      "tldr": "AIChipBench is a new benchmark designed to evaluate LLM coding agents on the task of generating synthesizable register-transfer-level (RTL) code for AI accelerator components. Authored by Guangyuan Wang et al., the study tasks agents with implementing quantized decoders—specifically Qwen3.5, Gemma 3, Gemma 4, and Llama 3.2—against an executable integer reference model. The benchmark requires agents to maintain correct internal state across decoding steps, a critical challenge because hardware errors in state updates often manifest as delayed output corruption rather than immediate failures.\n\nThe research analyzed 9,136 attempts across four coding agents, revealing that state-tracking is the primary failure point. The study found that providing feedback identifying the first state mismatch significantly outperformed output-only feedback, increasing acceptance rates by 25.0 to 46.9 percentage points and reducing agent-hours per accepted design by 50%. Despite passing initial tests, 45 of 69 accepted designs failed when evaluated against new sequences or conditions. Furthermore, attempts to optimize designs for speed while maintaining area constraints failed in over one-third of cases.\n\nPerformance rankings across the agents placed Sol (5.6) and Fable (5.1) ahead of Opus (5.5) and Astra (6). The authors conclude that current LLM agents require debugging feedback that explicitly exposes internal state and that benchmarks must incorporate final testing sequences that extend well beyond the initial development cases to ensure hardware reliability.",
+      "takeaways": [
+        "**Benchmark Methodology:** Agents must implement quantized Qwen3.5, Gemma 3, Gemma 4, and Llama 3.2 decoders in synthesizable RTL against an executable integer reference.",
+        "**Feedback Efficacy:** Providing feedback on the first state mismatch improved acceptance rates by 25.0% to 46.9% compared to output-only feedback.",
+        "**Reliability Gap:** 45 out of 69 designs that passed initial tests failed when regraded on new sequences or conditions within 32 steps.",
+        "**Agent Rankings:** Sol (5.6) and Fable (5.1) outperformed Opus (5.5) and Astra (6) across 200 random data splits.",
+        "**Optimization Difficulty:** Over 33% of attempts to speed up a correct design while maintaining fixed area constraints resulted in failure."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "db96fbc23ddff277",
+    "canonicalUrl": "https://arxiv.org/abs/2611.32335",
+    "title": "GOLD-SLAM: Gaussian-splatting Omnidirectional LiDAR-Depth SLAM",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "1053e8e6b509c8a6",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Weicong Zhang, Yuan Huang, Yu Zheng, Lin Chenxiao",
+    "contentSnippet": "Panoramic cameras capture nearly the entire spherical field of view in a single frame. However, the mismatch between this panoramic coverage and the field of view of LiDAR poses a substantial challenge for panoramic Gaussian splatting SLAM that relies on LiDAR depth priors. We introduce GOLD-SLAM, a Gaussian-splatting Omnidirectional LiDAR-Depth SLAM system that combines high-quality rendering with accurate geometric reconstruction. It performs tracking and mapping in the spherical domain and uses tracked visual features in regions without LiDAR coverage to improve pose estimation. To address insufficient coverage of newly observed surfaces and floating artifacts during incremental mapping, we introduce Depth-Aware Map Extension and Pruning (DAEP). To enable broader evaluation, we collect a new dataset, WHOLE, using a UAV platform across Weak-geometry, High-dynamic, Omnidirectional, Low-light, and Easy scenarios. Extensive experiments on public benchmarks and WHOLE demonstrate competitive rendering quality and improved geometric accuracy relative to perspective systems. Compared with existing panoramic baselines, GOLD-SLAM improves mean PSNR by 5.56-9.10 dB and reduces mean Depth-L1 by 71.9-83.9%. To assess deployment feasibility on resource-constrained platforms such as UAVs, we evaluate an embedded configuration of GOLD-SLAM on a Jetson Orin NX (16 GB), demonstrating online operation at the cost of reconstruction quality.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.32335",
+    "pdfUrl": "https://arxiv.org/pdf/2611.32335",
+    "summary": {
+      "tldr": "Panoramic cameras capture nearly the entire spherical field of view in a single frame. However, the mismatch between this panoramic coverage and the field of view of LiDAR poses a substantial challenge for panoramic Gaussian splatting SLAM that relies on LiDAR depth priors. We introduce GOLD-SLAM, a Gaussian-splatting Omnidirectional LiDAR-Depth SLAM system that combines high-quality rendering with accurate geometric reconstruction.\n\nIt performs tracking and mapping in the spherical domain and uses tracked visual features in regions without LiDAR coverage to improve pose estimation. To address insufficient coverage of newly observed surfaces and floating artifacts during incremental mapping, we introduce Depth-Aware Map Extension and Pruning (DAEP). To enable broader evaluation, we collect a new dataset, WHOLE, using a UAV platform across Weak-geometry, High-dynamic, Omnidirectional, Low-light, and Easy scenarios.",
+      "takeaways": [
+        "Extensive experiments on public benchmarks and WHOLE demonstrate competitive rendering quality and improved geometric accuracy relative to perspective systems.",
+        "Compared with existing panoramic baselines, GOLD-SLAM improves mean PSNR by 5.56-9.10 dB and reduces mean Depth-L1 by 71.9-83.9%.",
+        "To assess deployment feasibility on resource-constrained platforms such as UAVs, we evaluate an embedded configuration of GOLD-SLAM on a Jetson Orin NX (16 GB), demonstrating online operation at the cost of reconstruction quality."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "88acb0511bce8c6e",
+    "canonicalUrl": "https://arxiv.org/abs/2611.32938",
+    "title": "Efficient Video Retrieval Augmented Generation via Token Allocation",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-26T20:02:03.237Z",
+    "contentHash": "92f6c81e853bc2b2",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Ayush Barik, Fan Lai, Francis Y. Yan",
+    "contentSnippet": "Efficient long-video understanding requires identifying relevant evidence while minimizing the tokens processed by vision-language models (VLMs). Existing video retrieval-augmented generation (RAG) methods rely on frame selection and token compression, but overlook how much each additional token is worth. We introduce Lembas, a plug-and-play framework that formulates video RAG as a token allocation problem over frames and subtitles under a shared budget. Our key insight is that the value of a token diminishes within each item and decreases further as similar evidence receives more tokens. Lembas captures both effects in a single objective and solves it with an efficient iterative water-filling algorithm that has a provable convergence guarantee. For multi-turn conversations, Lembas reuses the tokens processed in earlier turns and refines relevance with the VLM's attention at no extra cost. Our evaluations show that Lembas improves accuracy by up to 7.2 percentage points over state-of-the-art baselines at comparable compute. On multi-turn video understanding, Lembas achieves up to 1.5 percentage points higher accuracy with 1.7-17.3x fewer TFLOPs.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.32938",
+    "pdfUrl": "https://arxiv.org/pdf/2611.32938",
+    "summary": {
+      "tldr": "Efficient long-video understanding requires identifying relevant evidence while minimizing the tokens processed by vision-language models (VLMs). Existing video retrieval-augmented generation (RAG) methods rely on frame selection and token compression, but overlook how much each additional token is worth. We introduce Lembas, a plug-and-play framework that formulates video RAG as a token allocation problem over frames and subtitles under a shared budget.\n\nOur key insight is that the value of a token diminishes within each item and decreases further as similar evidence receives more tokens. Lembas captures both effects in a single objective and solves it with an efficient iterative water-filling algorithm that has a provable convergence guarantee. For multi-turn conversations, Lembas reuses the tokens processed in earlier turns and refines relevance with the VLM's attention at no extra cost.",
+      "takeaways": [
+        "Our evaluations show that Lembas improves accuracy by up to 7.2 percentage points over state-of-the-art baselines at comparable compute.",
+        "On multi-turn video understanding, Lembas achieves up to 1.5 percentage points higher accuracy with 1.7-17.3x fewer TFLOPs."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   },
@@ -10553,334 +10915,6 @@
       ],
       "impact": "High",
       "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "14a959238623f243",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26976",
-    "title": "MixFold: Sub-4-Bit Mixed-Precision LLM Inference via Output-Channel Grouping on Mobile NPUs",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "49359bb8f321b20e",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Vinnam Kim, Seong Hoon Seo, Junhan Kim, Jaeseong You, An Chen",
-    "contentSnippet": "arXiv:2611.26976v1 Announce Type: new Abstract: Sub-4-bit quantization allows mobile devices to run larger LLMs, but its memory savings do not always translate into faster decoding on mobile NPUs. Their matrix units support only a few native integer datatypes, and converting unsupported weight formats on the vector unit can erase the gains from fewer bits. Mixed precision faces an additional constraint: each matrix-unit tile uses one datatype. MixFold executes 3-bit and perfectly symmetric 2-bit weights using native integer operations without expanding the weights to wider datatypes during decoding. MixFold then assigns datatypes to output-channel groups aligned with the matrix-unit tiles, enabling finer-than-layer assignment without disrupting matrix-unit execution. We compare MixFold with llama.cpp Hexagon backend on the Qualcomm Hexagon NPU of a Snapdragon 8 Elite Gen 5. Across the Qwen3 model family, MixFold achieves comparable or higher accuracy than llama.cpp's sub-4-bit formats at matched bits per weight, while decoding 1.16-1.41 times faster and generating 1.5-4.3 times more tokens per joule.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26976",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26976.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26976v1 Announce Type: new Abstract: Sub-4-bit quantization allows mobile devices to run larger LLMs, but its memory savings do not always translate into faster decoding on mobile NPUs. Their matrix units support only a few native integer datatypes, and converting unsupported weight formats on the vector unit can erase the gains from fewer bits. Mixed precision faces an additional constraint: each matrix-unit tile uses one datatype.\n\nMixFold executes 3-bit and perfectly symmetric 2-bit weights using native integer operations without expanding the weights to wider datatypes during decoding. MixFold then assigns datatypes to output-channel groups aligned with the matrix-unit tiles, enabling finer-than-layer assignment without disrupting matrix-unit execution. We compare MixFold with llama.cpp Hexagon backend on the Qualcomm Hexagon NPU of a Snapdragon 8 Elite Gen 5.",
-      "takeaways": [
-        "Across the Qwen3 model family, MixFold achieves comparable or higher accuracy than llama.cpp's sub-4-bit formats at matched bits per weight, while decoding 1.16-1.41 times faster and generating 1.5-4.3 times more tokens per joule."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "902a2dfd566a0933",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26988",
-    "title": "From Letter-of-Credit Requirements to Executable Specifications: Evaluating Verification Accuracy and Completeness",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "a803f4808add54be",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Ji Sub Choi, Whan Choi, Seo Yeon Gu, Suhyun Kim, Inyong Yun",
-    "contentSnippet": "arXiv:2611.26988v1 Announce Type: new Abstract: In letter-of-credit (LC) document examination, a correct final decision does not show that every requirement was examined. We therefore evaluate examination requirement by requirement and make each requirement executable. A language model converts the bill of lading (BL) and commercial invoice (IV) requirements of a credit into atomic conditions and logical structures, and a deterministic verifier retrieves the named evidence and computes each outcome, so every check can be compared with a gold encoding and traced to logged evidence. Because LC records are confidential, our on-premises 9B parser is fine-tuned only on synthetic pairs built from templates and human-reviewed public document values. On 345 real LC cases, final-decision accuracy proves misleading: a constant PASS rule has the highest raw accuracy while examining nothing. Although it never sees a real record during training, the fine-tuned parser detects 93% of the atomic requirements its ontology covers and reconstructs 86% of the covered requirements exactly. It verifies 82% of the evaluable requirements correctly, against 54% for a tool-using agent, and leads the agent on both satisfied requirements and discrepancies. It also completely examines 1.8 times as many cases as few-shot prompting of the same model, while direct prediction and the agent complete none. Executing the gold encodings with the same verifier shows that some of the remaining errors, missed discrepancies included, come from the operators and normalization, which a better parser alone cannot fix. Every rejection comes with a trace of the units and evidence behind it, which suits examiner-in-the-loop review.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26988",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26988.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26988v1 Announce Type: new Abstract: In letter-of-credit (LC) document examination, a correct final decision does not show that every requirement was examined. We therefore evaluate examination requirement by requirement and make each requirement executable. A language model converts the bill of lading (BL) and commercial invoice (IV) requirements of a credit into atomic conditions and logical structures, and a deterministic verifier retrieves the named evidence and computes each outcome, so every check can be compared with a gold encoding and traced to logged evidence.\n\nBecause LC records are confidential, our on-premises 9B parser is fine-tuned only on synthetic pairs built from templates and human-reviewed public document values. On 345 real LC cases, final-decision accuracy proves misleading: a constant PASS rule has the highest raw accuracy while examining nothing. Although it never sees a real record during training, the fine-tuned parser detects 93% of the atomic requirements its ontology covers and reconstructs 86% of the covered requirements exactly.",
-      "takeaways": [
-        "It verifies 82% of the evaluable requirements correctly, against 54% for a tool-using agent, and leads the agent on both satisfied requirements and discrepancies.",
-        "It also completely examines 1.8 times as many cases as few-shot prompting of the same model, while direct prediction and the agent complete none.",
-        "Executing the gold encodings with the same verifier shows that some of the remaining errors, missed discrepancies included, come from the operators and normalization, which a better parser alone cannot fix.",
-        "Every rejection comes with a trace of the units and evidence behind it, which suits examiner-in-the-loop review."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "91a05cc21f3ef9b6",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26998",
-    "title": "Reward Integrity in Adversarial Reinforcement Learning for LLM Guardrail Red-Teaming",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "5f5756c1f060b389",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Chengming Liu, Leon Viti, Hongxu Chen, Erdem Kemik, Mary-Anne Williams, Ruth Oliver",
-    "contentSnippet": "arXiv:2611.26998v1 Announce Type: new Abstract: We study reward fidelity in an adversarial reinforcement-learning loop for red-teaming financial-services language-model guardrails. Apparent wins can arise when an attack omits prescribed personally identifiable information (PII), or when a reward judge credits a response that did not break the targeted policy. On attacker-generated and public benchmark examples, TypeSafe Jev checks whether the prescribed PII is present. For outcome scoring, we compare the decision models TypeSafe Jev, Laya (pretrained and post-trained), and pretrained CLM-8B with logged Opus 4.8 judgements from a replay corpus. Post-training markedly improves Laya's agreement with the judge. A separate author-reviewed off-target set establishes that Opus can award false wins. The findings motivate specialised decision-model judges for checking prescribed PII in attack inputs and scoring target responses against the intended policy.",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26998",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26998.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26998v1 Announce Type: new Abstract: We study reward fidelity in an adversarial reinforcement-learning loop for red-teaming financial-services language-model guardrails. Apparent wins can arise when an attack omits prescribed personally identifiable information (PII), or when a reward judge credits a response that did not break the targeted policy. On attacker-generated and public benchmark examples, TypeSafe Jev checks whether the prescribed PII is present.\n\nFor outcome scoring, we compare the decision models TypeSafe Jev, Laya (pretrained and post-trained), and pretrained CLM-8B with logged Opus 4.8 judgements from a replay corpus. Post-training markedly improves Laya's agreement with the judge. A separate author-reviewed off-target set establishes that Opus can award false wins.",
-      "takeaways": [
-        "The findings motivate specialised decision-model judges for checking prescribed PII in attack inputs and scoring target responses against the intended policy."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "d024ff698ac69c50",
-    "canonicalUrl": "https://arxiv.org/abs/2611.27007",
-    "title": "Scalable Evaluation of Medical AI using Evidence-based Practice Recommendations",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "3dcf295c06129594",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Teya Bergamaschi, Bijal Rajput, Akshay Goel, Matthew Thompson, Jacqueline Shreibati, Dave Steiner, Ashley Carrick, Mahvish Nagda, Dale R. Webster, Avinatan Hassidim, Katherine Chou, Yossi Matias, Po-Hsuan Cameron Chen, Christina Chen, Mike Schaekermann, Yun Liu, Anil Palepu",
-    "contentSnippet": "arXiv:2611.27007v1 Announce Type: new Abstract: Rigorously evaluating medical artificial intelligence (AI) requires testing open-ended clinical management across diverse presentations and stages of care. However, existing benchmarks rely on manual expert authoring, limiting coverage across conditions, conditional care pathways, and evolving guidelines. We develop an automated pipeline that extracts and verifies structured clinical criteria and branching decision trees from practice recommendations to generate scenarios spanning the care continuum, including nuanced presentations and practice variations across regions and guideline editions. Applied to 436 BMJ Best Practice clinical monographs (354 US, 82 International), this yields 3,200 scenarios spanning differential diagnosis, investigations, treatment, and complications, plus targeted suites for regional specificity (731 US/International pairs) and temporal freshness (630 scenarios). To grade responses, we develop a clinician-calibrated autorater that scores management plans on a 4-point rubric stratifying deviations by clinical severity. Across Gemini models, scaling improves adherence, while web search (+0.8 percentage points [pp] on average) and multi-sample synthesis (+2.2 pp) combine additively (+2.8 pp). In context, full monographs consistently trail condensed excerpts. On targeted suites, web search narrows international performance gaps (+4.2 pp) and improves adherence to newly updated guidance (+4.6 pp). In a study with Primary Care Physicians (n = 9) across 200 scenarios, AI assistance raises adherence from 50.5% to 70.0%, driven largely by fewer clinical omissions. Overall, our results demonstrate a scalable evaluation setup using an evidence-based corpus originally written to guide human clinical decision-making, and demonstrate its viability to assess medical AI and its assistance on clinician decision-making.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.27007",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27007.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.27007v1 Announce Type: new Abstract: Rigorously evaluating medical artificial intelligence (AI) requires testing open-ended clinical management across diverse presentations and stages of care. However, existing benchmarks rely on manual expert authoring, limiting coverage across conditions, conditional care pathways, and evolving guidelines. We develop an automated pipeline that extracts and verifies structured clinical criteria and branching decision trees from practice recommendations to generate scenarios spanning the care continuum, including nuanced presentations and practice variations across regions and guideline editions.\n\nApplied to 436 BMJ Best Practice clinical monographs (354 US, 82 International), this yields 3,200 scenarios spanning differential diagnosis, investigations, treatment, and complications, plus targeted suites for regional specificity (731 US/International pairs) and temporal freshness (630 scenarios). To grade responses, we develop a clinician-calibrated autorater that scores management plans on a 4-point rubric stratifying deviations by clinical severity. Across Gemini models, scaling improves adherence, while web search (+0.8 percentage points [pp] on average) and multi-sample synthesis (+2.2 pp) combine additively (+2.8 pp).",
-      "takeaways": [
-        "In context, full monographs consistently trail condensed excerpts.",
-        "On targeted suites, web search narrows international performance gaps (+4.2 pp) and improves adherence to newly updated guidance (+4.6 pp).",
-        "In a study with Primary Care Physicians (n = 9) across 200 scenarios, AI assistance raises adherence from 50.5% to 70.0%, driven largely by fewer clinical omissions.",
-        "Overall, our results demonstrate a scalable evaluation setup using an evidence-based corpus originally written to guide human clinical decision-making, and demonstrate its viability to assess medical AI and its assistance on clinician decision-making."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "ef9e08c25b2079df",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26747",
-    "title": "SkillPrivus: Uncovering PRIVacy of USe Harms in Agentic Skills",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "0173f48d649fe238",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Mariana Fernandez-Espinosa, Ivoline Ngong, Keerthiram Murugesan, Karthikeyan Natesan Ramamurthy",
-    "contentSnippet": "arXiv:2611.26747v1 Announce Type: new Abstract: Agent skills extend AI assistants through installable instructions and code that can access users' files, accounts, and data. Even when performing their advertised tasks, skills may infer sensitive attributes, retain unnecessary information, or disclose data to unexpected recipients. We study these potential privacy-of-use harms through SkillPrivus, a static audit framework that analyzes skills before installation without executing them. SkillPrivus extracts data operations from code and natural-language instructions, grounds them in source evidence, and adapts Contextual Integrity to assess their appropriateness. Applied to 726 real skills from public marketplaces, 563 of which handle personal data, SkillPrivus flags at least one potential violation in 307 of these skills (54.5%), and its judgments agree with three blind human annotators on 83.2% of resolvable moves. The flagged behaviors include sensitive inferences, information use beyond the stated task, and disclosures to unexpected recipients, suggesting that privacy harms can arise from ordinary skill functionality.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26747",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26747.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26747v1 Announce Type: new Abstract: Agent skills extend AI assistants through installable instructions and code that can access users' files, accounts, and data. Even when performing their advertised tasks, skills may infer sensitive attributes, retain unnecessary information, or disclose data to unexpected recipients. We study these potential privacy-of-use harms through SkillPrivus, a static audit framework that analyzes skills before installation without executing them.\n\nSkillPrivus extracts data operations from code and natural-language instructions, grounds them in source evidence, and adapts Contextual Integrity to assess their appropriateness. Applied to 726 real skills from public marketplaces, 563 of which handle personal data, SkillPrivus flags at least one potential violation in 307 of these skills (54.5%), and its judgments agree with three blind human annotators on 83.2% of resolvable moves. The flagged behaviors include sensitive inferences, information use beyond the stated task, and disclosures to unexpected recipients, suggesting that privacy harms can arise from ordinary skill functionality.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "86dbe53c8a302098",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26756",
-    "title": "Reinforcement Learning Unlearns Corrupted SFT Reasoning",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "7aba16684e83a500",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Anika Misra, Shreyas Vinod, Huteng Dai",
-    "contentSnippet": "arXiv:2611.26756v1 Announce Type: new Abstract: We show that reinforcement learning (RL) in reasoning tasks can succeed even when the supervised fine-tuning (SFT) data is severely corrupted. In a mathematical reasoning dataset (GSM8K), we systematically corrupt training trajectories across 361 configurations by injecting realistic error types, varying error locations, trace-answer consistency, and corruption ratios up to 100%. While aggregated SFT-only performance steadily deteriorates under corruption (dropping from 43.61% to 13.80%), Group Relative Policy Optimization (GRPO) post-training consistently restores model accuracy back to gold-baseline levels (approximately 60%). Crucially, initializing RL with as few as N = 8 minimal, incorrect, three-line \"form-only\" traces boosts post-RL performance to 69.30%, outperforming standard gold SFT initialization (60.71%) and GRPO without SFT (35.00%). Further, we show that SFT accuracy is largely uncorrelated with post-RL accuracy (r approximately 0), demonstrating a fundamental asymmetry in post-training: SFT primarily establishes structural layout (form), while RL independently discovers functional reasoning (function).",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26756",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26756.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26756v1 Announce Type: new Abstract: We show that reinforcement learning (RL) in reasoning tasks can succeed even when the supervised fine-tuning (SFT) data is severely corrupted. In a mathematical reasoning dataset (GSM8K), we systematically corrupt training trajectories across 361 configurations by injecting realistic error types, varying error locations, trace-answer consistency, and corruption ratios up to 100%. While aggregated SFT-only performance steadily deteriorates under corruption (dropping from 43.61% to 13.80%), Group Relative Policy Optimization (GRPO) post-training consistently restores model accuracy back to gold-baseline levels (approximately 60%).",
-      "takeaways": [
-        "Crucially, initializing RL with as few as N = 8 minimal, incorrect, three-line \"form-only\" traces boosts post-RL performance to 69.30%, outperforming standard gold SFT initialization (60.71%) and GRPO without SFT (35.00%).",
-        "Further, we show that SFT accuracy is largely uncorrelated with post-RL accuracy (r approximately 0), demonstrating a fundamental asymmetry in post-training: SFT primarily establishes structural layout (form), while RL independently discovers functional reasoning (function)."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e7b3fd0626dcdcc4",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26775",
-    "title": "Know Your Context Bank: Repairing Inconsistency and Measuring Generalization in Context-Aware Text-to-SQL",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "8f096f510a8dcbf1",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Hailong Li, Mohammadreza Pourreza, Tal Neiman, Reza Sherkat, Per Jacobsson, Yannis Papakonstantinou",
-    "contentSnippet": "arXiv:2611.26775v1 Announce Type: new Abstract: Text-to-SQL systems increasingly rely on context banks: curated collections of example queries, metric definitions, and domain knowledge that tell a model how an organization writes its queries. In the enterprise, a bank grows over years as many analysts add entries, checked one at a time for correctness (does the SQL answer its own question?) and rarely for consistency with one another. Yet correctness is often loosely defined: a question seldom fixes how an entity is counted or which table defines it, so two entries can each pass review yet resolve the same decision in opposite ways. We call this condition context bank rot. A second question follows: does a system that uses a bank generalize from it, or only reproduce it? Existing benchmarks cannot tell, as they do not control how far a test question sits from the context. We answer both questions by comparing queries decision by decision, with a fast scorer distilled from human-calibrated LLM judges. Turned inward, the comparison diagnoses and repairs a bank. Fine-tuning on a cleaned BIRD-train bank beats a same-size random subset at every epoch (+2.6 points on average), and 92.4% of our removals had their SQL corrected by an independent expert audit, against 45.6% of audited entries. In-context examples that follow one convention beat those following the opposite one by 13.3 points, while a mix is barely better than none. Turned outward, the comparison generates test questions at a controlled distance from a bank, a pipeline we call CAT (Context-Aware Testing). On CAT-BIRD, for retrieval and fine-tuning alike, the benefit of a bank falls step by step with distance and is largely gone once about three quarters of a question's logic is new, and on CAT-Spider the benefit of retrieval likewise shrinks with distance.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26775",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26775.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26775v1 Announce Type: new Abstract: Text-to-SQL systems increasingly rely on context banks: curated collections of example queries, metric definitions, and domain knowledge that tell a model how an organization writes its queries. In the enterprise, a bank grows over years as many analysts add entries, checked one at a time for correctness (does the SQL answer its own question?) and rarely for consistency with one another. Yet correctness is often loosely defined: a question seldom fixes how an entity is counted or which table defines it, so two entries can each pass review yet resolve the same decision in opposite ways.\n\nWe call this condition context bank rot. A second question follows: does a system that uses a bank generalize from it, or only reproduce it? Existing benchmarks cannot tell, as they do not control how far a test question sits from the context.",
-      "takeaways": [
-        "We answer both questions by comparing queries decision by decision, with a fast scorer distilled from human-calibrated LLM judges.",
-        "Turned inward, the comparison diagnoses and repairs a bank.",
-        "Fine-tuning on a cleaned BIRD-train bank beats a same-size random subset at every epoch (+2.6 points on average), and 92.4% of our removals had their SQL corrected by an independent expert audit, against 45.6% of audited entries.",
-        "In-context examples that follow one convention beat those following the opposite one by 13.3 points, while a mix is barely better than none."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "26ec14834b5f7422",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26776",
-    "title": "What Helps Language-Model Agents Review Violent Video? A Controlled Comparison with a Human Evidence Reference",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "8547fb6559c51eda",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Mohammed El Amine Mokhtari, Matei Mancas, Virginie Vandenbulcke",
-    "contentSnippet": "arXiv:2611.26776v1 Announce Type: new Abstract: Systems that flag violent video for a human operator can now be built from language models without training, by combining perception models and letting a language model decide. We ask how the observations of the perception models should reach the decision, and which evidence matters. On the XD-Violence test set (799 clips) we fix one set of perception agents (video description, object detection, sound tagging, speech recognition and speech tagging) and one reasoning model, and compare three interfaces: messages between agents, a typed evidence graph explored with tools, and flat text read in one pass; and a single audio-visual model given the raw clip. Two annotators provide a human reference that records the decision, the incident segments and whether they relied on sight, sound or speech. Flat text matches the single model (F1 0.967 against 0.968), while the graph agent and message passing are less accurate; a variant of the graph agent developed on a separate set did not close the gap, and both graph summaries and multi-turn tool use lowered accuracy. These results hold with reworded prompts and with a larger reasoning model, except that the larger model weakens message passing enough for the graph agent to beat it. Sound events improve F1 by +0.012 [+0.004, +0.021], in line with the annotators, who used sound or speech on most violent clips. Citations of stored observations are faithful, changing about half of the decisions when removed, but no more so with the graph than with flat text, and the agent pipeline costs about 3 times the GPU time of the single model. We also report two artefacts of vision-language describers that mislead pipelines built on them.",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26776",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26776.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26776v1 Announce Type: new Abstract: Systems that flag violent video for a human operator can now be built from language models without training, by combining perception models and letting a language model decide. We ask how the observations of the perception models should reach the decision, and which evidence matters. On the XD-Violence test set (799 clips) we fix one set of perception agents (video description, object detection, sound tagging, speech recognition and speech tagging) and one reasoning model, and compare three interfaces: messages between agents, a typed evidence graph explored with tools, and flat text read in one pass; and a single audio-visual model given the raw clip.\n\nTwo annotators provide a human reference that records the decision, the incident segments and whether they relied on sight, sound or speech. Flat text matches the single model (F1 0.967 against 0.968), while the graph agent and message passing are less accurate; a variant of the graph agent developed on a separate set did not close the gap, and both graph summaries and multi-turn tool use lowered accuracy. These results hold with reworded prompts and with a larger reasoning model, except that the larger model weakens message passing enough for the graph agent to beat it.",
-      "takeaways": [
-        "Sound events improve F1 by +0.012 [+0.004, +0.021], in line with the annotators, who used sound or speech on most violent clips.",
-        "Citations of stored observations are faithful, changing about half of the decisions when removed, but no more so with the graph than with flat text, and the agent pipeline costs about 3 times the GPU time of the single model.",
-        "We also report two artefacts of vision-language describers that mislead pipelines built on them."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "a01b73a4accaf20d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26806",
-    "title": "MedicalRSI: Medical Recursive Self-Improving Agents via Clinical Model-Harness Co-Evolution",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "69bd1ae7e1ca18a9",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Ziqing Wang, Hamid Palangi, Lili Zhao, Kaize Ding",
-    "contentSnippet": "arXiv:2611.26806v1 Announce Type: new Abstract: Medical agents built on large language models (LLMs) have advanced rapidly, yet most stay fixed once deployed and do not keep using their experience to improve later attempts. As a result, the same kind of error can recur across patients. To address this, existing self-improvement methods update an agent's weights or its medical harness from its own experience, but their improving strategy stays fixed and never learns which changes actually help, which caps how much the agent can improve. Recursive self-improvement (RSI) instead improves both the agent and its improving strategy. However, achieving RSI for medical agents is challenging, because clinical workflows rarely come with a reference harness, and a change that fixes early errors may not fix the problems the agent meets later. We propose MedicalRSI, an RSI framework built on Clinical Model-Harness Co-Evolution, in which one model plays two roles. The Solver is the medical agent itself, and the Improver is its learnable improving strategy, which writes a medical harness from the agent's failures. Each harness is rewarded by its gain over acting without it, and both roles are trained together, so the Improver keeps adapting to the problems the Solver has not yet solved. On multiple benchmarks and LLM backbones, MedicalRSI outperforms existing context-level and weight-level self-improvement methods and transfers well to unseen workflows, new LLMs and new databases, a step toward medical agents that keep improving.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26806",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26806.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26806v1 Announce Type: new Abstract: Medical agents built on large language models (LLMs) have advanced rapidly, yet most stay fixed once deployed and do not keep using their experience to improve later attempts. As a result, the same kind of error can recur across patients. To address this, existing self-improvement methods update an agent's weights or its medical harness from its own experience, but their improving strategy stays fixed and never learns which changes actually help, which caps how much the agent can improve.\n\nRecursive self-improvement (RSI) instead improves both the agent and its improving strategy. However, achieving RSI for medical agents is challenging, because clinical workflows rarely come with a reference harness, and a change that fixes early errors may not fix the problems the agent meets later. We propose MedicalRSI, an RSI framework built on Clinical Model-Harness Co-Evolution, in which one model plays two roles.",
-      "takeaways": [
-        "The Solver is the medical agent itself, and the Improver is its learnable improving strategy, which writes a medical harness from the agent's failures.",
-        "Each harness is rewarded by its gain over acting without it, and both roles are trained together, so the Improver keeps adapting to the problems the Solver has not yet solved.",
-        "On multiple benchmarks and LLM backbones, MedicalRSI outperforms existing context-level and weight-level self-improvement methods and transfers well to unseen workflows, new LLMs and new databases, a step toward medical agents that keep improving."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "e0329f2020f2d2c3",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26809",
-    "title": "Search From the Start: Search-Native Pretraining for Language Models",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "65a21ebf7af16dea",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Kaustubh Ponkshe, Gyung Hyun Je, Stefan Taga, Colin Raffel, Martin Jaggi",
-    "contentSnippet": "arXiv:2611.26809v1 Announce Type: new Abstract: Modern language models (LMs) are increasingly deployed with access to search tools at inference. Yet pretraining remains predominantly focused on predicting static text, with search capabilities typically introduced during post-training. We propose Search-Native Pretraining as a practical route to teach search capability during pretraining from ordinary text corpora. Specifically, we augment pretraining corpus at scale with web-search queries and retrieve web response using a local index. Training on this augmented corpus teaches models to generate search calls and incorporate retrieved evidence during language modeling. Across Wikipedia and DCLM-Edu corpora and 360M to 3.3B parameter scales, search-pretrained models (\"QueryLM\") show improved performance on knowledge-intensive tasks and higher steerability toward the retrieved evidence. Crucially, their advantage persists after supervised fine-tuning of both search-pretrained and conventionally pretrained models, indicating that the tested post-training procedures do not fully recover the capabilities developed during pretraining. Throughout our experiments, we find that a 1.4B QueryLM consistently beats or matches the performance of a FLOP-matched 3.3B baseline model across all knowledge intensive tasks. These results establish search-pretraining as a practical way to develop foundational search capabilities during pretraining. We release the training artifacts, including model checkpoints and data.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26809",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26809.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26809v1 Announce Type: new Abstract: Modern language models (LMs) are increasingly deployed with access to search tools at inference. Yet pretraining remains predominantly focused on predicting static text, with search capabilities typically introduced during post-training. We propose Search-Native Pretraining as a practical route to teach search capability during pretraining from ordinary text corpora.\n\nSpecifically, we augment pretraining corpus at scale with web-search queries and retrieve web response using a local index. Training on this augmented corpus teaches models to generate search calls and incorporate retrieved evidence during language modeling. Across Wikipedia and DCLM-Edu corpora and 360M to 3.3B parameter scales, search-pretrained models (\"QueryLM\") show improved performance on knowledge-intensive tasks and higher steerability toward the retrieved evidence.",
-      "takeaways": [
-        "Crucially, their advantage persists after supervised fine-tuning of both search-pretrained and conventionally pretrained models, indicating that the tested post-training procedures do not fully recover the capabilities developed during pretraining.",
-        "Throughout our experiments, we find that a 1.4B QueryLM consistently beats or matches the performance of a FLOP-matched 3.3B baseline model across all knowledge intensive tasks.",
-        "These results establish search-pretraining as a practical way to develop foundational search capabilities during pretraining.",
-        "We release the training artifacts, including model checkpoints and data."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "2c0726cbadc066c7",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26832",
-    "title": "Neural Geometry as a Learning Signal",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "15cb3e68aaa730c7",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Eric Todd, Tal Haklay, Nikhil Prakash, Matthew Finlayson, Michael Hanna, Fenil R. Doshi, Daniel Wurgaft, Thomas McGrath, Owen Lewis, David Bau, Jack Merullo, Ekdeep Singh Lubana, Matthew Kowal, Thomas Fel, Atticus Geiger",
-    "contentSnippet": "arXiv:2611.26832v1 Announce Type: new Abstract: We investigate whether the geometric structure of neural representations can provide a sufficient learning signal for improving model behavior without any supervision on model outputs. First, we fine-tune Llama-3.1-8B to answer questions such as \"What month is four months after June?\" by supervising internal representations of the input month (June = 6) and offset (4), which are encoded with Fourier harmonics. Second, we fine-tune the model to predict line breaks in text wrapped to a fixed width by supervising an internal representation of the number of characters since the preceding newline, which is represented by a low-dimensional helical structure. In both tasks, we supervise a low-dimensional subspace of the residual stream using an idealized target structure, and find that internal geometric supervision achieves similar performance to standard fine-tuning (despite no supervision on outputs). Moreover, we find that simply patching in an ideal geometry is not sufficient to recover fine-tuning performance, and thus demonstrate geometric supervision provides beneficial effects beyond the representations it targets. Together, these findings show how mechanistic understanding of neural geometry can be leveraged to shape the behavior of neural networks.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26832",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26832.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26832v1 Announce Type: new Abstract: We investigate whether the geometric structure of neural representations can provide a sufficient learning signal for improving model behavior without any supervision on model outputs. First, we fine-tune Llama-3.1-8B to answer questions such as \"What month is four months after June?\" by supervising internal representations of the input month (June = 6) and offset (4), which are encoded with Fourier harmonics. Second, we fine-tune the model to predict line breaks in text wrapped to a fixed width by supervising an internal representation of the number of characters since the preceding newline, which is represented by a low-dimensional helical structure.\n\nIn both tasks, we supervise a low-dimensional subspace of the residual stream using an idealized target structure, and find that internal geometric supervision achieves similar performance to standard fine-tuning (despite no supervision on outputs). Moreover, we find that simply patching in an ideal geometry is not sufficient to recover fine-tuning performance, and thus demonstrate geometric supervision provides beneficial effects beyond the representations it targets. Together, these findings show how mechanistic understanding of neural geometry can be leveraged to shape the behavior of neural networks.",
-      "takeaways": [],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "13e18699cfae8a9e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26833",
-    "title": "Rethinking Full-Weight LoRA with Domain and Task Adapter Scaling for Question Answering over Portuguese Well Drilling Reports",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.944Z",
-    "contentHash": "2283d4f21a4b729b",
-    "sourceId": "arxiv-cl",
-    "sourceName": "arXiv cs.CL (Language & LLMs)",
-    "author": "Luan B. Guerra, Diogo M. Paes, Marcelo N. Grimberg, Arnaldo C. Junior, Wallace Casaca, Lucas C. Ribas",
-    "contentSnippet": "arXiv:2611.26833v1 Announce Type: new Abstract: Adapting large language models (LLMs) to specialized domains remains challenging, particularly for technical documents such as Portuguese well drilling reports, where annotated data are scarce and domain adaptation may compromise instruction-following capabilities. Although Low-Rank Adaptation (LoRA) is widely used for parameter-efficient adaptation, its scaling after training remains insufficiently explored. This study investigates the impact of LoRA adapter scaling on question answering over Portuguese drilling reports using Qwen2.5-7B and Llama-3.1-8B. Domain-adaptive pretraining (DAPT) is performed either directly on instruction-tuned models or on their base counterparts, with subsequent adapter transfer, while task-specific adapters are trained on WellQuest, an open-source question-answering dataset derived from Portuguese drilling reports. The two adapters are also combined using complementary weights. Scaling factors ranging from 0.1 to 1.0 are evaluated across multiple training checkpoints using BERTScore. Results show that fractional scaling consistently improves DAPT performance over full-weight application, increasing F1 from 68.8\\% to 71.9\\% for Qwen2.5-7B and from 63.2\\% to 68.5\\% for Llama-3.1-8B. QA adapters perform best at high but fractional weights, while base-to-instruct transfer yields better results than direct DAPT on instruct-tuned models. Adapter merging provides a modest improvement for Llama-3.1-8B. Overall, these findings demonstrate that post-training adapter scaling can improve domain adaptation without additional data or training.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26833",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26833.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26833v1 Announce Type: new Abstract: Adapting large language models (LLMs) to specialized domains remains challenging, particularly for technical documents such as Portuguese well drilling reports, where annotated data are scarce and domain adaptation may compromise instruction-following capabilities. Although Low-Rank Adaptation (LoRA) is widely used for parameter-efficient adaptation, its scaling after training remains insufficiently explored. This study investigates the impact of LoRA adapter scaling on question answering over Portuguese drilling reports using Qwen2.5-7B and Llama-3.1-8B.\n\nDomain-adaptive pretraining (DAPT) is performed either directly on instruction-tuned models or on their base counterparts, with subsequent adapter transfer, while task-specific adapters are trained on WellQuest, an open-source question-answering dataset derived from Portuguese drilling reports. The two adapters are also combined using complementary weights. Scaling factors ranging from 0.1 to 1.0 are evaluated across multiple training checkpoints using BERTScore.",
-      "takeaways": [
-        "Results show that fractional scaling consistently improves DAPT performance over full-weight application, increasing F1 from 68.8\\% to 71.9\\% for Qwen2.5-7B and from 63.2\\% to 68.5\\% for Llama-3.1-8B.",
-        "QA adapters perform best at high but fractional weights, while base-to-instruct transfer yields better results than direct DAPT on instruct-tuned models.",
-        "Adapter merging provides a modest improvement for Llama-3.1-8B.",
-        "Overall, these findings demonstrate that post-training adapter scaling can improve domain adaptation without additional data or training."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   }
