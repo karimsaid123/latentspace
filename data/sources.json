@@ -8,7 +8,7 @@
     "color": "#10a37f",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.306Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.098Z"
   },
   {
     "id": "deepmind",
@@ -19,7 +19,7 @@
     "color": "#3b82f6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.306Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.099Z"
   },
   {
     "id": "google-research",
@@ -30,7 +30,7 @@
     "color": "#4285f4",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.307Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.100Z"
   },
   {
     "id": "nvidia-blog",
@@ -41,7 +41,7 @@
     "color": "#76b900",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.307Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.101Z"
   },
   {
     "id": "huggingface",
@@ -52,7 +52,7 @@
     "color": "#f59e0b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.308Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.101Z"
   },
   {
     "id": "hf-daily-papers",
@@ -63,7 +63,7 @@
     "color": "#ffb000",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.452Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.706Z"
   },
   {
     "id": "bair-blog",
@@ -74,7 +74,7 @@
     "color": "#0284c7",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.308Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.101Z"
   },
   {
     "id": "aws-ml",
@@ -85,7 +85,7 @@
     "color": "#ff9900",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.475Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.730Z"
   },
   {
     "id": "semianalysis",
@@ -96,7 +96,7 @@
     "color": "#4f46e5",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.476Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.731Z"
   },
   {
     "id": "the-register-ai",
@@ -107,7 +107,7 @@
     "color": "#d97706",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.479Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.734Z"
   },
   {
     "id": "ieee-spectrum-ai",
@@ -118,7 +118,7 @@
     "color": "#2563eb",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.477Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.732Z"
   },
   {
     "id": "interconnects-ai",
@@ -129,7 +129,7 @@
     "color": "#065f46",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:57.478Z"
+    "lastFetchedAt": "2026-11-26T10:59:06.733Z"
   },
   {
     "id": "ahead-of-ai",
@@ -140,7 +140,7 @@
     "color": "#7c3aed",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.405Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.126Z"
   },
   {
     "id": "the-gradient",
@@ -151,7 +151,7 @@
     "color": "#db2777",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.408Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.129Z"
   },
   {
     "id": "techcrunch-ai",
@@ -162,7 +162,7 @@
     "color": "#059669",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.407Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.127Z"
   },
   {
     "id": "verge-ai",
@@ -173,7 +173,7 @@
     "color": "#e11d48",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.407Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.128Z"
   },
   {
     "id": "mit-tech-ai",
@@ -184,7 +184,7 @@
     "color": "#6366f1",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.408Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.129Z"
   },
   {
     "id": "arstechnica-tech",
@@ -195,7 +195,7 @@
     "color": "#ea580c",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.409Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.129Z"
   },
   {
     "id": "siliconangle-ai",
@@ -206,7 +206,7 @@
     "color": "#b45309",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.969Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.669Z"
   },
   {
     "id": "marktechpost",
@@ -217,7 +217,7 @@
     "color": "#10b981",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.970Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.669Z"
   },
   {
     "id": "simon-willison",
@@ -228,7 +228,7 @@
     "color": "#8b5cf6",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.970Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.670Z"
   },
   {
     "id": "arxiv-ai",
@@ -239,7 +239,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.971Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.671Z"
   },
   {
     "id": "arxiv-cl",
@@ -250,7 +250,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.971Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.672Z"
   },
   {
     "id": "arxiv-lg",
@@ -261,7 +261,7 @@
     "color": "#b31b1b",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:58.972Z"
+    "lastFetchedAt": "2026-11-26T10:59:08.672Z"
   },
   {
     "id": "arxiv-deepseek",
@@ -271,8 +271,8 @@
     "category": "Open Source & Research",
     "color": "#1e40af",
     "enabled": true,
-    "consecutiveFailures": 1,
-    "lastFetchedAt": "2026-11-26T02:02:05.232Z"
+    "consecutiveFailures": 0,
+    "lastFetchedAt": "2026-11-26T10:59:09.553Z"
   },
   {
     "id": "arxiv-deepmind",
@@ -283,7 +283,7 @@
     "color": "#2563eb",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.731Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.551Z"
   },
   {
     "id": "arxiv-meta",
@@ -294,7 +294,7 @@
     "color": "#0284c7",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.732Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.552Z"
   },
   {
     "id": "arxiv-mistral",
@@ -305,7 +305,7 @@
     "color": "#f97316",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.729Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.549Z"
   },
   {
     "id": "arxiv-moonshot",
@@ -316,7 +316,7 @@
     "color": "#059669",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.730Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.550Z"
   },
   {
     "id": "arxiv-xai",
@@ -327,6 +327,6 @@
     "color": "#1d9bf0",
     "enabled": true,
     "consecutiveFailures": 0,
-    "lastFetchedAt": "2026-11-26T02:01:59.732Z"
+    "lastFetchedAt": "2026-11-26T10:59:09.552Z"
   }
 ]
