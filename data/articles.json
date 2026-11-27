@@ -1,5 +1,118 @@
 [
   {
+    "id": "0f5d437dd39123c8",
+    "canonicalUrl": "https://siliconangle.com/2026/11/26/sap-reportedly-plans-to-lay-off-10000-employees-amid-ai-push/",
+    "title": "SAP reportedly plans to lay off 10,000+ employees amid AI push",
+    "publishedAt": "2026-11-27T01:20:53.000Z",
+    "fetchedAt": "2026-11-27T02:54:34.685Z",
+    "contentHash": "9726afd3b17e2633",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 20:20 EST / NOVEMBER 26 2026\n\nSAP reportedly plans to lay off 10,000+ employees amid AI push\n\nEnterprise software giant SAP SE is reportedly planning to lay off at least 10,000 employees, or more than 9% of its workforce.\n\nBloomberg today cited sources as saying that the scope of the restructuring initiative is still subject to change.\n\nAccording to the publication, SAP and a labor council in its home country of Germany have negotiated an “employment guarantee” that will run through 2028. That may mean the layoffs will mainly affect employees in other markets. The report indicates that SAP’s product, engineering and sales units are expected to see the largest cuts.\n\nExecutives have reportedly also asked other departments to find cost reduction opportunities.\n\nThe reported restructuring push follows a banner quarter for SAP. The company’s sales and adjusted profit both topped analyst expectations. Its €24.11 billion cloud contract backlog, a measure of future revenue, also came in ahead of the consensus estimate.\n\nThe planned layoffs are said to be connected to SAP’s efforts to integrate more artificial intelligence features into its products. The company is best known for its ERP, or enterprise resource planning, software. Enterprises use it to automate a long list of backoffice tasks and share data between teams. SAP also sells cloud services for other use cases such as sales automation and customer support.\n\nAt a May user conference, the company introduced an AI interface called Joule Work for its applications. SAP says that the tool will enable workers to centrally access its products instead of navigating multiple screens.\n\nJoule Work made its debut alongside a suite of AI agents dubbed Joule Assistants. According to SAP, they will use over 200 subagents to automate repetitive business tasks. Another new offering, Industry AI, will automate sector-specific workflows.\n\nThe report that SAP is preparing for job cuts doesn’t come as a complete surprise. Last week, Chief Financial Officer Dominik Asam told attendees of an investor event that the company expects its headcount to decline. Additionally, two of the software maker’s six directors will reportedly leave in connection with its shift to a more AI-centric strategy.\n\nIt’s unclear when the job cuts will take place. According to Bloomberg, SAP historically announced workforce reduction programs in",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Enterprise software giant SAP SE is reportedly planning to cut at least 10,000 employees, representing over 9% of its workforce, as part of an aggressive restructuring initiative tied to an internal artificial intelligence push. Citing Bloomberg sources, the planned cuts will primarily target product, engineering, and sales units, while other departments have been asked to identify cost-reduction opportunities. An employment guarantee negotiated between SAP and a German labor council, running through 2028, means the layoffs will predominantly impact markets outside Germany.\n\nThe restructuring follows a strong financial quarter in which SAP reported sales and adjusted profits exceeding analyst expectations, alongside a cloud contract backlog of €24.11 billion. The workforce reduction directly aligns with the company's shift toward embedding AI capabilities into its enterprise resource planning (ERP) and cloud services. Key recent product rollouts include the Joule Work centralized AI interface and the Joule Assistants suite, which utilizes over 200 subagents to automate repetitive business tasks, alongside Industry AI for sector-specific workflows. Chief Financial Officer Dominik Asam previously signaled headcount declines at an investor event, and two of SAP's six directors are departing amid the AI-centric strategic shift.\n\nWhile the exact timeline for the cuts remains unconfirmed, SAP historically announces workforce reduction programs in January, mirroring its 2024 restructuring initiative which also eliminated approximately 10,000 roles at a cost of roughly €3 billion.",
+      "takeaways": [
+        "**Planned Layoffs:** SAP SE is reportedly preparing to cut at least 10,000 employees, representing over 9% of its total workforce.",
+        "**Targeted Units:** Product, engineering, and sales departments are expected to absorb the largest share of the workforce reductions.",
+        "**Geographic Protection:** An employment guarantee negotiated with a German labor council runs through 2028, shielding workers in Germany and focusing cuts on international markets.",
+        "**Financial Context:** The restructuring follows a robust financial quarter featuring a €24.11 billion cloud contract backlog and adjusted profits beating consensus estimates.",
+        "**AI Product Suite:** The pivot supports SAP's recent AI introductions, including the Joule Work interface, Joule Assistants powered by over 200 subagents, and Industry AI."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "1435667468e46b5f",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/26/sakana-ai-namazu-small-30b-nemotron-3-nano/",
+    "title": "Sakana AI Releases Namazu Small, a 30B Model Built on Nemotron 3 Nano",
+    "publishedAt": "2026-11-26T22:06:40.000Z",
+    "fetchedAt": "2026-11-27T02:54:34.685Z",
+    "contentHash": "bb30d70b6c2ff362",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Michal Sutter",
+    "contentSnippet": "Sakana AI has announced Sakana Namazu Small , a 30-billion-parameter reasoning model built on NVIDIA Nemotron 3 Nano. The Japan-based lab ran continued pretraining and post-training in-house, starting from Nemotron 3 Nano’s pretrained base. Sakana AI team states that the result beats NVIDIA’s 120B Nemotron 3 Super on its 25-benchmark average. TL;DR Size: 30B total parameters, 3B active (labeled 30B-A3B in Sakana’s chart). Context length: Not disclosed. Runs on: Hardware not disclosed. Sakana says it is small enough for your own environment. The Nemotron 3 Nano base was designed for DGX Spark, H100 and B200 GPUs. Performance: 60.1 average on 25 benchmarks, ahead of Nemotron 3 Super (56.2) and Nano (50.2). Self-reported. Best: BrowseComp 73.5, about 2x Nemotron 3 Super’s 36.1. Worst: SimpleQA Verified 6.8, below Nemotron 3 Nano (9.1) and Super (18.1). What is Sakana Namazu Small? Sakana Namazu Small is a 30B-A3B reasoning model from Sakana AI, tuned for web research and long-document QA. “Sakana Namazu” names models Sakana builds on open models and finishes with its own post-training. The larger Sakana Namazu is based on Kimi K2.6. Namazu Small is the compact member of that family. Sakana AI targets 3 kinds of work: everyday conversation, research with web search, and reading long documents. It was developed as a reasoning model. It organizes the information it needs and reasons step by step toward an answer. How was Namazu Small trained? Sakana started from the pretrained base of Nemotron 3 Nano, not NVIDIA’s post-trained release. It then applied continued pretraining and post-training techniques built for this release. These sit on top of methods Sakana developed for the original Sakana Namazu. The base architecture matters for deployment. Nemotron 3 Nano is a hybrid Mamba-Transformer mixture-of-experts model. NVIDIA lists it at 30B total and 3B active parameters , with context up to 1M tokens. How does Namazu Small perform on benchmarks? Sakana compared it against 2 NVIDIA models, both post-trained by NVIDIA. These are Nemotron 3 Nano (30B-A3B) and Nemotron 3 Super (120B-A12B). The suite spans 25 benchmarks in 3 groups. All scores are self-reported by Sakana . Benchmark group Namazu Small (30B-A3B) Nemotron 3 Super (120B-A12B) Nemotron 3 Nano (30B-A3B) Overall (25 benchmarks) 60.1 56.2 50.2 Web search (9) 59.9 54.6 49.3 Context grounding and instruction fol",
+    "category": "Robotics & Hardware",
+    "lab": "Moonshot AI",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Sakana AI has unveiled Sakana Namazu Small, a 30-billion-parameter reasoning model (30B total, 3B active) built upon NVIDIA’s Nemotron 3 Nano base architecture. Designed for web research and long-document question answering, the model utilizes a hybrid Mamba-Transformer mixture-of-experts (MoE) structure. Sakana AI performed in-house continued pretraining and post-training on the raw Nemotron 3 Nano base, rather than using NVIDIA’s own post-trained releases, to optimize the model for step-by-step reasoning tasks.\n\nIn self-reported benchmarks across 25 categories, Sakana Namazu Small achieved an average score of 60.1, outperforming both the NVIDIA Nemotron 3 Super (120B-A12B) at 56.2 and the base Nemotron 3 Nano (30B-A3B) at 50.2. The model shows significant strength in web-based research, scoring 73.5 on BrowseComp—nearly double the 36.1 score of the Nemotron 3 Super. However, the model underperforms in specific areas, such as SimpleQA Verified, where it scored 6.8 compared to the 18.1 achieved by the Nemotron 3 Super.",
+      "takeaways": [
+        "**Architecture:** Hybrid Mamba-Transformer mixture-of-experts (MoE) with 30B total parameters and 3B active parameters.",
+        "**Performance Metric:** Achieved a 60.1 average across 25 benchmarks, surpassing the 120B-parameter Nemotron 3 Super (56.2).",
+        "**Specialization:** Optimized for web search and long-document QA, with a notable 73.5 score on the BrowseComp benchmark.",
+        "**Training Methodology:** Utilized continued pretraining and post-training techniques developed by Sakana AI, applied directly to the pretrained Nemotron 3 Nano base."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "68265f069ee1fc9d",
+    "canonicalUrl": "https://siliconangle.com/2026/11/26/report-sheds-light-on-china-ties-of-some-us-based-nvidia-partners/",
+    "title": "Report sheds light on China ties of some US-based Nvidia partners",
+    "publishedAt": "2026-11-26T21:13:23.000Z",
+    "fetchedAt": "2026-11-27T02:54:34.685Z",
+    "contentHash": "5cdbec44f58992d7",
+    "sourceId": "siliconangle-ai",
+    "sourceName": "SiliconANGLE AI",
+    "author": "Maria Deutscher",
+    "contentSnippet": "UPDATED 16:13 EST / NOVEMBER 26 2026\n\nReport sheds light on China ties of some US-based Nvidia partners\n\nAn investigation has shed light on links between some Nvidia Corp. partners and companies that are based in China or are accused of breaching export controls.\n\nThe analysis was carried out by C4ADS, a Washington, D.C.-based nonprofit, at the request of CBS News. The outlet published the findings Wednesday evening.\n\nThe first focus of the investigation was a San Jose, California-based company called RiCloud AI Inc. It’s an Nvidia preferred partner, which means that it can buy the chipmaker’s high-end graphics processing units. Companies with that partner destination also have access to Nvidia’s GPU software and technical support services.\n\nThe investigation determined that RiCloud AI is a unit of Shenzen-based Yuxing InfoTech Investment Holdings Ltd. The latter company’s chief executive reportedly has a degree from a university run by China’s military. Yuxing’s chair, in turn, previously worked at a Chinese tech firm that drew national security scrutiny in Australia.\n\nRiCloud AI recently signed a $120 million deal to lease Nvidia-powered servers to a Taiwanese whiskey company. The latter firm generated just $609,000 in profits last year.\n\nThe investigation also looked into a company called Topmost Corp. It’s reportedly linked to a California businessman who was recently indicted for allegedly smuggling GPUs to China.\n\nAccording to CBS News, Topmost’s website states that it’s an authorized reseller of Nvidia partner 2CRSi Inc. The latter company makes servers powered by the chipmaker’s GPUs. Last month, it disclosed that it received a grand jury subpoena in connection with a client “we ourselves had reported to the authorities.”\n\nThe report also noted that California-based Aivres Inc. has exported $3 billion worth of Nvidia-powered servers to Southeast Asia since 2024. It’s a subsidiary of Inspur, a Chinese tech firm that is on the U.S. Commerce Department’s Entity List. Organizations on the list are subject to trade restrictions.\n\nU.S. regulations prohibit companies from exporting Nvidia’s most advanced GPUs to China. Earlier this month, the Commerce Department closed a loophole that Chinese tech firms used to bypass those restrictions. The tech firms in questions rented access to Nvidia GPUs deployed in data centers outside China.\n\nSome of the data center",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "A C4ADS investigation commissioned by CBS News has identified potential security risks involving U.S.-based Nvidia partners and their ties to Chinese entities. The report highlights San Jose-based RiCloud AI, an Nvidia preferred partner, as a subsidiary of Shenzhen-based Yuxing InfoTech Investment Holdings Ltd. Yuxing’s leadership has documented links to Chinese military-run universities and firms previously flagged for national security concerns. RiCloud recently secured a $120 million server lease deal with a Taiwanese whiskey company that reported only $609,000 in annual profit, raising questions regarding the legitimacy of these transactions.\n\nThe investigation also scrutinized Aivres Inc., a California-based subsidiary of Inspur—a Chinese firm currently on the U.S. Commerce Department’s Entity List. Aivres has reportedly exported $3 billion in Nvidia-powered servers to Southeast Asia since 2024. Additionally, Topmost Corp., an authorized reseller of 2CRSi Inc. servers, is linked to a businessman indicted for smuggling GPUs to China. These findings emerge as the U.S. government tightens export controls to prevent Chinese firms from bypassing restrictions by renting GPU access in third-party data centers located in Southeast Asia.\n\nIn response to these regulatory shifts, Nvidia has reportedly instructed manufacturing partners to halt shipments of GPU-equipped servers to four Southeast Asian countries. Furthermore, market data indicates an \"unusually high\" volume of high-end B300 GPUs appearing for resale, likely stemming from canceled or redirected orders intended for data centers serving Chinese clients.",
+      "takeaways": [
+        "**RiCloud AI Ties:** The San Jose-based Nvidia preferred partner is a unit of Shenzhen-based Yuxing InfoTech, whose executives have ties to Chinese military-run universities and firms under Australian national security scrutiny.",
+        "**Aivres Export Volume:** Aivres Inc., a subsidiary of the U.S.-blacklisted firm Inspur, has exported $3 billion worth of Nvidia-powered servers to Southeast Asia since 2024.",
+        "**Regulatory Loophole:** The U.S. Commerce Department recently closed a loophole that allowed Chinese firms to bypass export bans by renting access to Nvidia GPUs in data centers located outside of China.",
+        "**Market Impact:** Following new export restrictions, thousands of high-end B300 GPUs have been listed for resale, and Nvidia has reportedly paused server shipments to four Southeast Asian nations."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "979e22972f743c14",
+    "canonicalUrl": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+    "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+    "publishedAt": "2026-11-26T20:03:54.000Z",
+    "fetchedAt": "2026-11-27T02:54:33.648Z",
+    "contentHash": "b04b16a837842f80",
+    "sourceId": "techcrunch-ai",
+    "sourceName": "TechCrunch AI",
+    "author": "Connie Loizos",
+    "contentSnippet": "Posted: 12:03 PM PST · November 26, 2026 Image Credits: I-Hwa Cheng / AFP / Getty Images Connie Loizos Nvidia hits pause on chip shipments to Southeast Asia Nvidia is under pressure to do things differently, and a new WSJ report shows how far that’s going.\n\nAccording to the Journal, Nvidia has told manufacturing partners, including Dell and Super Micro, to hit pause on server shipments to Malaysia, Singapore, Thailand, and Indonesia for an unspecified period as it assesses whether its regional partners are meeting U.S. export requirements.\n\nAs for why those countries, Chinese companies have been tapping Nvidia chips remotely from data centers there, a loophole the US Commerce Department closed — reportedly grudgingly — earlier this month. The Journal notes that the think tank Institute for Progress estimates remote data centers like these supply about 24% of China’s AI computing power.\n\nNewsletters See More Subscribe for the industry’s biggest tech news Related AI Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’\n\n<img width=\"668\" height=\"375\" src=\"https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?w=668\" class=\"attachment-card-block-16x9 size-card-block-16x9 wp-post-image\" alt=\"Character.ai displayed on smartphones\" decoding=\"async\" loading=\"lazy\" srcset=\"https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg 3840w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=150,84 150w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=300,169 300w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=768,432 768w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=680,383 680w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=1200,675 1200w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=1280,720 1280w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=430,242 430w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=720,405 720w, https://techcrunch.com/wp-content/uploads/2024/06/Character-Calls-Image-feat.jpg?resize=900,506 900w, https://techcrunch.com/wp-content/uploads/2024",
+    "category": "Robotics & Hardware",
+    "lab": "NVIDIA",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Nvidia has instructed manufacturing partners, including Dell and Super Micro, to temporarily halt server shipments to Malaysia, Singapore, Thailand, and Indonesia. The pause is intended to allow Nvidia to evaluate whether its regional partners are fully complying with U.S. export regulations.\n\nThe suspension follows actions by the U.S. Commerce Department earlier in the month to close a loophole that allowed Chinese companies to remotely access and tap Nvidia AI chips housed in Southeast Asian data centers. According to estimates from the think tank Institute for Progress cited in the report, these remote data centers account for roughly 24% of China's total AI computing power.",
+      "takeaways": [
+        "**Affected Hardware Partners:** Nvidia instructed manufacturers like Dell and Super Micro to halt server shipments.",
+        "**Impacted Countries:** Server shipments have been paused for Malaysia, Singapore, Thailand, and Indonesia.",
+        "**Regulatory Driver:** The pause addresses compliance with U.S. export requirements and the closure of a loophole allowing remote chip access.",
+        "**Compute Share:** Think tank Institute for Progress estimates that remote data centers in these regions supply about 24% of China's AI computing power."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "b81da0547893b262",
     "canonicalUrl": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
     "title": "Grand Theft Auto VI proves why efficiency isn’t a virtue",
@@ -182,18 +295,19 @@
     "author": "Simon Willison AI",
     "contentSnippet": "26th November 2026 Comment My comment on The New York Times warns photographers not to update Photoshop over AI features — Hacker News\n\nI had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.\n\nHe did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted.\n\nThe photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... is my laptop, taken in my garden, after hunting around for the best spot that didn't have too much glare on the screen. You can see how dirty my screen is, too!\n\nPhotography for a newspaper is photo journalism, and they take it seriously.\n\n(Thankfully I did not have a visible stain on my shirt.)\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a beat by Simon Willison, posted on 26th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
-      "tldr": "My comment on The New York Times warns photographers not to update Photoshop over AI features — Hacker News. I had a NYT photographer take my picture at my home earlier this year (for a story about Moltbook, oddly enough). At one point I asked if they could fix things up if I had a stain on my shirt and they said absolutely not - they present photographs as they were taken, with cropping and balancing applied but no edits beyond that.\n\nHe did spend a bunch of time trying to find the best possible natural lighting for the shots he wanted. The photo at the top of https://www.nytimes.com/2026/02/02/technology/moltbook-ai-so... Is my laptop, taken in my garden, after hunting around for the best spot that didn't have too much glare on the screen.",
+      "tldr": "A personal account published by Simon Willison on November 26, 2026, details an experience with a New York Times photographer who visited his home earlier in the year for a story covering Moltbook. During the photoshoot, the photographer explicitly refused to use AI-driven or advanced editing tools to alter elements like a hypothetical shirt stain, adhering to a strict photojournalism standard that permits only basic cropping and color balancing while preserving original imperfections such as a dirty laptop screen.\n\nThe interaction highlights the rigorous authenticity standards maintained by newspaper photojournalists, contrasting sharply with the widespread integration of generative AI features in modern image-editing software like Adobe Photoshop. The photographer relied entirely on capturing natural lighting and carefully scouting locations around Willison's garden to minimize screen glare rather than resorting to digital cleanup.",
       "takeaways": [
-        "You can see how dirty my screen is, too!",
-        "Photography for a newspaper is photo journalism, and they take it seriously.",
-        "(Thankfully I did not have a visible stain on my shirt.) Tags: photography , new-york-times , hacker-news , journalism."
+        "**Publication Context:** The New York Times ran a feature story regarding Moltbook on February 2, 2026, illustrated with photography taken at Simon Willison's home.",
+        "**Journalistic Constraints:** NYT photographers strictly adhere to a policy of presenting photographs as originally captured, prohibiting digital edits such as removing shirt stains.",
+        "**Allowed Post-Processing:** Permitted adjustments are strictly limited to basic cropping and balancing, prioritizing raw authenticity over digital enhancement."
       ],
       "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -721,20 +835,24 @@
     "sourceId": "arxiv-ai",
     "sourceName": "arXiv cs.AI (Artificial Intelligence)",
     "author": "Siyuan Chen, Yuping Gao, Tai Huang, Yuling Zhou, Dongyu Su, Tongguan Wang",
-    "contentSnippet": "arXiv:2611.33563v1 Announce Type: new Abstract: Automated Scientific Hypothesis Generation (ASHG) leveraging large language models (LLMs) aims to harness their strengths in knowledge integration, logical reasoning, and text generation for efficiently producing innovative, verifiable scientific hypotheses. However, existing approaches face three critical limitations: (i) insufficient fine-grained knowledge representation, as unstructured context impairs LLM comprehension and reasoning; (ii) lack of knowledge evolution traceability, constraining the generation of innovative cross-domain conjectures; (iii) absence of human-inspired and role-specialized multi-agent collaboration, failing to leverage the efficient innovation mechanisms arising from cognitive diversity and division of labor among expert roles to complete the full ASHG-evaluation loop. To address these limitations, we propose the Fine-grained Inspiration Graph-empowered Multi-Agent Collaboration framework (FIG-MAC) including: (i) Fine-grained Inspiration Graph module (FIG), to obtain fine-grained structured knowledge representations, where nodes represent academic semantic units and edges encode heuristic relationships among them; (ii) ontology-guided hybrid reasoning module, which follows the FIG ontology to construct structured reasoning paths and uses vector search to enrich them with semantic evidence, to obtain the traceable scientific conjecture paths; (iii) role-specialized Multi-Agent framework, inspired by real scientific teamwork, enabling a closed-loop process of scientific conjecture generation, screening, and validation. Experimental results demonstrate that FIG-MAC significantly outperforms state-of-the-art methods on source diversity, provenance-adjusted novelty, and raw novelty.",
+    "contentSnippet": "Authors: Siyuan Chen , Yuping Gao , Tai Huang , Yuling Zhou , Dongyu Su , Tongguan Wang\n\nAbstract: Automated Scientific Hypothesis Generation (ASHG) leveraging large language models (LLMs) aims to harness their strengths in knowledge integration, logical reasoning, and text generation for efficiently producing innovative, verifiable scientific hypotheses. However, existing approaches face three critical limitations: (i) insufficient fine-grained knowledge representation, as unstructured context impairs LLM comprehension and reasoning; (ii) lack of knowledge evolution traceability, constraining the generation of innovative cross-domain conjectures; (iii) absence of human-inspired and role-specialized multi-agent collaboration, failing to leverage the efficient innovation mechanisms arising from cognitive diversity and division of labor among expert roles to complete the full ASHG-evaluation loop. To address these limitations, we propose the Fine-grained Inspiration Graph-empowered Multi-Agent Collaboration framework (FIG-MAC) including: (i) Fine-grained Inspiration Graph module (FIG), to obtain fine-grained structured knowledge representations, where nodes represent academic semantic units and edges encode heuristic relationships among them; (ii) ontology-guided hybrid reasoning module, which follows the FIG ontology to construct structured reasoning paths and uses vector search to enrich them with semantic evidence, to obtain the traceable scientific conjecture paths; (iii) role-specialized Multi-Agent framework, inspired by real scientific teamwork, enabling a closed-loop process of scientific conjecture generation, screening, and validation. Experimental results demonstrate that FIG-MAC significantly outperforms state-of-the-art methods on source diversity, provenance-adjusted novelty, and raw novelty.",
     "category": "Open Source & Research",
     "lab": "Independent",
     "entryType": "RESEARCH_PAPER",
     "arxivId": "arXiv:2611.33563",
     "pdfUrl": "https://arxiv.org/pdf/2611.33563.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33563v1 Announce Type: new Abstract: Automated Scientific Hypothesis Generation (ASHG) leveraging large language models (LLMs) aims to harness their strengths in knowledge integration, logical reasoning, and text generation for efficiently producing innovative, verifiable scientific hypotheses. However, existing approaches face three critical limitations: (i) insufficient fine-grained knowledge representation, as unstructured context impairs LLM comprehension and reasoning; (ii) lack of knowledge evolution traceability, constraining the generation of innovative cross-domain conjectures; (iii) absence of human-inspired and role-specialized multi-agent collaboration, failing to leverage the efficient innovation mechanisms arising from cognitive diversity and division of labor among expert roles to complete the full ASHG-evaluation loop. To address these limitations, we propose the Fine-grained Inspiration Graph-empowered Multi-Agent Collaboration framework (FIG-MAC) including: (i) Fine-grained Inspiration Graph module (FIG), to obtain fine-grained structured knowledge representations, where nodes represent academic semantic units and edges encode heuristic relationships among them; (ii) ontology-guided hybrid reasoning module, which follows the FIG ontology to construct structured reasoning paths and uses vector search to enrich them with semantic evidence, to obtain the traceable scientific conjecture paths; (iii) role-specialized Multi-Agent framework, inspired by real scientific teamwork, enabling a closed-loop process of scientific conjecture generation, screening, and validation.",
+      "tldr": "Siyuan Chen, Yuping Gao, Tai Huang, Yuling Zhou, Dongyu Su, and Tongguan Wang introduced FIG-MAC (Fine-grained Inspiration Graph-empowered Multi-Agent Collaboration), a framework designed for Automated Scientific Hypothesis Generation (ASHG) using large language models. The authors address three major limitations in prior approaches: unstructured context impairing LLM comprehension, a lack of knowledge evolution traceability hindering cross-domain conjectures, and the absence of human-inspired, role-specialized multi-agent collaboration for complete hypothesis-evaluation loops.\n\nThe framework consists of three core components: a Fine-grained Inspiration Graph module (FIG) that builds structured representations where nodes represent academic semantic units and edges encode heuristic relationships; an ontology-guided hybrid reasoning module that constructs structured reasoning paths using vector search for semantic evidence to yield traceable conjecture paths; and a role-specialized multi-agent framework that mimics real scientific teamwork to execute a closed-loop process of conjecture generation, screening, and validation. Experimental results show that FIG-MAC outperforms state-of-the-art methods in source diversity, raw novelty, and provenance-adjusted novelty.",
       "takeaways": [
-        "Experimental results demonstrate that FIG-MAC significantly outperforms state-of-the-art methods on source diversity, provenance-adjusted novelty, and raw novelty."
+        "**Core Architecture:** FIG-MAC utilizes a Fine-grained Inspiration Graph (FIG) where academic semantic units form nodes and heuristic relationships form edges.",
+        "**Reasoning Mechanism:** An ontology-guided hybrid reasoning module leverages FIG ontologies and vector search to construct traceable scientific conjecture paths.",
+        "**Multi-Agent Workflow:** A role-specialized multi-agent framework models real scientific teamwork to drive a closed-loop cycle of conjecture generation, screening, and validation.",
+        "**Performance Metrics:** Experimental evaluations confirm that FIG-MAC exceeds state-of-the-art baselines across source diversity, raw novelty, and provenance-adjusted novelty."
       ],
-      "impact": "Notable",
+      "impact": "High",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -754,16 +872,18 @@
     "arxivId": "arXiv:2611.33594",
     "pdfUrl": "https://arxiv.org/pdf/2611.33594.pdf",
     "summary": {
-      "tldr": "ArXiv:2611.33594v1 Announce Type: new Abstract: Embedding models increasingly inform how people search, recommend, and retrieve information, yet we lack credible ways to test whether these similarity judgments reflect how humans understand meaning. Existing benchmarks typically rely on static, expert-labeled pairs with coarse Likert-style annotations, limiting scalability and making it difficult to obtain consistent, high-confidence annotations. We introduce Aligned Machine, an interactive, public-facing platform that transforms broad participation into a continuously growing Human-Aligned Similarity Benchmark (HASB) for evaluating semantic alignment in embedding-based systems.\n\nParticipants complete a cognitively-natural, forced-choice task, comparing two pairs of items (text or images) and selecting which pair is more similar. This comparative design is accessible to non-experts, yields clean preference data, and supports robust aggregation. We report results from an initial deployment with 115 participants contributing 2,875 total labeled pairs and 872 unique pairs.",
+      "tldr": "Researchers have introduced 'Aligned Machine,' a public-facing platform designed to evaluate how well multimodal embedding models align with human semantic similarity judgments. The project addresses the limitations of static, expert-labeled benchmarks by utilizing a forced-choice comparative task where participants select which of two pairs (text or images) exhibits greater similarity. This methodology generates the Human-Aligned Similarity Benchmark (HASB), a scalable dataset intended to capture nuanced human preference data that traditional Likert-style annotations often fail to represent.\n\nIn an initial deployment involving 115 participants, the researchers collected 2,875 labeled pairs covering 872 unique items. Evaluation of 12 widely used embedding models revealed that text-only models currently demonstrate higher overall agreement with human judgments than multimodal counterparts. Within the multimodal category, performance is inconsistent: alignment is strongest for image-image comparisons, followed by image-text, and is lowest for text-text tasks. The platform is built to support longitudinal tracking, allowing for the auditing of model updates, bias detection, and the measurement of concept drift as embedding architectures evolve.",
       "takeaways": [
-        "Using HASB, we evaluated 12 widely used embedding models and found only partial alignment between embedding similarity and human judgments.",
-        "Text-only models consistently achieve higher overall agreement than multimodal models, while multimodal performance varies systematically by task type: alignment is strongest for image-image comparisons, weaker for image-text comparisons, and lowest for text-text comparisons.",
-        "Aligned Machine is designed to evolve over time as participation grows, supporting longitudinal analysis, domain-specific studies, bias detection, and measurement of concept drift across model versions.",
-        "By combining accessible public participation with rigorous comparative evaluation, HASB provides a scalable and accountable framework for auditing semantic alignment in embedding models."
+        "**Benchmark Methodology:** Uses a forced-choice comparative task rather than Likert scales to improve annotation consistency and accessibility for non-expert participants.",
+        "**Initial Dataset Scale:** The pilot study gathered 2,875 labeled pairs from 115 participants, encompassing 872 unique text and image pairs.",
+        "**Model Performance Gap:** Text-only embedding models currently outperform multimodal models in human-aligned similarity tasks.",
+        "**Multimodal Variance:** Alignment performance for multimodal models is task-dependent, ranking highest for image-image, moderate for image-text, and lowest for text-text comparisons.",
+        "**Platform Utility:** Designed for continuous data collection to enable longitudinal analysis, domain-specific auditing, and detection of concept drift in future model iterations."
       ],
-      "impact": "High",
+      "impact": "Medium",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
+      "generatedWith": "gemini",
+      "summaryVersion": 2
     }
   },
   {
@@ -5218,6 +5338,62 @@
       ],
       "impact": "High",
       "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "65b5bab1ed535325",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34457",
+    "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T02:54:32.446Z",
+    "contentHash": "f71fe74f171302e8",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Zhenchen Tang, Haolin Lu, Songlin Yang, Xiaotong Zhao",
+    "contentSnippet": "Authors: Zhenchen Tang , Haolin Lu , Songlin Yang , Xiaotong Zhao , Ran Zhang , Bo Peng , Shuai Li , Haotian Fan , Haobin Zhong , Yanni Zhang , Songlian Li , Ning Zhang , Xun Gao , Alan Zhao , Jing Dong\n\nAbstract: Recent video generators produce realistic videos, yet controlling how scenes unfold remains challenging. Structural proxies, such as animated 3D blockouts, guide generation by specifying scene layout, motion, camera behavior, and event order. However, these coarse inputs leave details unspecified and may contain artifacts that should not be reproduced. Successful proxy-guided generation must therefore Preserve intended structure, Complete missing content and correct proxy artifacts, and Bind text, image, and audio conditions to the right entities and events. We introduce ProxyGenBench to study these interacting requirements, with 312 evaluation cases from 60 scenes across three scene tasks and controlled variations in proxy fidelity, text detail, and multimodal inputs. We evaluate five video generators using verified, case-specific checklists. Experiments show that proxies improve spatiotemporal control, but greater proxy detail can coincide with poorer completion, while strong structural adherence does not ensure correct binding.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34457",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34457",
+    "summary": {
+      "tldr": "Zhenchen Tang, Haolin Lu, Songlin Yang, and colleagues introduced ProxyGenBench, a benchmark designed to study proxy-guided video generation using structural proxies such as animated 3D blockouts. These proxies guide video generation by specifying scene layout, motion, camera behavior, and event order, while addressing the challenge of controlling how scenes unfold in modern video generators.\n\nThe benchmark features 312 evaluation cases spanning 60 scenes across three scene tasks, incorporating controlled variations in proxy fidelity, text detail, and multimodal inputs. The authors evaluated five video generators using verified, case-specific checklists to test three interacting requirements: preserving intended structure, completing missing content while correcting proxy artifacts, and binding text, image, and audio conditions to the correct entities and events.\n\nExperimental results on ProxyGenBench reveal that while structural proxies successfully improve spatiotemporal control, greater proxy detail can paradoxically coincide with poorer content completion. Furthermore, strong structural adherence does not guarantee correct entity and event binding.",
+      "takeaways": [
+        "**Dataset Scale:** ProxyGenBench contains 312 evaluation cases derived from 60 scenes across three distinct scene tasks.",
+        "**Core Methodology:** The benchmark utilizes controlled variations in proxy fidelity, text detail, and multimodal inputs, evaluating video generators using verified, case-specific checklists.",
+        "**Tested Requirements:** Evaluation focuses on three interacting requirements: preserving intended structure, completing missing content while correcting proxy artifacts, and binding text, image, and audio conditions to proper entities and events.",
+        "**Key Findings:** While proxies improve spatiotemporal control, higher proxy detail can lead to poorer completion, and strong structural adherence fails to ensure correct cross-modal binding."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "f9a402f3d05b71e6",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34051",
+    "title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T02:54:32.446Z",
+    "contentHash": "956e8b4f0c2fb899",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Xichong Zhang, Xixuan Hao, Zhichen Liu, Le Zhou",
+    "contentSnippet": "Authors: Xichong Zhang , Xixuan Hao , Zhichen Liu , Le Zhou , Zeyu Zhang , Boyu Chen , Mingfei Lu , Zehao Lin , Bo Tang , Yonggang Zhang , Linyun Liu , Feiyu Xiong , Jianlin Su , Zhiyu Li\n\nAbstract: Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes. To resolve this, we propose \\model{}, employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an $O(\\sqrt{T})$ upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that \\model{} achieves stable training alongside improved long-context retrieval. Compared to GDN-2, it boosts the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34051",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34051",
+    "summary": {
+      "tldr": "Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes.\n\nTo resolve this, we propose , employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an O(T) upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that achieves stable training alongside improved long-context retrieval.",
+      "takeaways": [
+        "Compared to GDN-2, it boosts the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   },
@@ -10749,173 +10925,6 @@
       "readTimeMinutes": 3,
       "generatedWith": "gemini",
       "summaryVersion": 2
-    }
-  },
-  {
-    "id": "dae9992927e48496",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26912",
-    "title": "Self-Evolving Beyond Human-Crafted Experience for EDA Scripting",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "7baf114333bc2b30",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yang Liu, Shengbo Tong, Xiyuan Chen, Shiwei Hou, Sen Yuan, Hao Wang, Yanfeng Li, Hongwen Li, Yiming Zhu, Zhuolun He, Wenjian Yu",
-    "contentSnippet": "Authors: Yang Liu , Shengbo Tong , Xiyuan Chen , Shiwei Hou , Sen Yuan , Hao Wang , Yanfeng Li , Hongwen Li , Yiming Zhu , Zhuolun He , Wenjian Yu\n\nAbstract: The growing complexity of electronic systems demands efficient design flows, yet EDA scripting remains a bottleneck: proprietary APIs are sparsely documented, and errors often appear as silent failures or cryptic exceptions. Hand-crafted knowledge helps but is difficult to maintain as toolchains evolve. We present ZhuLong-SE (Self-Evolution), an execution-grounded LLM agent that learns reusable knowledge from prior task traces. Building on ZhuLong, it enhances the task-level harness with API retrieval, documentation responses, isolated sandbox execution, and static checking, then adds governed cross-task self-evolution. Beyond solving individual tasks, ZhuLong-SE distills past execution traces into a three-tier memory store governed by ground-truth anchoring, disconfirmation filtering, held-out rollback, and anti-leakage retrieval. On the 158-task EDA-Eval-PyAether benchmark, the full task-level harness, with self-evolution disabled, achieves 92.4% pass@1 and outperforms ZhuLong on all five tested LLM backbones. On a harder instance-disjoint test set, self-evolution from the bare configuration surpasses a human-crafted-experience baseline by 2.5 percentage points (80.0% vs. 77.5% pass@1).\n\nNotes: Submitted to DATE 2027. 7 pages, 3 figures, 5 tables",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26912",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26912.pdf",
-    "summary": {
-      "tldr": "Researchers Yang Liu, Shengbo Tong, Xiyuan Chen, Shiwei Hou, Sen Yuan, Hao Wang, Yanfeng Li, Hongwen Li, Yiming Zhu, Zhuolun He, and Wenjian Yu submitted a paper to DATE 2027 titled \"Self-Evolving Beyond Human-Crafted Experience for EDA Scripting,\" introducing ZhuLong-SE (Self-Evolution). Designed to overcome the bottlenecks of sparsely documented proprietary APIs and cryptic execution failures in electronic design automation (EDA) scripting, ZhuLong-SE functions as an execution-grounded LLM agent that learns reusable knowledge from prior task traces.\n\nThe framework extends the original ZhuLong task-level harness by incorporating API retrieval, documentation responses, isolated sandbox execution, and static checking, combined with governed cross-task self-evolution. Rather than operating purely per-task, ZhuLong-SE distills past execution traces into a three-tier memory store governed by ground-truth anchoring, disconfirmation filtering, held-out rollback, and anti-leakage retrieval.\n\nEvaluated on the 158-task EDA-Eval-PyAether benchmark, the full task-level harness with self-evolution disabled achieves a 92.4% pass@1 rate, outperforming the base ZhuLong across all five tested LLM backbones. On a more challenging instance-disjoint test set, enabling self-evolution from a bare configuration surpasses a human-crafted-experience baseline by 2.5 percentage points, reaching 80.0% pass@1 compared to the baseline's 77.5%.",
-      "takeaways": [
-        "**Core Authorship & Venue:** Authored by an 11-person team including Yang Liu, Zhuolun He, and Wenjian Yu, submitted to DATE 2027.",
-        "**Benchmark Performance:** Evaluated on the 158-task EDA-Eval-PyAether benchmark, achieving 92.4% pass@1 with self-evolution disabled.",
-        "**Memory Architecture:** Utilizes a three-tier memory store governed by ground-truth anchoring, disconfirmation filtering, held-out rollback, and anti-leakage retrieval.",
-        "**Instance-Disjoint Comparison:** On a harder instance-disjoint test set, self-evolution from a bare configuration achieves 80.0% pass@1, beating the human-crafted-experience baseline of 77.5%."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "14beffb876731c8e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26935",
-    "title": "Self-similar Organization of Information in Language",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "3ed93a19066df278",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Leon Lufkin, Cutter Dawes, Kamesh Krishnamurthy",
-    "contentSnippet": "arXiv:2611.26935v1 Announce Type: new Abstract: How much information relevant to predicting the future of a passage (i.e. predictive information) is carried by the preceding text, and how is this information distributed along that history? These questions are fundamental to understanding both the statistical structure of language and what large language models (LLMs) can learn about it. Indeed, LLMs trained to predict the next token in text must exploit this predictive information, so its organization determines how the structure of language becomes available to the model to learn. We develop a theory for the organization of predictive information based on the scaling behavior of a family of information measures, and the theory predicts that if this organization has the same form at all measured length scales -- i.e., it has a self-similar structure -- then the information measures evaluated at different lengths collapse onto a common form. We observe this scaling collapse in long text documents, showing that predictive information is present at every length scale we measure and has a self-similar structure. Self-similarity is a considerably stronger property than showing the existence of long-range dependencies, and it constrains the process generating the text. More broadly, our results give quantitative support to the empirical observation that conditioning on more distant text continues to reveal new structure in language to LLMs.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26935",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26935.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26935v1 Announce Type: new Abstract: How much information relevant to predicting the future of a passage (i.e. Predictive information) is carried by the preceding text, and how is this information distributed along that history? These questions are fundamental to understanding both the statistical structure of language and what large language models (LLMs) can learn about it.\n\nIndeed, LLMs trained to predict the next token in text must exploit this predictive information, so its organization determines how the structure of language becomes available to the model to learn. We develop a theory for the organization of predictive information based on the scaling behavior of a family of information measures, and the theory predicts that if this organization has the same form at all measured length scales -- i.e., it has a self-similar structure -- then the information measures evaluated at different lengths collapse onto a common form. We observe this scaling collapse in long text documents, showing that predictive information is present at every length scale we measure and has a self-similar structure.",
-      "takeaways": [
-        "Self-similarity is a considerably stronger property than showing the existence of long-range dependencies, and it constrains the process generating the text.",
-        "More broadly, our results give quantitative support to the empirical observation that conditioning on more distant text continues to reveal new structure in language to LLMs."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "8c1854f784a023ca",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26942",
-    "title": "CodeReviewBench: An Automated Benchmark for Evaluating the Software Factory",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "568098a0d7c0b9f3",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Ashley Zhang, Narmeen Fatimah Oozeer, Aleksandr Zverianskii, Daniel Ng, Tasana Pejovic, Ant\\'ia Garc\\'ia, Jacob Clyne, Ravpreet Setia, Akshay Utture, Etan Jacob Ginsberg, Shriyash Kaustubh Upadhyay, Fazl Barez",
-    "contentSnippet": "arXiv:2611.26942v1 Announce Type: new Abstract: As AI agents ship more code with minimal human oversight, code review becomes the critical quality-control checkpoint -- but one without a reliable, objective verifier: review quality is nuanced and ultimately a judgment call by the PR author. Existing benchmarks are structurally misaligned with this: annotators are third-party reviewers, like the bots they evaluate, not the PR authors who actually decide what to fix. They also rely on small, static issue sets that require full re-evaluation as tools update, limiting how frequently progress can be tracked. We introduce CodeReviewBench, built on a fundamentally different signal: revealed developer preferences -- if a developer acts on a bot's suggestion, we treat it as useful; if they ignore it, we do not. This signal is mined daily from the public GitHub event stream, yielding 500K+ judged PRs across 18 tools, and refreshes continuously as tools evolve. We validate the developer preference against an independent offline benchmark: the two agree on precision rankings and independently detect the same product updates within days of vendor releases. Together, these form the benchmark.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26942",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26942.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26942v1 Announce Type: new Abstract: As AI agents ship more code with minimal human oversight, code review becomes the critical quality-control checkpoint -- but one without a reliable, objective verifier: review quality is nuanced and ultimately a judgment call by the PR author. Existing benchmarks are structurally misaligned with this: annotators are third-party reviewers, like the bots they evaluate, not the PR authors who actually decide what to fix. They also rely on small, static issue sets that require full re-evaluation as tools update, limiting how frequently progress can be tracked.\n\nWe introduce CodeReviewBench, built on a fundamentally different signal: revealed developer preferences -- if a developer acts on a bot's suggestion, we treat it as useful; if they ignore it, we do not. This signal is mined daily from the public GitHub event stream, yielding 500K+ judged PRs across 18 tools, and refreshes continuously as tools evolve. We validate the developer preference against an independent offline benchmark: the two agree on precision rankings and independently detect the same product updates within days of vendor releases.",
-      "takeaways": [
-        "Together, these form the benchmark."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "7674d7520cee7340",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26966",
-    "title": "Keep the Process, Change the Supplier: Runtime Governance for Tool-Using AI Agents",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "34d00df2e308cd70",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Deepak Waghmare, Shaad Sufi",
-    "contentSnippet": "arXiv:2611.26966v1 Announce Type: new Abstract: Tool-using AI agents propose actions whose authorization and external effects cannot be inferred from generated text alone. We study an execution boundary that separates agent proposals from business-controlled authority, context disclosure, and supplier selection. The Open Process Control Plane (OPCP) mediates capability calls and records uncertain outcomes when a supplier may have acted without returning an acceptable reply. We evaluate this runtime with scripted requests and synthetic suppliers: 2,400 fault episodes across four policies, 60 process-termination/restart episodes, 19,000 timed calls across 19 configurations, five targeted mutations over 43 fixtures, and 160 substitution records. No language model or autonomous agent is evaluated. OPCP and a conservative composition agree on all measured fault outcomes. Both recover after definite refusal without cross-supplier duplication; retry-all duplicates effects in every tested lost-reply-after-commit case. Persistent runtime state prevents cross-supplier replay in the restart experiments, while same-supplier duplicate prevention also requires supplier idempotency. At 128 suppliers, best-score routing has a median latency of 1.411 ms versus 0.261 ms for pinned routing. All five selected mutations are detected, and record enumeration exposes acceptance of an empty regression set. These results characterize an execution mechanism relevant to agent governance, including its costs and assumption boundaries. They do not establish improved agent task success, prompt-injection resistance, or real-vendor model portability.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26966",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26966.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26966v1 Announce Type: new Abstract: Tool-using AI agents propose actions whose authorization and external effects cannot be inferred from generated text alone. We study an execution boundary that separates agent proposals from business-controlled authority, context disclosure, and supplier selection. The Open Process Control Plane (OPCP) mediates capability calls and records uncertain outcomes when a supplier may have acted without returning an acceptable reply.\n\nWe evaluate this runtime with scripted requests and synthetic suppliers: 2,400 fault episodes across four policies, 60 process-termination/restart episodes, 19,000 timed calls across 19 configurations, five targeted mutations over 43 fixtures, and 160 substitution records. No language model or autonomous agent is evaluated. OPCP and a conservative composition agree on all measured fault outcomes.",
-      "takeaways": [
-        "Both recover after definite refusal without cross-supplier duplication; retry-all duplicates effects in every tested lost-reply-after-commit case.",
-        "Persistent runtime state prevents cross-supplier replay in the restart experiments, while same-supplier duplicate prevention also requires supplier idempotency.",
-        "At 128 suppliers, best-score routing has a median latency of 1.411 ms versus 0.261 ms for pinned routing.",
-        "All five selected mutations are detected, and record enumeration exposes acceptance of an empty regression set."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "b3dd5830b7fd0237",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26968",
-    "title": "Right Numbers, Wrong Story: When LLMs Narrate Financial Changes Beyond Their Inputs",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "5a3c8353527500a6",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Seunghan Lee, Jun Seo, Junhyeok Kang, Jaehoon Lee, Sangjun Han, Sungdong Yoo, Minjae Kim, Tae Yoon Lim, Dongwan Kang, Hwanil Choi, Soonyoung Lee, Wonbin Ahn",
-    "contentSnippet": "arXiv:2611.26968v1 Announce Type: new Abstract: A financial report drafted by an LLM can state every number correctly but still go beyond its input, adding judgments and causes that no one supplied. We call these additions unsupported framing and find them far more often in LLM drafts than in reports written by proInput facts Revenue +3% Higher prices 10-K filings Revenue increased 3% on higher prices. 10-K writer Revenue surged 3% on higher prices, due to strong demand. LLM Fits the size? Surged: Unusual for 3% In the input? In the input? Strong demand: Not in input Higher prices: Kept fessionals, and attempts to fix them by prompting with how each word is used instead make such judgments more frequent. We therefore propose FrameCheck, a plug-in that sits beFrameCheck Revenue increased 3% on higher prices. No extra model call Judgment word Unsupported cause Supported cause tween the LLM and human review to keep each draft within its input. Specifically, FrameCheck 1) guides the draft with professional examples that report a change of similar magnitude, 2) flags judgments that professionals would not use and causes the input does not give, and 3) removes them by rule, without a model call. In experiments on 17 open LLMs and 3M drafts, FrameCheck removes almost all unsupported framing from drafts and brings the judgment rate close to that of the writers of 10-K filings, the annual reports that US firms file with regulators. Code is available at github.com/seunghan96/framecheck.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26968",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26968.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26968v1 Announce Type: new Abstract: A financial report drafted by an LLM can state every number correctly but still go beyond its input, adding judgments and causes that no one supplied. We call these additions unsupported framing and find them far more often in LLM drafts than in reports written by proInput facts Revenue +3% Higher prices 10-K filings Revenue increased 3% on higher prices. 10-K writer Revenue surged 3% on higher prices, due to strong demand.\n\nSurged: Unusual for 3% In the input? Strong demand: Not in input Higher prices: Kept fessionals, and attempts to fix them by prompting with how each word is used instead make such judgments more frequent. We therefore propose FrameCheck, a plug-in that sits beFrameCheck Revenue increased 3% on higher prices.",
-      "takeaways": [
-        "No extra model call Judgment word Unsupported cause Supported cause tween the LLM and human review to keep each draft within its input.",
-        "Specifically, FrameCheck 1) guides the draft with professional examples that report a change of similar magnitude, 2) flags judgments that professionals would not use and causes the input does not give, and 3) removes them by rule, without a model call.",
-        "In experiments on 17 open LLMs and 3M drafts, FrameCheck removes almost all unsupported framing from drafts and brings the judgment rate close to that of the writers of 10-K filings, the annual reports that US firms file with regulators.",
-        "Code is available at github.com/seunghan96/framecheck."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "14dcac9f333a385d",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26975",
-    "title": "Run One, Get Two: Near-Free Streaming Safety Checks for Local LLMs",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "a8363b0ea0ebe181",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Soheil Zibakhsh, Pedram Aghazadeh, Farinaz Koushanfar",
-    "contentSnippet": "arXiv:2611.26975v1 Announce Type: new Abstract: Local LLM assistants decode for one user at a time, so decoding is bound by memory bandwidth and leaves compute idle. Streaming safety checks today trade accuracy against cost. A dedicated guard model is accurate but nearly doubles the latency per token, while a hidden-state probe is cheap but less accurate. We present ToRA, an adapter that runs a second model as an extra row in the generator's decode step, sharing its weights and KV cache. Dual-row kernels read each weight once for both rows. On Qwen3-0.6B, ToRA matches or beats a dedicated streaming guard, with higher F1 on 12 of 17 benchmarks. It detects 11.8 points more unsafe responses than the probe at a similar cost, under 4% added latency per token.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26975",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26975.pdf",
-    "summary": {
-      "tldr": "ArXiv:2611.26975v1 Announce Type: new Abstract: Local LLM assistants decode for one user at a time, so decoding is bound by memory bandwidth and leaves compute idle. Streaming safety checks today trade accuracy against cost. A dedicated guard model is accurate but nearly doubles the latency per token, while a hidden-state probe is cheap but less accurate.\n\nWe present ToRA, an adapter that runs a second model as an extra row in the generator's decode step, sharing its weights and KV cache. Dual-row kernels read each weight once for both rows. On Qwen3-0.6B, ToRA matches or beats a dedicated streaming guard, with higher F1 on 12 of 17 benchmarks.",
-      "takeaways": [
-        "It detects 11.8 points more unsafe responses than the probe at a similar cost, under 4% added latency per token."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 1,
-      "generatedWith": "heuristic"
     }
   }
 ]
