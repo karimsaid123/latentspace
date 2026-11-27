@@ -1,5 +1,64 @@
 [
   {
+    "id": "1cc28ae27bf59c30",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/26/nexos-ai-ai-gateway-200-models-governance/",
+    "title": "nexos.ai AI Adoption Platform puts 200+ models behind one AI Gateway, with budget limits and governance built in",
+    "publishedAt": "2026-11-27T03:43:35.000Z",
+    "fetchedAt": "2026-11-27T11:40:59.830Z",
+    "contentHash": "981ddf5d9f6bd8ce",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "nexos.ai is an all-in-one AI platform for enterprise AI adoption . It brings full control and governance to every team. The AI gateway at its core routes every LLM request through one unified layer where budgets, policies, and audit trails apply. Here’s how it governs usage, optimizes AI spend, and meets the compliance requirements EU companies set. TL;DR Governance. Adopt AI with control. Set who can use which models, apply budgets and usage limits, and manage permissions from one place. Compliance. SOC 2 Type 2, ISO 27001, and ISO 42001 certified, and fully GDPR compliant. Cost control. Smart Router and LLM caching allow AI spend optimization. Cost tracking attributes every dollar to a team, project, or user. European hosting. The platform and most available models are hosted in Europe, with zero data retention and no training on your data. Visibility. LLM observability shows usage, cost, and routing decisions across every team. Why does AI adoption need a control layer? Teams often start using AI on their own. Marketing picks one tool, engineering picks another, and each team signs up for its own API keys. Spend grows faster than anyone’s view of it, and leadership sees the total on the monthly invoice. The EU AI Act adds a second pressure. It moves AI governance and accountability from policy documents into daily operations. CTOs and CISOs now need shared answers on which models are used, what data goes into them, and what each team spends. What does the nexos.ai AI gateway do? An AI gateway sits between your applications and the model providers they call. Developers keep one API and their existing SDKs. Leadership gets one place to set and enforce rules. The nexos.ai AI gateway handles three jobs. Governance and control. Admins set which models each team can access and enforce policies centrally. Spend optimization. Requests are routed, cached, and compressed so routine work uses cheaper models and fewer tokens. Reliability. When a provider goes down or slows, automatic fallbacks reroute requests to another model or provider. The same endpoint reaches 200+ leading AI models, so teams can adopt new models without locking into one vendor. How does the gateway govern AI usage? Admins decide which teams and users can reach which models. They set budgets and usage limits per team or user. Policy enforcement applies those rules to every request, and audit log",
+    "category": "Ethics & Policy",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "nexos.ai has launched an enterprise AI adoption platform centered on a unified AI gateway designed to centralize governance, cost management, and compliance for organizations utilizing large language models. The platform provides access to over 200 AI models through a single API endpoint, allowing developers to maintain existing SDKs while enabling leadership to enforce centralized policies, budget caps, and usage limits across different teams and projects.\n\nTechnically, the platform integrates a 'Smart Router' and LLM caching mechanism to optimize token usage and reduce operational costs. It includes automated fallback capabilities that reroute requests to alternative models or providers during outages or latency spikes. The service is built to meet stringent regulatory requirements, holding SOC 2 Type 2, ISO 27001, and ISO 42001 certifications, while ensuring full GDPR compliance through European-based hosting, zero data retention policies, and a commitment to not train models on customer data.",
+      "takeaways": [
+        "**Model Access:** The platform provides a single API gateway for over 200 AI models, preventing vendor lock-in.",
+        "**Compliance Standards:** The service is SOC 2 Type 2, ISO 27001, and ISO 42001 certified and fully compliant with the EU AI Act and GDPR.",
+        "**Cost Management:** Features include LLM caching, request compression, and granular cost tracking attributed to specific teams, projects, or users.",
+        "**Operational Reliability:** The gateway includes automatic rerouting to secondary models or providers to mitigate downtime or performance degradation.",
+        "**Data Privacy:** The platform enforces a zero data retention policy and guarantees that customer data is not used for model training."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
+    "id": "21d840f0a67c0379",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/26/tencent-dfly2-speculative-decoding-sparse-models/",
+    "title": "Tencent Open-Sources DFly2: Speculative Decoding That Reuses the Target’s Sparse KV Cache",
+    "publishedAt": "2026-11-27T03:31:30.000Z",
+    "fetchedAt": "2026-11-27T11:40:59.830Z",
+    "contentHash": "b90c16fc844399c8",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Tencent has open-sourced DFly2 , a speculative decoding drafter built for natively sparse LLMs. DFly2 speculative decoding targets models like DeepSeek-V4.1-Flash, GLM-5.3-Flash and Tencent’s own Hy4 flash . Its main approach is that the drafter keeps no KV cache of its own. This is important for long-context and agentic serving, where draft memory competes with concurrency. TL;DR Size: 0.85B-parameter, 5-layer drafter shipped with Hy4 flash. Runs on: Serving tests used NVIDIA H20 GPUs with vLLM, TP8 per instance. Hy4 flash’s vLLM recipe defaults to 8x H200. Performance: Higher draft acceptance than same-recipe DFlash and DSpark on all 3 targets and all general benchmarks. Best: Up to 81% more throughput on DeepSeek-V4.1-Flash (SWE 64K), at matched per-user speed. Worst: Smallest gain on Hy4 flash general tasks: only 3.9% over DSpark at temperature 0. What is DFly2? DFly2 is a block-parallel speculative decoding drafter from Tencent’s Hunyuan AI Infra team. It is described in the research paper ‘ DFly2: Turbocharging Long-Context Speculative Decoding by Sharing the Target’s Sparsity ‘. Speculative decoding uses a small drafter to propose tokens. The target verifies them in 1 pass, so output stays lossless. Long context makes this costly. A normal drafter attends over the whole prefix and stores its own KV cache. How does DFly2 work? DFly2 pairs each draft layer with one sparse attention layer in the target. It shares 2 things with that layer. KV sharing: the draft layer reads the paired target layer’s latent KV cache. Index sharing: it attends only to positions the target’s indexer already selected (top-k sparse KV). Initialization: each draft layer starts from its paired target layer’s weights. Hidden injection: the target’s last-layer hidden state is gated into the draft block. Intra-block correction: the drafter rereads the shared context slot by slot within a block. On DeepSeek-V4.1-Flash, a selection made 1 step early covers close to 90% of what later block tokens select. A same-size sliding window recovers less than 20%. Per the AngelSpec GitHub page , each draft token attends to at most about 2K keys. So drafting cost stays roughly flat at any context length. DFly2 also skips prefill entirely. The prefill-to-decode transfer adds only 1 last-layer hidden state. How much memory does a separate draft cache cost? A conventional 3-layer drafter cache would",
+    "imageUrl": "https://s.w.org/images/core/emoji/17.0.2/72x72/25c0.png",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "RESEARCH_PAPER",
+    "summary": {
+      "tldr": "Tencent’s Hunyuan AI Infra team has open-sourced DFly2, a speculative decoding drafter designed specifically for natively sparse Large Language Models (LLMs) such as DeepSeek-V4.1-Flash, GLM-5.3-Flash, and Tencent’s Hy4 flash. The architecture features a 0.85B-parameter, 5-layer drafter that eliminates the need for a dedicated KV cache by leveraging the target model's existing sparse KV cache. By sharing indices and KV states directly with the target model's sparse attention layers, DFly2 maintains a flat drafting cost regardless of context length, addressing the memory bottlenecks typically associated with long-context and agentic serving.\n\nTechnically, DFly2 operates by pairing each draft layer with a corresponding sparse attention layer in the target model, utilizing weight initialization from the target and gating the target's last-layer hidden state into the draft block. This approach allows the drafter to attend to at most 2K keys per token, significantly outperforming traditional drafters like DFlash and DSpark. In benchmarks, DFly2 achieved up to 81% higher throughput on DeepSeek-V4.1-Flash (SWE 64K) at matched per-user speeds, with a minimum gain of 3.9% over DSpark on Hy4 flash general tasks at temperature 0. The system is optimized for vLLM deployment, with testing conducted on NVIDIA H20 GPUs (TP8 per instance) and a default recipe for 8x H200s.",
+      "takeaways": [
+        "**Architecture:** 0.85B-parameter, 5-layer drafter that shares KV cache and indices with the target model to avoid redundant memory usage.",
+        "**Performance:** Achieved up to 81% throughput increase on DeepSeek-V4.1-Flash (64K context) compared to baseline speculative decoding methods.",
+        "**Efficiency:** Drafting cost remains flat across context lengths because each draft token attends to a maximum of ~2K keys.",
+        "**Deployment:** Tested on NVIDIA H20 GPUs using vLLM with TP8, with a standard production recipe utilizing 8x H200 GPUs.",
+        "**Mechanism:** Eliminates prefill overhead by transferring only the last-layer hidden state from the target to the drafter."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 3,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "0f5d437dd39123c8",
     "canonicalUrl": "https://siliconangle.com/2026/11/26/sap-reportedly-plans-to-lay-off-10000-employees-amid-ai-push/",
     "title": "SAP reportedly plans to lay off 10,000+ employees amid AI push",
@@ -5388,12 +5447,209 @@
     "arxivId": "2611.34051",
     "pdfUrl": "https://arxiv.org/pdf/2611.34051",
     "summary": {
-      "tldr": "Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes.\n\nTo resolve this, we propose , employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an O(T) upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that achieves stable training alongside improved long-context retrieval.",
+      "tldr": "Authors: Xichong Zhang , Xixuan Hao , Zhichen Liu , Le Zhou , Zeyu Zhang , Boyu Chen , Mingfei Lu , Zehao Lin , Bo Tang , Yonggang Zhang , Linyun Liu , Feiyu Xiong , Jianlin Su , Zhiyu Li Abstract: Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retrieval, yet it suffers from training failures during long-context training. We trace these failures to the asymmetry between reading and modification directions during erasure, which yields non-normal erase operators whose directional gains accumulate across tokens, triggering exponential state growth even without new writes.\n\nTo resolve this, we propose \\model{}, employing symmetric erasure to ensure non-expansive state propagation and decay-regulated residual writing to preserve writing flexibility. Theoretically, we establish an $O(\\sqrt{T})$ upper bound on recurrent state growth while retaining chunkwise parallel computation. Experiments on ~1.6B parameter models show that \\model{} achieves stable training alongside improved long-context retrieval.",
       "takeaways": [
         "Compared to GDN-2, it boosts the 128K average RULER score by 6.80 points in the recurrent setting and average accuracy across nine downstream tasks by 0.62 points in the hybrid setting."
       ],
       "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "a6a4522ce57254d0",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34782",
+    "title": "Generation as Reverse Encoding",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "b2eb51843e4374bc",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Cheng Shi, Sibei Yang, Hanzhong Guo, Yipeng Qin",
+    "contentSnippet": "Pretrained visual representations accelerate generative learning by abstracting away appearance and spatial detail. Yet the same abstraction makes the return to pixels far harder, shifting much of the burden onto a larger decoder. We ask why the representation-to-pixel path should be learned independently when the encoder already provides a learned pixel-to-semantics path (the semantic encoding path). We introduce RevFlow, based on the principle of generation as reverse encoding. RevFlow uses intermediate representations of a frozen encoder as successive generative targets, first generating deep semantic representations, then shallow representations that retain appearance and spatial detail, before decoding to pixels. To learn these transitions without training a separate generator for each stage, we develop HyC-DiT, a unified generative model with a standard DiT backbone shared across stages and stage-specific condition injection. We further show that native matching in semantic representation space enables few-step generation. RevFlow accelerates both learning and sampling. On ImageNet 256 times 256, RevFlow reaches 1.96 FID at 690M and 1.74 FID at 1.55B after only 5 training epochs. It also achieves 30.25 dB reconstruction PSNR with an 89M decoder. After a short native-matching adaptation phase, RevFlow-XL achieves 2.85 FID using a single sampling step in each stage. Our code repository is at https://github.com/ChengShiest/RevFlow",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34782",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34782",
+    "summary": {
+      "tldr": "Pretrained visual representations accelerate generative learning by abstracting away appearance and spatial detail. Yet the same abstraction makes the return to pixels far harder, shifting much of the burden onto a larger decoder. We ask why the representation-to-pixel path should be learned independently when the encoder already provides a learned pixel-to-semantics path (the semantic encoding path).\n\nWe introduce RevFlow, based on the principle of generation as reverse encoding. RevFlow uses intermediate representations of a frozen encoder as successive generative targets, first generating deep semantic representations, then shallow representations that retain appearance and spatial detail, before decoding to pixels. To learn these transitions without training a separate generator for each stage, we develop HyC-DiT, a unified generative model with a standard DiT backbone shared across stages and stage-specific condition injection.",
+      "takeaways": [
+        "We further show that native matching in semantic representation space enables few-step generation.",
+        "RevFlow accelerates both learning and sampling.",
+        "On ImageNet 256 times 256, RevFlow reaches 1.96 FID at 690M and 1.74 FID at 1.55B after only 5 training epochs.",
+        "It also achieves 30.25 dB reconstruction PSNR with an 89M decoder."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "218ec7c7220cef74",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34719",
+    "title": "Reading, Not Adapting: Unlocking Frozen Visual Knowledge for AI-Generated Image Detection",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "cbd27f482363dd33",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Yuncheng Guo, Ying Dong, Xiaodong Gu",
+    "contentSnippet": "Generalization to unseen image generators has driven efforts to adapt pretrained visual representations for detection. Yet recent findings show that vision foundation models already encode transferable detection knowledge, while further adaptation can impair generalization. This motivates a shift from backbone adaptation to knowledge readout. Conventional linear probing offers a direct way to read this knowledge but is limited to final-layer RGB features. Multi-cue detectors broaden the evidence base, but their designs introduce other tradeoffs: adaptation may compromise pretrained transferability, heterogeneous encoders complicate feature integration, and late fusion precludes intermediate cross-view interaction. To overcome these limitations, we propose ReMoT, a Mixture-of-Transformers-inspired framework that reads complementary knowledge from spatially aligned RGB and wavelet views within a fully frozen visual foundation. ReMoT employs staged joint attention to enable controlled local and global cross-view interaction, while learnable fusion queries progressively read complementary evidence across Transformer depth without writeback. ReMoT achieves 91.2% average accuracy across eight benchmark groups with 3,074 trainable parameters, attaining the highest overall average among the evaluated methods. These results support structured knowledge readout as a promising alternative to backbone adaptation. Code is available at https://github.com/yunncheng/ReMoT.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34719",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34719",
+    "summary": {
+      "tldr": "Generalization to unseen image generators has driven efforts to adapt pretrained visual representations for detection. Yet recent findings show that vision foundation models already encode transferable detection knowledge, while further adaptation can impair generalization. This motivates a shift from backbone adaptation to knowledge readout.\n\nConventional linear probing offers a direct way to read this knowledge but is limited to final-layer RGB features. Multi-cue detectors broaden the evidence base, but their designs introduce other tradeoffs: adaptation may compromise pretrained transferability, heterogeneous encoders complicate feature integration, and late fusion precludes intermediate cross-view interaction. To overcome these limitations, we propose ReMoT, a Mixture-of-Transformers-inspired framework that reads complementary knowledge from spatially aligned RGB and wavelet views within a fully frozen visual foundation.",
+      "takeaways": [
+        "ReMoT employs staged joint attention to enable controlled local and global cross-view interaction, while learnable fusion queries progressively read complementary evidence across Transformer depth without writeback.",
+        "ReMoT achieves 91.2% average accuracy across eight benchmark groups with 3,074 trainable parameters, attaining the highest overall average among the evaluated methods.",
+        "These results support structured knowledge readout as a promising alternative to backbone adaptation.",
+        "Code is available at https://github.com/yunncheng/ReMoT."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "1dfaec3ec05c5815",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34232",
+    "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "9e69df612d56ab1e",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Hui Shen, Yunta Hsieh, Jianing Ma, Zhuoran Yin",
+    "contentSnippet": "Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions. However, existing benchmarks typically isolate web, mobile, or desktop environments, leaving it unclear whether a single generalist agent can execute long-horizon workflows that span multiple operating systems and persistent application states. We introduce OS-Omni, a live cross-platform benchmark and execution environment for evaluating computer-using agents across Windows, Ubuntu, macOS, iOS, Android, and Web environments. OS-Omni is released in versioned waves of 300 tasks each; this paper focuses on the first release, v1, which contains 48 tasks per platform and 12 cross-platform workflows that pair a desktop with an Android phone. OS-Omni provides reproducible initialization, platform-specific adapters, trajectory logging, and executable final-state evaluators, and includes controlled service-backed applications for workflows involving account, cart, budget, calendar, message, and other persistent state. Human studies show that OS-Omni tasks require 67.54 interaction steps, substantially exceeding OSWorld references of 15.0 steps. On v1, the strongest evaluated agent, Claude Opus 5.5, reaches 68.5% average success, trailing the 77.3% human reference by 8.8 points; the gap is uneven across platforms, with frontier models exceeding humans on Linux but trailing them by more than 25 points on iOS and macOS. These results indicate that current agents remain far from platform-robust, long-horizon computer use, especially when success requires sustained state tracking and durable final-state changes.",
+    "category": "Open Source & Research",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34232",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34232",
+    "summary": {
+      "tldr": "Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions. However, existing benchmarks typically isolate web, mobile, or desktop environments, leaving it unclear whether a single generalist agent can execute long-horizon workflows that span multiple operating systems and persistent application states. We introduce OS-Omni, a live cross-platform benchmark and execution environment for evaluating computer-using agents across Windows, Ubuntu, macOS, iOS, Android, and Web environments.\n\nOS-Omni is released in versioned waves of 300 tasks each; this paper focuses on the first release, v1, which contains 48 tasks per platform and 12 cross-platform workflows that pair a desktop with an Android phone. OS-Omni provides reproducible initialization, platform-specific adapters, trajectory logging, and executable final-state evaluators, and includes controlled service-backed applications for workflows involving account, cart, budget, calendar, message, and other persistent state. Human studies show that OS-Omni tasks require 67.54 interaction steps, substantially exceeding OSWorld references of 15.0 steps.",
+      "takeaways": [
+        "On v1, the strongest evaluated agent, Claude Opus 5.5, reaches 68.5% average success, trailing the 77.3% human reference by 8.8 points; the gap is uneven across platforms, with frontier models exceeding humans on Linux but trailing them by more than 25 points on iOS and macOS.",
+        "These results indicate that current agents remain far from platform-robust, long-horizon computer use, especially when success requires sustained state tracking and durable final-state changes."
+      ],
+      "impact": "Breakthrough",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "65a381c9fe2032c6",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34852",
+    "title": "DRBench Pro: A Knowledge-Centric Benchmark for Professional Deep Research Agents",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "f7c8aa40d83ef5f1",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Han Huang, Yuchen Yan, Xingyu Wu, Yijun Li",
+    "contentSnippet": "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores them. We introduce DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target. Our automated pipeline builds local knowledge trees from Wikipedia and uses sampled subgraphs to generate research queries and evidence-grounded rubrics. Each rubric corresponds to a relation in the tree, preserving the structure of the knowledge being evaluated. Agents receive only the research query. This structure allows us to measure breadth across major research directions and depth along related knowledge chains, with their geometric mean giving overall coverage. The benchmark includes 144 cases across 24 domains and 44,102 rubrics. Evaluating 16 deep research agents reveals different strengths in breadth and depth, with the best-performing agent reaching 57.04% overall coverage. Rubric judgments agree closely with human annotations, and agent rankings remain stable across the tested metric configurations.",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34852",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34852",
+    "summary": {
+      "tldr": "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a report covers and how deeply it explores them. We introduce DRBench Pro, a benchmark that makes structured knowledge coverage the primary evaluation target.\n\nOur automated pipeline builds local knowledge trees from Wikipedia and uses sampled subgraphs to generate research queries and evidence-grounded rubrics. Each rubric corresponds to a relation in the tree, preserving the structure of the knowledge being evaluated. Agents receive only the research query.",
+      "takeaways": [
+        "This structure allows us to measure breadth across major research directions and depth along related knowledge chains, with their geometric mean giving overall coverage.",
+        "The benchmark includes 144 cases across 24 domains and 44,102 rubrics.",
+        "Evaluating 16 deep research agents reveals different strengths in breadth and depth, with the best-performing agent reaching 57.04% overall coverage.",
+        "Rubric judgments agree closely with human annotations, and agent rankings remain stable across the tested metric configurations."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "27e029b82de16a5b",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34290",
+    "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "8313f7789b58bba3",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Modi Jin, Xuying Zhang, Yijing Guo, Haoran Li",
+    "contentSnippet": "Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34290",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34290",
+    "summary": {
+      "tldr": "Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance.\n\nActive States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets.",
+      "takeaways": [
+        "Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards."
+      ],
+      "impact": "High",
       "readTimeMinutes": 1,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "0d0c22525f2f3fc8",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34813",
+    "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "12a989d55a5a0bf7",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Dezhi Luo, Fengyuan Yu, Haotian Zhang, Zehong Zhao",
+    "contentSnippet": "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the visual medium, unfolding directly in the frames rather than through language or code. Whether this native route is in fact the more reliable path to visual reasoning has not been tested against a symbolic alternative under the same conditions. We therefore pose the same tasks, with identical inputs, output specification and evaluator, to both media: rather than denoising pixels, a coding agent writes a program that renders the answer video, which an unmodified rule-based evaluator scores. On VBVR-Pro-Bench (Xu et al., 2026), a 500-instance suite spanning five cognitive categories with symbolic ground truth, the agent receives the same first frame and prompt as the video model, with no access to ground truth, metadata or generation models, and one attempt per instance. Three closed-model agents (Codex with gpt-6-astra, Claude Code with Fable 5.1 and Gemini CLI with Gemini 3.1 Pro) score 0.923, 0.894 and 0.893, each more than 0.22 above the strongest video model. Among 23 runnable open-weight models, the best, GLM-5, reaches 0.572, above all video models except the RL-trained one. Together, we show that for tasks whose solutions can be computed from a first frame and a prompt, program synthesis is currently a substantially more reliable route to visual reasoning than video generation. We further distinguish depictive programs, which navigate the image to recover a transferable scheme, from propositional programs, which operate on hard-coded values, revealing how visual reasoning unfolds in agent-written programs and what it implies for its nature of reasoning in general.",
+    "category": "Open Source & Research",
+    "lab": "Anthropic",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34813",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34813",
+    "summary": {
+      "tldr": "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the visual medium, unfolding directly in the frames rather than through language or code. Whether this native route is in fact the more reliable path to visual reasoning has not been tested against a symbolic alternative under the same conditions.\n\nWe therefore pose the same tasks, with identical inputs, output specification and evaluator, to both media: rather than denoising pixels, a coding agent writes a program that renders the answer video, which an unmodified rule-based evaluator scores. On VBVR-Pro-Bench (Xu et al., 2026), a 500-instance suite spanning five cognitive categories with symbolic ground truth, the agent receives the same first frame and prompt as the video model, with no access to ground truth, metadata or generation models, and one attempt per instance. Three closed-model agents (Codex with gpt-6-astra, Claude Code with Fable 5.1 and Gemini CLI with Gemini 3.1 Pro) score 0.923, 0.894 and 0.893, each more than 0.22 above the strongest video model.",
+      "takeaways": [
+        "Among 23 runnable open-weight models, the best, GLM-5, reaches 0.572, above all video models except the RL-trained one.",
+        "Together, we show that for tasks whose solutions can be computed from a first frame and a prompt, program synthesis is currently a substantially more reliable route to visual reasoning than video generation.",
+        "We further distinguish depictive programs, which navigate the image to recover a transferable scheme, from propositional programs, which operate on hard-coded values, revealing how visual reasoning unfolds in agent-written programs and what it implies for its nature of reasoning in general."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "809cf97dbbeca154",
+    "canonicalUrl": "https://arxiv.org/abs/2611.34693",
+    "title": "ShowNow: Fine-Grained Speculative Streaming for Responsive World Models",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "19863c89159d21cc",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Yiren Song, Guian Fang, Mike Zheng Shou",
+    "contentSnippet": "Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path. We introduce ShowNow, a fine-grained speculative streaming framework that uses computation available during playback to prepare action-conditioned futures before input arrives. Single-latent commitment enables frequent decisions, while configurable preparation covers one to eight actions. We construct a matched multi-future dataset to train alternative continuations from a common state; shared-history tree execution and fused commitment make their preparation efficient. On a single H100, our 5B model sustains 480p generation at 16 fps with eight prepared futures. In ViZDoom, the complete ShowNow deployment reduces median input-to-display latency from 620 to 208 ms relative to the native-block SolarWM-FT deployment. Matched-policy experiments reduce restart empty ticks from 1.56% to 0.09% (94%) and improve on-time responses to action changes. These results establish complementary roles for fine-grained commitment and advance preparation, with measured trade-offs in visual fidelity and long-horizon consistency. ShowNow turns playback-time computation into responsive visual interaction. Project: https://github.com/showlab/ShowNow.",
+    "category": "Ethics & Policy",
+    "lab": "NVIDIA",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.34693",
+    "pdfUrl": "https://arxiv.org/pdf/2611.34693",
+    "summary": {
+      "tldr": "Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path. We introduce ShowNow, a fine-grained speculative streaming framework that uses computation available during playback to prepare action-conditioned futures before input arrives.\n\nSingle-latent commitment enables frequent decisions, while configurable preparation covers one to eight actions. We construct a matched multi-future dataset to train alternative continuations from a common state; shared-history tree execution and fused commitment make their preparation efficient. On a single H100, our 5B model sustains 480p generation at 16 fps with eight prepared futures.",
+      "takeaways": [
+        "In ViZDoom, the complete ShowNow deployment reduces median input-to-display latency from 620 to 208 ms relative to the native-block SolarWM-FT deployment.",
+        "Matched-policy experiments reduce restart empty ticks from 1.56% to 0.09% (94%) and improve on-time responses to action changes.",
+        "These results establish complementary roles for fine-grained commitment and advance preparation, with measured trade-offs in visual fidelity and long-horizon consistency.",
+        "ShowNow turns playback-time computation into responsive visual interaction."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
       "generatedWith": "heuristic"
     }
   },
@@ -9182,6 +9438,63 @@
     }
   },
   {
+    "id": "ae8cd0aae3f0a9a9",
+    "canonicalUrl": "https://arxiv.org/abs/2611.32238",
+    "title": "Boundary-Aware Policy Learning for Agent-Orchestrated Robot Manipulation",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "78dc0bc36d65dd0a",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Kaipeng Fang, Yuhao Wang, Ji Zhang, Yunsong Zhou",
+    "contentSnippet": "Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy's handoff boundary. Existing whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging. We propose Boundary-Aware Policy Learning, which explicitly shapes and then expands the handoff boundary of a visuomotor policy. First, Boundary-Explicit Training fine-tunes the policy on contact segments with diverse start poses, yielding a wide and well-defined boundary that can be communicated to the agent through a simple handoff protocol. Second, Boundary-Expanding Self-Improvement retrains the policy on curated successful system rollouts, extending the boundary toward earlier stages of each task and allowing the agent to hand over sooner with fewer language-model calls. Across RoboTwin 2.0 and RoboDojo, our system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes, while further reducing its API cost and execution time by 41.3% and 37.5%, respectively. These results suggest that the key to robust agent-policy orchestration lies not only in improving either component individually, but also in explicitly shaping the boundary between them.",
+    "category": "Robotics & Hardware",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.32238",
+    "pdfUrl": "https://arxiv.org/pdf/2611.32238",
+    "summary": {
+      "tldr": "Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, while the agent may invoke it outside this region. We call this region the policy's handoff boundary.\n\nExisting whole-task policies typically have handoff boundaries that are narrow and difficult for an agent to characterize, making reliable coordination challenging. We propose Boundary-Aware Policy Learning, which explicitly shapes and then expands the handoff boundary of a visuomotor policy. First, Boundary-Explicit Training fine-tunes the policy on contact segments with diverse start poses, yielding a wide and well-defined boundary that can be communicated to the agent through a simple handoff protocol.",
+      "takeaways": [
+        "Second, Boundary-Expanding Self-Improvement retrains the policy on curated successful system rollouts, extending the boundary toward earlier stages of each task and allowing the agent to hand over sooner with fewer language-model calls.",
+        "Across RoboTwin 2.0 and RoboDojo, our system outperforms the strongest baseline by over 26 percentage points, reaching 98.4% success in randomized RoboTwin 2.0 scenes, while further reducing its API cost and execution time by 41.3% and 37.5%, respectively.",
+        "These results suggest that the key to robust agent-policy orchestration lies not only in improving either component individually, but also in explicitly shaping the boundary between them."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
+    "id": "952f3ff94cb7e9f3",
+    "canonicalUrl": "https://arxiv.org/abs/2611.32993",
+    "title": "Decision-Native Multimodal Clinical Modeling via Anatomical Grounding and Confidence Calibration",
+    "publishedAt": "2026-11-24T00:00:00.000Z",
+    "fetchedAt": "2026-11-27T11:40:58.207Z",
+    "contentHash": "96a7bde28cc2374c",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Juntao Jiang, Wenqi Zhong, Guangyu Guo, Dexia Chen",
+    "contentSnippet": "Structured clinical decisions from volumetric computed tomography (CT) require anatomically grounded predictions and calibrated confidence estimates. However, existing 3D medical multimodal models often suffer from uncalibrated autoregressive decoding and shortcut reliance on irrelevant anatomical regions. We introduce Radev, a decision-native multimodal model that integrates anatomy-guided visual compression, direct candidate prediction, and counterfactual confidence supervision. To bridge global context with fine-grained slice details, a frozen 3D encoder extracts reusable organ-level features, which are dynamically selected by the query to attend to 2D slice features within predicted anatomical bounds. The resulting compact visual tokens enable the language backbone to estimate candidate probabilities in a single forward pass without autoregressive decoding. We further propose Counterfactual-Calibrated Training (CCT) to compare predictions under intact and intervened organ representations. CCT encourages confidence to decrease when removing target-organ evidence degrades decision quality, while penalizing excessive confidence drops under unrelated-organ removal. To facilitate rigorous evaluation, we construct CT-Verdict, a comprehensive benchmark spanning binary finding presence, multiple-choice questions, and ordinal severity assessment across both in-distribution and external cohorts. Extensive experiments demonstrate that Radev significantly outperforms state-of-the-art methods in both decision accuracy and confidence calibration, while generalizing robustly under distribution shifts. Project page at https://juntaojianggavin.github.io/projects/Radev/",
+    "category": "Business & Big Tech",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.32993",
+    "pdfUrl": "https://arxiv.org/pdf/2611.32993",
+    "summary": {
+      "tldr": "Structured clinical decisions from volumetric computed tomography (CT) require anatomically grounded predictions and calibrated confidence estimates. However, existing 3D medical multimodal models often suffer from uncalibrated autoregressive decoding and shortcut reliance on irrelevant anatomical regions. We introduce Radev, a decision-native multimodal model that integrates anatomy-guided visual compression, direct candidate prediction, and counterfactual confidence supervision.\n\nTo bridge global context with fine-grained slice details, a frozen 3D encoder extracts reusable organ-level features, which are dynamically selected by the query to attend to 2D slice features within predicted anatomical bounds. The resulting compact visual tokens enable the language backbone to estimate candidate probabilities in a single forward pass without autoregressive decoding. We further propose Counterfactual-Calibrated Training (CCT) to compare predictions under intact and intervened organ representations.",
+      "takeaways": [
+        "CCT encourages confidence to decrease when removing target-organ evidence degrades decision quality, while penalizing excessive confidence drops under unrelated-organ removal.",
+        "To facilitate rigorous evaluation, we construct CT-Verdict, a comprehensive benchmark spanning binary finding presence, multiple-choice questions, and ordinal severity assessment across both in-distribution and external cohorts.",
+        "Extensive experiments demonstrate that Radev significantly outperforms state-of-the-art methods in both decision accuracy and confidence calibration, while generalizing robustly under distribution shifts.",
+        "Project page at https://juntaojianggavin.github.io/projects/Radev/."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "heuristic"
+    }
+  },
+  {
     "id": "38c0e21872f5caf6",
     "canonicalUrl": "https://siliconangle.com/2026/11/23/ai-agent-provider-sierra-closes-1-75b-investment-amid-rapid-revenue-growth/",
     "title": "AI agent provider Sierra closes $1.75B investment amid rapid revenue growth",
@@ -10589,342 +10902,6 @@
       "impact": "Notable",
       "readTimeMinutes": 2,
       "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "f6f389b25e9ed621",
-    "canonicalUrl": "https://arxiv.org/abs/2611.30090v1",
-    "title": "Post-Training Agents for Long-Document Reasoning",
-    "publishedAt": "2026-11-23T05:51:19.000Z",
-    "fetchedAt": "2026-11-24T15:34:29.737Z",
-    "contentHash": "53b8dce2f00eb22f",
-    "sourceId": "arxiv-moonshot",
-    "sourceName": "arXiv Moonshot & Kimi Research",
-    "author": "Sushant Mehta",
-    "contentSnippet": "Professional documents are a long-context workload that retrieval-style benchmarks do not capture. In a ten-domain enterprise collection, a task's evidence is spread across a source document of median length 27 pages (mean 48.8, maximum 873); a third of tasks rest mainly on charts, drawings, and maps; and 70.9% require two or more reasoning hops. We post-train Kimi-K2.7, an open-weight foundation model, at its full context window on 1,465 expert-authored tasks with atomic rubrics from that collection, training rank-32 adapters with one round of privileged-context on-policy self-distillation followed by two rounds of rubric-reward reinforcement learning. We render each PDF as text for training and as extracted text plus selected page images at evaluation. The smoothed RL training reward rises from 0.37 in the first tenth of the run to 0.67 in the last. On the 100-task GDP.pdf holdout, served in a 262,144-token window, strict pass (all rubric criteria met) more than doubles after the second round, from 11.0% to 24.5%, with gains across input lengths up to 240K tokens. Mean tokens generated stay flat (9,803 to 9,733), so the gain does not come from longer outputs. GPT-5.6 Sol's leaderboard strict pass is 30.7% at a measured 3,422 tokens. On 220 out-of-domain GDPval tasks, where the model runs as a long-horizon tool-using agent, mean rubric reward rises from 0.571 to 0.746 after the third round and zero-credit tasks fall from 54 to 10, while messages per task fall 18%, from 70.9 to 58.2. In paired trajectories, the third round replaces a context-thrashing retry loop with one up-front check of all sources, and verification extends from checking that files exist to checking what they contain. We argue that long-context evaluation of agents should report accuracy jointly with tokens and turns, and that datasets of long documents should ship text and image renderings alongside each PDF.",
-    "category": "Business & Big Tech",
-    "lab": "Moonshot AI",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.30090",
-    "pdfUrl": "https://arxiv.org/pdf/2611.30090.pdf",
-    "summary": {
-      "tldr": "Professional documents are a long-context workload that retrieval-style benchmarks do not capture. In a ten-domain enterprise collection, a task's evidence is spread across a source document of median length 27 pages (mean 48.8, maximum 873); a third of tasks rest mainly on charts, drawings, and maps; and 70.9% require two or more reasoning hops. We post-train Kimi-K2.7, an open-weight foundation model, at its full context window on 1,465 expert-authored tasks with atomic rubrics from that collection, training rank-32 adapters with one round of privileged-context on-policy self-distillation followed by two rounds of rubric-reward reinforcement learning.\n\nWe render each PDF as text for training and as extracted text plus selected page images at evaluation. The smoothed RL training reward rises from 0.37 in the first tenth of the run to 0.67 in the last. On the 100-task GDP.pdf holdout, served in a 262,144-token window, strict pass (all rubric criteria met) more than doubles after the second round, from 11.0% to 24.5%, with gains across input lengths up to 240K tokens.",
-      "takeaways": [
-        "Mean tokens generated stay flat (9,803 to 9,733), so the gain does not come from longer outputs.",
-        "GPT-5.6 Sol's leaderboard strict pass is 30.7% at a measured 3,422 tokens.",
-        "On 220 out-of-domain GDPval tasks, where the model runs as a long-horizon tool-using agent, mean rubric reward rises from 0.571 to 0.746 after the third round and zero-credit tasks fall from 54 to 10, while messages per task fall 18%, from 70.9 to 58.2.",
-        "In paired trajectories, the third round replaces a context-thrashing retry loop with one up-front check of all sources, and verification extends from checking that files exist to checking what they contain."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "cd02a86f341630ad",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26663",
-    "title": "Adding One More Agent: How AI Team Size and Formation Shape Productivity and Diversity in Human-AI Brainstorming Teams",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "5730234d5a78424a",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Rong-Ching Chang, Hao-Chuan Wang",
-    "contentSnippet": "Authors: Rong-Ching Chang , Hao-Chuan Wang\n\nAbstract: Generative AI has improved individual productivity, but whether adding a plurality of AI partners helps or hurts remains open. We crossed AI partnership (one versus two) with behavioral formation (calibrated to average human behavior versus customized by the participant) in a brainstorming experiment ($N$=168) with human-human dyads as reference. Two-AI rooms posted more ideas to the shared board, but human-authored ideas dropped substantially. With one AI partner, formation mattered: humans paired with an average-calibrated AI posted more than any other condition. With two, this effect vanished. Humans continued talking but converted fewer ideas into board posts. AI social talk predicted more human posts, while AI posting volume predicted fewer. AI presence increased global diversity of human-authored ideas, but only a second AI increased within-session differentiation. The number of AI partners and their formation can reshape what the human contributes; single-agent results do not generalize to multi-agent teams.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26663",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26663.pdf",
-    "summary": {
-      "tldr": "In a study of 168 participants, researchers Rong-Ching Chang and Hao-Chuan Wang investigated how the number of AI agents and their behavioral configuration influence human productivity and idea diversity during brainstorming sessions. The experiment compared human-human dyads against human-AI teams, testing two variables: the number of AI partners (one versus two) and the AI's behavioral formation (calibrated to average human behavior versus customized by the participant). Results indicate that while two-AI teams generated a higher total volume of ideas on shared boards, they caused a substantial decline in the number of human-authored ideas compared to single-AI setups.\n\nTechnical findings reveal that the effectiveness of AI formation is highly sensitive to team size. In single-AI conditions, participants paired with an 'average-calibrated' AI outperformed all other configurations. However, this performance advantage disappeared when a second AI was introduced. The study identified a negative correlation between AI posting volume and human contribution, suggesting that high-frequency AI output may crowd out human input. Conversely, social interaction from the AI was found to be a positive predictor of human idea generation. While the presence of any AI increased the global diversity of human ideas, only the addition of a second AI agent significantly improved within-session idea differentiation.",
-      "takeaways": [
-        "**Study Scope:** Controlled experiment with N=168 participants comparing human-human dyads against teams with one or two AI agents.",
-        "**Productivity Trade-off:** Two-AI teams increased total board posts but caused a significant decrease in human-authored idea contributions.",
-        "**Formation Sensitivity:** The performance benefit of 'average-calibrated' AI behavior is exclusive to single-agent teams and does not scale to multi-agent environments.",
-        "**Interaction Dynamics:** AI social talk positively correlates with human idea posting, whereas high AI posting volume correlates with reduced human output.",
-        "**Diversity Metrics:** While single AI agents increase global idea diversity, a second AI agent is required to achieve significant within-session idea differentiation."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "585cc50ff286833b",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26717",
-    "title": "Coherence by Construction: Synthesizing CTI Knowledge Graphs and the Formal Limits of Coherence Validation",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "9dfb9412311920ee",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Tanzimul Alam Fahim, Mohammad Arif Hossain",
-    "contentSnippet": "Authors: Tanzimul Alam Fahim , Mohammad Arif Hossain\n\nAbstract: Synthesizing relational training data such as knowledge graphs with a large language model typically emits structured objects one at a time, which keeps each object valid but leaves the relationships between them ungrounded. We study an alternative paradigm, generation by simulation: rather than describing a relational artifact, we simulate a process that produces it and take the artifact to be its causal record. Language-model agents propose intent and a deterministic referee resolves outcomes against an explicit world model, so a relation is emitted only when the event it represents occurs, making coherence a property of construction. We instantiate the paradigm for cyber threat intelligence knowledge graphs in the STIX 2.1 standard with three engines, among them an evolutionary engine applying language-model genetic operators to structured graph genomes, sharing a deterministic compiler that makes malformed and dangling output unrepresentable. We prove referential closure, causal grounding, and identifier stability, an ablation localizes each to the referee and world model rather than the policy, and two independent LLM judges reproduce the rubric's engine ranking. Our central result is cautionary, and we prove it: a validator reading any graph feature set a structure-matched random graph can reproduce is uninformative about coherence for a coherence-by-construction generator. Using Erdős-Rényi controls we realize the theorem four times, as structural separation, embedding transfer, inductive link prediction, and real-data augmentation each reward a triviality rather than coherence; we give the mechanism behind each and the conditions a valid benchmark must meet.\n\nNotes: 21 pages, 5 figures. Includes supplementary material (Sections S-I through S-X)",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26717",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26717.pdf",
-    "summary": {
-      "tldr": "Tanzimul Alam Fahim and Mohammad Arif Hossain introduce 'generation by simulation,' a paradigm for synthesizing Cyber Threat Intelligence (CTI) knowledge graphs that shifts from direct object generation to simulating causal processes. By utilizing language-model agents to propose intent and a deterministic referee to resolve outcomes against an explicit world model, the authors ensure that relations are only emitted when the underlying event occurs. This approach guarantees coherence by construction, specifically targeting the STIX 2.1 standard, and utilizes three distinct engines, including an evolutionary engine that applies genetic operators to structured graph genomes.\n\nThe paper proves that this methodology achieves referential closure, causal grounding, and identifier stability, with a deterministic compiler preventing malformed or dangling outputs. The authors provide a cautionary central result: they prove that validators relying on graph feature sets—which structure-matched random graphs can replicate—are fundamentally uninformative for coherence-by-construction generators. Through Erdős-Rényi controls, the researchers demonstrate that common evaluation metrics like embedding transfer, inductive link prediction, and real-data augmentation often reward trivial structural properties rather than actual coherence, establishing the necessary conditions for valid future benchmarking.",
-      "takeaways": [
-        "**Methodology:** Generation by simulation replaces direct relational artifact description with a causal record produced by a deterministic referee and world model.",
-        "**Standard Compliance:** The framework is instantiated for CTI knowledge graphs using the STIX 2.1 standard.",
-        "**Core Proof:** The authors prove that validators based on graph feature sets are uninformative for coherence-by-construction generators because random graphs can replicate these features.",
-        "**Evaluation Failure:** Common benchmarks including structural separation, embedding transfer, and inductive link prediction are shown to reward triviality rather than coherence.",
-        "**Engine Architecture:** The system includes three engines, notably an evolutionary engine that uses LLM-based genetic operators on structured graph genomes."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 4,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "2ffd747d4cc71821",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26722",
-    "title": "TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "ddf7afc6ff95eefd",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Moritz P\\\"otzsch, Andrea Gentilini, Lisa Rossgoderer, Tom Osterfeld, Kesava Prasad Sanjivi Arul, Swanand Ravindra Kadhe",
-    "contentSnippet": "Authors: Moritz Pötzsch , Andrea Gentilini , Lisa Rossgoderer , Tom Osterfeld , Kesava Prasad Sanjivi Arul , Swanand Ravindra Kadhe\n\nAbstract: To autonomously execute multi-step tasks, enterprise agents must reliably interact with tools, call APIs, or query databases, making tool-calling a fundamental capability of AI models. Supervised fine-tuning (SFT) optimises for producing the correct call, but never contrasts it with a plausible incorrect one. In an environment where even a minor formatting error can invalidate a call and an incorrect decision can derail the interaction, direct preference optimisation (DPO) targets exactly this contrast. DPO, therefore, requires preference pairs rather than plain demonstrations. For tool-calling, such data, especially in realistic multi-turn settings, remains extremely scarce. To address this scarcity, we introduce TOUMAII, a large-scale tool-calling preference dataset containing ~4.5M validated preference pairs, derived from Agent-Ark/Toucan-1.5M (apache-2.0) conversations. The dataset consists of multi- and single-turn interactions and includes parallel and sequential function calls. Additionally, we release TOUMAII-Gen, a synthetic data generation pipeline that consumes tool-calling SFT datasets and generates a preference dataset with naturally occurring model-generated tool-calling failure modes. To validate the effectiveness of our DPO data, we fine-tune a 3-billion-parameter model, achieving performance parity with other high-quality tool-calling preference datasets. Furthermore, we release a second small preference dataset derived from ToolACE (apache-2.0), showcasing the source-agnostic nature of our pipeline. We release the complete code and datasets: this https URL and this https URL\n\nNotes: Accepted to the 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET) at NeurIPS 2026. 27 pages, including 5 pages of main text, references, and appendices; 17 figures and 7 tables. Code: this https URL . Datasets: this https URL",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26722",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26722.pdf",
-    "summary": {
-      "tldr": "Researchers Moritz Pötzsch et al. have introduced TOUMAII, a large-scale dataset comprising approximately 4.5 million validated preference pairs designed to improve tool-calling capabilities in enterprise AI agents through Direct Preference Optimization (DPO). Unlike standard supervised fine-tuning (SFT) which focuses solely on correct outputs, TOUMAII provides contrastive data—pairing correct tool calls with plausible incorrect ones—to address the high sensitivity of multi-turn agentic interactions where minor formatting errors or logic failures can cause system-wide task failure.\n\nThe dataset is derived from the Apache-2.0 licensed Agent-Ark/Toucan-1.5M corpus and includes both single-turn and multi-turn interactions, covering complex scenarios such as parallel and sequential function calls. Alongside the dataset, the authors released TOUMAII-Gen, a synthetic pipeline that processes existing SFT tool-calling data to automatically generate preference pairs by simulating common model failure modes. The researchers validated the pipeline's utility by fine-tuning a 3-billion-parameter model, which achieved performance parity with existing high-quality preference datasets. The project also includes a secondary dataset derived from ToolACE, demonstrating the pipeline's source-agnostic flexibility.",
-      "takeaways": [
-        "**Dataset Scale:** TOUMAII contains ~4.5 million validated preference pairs for training tool-calling agents.",
-        "**Generation Pipeline:** TOUMAII-Gen is a synthetic data generation tool that creates preference pairs by identifying and simulating model-generated failure modes in SFT datasets.",
-        "**Model Validation:** A 3-billion-parameter model fine-tuned on TOUMAII achieved performance parity with existing state-of-the-art tool-calling preference datasets.",
-        "**Source Agnosticism:** The pipeline was successfully tested on both Agent-Ark/Toucan-1.5M and ToolACE datasets, both under Apache-2.0 licenses.",
-        "**Publication Context:** The work was accepted to the 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET) at NeurIPS 2026."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "461a81e08dcc750a",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26782",
-    "title": "ChatAtom: A Multi-Agent LLM System for Molecular Dynamics Simulation and Visualization",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "da5b9ee847c0fd43",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Trupti Mohanty, Ming Du, Mitchell A. Wood, Brad L. Boyce, Remi Dingreville, Mathew J. Cherukara",
-    "contentSnippet": "Authors: Trupti Mohanty , Ming Du , Mitchell A. Wood , Brad L. Boyce , Remi Dingreville , Mathew J. Cherukara\n\nAbstract: Molecular dynamics (MD) simulation resolves atomic-scale motion and predicts the structural, mechanical, and dynamic properties of materials, making it cen- tral to materials design and discovery. Yet an MD study requires an expert-driven workflow: designing the simulation, writing reliable input scripts, executing them, and analyzing the results with separate tools. Here we present ChatAtom, a multi-agent large language model system that translates a natural-language request into a complete MD workflow without the user writing input scripts or analysis code. Each agent has a defined responsibility within the workflow. An orchestrator plans the study; the LAMMPS and OVITO agents each use a generator-reviewer pair to prepare and review simulation and visualization scripts before execution; a high-performance computing agent dispatches jobs to remote resources; and an analysis agent interprets the completed run. The work- flow is accessible through a browser interface that streams thermodynamic data and rendered frames during local execution, allowing users to follow the simu- lation as it progresses. The architecture also supports new capabilities through loadable skills without modifying the agents, enabling autonomous hypothesis generation and testing. We evaluate ChatAtom through script-generation bench- marks, an end-to-end study of crack propagation, and a closed-loop campaign. By bringing script generation, execution, visualization, and analysis into one reviewed and observable pipeline, ChatAtom lowers the barrier to conducting MD studies and broadens access to advanced simulation workflows.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26782",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26782.pdf",
-    "summary": {
-      "tldr": "ChatAtom is a multi-agent LLM framework designed to automate the end-to-end molecular dynamics (MD) simulation workflow, developed by researchers Trupti Mohanty, Ming Du, Mitchell A. Wood, Brad L. Boyce, Remi Dingreville, and Mathew J. Cherukara. The system eliminates the need for manual input script generation or analysis coding by translating natural-language requests into executable workflows. It utilizes a modular architecture where specialized agents handle distinct tasks: an orchestrator for study planning, dedicated agents for LAMMPS (simulation) and OVITO (visualization) using generator-reviewer pairs to ensure script accuracy, a high-performance computing (HPC) agent for job dispatch, and an analysis agent for interpreting results.\n\nThe system features a browser-based interface that provides real-time streaming of thermodynamic data and rendered frames, allowing users to monitor simulations as they progress. ChatAtom's architecture is extensible, supporting new capabilities via loadable skills that do not require modification of the core agent codebase, facilitating autonomous hypothesis generation and testing. The authors validated the system through script-generation benchmarks, an end-to-end crack propagation study, and a closed-loop experimental campaign, demonstrating its ability to integrate simulation, visualization, and analysis into a single, observable pipeline.",
-      "takeaways": [
-        "**Agent Architecture:** Employs a multi-agent system including an orchestrator, LAMMPS and OVITO agents with generator-reviewer pairs, an HPC dispatcher, and an analysis agent.",
-        "**Extensibility:** Supports new functionality through loadable skills, allowing for autonomous hypothesis testing without altering the underlying agent framework.",
-        "**User Interface:** Provides a browser-based dashboard for real-time monitoring of thermodynamic data and visualization frames during simulation execution.",
-        "**Validation Studies:** Evaluated via script-generation benchmarks, a crack propagation simulation, and a closed-loop research campaign."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "ba63b85712814233",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26794",
-    "title": "Beyond Final Answers: Interpretable Tumor Immune Microenvironment Reasoning from H&E and mIF",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "3352c6a467c5ea3d",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Yixuan Duan, Kexin Geng, Hanwen Xu, Wei Qiu",
-    "contentSnippet": "arXiv:2611.26794v1 Announce Type: new Abstract: Readouts of the tumor immune microenvironment (TIME), such as CD8+ T-cell density, intra-epithelial infiltration and the Ki67 index, combine tissue architecture from H&E with cell phenotypes from multiplex immunofluorescence (mIF). Multimodal large language models (MLLMs) could automate these readouts with an explanation, but two gaps remain. Pathology MLLMs read H&E alone, while these readouts need the cell phenotypes that mIF measures. And their reasoning has no step-level truth to be checked against, so R1-style reinforcement learning rewards only the final answer and leaves the reasoning unverified. Same-section H&E and mIF provide what both gaps lack: mIF measures every cell without manual annotation, which gives cell-level ground truth for each step that clinical guidelines prescribe, from delineating a tissue compartment to counting and normalizing the marker-positive cells within it. We therefore present HERMES (H&E-mIF Reasoning with Multimodal Evidence Supervision), an R1-style MLLM that reasons jointly over paired H&E and mIF in guideline steps and is trained with a process reward that checks every stated quantity against this truth. Across four field-level TIME tasks in colorectal cancer, HERMES (4B) reaches an average accuracy of 84.5%, compared with 74.7% for the strongest of twelve proprietary, general, medical and pathology MLLMs, and a higher share of its intermediate quantities is correct than for the strongest open-weight baseline. Without the process reward, reinforcement learning barely improves on supervised fine-tuning (80.0% vs. 78.8%) and fewer stated quantities are correct; editing a decisive stated quantity changes the answer as implied in all 885 test questions. Without retraining, it keeps the highest average accuracy on an external cohort imaged with CODEX (76.4% vs. 67.3%) and on head and neck cancer, a cancer type absent from training (76.7% vs. 72.5%).",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26794",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26794.pdf",
-    "summary": {
-      "tldr": "Researchers have introduced HERMES (H&E-mIF Reasoning with Multimodal Evidence Supervision), a 4B parameter multimodal large language model (MLLM) designed to automate tumor immune microenvironment (TIME) analysis by reasoning jointly over paired H&E and multiplex immunofluorescence (mIF) images. Unlike existing pathology MLLMs that rely solely on H&E, HERMES utilizes mIF data to provide cell-level ground truth, enabling the model to verify intermediate reasoning steps against clinical guidelines for tasks such as tissue compartment delineation and marker-positive cell counting.\n\nHERMES employs an R1-style reinforcement learning approach with process reward supervision, ensuring that every stated quantity in its reasoning chain is checked against mIF-derived ground truth. In evaluations across four colorectal cancer TIME tasks, HERMES achieved an average accuracy of 84.5%, outperforming twelve proprietary, general, and medical MLLMs, which averaged 74.7%. The model demonstrated robust generalization, maintaining superior performance on external CODEX-imaged cohorts (76.4% vs. 67.3%) and head and neck cancer datasets (76.7% vs. 72.5%), despite these being absent from the training data. Ablation studies confirmed that the process reward is critical, as reinforcement learning without it yielded only marginal gains over supervised fine-tuning (80.0% vs. 78.8%).",
-      "takeaways": [
-        "**Model Architecture:** HERMES is a 4B parameter MLLM trained with process reward supervision to reason over paired H&E and mIF data.",
-        "**Performance Benchmark:** HERMES achieved 84.5% average accuracy on colorectal cancer TIME tasks, significantly higher than the 74.7% benchmark set by the strongest of twelve competing MLLMs.",
-        "**Generalization Capability:** The model maintained high accuracy on out-of-distribution data, including CODEX-imaged cohorts and head and neck cancer, without requiring retraining.",
-        "**Process Reward Impact:** Reinforcement learning with process rewards significantly improved accuracy and reasoning reliability compared to standard supervised fine-tuning (80.0% vs. 78.8%).",
-        "**Verification Mechanism:** The model's reasoning is validated against 885 test questions where editing a decisive stated quantity correctly alters the final answer."
-      ],
-      "impact": "Breakthrough",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "9e7d1b0c4460f6f1",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26797",
-    "title": "Memorization and Generalization in Generative Models: A Perspective From Energy-based Modeling and Associative Memory",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "4eaacc9f08d0378b",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Bao Pham",
-    "contentSnippet": "arXiv:2611.26797v1 Announce Type: new Abstract: Generative models now write working code, produce realistic images, and hold long conversations, yet the mechanisms behind their intelligence still evade our understanding. This thesis explores that puzzle through Associative Memory (AM), in which patterns are stored as energy minima and retrieved through attractor dynamics. Beyond their capacity, AMs form new minima known as spurious states, long regarded as a failure of memory. We argue that this failure is where creativity begins, and that memorization and generalization can coexist as outcomes of one retrieval process. First, we show that diffusion models behave as AMs. With little data, a diffusion model forms a distinct basin of attraction around each training sample. As the data grows, these basins shrink, and spurious states emerge as attractors that blend stored samples yet match none of them. They are the first signs of generative capability. We characterize this transition by measuring the volume, energy, and curvature of these basins across datasets and architectures, including Stable Diffusion. We then turn to language and move beyond the energy-based view of AM. We show that uniform-state discrete diffusion models are AMs capable of retrieving unseen data, with basins of attraction that arise from conditional likelihood maximization alone. As the training set grows, basins around training examples contract while basins around unseen examples expand, until corrupted test sentences are recovered as reliably as training ones. Conditional entropy exposes this coexistence within a single sequence and cheaply diagnoses where a model lies along the transition. Together, these results suggest that AM is a general principle defined by basins of attraction, and that memorization and generalization can coexist within one model. AM thus offers a framework for asking when a generative model recalls and when it creates.",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26797",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26797.pdf",
-    "summary": {
-      "tldr": "The research paper 'Memorization and Generalization in Generative Models: A Perspective From Energy-based Modeling and Associative Memory' (arXiv:2611.26797v1) proposes a unified framework for understanding generative AI through the lens of Associative Memory (AM). The authors argue that generative models function by storing patterns as energy minima, where retrieval occurs via attractor dynamics. The study posits that 'spurious states'—previously considered memory failures—are actually the mechanism behind generative creativity, allowing models to blend training samples into novel outputs.\n\nTechnically, the authors demonstrate that diffusion models, including Stable Diffusion, act as AMs where training samples form distinct basins of attraction. As training data volume increases, these basins shrink, causing spurious states to emerge as attractors that represent unseen data. The researchers extend this analysis to language models, specifically uniform-state discrete diffusion models, showing that conditional likelihood maximization drives the expansion of basins around unseen examples. By utilizing conditional entropy, the authors provide a diagnostic metric to determine whether a model is currently in a state of memorization or generalization, suggesting that these two behaviors are not mutually exclusive but coexist within a single retrieval process.",
-      "takeaways": [
-        "**Theoretical Framework:** Generative models are re-characterized as Associative Memories where patterns are stored as energy minima and retrieved through attractor dynamics.",
-        "**Role of Spurious States:** The paper identifies spurious states—previously viewed as memory errors—as the fundamental source of generative creativity and generalization.",
-        "**Diffusion Dynamics:** In diffusion models, increasing training data causes basins of attraction around specific samples to shrink, facilitating the emergence of attractors that blend data points.",
-        "**Diagnostic Metric:** Conditional entropy is proposed as a low-cost method to measure the transition between memorization and generalization within a model's sequence generation.",
-        "**Model Scope:** The research validates this AM framework across both image-based architectures, such as Stable Diffusion, and uniform-state discrete diffusion models for language."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "03465724b88b0cc0",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26870",
-    "title": "Beyond Demographic Discrimination: Benchmarking Normative-Descriptive Calibration in LLMs",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "2c8e9e1230a8bf69",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Radhika Bhargava, Shinibali Bhattacharyya, George Mihaila, Jay Prajapati, Anwesan Pal, Yue Zhang",
-    "contentSnippet": "arXiv:2611.26870v1 Announce Type: new Abstract: Large language models (LLMs) are increasingly deployed in socially consequential settings, where they must distinguish between normative reasoning (what should happen) and descriptive reasoning (what is likely to happen). Most fairness benchmarks evaluate demographic discrimination under a single reasoning objective, and none we know of tests whether a model treats the same item differently when asked to describe an outcome versus decide one. We introduce normative--descriptive calibration, the extent to which a model's differentiation between matched candidates depends on whether it is asked to predict or to decide, and measure it with the Normative--Descriptive Calibration Benchmark (NDCB): 697 matched-pair scenarios across six domains, each posed under both framings, and three metrics, Normative Engagement Rate (NER), Normative Leakage Rate (NLR), and Normative--Descriptive Separation (NDS). Across six LLMs, NDS separates 13 of 15 model pairs, against 7 for BBQ accuracy and none for BOLD, although these counts also reflect each benchmark's sample size. Claude Sonnet 4.6 and Claude Opus 4.6 separate the framings most strongly (average NDS $= +0.55$ and $+0.52$, with overlapping confidence intervals), whereas GPT-5.5's average NDS is negative ($-0.14$) under the single-pick instruction and near zero ($+0.02$) without it. In a simplified prompt template, removing single trigger words never changes the sign of a model's average NDS but can shift it by up to 0.46 and reorder models. Reversing candidate order reveals a further effect: when forced to choose between identical candidates, all six models favor whichever is listed first, and once order is averaged out their demographic-aligned lean is toward the marginalized candidate. Describing disparities and prescribing them are separable behaviors that differ across models.",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26870",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26870.pdf",
-    "summary": {
-      "tldr": "Researchers introduced the Normative-Descriptive Calibration Benchmark (NDCB) to evaluate how LLMs distinguish between descriptive reasoning (predicting outcomes) and normative reasoning (prescribing outcomes). The benchmark consists of 697 matched-pair scenarios across six domains, utilizing three primary metrics: Normative Engagement Rate (NER), Normative Leakage Rate (NLR), and Normative-Descriptive Separation (NDS). The study tests whether models apply different logic when asked to predict what is likely to happen versus what should happen, addressing a gap in current fairness benchmarks that often conflate these reasoning objectives.\n\nTesting six LLMs, the study found that NDS effectively differentiates model behaviors, separating 13 of 15 model pairs, compared to 7 for BBQ accuracy and zero for BOLD. Claude Sonnet 4.6 and Claude Opus 4.6 exhibited the strongest separation between framings, with average NDS scores of +0.55 and +0.52, respectively. Conversely, GPT-5.5 showed a negative NDS (-0.14) under single-pick instructions, indicating a failure to distinguish between the two reasoning modes. The research also identified a significant positional bias: all six models consistently favored the first-listed candidate in forced-choice scenarios, and once order effects were neutralized, models showed a demographic-aligned preference toward marginalized candidates.",
-      "takeaways": [
-        "**Benchmark Scope:** The NDCB comprises 697 matched-pair scenarios across six distinct domains to test normative versus descriptive reasoning.",
-        "**Model Performance:** Claude Sonnet 4.6 and Claude Opus 4.6 achieved the highest NDS scores (+0.55 and +0.52), while GPT-5.5 recorded a negative NDS (-0.14) under single-pick prompts.",
-        "**Positional Bias:** All six evaluated models demonstrated a consistent preference for the first-listed candidate when forced to choose between identical options.",
-        "**Metric Sensitivity:** Removing single trigger words in prompt templates can shift a model's NDS by up to 0.46, potentially reordering model rankings.",
-        "**Comparative Efficacy:** The NDS metric successfully separated 13 of 15 model pairs, outperforming the BBQ accuracy benchmark (7 of 15) and BOLD (0 of 15)."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "d255db050aaeae04",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26903",
-    "title": "Towards Robust Partial-Edit Deepfake Localization: An edit and Generator Conditioned Analysis",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "19b2c2ba39405ea3",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Aishwarya Fursule, Vamshi Nallaguntla, Yuan Tseng, David Harwath, Anderson Avila, Shruti Kshirsagar",
-    "contentSnippet": "Authors: Aishwarya Fursule , Vamshi Nallaguntla , Yuan Tseng , David Harwath , Anderson Avila , Shruti Kshirsagar\n\nAbstract: Partial-edit deepfake localization aims to identify manipulated regions within otherwise authentic speech. Recent systems report strong overall results, but aggregate scores do not reveal whether this performance holds across different editing conditions. In this work, we present an edit- and generator-conditioned analysis of Segment-Aware Localization (SAL) using WavLM-Large and XLS-R representations on the VoiceCraft and SSR-Speech subsets of PartialEdit. We categorize edits along three transcript-derived axes, namely content, meaning change, and editing operation, and evaluate each generator separately. While both representations achieve strong overall performance, localization is noticeably weaker on SSR-Speech. From our experiments, we found that the deletion is the hardest operation, and deletions produced by SSR-Speech are the most challenging condition for both representations. In contrast, edit content, meaning change, and sentence novelty have smaller effects. These findings show that a single aggregate score can mask important weaknesses, and that partial-edit localization should be evaluated separately across generators and edit types.\n\nNotes: Submitted to ICASSP 2027 Workshop",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26903",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26903.pdf",
-    "summary": {
-      "tldr": "Researchers Aishwarya Fursule, Vamshi Nallaguntla, Yuan Tseng, David Harwath, Anderson Avila, and Shruti Kshirsagar presented a granular analysis of Segment-Aware Localization (SAL) for partial-edit deepfake detection, submitted to the ICASSP 2027 Workshop. The study evaluates the performance of WavLM-Large and XLS-R representations on the VoiceCraft and SSR-Speech subsets of the PartialEdit dataset, moving beyond aggregate metrics to assess how specific editing conditions impact localization accuracy.\n\nThe study categorizes edits across three axes: content, meaning change, and editing operation. Experimental results indicate that while both WavLM-Large and XLS-R maintain strong overall performance, localization efficacy drops significantly on the SSR-Speech subset compared to VoiceCraft. The researchers identified 'deletion' as the most difficult editing operation to localize, with deletions generated by SSR-Speech proving to be the most challenging condition for both models. Conversely, factors such as edit content, meaning change, and sentence novelty demonstrated minimal impact on localization performance, suggesting that aggregate scoring masks critical model vulnerabilities.",
-      "takeaways": [
-        "**Model Architectures:** The study evaluates WavLM-Large and XLS-R representations for the task of segment-aware localization.",
-        "**Dataset Subsets:** Performance was benchmarked specifically against the VoiceCraft and SSR-Speech subsets of the PartialEdit dataset.",
-        "**Hardest Operation:** Deletion was identified as the most difficult editing operation to localize across both tested representations.",
-        "**Performance Variance:** Localization performance is noticeably weaker on the SSR-Speech subset compared to VoiceCraft, highlighting generator-specific vulnerabilities.",
-        "**Metric Critique:** The authors argue that aggregate performance scores are insufficient and that evaluation must be segmented by generator type and edit operation to reveal model weaknesses."
-      ],
-      "impact": "Medium",
-      "readTimeMinutes": 2,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "7afd1e283c6656dc",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26906",
-    "title": "Budget-Aware Predict-and-Verify Theorem Proving with Heterogeneous LLM Solvers",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "ad7fe908e44922db",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Wei Jiang, Ziran Liu, Wei Wang",
-    "contentSnippet": "Authors: Wei Jiang , Ziran Liu , Wei Wang\n\nAbstract: Large language model (LLM) theorem solvers differ in both proving capability and inference cost. Applying an expensive solver to every subgoal wastes computation when cheaper models are sufficient, while always starting from the cheapest solver wastes attempts on subgoals that require stronger models. We present BudgetPV, an agentic budget-aware predict-and-verify system that allocates computation across unresolved subgoals and heterogeneous LLM solvers. BudgetPV uses a cross-solver predictor to guide solver selection for each subgoal and revises the allocation as verification feedback becomes available. The allocation problem changes as proving progresses. Early decisions mainly determine which solver should handle an untried subgoal, while later decisions determine which previously attempted subgoals should receive additional computation. We train the predictor with two objectives for these two stages. Class-weighted cross-entropy improves assignment to less frequent stronger solvers during the initial stage, while plain cross-entropy provides better calibrated probabilities for later allocation among previously attempted subgoals. We evaluate BudgetPV on Lean Workbook, miniF2F, ProofNet, and PutnamBench using three progressively expanded solver settings: a strong but expensive solver alone, adding a medium-cost solver with intermediate solving capability, and further adding a cheap solver with lower solving capability. BudgetPV requires less LLM generation computation than uniform allocation to solve the same number of subgoals across the evaluated settings. The experiments further show the computation savings obtained as medium- and lower-cost solvers are added.\n\nNotes: 16 pages, 9 tables, 1 figure",
-    "category": "Open Source & Research",
-    "lab": "Independent",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26906",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26906.pdf",
-    "summary": {
-      "tldr": "Researchers Wei Jiang, Ziran Liu, and Wei Wang have introduced BudgetPV, an agentic framework designed to optimize computational expenditure in theorem proving by dynamically allocating subgoals to a heterogeneous pool of LLM solvers. The system addresses the inefficiency of uniform solver application by utilizing a cross-solver predictor that determines the optimal model for each subgoal based on its difficulty and the available budget. The framework operates in two distinct stages: an initial assignment phase for untried subgoals and a subsequent revision phase that reallocates computation to previously attempted subgoals based on verification feedback.\n\nThe methodology employs a dual-objective training strategy for the predictor: class-weighted cross-entropy to ensure adequate assignment to high-capability, low-frequency solvers during the initial stage, and plain cross-entropy to calibrate probabilities for later-stage resource allocation. BudgetPV was evaluated across four benchmarks—Lean Workbook, miniF2F, ProofNet, and PutnamBench—using three solver configurations that scale from a single high-cost model to a tiered system incorporating medium and low-cost solvers. Experimental results demonstrate that BudgetPV achieves equivalent proof success rates while significantly reducing total LLM generation computation compared to uniform allocation strategies, with efficiency gains scaling as more cost-effective solvers are integrated into the pipeline.",
-      "takeaways": [
-        "**System Architecture:** BudgetPV utilizes a cross-solver predictor that dynamically manages computation allocation across heterogeneous LLM solvers based on subgoal difficulty.",
-        "**Training Objectives:** The predictor uses class-weighted cross-entropy for initial solver assignment and plain cross-entropy for calibrated probability estimation during later-stage re-allocation.",
-        "**Benchmark Suite:** Performance was validated on Lean Workbook, miniF2F, ProofNet, and PutnamBench using three tiered solver settings ranging from single-model to multi-cost configurations.",
-        "**Efficiency Gains:** The framework consistently requires less total LLM generation computation than uniform allocation methods to achieve the same number of solved subgoals."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
-    }
-  },
-  {
-    "id": "9727016a4ca8e93e",
-    "canonicalUrl": "https://arxiv.org/abs/2611.26910",
-    "title": "AstronautBench: Measuring Agent Self-Improvement Across Episodes Through Knowledge, Evidence, and Progress",
-    "publishedAt": "2026-11-23T05:00:00.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.943Z",
-    "contentHash": "4b74bccc6bd73e82",
-    "sourceId": "arxiv-ai",
-    "sourceName": "arXiv cs.AI (Artificial Intelligence)",
-    "author": "Congyuan Yu, Runping Tian",
-    "contentSnippet": "arXiv:2611.26910v1 Announce Type: new Abstract: LLM agents are expected to improve themselves from their own experience across episodes, with fixed weights. Self-improvement in an embodied world cannot be read from one measure. Existing benchmarks measure task progress, world-knowledge question answering (QA), and episodic memory, but a correct answer does not show that the agent ever observed the evidence for it, and progress does not show what the agent learned. We introduce AstronautBench, which measures one agent's self-improvement through three views on the same run: what it knows, whether its own evidence supports that knowledge, and how far it gets in the world. It is built on the game Outer Wilds, where each episode is a 22-minute loop after which the world resets, only the agent's knowledge carries over, and progress is gated by knowledge. After every episode, we measure the places reached and ship-log rumor facts revealed, the correctness of answers to 164 questions about the world, and whether each answer is supported by the frames and position the agent cites from its own recorded play. Two LLM judges from different model families check every answer. In eight-episode baselines with GPT-6.1 Sol and Gemini 4 Argon planners, which act through a learned controller or their own gamepad inputs, the three views do not move together, so any one of them alone gives an incomplete picture of whether the agent is improving. The GPT-6.1 Sol agent's correct answers grow from 14.6% to 26.8% of all questions, but at episode 8 only 59 to 68% of them are supported by its cited evidence. It reveals no new rumor facts after episode 3, while the places it reaches and its memory keep growing. More than half of the answers that become correct after episode 3 cite only evidence from earlier episodes.",
-    "category": "Open Source & Research",
-    "lab": "Google DeepMind",
-    "entryType": "RESEARCH_PAPER",
-    "arxivId": "arXiv:2611.26910",
-    "pdfUrl": "https://arxiv.org/pdf/2611.26910.pdf",
-    "summary": {
-      "tldr": "Researchers have introduced AstronautBench, a new evaluation framework designed to measure LLM agent self-improvement across episodes without updating model weights. Built within the game Outer Wilds—a title characterized by 22-minute loops where world state resets but knowledge persists—the benchmark assesses agents through three distinct lenses: world-knowledge QA, the validity of evidence cited from the agent's own recorded gameplay, and physical progress within the game environment. The benchmark includes 164 specific world-knowledge questions and utilizes dual LLM judges from different model families to verify the accuracy and evidentiary support of agent responses.\n\nInitial testing with GPT-6.1 Sol and Gemini 4 Argon planners revealed that these three performance metrics often diverge, indicating that traditional task-progress benchmarks provide an incomplete picture of agent learning. For the GPT-6.1 Sol agent, correct answers increased from 14.6% to 26.8% over eight episodes; however, by the final episode, only 59% to 68% of these answers were backed by the agent's cited evidence. Furthermore, the agent ceased discovering new 'rumor facts' after episode 3, despite continued growth in physical exploration and memory, with over half of the post-episode 3 correct answers relying solely on evidence gathered in earlier loops.",
-      "takeaways": [
-        "**Benchmark Architecture:** AstronautBench evaluates agents across three views: world-knowledge QA, evidentiary support from recorded frames/positions, and physical progress in the Outer Wilds game environment.",
-        "**GPT-6.1 Sol Performance:** The agent improved its QA accuracy from 14.6% to 26.8% over eight episodes, yet evidentiary support for these answers remained low, peaking at 68% by episode 8.",
-        "**Stagnation Metrics:** The GPT-6.1 Sol agent stopped revealing new rumor facts after episode 3, despite continued expansion in the number of locations visited and memory accumulation.",
-        "**Evaluation Methodology:** The benchmark utilizes 164 world-knowledge questions and employs two LLM judges from different model families to verify the consistency between agent answers and cited evidence."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
     }
   }
 ]
