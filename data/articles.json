@@ -1,5 +1,33 @@
 [
   {
+    "id": "bedee2e9acb0a56a",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
+    "title": "datasette-charts 0.4a0",
+    "publishedAt": "2026-11-27T23:57:17.000Z",
+    "fetchedAt": "2026-11-28T02:56:22.545Z",
+    "contentHash": "7ae0f5befa3ce538",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "Release: datasette-charts 0.4a0 The new datasette-charts plugin has its own plugin hook to allow other plugins to define new chart types, but I hadn't actually used it for anything yet. I had Claude Opus 5.5 build an experimental plugins just to try out the hook and it came up with a bunch of friction points in the design. This release addresses those, which should make building additional chart plugins a whole lot more ergonomic. I've also added a website for the plugin, at charts.datasette.io . The new website includes a tutorial for plugin authors , and a gallery showing all of the core charts and annotations, each one linking to an interactive demo on Datasette Lite . <img alt=\"Screenshot of a documentation page section showing a two-by-two grid of cards, each with a chart screenshot, a heading, a description, a link and a collapsed disclosure. Heading: \"Annotations\". Intro text: \"Notes drawn on a chart: lines, shaded ranges, callouts and text. They are part of the chart's spec, so they are kept in the link to the chart. Documentation for annotations.\" where \"Documentation for annotations\" is a link. Card 1: an area line chart titled \"Rows per quarter of published_at\", y-axis labelled \"↑ Rows\" with ticks 0, 20, 40, 60, 80, 100, 120, 140, 160 and x-axis ticks 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, with a vertical dashed line just before 2023 labelled \"Datasette 1.0a0\"; the line peaks near 150 in mid 2020 and near 138 in early 2023. Caption \"SCREENSHOT\". Heading \"A line at an x value\". Text \"A dashed line across the chart at a date, here the day of a release.\" Link \"Try this demo yourself\". Disclosure \"▶ Chart spec\". Card 2: a stacked bar chart titled \"Rows per year of upload_time by packagetype\", legend \"bdist_wheel\" (blue) and \"sdist\" (orange), y-axis labelled \"↑ Rows\" with ticks 0, 100, 200, 300, 400, 500, 600 and x-axis ticks 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, with a solid red horizontal line at 500 labelled \"500 uploads a year\"; the bars for 2020, 2021 and 2023 rise above the line. Caption \"SCREENSHOT\". Heading \"A line at a y value\". Text \"A reference line at a value, drawn solid and in red.\" Link \"Try this demo yourself\". Disclosure \"▶ Chart spec\". Card 3: a blue histogram titled \"Distribution of latitude\", y-axis labelled \"↑ Rows\" with ticks 0, 1,000, 2,000, 3,000, 4,000, 5,000, 6,000, 7,000, 8,000 and x",
+    "category": "LLMs & GenAI",
+    "lab": "Anthropic",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Datasette-charts 0.4a0 introduces a refined plugin hook architecture designed to improve the ergonomics of building custom chart types for the Datasette ecosystem. The update was informed by an experimental plugin development process using Claude Opus 5.5, which identified and resolved specific friction points in the previous hook design. This release aims to streamline the creation of third-party chart plugins by providing a more robust framework for developers.\n\nAccompanying the release is a new dedicated documentation site at charts.datasette.io. This site features a comprehensive tutorial for plugin authors and a gallery showcasing core chart types and annotation capabilities. The gallery includes interactive demonstrations hosted on Datasette Lite, allowing users to inspect chart specifications directly. Notable features highlighted in the documentation include support for annotations such as vertical dashed lines for temporal markers and horizontal solid red reference lines for threshold visualization.",
+      "takeaways": [
+        "**Plugin Hook Refinement:** Version 0.4a0 updates the plugin hook architecture to simplify the development of external chart plugins.",
+        "**New Documentation Portal:** A dedicated site at charts.datasette.io now hosts tutorials, a chart gallery, and interactive demos.",
+        "**Annotation Support:** The plugin supports complex chart annotations, including vertical lines for date-based events and horizontal reference lines for data thresholds.",
+        "**Interactive Demos:** The documentation gallery integrates with Datasette Lite, enabling users to view and interact with live chart specifications."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "74e2e0a2a0ff10e4",
     "canonicalUrl": "https://siliconangle.com/2026/11/27/jensen-huang-returns-but-controversies-keep-growing-around-nvidia/",
     "title": "Jensen Huang returns, but controversies keep growing around Nvidia",
@@ -70,7 +98,7 @@
     "contentSnippet": "Aside from dealing with my calendar, there’s one thing I want AI to do: tell me if I’m about to miss the bus. What I need is a widget. It needs to tell me real-time arrivals for the bus stop near my house. Tapping around on my phone screen to open the right app and select my stop will slow me down enough to miss a bus. I need glanceable information, and I hoped that Android’s vibe-coded widget feature could help me out here. It hasn’t, to my disappointment, but I still had a good time cooking up other widgets. Google announced the ability to create custom widgets using AI back at I/O in the spring. It’s called Create My Widget, and it’s part of Android’s suite of “Gemini Intelligence” features. It’s in beta, and only just started rolling out to Pixel phones earlier this month. I was hyped. Not only does this feature raise tantalizing questions like “What is an app?” and “Where does the app live?” — stuff we live for here at The Verge dot com — it has potential to help me make my home screen ridiculous. I fired it up on a Pixel 11 Pro and cooked up my first few widgets, including one that shows a different quote from Jurassic Park every hour — the original film, not any of the sequels, naturally. It took about 20 seconds to make, and it rules. Tapping the widget opens a thread in r/MovieQuotes, so there’s not much software magic going on under the hood, evidently. But did it bring me real joy to read the words “That is one big pile of shit,” on my home screen? It did. I also made a widget that will display the words “Tut tut, looks like rain” whenever it’s raining. This is silly, and it accomplishes nothing except making me happy. I couldn’t think of anything clever it should say when there’s no rain, so it just says “No rain right now” otherwise. But I live in Seattle, so I’ll get a lot of mileage out of this widget. [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Screenshot_20261124-094903.png?quality=90&strip=all] [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Screenshot_20261124-100716.png?quality=90&strip=all] [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Screenshot_20261124-134520.png?quality=90&strip=all] [Image: https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Screenshot_20261124-133809.png?quality=90&strip=all] The create-a-widget interface suggests a few id",
     "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/DSC04405_processed.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Google DeepMind",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Google has introduced 'Create My Widget,' a beta feature within its 'Gemini Intelligence' suite for Android, designed to allow users to generate custom home screen widgets via natural language prompts. First announced at Google I/O in the spring, the feature recently began rolling out to Pixel devices, including the Pixel 11 Pro. The tool is intended to simplify the creation of personalized widgets for tasks ranging from habit tracking and recipe suggestions to countdowns and sports scores.\n\nTechnically, the widgets function primarily as prompt shortcuts for the Gemini model rather than standalone mini-applications. When a user interacts with a widget, it triggers the Gemini interface to process the request, often pulling data from Google Search or executing calendar-based actions. While effective for static or simple query-based tasks—such as displaying rotating quotes or event countdowns—the feature currently lacks the real-time data integration required for complex, dynamic use cases like live public transit arrival tracking, where the model often defaults to generic schedule information rather than real-time updates.",
@@ -175,6 +203,32 @@
     }
   },
   {
+    "id": "cb9c58904170486c",
+    "canonicalUrl": "https://simonwillison.net/2026/Nov/27/datasette-mcp/",
+    "title": "datasette-mcp 0.4",
+    "publishedAt": "2026-11-27T00:26:17.000Z",
+    "fetchedAt": "2026-11-28T02:56:22.545Z",
+    "contentHash": "23c54a1a01e9c6c6",
+    "sourceId": "simon-willison",
+    "sourceName": "Simon Willison AI",
+    "author": "Simon Willison AI",
+    "contentSnippet": "27th November 2026 Release datasette-mcp 0.4 — Adds a /-/mcp MCP server to any Datasette instance Fixed for compatibility with Datasette 1.0a44 .\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a beat by Simon Willison, posted on 27th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
+    "category": "LLMs & GenAI",
+    "lab": "Independent",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "The datasette-mcp 0.4 release introduces a /-/mcp endpoint, enabling any Datasette instance to function as a Model Context Protocol (MCP) server. This update specifically addresses compatibility issues with the Datasette 1.0a44 release.",
+      "takeaways": [
+        "**Version Compatibility:** The 0.4 update is specifically engineered to resolve integration issues with Datasette 1.0a44.",
+        "**Core Functionality:** The plugin adds a /-/mcp route to Datasette instances, facilitating standardized communication between the database tool and MCP-compliant AI clients."
+      ],
+      "impact": "Notable",
+      "readTimeMinutes": 1,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "c2bd7953104652e4",
     "canonicalUrl": "https://huggingface.co/blog/video-trainium3",
     "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
@@ -186,7 +240,7 @@
     "author": "Hugging Face Blog",
     "contentSnippet": "Thanks to our partnership with AWS, we were lucky enough to get access to a Trainium3 machine ( trn3.48xlarge , 64 NeuronCores) for a month. We spent most of the month testing Hugging Face models on it, and getting more of them to work.\n\nWith five days left, I allowed myself a little fun. When you have a Ferrari, every now and then you want to take it out on the track. So I asked myself: what if I tried to generate videos?\n\nI picked LTX-2.5 from Lightricks, which generates video and sound together. By the end, once the models were loaded, a 10-second clip with sound took 22 to 23 s to generate, on half of the machine. Here is the result.\n\nI had two goals. The first was to see how easy it is to generate videos with diffusers on Trainium3. Not the simple clips from the examples: I wanted to make short films from a script, closer to a real use case, like drafting a movie. The second was performance. I wanted to get close to what you get with CUDA, or with LTX's own API.\n\nFor CUDA, I found no real figure to compare against. The only one is LTX's claim of 6.8 s for a 10-second 720p clip on four B200 GPUs, with no detail on how it was measured. So I set CUDA aside and compared with LTX's online API instead, which LTX says makes a 10-second 1080p clip in 23.7 s. In the end, the setup matches it, and even beats it by about a second: 22 to 23 s for a 10-second clip at 2048×1024, once the models are loaded, on half of the machine. Not bad, considering how little time I had to optimize the pipelines.\n\nHow it works\n\nThe input is a film: a JSON list of shots, each with a name and a prompt, much like a storyboard. LTX-2.5 does better with long prompts, so each prompt is a paragraph on the style, the subject, the motion, the camera, the light and the sound. Here is the seal film's file, with the prompts shortened:\n\nEach shot has a name and a prompt , and can have a seed , to keep the take I picked among several. Shots are chained with two keys. This chaining is the point, since prompts alone do not keep a subject from one shot to the next:\n\nfrom : the shot starts from the last frames of an earlier shot. Starting from the earlier shot's last frame keeps a subject's look across a cut; starting from its last 25 frames (1 s) also continues the motion.\n\nto : the shot ends on the first frames of a later shot, so that it leads into it.\n\nA shot can also be trimmed, or have a capti",
     "category": "Open Source & Research",
-    "lab": "Independent",
+    "lab": "NVIDIA",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "Researcher and developer dacorvo has successfully ported Lightricks' LTX-2.5 video generation model to AWS Trainium3 hardware (trn3.48xlarge), achieving performance parity with LTX’s commercial API. By utilizing 32 of the machine's 64 available NeuronCores, the implementation generates 10-second, 2048×1024 resolution video clips with sound in 22 to 23 seconds. This represents a significant optimization over initial attempts, which took over 5 minutes for lower-resolution output, and demonstrates the viability of using Trainium3 for complex, multi-shot film drafting workflows.\n\nThe technical implementation relies on a custom Python framework that manages shot chaining via 'from' and 'to' keys, allowing for temporal consistency across cuts by conditioning new shots on the final or initial frames of preceding ones. The pipeline leverages three specific Hugging Face diffusers components: LTX2Pipeline for initial shot generation, LTX2ConditionPipeline for frame-conditioned shots, and LTX2LatentUpsamplePipeline for 2x upscaling. Performance gains were achieved through a combination of tensor parallelism (to fit the transformer model across cores) and sequence parallelism (to manage graph sizes and memory constraints), alongside significant host-side optimizations that reduced host-processing time from 280 seconds to 8 seconds per clip.",
@@ -5769,6 +5823,36 @@
     }
   },
   {
+    "id": "f6e9e53386579aa8",
+    "canonicalUrl": "https://arxiv.org/abs/2611.33885",
+    "title": "LayoutRecall: Preserving Appearance in Multi-Round 3D Layout-Controlled Image Editing",
+    "publishedAt": "2026-11-25T00:00:00.000Z",
+    "fetchedAt": "2026-11-28T02:56:20.574Z",
+    "contentHash": "149df32156c4dbee",
+    "sourceId": "hf-daily-papers",
+    "sourceName": "Hugging Face Daily Papers",
+    "author": "Yankuan Chi, Xin Lin, Baihan Yang, Yuheng Liu",
+    "contentSnippet": "Authors: Yankuan Chi , Xin Lin , Baihan Yang , Yuheng Liu , Jason Li , Truong Nguyen\n\nAbstract: 3D layout-controlled image editing gives users explicit control over object placement and camera viewpoint. In a sequence of edits, however, the latest image can lose the appearance of an object when it is occluded or leaves view. The target layout specifies where the object should reappear, while its appearance must be recovered from earlier observations. We introduce LayoutRecall, a multi-round editor that stores and reuses appearance in the local coordinate systems of 3D boxes. Box-Surface Latent Memory retains image latents on box faces and retrieves them along rays in the target view. Geometry-Aligned Memory Conditioning supplies the retrieved tokens to a FLUX.2 editor using target-view positions, shared box-local embeddings, and object-wise attention. A correspondence loss encourages the editor to attend to matching observations during denoising. We also introduce LayoutLoop, a multi-round 3D layout-controlled image editing benchmark with calibrated layouts and designed revisits. We conduct extensive experiments on LayoutLoop and real-scene data to verify the ability of our method. The project page is at this https URL .",
+    "category": "Open Source & Research",
+    "lab": "Independent",
+    "entryType": "RESEARCH_PAPER",
+    "arxivId": "2611.33885",
+    "pdfUrl": "https://arxiv.org/pdf/2611.33885",
+    "summary": {
+      "tldr": "LayoutRecall is a multi-round 3D layout-controlled image editing framework developed by Yankuan Chi, Xin Lin, Baihan Yang, Yuheng Liu, Jason Li, and Truong Nguyen. The system addresses the 'appearance drift' problem in sequential editing, where objects lose their original visual identity after being occluded or moving out of frame. By utilizing 3D box-based local coordinate systems, the framework ensures that objects maintain consistent appearance across multiple edits even when they reappear in new target layouts.\n\nThe architecture centers on two primary components: Box-Surface Latent Memory and Geometry-Aligned Memory Conditioning. The former stores image latents on the faces of 3D boxes, which are then retrieved along rays corresponding to the target viewpoint. The latter integrates these retrieved tokens into a FLUX.2 editor using object-wise attention, shared box-local embeddings, and target-view positions. A specific correspondence loss function is employed during the denoising process to force the model to align with previous observations. Alongside the method, the authors introduced LayoutLoop, a new benchmark featuring calibrated layouts and designed object revisits to evaluate multi-round editing performance.",
+      "takeaways": [
+        "**Core Architecture:** Utilizes Box-Surface Latent Memory to store and retrieve image latents on 3D box faces for consistent object appearance.",
+        "**Integration Model:** Leverages the FLUX.2 editor as the base model, conditioned via geometry-aligned memory and object-wise attention.",
+        "**New Benchmark:** Introduces LayoutLoop, a dataset specifically designed for testing multi-round 3D layout-controlled editing with calibrated layouts.",
+        "**Training Objective:** Implements a correspondence loss to ensure the editor maintains visual consistency by attending to previous object observations during denoising."
+      ],
+      "impact": "Medium",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "b4cd6a3efcf87c1a",
     "canonicalUrl": "https://www.marktechpost.com/2026/11/24/meta-facebook-your-algorithm-llm-recommendations/",
     "title": "Meet Facebook’s Your Algorithm: How Meta Turns Plain-Language Preferences Into Ranking",
@@ -10835,89 +10919,6 @@
       "impact": "Notable",
       "readTimeMinutes": 1,
       "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "5586ab7d3ddabd56",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/23/27-ai-cybersecurity-terms/",
-    "title": "27 Cybersecurity Terms to Prepare You for the Age of AI",
-    "publishedAt": "2026-11-23T10:40:16.000Z",
-    "fetchedAt": "2026-11-23T20:32:59.003Z",
-    "contentHash": "2bd8f304fdb5d4b4",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "AI now sits on both sides of the security fight, and the vocabulary has changed with it. IBM’s 2026 Cost of a Data Breach Report found that 1 in 4 malicious breaches were AI-enabled, up 56% year over year. Those breaches cost an average of $6 million, about $1 million above the $4.99 million global average. Attackers now target the models themselves, the agents that act on their output, and the people who trust what AI produces. The reference lists have moved fast to keep up. OWASP published its Top 10 for LLM Applications 2026 on August 4, 2026, and its first Top 10 for Agentic Applications in December 2025. MITRE ATLAS maps attacker tactics against AI systems the way ATT&CK does for IT. The 27 terms below are grouped in 4 parts: attacks on models, agentic risks, AI-powered attacks on people, and the defenses that answer them. Part 1: Attacks on the model itself These attacks target what a model reads, learns or reveals. NIST groups them into evasion, poisoning, privacy and misuse in its Adversarial Machine Learning taxonomy (NIST AI 100-2e2025) , published March 2025. 1. Prompt injection Prompt injection is input crafted to override a model’s intended instructions. It has ranked No. 1 on every edition of the OWASP LLM list, including the 2026 edition . LLMs have no hard boundary between instructions and data, so any text the model reads can try to steer it. 2. Indirect prompt injection Indirect prompt injection hides the malicious instruction in content the model retrieves: an email, a web page, a PDF or a code comment. The user never types it. The clearest real case is EchoLeak (CVE-2025-32711) , a zero-click flaw in Microsoft 365 Copilot rated CVSS 9.3. Aim Security showed that one crafted email could make Copilot leak organizational data; Microsoft fixed it server-side in May 2025. 3. Jailbreak A jailbreak tricks a model into ignoring its safety training, usually through role-play, fake context or sheer volume. Anthropic’s many-shot jailbreaking research showed that stuffing a long prompt with up to 256 fake dialogues can override safety behavior. Its effectiveness grows with context window size, following a power law. 4. Data poisoning Data poisoning plants malicious samples in training or fine-tuning data so the model learns harmful behavior. A joint study by Anthropic, the UK AI Security Institute and the Alan Turing Institute found that just 250 mal",
-    "category": "Open Source & Research",
-    "lab": "Anthropic",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "AI now sits on both sides of the security fight, and the vocabulary has changed with it. IBM’s 2026 Cost of a Data Breach Report found that 1 in 4 malicious breaches were AI-enabled, up 56% year over year. Those breaches cost an average of $6 million, about $1 million above the $4.99 million global average.\n\nAttackers now target the models themselves, the agents that act on their output, and the people who trust what AI produces. The reference lists have moved fast to keep up. OWASP published its Top 10 for LLM Applications 2026 on August 4, 2026, and its first Top 10 for Agentic Applications in December 2025.",
-      "takeaways": [
-        "MITRE ATLAS maps attacker tactics against AI systems the way ATT&CK does for IT.",
-        "The 27 terms below are grouped in 4 parts: attacks on models, agentic risks, AI-powered attacks on people, and the defenses that answer them.",
-        "Part 1: Attacks on the model itself These attacks target what a model reads, learns or reveals.",
-        "NIST groups them into evasion, poisoning, privacy and misuse in its Adversarial Machine Learning taxonomy (NIST AI 100-2e2025) , published March 2025."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "246989b2da7c43b6",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/23/architect-labs-frostbite-ai-designed-cpu-interaction-nets/",
-    "title": "Architect Labs Unveils Frostbite, an Interaction Net CPU Designed by AI",
-    "publishedAt": "2026-11-23T10:05:47.000Z",
-    "fetchedAt": "2026-11-23T20:32:59.003Z",
-    "contentHash": "219ac57650980e39",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Michal Sutter",
-    "contentSnippet": "Architect Labs has introduced Frostbite , an AI-designed CPU with a new instruction set built around interaction nets. The company states that its AI agents designed Frostbite from interaction net theory down to final GDS. In pre-silicon tests, it reports 4.59x the performance per watt of a modern in-order CPU core. TL;DR Size: 1 quad (2×2 tiles) plus 4 L3 nodes takes 0.792 mm² on 7 nm. No parameter count (it is a CPU). Runs on: Pre-silicon only. Final GDS closes at 500 MHz on 7 nm. An FPGA-hosted playground is planned. Performance: 4.59x perf per watt (geomean, 25 workloads) and 8.77x perf per area vs 1 in-order core. Best: 23.12x perf per watt on conv2d. What is Frostbite? Frostbite is a CPU from Architect Labs that executes programs as interaction nets in hardware. Programs are written in Vine , a Rust-like language, and compiled to an IR called Ivy. The chip is a mesh of tiles, each with its own small local memory. The launch post on X states that the AI agents co-designed the ISA and chip architecture given only interaction net theory. How do interaction nets enable parallelism? Interaction nets were introduced by Yves Lafont at POPL 1990 . A program is a graph of nodes. Computation rewrites pairs of nodes connected through their ports. Each node has 1 principal port, so active pairs never overlap and can fire in any order. Every value is used exactly once, so there is no shared mutable state to guard. A 5-queens net has 3,183 interactions and a 262-step critical path. About 12 interactions are ready per step. Software runtimes such as HVM2 already run interaction nets on GPUs. Frostbite moves the model into the ISA itself. How is the Frostbite hardware organized? The chip is built from tiles grouped into 2×2 quads. Each tile has front end, engine, memory and system blocks. A runtime domain adds a frame manager, scheduler, work queue and outlet. Its ISA adds wide bundles, hardware loop counters, streams, and ops that take, peek or copy values. Each tile runs its own queued work first. If idle, it takes work from a neighbor. If none is found, it goes inactive to save power. The company says this work stealing emerged during design and was not hand-specified. How did AI agents design the chip? Agents first synthesized papers and built Python models. Their output was a 141-page PDF. It was deleted after the first RTL pass because its estimates were physica",
-    "category": "Robotics & Hardware",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Architect Labs has introduced Frostbite , an AI-designed CPU with a new instruction set built around interaction nets. The company states that its AI agents designed Frostbite from interaction net theory down to final GDS. In pre-silicon tests, it reports 4.59x the performance per watt of a modern in-order CPU core.\n\nTL;DR Size: 1 quad (2×2 tiles) plus 4 L3 nodes takes 0.792 mm² on 7 nm. No parameter count (it is a CPU). Runs on: Pre-silicon only.",
-      "takeaways": [
-        "Final GDS closes at 500 MHz on 7 nm.",
-        "An FPGA-hosted playground is planned.",
-        "Performance: 4.59x perf per watt (geomean, 25 workloads) and 8.77x perf per area vs 1 in-order core.",
-        "Best: 23.12x perf per watt on conv2d."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "30b7a7ba54768659",
-    "canonicalUrl": "https://www.marktechpost.com/2026/11/23/meta-tlx-triton-low-level-extensions/",
-    "title": "Meta TLX Brings Warp-Group GPU Control to Triton on Hopper, Blackwell, AMD",
-    "publishedAt": "2026-11-23T08:24:57.000Z",
-    "fetchedAt": "2026-11-23T08:39:13.942Z",
-    "contentHash": "90d26829c4e6ce48",
-    "sourceId": "marktechpost",
-    "sourceName": "MarkTechPost AI",
-    "author": "Asif Razzaq",
-    "contentSnippet": "Meta has published a detailed report on TLX (Triton Low-Level Extensions) . It is the GPU compiler extension behind Meta’s production ML kernels. Meta TLX is a Triton extension that exposes warp groups, barriers, TMA and clusters to Python kernels. It targets NVIDIA Hopper and Blackwell plus AMD MI300 and MI350-series GPUs. For kernel engineers, the message is CUDA-level control without leaving Triton. TL;DR What it is: an extension to Triton, not a new language. A Blackwell GEMM takes roughly 200 lines of Python-level Triton . Runs on: NVIDIA Hopper (H100) and Blackwell (B200, GB200), AMD MI300 and MI350-series. MIT-licensed. Performance: within -0.9% to +3.7% of cuBLAS on 6 H100 FP16 GEMM shapes ( PyTorch ). Best: a 4x speedup on an H100 linear compression kernel for ads inference ( Meta ). Worst: dense LLM-style attention forward reaches about 87% of FlashAttention-4 on B200 ( PyTorch ). Bottom line: Best: hand-tuned performance from short Triton code. Worst: all numbers are self-reported, with no independent benchmarks yet. What is TLX and what problem does it solve? Triton programs GPUs at the block level. CUDA programs them at the thread level. Modern GPUs need something in between. Hopper introduced warp specialization and the Tensor Memory Accelerator (TMA). Blackwell added tensor memory (TMEM), cluster execution and paired-CTA execution. Meta says CUDA could express these patterns, but only with large amounts of architecture-specific code. TLX fills that gap with a model the research team calls MIMW (Multi-Instruction, Multi-Warp) . The warp group becomes the basic unit of orchestration. Triton still defines what runs. TLX defines how it is orchestrated. Engineers write ordinary Triton and add TLX calls only where control matters. How does TLX work? TLX adds 5 extension areas on top of Triton: Warp-group orchestration: warp groups get roles such as producer, consumer and epilogue. Synchronization: warp groups sync through hardware mbarriers. Thread-level sync stays with the compiler. Memory orchestration: direct access to TMA, asynchronous tensor-core ops and TMEM. Cluster execution: multiple CTAs cooperate through distributed shared memory and cluster-wide barriers. Optional layouts: the compiler infers layouts. Programmers override them only for speed. The API reads like Triton. Meta’s Blackwell matmul example uses tlx.local_alloc , tlx.alloc_barr",
-    "category": "Robotics & Hardware",
-    "lab": "NVIDIA",
-    "entryType": "RESEARCH_PAPER",
-    "summary": {
-      "tldr": "Meta has released TLX (Triton Low-Level Extensions), an MIT-licensed extension for the Triton compiler designed to provide CUDA-level hardware control while maintaining Python-based kernel development. TLX targets NVIDIA Hopper (H100) and Blackwell (B200, GB200) architectures, as well as AMD MI300 and MI350-series GPUs. By introducing a Multi-Instruction, Multi-Warp (MIMW) programming model, TLX allows engineers to orchestrate warp groups, hardware barriers, the Tensor Memory Accelerator (TMA), and cluster execution without the verbosity of raw CUDA, effectively bridging the gap between block-level Triton abstractions and thread-level hardware capabilities.\n\nTechnically, TLX functions as an orchestration layer where the warp group serves as the primary unit of execution. It introduces five specific extension areas: warp-group orchestration (producer/consumer/epilogue roles), hardware-level mbarriers for synchronization, direct TMA and asynchronous tensor-core operations, cluster-wide shared memory management, and manual layout overrides. Meta reports that a Blackwell GEMM can be implemented in approximately 200 lines of Python-based Triton code. Performance benchmarks on six H100 FP16 GEMM shapes show results ranging from -0.9% to +3.7% compared to cuBLAS, while specific internal use cases, such as an H100 linear compression kernel for ads inference, achieved a 4x speedup. Conversely, dense LLM-style attention forward passes on B200 hardware currently reach approximately 87% of FlashAttention-4 performance.",
-      "takeaways": [
-        "**Architecture Support:** Compatible with NVIDIA Hopper (H100), Blackwell (B200, GB200), and AMD MI300/MI350-series GPUs.",
-        "**Performance Metrics:** Achieved -0.9% to +3.7% performance parity with cuBLAS on H100 FP16 GEMM shapes and a 4x speedup on specific ads inference linear compression kernels.",
-        "**Programming Model:** Implements a Multi-Instruction, Multi-Warp (MIMW) model where warp groups act as the primary unit of orchestration, utilizing hardware mbarriers for synchronization.",
-        "**Key Features:** Adds five extension areas to Triton, including direct TMA access, cluster execution, and explicit warp-group role assignment (producer, consumer, epilogue).",
-        "**Caveats:** All performance data is self-reported by Meta with no independent third-party benchmarking currently available."
-      ],
-      "impact": "High",
-      "readTimeMinutes": 3,
-      "generatedWith": "gemini",
-      "summaryVersion": 2
     }
   }
 ]
