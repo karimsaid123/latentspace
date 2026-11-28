@@ -1,5 +1,35 @@
 [
   {
+    "id": "33e680266da2c6f9",
+    "canonicalUrl": "https://www.marktechpost.com/2026/11/28/ant-group-lingsante-3-1-flash-open-source-medical-ai/",
+    "title": "Ant Group Releases LingSante-3.1-flash: An Open-Weight MoE Model with 560B Total Parameters and 25B Activations per Token",
+    "publishedAt": "2026-11-28T09:45:33.000Z",
+    "fetchedAt": "2026-11-28T11:20:29.404Z",
+    "contentHash": "4274c198cee5d4bd",
+    "sourceId": "marktechpost",
+    "sourceName": "MarkTechPost AI",
+    "author": "Asif Razzaq",
+    "contentSnippet": "Ant Group has open-sourced LingSante , a family of medical and health AI models behind health app Afu. The flagship, LingSante-3.1-flash , is an open-weight medical AI model with 560B total parameters and 25B active per token. It ships under the MIT license with a 1M-token context window. On the new InclusionMed evaluation, it scores highest among open models. It is a self-hostable model trained for clinical reasoning, medical search and tool-using agents. TL;DR What? :It is a self-hostable model trained for clinical reasoning, medical search and tool-using agents. Size: 560B total, ~25B active per token (MoE), 1M-token context. Runs on: Multi-GPU servers. The reference SGLang setup uses 8x H200 or 4x GB300. An MXFP4 quantized checkpoint is available. Performance: Strong on medical reasoning and medical agents. Weaker on general coding and CLI agent tasks. Best: 65.72 on HealthBench Professional,the top score in the model card’s 9-model comparison What is LingSante-3.1-flash? LingSante-3.1-flash is a medical deep-reasoning model from Ant Group, built on the Ling-3.1-flash base model. It targets complex case analysis and professional medical agents. According to Ant’s official release, Afu serves 150 million users and handles nearly 20 million health consultations daily. LingSante is the model family behind that app. What is in the LingSante family? Ant group opened two models first, with more weights promised in phases: LingSante-3.1-flash: 560B total, ~25B active, 1M context, text-only deep reasoning. LingSante-3.1-air-VL : 124B total, 5.5B active, 256K context, built on Ling-3.0-flash-VL, MIT license. The research team also names 3 models not yet open. LingSante-Pulse predicts risk for more than 150 conditions. LingSante-MedGuard screens for medical safety, compliance and bioethics risks. LingSante-Live is a real-time video consultation agent already inside Afu. How does the architecture work? The model card describes a hybrid-linear MoE design: 63 KDA (linear attention) layers and 9 gated MLA layers, a 7:1 ratio 512 routed experts plus 1 shared expert, 8 routed experts active per token Hidden size 4096, 64 attention heads, vocabulary of 157,184 BF16, F32 and F8_E4M3 tensor types The linear-heavy attention stack is what makes a 1M-token window practical at this size. How was it trained? Medical and general data were mixed through pretraining, mid-training ",
+    "imageUrl": "https://www.marktechpost.com/wp-content/uploads/2026/11/image.jpeg",
+    "category": "Robotics & Hardware",
+    "lab": "DeepSeek",
+    "entryType": "DISPATCH",
+    "summary": {
+      "tldr": "Ant Group has open-sourced LingSante-3.1-flash, a flagship medical and health AI model featuring 560 billion total parameters and approximately 25 billion active parameters per token using a Mixture of Experts (MoE) architecture. Released under the MIT license with a 1-million-token context window, the model powers Ant Group's Afu health application, which serves 150 million users and handles nearly 20 million health consultations daily. It is designed for self-hosting on multi-GPU servers, with a reference SGLang setup requiring either 8x H200 or 4x GB300 GPUs, alongside an available MXFP4 quantized checkpoint.\n\nArchitecturally, LingSante-3.1-flash employs a hybrid-linear MoE design consisting of 63 KDA linear attention layers and 9 gated MLA layers in a 7:1 ratio, utilizing 512 routed experts plus 1 shared expert, with 8 routed experts active per token. The model has a hidden size of 4096, 64 attention heads, and a vocabulary size of 157,184, supporting BF16, F32, and F8_E4M3 tensor types. The linear-heavy attention stack enables its practical 1-million-token context length. On evaluation benchmarks, it achieved the highest score among open models on the InclusionMed test and scored a top 65.72 on HealthBench Professional, though it remains weaker on general coding and CLI agent tasks.\n\nAlongside the flagship flash model, Ant Group released LingSante-3.1-air-VL, a 124B total parameter vision-language model with 5.5B active parameters and a 256K context window. The research team also disclosed three unreleased models: LingSante-Pulse for risk prediction across 150+ conditions, LingSante-MedGuard for medical safety and bioethics screening, and LingSante-Live, a real-time video consultation agent integrated into the Afu app.",
+      "takeaways": [
+        "**Model Specifications:** LingSante-3.1-flash features 560B total parameters, ~25B active parameters per token, a 1M-token context window, and is released under the MIT license.",
+        "**Architectural Design:** Utilizes a hybrid-linear MoE design with 63 KDA linear attention layers, 9 gated MLA layers, 512 routed experts, 1 shared expert, and 8 active routed experts per token, with a hidden size of 4096 and 64 attention heads.",
+        "**Hardware & Deployment:** Requires multi-GPU servers with a reference SGLang setup of 8x H200 or 4x GB300 GPUs, and offers an MXFP4 quantized checkpoint.",
+        "**Benchmark Performance:** Reached the highest score among open models on the InclusionMed evaluation and scored 65.72 on HealthBench Professional, outperforming peers on medical reasoning while lagging in general coding.",
+        "**Model Family:** Includes the open-weights LingSante-3.1-air-VL (124B total, 5.5B active, 256K context) and unreleased variants LingSante-Pulse, LingSante-MedGuard, and LingSante-Live."
+      ],
+      "impact": "High",
+      "readTimeMinutes": 2,
+      "generatedWith": "gemini",
+      "summaryVersion": 2
+    }
+  },
+  {
     "id": "bedee2e9acb0a56a",
     "canonicalUrl": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
     "title": "datasette-charts 0.4a0",
@@ -214,7 +244,7 @@
     "author": "Simon Willison AI",
     "contentSnippet": "27th November 2026 Release datasette-mcp 0.4 — Adds a /-/mcp MCP server to any Datasette instance Fixed for compatibility with Datasette 1.0a44 .\n\nRecent articles Three LLM inflection points in twelve months - 24th November 2026 Ladybird's first alpha release - 23rd November 2026 Running the full server-side Datasette Python app in the browser with service workers and Pyodide - 17th November 2026 Locating the source of a mysterious beep with Claude - 9th November 2026 This is a beat by Simon Willison, posted on 27th November 2026 .\n\nMonthly briefing\n\nSponsor me for $10/month and get a curated email digest of the month's most important LLM developments.",
     "category": "LLMs & GenAI",
-    "lab": "Independent",
+    "lab": "Anthropic",
     "entryType": "DISPATCH",
     "summary": {
       "tldr": "The datasette-mcp 0.4 release introduces a /-/mcp endpoint, enabling any Datasette instance to function as a Model Context Protocol (MCP) server. This update specifically addresses compatibility issues with the Datasette 1.0a44 release.",
@@ -5886,8 +5916,8 @@
     "canonicalUrl": "https://simonwillison.net/2026/Nov/24/llm-inflection-points/",
     "title": "Three LLM inflection points in twelve months",
     "publishedAt": "2026-11-24T23:02:07.000Z",
-    "fetchedAt": "2026-11-25T00:04:43.292Z",
-    "contentHash": "38a8329a4e317379",
+    "fetchedAt": "2026-11-28T11:20:29.405Z",
+    "contentHash": "da174a2568b77076",
     "sourceId": "simon-willison",
     "sourceName": "Simon Willison AI",
     "author": "Simon Willison AI",
@@ -10892,32 +10922,6 @@
       ],
       "impact": "Notable",
       "readTimeMinutes": 2,
-      "generatedWith": "heuristic"
-    }
-  },
-  {
-    "id": "599ec3a9c12f02c6",
-    "canonicalUrl": "https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday",
-    "title": "Meta Muse can do your Black Friday shopping at Walmart",
-    "publishedAt": "2026-11-23T11:00:00.000Z",
-    "fetchedAt": "2026-11-23T20:32:57.946Z",
-    "contentHash": "3b4f6e752e6081ca",
-    "sourceId": "verge-ai",
-    "sourceName": "The Verge AI",
-    "author": "Jess Weatherbed",
-    "contentSnippet": "Muse can find Walmart’s Black Friday deals so that you don’t have to. | Image: Walmart Walmart will now let Meta's Muse shop on your behalf, allowing the AI agent to find and purchase Black Friday deals via Walmart's Sparky AI assistant. The retail giant is rolling out a live implementation of the Agent Gateway it announced last month , which helps AI agents find relevant products for you without sharing your purchase history, according to Walmart. Muse can make purchases through Walmart's \"Agent Profiles,\" which provide a dedicated space for agent activity within your Walmart customer account. These profiles also allow you to set spending limits, approve purchases, and check the purchase history of everything bought by Mu … Read the full story at The Verge.",
-    "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/Walmart-Meta-Muse-Agent-Gateway.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C100",
-    "category": "LLMs & GenAI",
-    "lab": "Independent",
-    "entryType": "DISPATCH",
-    "summary": {
-      "tldr": "Muse can find Walmart’s Black Friday deals so that you don’t have to. | Image: Walmart Walmart will now let Meta's Muse shop on your behalf, allowing the AI agent to find and purchase Black Friday deals via Walmart's Sparky AI assistant. The retail giant is rolling out a live implementation of the Agent Gateway it announced last month , which helps AI agents find relevant products for you without sharing your purchase history, according to Walmart.",
-      "takeaways": [
-        "Muse can make purchases through Walmart's \"Agent Profiles,\" which provide a dedicated space for agent activity within your Walmart customer account.",
-        "These profiles also allow you to set spending limits, approve purchases, and check the purchase history of everything bought by Mu … Read the full story at The Verge."
-      ],
-      "impact": "Notable",
-      "readTimeMinutes": 1,
       "generatedWith": "heuristic"
     }
   }
